@@ -1,0 +1,31 @@
+{
+  "name": "sparelax",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "sass": "sass --watch public/scss/style.scss:public/css/style.css"
+  },
+  "dependencies": {
+    "eslint": "8.32.0",
+    "eslint-config-next": "13.1.5",
+    "isotope-layout": "^3.0.6",
+    "next": "^14.2.15",
+    "rc-slider": "^11.1.7",
+    "react": "^18.2.0",
+    "react-animated-slider": "^1.1.4",
+    "react-circular-progressbar": "^2.1.0",
+    "react-countup": "^6.4.1",
+    "react-dom": "^18.2.0",
+    "react-modal-video": "^2.0.0",
+    "react-range-slider-input": "^3.0.7",
+    "react-slider": "^2.0.6",
+    "react-visibility-sensor": "^5.1.1",
+    "sass": "^1.57.1",
+    "swiper": "^11.1.14",
+    "wowjs": "^1.1.3"
+  }
+}
