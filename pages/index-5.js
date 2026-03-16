@@ -18,17 +18,18 @@ export default function Home5() {
         <>
             <Layout HeaderStyle="five" FooterStyle="three">
                 <Banner />
+                <About />
                 <Step />
                 <Gallery />
-                <About />
-                <Video />
-                <Services />
+
+                {/* <Video /> */}
+                {/* <Services /> */}
                 <Marquee />
                 <Testimonial />
                 <PackageSection />
                 <Pricing />
                 {/* <Contact /> */}
-                <News />
+                {/* <News /> */}
             </Layout>
         </>
     );
