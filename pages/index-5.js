@@ -11,21 +11,23 @@ import Step from "../components/sections/Home5/Step";
 import Contact from "../components/sections/Home5/Contact";
 import Testimonial from "../components/sections/Home3/Testimonial";
 import News from "../components/sections/Home5/News";
+import PackageSection from "@/components/sections/Home1/Package";
 
 export default function Home5() {
     return (
-        <> 
+        <>
             <Layout HeaderStyle="five" FooterStyle="three">
                 <Banner />
+                <Step />
+                <Gallery />
                 <About />
                 <Video />
                 <Services />
                 <Marquee />
-                <Pricing />
-                <Step />
-                <Gallery />
                 <Testimonial />
-                <Contact />
+                <PackageSection />
+                <Pricing />
+                {/* <Contact /> */}
                 <News />
             </Layout>
         </>
