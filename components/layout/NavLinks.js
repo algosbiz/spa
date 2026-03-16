@@ -66,7 +66,7 @@ const NavLinks = () => {
                 </ul>
             </li>
             <li>
-                <Link href="/#0">Services <i className="fa-solid fa-angle-down"></i></Link>
+                <Link href="/index-2">Services <i className="fa-solid fa-angle-down"></i></Link>
                 <ul className="sub-menu">
                     <li><Link href="/page-services">Service Grid</Link></li>
                     <li><Link href="/page-service-details">Service Details</Link></li>

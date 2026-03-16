@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Home3_About() {
     return (
         <>
-        <section id="about" className="about-section-three pb-130 paralax__animation">
+        <section id="about" className="about-section-three pt-130 pb-130 paralax__animation">
             <div className="shape">
                 <img className="animation__floatBob" src="images/shape/about-three-shape.png" alt="image"/>
             </div>

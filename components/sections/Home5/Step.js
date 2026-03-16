@@ -3,7 +3,7 @@ import React from 'react'
 export default function Home5_Step() {
     return (
         <>
-        <section id="projects" className="step-section pt-130">
+        <section id="projects" className="step-section pt-30">
             <div className="shape1 slideInLeft wow">
                 <img className="sway_Y__animationY" src="images/shape/step-shape-left.png" alt="image"/>
             </div>

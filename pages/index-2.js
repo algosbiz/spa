@@ -5,7 +5,8 @@ import About from "../components/sections/Home2/About";
 import Product from "../components/sections/Home2/Product";
 import Services from "../components/sections/Home2/Services";
 import Marquee from "../components/sections/Home2/Marquee";
-import Pricing from "../components/sections/Home2/Pricing";
+// import Pricing from "../components/sections/Home2/Pricing";
+import Pricing from "../components/sections/Home3/Pricing";
 import Contact from "../components/sections/Home2/Contact";
 import Funfact from "../components/sections/Home2/Funfact";
 import Testimonial from "../components/sections/Home2/Testimonial";
@@ -15,11 +16,12 @@ import Instagram from "../components/sections/Home2/Instagram";
 
 export default function Home2() {
     return (
-        <> 
+        <>
             <Layout HeaderStyle="two" FooterStyle="two">
                 <Banner />
                 <About />
-                <Services />
+                <Pricing />
+
                 <Marquee />
                 <Pricing />
                 <Product />
@@ -29,6 +31,7 @@ export default function Home2() {
                 <Funfact />
                 <News />
                 <Instagram />
+                <Services />
             </Layout>
         </>
     );
