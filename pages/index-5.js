@@ -12,6 +12,7 @@ import Contact from "../components/sections/Home5/Contact";
 import Testimonial from "../components/sections/Home3/Testimonial";
 import News from "../components/sections/Home5/News";
 import PackageSection from "@/components/sections/Home1/Package";
+import Feature from "../components/sections/Home1/Feature";
 
 export default function Home5() {
     return (
@@ -19,6 +20,7 @@ export default function Home5() {
             <Layout HeaderStyle="five" FooterStyle="three">
                 <Banner />
                 <About />
+                <Feature />
                 <Step />
                 <Gallery />
 
