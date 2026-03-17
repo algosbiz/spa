@@ -6698,6 +6698,7 @@ textarea.form-control {
 
 .faq-section {
   overflow: hidden;
+  padding: 100px 0;
 }
 .faq-section .outer-box {
   padding: 0 50px;
@@ -7342,6 +7343,7 @@ textarea.form-control {
   overflow: hidden;
   position: relative;
   z-index: 1;
+  padding: 100px 0;
 }
 .instagram-section-two::after {
   position: absolute;

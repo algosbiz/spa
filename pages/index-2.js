@@ -5,6 +5,7 @@ import About from "../components/sections/Home2/About";
 import Product from "../components/sections/Home2/Product";
 import Services from "../components/sections/Home2/Services";
 import Marquee from "../components/sections/Home2/Marquee";
+import Faq from "../components/sections/Home6/Faq";
 // import Pricing from "../components/sections/Home2/Pricing";
 import Pricing from "../components/sections/Home3/Pricing";
 import Contact from "../components/sections/Home2/Contact";
@@ -30,6 +31,7 @@ export default function Home2() {
                 <Funfact />
                 {/* <News /> */}
                 <Instagram />
+                <Faq />
                 <Services />
             </Layout>
         </>
