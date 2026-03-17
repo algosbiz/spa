@@ -17,19 +17,18 @@ import Instagram from "../components/sections/Home2/Instagram";
 export default function Home2() {
     return (
         <>
-            <Layout HeaderStyle="two" FooterStyle="two">
+            <Layout HeaderStyle="five" FooterStyle="two">
                 <Banner />
                 <About />
                 <Pricing />
-
                 <Marquee />
                 <Pricing />
                 <Product />
                 <Testimonial />
-                <Team />
-                <Contact />
+                {/* <Team /> */}
+                {/* <Contact /> */}
                 <Funfact />
-                <News />
+                {/* <News /> */}
                 <Instagram />
                 <Services />
             </Layout>
