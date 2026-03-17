@@ -29,7 +29,7 @@ CSS TABLE OF CONTENTS
     4.01 --> All Section
 
 ------------------------------------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+/* Google Fonts now loaded via <link> in PageHead.js for Vercel compatibility */
 @import url("meanmenu.css");
 @import url("animate.css");
 @import url("fontawesome.css");
@@ -11743,7 +11743,7 @@ Page Title
 ====================================================================
 
 ***/
-@-webkit-keyframes "ripple" {
+@-webkit-keyframes ripple {
   70% {
     -webkit-box-shadow: 0 0 0 70px rgba(255, 255, 255, 0);
     box-shadow: 0 0 0 70px rgba(255, 255, 255, 0);
@@ -11753,7 +11753,7 @@ Page Title
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
 }
-@keyframes "ripple" {
+@keyframes ripple {
   70% {
     -webkit-box-shadow: 0 0 0 70px rgba(255, 255, 255, 0);
     box-shadow: 0 0 0 70px rgba(255, 255, 255, 0);
