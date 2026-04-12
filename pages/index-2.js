@@ -24,13 +24,14 @@ export default function Home2() {
                 <Pricing />
                 <Marquee />
                 <Pricing />
-                <Product />
-                <Testimonial />
-                {/* <Team /> */}
-                {/* <Contact /> */}
+                {/* <Product /> */}
                 <Funfact />
                 {/* <News /> */}
                 <Instagram />
+                <Testimonial />
+                {/* <Team /> */}
+                {/* <Contact /> */}
+
                 <Faq />
                 <Services />
             </Layout>
