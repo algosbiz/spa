@@ -40,9 +40,9 @@ const NavLinks = () => {
             </li>
             <li><Link href="/page-about">About</Link></li>
             <li>
-                <Link href="/#0">Pages <i className="fa-solid fa-angle-down"></i></Link>
+                <Link href="/#0">Treatments <i className="fa-solid fa-angle-down"></i></Link>
                 <ul className="sub-menu">
-                    <li><Link href="/page-gallery">Gallery</Link></li>
+                    <li><Link href="/page-gallery">Balinese Massage</Link></li>
                     <li>
                         <Link className="arrow" href="#0">Team</Link>
                         <ul className="sub-sub-menu">
