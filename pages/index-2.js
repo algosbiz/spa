@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/layout/Layout";
 import Banner from "../components/sections/Home2/Banner";
-import About from "../components/sections/Home2/About";
+// import About from "../components/sections/Home2/About";
 import Product from "../components/sections/Home2/Product";
 import Services from "../components/sections/Home2/Services";
 import Marquee from "../components/sections/Home2/Marquee";
@@ -14,23 +14,29 @@ import Testimonial from "../components/sections/Home2/Testimonial";
 import Team from "../components/sections/Home2/Team";
 import News from "../components/sections/Home2/News";
 import Instagram from "../components/sections/Home2/Instagram";
+import AboutReverse from "../components/sections/Home1/AboutReverse";
+import About from "../components/sections/Home1/About";
 
 export default function Home2() {
     return (
         <>
             <Layout HeaderStyle="five" FooterStyle="two">
                 <Banner />
-                <About />
+                {/* <About /> */}
                 <Pricing />
                 <Marquee />
-                <Pricing />
                 {/* <Product /> */}
                 <Funfact />
                 {/* <News /> */}
-                <Instagram />
+                {/* <Instagram /> */}
+
                 <Testimonial />
                 {/* <Team /> */}
                 {/* <Contact /> */}
+                <About />
+                <AboutReverse />
+                <About />
+                <AboutReverse />
                 <Faq />
                 <Services />
             </Layout>

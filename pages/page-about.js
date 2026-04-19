@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "../components/layout/Layout";
-import About from "../components/sections/Home1/About";
+import AboutReverse from "../components/sections/Home1/AboutReverse";
 import MarqueeSwiper from "../components/sections/Home1/MarqueeSwiper";
 import Video from "../components/sections/Home1/Video";
 import Contact from "../components/sections/Home1/Contact";
@@ -13,7 +13,7 @@ export default function Home() {
         <>
             <Layout HeaderStyle="one" FooterStyle="four">
                 <PageTitle pageName="About Us" />
-                <About />
+                <AboutReverse />
                 <MarqueeSwiper />
                 <Video />
                 <Contact />
