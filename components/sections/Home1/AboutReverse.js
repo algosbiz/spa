@@ -4,12 +4,12 @@ import Link from 'next/link'
 export default function Home1_AboutReverse() {
     return (
         <>
-            <section id="about" className="about-section pt-130 pb-100">
+            <section id="about" className="about-section section__decoration-top section__decoration-bottom bg-sub pt-130 pb-100">
                 <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <img src="images/shape/about-left-shape.png" alt="image"/>
+                    <img src="images/shape/about-left-shape.png" alt="image" />
                 </div>
                 <div className="shape2 wow slideInRight" data-wow-delay="400ms" data-wow-duration="1500ms">
-                    <img className="sway_Y__animation" src="images/shape/about-right-shape.png" alt="image"/>
+                    <img className="sway_Y__animation" src="images/shape/about-right-shape.png" alt="image" />
                 </div>
                 <div className="container">
                     <div className="row g-4">
@@ -17,7 +17,7 @@ export default function Home1_AboutReverse() {
                             <div className="inner-column wow fadeInLeft" data-tilt data-tilt-max="3" data-wow-delay="200ms"
                                 data-wow-duration="1500ms" style={{ float: 'left' }}>
                                 <div className="image-box">
-                                    <img src="images/about/about-image.png" alt="image"/>
+                                    <img src="images/about/about-image.png" alt="image" />
                                 </div>
                                 <div className="info">
                                     <h4><span className="count">25</span> <span>+</span> Years</h4>

@@ -76,12 +76,65 @@ export default function Home3_Pricing() {
                         </div>
                     </div>
                 </div>
-                <div className="outer-box">
+                <div className="outer-box mb-50">
                     <div className="row g-4">
                         <div className="col-lg-4 col-xl-3 order-2 order-lg-1 pricing-block">
                             <div className="inner-box">
                                 <div className="shape"><img src="images/pricing/shape.png" alt="image"/></div>
                                 <h2 className="price">$59 <span>/ Hr</span></h2>
+                                <h6>Massage & Treatments</h6>
+                                <ul>
+                                    <li>1. Relaxing Spa</li>
+                                    <li>2. Oil Massage</li>
+                                    <li>3. Cupping Massage</li>
+                                    <li>4. Hand & Feet</li>
+                                </ul>
+                                <Link href="/page-contact" className="btn-two mt-35">Book Now
+                                    <span className="icon_box">
+                                        <i className="fa-regular icon_first fa-arrow-right-long"></i>
+                                        <i className="fa-regular icon_second fa-arrow-right-long"></i>
+                                    </span>
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="col-lg-8 col-xl-9 image-column order-1 order-lg-2">
+                            <div className="image-box"><img src="images/pricing/pricing-three-image2.jpg" alt="image"/></div>
+                        </div>
+                    </div>
+                </div>
+                <div className="outer-box mb-50">
+                    <div className="row g-4">
+                        <div className="col-lg-8 col-xl-9 image-column">
+                            <div className="image-box"> <img src="images/pricing/pricing-three-image1.jpg" alt="image"/>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-xl-3 pricing-block">
+                            <div className="inner-box">
+                                <div className="shape"> <img src="images/pricing/shape.png" alt="image"/> </div>
+                                <h2 className="price">$89 <span>/ Hr</span></h2>
+                                <h6>Massage & Treatments</h6>
+                                <ul>
+                                    <li>1. Relaxing Spa</li>
+                                    <li>2. Oil Massage</li>
+                                    <li>3. Cupping Massage</li>
+                                    <li>4. Hand & Feet</li>
+                                </ul>
+                                <Link href="/page-contact" className="btn-two mt-35">Book Now
+                                    <span className="icon_box">
+                                        <i className="fa-regular icon_first fa-arrow-right-long"></i>
+                                        <i className="fa-regular icon_second fa-arrow-right-long"></i>
+                                    </span>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="outer-box">
+                    <div className="row g-4">
+                        <div className="col-lg-4 col-xl-3 order-2 order-lg-1 pricing-block">
+                            <div className="inner-box">
+                                <div className="shape"><img src="images/pricing/shape.png" alt="image"/></div>
+                                <h2 className="price">$119 <span>/ Hr</span></h2>
                                 <h6>Massage & Treatments</h6>
                                 <ul>
                                     <li>1. Relaxing Spa</li>

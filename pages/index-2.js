@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/layout/Layout";
 import Banner from "../components/sections/Home2/Banner";
-// import About from "../components/sections/Home2/About";
+import AboutOld from "../components/sections/Home2/About";
 import Product from "../components/sections/Home2/Product";
 import Services from "../components/sections/Home2/Services";
 import Marquee from "../components/sections/Home2/Marquee";
@@ -22,7 +22,7 @@ export default function Home2() {
         <>
             <Layout HeaderStyle="five" FooterStyle="two">
                 <Banner />
-                {/* <About /> */}
+                <AboutOld />
                 <Pricing />
                 <Marquee />
                 {/* <Product /> */}
