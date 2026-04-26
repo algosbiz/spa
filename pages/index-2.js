@@ -24,7 +24,7 @@ export default function Home2() {
                 <Banner />
                 <AboutOld />
                 <Pricing />
-                <Marquee />
+                {/* <Marquee /> */}
                 {/* <Product /> */}
                 <Funfact />
                 {/* <News /> */}
@@ -36,7 +36,6 @@ export default function Home2() {
                 <About />
                 <AboutReverse />
                 <About />
-                <AboutReverse />
                 <Faq />
                 <Services />
             </Layout>

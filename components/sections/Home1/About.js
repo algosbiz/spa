@@ -6,10 +6,10 @@ export default function Home1_About() {
         <>
             <section id="about" className="about-section pt-130 pb-100">
                 <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <img src="images/shape/about-left-shape.png" alt="image"/>
+                    <img src="images/shape/about-left-shape.png" alt="image" />
                 </div>
                 <div className="shape2 wow slideInRight" data-wow-delay="400ms" data-wow-duration="1500ms">
-                    <img className="sway_Y__animation" src="images/shape/about-right-shape.png" alt="image"/>
+                    <img className="sway_Y__animation" src="images/shape/about-right-shape.png" alt="image" />
                 </div>
                 <div className="container">
                     <div className="row g-4">
@@ -121,13 +121,13 @@ export default function Home1_About() {
                         <div className="col-lg-5 image-column">
                             <div className="inner-column wow fadeInLeft" data-tilt data-tilt-max="3" data-wow-delay="200ms"
                                 data-wow-duration="1500ms">
-                                <div className="image-box">
-                                    <img src="images/about/about-image.png" alt="image"/>
+                                <div className="">
+                                    <img src="images/about/about-image.png" alt="image" />
                                 </div>
-                                <div className="info">
+                                {/* <div className="info">
                                     <h4><span className="count">25</span> <span>+</span> Years</h4>
                                     <h4 className="title">Experience</h4>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Home1_AboutReverse() {
     return (
         <>
-            <section id="about" className="about-section section__decoration-top section__decoration-bottom bg-sub pt-130 pb-100">
+            <section id="about" className="about-section section__decoration-top section__decoration-bottom bg-sub pt-130 pb-130">
                 <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
                     <img src="images/shape/about-left-shape.png" alt="image" />
                 </div>
