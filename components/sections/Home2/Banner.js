@@ -68,6 +68,7 @@ export default function Home2_Banner() {
                         </SwiperSlide>
                     </div>
                 </Swiper>
+                <div className="banner-two__pagination" />
             </section>
         </>
     )
