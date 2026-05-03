@@ -121,9 +121,9 @@ const Header1 = ({ scroll }) => {
 		</header>
 
         {/* <!-- Sidebar area start here --> */}
-        <div className={`sidebar-area offcanvas light-area offcanvas-end ${sidebarToggle ? 'show' : ''}`} id="menubar">
+        <div className={`sidebar-area sidebar-area--white offcanvas offcanvas-end ${sidebarToggle ? 'show' : ''}`} id="menubar" style={{ backgroundColor: "#ffffff", borderLeft: "1px solid rgba(95, 90, 84, 0.12)" }}>
             <div className="offcanvas-header">
-                <Link href="/index" className="logo"> <img src="images/logo/logo-light.png" alt="logo"/></Link>
+                <Link href="/" className="logo"> <img src="images/logo/logo.png" alt="logo"/></Link>
                 <button type="button" className="btn-close" onClick={handleToggleSidebar}><i
                         className="fa-regular fa-xmark"></i></button>
             </div>
@@ -132,24 +132,18 @@ const Header1 = ({ scroll }) => {
                     <MobileMenu />
                 </div>
                 <div className="d-none d-lg-block">
-                    <h5 className="text-white mb-20">About Us</h5>
-                    <p className="sidebar__text">Unleash the full potential of your website and elevate its online presence with
-                        our comprehensive consultation solutions.</p>
+                    <h5 className="mb-20" style={{ color: "#2f2924" }}>About Us</h5>
+                    <p className="sidebar__text" style={{ color: "#5f5a54" }}>Spa Bali Moon offers high-quality traditional massages and spa therapies, with outcall and home services by skilled therapists specializing in Balinese Body Massage.</p>
                 </div>
                 <div className="sidebar__contact-info mt-30">
-                    <h5 className="text-white mb-20">Contact Info</h5>
+                    <h5 className="mb-20" style={{ color: "#2f2924" }}>Contact Info</h5>
                     <ul>
-                        <li><i className="fa-solid fa-location-dot"></i> <Link href="/#0">121 King Street, Melbourne</Link></li>
-                        <li className="py-2"><i className="fa-solid fa-phone-volume"></i> <Link href="/tel:+912659302003">+91 2659302
-                                003</Link></li>
-                        <li><i className="fa-solid fa-paper-plane"></i> <Link href="/#0">info.company@gmail.com</Link></li>
+                        <li><i className="fa-solid fa-location-dot" style={{ color: "#b39242" }}></i> <Link href="/#0" style={{ color: "#5f5a54" }}>Jl. Panggung Sari No. 30, Seminyak, Bali</Link></li>
+                        <li className="py-2"><i className="fa-solid fa-phone-volume" style={{ color: "#b39242" }}></i> <Link href="tel:+6287863175144" style={{ color: "#5f5a54" }}>+62 878-6317-5144</Link></li>
+                        <li><i className="fa-solid fa-paper-plane" style={{ color: "#b39242" }}></i> <Link href="mailto:info@spabalimoon.com" style={{ color: "#5f5a54" }}>info@spabalimoon.com</Link></li>
                     </ul>
                 </div>
-                <div className="sidebar__btns my-4">
-                    <Link href="/#!">Sign Up</Link>
-                    <Link className="sign-in" href="#!">Sign In</Link>
-                </div>
-                <div className="sidebar__socials">
+                <div className="sidebar__socials mt-30">
                     <ul>
                         <li>
                             <Link href="/#0">

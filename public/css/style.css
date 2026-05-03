@@ -12490,3 +12490,19 @@ Sidebar
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/* Sidebar White Theme */
+.sidebar-area--white {
+    background-color: #ffffff !important;
+    border-left: 1px solid rgba(95, 90, 84, 0.12) !important;
+}
+.sidebar-area--white .mobile-menu ul li a {
+    color: #2f2924 !important;
+    border-top: 1px solid rgba(95, 90, 84, 0.1) !important;
+}
+.sidebar-area--white .mobile-menu ul li .dropdown-btn i {
+    color: #ffffff !important;
+}
+.sidebar-area--white .btn-close {
+    background-color: #b39242 !important;
+} 

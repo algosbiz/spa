@@ -16,7 +16,7 @@ import Video from "../components/sections/Home1/Video";
 export default function Home5() {
     return (
         <>
-            <Layout HeaderStyle="five" FooterStyle="three">
+            <Layout HeaderStyle="five" FooterStyle="two">
                 <Banner />
                 <Step />
                 <About />
@@ -26,7 +26,7 @@ export default function Home5() {
 
                 {/* <Video /> */}
                 {/* <Services /> */}
-                <Marquee />
+                {/* <Marquee /> */}
                 <Testimonial />
                 <PackageSection />
                 <Video />
