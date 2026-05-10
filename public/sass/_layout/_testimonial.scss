@@ -162,4 +162,24 @@
 		}
 	}
 }
+
+.testimonial-slider-two {
+	.swiper-pagination {
+		position: relative !important;
+		bottom: auto !important;
+		margin-top: 30px;
+	}
+	.swiper-pagination-bullet {
+		width: 12px;
+		height: 12px;
+		background: #E7A391;
+		opacity: 0.4;
+		transition: all 0.3s ease;
+	}
+	.swiper-pagination-bullet-active {
+		opacity: 1;
+		background: #E7A391;
+		transform: scale(1.3);
+	}
+}
 // Testimonial two area end here ***

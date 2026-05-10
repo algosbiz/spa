@@ -6,7 +6,7 @@ const NavLinks = () => {
 
         <ul>
             <li>
-                <Link href="/index-5">Home <i className="fa-solid fa-angle-down"></i></Link>
+                <Link href="/">Home <i className="fa-solid fa-angle-down"></i></Link>
                 <ul className="sub-menu">
                     <li><Link href="/">Home one</Link></li>
                     <li><Link href="/index-2">Home two</Link></li>
@@ -66,7 +66,7 @@ const NavLinks = () => {
                 </ul>
             </li>
             <li>
-                <Link href="/index-2">Reservation <i className="fa-solid fa-angle-down"></i></Link>
+                <Link href="/reservation">Reservation <i className="fa-solid fa-angle-down"></i></Link>
                 <ul className="sub-menu">
                     <li><Link href="/page-services">Service Grid</Link></li>
                     <li><Link href="/page-service-details">Service Details</Link></li>
