@@ -1,7 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 const Footer = () => {
+    const [email, setEmail] = useState('');
+    const [status, setStatus] = useState('idle'); // 'idle', 'loading', 'success', 'error'
+    const [message, setMessage] = useState('');
+
+    const handleSubscribe = async (e) => {
+        e.preventDefault();
+        
+        if (!email) {
+            setStatus('error');
+            setMessage('Please enter your email address.');
+            return;
+        }
+
+        setStatus('loading');
+        setMessage('');
+
+        try {
+            const response = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok && data.success) {
+                setStatus('success');
+                setMessage(data.message || 'Thanks for subscribing!');
+                setEmail('');
+            } else {
+                setStatus('error');
+                setMessage(data.message || 'Subscription failed. Please try again.');
+            }
+        } catch (error) {
+            setStatus('error');
+            setMessage('Network error. Please check your connection.');
+        }
+        
+        // Clear message after 5 seconds
+        setTimeout(() => {
+            setStatus('idle');
+            setMessage('');
+        }, 5000);
+    };
     return (
         <>
         <footer className="footer-two-area footer-two-area--white-simple">
@@ -13,10 +57,29 @@ const Footer = () => {
                     <Link href="/" className="logo"><img src="images/logo/logo.png" alt="Spa Bali Moon"/></Link>
                     <div className="newsletter">
                         <h3 className="title">Join Our Newsletter</h3>
-                        <div className="input">
-                            <input type="text" placeholder="Your Email"/>
-                            <button type="button">Subscribe</button>
-                        </div>
+                        <form className="input" onSubmit={handleSubscribe} style={{ position: 'relative' }}>
+                            <input 
+                                type="email" 
+                                placeholder="Your Email" 
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                disabled={status === 'loading'}
+                                required
+                            />
+                            <button type="submit" disabled={status === 'loading'}>
+                                {status === 'loading' ? 'Sending...' : 'Subscribe'}
+                            </button>
+                        </form>
+                        {message && (
+                            <p style={{ 
+                                marginTop: '10px', 
+                                fontSize: '14px', 
+                                color: status === 'success' ? '#28a745' : '#dc3545',
+                                transition: 'opacity 0.3s ease'
+                            }}>
+                                {message}
+                            </p>
+                        )}
                     </div>
                 </div>
                 <div className="row g-5">

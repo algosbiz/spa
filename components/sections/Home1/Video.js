@@ -16,6 +16,11 @@ export default function Home1_Video() {
                         </h4>
                         <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Areas
                             of Expertise</h2>
+
+                        <p className="text wow fadeInUp" data-wow-delay="500ms" data-wow-duration="1500ms">Proin
+                            efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget
+                            egestas magna mi ut arcu. Phasellus nec. Velit orci consectetur ligula, eget egestas
+                            magna mi ut arcu. Phasellus nec.</p>
                     </div>
                     <div className="row align-items-center g-4">
                         <div className="col-lg-6 video-column">

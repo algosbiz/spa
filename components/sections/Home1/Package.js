@@ -42,10 +42,7 @@ const PackageItem = ({ item, isLast }) => {
                     <a href="#" onClick={(e) => { e.preventDefault(); setIsOpen(!isOpen); }} style={{cursor: 'pointer'}}>
                         {item.name} {isOpen ? <i className="fa-solid fa-angle-up ms-1" style={{fontSize: '14px'}}></i> : <i className="fa-solid fa-angle-down ms-1" style={{fontSize: '14px'}}></i>}
                     </a> 
-                    <span className="line"></span>
-                    <span>from</span> {item.defaultPrice}
                 </h3>
-                <p>{item.desc}</p>
                 <div 
                     className="pricing-dropdown" 
                     style={{ 
