@@ -5271,9 +5271,19 @@ textarea.form-control {
     width: 100%;
     max-width: 60px;
   }
+  
+  .banner-five__content .info .video-btn i {
+    font-size: 32px !important;
+  }
 
   .banner-five__content .info .text {
     font-size: 14px;
+  }
+  
+  .banner-five__content .info .arry {
+    bottom: -60px;
+    left: 40px;
+    transform: scale(0.8);
   }
 }
 
@@ -6622,13 +6632,24 @@ textarea.form-control {
 
 @media (max-width: 470px) {
   .feature-block .inner-box {
-    padding: 10px;
+    padding: 20px;
     gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .feature-block .inner-box .icon svg {
     width: 40px;
     height: 40px;
+  }
+  .feature-block .inner-box .image-box {
+    max-width: 100%;
+    width: 100%;
+  }
+  .feature-block .inner-box .image-box img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
 }
 

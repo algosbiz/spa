@@ -88,9 +88,16 @@ const Footer = () => {
                             <div className="footer-about">
                                 <div>
                                     <p className="text">Spa Bali Moon offers high-quality traditional massages and spa therapies, with outcall and home services by skilled therapists specializing in Balinese Body Massage.</p>
-                                    <div className="socials">
-                                        <Link href="#0" aria-label="Tripadvisor"><i className="fa-brands fa-tripadvisor"></i></Link>
-                                        <Link href="#0" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></Link>
+                                    <div className="footer__payments">
+                                        <h3 className="title" style={{ marginBottom: '20px' }}>We accept payment</h3>
+                                        <div className="footer__payment-list">
+                                            <span className="footer__payment-card" aria-label="Mastercard">
+                                                <i className="fa-brands fa-cc-mastercard"></i>
+                                            </span>
+                                            <span className="footer__payment-card" aria-label="Visa">
+                                                <i className="fa-brands fa-cc-visa"></i>
+                                            </span>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -103,8 +110,14 @@ const Footer = () => {
                         <div className="footer__item">
                             <h3 className="title">Contact Us</h3>
                             <ul className="links">
-                                <li>Address: Jl. Panggung Sari No. 30, Seminyak, Bali</li>
-                                <li>Phone: +62 878-6317-5144</li>
+                                <li style={{ display: 'flex', flexDirection: 'column', marginBottom: '15px', alignItems: 'flex-start' }}>
+                                    <span style={{ fontSize: '14px', marginBottom: '2px' }}>Address:</span>
+                                    <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>Jl. Panggung Sari No. 30, Seminyak, Bali</span>
+                                </li>
+                                <li style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                                    <span style={{ fontSize: '14px', marginBottom: '2px' }}>Phone:</span>
+                                    <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>+62 878-6317-5144</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -122,9 +135,17 @@ const Footer = () => {
                         <div className="footer__item">
                             <h3 className="title">Opening Times</h3>
                             <ul className="time-table">
-                                <li>Day Spa in Seminyak <span>&nbsp;</span></li>
-                                <li>Open Daily: <span>9am-11pm</span></li>
-                                <li>Home service fee <span>75k/therapist</span></li>
+                                <li style={{ display: 'block', marginBottom: '15px', borderBottom: '1px solid rgba(95, 90, 84, 0.1)', paddingBottom: '8px' }}>
+                                    <span style={{ fontWeight: '700', color: '#2f2924', fontSize: '16px' }}>Day Spa in Seminyak</span>
+                                </li>
+                                <li style={{ display: 'flex', flexDirection: 'column', marginBottom: '12px', alignItems: 'flex-start' }}>
+                                    <span style={{ fontSize: '14px', marginBottom: '2px' }}>Open Daily:</span>
+                                    <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>9am - 11pm</span>
+                                </li>
+                                <li style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                                    <span style={{ fontSize: '14px', marginBottom: '2px' }}>Home service fee:</span>
+                                    <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>75k / therapist</span>
+                                </li>
                             </ul>
                         </div>
                     </div>

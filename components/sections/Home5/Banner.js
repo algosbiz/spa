@@ -1,8 +1,6 @@
-import React,{useState} from 'react';
-import ModalVideo from 'react-modal-video';
+import React from 'react';
 
 export default function Home5_Banner() {
-    const [isOpen, setOpen] = useState(false);
     return (
         <>
         <section id="home" className="banner-five-area section__decoration-bottom paralax__animation mb-130">
@@ -17,12 +15,8 @@ export default function Home5_Banner() {
                     <div className="banner-five__content">
                         <h1 className="title">Experience <span>Bliss, Embrace</span></h1>
                         <div className="info">
-                            <a onClick={() => setOpen(true)} className="video-btn wow zoomIn"
-                                data-fancybox="gallery" data-caption="">
-                                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0.786133 0L10.2147 5.5L0.786133 11V0Z" fill="black" />
-                                </svg>
+                            <a href="https://wa.me/6287863031503" target="_blank" rel="noopener noreferrer" className="video-btn wow zoomIn" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', borderColor: '#a78627' }}>
+                                <i className="fa-brands fa-whatsapp" style={{ color: '#a78627', fontSize: '45px' }}></i>
                             </a>
                             <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur
                                 ligula, eget egestas magna mi ut arcu.</p>
@@ -48,7 +42,6 @@ export default function Home5_Banner() {
                 </div>
             </div>
         </section>
-        <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="Fvae8nxzVz4" onClose={() => setOpen(false)} />
         </>
     )
 }
