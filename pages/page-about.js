@@ -11,7 +11,7 @@ export default function Home() {
 
     return (
         <>
-            <Layout HeaderStyle="one" FooterStyle="four">
+            <Layout HeaderStyle="one" FooterStyle="two">
                 <PageTitle pageName="About Us" />
                 <AboutReverse />
                 <MarqueeSwiper />

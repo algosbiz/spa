@@ -138,9 +138,9 @@ const Header3 = ({ scroll }) => {
                 <div className="sidebar__contact-info mt-30">
                     <h5 className="mb-20" style={{ color: "#2f2924" }}>Contact Info</h5>
                     <ul>
-                        <li><i className="fa-solid fa-location-dot" style={{ color: "#b39242" }}></i> <Link href="/#0" style={{ color: "#5f5a54" }}>Jl. Panggung Sari No. 30, Seminyak, Bali</Link></li>
-                        <li className="py-2"><i className="fa-solid fa-phone-volume" style={{ color: "#b39242" }}></i> <Link href="tel:+6287863175144" style={{ color: "#5f5a54" }}>+62 878-6317-5144</Link></li>
-                        <li><i className="fa-solid fa-paper-plane" style={{ color: "#b39242" }}></i> <Link href="mailto:info@spabalimoon.com" style={{ color: "#5f5a54" }}>info@spabalimoon.com</Link></li>
+                        <li><i className="fa-solid fa-location-dot" style={{ color: "#A78627" }}></i> <Link href="/#0" style={{ color: "#5f5a54" }}>Jl. Panggung Sari No. 30, Seminyak, Bali</Link></li>
+                        <li className="py-2"><i className="fa-solid fa-phone-volume" style={{ color: "#A78627" }}></i> <Link href="tel:+6287863175144" style={{ color: "#5f5a54" }}>+62 878-6317-5144</Link></li>
+                        <li><i className="fa-solid fa-paper-plane" style={{ color: "#A78627" }}></i> <Link href="mailto:info@spabalimoon.com" style={{ color: "#5f5a54" }}>info@spabalimoon.com</Link></li>
                     </ul>
                 </div>
                 <div className="sidebar__socials mt-30">

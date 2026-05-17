@@ -123,7 +123,7 @@ const PackageItem = ({ item, isLast }) => {
                             <ul className="list-unstyled" style={{ paddingLeft: '0' }}>
                                 {item.benefits.map((benefit, idx) => (
                                     <li key={idx} style={{ fontSize: '13px', color: '#5f5a54', display: 'flex', gap: '10px', marginBottom: '5px', lineHeight: '1.4' }}>
-                                        <i className="fa-solid fa-circle" style={{ fontSize: '5px', marginTop: '8px', color: '#b39242' }}></i>
+                                        <i className="fa-solid fa-circle" style={{ fontSize: '5px', marginTop: '8px', color: '#A78627' }}></i>
                                         <span>{benefit}</span>
                                     </li>
                                 ))}
@@ -145,7 +145,7 @@ const PackageItem = ({ item, isLast }) => {
 };
 
 export default function PackageSection() {
-    const [activeIndex, setActiveIndex] = useState(2);
+    const [activeIndex, setActiveIndex] = useState(1);
     const handleOnClick = (index) => {
         setActiveIndex(index);
     };
