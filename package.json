@@ -10,6 +10,8 @@
     "sass": "sass --watch public/scss/style.scss:public/css/style.css"
   },
   "dependencies": {
+    "@marsidev/react-turnstile": "^1.5.2",
+    "@sendgrid/mail": "^8.1.6",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.5",
     "isotope-layout": "^3.0.6",

@@ -60,20 +60,17 @@ const decoratorSvg = (
 export default function BookTreatment() {
     return (
         <>
-            <section className="book-treatment-section pt-130 pb-130">
+            <section className="book-treatment-section faq-section pt-130 pb-130">
                 <div className="container">
                     {/* Section Header */}
                     <div className="section-header center mb-60">
-                        <h2 className="title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms" style={{ fontFamily: 'var(--title-font)', fontWeight: 600 }}>
-                            Book Your Treatment
-                        </h2>
-                        <h4 className="wow fadeInUp" data-wow-delay="100ms" data-wow-duration="1500ms" style={{ color: '#C4A265', fontStyle: 'italic', fontWeight: 400, marginTop: '10px', fontFamily: 'var(--title-font)' }}>
+                        <h4 className="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
                             Your Spa Experience is One Click Away
                         </h4>
-                        <div className="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms" style={{ margin: '20px auto', textAlign: 'center' }}>
-                            {decoratorSvg}
-                        </div>
-                        <p className="text wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms" style={{ maxWidth: '800px', margin: '0 auto' }}>
+                        <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms" style={{ marginBottom: '20px' }}>
+                            Book Your Treatment
+                        </h2>
+                        <p className="text wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms" style={{ maxWidth: '800px', margin: '0 auto' }}>
                             We value your time and aim to make the reservation process as smooth as possible. Simply click the button below to book your appointment, and our team will take care of the arrangements to ensure everything is ready for your scheduled time.
                         </p>
                     </div>
@@ -81,60 +78,44 @@ export default function BookTreatment() {
                     {/* Two Column Cards */}
                     <div className="row g-4">
                         {/* Left Card - Home Service */}
-                        <div className="col-lg-6">
-                            <div className="wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms" style={{
-                                backgroundColor: 'var(--theme-color-gray, #f5f2ec)',
-                                borderRadius: '30px',
-                                padding: '50px 40px',
-                                height: '100%'
-                            }}>
-                                <h3 style={{ fontFamily: 'var(--title-font)', fontSize: '28px', fontWeight: 600, marginBottom: '10px' }}>
+                        <div className="col-xxl-6 content-column">
+                            <div className="inner-column wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                <h3 style={{ marginBottom: '10px' }}>
                                     Home Service Massage (Hotel & Villa)
                                 </h3>
-                                <p style={{ color: '#C4A265', fontStyle: 'italic', marginBottom: '8px' }}>
+                                <p style={{ color: '#C4A265', marginBottom: '30px' }}>
                                     Treat yourself to a relaxing spa experience at your home, hotel, or villa
                                 </p>
-                                <div style={{ margin: '15px 0 30px' }}>
-                                    {decoratorSvg}
-                                </div>
                                 {homeServiceItems.map((item, index) => (
                                     <div key={index} style={{ display: 'flex', gap: '15px', marginBottom: '25px', alignItems: 'flex-start' }}>
                                         <span style={{ minWidth: '30px', paddingTop: '3px' }}>{lotusIcon}</span>
                                         <div>
-                                            <h5 style={{ fontFamily: 'var(--title-font)', fontWeight: 600, marginBottom: '5px', fontSize: '18px' }}>{item.title}</h5>
-                                            <p style={{ margin: 0, lineHeight: '1.6' }}>{item.text}</p>
+                                            <h5 style={{ marginBottom: '5px' }}>{item.title}</h5>
+                                            <p className="text" style={{ margin: 0 }}>{item.text}</p>
                                         </div>
                                     </div>
                                 ))}
-                                <p style={{ fontWeight: 700, textAlign: 'center', marginTop: '15px', fontFamily: 'var(--title-font)' }}>
+                                <p className="text" style={{ fontWeight: 700, textAlign: 'center', marginTop: '15px' }}>
                                     Home service extra 75k per therapist
                                 </p>
                             </div>
                         </div>
 
                         {/* Right Card - Day Spa */}
-                        <div className="col-lg-6">
-                            <div className="wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms" style={{
-                                backgroundColor: 'var(--theme-color-gray, #f5f2ec)',
-                                borderRadius: '30px',
-                                padding: '50px 40px',
-                                height: '100%'
-                            }}>
-                                <h3 style={{ fontFamily: 'var(--title-font)', fontSize: '28px', fontWeight: 600, marginBottom: '10px' }}>
+                        <div className="col-xxl-6 content-column">
+                            <div className="inner-column wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                <h3 style={{ marginBottom: '10px' }}>
                                     Day Spa Bookings (Seminyak Location)
                                 </h3>
-                                <p style={{ color: '#C4A265', fontStyle: 'italic', marginBottom: '8px' }}>
+                                <p style={{ color: '#C4A265', marginBottom: '30px' }}>
                                     Visit our spa in Seminyak to enjoy a peaceful and comfortable space
                                 </p>
-                                <div style={{ margin: '15px 0 30px' }}>
-                                    {decoratorSvg}
-                                </div>
                                 {daySpaItems.map((item, index) => (
                                     <div key={index} style={{ display: 'flex', gap: '15px', marginBottom: '25px', alignItems: 'flex-start' }}>
                                         <span style={{ fontSize: '28px', minWidth: '40px', textAlign: 'center', lineHeight: '1.2' }}>{item.icon}</span>
                                         <div>
-                                            <h5 style={{ fontFamily: 'var(--title-font)', fontWeight: 600, marginBottom: '5px', fontSize: '18px' }}>{item.title}</h5>
-                                            <p style={{ margin: 0, lineHeight: '1.6' }}>{item.text}</p>
+                                            <h5 style={{ marginBottom: '5px' }}>{item.title}</h5>
+                                            <p className="text" style={{ margin: 0 }}>{item.text}</p>
                                         </div>
                                     </div>
                                 ))}
