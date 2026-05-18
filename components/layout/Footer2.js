@@ -101,8 +101,6 @@ const Footer = () => {
                                     </div>
 
                                 </div>
-                                <p className="copyright-text">&copy; 2026 <Link href="/">Spa Bali Moon</Link>, All Rights Reserved
-                                </p>
                             </div>
                         </div>
                     </div>
@@ -143,12 +141,21 @@ const Footer = () => {
                                     <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>9am - 11pm</span>
                                 </li>
                                 <li style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                                    <span style={{ fontSize: '14px', marginBottom: '2px' }}>Home service fee:</span>
+                                    <span style={{ fontSize: '14px', marginBottom: '2px' }}>
+                                        <Link href="/home-service" style={{ color: '#5f5a54', textDecoration: 'underline', fontWeight: '500' }}>
+                                            Home service fee:
+                                        </Link>
+                                    </span>
                                     <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>75k / therapist</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
+                </div>
+                <div className="footer__bottom" style={{ display: 'flex', justifyContent: 'center', marginTop: '40px', paddingTop: '20px', borderTop: '1px solid rgba(95, 90, 84, 0.12)' }}>
+                    <p className="copyright-text" style={{ textAlign: 'center', marginBottom: 0 }}>
+                        All Rights Reserved &copy; 2026 <Link href="/">Spa Bali Moon</Link> &middot; <Link href="/privacy-policy">Privacy Policy</Link> &middot; <Link href="/terms-conditions">Terms &amp; Conditions</Link>
+                    </p>
                 </div>
             </div>
         </footer>

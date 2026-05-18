@@ -49,7 +49,7 @@ const Footer = () => {
                                     <ul className="links">
                                         <li>Day Spa in Seminyak</li>
                                         <li>Open Daily: 9am-11pm</li>
-                                        <li><strong>Home service fee</strong> 75k/therapist</li>
+                                        <li><Link href="/home-service" style={{ color: 'inherit', textDecoration: 'underline' }}><strong>Home service fee</strong></Link> 75k/therapist</li>
                                     </ul>
                                 </div>
                             </div>
@@ -90,8 +90,8 @@ const Footer = () => {
                         <div className="footer__bottom">
                             <p className="copyright-text">All Rights Reserved &copy; 2026 Spa Bali Moon</p>
                             <div className="footer__bottom-links">
-                                <Link href="#0">Privacy Policy</Link>
-                                <Link href="#0">Terms &amp; Conditions</Link>
+                                <Link href="/privacy-policy">Privacy Policy</Link>
+                                <Link href="/terms-conditions">Terms &amp; Conditions</Link>
                             </div>
                         </div>
                     </div>
