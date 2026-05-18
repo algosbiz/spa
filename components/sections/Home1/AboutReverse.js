@@ -6,10 +6,10 @@ export default function Home1_AboutReverse() {
         <>
             <section id="about" className="about-section section__decoration-top section__decoration-bottom bg-sub pt-130 pb-130">
                 <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <img src="images/shape/about-left-shape.png" alt="image" />
+                    <img src="images/shape/banner-six-shape.png" alt="image" />
                 </div>
                 <div className="shape2 wow slideInRight" data-wow-delay="400ms" data-wow-duration="1500ms">
-                    <img className="sway_Y__animation" src="images/shape/about-right-shape.png" alt="image" />
+                    <img className="sway_Y__animation" src="images/shape/mirror-left-shape.png" alt="image" />
                 </div>
                 <div className="container">
                     <div className="row g-4">

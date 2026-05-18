@@ -80,7 +80,7 @@ export default function BookTreatment() {
                     <div className="row g-4">
                         {/* Left Card - Home Service */}
                         <div className="col-lg-6 content-column">
-                            <div className="inner-column wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div className="inner-column wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms" style={{ margin: '0 auto' }}>
                                 <div className="section-header">
                                     <h3 style={{ marginBottom: '10px' }}>
                                         Home Service Massage (Hotel & Villa)
@@ -110,7 +110,7 @@ export default function BookTreatment() {
 
                         {/* Right Card - Day Spa */}
                         <div className="col-lg-6 content-column">
-                            <div className="inner-column wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div className="inner-column wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms" style={{ margin: '0 auto' }}>
                                 <div className="section-header">
                                     <h3 style={{ marginBottom: '10px' }}>
                                         Day Spa Bookings (Seminyak Location)

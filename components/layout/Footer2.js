@@ -54,7 +54,7 @@ const Footer = () => {
             </div>
             <div className="container">
                 <div className="footer-two__head">
-                    <Link href="/" className="logo"><img src="images/logo/logo.png" alt="Spa Bali Moon"/></Link>
+                    <Link href="/" className="logo"><img src="images/logo/SMBtitle.svg" alt="Spa Bali Moon"/></Link>
                     <div className="newsletter">
                         <h3 className="title">Join Our Newsletter</h3>
                         <form className="input" onSubmit={handleSubscribe} style={{ position: 'relative' }}>

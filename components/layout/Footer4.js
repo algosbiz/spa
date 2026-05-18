@@ -13,7 +13,7 @@ const Footer = () => {
                                     <div className="footer-about">
                                         <div>
                                             <Link href="/" className="logo footer__brand">
-                                                <img src="images/logo/logo.png" alt="Spa Bali Moon" />
+                                                <img src="images/logo/SMBtitle.svg" alt="Spa Bali Moon" />
                                             </Link>
                                             <p className="text">Spa Bali Moon offers high-quality traditional massages and spa therapies, with outcall and home services by skilled therapists specializing in Balinese Body Massage.</p>
                                         </div>
