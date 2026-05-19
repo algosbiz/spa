@@ -8,23 +8,24 @@ import Funfact from "../components/sections/Home2/Funfact";
 import Testimonial from "../components/sections/Home2/Testimonial";
 import HomeServiceBanner from "../components/sections/HomeService/Banner";
 import HomeServiceInfo from "../components/sections/HomeService/Info";
-
+import Video from "../components/sections/Home1/Video";
 export default function HomeServicePage() {
     return (
         <>
             <Layout HeaderStyle="five" FooterStyle="two">
                 {/* Custom Banner with different shape and titles */}
                 <HomeServiceBanner />
-                
+                <AboutOld />
                 {/* Custom Home Service Info details */}
                 <HomeServiceInfo />
 
                 {/* About and service pricing details from standard layout */}
-                <AboutOld />
-                <Pricing />
+
+                {/* <Pricing /> */}
                 <Funfact />
                 <Testimonial />
                 <Faq />
+                <Video />
                 <Services />
             </Layout>
         </>
