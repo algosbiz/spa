@@ -133,15 +133,14 @@ export default function Home5_Pricing() {
                                         </defs>
                                     </svg>
                                 </div>
-                                <h4>Comfort Relax</h4>
-                                <h2 className="price">$35 <span>/ Hr</span></h2>
+                                <h4>Balinese Massage Package A</h4>
+                                <h2 className="price">IDR 449K</h2>
                                 <ul>
-                                    <li>1. Relaxing personal training</li>
-                                    <li>2. Video & audio content</li>
-                                    <li>3. Cupping Massage</li>
-                                    <li>4. Hand & Feet</li>
+                                    <li>1 Hr &nbsp; Balinese Massage</li>
+                                    <li>1 Hr &nbsp; Mani &amp; Pedi</li>
+                                    <li>30 Mins &nbsp; Cream bath</li>
                                 </ul>
-                                <Link href="/page-contact" className="btn-two mt-35">Book Now
+                                <Link href="/page-contact" className="btn-two mt-35">Reserve
                                     <span className="icon_box">
                                         <i className="fa-regular icon_first fa-arrow-right-long"></i>
                                         <i className="fa-regular icon_second fa-arrow-right-long"></i>
@@ -194,15 +193,14 @@ export default function Home5_Pricing() {
                                         </defs>
                                     </svg>
                                 </div>
-                                <h4 className="text-white">Premium Spa</h4>
-                                <h2 className="price">$80 <span>/ Hr</span></h2>
+                                <h4 className="text-white">Balinese Massage Package B</h4>
+                                <h2 className="price">IDR 549K</h2>
                                 <ul>
-                                    <li>1. Relaxing personal training</li>
-                                    <li>2. Video & audio content</li>
-                                    <li>3. Cupping Massage</li>
-                                    <li>4. Hand & Feet</li>
+                                    <li>1 Hr &nbsp; Balinese Massage</li>
+                                    <li>1 Hr &nbsp; Mani &amp; Pedi</li>
+                                    <li>1 Hr &nbsp; Bali Moon Facial</li>
                                 </ul>
-                                <Link href="/page-contact" className="btn-one-light mt-35">Book Now
+                                <Link href="/page-contact" className="btn-one-light mt-35">Reserve
                                     <span className="icon_box">
                                         <i className="fa-regular icon_first fa-arrow-right-long"></i>
                                         <i className="fa-regular icon_second fa-arrow-right-long"></i>
@@ -266,15 +264,14 @@ export default function Home5_Pricing() {
                                             fill="#A78627" />
                                     </svg>
                                 </div>
-                                <h4>Luxury Retreat</h4>
-                                <h2 className="price">$140 <span>/ Hr</span></h2>
+                                <h4>Balinese Massage Package C</h4>
+                                <h2 className="price">IDR 449K</h2>
                                 <ul>
-                                    <li>1. Relaxing personal training</li>
-                                    <li>2. Video & audio content</li>
-                                    <li>3. Cupping Massage</li>
-                                    <li>4. Hand & Feet</li>
+                                    <li>1 Hr &nbsp; Balinese Massage</li>
+                                    <li>30 Mins &nbsp; Cream bath</li>
+                                    <li>1 Hr &nbsp; Bali Moon Facial</li>
                                 </ul>
-                                <Link href="/page-contact" className="btn-two mt-35">Book Now
+                                <Link href="/page-contact" className="btn-two mt-35">Reserve
                                     <span className="icon_box">
                                         <i className="fa-regular icon_first fa-arrow-right-long"></i>
                                         <i className="fa-regular icon_second fa-arrow-right-long"></i>
@@ -338,15 +335,14 @@ export default function Home5_Pricing() {
                                             fill="#A78627" />
                                     </svg>
                                 </div>
-                                <h4>Ultimate Relax</h4>
-                                <h2 className="price">$200 <span>/ Hr</span></h2>
+                                <h4>Balinese Massage Package D</h4>
+                                <h2 className="price">IDR 399K</h2>
                                 <ul>
-                                    <li>1. Relaxing personal training</li>
-                                    <li>2. Video & audio content</li>
-                                    <li>3. Cupping Massage</li>
-                                    <li>4. Hand & Feet</li>
+                                    <li>1 Hr &nbsp; Balinese Massage</li>
+                                    <li>30 Mins &nbsp; Manicure</li>
+                                    <li>30 Mins &nbsp; Pedicure</li>
                                 </ul>
-                                <Link href="/page-contact" className="btn-two mt-35">Book Now
+                                <Link href="/page-contact" className="btn-two mt-35">Reserve
                                     <span className="icon_box">
                                         <i className="fa-regular icon_first fa-arrow-right-long"></i>
                                         <i className="fa-regular icon_second fa-arrow-right-long"></i>
