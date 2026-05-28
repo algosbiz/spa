@@ -7,6 +7,7 @@ import Contact from "../components/sections/Home1/Contact";
 import Testimonial from "../components/sections/Home3/Testimonial";
 import PageTitle from "../components/sections/PageTitle";
 import Pricing from "../components/sections/Home5/Pricing";
+import PackageSection from "@/components/sections/Home1/Package";
 
 export default function Home() {
 
@@ -15,6 +16,7 @@ export default function Home() {
         <Layout HeaderStyle="one" FooterStyle="two">
           <PageTitle pageName="About Us" />
           <AboutReverse />
+          <PackageSection />
           <Pricing />
           <MarqueeSwiper />
           <Video />
