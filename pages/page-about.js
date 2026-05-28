@@ -8,13 +8,14 @@ import Testimonial from "../components/sections/Home3/Testimonial";
 import PageTitle from "../components/sections/PageTitle";
 import Pricing from "../components/sections/Home5/Pricing";
 import PackageSection from "@/components/sections/Home1/Package";
+import Banner from "../components/sections/Home2/Banner";
 
 export default function Home() {
 
     return (
       <>
         <Layout HeaderStyle="one" FooterStyle="two">
-          <PageTitle pageName="About Us" />
+          <Banner />
           <AboutReverse />
           <PackageSection />
           <Pricing />

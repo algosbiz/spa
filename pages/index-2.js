@@ -20,7 +20,7 @@ import About from "../components/sections/Home1/About";
 export default function Home2() {
     return (
         <>
-            <Layout HeaderStyle="five" FooterStyle="two">
+            <Layout HeaderStyle="one" FooterStyle="two">
                 <Banner />
                 <AboutOld />
                 <Pricing />

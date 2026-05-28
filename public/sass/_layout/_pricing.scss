@@ -191,9 +191,9 @@
 		}
 
 		.icon {
-			width: 70px;
-			height: 70px;
-			line-height: 70px;
+			width: 85px;
+			height: 85px;
+			line-height: 85px;
 			text-align: center;
 			background-color: var(--theme-color-gray);
 			border-radius: 50%;
@@ -201,13 +201,16 @@
 			margin-bottom: 20px;
 			svg {
 				transition: 0.9s;
-				width: 38px;
-				height: 38px;
+				width: 46px;
+				height: 46px;
 			}
 		}
 		h4 {
 			font-size: 24px;
 			line-height: 32px;
+			br {
+				display: inline;
+			}
 		}
 		.price {
 			margin: 20px 0 30px;
@@ -239,6 +242,13 @@
 					display: inline-block;
 					min-width: 60px;
 					flex-shrink: 0;
+				}
+				@include breakpoint(max-md) {
+					font-size: 16px;
+					line-height: 26px;
+					.duration {
+						min-width: 70px;
+					}
 				}
 			}
 		}

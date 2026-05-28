@@ -65,13 +65,7 @@ const NavLinks = () => {
                     <li><Link href="/page-404">404 Error</Link></li>
                 </ul>
             </li>
-            <li>
-                <Link href="/reservation">Reservation <i className="fa-solid fa-angle-down"></i></Link>
-                <ul className="sub-menu">
-                    <li><Link href="/page-services">Service Grid</Link></li>
-                    <li><Link href="/page-service-details">Service Details</Link></li>
-                </ul>
-            </li>
+            <li><Link href="/reservation">Reservation</Link></li>
             {/* <li>
                 <Link href="/#0">News <i className="fa-solid fa-angle-down"></i></Link>
                 <ul className="sub-menu">

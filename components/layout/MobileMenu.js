@@ -111,12 +111,7 @@ const MobileMenu = () => {
                     <div className={isActive.key === 2 ? "dropdown-btn active" : "dropdown-btn"} onClick={() => handleClick(2)}><i className="fa fa-angle-down" /></div>
                 </li>
                 <li>
-                    <Link href="#0">Reservation</Link>
-                    <ul className={isActive.key === 3 ? "sub-menu d-block" : "d-none"}>
-                        <li><Link href="/page-services">Service Grid</Link></li>
-                        <li><Link href="/page-service-details">Service Details</Link></li>
-                    </ul>
-                    <div className={isActive.key === 3 ? "dropdown-btn active" : "dropdown-btn"} onClick={() => handleClick(3)}><i className="fa fa-angle-down" /></div>
+                    <Link href="/reservation">Reservation</Link>
                 </li>
                 <li><Link href="/page-contact">Contact</Link></li>
             </ul>

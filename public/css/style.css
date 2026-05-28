@@ -8129,9 +8129,9 @@ textarea.form-control {
 }
 
 .pricing-block-five .inner-box .icon {
-  width: 70px;
-  height: 70px;
-  line-height: 70px;
+  width: 85px;
+  height: 85px;
+  line-height: 85px;
   text-align: center;
   background-color: var(--theme-color-gray);
   border-radius: 50%;
@@ -8141,13 +8141,17 @@ textarea.form-control {
 
 .pricing-block-five .inner-box .icon svg {
   transition: 0.9s;
-  width: 38px;
-  height: 38px;
+  width: 46px;
+  height: 46px;
 }
 
 .pricing-block-five .inner-box h4 {
   font-size: 24px;
   line-height: 32px;
+}
+
+.pricing-block-five .inner-box h4 br {
+  display: inline;
 }
 
 .pricing-block-five .inner-box .price {
@@ -8207,6 +8211,16 @@ textarea.form-control {
 
 .pricing-block-five .inner-box.active ul li {
   color: var(--theme-color-white);
+}
+
+@media (max-width: 767px) {
+  .pricing-block-five .inner-box ul li {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .pricing-block-five .inner-box ul li .duration {
+    min-width: 70px;
+  }
 }
 
 .product-section {
