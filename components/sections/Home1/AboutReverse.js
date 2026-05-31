@@ -5,7 +5,7 @@ export default function Home1_AboutReverse() {
     return (
         <>
             <section id="about" className="about-section section__decoration-top section__decoration-bottom bg-sub pt-130 pb-130">
-                <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms" style={{ bottom: '120px' }}>
                     <img src="images/shape/banner-six-shape.png" alt="image" />
                 </div>
                 <div className="shape2 wow slideInRight" data-wow-delay="400ms" data-wow-duration="1500ms">

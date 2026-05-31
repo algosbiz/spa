@@ -181,7 +181,7 @@ export default function PackageSection() {
                                 aria-controls="item1" aria-selected="true">
                                 <div className="icon-box">
                                 </div>
-                                <h6 className="title">HOME SERVICE FEE</h6>
+                                <h6 className="title">Home Service Fee</h6>
                             </button>
                         </li>
                         <li className="nav-item" role="presentation">
@@ -189,7 +189,7 @@ export default function PackageSection() {
                                 aria-controls="item2" aria-selected="false">
                                 <div className="icon-box">
                                 </div>
-                                <h6 className="title">EXTRA 75K/THERAPIST</h6>
+                                <h6 className="title">Extra 75K/Therapist</h6>
                             </button>
                         </li>
                     </ul>
