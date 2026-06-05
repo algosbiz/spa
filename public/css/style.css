@@ -8128,6 +8128,15 @@ textarea.form-control {
   content: "";
 }
 
+.pricing-section-five.bg-sub::after {
+  background-color: transparent;
+  background: url(../images/shape/section-shape-bottom.png) no-repeat center bottom;
+  top: auto;
+  bottom: 0;
+  height: 74px;
+  z-index: 1;
+}
+
 .pricing-block-five .inner-box {
   position: relative;
   z-index: 1;

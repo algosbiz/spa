@@ -5,27 +5,26 @@ export default function Home5_Pricing() {
     return (
       <>
         <section
-          className="pricing-section-five pt-130 pb-130"
-          style={{ backgroundImage: `url(images/bg/pricing-five-bg.jpg)` }}
+          className="pricing-section-five section__decoration-top section__decoration-bottom bg-sub pt-130 pb-130"
         >
           <div className="container">
             <div className="section-header mb-60 center">
               <h4
-                className="sub-title text-white wow fadeInUp"
+                className="sub-title wow fadeInUp"
                 data-wow-delay="00ms"
                 data-wow-duration="1500ms"
               >
                 Best Price
               </h4>
               <h2
-                className="title text-white wow fadeInUp"
+                className="title wow fadeInUp"
                 data-wow-delay="200ms"
                 data-wow-duration="1500ms"
               >
                 Our Flexible Pricing Plan
               </h2>
               <p
-                className="text-white wow fadeInUp"
+                className="wow fadeInUp"
                 data-wow-delay="400ms"
                 data-wow-duration="1500ms"
               >

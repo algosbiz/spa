@@ -7,7 +7,7 @@ export default function Home2() {
     return (
         <>
             <Layout HeaderStyle="one" FooterStyle="two">
-                <Banner />
+                {/* <Banner /> */}
                 <BookTreatment />
             </Layout>
         </>
