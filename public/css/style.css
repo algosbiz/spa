@@ -2092,6 +2092,30 @@ figure {
   background: url(../images/shape/section-shape-bottom.png) no-repeat center bottom;
 }
 
+.section__decoration-left,
+.section__decoration-right {
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.section__decoration-left {
+  left: 0;
+  background-image: url(../images/shape/section-shape-left.svg);
+  background-position: left center;
+}
+
+.section__decoration-right {
+  right: 0;
+  background-image: url(../images/shape/section-shape-right.svg);
+  background-position: right center;
+}
+
 .splt-txt .whitespace {
   width: 8px;
 }

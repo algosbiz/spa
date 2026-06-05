@@ -203,6 +203,8 @@ body.dark-mode .op003 {
 }
 body.dark-mode .section__decoration-top::before,
 body.dark-mode .section__decoration-bottom::after,
+body.dark-mode .section__decoration-left,
+body.dark-mode .section__decoration-right,
 body.dark-mode .service-section .shape1 img {
   opacity: 0.1;
 }

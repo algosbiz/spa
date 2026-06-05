@@ -31,6 +31,10 @@ export default function Home1_ReserveCta() {
                         textAlign: 'center',
                     }}
                 >
+                    {/* Left & right torn-paper edge overlays */}
+                    <div className="section__decoration-left"></div>
+                    <div className="section__decoration-right"></div>
+
                     <div style={{ position: 'relative', zIndex: 2, maxWidth: '860px', margin: '0 auto' }}>
                         <h2
                             className="title text-white wow fadeInUp"
