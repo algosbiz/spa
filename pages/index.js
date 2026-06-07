@@ -7,6 +7,7 @@ import Gallery from "../components/sections/Home5/Gallery";
 import Services from "../components/sections/Home1/Services";
 import Marquee from "../components/sections/Home5/Marquee";
 import Pricing from "../components/sections/Home5/Pricing";
+import PackagePricing from "../components/sections/Home5/PackagePricing";
 import Step from "../components/sections/Home5/Step";
 import Contact from "../components/sections/Home5/Contact";
 import Testimonial from "../components/sections/Home3/Testimonial";
@@ -62,6 +63,7 @@ export default function Home5() {
                 <PackageSection />
                 <Video />
                 <Pricing />
+                <PackagePricing />
                 {/* <Contact /> */}
                 {/* <News /> */}
             </Layout>
