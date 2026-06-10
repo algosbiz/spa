@@ -57,7 +57,7 @@ export default function Home6_Banner() {
                         magna mi ut arcu.
                         Phasellus nec odio orci. Nunc id massa ante. Suspendisse sit amet neque euismod, convallis quam
                         eget,</p>
-                    <Link href="/page-contact" className="btn-two-dark wow fadeInDown mt-50" data-wow-delay="1s">Book Now
+                    <Link href="/contact" className="btn-two-dark wow fadeInDown mt-50" data-wow-delay="1s">Book Now
                         <span className="icon_box">
                             <i className="fa-regular icon_first fa-arrow-right-long"></i>
                             <i className="fa-regular icon_second fa-arrow-right-long"></i>

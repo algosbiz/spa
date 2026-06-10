@@ -126,7 +126,7 @@ export default function Home3_About() {
                                     </li>
                                 </ul>
                             </div>
-                            <Link href="/page-about" className="btn-three mt-40 wow fadeInDown" data-wow-delay="400ms"
+                            <Link href="/pricing" className="btn-three mt-40 wow fadeInDown" data-wow-delay="400ms"
                                 data-wow-duration="1500ms">Discover More </Link>
                         </div>
                     </div>

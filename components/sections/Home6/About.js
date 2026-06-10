@@ -116,7 +116,7 @@ export default function Home6_About() {
                                     egestas magna mi ut arcu. Phasellus nec odio orci. Nunc id massa ante. Suspendisse
                                     sit amet neque euismod, convallis quam eget,</p>
                             </div>
-                            <Link href="/page-about" className="btn-two mt-30 wow fadeInDown" data-wow-delay="400ms"
+                            <Link href="/pricing" className="btn-two mt-30 wow fadeInDown" data-wow-delay="400ms"
                                 data-wow-duration="1500ms">Learn More
                                 <span className="icon_box">
                                     <i className="fa-regular icon_first fa-arrow-right-long"></i>

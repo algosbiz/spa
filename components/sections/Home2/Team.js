@@ -143,7 +143,7 @@ export default function Home2_Team() {
                                     <div className="shape">
                                         <img src="images/team/shape.png" alt="image"/>
                                     </div>
-                                    <h4 className="title"><Link href="/page-team-details">Jane William</Link></h4>
+                                    <h4 className="title"><Link href="/team-details">Jane William</Link></h4>
                                     <span>Spa Message</span>
                                 </div>
                             </div>
@@ -208,7 +208,7 @@ export default function Home2_Team() {
                                     <div className="shape">
                                         <img src="images/team/shape.png" alt="image"/>
                                     </div>
-                                    <h4 className="title"><Link href="/page-team-details">Wade Warren</Link></h4>
+                                    <h4 className="title"><Link href="/team-details">Wade Warren</Link></h4>
                                     <span>Spa Message</span>
                                 </div>
                             </div>
@@ -273,7 +273,7 @@ export default function Home2_Team() {
                                     <div className="shape">
                                         <img src="images/team/shape.png" alt="image"/>
                                     </div>
-                                    <h4 className="title"><Link href="/page-team-details">Guy Hawkins</Link></h4>
+                                    <h4 className="title"><Link href="/team-details">Guy Hawkins</Link></h4>
                                     <span>Spa Message</span>
                                 </div>
                             </div>
@@ -338,7 +338,7 @@ export default function Home2_Team() {
                                     <div className="shape">
                                         <img src="images/team/shape.png" alt="image"/>
                                     </div>
-                                    <h4 className="title"><Link href="/page-team-details">Cody Fisher</Link></h4>
+                                    <h4 className="title"><Link href="/team-details">Cody Fisher</Link></h4>
                                     <span>Spa Message</span>
                                 </div>
                             </div>
@@ -403,7 +403,7 @@ export default function Home2_Team() {
                                     <div className="shape">
                                         <img src="images/team/shape.png" alt="image"/>
                                     </div>
-                                    <h4 className="title"><Link href="/page-team-details">Jane William</Link></h4>
+                                    <h4 className="title"><Link href="/team-details">Jane William</Link></h4>
                                     <span>Spa Message</span>
                                 </div>
                             </div>
@@ -468,7 +468,7 @@ export default function Home2_Team() {
                                     <div className="shape">
                                         <img src="images/team/shape.png" alt="image"/>
                                     </div>
-                                    <h4 className="title"><Link href="/page-team-details">Wade Warren</Link></h4>
+                                    <h4 className="title"><Link href="/team-details">Wade Warren</Link></h4>
                                     <span>Spa Message</span>
                                 </div>
                             </div>

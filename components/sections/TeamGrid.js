@@ -102,7 +102,7 @@ export default function TeamGrid() {
                             </ul>
                             <div className="content">
                             <div className="shape"><img src={`images/team/${item.img1}`} alt="Image" /></div>
-                            <h4 className="title"><Link href="/page-team-details">{item.title}</Link></h4>
+                            <h4 className="title"><Link href="/team-details">{item.title}</Link></h4>
                             <span>{item.desig}</span>
                             </div>
                         </div>

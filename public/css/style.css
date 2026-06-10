@@ -3138,8 +3138,9 @@ figure {
 .btn-two:hover,
 .btn-two-dark:hover,
 .btn-two-light:hover {
-  background-color: var(--theme-color2);
+  background-color: var(--theme-color1);
   border: 1px solid transparent;
+  filter: brightness(1.15);
 }
 
 .btn-two-light {

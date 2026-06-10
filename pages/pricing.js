@@ -7,6 +7,7 @@ import Contact from "../components/sections/Home1/Contact";
 import Testimonial from "../components/sections/Home3/Testimonial";
 import PageTitle from "../components/sections/PageTitle";
 import Pricing from "../components/sections/Home5/Pricing";
+import PackagePricing from "../components/sections/Home5/PackagePricing";
 import PackageSection from "@/components/sections/Home1/Package";
 import Banner from "../components/sections/Home2/Banner";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
@@ -21,6 +22,7 @@ export default function Home() {
           {/* <AboutReverse /> */}
           <PackageSection />
           <Pricing />
+          <PackagePricing />
           <MarqueeSwiper />
 
           {/* <Contact /> */}

@@ -45,7 +45,7 @@ export default function Home1_Banner() {
                     </h4>
                     <h1 className="title" data-animation="fadeInUp" data-delay=".5s"><span>Experience</span>
                         Beauty Services</h1>
-                    <Link href="/page-contact" className="btn-two-light mt-30" data-animation="fadeInUp"
+                    <Link href="/contact" className="btn-two-light mt-30" data-animation="fadeInUp"
                         data-delay="1s">Book
                         Now
                         <span className="icon_box">

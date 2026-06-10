@@ -109,7 +109,7 @@ export default function Home1_About() {
                                         </li>
                                     </ul>
                                 </div>
-                                <Link href="/page-about" className="btn-one mt-30 wow fadeInDown" data-wow-delay="400ms"
+                                <Link href="/pricing" className="btn-one mt-30 wow fadeInDown" data-wow-delay="400ms"
                                     data-wow-duration="1500ms">Learn More
                                     <span className="icon_box">
                                         <i className="fa-regular icon_first fa-arrow-right-long"></i>

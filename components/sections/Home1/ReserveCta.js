@@ -85,7 +85,7 @@ export default function Home1_ReserveCta() {
                         </p>
 
                         <Link
-                            href="/page-contact"
+                            href="/contact"
                             className="btn-two-light mt-30 wow fadeInUp"
                             data-wow-delay="500ms"
                             data-wow-duration="1500ms"

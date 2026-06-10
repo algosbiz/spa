@@ -42,7 +42,7 @@ const Header1 = ({ scroll }) => {
                         </div>
                         <div className="menu-btns">
                             <button className="search-trigger d-none d-lg-block" onClick={handleToggleSearch}><i className="fa-light fa-magnifying-glass"></i></button>
-                            <Link href="/page-contact" className="book-now d-none d-xxl-inline-block">Book An Apoinment
+                            <Link href="/contact" className="book-now d-none d-xxl-inline-block">Book An Apoinment
                                 <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clipPath="url(#clip0_1_441)">
                                         <path

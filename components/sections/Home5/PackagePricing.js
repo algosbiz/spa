@@ -905,7 +905,7 @@ export default function Home5_PackagePricing() {
                         </li>
                       ))}
                     </ul>
-                    <Link href="/page-contact" className="btn-two mt-35">
+                    <Link href="/contact" className="btn-two mt-35">
                       Reserve
                       <span className="icon_box">
                         <i className="fa-regular icon_first fa-arrow-right-long"></i>

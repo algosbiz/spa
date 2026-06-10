@@ -61,7 +61,7 @@ export default function Home2_Pricing() {
                                         <li>3. Cupping Massage</li>
                                         <li>4. Hand & Feet</li>
                                     </ul>
-                                    <Link href="/page-contact" className="btn-one-light mt-35">Book Now
+                                    <Link href="/contact" className="btn-one-light mt-35">Book Now
                                         <span className="icon_box">
                                             <i className="fa-regular icon_first fa-arrow-right-long"></i>
                                             <i className="fa-regular icon_second fa-arrow-right-long"></i>
@@ -82,7 +82,7 @@ export default function Home2_Pricing() {
                                         <li>3. Cupping Massage</li>
                                         <li>4. Hand & Feet</li>
                                     </ul>
-                                    <Link href="/page-contact" className="btn-two mt-35">Book Now
+                                    <Link href="/contact" className="btn-two mt-35">Book Now
                                         <span className="icon_box">
                                             <i className="fa-regular icon_first fa-arrow-right-long"></i>
                                             <i className="fa-regular icon_second fa-arrow-right-long"></i>

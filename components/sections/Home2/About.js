@@ -23,7 +23,7 @@ export default function Home2_About() {
                                 <img data-depth="0.05" className="circle-image" src="images/about/about-two-image2.png"
                                     alt="image"/>
                             </div>
-                            <Link href="/page-about" className="circle-btn"><svg width="31" height="31" viewBox="0 0 31 31"
+                            <Link href="/pricing" className="circle-btn"><svg width="31" height="31" viewBox="0 0 31 31"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clipPath="url(#clip0_1_1364)">
                                         <path

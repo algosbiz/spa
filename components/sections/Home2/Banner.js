@@ -56,7 +56,7 @@ export default function Home2_Banner() {
                                     </h4>
                                     <h1 className="title" data-animation="fadeInUp" data-delay=".5s"><span>Indulge in</span>
                                         Pure Tranquility</h1>
-                                    <Link href="/page-contact" className="btn-two-light mt-50" data-animation="fadeInUp" data-delay="1s">Book
+                                    <Link href="/contact" className="btn-two-light mt-50" data-animation="fadeInUp" data-delay="1s">Book
                                         Now
                                         <span className="icon_box">
                                             <i className="fa-regular icon_first fa-arrow-right-long"></i>

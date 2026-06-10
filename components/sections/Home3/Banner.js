@@ -47,7 +47,7 @@ export default function Home3_Banner() {
                         Rejuvenate You Today
                     </h4>
                     <h1 className="title wow fadeInDown" data-wow-delay="500ms"><span>Experience</span> Beauty Services</h1>
-                    <Link href="page-contact" className="btn-two-light wow fadeInDown mt-50" data-wow-delay="1s">Book Now
+                    <Link href="/contact" className="btn-two-light wow fadeInDown mt-50" data-wow-delay="1s">Book Now
                         <span className="icon_box">
                             <i className="fa-regular icon_first fa-arrow-right-long"></i>
                             <i className="fa-regular icon_second fa-arrow-right-long"></i>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-export default function Home5_Pricing() {
+export default function Home5_Pricing({ showMore = false }) {
     return (
       <>
         <section
@@ -34,6 +34,17 @@ export default function Home5_Pricing() {
                 laid-back and cozy experience, whether alone, with a partner, or
                 with friends.
               </p>
+              {showMore && (
+                <div className="mt-30 wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                  <Link href="/pricing" className="btn-two">
+                    More Services
+                    <span className="icon_box">
+                      <i className="fa-regular icon_first fa-arrow-right-long"></i>
+                      <i className="fa-regular icon_second fa-arrow-right-long"></i>
+                    </span>
+                  </Link>
+                </div>
+              )}
             </div>
             <div className="row g-4">
               <div
@@ -202,7 +213,7 @@ export default function Home5_Pricing() {
                     <li><span className="duration">1 Hr</span><span className="service">Mani &amp; Pedi</span></li>
                     <li><span className="duration">30 Mins</span><span className="service">Cream bath</span></li>
                   </ul>
-                  <Link href="/page-contact" className="btn-two mt-35">
+                  <Link href="/contact" className="btn-two mt-35">
                     Reserve
                     <span className="icon_box">
                       <i className="fa-regular icon_first fa-arrow-right-long"></i>
@@ -280,7 +291,7 @@ export default function Home5_Pricing() {
                     <li><span className="duration">1 Hr</span><span className="service">Mani &amp; Pedi</span></li>
                     <li><span className="duration">1 Hr</span><span className="service">Bali Moon Facial</span></li>
                   </ul>
-                  <Link href="/page-contact" className="btn-two mt-35">
+                  <Link href="/contact" className="btn-two mt-35">
                     Reserve
                     <span className="icon_box">
                       <i className="fa-regular icon_first fa-arrow-right-long"></i>
@@ -375,7 +386,7 @@ export default function Home5_Pricing() {
                     <li><span className="duration">30 Mins</span><span className="service">Cream bath</span></li>
                     <li><span className="duration">1 Hr</span><span className="service">Bali Moon Facial</span></li>
                   </ul>
-                  <Link href="/page-contact" className="btn-two mt-35">
+                  <Link href="/contact" className="btn-two mt-35">
                     Reserve
                     <span className="icon_box">
                       <i className="fa-regular icon_first fa-arrow-right-long"></i>
@@ -470,7 +481,7 @@ export default function Home5_Pricing() {
                     <li><span className="duration">30 Mins</span><span className="service">Manicure</span></li>
                     <li><span className="duration">30 Mins</span><span className="service">Pedicure</span></li>
                   </ul>
-                  <Link href="/page-contact" className="btn-two mt-35">
+                  <Link href="/contact" className="btn-two mt-35">
                     Reserve
                     <span className="icon_box">
                       <i className="fa-regular icon_first fa-arrow-right-long"></i>

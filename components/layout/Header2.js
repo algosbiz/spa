@@ -90,7 +90,7 @@ const Header1 = ({ scroll }) => {
 									</defs>
 								</svg>
 							</Link>
-							<Link href="/page-contact" className="book-now d-none d-xl-inline-block">Book Now
+							<Link href="/contact" className="book-now d-none d-xl-inline-block">Book Now
 								<svg width="12" height="13" viewBox="0 0 12 13" fill="none"
 									xmlns="http://www.w3.org/2000/svg">
 									<g clipPath="url(#clip0_1_441)">
