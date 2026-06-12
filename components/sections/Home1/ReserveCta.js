@@ -14,26 +14,52 @@ const lotusIcon = (
     </svg>
 );
 
+// A soft, semi-transparent white stroke for the hand-painted brush frame.
+const brush = (opacity, width) => ({
+    fill: 'none',
+    stroke: `rgba(255, 255, 255, ${opacity})`,
+    strokeWidth: width,
+    strokeLinecap: 'round',
+    vectorEffect: 'non-scaling-stroke',
+});
+
 export default function Home1_ReserveCta() {
     return (
         <section className="reserve-cta-section" style={{ padding: '70px 0', overflow: 'hidden' }}>
             <div className="container">
-                {/* Wavy banner — the shape is a custom clip-path, not the theme's torn-paper edges */}
                 <div
-                    className="reserve-cta-banner section__decoration-top section__decoration-bottom"
+                    className="reserve-cta-banner"
                     style={{
                         position: 'relative',
                         backgroundImage: `linear-gradient(rgba(28, 26, 29, 0.45), rgba(28, 26, 29, 0.45)), url(images/bg/contact-five-bg.jpg)`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
-                        padding: '105px 50px',
+                        padding: '95px 70px',
                         textAlign: 'center',
+                        borderRadius: '18px',
+                        overflow: 'hidden',
                     }}
                 >
-                    {/* Left & right torn-paper edge overlays */}
-                    <div className="section__decoration-left"></div>
-                    <div className="section__decoration-right"></div>
+                    {/* Decorative hand-painted brush-stroke frame (top / bottom / left / right) */}
+                    <svg viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"
+                        style={{ position: 'absolute', top: '14px', left: '26px', width: 'calc(100% - 52px)', height: '30px', pointerEvents: 'none', zIndex: 1 }}>
+                        <path d="M0,22 C160,8 320,30 480,18 C640,8 820,30 1000,16" style={brush(0.6, 2)} />
+                        <path d="M130,30 C300,22 450,32 620,26" style={brush(0.3, 1.5)} />
+                    </svg>
+                    <svg viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"
+                        style={{ position: 'absolute', bottom: '14px', left: '26px', width: 'calc(100% - 52px)', height: '30px', pointerEvents: 'none', zIndex: 1 }}>
+                        <path d="M0,18 C160,32 320,10 480,22 C640,32 820,10 1000,24" style={brush(0.6, 2)} />
+                        <path d="M380,10 C560,18 720,8 880,14" style={brush(0.3, 1.5)} />
+                    </svg>
+                    <svg viewBox="0 0 40 1000" preserveAspectRatio="none" aria-hidden="true"
+                        style={{ position: 'absolute', left: '14px', top: '26px', height: 'calc(100% - 52px)', width: '30px', pointerEvents: 'none', zIndex: 1 }}>
+                        <path d="M22,0 C12,160 30,320 20,500 C12,680 30,840 22,1000" style={brush(0.55, 2)} />
+                    </svg>
+                    <svg viewBox="0 0 40 1000" preserveAspectRatio="none" aria-hidden="true"
+                        style={{ position: 'absolute', right: '14px', top: '26px', height: 'calc(100% - 52px)', width: '30px', pointerEvents: 'none', zIndex: 1 }}>
+                        <path d="M18,0 C28,160 10,320 20,500 C28,680 10,840 18,1000" style={brush(0.55, 2)} />
+                    </svg>
 
                     <div style={{ position: 'relative', zIndex: 2, maxWidth: '860px', margin: '0 auto' }}>
                         <h2
