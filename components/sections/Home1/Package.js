@@ -13,6 +13,7 @@ const servicesTab1 = [
             { time: '60 mins', price: 'IDR 199K' },
         ]
     },
+    { id: 4, name: 'Aroma therapy', defaultPrice: '$50', desc: 'Essential oil massage to balance mind, body, and spirit.', image: 'images/package/package-image4.png', options: defaultOptions },
     {
         id: 2, name: 'Aromatheraphy Massage', defaultPrice: '$50', desc: 'A calming treatment that uses essential oils and gentle strokes to ease tension and support circulation.', image: 'images/package/package-image2.png', options: [
             { time: '1 Hour', price: '169K' },
@@ -32,7 +33,6 @@ const servicesTab1 = [
             { time: 'Price', price: '196K' }
         ]
     },
-    { id: 4, name: 'Aroma therapy', defaultPrice: '$50', desc: 'Essential oil massage to balance mind, body, and spirit.', image: 'images/package/package-image4.png', options: defaultOptions },
     {
         id: 5, name: 'Balinese Massage', defaultPrice: '$50', desc: 'Traditional Balinese technique for deep tissue relaxation.', image: 'images/package/package-image5.png', options: [
             { time: '60 mins', price: '$85' },
@@ -60,7 +60,11 @@ const servicesTab2 = [
             { time: '90 mins', price: '$130' }
         ]
     },
-    { id: 12, name: 'Thai Massage', defaultPrice: '$60', desc: 'Ancient yoga-like stretching for flexibility.', image: 'images/package/package-image2.png', options: defaultOptions },
+    {
+        id: 18, name: 'Ear Candle', defaultPrice: '$60', desc: 'Traditional ear clearing and relaxation.', image: 'images/package/package-image8.png', options: [
+            { time: '30 mins', price: '$30' }
+        ]
+    },
     {
         id: 13, name: 'Facial Treatment', defaultPrice: '$70', desc: 'Skin cleansing and hydration for a youthful glow.', image: 'images/package/package-image3.png', options: [
             { time: '60 mins', price: '$75' }
@@ -83,11 +87,7 @@ const servicesTab2 = [
         ]
     },
     { id: 17, name: 'Sports Massage', defaultPrice: '$30', desc: 'Focused treatment for athletes.', image: 'images/package/package-image7.png', options: defaultOptions },
-    {
-        id: 18, name: 'Ear Candle', defaultPrice: '$60', desc: 'Traditional ear clearing and relaxation.', image: 'images/package/package-image8.png', options: [
-            { time: '30 mins', price: '$30' }
-        ]
-    },
+    { id: 12, name: 'Thai Massage', defaultPrice: '$60', desc: 'Ancient yoga-like stretching for flexibility.', image: 'images/package/package-image2.png', options: defaultOptions },
 ];
 
 const PackageItem = ({ item, isLast }) => {
@@ -159,7 +159,7 @@ export default function PackageSection() {
     const tab2Col2 = servicesTab2.slice(halfLength2);
 
     return (
-        <section className="package-section section__decoration-top section__decoration-bottom bg-sub-two pt-170 pb-170">
+        <section className="package-section section__decoration-top section__decoration-bottom bg-sub pt-170 pb-170">
             <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
                 <img className="sway_Y__animationY" src="images/shape/package-shape-left.png" alt="image" />
             </div>

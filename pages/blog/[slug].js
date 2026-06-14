@@ -20,7 +20,7 @@ export default function BlogDetailPage({ post, recentPosts }) {
                 {post.cover_image && <meta property="og:image" content={post.cover_image} />}
                 <meta property="og:type" content="article" />
             </Head>
-            <Layout HeaderStyle="one" FooterStyle="four">
+            <Layout HeaderStyle="one" FooterStyle="two">
                 <PageTitle pageName={post.title} />
                 <BlogDetails post={post} recentPosts={recentPosts} />
             </Layout>

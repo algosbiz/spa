@@ -1,7 +1,15 @@
 import React from 'react'
 import Link from 'next/link'
 
-export default function Home2_About() {
+export default function Home2_About({
+    subTitle = "About",
+    title = (<>Welcome to <br /> beauty & Spa Center</>),
+    text = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas magna mi ut arcu. Phasellus nec odio orci. Nunc id massa ante. Suspendisse sit amet neque euismod, convallis quam eget,",
+    feature1Title = "Stone spa",
+    feature1Text = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.",
+    feature2Title = "Face Treatments",
+    feature2Text = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.",
+}) {
     return (
         <>
         <section id="about" className="about-section-two pt-130 pb-100 paralax__animation">
@@ -61,16 +69,10 @@ export default function Home2_About() {
                                                 fill="#A78627" />
                                         </g>
                                     </svg>
-                                    About
+                                    {subTitle}
                                 </h4>
-                                <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Welcome
-                                    to <br/>
-                                    beauty & Spa Center</h2>
-                                <p className="text wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">Proin
-                                    efficitur, mauris vel condimentum pulvinar, velit orci consectetur
-                                    ligula, eget egestas magna mi ut arcu.
-                                    Phasellus nec odio orci. Nunc id massa ante. Suspendisse sit amet neque euismod,
-                                    convallis quam eget,</p>
+                                <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{title}</h2>
+                                <p className="text wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">{text}</p>
                             </div>
                             <div className="inner-box mb-30 wow fadeInDown" data-wow-delay="00ms"
                                 data-wow-duration="1500ms">
@@ -158,9 +160,8 @@ export default function Home2_About() {
 
                                 </div>
                                 <div className="content">
-                                    <h4>Stone spa</h4>
-                                    <p>Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula,
-                                        eget egestas.</p>
+                                    <h4>{feature1Title}</h4>
+                                    <p>{feature1Text}</p>
                                 </div>
                             </div>
                             <div className="inner-box wow fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
@@ -242,9 +243,8 @@ export default function Home2_About() {
                                     </svg>
                                 </div>
                                 <div className="content">
-                                    <h4>Face Treatments</h4>
-                                    <p>Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula,
-                                        eget egestas.</p>
+                                    <h4>{feature2Title}</h4>
+                                    <p>{feature2Text}</p>
                                 </div>
                             </div>
                         </div>

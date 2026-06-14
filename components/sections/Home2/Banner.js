@@ -6,7 +6,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-export default function Home2_Banner() {
+export default function Home2_Banner({
+    subTitle = "Rejuvenate You Today",
+    titleSpan = "Indulge in",
+    title = "Pure Tranquility",
+    image = "images/banner/banner-two-image1.jpg",
+    buttonText = "Book Now",
+    buttonLink = "/contact",
+}) {
     const swiperOptions = {
         modules: [Pagination],
         slidesPerView: 1,
@@ -25,7 +32,7 @@ export default function Home2_Banner() {
                 <Swiper {...swiperOptions} className="swiper  banner-two__slider">
                     <div className="swiper-wrapper">
                         <SwiperSlide className="swiper-slide">
-                            <div className="slide-bg" style={{ backgroundImage: 'url(images/banner/banner-two-image1.jpg)' }}></div>
+                            <div className="slide-bg" style={{ backgroundImage: `url(${image})` }}></div>
                             <div className="container">
                                 <div className=" banner-two__content">
                                     <h4 className="sub-title" data-animation="fadeInUp" data-delay=".3s">
@@ -52,12 +59,10 @@ export default function Home2_Banner() {
                                                     fill="white" />
                                             </g>
                                         </svg>
-                                        Rejuvenate You Today
+                                        {subTitle}
                                     </h4>
-                                    <h1 className="title" data-animation="fadeInUp" data-delay=".5s"><span>Indulge in</span>
-                                        Pure Tranquility</h1>
-                                    <Link href="/contact" className="btn-two-light mt-50" data-animation="fadeInUp" data-delay="1s">Book
-                                        Now
+                                    <h1 className="title" data-animation="fadeInUp" data-delay=".5s"><span>{titleSpan}</span> {title}</h1>
+                                    <Link href={buttonLink} className="btn-two-light mt-50" data-animation="fadeInUp" data-delay="1s">{buttonText}
                                         <span className="icon_box">
                                             <i className="fa-regular icon_first fa-arrow-right-long"></i>
                                             <i className="fa-regular icon_second fa-arrow-right-long"></i>

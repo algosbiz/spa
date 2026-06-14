@@ -14,21 +14,23 @@ import ReserveCta from "../components/sections/Home1/ReserveCta";
 
 export default function Home() {
 
-    return (
-      <>
-        <Layout HeaderStyle="one" FooterStyle="two">
-          <Banner />
-          <Video />
-          {/* <AboutReverse /> */}
-          <PackageSection />
-          <Pricing />
-          <PackagePricing />
-          <MarqueeSwiper />
+  return (
+    <>
+      <Layout HeaderStyle="one" FooterStyle="two">
+        <Banner />
+        <Video />
+        {/* <AboutReverse /> */}
+        <PackageSection />
+        {/* <Pricing /> */}
+        <PackagePricing />
+        {/* <MarqueeSwiper /> */}
 
-          {/* <Contact /> */}
-          <Testimonial />
+        {/* <Contact /> */}
+        <Testimonial />
+        <div className="section__decoration-top section__decoration-bottom bg-sub pt-100 pb-100">
           <ReserveCta />
-        </Layout>
-      </>
-    );
+        </div>
+      </Layout>
+    </>
+  );
 }

@@ -1,7 +1,12 @@
 import React from 'react';
 import Accordion from '../../elements/Accordion';
 
-export default function Home6_Faq() {
+export default function Home6_Faq({
+    imageTitle = "Revive Your Senses",
+    subTitle = "Get to know us",
+    title = (<>All About Your Spa Day</>),
+    items,
+}) {
     return (
         <>
             <section className="faq-section pt-100 pb-100">
@@ -10,7 +15,7 @@ export default function Home6_Faq() {
                         <div className="col-xxl-6 image-column">
                             <div className="inner-column gsap__parallax">
                                 <img src="images/faq/faq-image.jpg" alt="image" />
-                                <h2 className="title">Revive Your Senses</h2>
+                                <h2 className="title">{imageTitle}</h2>
                             </div>
                         </div>
                         <div className="col-xxl-6 content-column">
@@ -40,13 +45,12 @@ export default function Home6_Faq() {
                                                     fill="#A78627" />
                                             </g>
                                         </svg>
-                                        Get to know us
+                                        {subTitle}
                                     </h4>
-                                    <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">All
-                                        About Your Spa Day</h2>
+                                    <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{title}</h2>
                                 </div>
                                 <div className="faq-accordion wow fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
-                                    <Accordion />
+                                    <Accordion items={items} />
                                 </div>
                                 <div className="shape">
                                     <img className="bobble__animation" src="images/faq/shape.png" alt="image" />

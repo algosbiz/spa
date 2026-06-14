@@ -123,9 +123,9 @@ const Footer = () => {
                         <div className="footer__item">
                             <h3 className="title">Home Services</h3>
                             <ul className="links">
-                                <li><Link href="#0">Massage Hotel &amp; Villa</Link></li>
-                                <li><Link href="#0">Massage Seminyak</Link></li>
-                                <li><Link href="#0">Massage Kuta</Link></li>
+                                <li><Link href="/massage-hotel-villa">Massage Hotel &amp; Villa</Link></li>
+                                <li><Link href="/massage-seminyak">Massage Seminyak</Link></li>
+                                <li><Link href="/massage-kuta">Massage Kuta</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -134,7 +134,7 @@ const Footer = () => {
                             <h3 className="title">Opening Times</h3>
                             <ul className="time-table">
                                 <li style={{ display: 'block', marginBottom: '15px', borderBottom: '1px solid rgba(95, 90, 84, 0.1)', paddingBottom: '8px' }}>
-                                    <span style={{ fontWeight: '700', color: '#2f2924', fontSize: '16px' }}>Day Spa in Seminyak</span>
+                                    <Link href="/day-spa-seminyak" style={{ fontWeight: '700', color: '#2f2924', fontSize: '16px' }}>Day Spa in Seminyak</Link>
                                 </li>
                                 <li style={{ display: 'flex', flexDirection: 'column', marginBottom: '12px', alignItems: 'flex-start' }}>
                                     <span style={{ fontSize: '14px', marginBottom: '2px' }}>Open Daily:</span>

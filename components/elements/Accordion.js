@@ -19,31 +19,33 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => (
   </div>
 );
 
-const Accordion = () => {
+const defaultData = [
+  {
+    question: "1. What should I wear to the spa?",
+    answer:
+      "We recommend wearing comfortable clothing to the spa. For treatments like massages or facials, you'll be provided with a robe and slippers. Our therapists are trained to drape you discreetly to ensure your privacy at all times.",
+  },
+  {
+    question: "2. Do I need to book an appointment in advance?",
+    answer:
+      "We recommend wearing comfortable clothing to the spa. For treatments like massages or facials, you'll be provided with a robe and slippers. Our therapists are trained to drape you discreetly to ensure your privacy at all times.",
+  },
+  {
+    question: "3. What time should I arrive for my appointment?",
+    answer:
+      "We recommend wearing comfortable clothing to the spa. For treatments like massages or facials, you'll be provided with a robe and slippers. Our therapists are trained to drape you discreetly to ensure your privacy at all times.",
+  },
+  {
+    question: "4. Can I request a male or female therapist?",
+    answer:
+      "We recommend wearing comfortable clothing to the spa. For treatments like massages or facials, you'll be provided with a robe and slippers. Our therapists are trained to drape you discreetly to ensure your privacy at all times.",
+  },
+];
+
+const Accordion = ({ items = defaultData }) => {
   const [openIndex, setOpenIndex] = useState(0);
 
-  const data = [
-    {
-      question: "1. What should I wear to the spa?",
-      answer:
-        "We recommend wearing comfortable clothing to the spa. For treatments like massages or facials, you'll be provided with a robe and slippers. Our therapists are trained to drape you discreetly to ensure your privacy at all times.",
-    },
-    {
-      question: "2. Do I need to book an appointment in advance?",
-      answer:
-        "We recommend wearing comfortable clothing to the spa. For treatments like massages or facials, you'll be provided with a robe and slippers. Our therapists are trained to drape you discreetly to ensure your privacy at all times.",
-    },
-    {
-      question: "3. What time should I arrive for my appointment?",
-      answer:
-        "We recommend wearing comfortable clothing to the spa. For treatments like massages or facials, you'll be provided with a robe and slippers. Our therapists are trained to drape you discreetly to ensure your privacy at all times.",
-    },
-    {
-      question: "4. Can I request a male or female therapist?",
-      answer:
-        "We recommend wearing comfortable clothing to the spa. For treatments like massages or facials, you'll be provided with a robe and slippers. Our therapists are trained to drape you discreetly to ensure your privacy at all times.",
-    },
-  ];
+  const data = items;
 
   const toggleIndex = (index) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));

@@ -6,7 +6,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-export default function Home2_Services() {
+export default function Home2_Services({
+    subTitle = "Services",
+    title = (<>Our Services Will Make <br /> You Glow</>),
+}) {
     const swiperOptions = {
         modules: [Autoplay, Navigation],
         slidesPerView: 3,
@@ -70,9 +73,9 @@ export default function Home2_Services() {
                                         fill="#A78627" />
                                 </g>
                             </svg>
-                            Services
+                            {subTitle}
                         </h4>
-                        <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Our Services Will Make <br /> You Glow</h2>
+                        <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{title}</h2>
                     </div>
                     <Swiper {...swiperOptions} className="swiper service-slider-two">
                         <div className="swiper-wrapper">

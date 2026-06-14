@@ -7,7 +7,7 @@ import { getPublishedPosts } from "@/lib/posts";
 export default function BlogPage({ posts }) {
     return (
         <>
-            <Layout HeaderStyle="one" FooterStyle="four">
+            <Layout HeaderStyle="one" FooterStyle="two">
                 <PageTitle pageName="Blog" />
                 <NewsGrid posts={posts} />
             </Layout>

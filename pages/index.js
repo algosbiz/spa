@@ -60,7 +60,7 @@ export default function Home5() {
                     }
                 ]} />
                 <PackageSection />
-                <Video />
+                {/* <Video /> */}
                 <Pricing showMore />
                 {/* <Contact /> */}
                 {/* <News /> */}

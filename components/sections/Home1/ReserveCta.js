@@ -23,9 +23,12 @@ const brush = (opacity, width) => ({
     vectorEffect: 'non-scaling-stroke',
 });
 
-export default function Home1_ReserveCta() {
+export default function Home1_ReserveCta({
+    title = "Experience True Relaxation with Our Day Spa",
+    text = "Get professional spa treatments at your home, hotel, or villa, bringing relaxation and care right to your space. Home service is available for an additional IDR 75,000 per therapist within Seminyak and nearby areas, and in-spa treatments can be booked at a time that suits you.",
+}) {
     return (
-        <section className="reserve-cta-section" style={{ padding: '70px 0', overflow: 'hidden' }}>
+        <section className="reserve-cta-section " style={{ padding: '70px 0', overflow: 'hidden' }}>
             <div className="container">
                 <div
                     className="reserve-cta-banner"
@@ -68,7 +71,7 @@ export default function Home1_ReserveCta() {
                             data-wow-duration="1500ms"
                             style={{ fontSize: '32px', lineHeight: 1.3, marginBottom: 0 }}
                         >
-                            Experience True Relaxation with Our Day Spa
+                            {title}
                         </h2>
 
                         <p
@@ -77,10 +80,7 @@ export default function Home1_ReserveCta() {
                             data-wow-duration="1500ms"
                             style={{ maxWidth: '720px', margin: '16px auto 0' }}
                         >
-                            Get professional spa treatments at your home, hotel, or villa, bringing
-                            relaxation and care right to your space. Home service is available for an
-                            additional IDR 75,000 per therapist within Seminyak and nearby areas, and
-                            in-spa treatments can be booked at a time that suits you.
+                            {text}
                         </p>
 
                         {/* Divider — uses the site's signature lotus ornament */}
