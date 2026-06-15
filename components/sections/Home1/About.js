@@ -99,7 +99,7 @@ export default function Home1_About({
                         <div className="col-lg-5 image-column">
                             <div className="inner-column wow fadeInLeft" data-tilt data-tilt-max="3" data-wow-delay="200ms"
                                 data-wow-duration="1500ms">
-                                <div className="">
+                                <div className="image-box">
                                     <img src="/images/about/about-image.png" alt="image" />
                                 </div>
                                 {/* <div className="info">
