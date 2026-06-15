@@ -45,17 +45,17 @@ export default function ShopSidebar() {
                                     </div>
                                     <div className="post-inner">
                                         <div className="post">
-                                            <figure className="post-thumb"><Link href="shop-detailsclassName="><img src="images/resource/products/thumb-1.jpg" alt="Image" /></Link></figure>
+                                            <figure className="post-thumb"><Link href="shop-detailsclassName="><img src="/images/resource/products/thumb-1.jpg" alt="Image" /></Link></figure>
                                             <Link href="shop-product-detailsclassName=">Best Headset</Link>
                                             <span className="price">$45.00</span>
                                         </div>
                                         <div className="post">
-                                            <figure className="post-thumb"><Link href="shop-detailsclassName="><img src="images/resource/products/thumb-2.jpg" alt="Image" /></Link></figure>
+                                            <figure className="post-thumb"><Link href="shop-detailsclassName="><img src="/images/resource/products/thumb-2.jpg" alt="Image" /></Link></figure>
                                             <Link href="shop-product-detailsclassName=">Quality Battery</Link>
                                             <span className="price">$34.00</span>
                                         </div>
                                         <div className="post">
-                                            <figure className="post-thumb"><Link href="shop-detailsclassName="><img src="images/resource/products/thumb-3.jpg" alt="Image" /></Link></figure>
+                                            <figure className="post-thumb"><Link href="shop-detailsclassName="><img src="/images/resource/products/thumb-3.jpg" alt="Image" /></Link></figure>
                                             <Link href="shop-product-detailsclassName=">Smart Watch</Link>
                                             <span className="price">$29.00</span>
                                         </div>

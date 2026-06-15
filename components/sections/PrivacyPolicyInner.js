@@ -5,10 +5,10 @@ export default function PrivacyPolicyInner() {
         <section className="privacy-policy-section pt-120 pb-120" style={{ backgroundColor: '#fcfaf6', position: 'relative', overflow: 'hidden', zIndex: 1 }}>
             {/* Elegant Floating Background Leaf Shapes */}
             <div className="shape1" style={{ position: 'absolute', left: 0, top: '10%', zIndex: -1 }}>
-                <img src="images/shape/about-left-shape.png" alt="shape" />
+                <img src="/images/shape/about-left-shape.png" alt="shape" />
             </div>
             <div className="shape2" style={{ position: 'absolute', right: 0, bottom: '15%', zIndex: -1 }}>
-                <img className="sway_Y__animation" src="images/shape/about-right-shape.png" alt="shape" />
+                <img className="sway_Y__animation" src="/images/shape/about-right-shape.png" alt="shape" />
             </div>
 
             <div className="container">

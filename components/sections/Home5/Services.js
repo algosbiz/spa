@@ -7,7 +7,7 @@ export default function Home5_Services() {
         <>
             <section id="services" className="service-section-five pt-130 pb-130">
                 <div className="shape wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
-                    <img className="animation__arryUpDown" src="images/shape/service-four-shape-left.png" alt="image"/>
+                    <img className="animation__arryUpDown" src="/images/shape/service-four-shape-left.png" alt="image"/>
                 </div>
                 <div className="container">
                     <div className="section-header center mb-60">
@@ -43,7 +43,7 @@ export default function Home5_Services() {
                     <div className="row g-4 g-lg-0 align-items-center">
                         <div className="col-sm-6 col-lg-4">
                             <div className="image gsap__parallax-zoom">
-                                <img src="images/service/service-five-image1.jpg" alt="image"/>
+                                <img src="/images/service/service-five-image1.jpg" alt="image"/>
                             </div>
                         </div>
                         <div className="col-sm-6 col-lg-4 service-block-five">
@@ -115,7 +115,7 @@ export default function Home5_Services() {
                         </div>
                         <div className="col-sm-6 col-lg-4">
                             <div className="image gsap__parallax-zoom">
-                                <img src="images/service/service-five-image2.jpg" alt="image"/>
+                                <img src="/images/service/service-five-image2.jpg" alt="image"/>
                             </div>
                         </div>
                         <div className="col-sm-6 col-lg-4 service-block-five">
@@ -238,7 +238,7 @@ export default function Home5_Services() {
                         </div>
                         <div className="col-sm-6 col-lg-4">
                             <div className="image gsap__parallax-zoom">
-                                <img src="images/service/service-five-image3.jpg" alt="image"/>
+                                <img src="/images/service/service-five-image3.jpg" alt="image"/>
                             </div>
                         </div>
                         <div className="col-sm-6 col-lg-4 service-block-five">

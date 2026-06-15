@@ -56,10 +56,10 @@ export default function BookTreatment() {
         <>
             <section className="book-treatment-section about-section section__decoration-top section__decoration-bottom bg-sub pt-130 pb-130">
                 <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <img src="images/shape/service-shape-left.png" alt="shape" />
+                    <img src="/images/shape/service-shape-left.png" alt="shape" />
                 </div>
                 <div className="shape2 wow slideInRight" data-wow-delay="400ms" data-wow-duration="1500ms">
-                    <img className="sway_Y__animation" src="images/shape/service-shape-right.png" alt="shape" />
+                    <img className="sway_Y__animation" src="/images/shape/service-shape-right.png" alt="shape" />
                 </div>
                 <div className="container">
                     {/* Section Header */}

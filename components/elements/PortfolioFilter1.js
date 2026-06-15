@@ -75,7 +75,7 @@ export default function PortfolioFilter1() {
                         <div className="image-box">
                             <div className="image">
                                 <Link href="/shop-product-details">
-                                    <img src="images/resource/product1-1.jpg" alt="Image" />
+                                    <img src="/images/resource/product1-1.jpg" alt="Image" />
                                 </Link>
                             </div>
                             <div className="icon-box">
@@ -102,7 +102,7 @@ export default function PortfolioFilter1() {
                         <div className="image-box">
                             <div className="image">
                                 <Link href="/shop-product-details">
-                                    <img src="images/resource/product1-2.jpg" alt="Image" />
+                                    <img src="/images/resource/product1-2.jpg" alt="Image" />
                                 </Link>
                             </div>
                             <div className="icon-box">
@@ -129,7 +129,7 @@ export default function PortfolioFilter1() {
                         <div className="image-box">
                             <div className="image">
                                 <Link href="/shop-product-details">
-                                    <img src="images/resource/product1-3.jpg" alt="Image" />
+                                    <img src="/images/resource/product1-3.jpg" alt="Image" />
                                 </Link>
                             </div>
                             <div className="icon-box">
@@ -156,7 +156,7 @@ export default function PortfolioFilter1() {
                         <div className="image-box">
                             <div className="image">
                                 <Link href="/shop-product-details">
-                                    <img src="images/resource/product1-4.jpg" alt="Image" />
+                                    <img src="/images/resource/product1-4.jpg" alt="Image" />
                                 </Link>
                             </div>
                             <div className="icon-box">
@@ -183,7 +183,7 @@ export default function PortfolioFilter1() {
                         <div className="image-box">
                             <div className="image">
                                 <Link href="/shop-product-details">
-                                    <img src="images/resource/product1-4.jpg" alt="Image" />
+                                    <img src="/images/resource/product1-4.jpg" alt="Image" />
                                 </Link>
                             </div>
                             <div className="icon-box">
@@ -210,7 +210,7 @@ export default function PortfolioFilter1() {
                         <div className="image-box">
                             <div className="image">
                                 <Link href="/shop-product-details">
-                                    <img src="images/resource/product1-1.jpg" alt="Image" />
+                                    <img src="/images/resource/product1-1.jpg" alt="Image" />
                                 </Link>
                             </div>
                             <div className="icon-box">
@@ -237,7 +237,7 @@ export default function PortfolioFilter1() {
                         <div className="image-box">
                             <div className="image">
                                 <Link href="/shop-product-details">
-                                    <img src="images/resource/product1-2.jpg" alt="Image" />
+                                    <img src="/images/resource/product1-2.jpg" alt="Image" />
                                 </Link>
                             </div>
                             <div className="icon-box">
@@ -264,7 +264,7 @@ export default function PortfolioFilter1() {
                         <div className="image-box">
                             <div className="image">
                                 <Link href="/shop-product-details">
-                                    <img src="images/resource/product1-3.jpg" alt="Image" />
+                                    <img src="/images/resource/product1-3.jpg" alt="Image" />
                                 </Link>
                             </div>
                             <div className="icon-box">

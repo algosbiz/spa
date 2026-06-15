@@ -92,13 +92,13 @@ const ShopDetails = () => {
                   }}
                 className="slider-pager">
                 <SwiperSlide>
-                  <div className="image-box"><img src="images/resource/products/product-details.jpg" alt="Image"/></div>
+                  <div className="image-box"><img src="/images/resource/products/product-details.jpg" alt="Image"/></div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="image-box"><img src="images/resource/products/product-details2.jpg" alt="Image"/></div>
+                  <div className="image-box"><img src="/images/resource/products/product-details2.jpg" alt="Image"/></div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="image-box"><img src="images/resource/products/product-details3.jpg" alt="Image"/></div>
+                  <div className="image-box"><img src="/images/resource/products/product-details3.jpg" alt="Image"/></div>
                 </SwiperSlide>
               </Swiper>
               <Swiper
@@ -111,17 +111,17 @@ const ShopDetails = () => {
                 className="slider-pager">
                 <SwiperSlide className="product-thumb wide-100">
                   <figure className="image">
-                    <img src="images/resource/products/product-details.jpg" alt="Image"/>
+                    <img src="/images/resource/products/product-details.jpg" alt="Image"/>
                   </figure>
                 </SwiperSlide>
                 <SwiperSlide className="product-thumb wide-100">
                   <figure className="image">
-                    <img src="images/resource/products/product-details2.jpg" alt="Image"/>
+                    <img src="/images/resource/products/product-details2.jpg" alt="Image"/>
                   </figure>
                 </SwiperSlide>
                 <SwiperSlide className="product-thumb wide-100">
                   <figure className="image">
-                    <img src="images/resource/products/product-details3.jpg" alt="Image"/>
+                    <img src="/images/resource/products/product-details3.jpg" alt="Image"/>
                   </figure>
                 </SwiperSlide>
               </Swiper>
@@ -220,7 +220,7 @@ const ShopDetails = () => {
                     <div className="col-lg-6 col-md-6 col-sm-12 comment-column">
                         <div className="single-comment-box">
                             <div className="inner-box">
-                                <figure className="comment-thumb"><img src="images/resource/testi-2.jpg" alt="Image" /></figure>
+                                <figure className="comment-thumb"><img src="/images/resource/testi-2.jpg" alt="Image" /></figure>
                                 <div className="inner">
                                     <ul className="rating clearfix">
                                         <li><i className="fas fa-star"></i></li>
@@ -238,7 +238,7 @@ const ShopDetails = () => {
                     <div className="col-lg-6 col-md-6 col-sm-12 comment-column">
                         <div className="single-comment-box">
                             <div className="inner-box">
-                                <figure className="comment-thumb"><img src="images/resource/testi-1.jpg" alt="Image" /></figure>
+                                <figure className="comment-thumb"><img src="/images/resource/testi-1.jpg" alt="Image" /></figure>
                                 <div className="inner">
                                     <ul className="rating clearfix">
                                         <li><i className="fas fa-star"></i></li>
@@ -355,7 +355,7 @@ const ShopDetails = () => {
         <div className="product-block col-lg-3 col-md-6">
           <div className="inner-box">
             <div className="image-box">
-              <div className="image"><Link href="/shop-product-details"><img src="images/resource/product1-1.jpg" alt="Image"/></Link></div>
+              <div className="image"><Link href="/shop-product-details"><img src="/images/resource/product1-1.jpg" alt="Image"/></Link></div>
               <div className="icon-box">
                 <Link href="/shop-product-details" className="ui-btn"><i className="fa fa-heart"></i></Link>
                 <Link href="/shop-cart" className="ui-btn"><i className="fa fa-shopping-cart"></i></Link>
@@ -373,7 +373,7 @@ const ShopDetails = () => {
         <div className="product-block col-lg-3 col-md-6">
           <div className="inner-box">
             <div className="image-box">
-              <div className="image"><Link href="/shop-product-details"><img src="images/resource/product1-2.jpg" alt="Image"/></Link></div>
+              <div className="image"><Link href="/shop-product-details"><img src="/images/resource/product1-2.jpg" alt="Image"/></Link></div>
               <div className="icon-box">
                 <Link href="/shop-product-details" className="ui-btn"><i className="fa fa-heart"></i></Link>
                 <Link href="/shop-cart" className="ui-btn"><i className="fa fa-shopping-cart"></i></Link>
@@ -391,7 +391,7 @@ const ShopDetails = () => {
         <div className="product-block col-lg-3 col-md-6">
           <div className="inner-box">
             <div className="image-box">
-              <div className="image"><Link href="/shop-product-details"><img src="images/resource/product1-3.jpg" alt="Image"/></Link></div>
+              <div className="image"><Link href="/shop-product-details"><img src="/images/resource/product1-3.jpg" alt="Image"/></Link></div>
               <div className="icon-box">
                 <Link href="/shop-product-details" className="ui-btn"><i className="fa fa-heart"></i></Link>
                 <Link href="/shop-cart" className="ui-btn"><i className="fa fa-shopping-cart"></i></Link>
@@ -409,7 +409,7 @@ const ShopDetails = () => {
         <div className="product-block col-lg-3 col-md-6">
           <div className="inner-box">
             <div className="image-box">
-              <div className="image"><Link href="/shop-product-details"><img src="images/resource/product1-4.jpg" alt="Image"/></Link></div>
+              <div className="image"><Link href="/shop-product-details"><img src="/images/resource/product1-4.jpg" alt="Image"/></Link></div>
               <div className="icon-box">
                 <Link href="/shop-product-details" className="ui-btn"><i className="fa fa-heart"></i></Link>
                 <Link href="/shop-cart" className="ui-btn"><i className="fa fa-shopping-cart"></i></Link>

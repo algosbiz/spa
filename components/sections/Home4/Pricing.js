@@ -6,7 +6,7 @@ export default function Home4_Pricing() {
         <>
         <section id="projects" className="package-section  pb-130">
             <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                <img className="sway_Y__animationY" src="images/shape/package-four-shape-left.png" alt="image"/>
+                <img className="sway_Y__animationY" src="/images/shape/package-four-shape-left.png" alt="image"/>
             </div>
             <div className="container">
                 <div className="section-header mb-60 center">
@@ -43,7 +43,7 @@ export default function Home4_Pricing() {
                     <div className="col-lg-6 package-block">
                         <div className="inner-box mb-50">
                             <div className="image">
-                                <img src="images/package/package-image1.png" alt="image"/>
+                                <img src="/images/package/package-image1.png" alt="image"/>
                             </div>
                             <div className="content">
                                 <h3 className="title">
@@ -56,7 +56,7 @@ export default function Home4_Pricing() {
                         </div>
                         <div className="inner-box mb-50">
                             <div className="image">
-                                <img src="images/package/package-image2.png" alt="image"/>
+                                <img src="/images/package/package-image2.png" alt="image"/>
                             </div>
                             <div className="content">
                                 <h3 className="title">
@@ -69,7 +69,7 @@ export default function Home4_Pricing() {
                         </div>
                         <div className="inner-box mb-50">
                             <div className="image">
-                                <img src="images/package/package-image3.png" alt="image"/>
+                                <img src="/images/package/package-image3.png" alt="image"/>
                             </div>
                             <div className="content">
                                 <h3 className="title">
@@ -82,7 +82,7 @@ export default function Home4_Pricing() {
                         </div>
                         <div className="inner-box">
                             <div className="image">
-                                <img src="images/package/package-image4.png" alt="image"/>
+                                <img src="/images/package/package-image4.png" alt="image"/>
                             </div>
                             <div className="content">
                                 <h3 className="title">
@@ -97,7 +97,7 @@ export default function Home4_Pricing() {
                     <div className="col-lg-6 package-block">
                         <div className="inner-box mb-50">
                             <div className="image">
-                                <img src="images/package/package-image5.png" alt="image"/>
+                                <img src="/images/package/package-image5.png" alt="image"/>
                             </div>
                             <div className="content">
                                 <h3 className="title">
@@ -110,7 +110,7 @@ export default function Home4_Pricing() {
                         </div>
                         <div className="inner-box mb-50">
                             <div className="image">
-                                <img src="images/package/package-image6.png" alt="image"/>
+                                <img src="/images/package/package-image6.png" alt="image"/>
                             </div>
                             <div className="content">
                                 <h3 className="title">
@@ -123,7 +123,7 @@ export default function Home4_Pricing() {
                         </div>
                         <div className="inner-box mb-50">
                             <div className="image">
-                                <img src="images/package/package-image7.png" alt="image"/>
+                                <img src="/images/package/package-image7.png" alt="image"/>
                             </div>
                             <div className="content">
                                 <h3 className="title">
@@ -136,7 +136,7 @@ export default function Home4_Pricing() {
                         </div>
                         <div className="inner-box">
                             <div className="image">
-                                <img src="images/package/package-image8.png" alt="image"/>
+                                <img src="/images/package/package-image8.png" alt="image"/>
                             </div>
                             <div className="content">
                                 <h3 className="title">

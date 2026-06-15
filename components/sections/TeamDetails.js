@@ -65,7 +65,7 @@ const TeamDetails = () => {
 						<div className="col-xl-6 col-lg-6">
 							<div className="team-details__top-left">
 								<div className="team-details__top-img">
-									<img src="images/resource/team-details.jpg" alt="Image" />
+									<img src="/images/resource/team-details.jpg" alt="Image" />
 									<div className="team-details__big-text"></div>
 								</div>
 							</div>

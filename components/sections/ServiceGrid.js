@@ -7,10 +7,10 @@ export default function ServiceGrid() {
         <>
         <section className="service-section section__decoration-top  section__decoration-bottom bg-sub pt-130 pb-130">
             <div className="shape1 wow slideInLeft">
-                <img className="sway__animation" src="images/shape/service-shape-left.png" alt="imag" />
+                <img className="sway__animation" src="/images/shape/service-shape-left.png" alt="imag" />
             </div>
             <div className="shape2">
-                <img className="animation__arryUpDown" src="images/shape/service-shape-right.png" alt="imag" />
+                <img className="animation__arryUpDown" src="/images/shape/service-shape-right.png" alt="imag" />
             </div>
             <div className="container">
                 <div className="row g-5">

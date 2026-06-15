@@ -6,7 +6,7 @@ const PageHead = ({ headTitle }) => {
         <>
             <Head>
                 <title>{headTitle ? headTitle : "Spa Bali Moon - Best Spa in Bali"}</title>
-                <link rel="shortcut icon" href="images/SMBlogo.ico" type="image/x-icon" />
+                <link rel="shortcut icon" href="/images/SMBlogo.ico" type="image/x-icon" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet" />

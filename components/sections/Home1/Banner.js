@@ -15,7 +15,7 @@ export default function Home1_Banner() {
         <section id="home" className="banner-area">
             <div className="banner__wrp">
                 <video className="banner__video parallaxScaleScroll" ref={videoRef} muted loop playsInline autoPlay>
-                    <source src="images/banner/banner-one.mp4" type="video/mp4"/>
+                    <source src="/images/banner/banner-one.mp4" type="video/mp4"/>
                 </video>
                 <div className=" banner__content">
                     <h4 className="sub-title" data-animation="fadeInUp" data-delay=".3s">

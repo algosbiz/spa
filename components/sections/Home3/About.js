@@ -6,27 +6,27 @@ export default function Home3_About() {
         <>
         <section id="about" className="about-section-three pt-130 pb-130 paralax__animation">
             <div className="shape">
-                <img className="animation__floatBob" src="images/shape/about-three-shape.png" alt="image"/>
+                <img className="animation__floatBob" src="/images/shape/about-three-shape.png" alt="image"/>
             </div>
             <div className="container">
                 <div className="row g-0 align-items-center">
                     <div className="col-xl-6 image-column">
                         <div className="inner-column">
                             <div className="image">
-                                <img className="image1" src="images/about/about-three-image1.png" alt="image"/>
+                                <img className="image1" src="/images/about/about-three-image1.png" alt="image"/>
                             </div>
-                            <img className="image2" src="images/about/about-three-image2.png" alt="image"/>
+                            <img className="image2" src="/images/about/about-three-image2.png" alt="image"/>
                             <div className="info">
-                                <img data-depth="0.01" src="images/about/about-three-info.png" alt="image"/>
+                                <img data-depth="0.01" src="/images/about/about-three-info.png" alt="image"/>
                             </div>
                             <div className="shape-one">
-                                <img className="animation__arryUpDown" src="images/about/shape1.png" alt="image"/>
+                                <img className="animation__arryUpDown" src="/images/about/shape1.png" alt="image"/>
                             </div>
                             <div className="shape-two">
-                                <img data-depth="0.03" src="images/about/shape2.png" alt="image"/>
+                                <img data-depth="0.03" src="/images/about/shape2.png" alt="image"/>
                             </div>
                             <div className="shape-three">
-                                <img className="animation__arryLeftRight" src="images/about/shape3.png" alt="image"/>
+                                <img className="animation__arryLeftRight" src="/images/about/shape3.png" alt="image"/>
                             </div>
                         </div>
                     </div>

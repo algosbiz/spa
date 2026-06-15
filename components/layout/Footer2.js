@@ -50,11 +50,11 @@ const Footer = () => {
         <>
         <footer className="footer-two-area footer-two-area--white-simple">
             <div className="footer__shape">
-                <img src="images/shape/footer-shape-left.png" alt="shape"/>
+                <img src="/images/shape/footer-shape-left.png" alt="shape"/>
             </div>
             <div className="container">
                 <div className="footer-two__head">
-                    <Link href="/" className="logo"><img src="images/logo/SMBtitle.svg" alt="Spa Bali Moon"/></Link>
+                    <Link href="/" className="logo"><img src="/images/logo/SMBtitle.svg" alt="Spa Bali Moon"/></Link>
                     <div className="newsletter">
                         <h3 className="title">Join Our Newsletter</h3>
                         <form className="input" onSubmit={handleSubscribe} style={{ position: 'relative' }}>

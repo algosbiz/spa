@@ -7,10 +7,10 @@ export default function Home1_Services() {
         <>
         <section id="services" className="service-section section__decoration-top  section__decoration-bottom bg-sub pt-130 pb-130">
             <div className="shape1 wow slideInLeft">
-                <img className="sway__animation" src="images/shape/service-shape-left.png" alt="imag"/>
+                <img className="sway__animation" src="/images/shape/service-shape-left.png" alt="imag"/>
             </div>
             <div className="shape2">
-                <img className="animation__arryUpDown" src="images/shape/service-shape-right.png" alt="image"/>
+                <img className="animation__arryUpDown" src="/images/shape/service-shape-right.png" alt="image"/>
             </div>
             <div className="container">
                 <div className="section-header mb-60 center">

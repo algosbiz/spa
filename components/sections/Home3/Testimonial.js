@@ -8,28 +8,28 @@ import 'swiper/css/thumbs';
 
 const defaultTestimonials = [
     {
-        image: "images/testimonial/testimonial-two-image1.png",
+        image: "/images/testimonial/testimonial-two-image1.png",
         name: "Wade Warren",
         designation: "Happy Client",
         text: "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas magna mi ut arcu. Phasellus nec odio orci. Nunc id massa ante. Suspendisse sit amet.",
         stars: 5
     },
     {
-        image: "images/testimonial/testimonial-two-image2.png",
+        image: "/images/testimonial/testimonial-two-image2.png",
         name: "Jane William",
         designation: "Happy Client",
         text: "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas magna mi ut arcu. Phasellus nec odio orci. Nunc id massa ante. Suspendisse sit amet.",
         stars: 5
     },
     {
-        image: "images/testimonial/testimonial-two-image3.png",
+        image: "/images/testimonial/testimonial-two-image3.png",
         name: "Guy Hawkins",
         designation: "Happy Client",
         text: "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas magna mi ut arcu. Phasellus nec odio orci. Nunc id massa ante. Suspendisse sit amet.",
         stars: 5
     },
     {
-        image: "images/testimonial/testimonial-two-image1.png",
+        image: "/images/testimonial/testimonial-two-image1.png",
         name: "Robert Fox",
         designation: "Happy Client",
         text: "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas magna mi ut arcu. Phasellus nec odio orci. Nunc id massa ante. Suspendisse sit amet.",
@@ -57,13 +57,13 @@ export default function Home3_Testimonial({ testimonialsData = defaultTestimonia
         <>
             <section className="testimonial-section-two pt-130 pb-130">
                 <div className="shape1">
-                    <img className="animation__arryUpDown" src="images/shape/testimonial-two-shape-left.png" alt="image" />
+                    <img className="animation__arryUpDown" src="/images/shape/testimonial-two-shape-left.png" alt="image" />
                 </div>
                 <div className="shape2">
-                    <img className="animation__arryLeftRight" src="images/shape/testimonial-two-shape-right.png" alt="image" />
+                    <img className="animation__arryLeftRight" src="/images/shape/testimonial-two-shape-right.png" alt="image" />
                 </div>
                 <div className="shape3">
-                    <img className="bobble__animation" src="images/shape/testimonial-three-shape-center.png" alt="image" />
+                    <img className="bobble__animation" src="/images/shape/testimonial-three-shape-center.png" alt="image" />
                 </div>
                 <div className="container">
                     <div className="outer-box">

@@ -6,10 +6,10 @@ export default function HomeServiceBanner() {
         <>
             <section className="banner-two-area section__decoration-bottom" style={{ position: 'relative', overflow: 'hidden' }}>
                 <div className="banner-two__shape">
-                    <img src="images/shape/banner-three-shape.png" alt="shape" />
+                    <img src="/images/shape/banner-three-shape.png" alt="shape" />
                 </div>
                 <div className="slide-bg" style={{ 
-                    backgroundImage: 'url(images/banner/banner-two-image1.jpg)', 
+                    backgroundImage: 'url(/images/banner/banner-two-image1.jpg)', 
                     backgroundSize: 'cover', 
                     backgroundPosition: 'center',
                     height: '80vh',

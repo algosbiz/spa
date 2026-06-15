@@ -44,43 +44,43 @@ export default function Home1_Instagram() {
                 <div className="swiper-wrapper">
                     <SwiperSlide className="swiper-slide instagram-block">
                         <Link href="#0" className="inner-box">
-                            <img src="images/instagram/instagram-image1.jpg" alt="image"/>
+                            <img src="/images/instagram/instagram-image1.jpg" alt="image"/>
                             <div className="icon"><i className="fa-brands fa-instagram"></i></div>
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide className="swiper-slide instagram-block">
                         <Link href="#0" className="inner-box">
-                            <img src="images/instagram/instagram-image2.jpg" alt="image"/>
+                            <img src="/images/instagram/instagram-image2.jpg" alt="image"/>
                             <div className="icon"><i className="fa-brands fa-instagram"></i></div>
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide className="swiper-slide instagram-block">
                         <Link href="#0" className="inner-box">
-                            <img src="images/instagram/instagram-image3.jpg" alt="image"/>
+                            <img src="/images/instagram/instagram-image3.jpg" alt="image"/>
                             <div className="icon"><i className="fa-brands fa-instagram"></i></div>
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide className="swiper-slide instagram-block">
                         <Link href="#0" className="inner-box">
-                            <img src="images/instagram/instagram-image4.jpg" alt="image"/>
+                            <img src="/images/instagram/instagram-image4.jpg" alt="image"/>
                             <div className="icon"><i className="fa-brands fa-instagram"></i></div>
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide className="swiper-slide instagram-block">
                         <Link href="#0" className="inner-box">
-                            <img src="images/instagram/instagram-image5.jpg" alt="image"/>
+                            <img src="/images/instagram/instagram-image5.jpg" alt="image"/>
                             <div className="icon"><i className="fa-brands fa-instagram"></i></div>
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide className="swiper-slide instagram-block">
                         <Link href="#0" className="inner-box">
-                            <img src="images/instagram/instagram-image2.jpg" alt="image"/>
+                            <img src="/images/instagram/instagram-image2.jpg" alt="image"/>
                             <div className="icon"><i className="fa-brands fa-instagram"></i></div>
                         </Link>
                     </SwiperSlide>
                     <SwiperSlide className="swiper-slide instagram-block">
                         <Link href="#0" className="inner-box">
-                            <img src="images/instagram/instagram-image3.jpg" alt="image"/>
+                            <img src="/images/instagram/instagram-image3.jpg" alt="image"/>
                             <div className="icon"><i className="fa-brands fa-instagram"></i></div>
                         </Link>
                     </SwiperSlide>

@@ -6,10 +6,10 @@ export default function Home3_Pricing() {
         <>
         <section className="pricing-section-three section__decoration-top section__decoration-bottom pt-130 pb-170">
             <div className="shape1">
-                <img className="animation__arryUpDown" src="images/shape/pricing-three-shape-left.png" alt="image"/>
+                <img className="animation__arryUpDown" src="/images/shape/pricing-three-shape-left.png" alt="image"/>
             </div>
             <div className="shape2">
-                <img className="animation__arryLeftRight" src="images/shape/pricing-three-shape-right.png" alt="image"/>
+                <img className="animation__arryLeftRight" src="/images/shape/pricing-three-shape-right.png" alt="image"/>
             </div>
             <div className="container">
                 <div className="section-header__flex mb-60">
@@ -52,12 +52,12 @@ export default function Home3_Pricing() {
                 <div className="outer-box mb-50">
                     <div className="row g-4">
                         <div className="col-lg-8 col-xl-9 image-column">
-                            <div className="image-box"> <img src="images/pricing/pricing-three-image1.jpg" alt="image"/>
+                            <div className="image-box"> <img src="/images/pricing/pricing-three-image1.jpg" alt="image"/>
                             </div>
                         </div>
                         <div className="col-lg-4 col-xl-3 pricing-block">
                             <div className="inner-box">
-                                <div className="shape"> <img src="images/pricing/shape.png" alt="image"/> </div>
+                                <div className="shape"> <img src="/images/pricing/shape.png" alt="image"/> </div>
                                 <h2 className="price">$19 <span>/ Hr</span></h2>
                                 <h6>Massage & Treatments</h6>
                                 <ul>
@@ -80,7 +80,7 @@ export default function Home3_Pricing() {
                     <div className="row g-4">
                         <div className="col-lg-4 col-xl-3 order-2 order-lg-1 pricing-block">
                             <div className="inner-box">
-                                <div className="shape"><img src="images/pricing/shape.png" alt="image"/></div>
+                                <div className="shape"><img src="/images/pricing/shape.png" alt="image"/></div>
                                 <h2 className="price">$59 <span>/ Hr</span></h2>
                                 <h6>Massage & Treatments</h6>
                                 <ul>
@@ -98,7 +98,7 @@ export default function Home3_Pricing() {
                             </div>
                         </div>
                         <div className="col-lg-8 col-xl-9 image-column order-1 order-lg-2">
-                            <div className="image-box"><img src="images/pricing/pricing-three-image2.jpg" alt="image"/></div>
+                            <div className="image-box"><img src="/images/pricing/pricing-three-image2.jpg" alt="image"/></div>
                         </div>
                     </div>
                 </div>

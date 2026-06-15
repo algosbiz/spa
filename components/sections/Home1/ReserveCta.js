@@ -34,7 +34,7 @@ export default function Home1_ReserveCta({
                     className="reserve-cta-banner"
                     style={{
                         position: 'relative',
-                        backgroundImage: `linear-gradient(rgba(28, 26, 29, 0.45), rgba(28, 26, 29, 0.45)), url(images/bg/contact-five-bg.jpg)`,
+                        backgroundImage: `linear-gradient(rgba(28, 26, 29, 0.45), rgba(28, 26, 29, 0.45)), url(/images/bg/contact-five-bg.jpg)`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',

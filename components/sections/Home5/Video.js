@@ -14,7 +14,7 @@ export default function Home5_Video() {
     <section className="video-section-three video-five-area pl-50 pr-50">
         <div className="radius30 bg-sub">
             <div className="image-box gsap__parallax radius30">
-                <img src="images/video/video-five-image.jpg" alt="image"/>
+                <img src="/images/video/video-five-image.jpg" alt="image"/>
                 <div className="btn-video video-pulse">
                     <a className="video-popup" onClick={() => setOpen(true)}
                         data-fancybox="gallery" data-caption=""><i className="fa-sharp fa-solid fa-play"></i></a>

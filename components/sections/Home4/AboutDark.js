@@ -6,7 +6,7 @@ export default function Home4_About() {
         <section id="about" className="about-section-four pb-130">
             <div className="outer-box">
                 <div className="shape">
-                    <img className="animation__arryLeftRight" src="images/about/about-four-shape.png" alt="image"/>
+                    <img className="animation__arryLeftRight" src="/images/about/about-four-shape.png" alt="image"/>
                 </div>
                 <div className="row g-4">
                     <div className="col-lg-5 left-column">
@@ -45,13 +45,13 @@ export default function Home4_About() {
                                     egestas magna mi ut arcu. Phasellus nec odio orci. Nunc id massa ante. Suspendisse
                                     sit amet neque euismod, convallis quam eget,</p>
                             </div>
-                            <div className="image"><img src="images/about/about-four-image1.jpg" alt="image"/></div>
+                            <div className="image"><img src="/images/about/about-four-image1.jpg" alt="image"/></div>
                         </div>
                     </div>
                     <div className="col-lg-7 right-column">
                         <div className="inner-column">
                             <div className="image">
-                                <img src="images/about/about-four-image2.jpg" alt="image"/>
+                                <img src="/images/about/about-four-image2.jpg" alt="image"/>
                             </div>
                             <div className="content-box mt-80">
                                 <h3 className="title wow fadeInDown" data-wow-delay="00ms" data-wow-duration="1500ms">Benefits of

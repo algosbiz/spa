@@ -916,7 +916,7 @@ function PricingCta({ headline, text, cta }) {
           className="reserve-cta-banner"
           style={{
             position: 'relative',
-            backgroundImage: `linear-gradient(rgba(28, 26, 29, 0.45), rgba(28, 26, 29, 0.45)), url(images/bg/contact-five-bg.jpg)`,
+            backgroundImage: `linear-gradient(rgba(28, 26, 29, 0.45), rgba(28, 26, 29, 0.45)), url(/images/bg/contact-five-bg.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
@@ -1057,7 +1057,7 @@ export default function Home5_PackagePricing() {
                     >
                       <div className="inner-box">
                         <div className="shape">
-                          <img src="images/pricing/shape.png" alt="image" />
+                          <img src="/images/pricing/shape.png" alt="image" />
                         </div>
                         <div className="icon">{icons[pi]}</div>
                         <h4>

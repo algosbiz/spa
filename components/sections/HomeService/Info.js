@@ -45,10 +45,10 @@ export default function HomeServiceInfo() {
         <section className="home-service-info-area pt-100 pb-100" style={{ backgroundColor: '#fcfaf6', position: 'relative', overflow: 'hidden', zIndex: 1 }}>
             {/* Elegant Floating Background Leaf Shapes (Unique to this section) */}
             <div className="shape1" style={{ position: 'absolute', left: 0, top: '15%', zIndex: -1 }}>
-                <img src="images/shape/about-left-shape.png" alt="shape" />
+                <img src="/images/shape/about-left-shape.png" alt="shape" />
             </div>
             <div className="shape2" style={{ position: 'absolute', right: 0, bottom: '15%', zIndex: -1 }}>
-                <img className="sway_Y__animation" src="images/shape/about-right-shape.png" alt="shape" />
+                <img className="sway_Y__animation" src="/images/shape/about-right-shape.png" alt="shape" />
             </div>
 
             <div className="container">

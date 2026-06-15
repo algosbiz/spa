@@ -86,7 +86,7 @@ export default function Home2_Team() {
                         <SwiperSlide className="swiper-slide team-block">
                             <div className="inner-box">
                                 <div className="image">
-                                    <img src="images/team/team-image1.jpg" alt="image"/>
+                                    <img src="/images/team/team-image1.jpg" alt="image"/>
                                 </div>
                                 <ul className="socials">
                                     <li>
@@ -141,7 +141,7 @@ export default function Home2_Team() {
                                 </ul>
                                 <div className="content">
                                     <div className="shape">
-                                        <img src="images/team/shape.png" alt="image"/>
+                                        <img src="/images/team/shape.png" alt="image"/>
                                     </div>
                                     <h4 className="title"><Link href="/team-details">Jane William</Link></h4>
                                     <span>Spa Message</span>
@@ -151,7 +151,7 @@ export default function Home2_Team() {
                         <SwiperSlide className="swiper-slide team-block">
                             <div className="inner-box">
                                 <div className="image">
-                                    <img src="images/team/team-image2.jpg" alt="image"/>
+                                    <img src="/images/team/team-image2.jpg" alt="image"/>
                                 </div>
                                 <ul className="socials">
                                     <li>
@@ -206,7 +206,7 @@ export default function Home2_Team() {
                                 </ul>
                                 <div className="content">
                                     <div className="shape">
-                                        <img src="images/team/shape.png" alt="image"/>
+                                        <img src="/images/team/shape.png" alt="image"/>
                                     </div>
                                     <h4 className="title"><Link href="/team-details">Wade Warren</Link></h4>
                                     <span>Spa Message</span>
@@ -216,7 +216,7 @@ export default function Home2_Team() {
                         <SwiperSlide className="swiper-slide team-block">
                             <div className="inner-box">
                                 <div className="image">
-                                    <img src="images/team/team-image3.jpg" alt="image"/>
+                                    <img src="/images/team/team-image3.jpg" alt="image"/>
                                 </div>
                                 <ul className="socials">
                                     <li>
@@ -271,7 +271,7 @@ export default function Home2_Team() {
                                 </ul>
                                 <div className="content">
                                     <div className="shape">
-                                        <img src="images/team/shape.png" alt="image"/>
+                                        <img src="/images/team/shape.png" alt="image"/>
                                     </div>
                                     <h4 className="title"><Link href="/team-details">Guy Hawkins</Link></h4>
                                     <span>Spa Message</span>
@@ -281,7 +281,7 @@ export default function Home2_Team() {
                         <SwiperSlide className="swiper-slide team-block">
                             <div className="inner-box">
                                 <div className="image">
-                                    <img src="images/team/team-image4.jpg" alt="image"/>
+                                    <img src="/images/team/team-image4.jpg" alt="image"/>
                                 </div>
                                 <ul className="socials">
                                     <li>
@@ -336,7 +336,7 @@ export default function Home2_Team() {
                                 </ul>
                                 <div className="content">
                                     <div className="shape">
-                                        <img src="images/team/shape.png" alt="image"/>
+                                        <img src="/images/team/shape.png" alt="image"/>
                                     </div>
                                     <h4 className="title"><Link href="/team-details">Cody Fisher</Link></h4>
                                     <span>Spa Message</span>
@@ -346,7 +346,7 @@ export default function Home2_Team() {
                         <SwiperSlide className="swiper-slide team-block">
                             <div className="inner-box">
                                 <div className="image">
-                                    <img src="images/team/team-image1.jpg" alt="image"/>
+                                    <img src="/images/team/team-image1.jpg" alt="image"/>
                                 </div>
                                 <ul className="socials">
                                     <li>
@@ -401,7 +401,7 @@ export default function Home2_Team() {
                                 </ul>
                                 <div className="content">
                                     <div className="shape">
-                                        <img src="images/team/shape.png" alt="image"/>
+                                        <img src="/images/team/shape.png" alt="image"/>
                                     </div>
                                     <h4 className="title"><Link href="/team-details">Jane William</Link></h4>
                                     <span>Spa Message</span>
@@ -411,7 +411,7 @@ export default function Home2_Team() {
                         <SwiperSlide className="swiper-slide team-block">
                             <div className="inner-box">
                                 <div className="image">
-                                    <img src="images/team/team-image2.jpg" alt="image"/>
+                                    <img src="/images/team/team-image2.jpg" alt="image"/>
                                 </div>
                                 <ul className="socials">
                                     <li>
@@ -466,7 +466,7 @@ export default function Home2_Team() {
                                 </ul>
                                 <div className="content">
                                     <div className="shape">
-                                        <img src="images/team/shape.png" alt="image"/>
+                                        <img src="/images/team/shape.png" alt="image"/>
                                     </div>
                                     <h4 className="title"><Link href="/team-details">Wade Warren</Link></h4>
                                     <span>Spa Message</span>

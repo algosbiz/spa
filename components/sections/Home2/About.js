@@ -14,10 +14,10 @@ export default function Home2_About({
         <>
         <section id="about" className="about-section-two pt-130 pb-100 paralax__animation">
             <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                <img className="animation__arryUpDown" src="images/shape/about-two-left.png" alt="image"/>
+                <img className="animation__arryUpDown" src="/images/shape/about-two-left.png" alt="image"/>
             </div>
             <div className="shape2">
-                <img className="animation__floatBob" src="images/shape/about-two-right.png" alt="image"/>
+                <img className="animation__floatBob" src="/images/shape/about-two-right.png" alt="image"/>
             </div>
             <div className="container">
                 <div className="row g-4">
@@ -26,9 +26,9 @@ export default function Home2_About({
                         <div className="inner-column">
                             <div className="image-box">
                                 <div className="image" data-depth="0.03">
-                                    <img src="images/about/about-two-image.png" alt="image"/>
+                                    <img src="/images/about/about-two-image.png" alt="image"/>
                                 </div>
-                                <img data-depth="0.05" className="circle-image" src="images/about/about-two-image2.png"
+                                <img data-depth="0.05" className="circle-image" src="/images/about/about-two-image2.png"
                                     alt="image"/>
                             </div>
                             <Link href="/pricing" className="circle-btn"><svg width="31" height="31" viewBox="0 0 31 31"

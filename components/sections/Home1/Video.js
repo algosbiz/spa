@@ -7,7 +7,7 @@ export default function Home1_Video() {
         <>
             <section className="video-section pt-130 pb-130">
                 <div className="shape">
-                    <img className="animation__arryUpDown" src="images/shape/video-shape.png" alt="image" />
+                    <img className="animation__arryUpDown" src="/images/shape/video-shape.png" alt="image" />
                 </div>
                 <div className="container">
                     <div className="section-header mb-60 center">
@@ -38,7 +38,7 @@ export default function Home1_Video() {
                                         magna mi ut arcu. Phasellus nec.</p>
                                 </div>
                                 <div className="image gsap__parallax-zoom">
-                                    <img src="images/video/video-image2.jpg" alt="image" />
+                                    <img src="/images/video/video-image2.jpg" alt="image" />
                                     <div className="btn-video video-pulse">
                                         <a className="video-popup wow zoomIn" onClick={() => setOpen(true)}>
                                             <svg width="82" height="82" viewBox="0 0 82 82" fill="none"
@@ -141,7 +141,7 @@ export default function Home1_Video() {
                         </div>
                         <div className="col-lg-6 image-column">
                             <div className="inner-column wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                                <img data-tilt data-tilt-max="3" src="images/video/video-image1.jpg" alt="image" />
+                                <img data-tilt data-tilt-max="3" src="/images/video/video-image1.jpg" alt="image" />
                             </div>
                         </div>
                     </div>

@@ -41,7 +41,7 @@ export default function Home6_News() {
                         data-wow-duration="1500ms">
                         <div className="inner-box">
                             <div className="image">
-                                <img src="images/blog/blog-two-image1.jpg" alt="imag"/>
+                                <img src="/images/blog/blog-two-image1.jpg" alt="imag"/>
                             </div>
                             <div className="content">
                                 <h6 className="info"><span>Admin</span><span className="dot">Body, Treatment</span></h6>
@@ -57,7 +57,7 @@ export default function Home6_News() {
                         data-wow-duration="1500ms">
                         <div className="inner-box">
                             <div className="image">
-                                <img src="images/blog/blog-two-image2.jpg" alt="imag"/>
+                                <img src="/images/blog/blog-two-image2.jpg" alt="imag"/>
                             </div>
                             <div className="content">
                                 <h6 className="info"><span>Admin</span><span className="dot">Body, Treatment</span></h6>
@@ -73,7 +73,7 @@ export default function Home6_News() {
                         data-wow-duration="1500ms">
                         <div className="inner-box">
                             <div className="image">
-                                <img src="images/blog/blog-two-image3.jpg" alt="imag"/>
+                                <img src="/images/blog/blog-two-image3.jpg" alt="imag"/>
                             </div>
                             <div className="content">
                                 <h6 className="info"><span>Admin</span><span className="dot">Body, Treatment</span></h6>

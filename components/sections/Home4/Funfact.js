@@ -50,7 +50,7 @@ export default function Home4_Funfact() {
                         </div>
                     </div>
                 </div>
-                <div className="image-box" style={{ backgroundImage: `url(images/funfact/funfact-image.jpg)` }}>
+                <div className="image-box" style={{ backgroundImage: `url(/images/funfact/funfact-image.jpg)` }}>
                     <div className="section-header center">
                         <h4 className="sub-title color-light wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
                             <svg className="icon" width="25" height="26" viewBox="0 0 25 26" fill="none"

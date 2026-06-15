@@ -6,7 +6,7 @@ export default function Home6_About() {
         <>
         <section id="about" className="about-section-six">
             <div className="shape">
-                <img className="animation__floatBob" src="images/shape/about-six-shape.png" alt="image"/>
+                <img className="animation__floatBob" src="/images/shape/about-six-shape.png" alt="image"/>
             </div>
             <div className="container">
                 <div className="row g-5">
@@ -14,7 +14,7 @@ export default function Home6_About() {
                         <div className="inner-column">
                             <div className="image mb-60" data-tilt data-tilt-max="3">
                                 <img className="wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms"
-                                    src="images/about/about-six-image1.jpg" alt="image"/>
+                                    src="/images/about/about-six-image1.jpg" alt="image"/>
                             </div>
                             <div className="content-box">
                                 <div className="list wow fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
@@ -125,7 +125,7 @@ export default function Home6_About() {
                             </Link>
                             <div className="image mt-80" data-tilt data-tilt-max="3">
                                 <img className="wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms"
-                                    src="images/about/about-six-image2.jpg" alt="image"/>
+                                    src="/images/about/about-six-image2.jpg" alt="image"/>
                             </div>
                         </div>
                     </div>

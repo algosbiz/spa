@@ -5,10 +5,10 @@ export default function Home5_Step() {
         <>
             <section id="projects" className="step-section pt-30 pb-130">
                 <div className="shape1 slideInLeft wow">
-                    <img className="sway_Y__animationY" src="images/shape/step-shape-left.png" alt="image" />
+                    <img className="sway_Y__animationY" src="/images/shape/step-shape-left.png" alt="image" />
                 </div>
                 <div className="shape2">
-                    <img className="animation__rotateAndScale" src="images/shape/step-shape-right.png" alt="image" />
+                    <img className="animation__rotateAndScale" src="/images/shape/step-shape-right.png" alt="image" />
                 </div>
                 <div className="container">
                     <div className="section-header center mb-60">
@@ -42,7 +42,7 @@ export default function Home5_Step() {
                     </div>
                     <div className="outer-box">
                         <div className="step-line">
-                            <img src="images/shape/step-line.png" alt="image" />
+                            <img src="/images/shape/step-line.png" alt="image" />
                         </div>
                         <div className="row g-5">
                             <div className="col-lg-4 step-block">

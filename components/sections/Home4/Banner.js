@@ -44,14 +44,14 @@ export default function Home4_Banner() {
         <>
         <section id="home" className="banner-four-area">
             <div className="banner-four__shape-one">
-                <img className="animation__arryUpDown" src="images/shape/banner-four-shape1.png" alt="image"/>
+                <img className="animation__arryUpDown" src="/images/shape/banner-four-shape1.png" alt="image"/>
             </div>
             <div className="banner-four__shape-two">
-                <img className="animation__floatBob" src="images/shape/banner-four-shape2.png" alt="image"/>
+                <img className="animation__floatBob" src="/images/shape/banner-four-shape2.png" alt="image"/>
             </div>
             <div className="banner-four__wrp">
                 <div className="banner-four__image gsap__parallax-zoom">
-                    <img src="images/banner/banner-four-image.jpg" alt="image"/>
+                    <img src="/images/banner/banner-four-image.jpg" alt="image"/>
                 </div>
                 <div className="banner-four__content">
                     <h4 className="sub-title wow fadeInUp" data-wow-delay="300ms">
@@ -99,7 +99,7 @@ export default function Home4_Banner() {
                         <SwiperSlide className="swiper-slide">
                             <div className="item">
                                 <div className="new-tag">New</div>
-                                <div className="image"><img src="images/product/baner-broduct1.png" alt="image"/></div>
+                                <div className="image"><img src="/images/product/baner-broduct1.png" alt="image"/></div>
                                 <div className="content">
                                     <h4 className="price">$60.00</h4>
                                     <h3 className="title"><Link href="/shop-product">Glow Facial Cream</Link></h3>
@@ -109,7 +109,7 @@ export default function Home4_Banner() {
                         <SwiperSlide className="swiper-slide">
                             <div className="item">
                                 <div className="hot-tag">Hot</div>
-                                <div className="image"><img src="images/product/baner-broduct2.png" alt="image"/></div>
+                                <div className="image"><img src="/images/product/baner-broduct2.png" alt="image"/></div>
                                 <div className="content">
                                     <h4 className="price">$60.00</h4>
                                     <h3 className="title"><Link href="/shop-product">Glow Facial Cream</Link></h3>
@@ -119,7 +119,7 @@ export default function Home4_Banner() {
                         <SwiperSlide className="swiper-slide">
                             <div className="item">
                                 <div className="new-tag">New</div>
-                                <div className="image"><img src="images/product/baner-broduct3.png" alt="image"/></div>
+                                <div className="image"><img src="/images/product/baner-broduct3.png" alt="image"/></div>
                                 <div className="content">
                                     <h4 className="price">$60.00</h4>
                                     <h3 className="title"><Link href="/shop-product">Glow Facial Cream</Link></h3>

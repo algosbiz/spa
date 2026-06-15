@@ -5,10 +5,10 @@ export default function Home5_Banner() {
         <>
         <section id="home" className="banner-five-area section__decoration-bottom paralax__animation mb-130">
             <div className="banner-five__shape-one parallaxLeftScroll">
-                <img src="images/shape/banner-five-shape1.png" alt="image"/>
+                <img src="/images/shape/banner-five-shape1.png" alt="image"/>
             </div>
             <div className="banner-five__shape-two parallaxLeftScroll">
-                <img className="animation__arryLeftRight" src="images/shape/banner-five-shape2.png" alt="image"/>
+                <img className="animation__arryLeftRight" src="/images/shape/banner-five-shape2.png" alt="image"/>
             </div>
             <div className="container">
                 <div className="banner-five__wrp">
@@ -21,22 +21,22 @@ export default function Home5_Banner() {
                             <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur
                                 ligula, eget egestas magna mi ut arcu.</p>
                             <div className="arry">
-                                <img className="animation__arryUpDown" src="images/banner/banner-five-arry.png" alt="image"/>
+                                <img className="animation__arryUpDown" src="/images/banner/banner-five-arry.png" alt="image"/>
                             </div>
                         </div>
                     </div>
                     <div className="banner-five__image-left">
                         <div className="gsap__parallax">
-                            <img src="images/banner/banner-five-image1.jpg" alt="image"/>
+                            <img src="/images/banner/banner-five-image1.jpg" alt="image"/>
                         </div>
-                        <img className="shape" data-depth="0.03" src="images/banner/banner-five-image2.jpg"
+                        <img className="shape" data-depth="0.03" src="/images/banner/banner-five-image2.jpg"
                             alt="image"/>
                     </div>
                     <div className="banner-five__image-right">
                         <div className="gsap__parallax">
-                            <img src="images/banner/banner-five-image1-shape.png" alt="image"/>
+                            <img src="/images/banner/banner-five-image1-shape.png" alt="image"/>
                         </div>
-                        <img className="shape parallaxRightRotateScroll" src="images/banner/banner-five-image2-shape.png"
+                        <img className="shape parallaxRightRotateScroll" src="/images/banner/banner-five-image2-shape.png"
                             alt="image"/>
                     </div>
                 </div>

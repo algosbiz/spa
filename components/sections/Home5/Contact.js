@@ -28,7 +28,7 @@ export default function Home5_Contact() {
 
     return (
         <>
-            <section id="contact" className="contact-section-two section__decoration-top section__decoration-bottom" style={{ backgroundImage: `url(images/bg/contact-five-bg.jpg)` }}>
+            <section id="contact" className="contact-section-two section__decoration-top section__decoration-bottom" style={{ backgroundImage: `url(/images/bg/contact-five-bg.jpg)` }}>
             <div className="container">
                 <div className="row justify-content-end">
                     <div className="col-xl-6 form-column">

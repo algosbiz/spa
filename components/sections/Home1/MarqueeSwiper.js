@@ -44,37 +44,37 @@ export default function Home1_MarqueeSwiper() {
                     <div className="swiper-wrapper">
                         <SwiperSlide className="swiper-slide">
                             <div className="brand__item">
-                                <img src="images/brand/brand-image1.png" alt="icon"/>
+                                <img src="/images/brand/brand-image1.png" alt="icon"/>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide">
                             <div className="brand__item">
-                                <img src="images/brand/brand-image2.png" alt="icon"/>
+                                <img src="/images/brand/brand-image2.png" alt="icon"/>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide">
                             <div className="brand__item">
-                                <img src="images/brand/brand-image3.png" alt="icon"/>
+                                <img src="/images/brand/brand-image3.png" alt="icon"/>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide">
                             <div className="brand__item">
-                                <img src="images/brand/brand-image4.png" alt="icon"/>
+                                <img src="/images/brand/brand-image4.png" alt="icon"/>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide">
                             <div className="brand__item">
-                                <img src="images/brand/brand-image5.png" alt="icon"/>
+                                <img src="/images/brand/brand-image5.png" alt="icon"/>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide">
                             <div className="brand__item">
-                                <img src="images/brand/brand-image1.png" alt="icon"/>
+                                <img src="/images/brand/brand-image1.png" alt="icon"/>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide">
                             <div className="brand__item">
-                                <img src="images/brand/brand-image2.png" alt="icon"/>
+                                <img src="/images/brand/brand-image2.png" alt="icon"/>
                             </div>
                         </SwiperSlide>
                     </div>

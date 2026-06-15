@@ -5,7 +5,7 @@ export default function Home6_Feature() {
         <>
         <section className="feature-section-six pt-130 pb-130">
             <div className="shape">
-                <img className="animation__rotate" src="images/shape/feature-six-shape.png" alt="image"/>
+                <img className="animation__rotate" src="/images/shape/feature-six-shape.png" alt="image"/>
             </div>
             <div className="container">
                 <div className="row g-5">

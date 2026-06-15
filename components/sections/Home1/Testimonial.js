@@ -46,7 +46,7 @@ export default function Home1_Testimonial() {
         <>
         <section className="testimonial-section pt-130 pb-130">
             <div className="shape">
-                <img className="animation__arryUpDown" src="images/shape/testimonial-shape.png" alt="image"/>
+                <img className="animation__arryUpDown" src="/images/shape/testimonial-shape.png" alt="image"/>
             </div>
             <div className="container">
                 <div className="section-header__flex mb-60">
@@ -91,7 +91,7 @@ export default function Home1_Testimonial() {
                             <div className="inner-box">
                                 <div className="image-box">
                                     <div className="image">
-                                        <img src="images/testimonial/testimonial-image1.png" alt="image"/>
+                                        <img src="/images/testimonial/testimonial-image1.png" alt="image"/>
                                     </div>
                                 </div>
                                 <div className="content-box">
@@ -116,7 +116,7 @@ export default function Home1_Testimonial() {
                             <div className="inner-box">
                                 <div className="image-box">
                                     <div className="image">
-                                        <img src="images/testimonial/testimonial-image2.png" alt="image"/>
+                                        <img src="/images/testimonial/testimonial-image2.png" alt="image"/>
                                     </div>
                                 </div>
                                 <div className="content-box">
@@ -141,7 +141,7 @@ export default function Home1_Testimonial() {
                             <div className="inner-box">
                                 <div className="image-box">
                                     <div className="image">
-                                        <img src="images/testimonial/testimonial-image3.png" alt="image"/>
+                                        <img src="/images/testimonial/testimonial-image3.png" alt="image"/>
                                     </div>
                                 </div>
                                 <div className="content-box">
@@ -166,7 +166,7 @@ export default function Home1_Testimonial() {
                             <div className="inner-box">
                                 <div className="image-box">
                                     <div className="image">
-                                        <img src="images/testimonial/testimonial-image1.png" alt="image"/>
+                                        <img src="/images/testimonial/testimonial-image1.png" alt="image"/>
                                     </div>
                                 </div>
                                 <div className="content-box">

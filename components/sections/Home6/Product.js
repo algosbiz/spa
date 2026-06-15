@@ -81,7 +81,7 @@ export default function Home6_Product() {
                             <div className="inner-box">
                                 <div className="image radius30">
                                     <Link href="/shop-product-details">
-                                        <img src="images/product/product-image1.png" alt="image"/>
+                                        <img src="/images/product/product-image1.png" alt="image"/>
                                     </Link>
                                     <div className="info">
                                         <Link href="#0">
@@ -131,7 +131,7 @@ export default function Home6_Product() {
                             <div className="inner-box">
                                 <div className="image radius30">
                                     <Link href="/shop-product-details">
-                                        <img src="images/product/product-image2.png" alt="image"/>
+                                        <img src="/images/product/product-image2.png" alt="image"/>
                                     </Link>
                                     <div className="info">
                                         <Link href="#0">
@@ -181,7 +181,7 @@ export default function Home6_Product() {
                             <div className="inner-box">
                                 <div className="image radius30">
                                     <Link href="/shop-product-details">
-                                        <img src="images/product/product-image3.png" alt="image"/>
+                                        <img src="/images/product/product-image3.png" alt="image"/>
                                     </Link>
                                     <div className="info">
                                         <Link href="#0">
@@ -231,7 +231,7 @@ export default function Home6_Product() {
                             <div className="inner-box">
                                 <div className="image radius30">
                                     <Link href="/shop-product-details">
-                                        <img src="images/product/product-image4.png" alt="image"/>
+                                        <img src="/images/product/product-image4.png" alt="image"/>
                                     </Link>
                                     <div className="info">
                                         <Link href="#0">
@@ -281,7 +281,7 @@ export default function Home6_Product() {
                             <div className="inner-box">
                                 <div className="image radius30">
                                     <Link href="/shop-product-details">
-                                        <img src="images/product/product-image5.png" alt="image"/>
+                                        <img src="/images/product/product-image5.png" alt="image"/>
                                     </Link>
                                     <div className="info">
                                         <Link href="#0">

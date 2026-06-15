@@ -78,7 +78,7 @@ export default function Home6_Portfolio() {
                     <div className="swiper-wrapper">
                         <SwiperSlide className="swiper-slide gallery-block-two">
                             <div className="inner-box">
-                                <img src="images/gellery/gallery-two-image1.jpg" alt="image"/>
+                                <img src="/images/gellery/gallery-two-image1.jpg" alt="image"/>
                                 <div className="content">
                                     <h5 className="sub-title">Escape</h5>
                                     <h3 className="title"><Link href="/page-service-details">Relaxation</Link></h3>
@@ -87,7 +87,7 @@ export default function Home6_Portfolio() {
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide gallery-block-two">
                             <div className="inner-box">
-                                <img src="images/gellery/gallery-two-image2.jpg" alt="image"/>
+                                <img src="/images/gellery/gallery-two-image2.jpg" alt="image"/>
                                 <div className="content">
                                     <h5 className="sub-title">Beauty</h5>
                                     <h3 className="title"><Link href="/page-service-details">Hot Spring</Link></h3>
@@ -96,7 +96,7 @@ export default function Home6_Portfolio() {
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide gallery-block-two">
                             <div className="inner-box">
-                                <img src="images/gellery/gallery-two-image3.jpg" alt="image"/>
+                                <img src="/images/gellery/gallery-two-image3.jpg" alt="image"/>
                                 <div className="content">
                                     <h5 className="sub-title">Hot</h5>
                                     <h3 className="title"><Link href="/page-service-details">Wellness</Link></h3>
@@ -105,7 +105,7 @@ export default function Home6_Portfolio() {
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide gallery-block-two">
                             <div className="inner-box">
-                                <img src="images/gellery/gallery-two-image4.jpg" alt="image"/>
+                                <img src="/images/gellery/gallery-two-image4.jpg" alt="image"/>
                                 <div className="content">
                                     <h5 className="sub-title">Hot</h5>
                                     <h3 className="title"><Link href="/page-service-details">Redefined</Link></h3>
@@ -114,7 +114,7 @@ export default function Home6_Portfolio() {
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide gallery-block-two">
                             <div className="inner-box">
-                                <img src="images/gellery/gallery-two-image1.jpg" alt="image"/>
+                                <img src="/images/gellery/gallery-two-image1.jpg" alt="image"/>
                                 <div className="content">
                                     <h5 className="sub-title">Escape</h5>
                                     <h3 className="title"><Link href="/page-service-details">Relaxation</Link></h3>
@@ -123,7 +123,7 @@ export default function Home6_Portfolio() {
                         </SwiperSlide>
                         <SwiperSlide  className="swiper-slide gallery-block-two">
                             <div className="inner-box">
-                                <img src="images/gellery/gallery-two-image2.jpg" alt="image"/>
+                                <img src="/images/gellery/gallery-two-image2.jpg" alt="image"/>
                                 <div className="content">
                                     <h5 className="sub-title">Beauty</h5>
                                     <h3 className="title"><Link href="/page-service-details">Hot Spring</Link></h3>

@@ -39,7 +39,7 @@ export default function Home1_News() {
                     <div className="col-md-6 blog-block col-xl-4 wow fadeInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
                         <div className="inner-box">
                             <div className="image-box">
-                                <div className="image"><img src="images/blog/blog-image1.jpg" alt="imag"/></div>
+                                <div className="image"><img src="/images/blog/blog-image1.jpg" alt="imag"/></div>
                             </div>
                             <div className="content-box">
                                 <h6 className="info"><span>Admin</span><span className="dot">Body, Treatment</span></h6>
@@ -52,7 +52,7 @@ export default function Home1_News() {
                     <div className="col-md-6 blog-block col-xl-4 wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
                         <div className="inner-box">
                             <div className="image-box">
-                                <div className="image"><img src="images/blog/blog-image2.jpg" alt="imag"/></div>
+                                <div className="image"><img src="/images/blog/blog-image2.jpg" alt="imag"/></div>
                             </div>
                             <div className="content-box">
                                 <h6 className="info"><span>Admin</span><span className="dot">Body, Treatment</span></h6>
@@ -65,7 +65,7 @@ export default function Home1_News() {
                     <div className="col-md-6 blog-block col-xl-4 wow fadeInLeft" data-wow-delay="400ms" data-wow-duration="1500ms">
                         <div className="inner-box">
                             <div className="image-box">
-                                <div className="image"><img src="images/blog/blog-image3.jpg" alt="imag"/></div>
+                                <div className="image"><img src="/images/blog/blog-image3.jpg" alt="imag"/></div>
                             </div>
                             <div className="content-box">
                                 <h6 className="info"><span>Admin</span><span className="dot">Body, Treatment</span></h6>

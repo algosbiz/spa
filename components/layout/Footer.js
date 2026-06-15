@@ -6,11 +6,11 @@ const Footer = () => {
         <>
         <footer className="footer-area">
 			<div className="footer__shape">
-				<img src="images/shape/footer-shape-left.png" alt="shape"/>
+				<img src="/images/shape/footer-shape-left.png" alt="shape"/>
 			</div>
 			<div className="container">
 				<div className="footer__head">
-					<Link href="/" className="logo"><img src="images/logo/logo-light.png" alt="logo"/></Link>
+					<Link href="/" className="logo"><img src="/images/logo/logo-light.png" alt="logo"/></Link>
 				</div>
 				<div className="row g-5">
 					<div className="col-md-6 col-xl-4">

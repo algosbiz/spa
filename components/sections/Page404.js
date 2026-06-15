@@ -10,7 +10,7 @@ const Error = () => {
                     <div className="col-xl-12">
                         <div className="error-page__inner">
                             <div className="error-page__title-box">
-                                <img src="images/resource/404.jpg" alt="Image"/>
+                                <img src="/images/resource/404.jpg" alt="Image"/>
                                 <h3 className="error-page__sub-title">Page not found!</h3>
                             </div>
                             <p className="error-page__text">Sorry we can't find that page! The page you are looking <br /> for was never existed.</p>

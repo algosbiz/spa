@@ -10,7 +10,7 @@ export default function Home2_Banner({
     subTitle = "Rejuvenate You Today",
     titleSpan = "Indulge in",
     title = "Pure Tranquility",
-    image = "images/banner/banner-two-image1.jpg",
+    image = "/images/banner/banner-two-image1.jpg",
     buttonText = "Book Now",
     buttonLink = "/contact",
 }) {
@@ -27,7 +27,7 @@ export default function Home2_Banner({
         <>
             <section className="banner-two-area section__decoration-bottom">
                 <div className="banner-two__shape">
-                    <img src="images/shape/banner-two-shape.png" alt="shape" />
+                    <img src="/images/shape/banner-two-shape.png" alt="shape" />
                 </div>
                 <Swiper {...swiperOptions} className="swiper  banner-two__slider">
                     <div className="swiper-wrapper">

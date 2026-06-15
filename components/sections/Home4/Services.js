@@ -7,10 +7,10 @@ export default function Home4_Services() {
         <>
             <section id="services" className="service-section-four pt-100 pb-130">
                 <div className="shape1 wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
-                    <img className="animation__arryUpDown" src="images/shape/service-four-shape-left.png" alt="image"/>
+                    <img className="animation__arryUpDown" src="/images/shape/service-four-shape-left.png" alt="image"/>
                 </div>
                 <div className="shape2 wow bounceIn">
-                    <img className="animation__rotate" src="images/shape/service-four-shape-right.png" alt="image"/>
+                    <img className="animation__rotate" src="/images/shape/service-four-shape-right.png" alt="image"/>
                 </div>
                 <div className="container">
                     <div className="section-header mb-60 center">

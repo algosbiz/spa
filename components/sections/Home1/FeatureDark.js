@@ -50,7 +50,7 @@ export default function Home1_Feature() {
                         <SwiperSlide className="feature-block swiper-slide">
                             <div className="inner-box">
                                 <div className="image-box">
-                                    <img src="images/service/service-image1.jpg" alt="image"/>
+                                    <img src="/images/service/service-image1.jpg" alt="image"/>
                                 </div>
                                 <div className="content-box">
                                     <div className="icon">
@@ -96,7 +96,7 @@ export default function Home1_Feature() {
                         <SwiperSlide className="swiper-slide feature-block">
                             <div className="inner-box">
                                 <div className="image-box">
-                                    <img src="images/service/service-image2.jpg" alt="image"/>
+                                    <img src="/images/service/service-image2.jpg" alt="image"/>
                                 </div>
                                 <div className="content-box">
                                     <div className="icon">
@@ -160,7 +160,7 @@ export default function Home1_Feature() {
                         <SwiperSlide className="feature-block swiper-slide">
                             <div className="inner-box">
                                 <div className="image-box">
-                                    <img src="images/service/service-image1.jpg" alt="image"/>
+                                    <img src="/images/service/service-image1.jpg" alt="image"/>
                                 </div>
                                 <div className="content-box">
                                     <div className="icon">
@@ -206,7 +206,7 @@ export default function Home1_Feature() {
                         <SwiperSlide className="swiper-slide feature-block">
                             <div className="inner-box">
                                 <div className="image-box">
-                                    <img src="images/service/service-image2.jpg" alt="image"/>
+                                    <img src="/images/service/service-image2.jpg" alt="image"/>
                                 </div>
                                 <div className="content-box">
                                     <div className="icon">

@@ -8,13 +8,13 @@ export default function Home2_Pricing() {
             <div className="row g-3">
                 <div className="col-xl-6 image-column">
                     <div className="inner-column gsap__parallax-zoom">
-                        <img src="images/pricing/pricing-image.jpg" alt="imag"/>
+                        <img src="/images/pricing/pricing-image.jpg" alt="imag"/>
                     </div>
                 </div>
                 <div className="col-xl-6 content-column">
                     <div className="inner-column">
                         <div className="outer-shape">
-                            <img className="animation__arryUpDown" src="images/shape/pricing-shape.png" alt="image"/>
+                            <img className="animation__arryUpDown" src="/images/shape/pricing-shape.png" alt="image"/>
                         </div>
                         <div className="section-header mb-60">
                             <h4 className="sub-title color-light wow fadeInUp" data-wow-delay="00ms"
@@ -51,7 +51,7 @@ export default function Home2_Pricing() {
                             <div className="col-sm-6 pricing-block wow fadeInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
                                 <div className="inner-box transparent">
                                     <div className="shape">
-                                        <img src="images/pricing/shape.png" alt="image"/>
+                                        <img src="/images/pricing/shape.png" alt="image"/>
                                     </div>
                                     <h2 className="price">$129 <span>/ Hr</span></h2>
                                     <h6>Massage & Treatments</h6>
@@ -72,7 +72,7 @@ export default function Home2_Pricing() {
                             <div className="col-sm-6 pricing-block wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
                                 <div className="inner-box">
                                     <div className="shape">
-                                        <img src="images/pricing/shape.png" alt="image"/>
+                                        <img src="/images/pricing/shape.png" alt="image"/>
                                     </div>
                                     <h2 className="price">$159 <span>/ Hr</span></h2>
                                     <h6>Massage & Treatments</h6>

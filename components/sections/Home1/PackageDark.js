@@ -10,10 +10,10 @@ export default function PackageSection() {
   return (
     <section className="package-section section__decoration-top section__decoration-bottom pt-170 pb-170">
         <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-            <img className="sway_Y__animationY" src="images/shape/package-shape-left.png" alt="image"/>
+            <img className="sway_Y__animationY" src="/images/shape/package-shape-left.png" alt="image"/>
         </div>
         <div className="shape2">
-            <img className="sway__animation" src="images/shape/package-shape-right.png" alt="image"/>
+            <img className="sway__animation" src="/images/shape/package-shape-right.png" alt="image"/>
         </div>
         <div className="container">
             <div className="section-header mb-60 center">
@@ -49,7 +49,7 @@ export default function PackageSection() {
                         <div className="col-lg-6 package-block">
                             <div className="inner-box mb-50">
                                 <div className="image">
-                                    <img src="images/package/package-image1.png" alt="image"/>
+                                    <img src="/images/package/package-image1.png" alt="image"/>
                                 </div>
                                 <div className="content">
                                     <h3 className="title"><Link href="/page-pricing">Aroma therapy</Link> <span
@@ -61,7 +61,7 @@ export default function PackageSection() {
                             </div>
                             <div className="inner-box mb-50">
                                 <div className="image">
-                                    <img src="images/package/package-image2.png" alt="image"/>
+                                    <img src="/images/package/package-image2.png" alt="image"/>
                                 </div>
                                 <div className="content">
                                     <h3 className="title"><Link href="/page-pricing">Sauna relax</Link> <span
@@ -73,7 +73,7 @@ export default function PackageSection() {
                             </div>
                             <div className="inner-box mb-50">
                                 <div className="image">
-                                    <img src="images/package/package-image3.png" alt="image"/>
+                                    <img src="/images/package/package-image3.png" alt="image"/>
                                 </div>
                                 <div className="content">
                                     <h3 className="title"><Link href="/page-pricing">Geothermal spa</Link> <span
@@ -85,7 +85,7 @@ export default function PackageSection() {
                             </div>
                             <div className="inner-box">
                                 <div className="image">
-                                    <img src="images/package/package-image4.png" alt="image"/>
+                                    <img src="/images/package/package-image4.png" alt="image"/>
                                 </div>
                                 <div className="content">
                                     <h3 className="title"><Link href="/page-pricing">Aroma therapy</Link> <span
@@ -100,7 +100,7 @@ export default function PackageSection() {
                         <div className="col-lg-6 package-block">
                             <div className="inner-box mb-50">
                                 <div className="image">
-                                    <img src="images/package/package-image5.png" alt="image"/>
+                                    <img src="/images/package/package-image5.png" alt="image"/>
                                 </div>
                                 <div className="content">
                                     <h3 className="title"><Link href="/page-pricing">Aroma therapy</Link> <span
@@ -112,7 +112,7 @@ export default function PackageSection() {
                             </div>
                             <div className="inner-box mb-50">
                                 <div className="image">
-                                    <img src="images/package/package-image6.png" alt="image"/>
+                                    <img src="/images/package/package-image6.png" alt="image"/>
                                 </div>
                                 <div className="content">
                                     <h3 className="title"><Link href="/page-pricing">Sauna relax</Link> <span
@@ -124,7 +124,7 @@ export default function PackageSection() {
                             </div>
                             <div className="inner-box mb-50">
                                 <div className="image">
-                                    <img src="images/package/package-image7.png" alt="image"/>
+                                    <img src="/images/package/package-image7.png" alt="image"/>
                                 </div>
                                 <div className="content">
                                     <h3 className="title"><Link href="/page-pricing">Geothermal spa</Link> <span
@@ -136,7 +136,7 @@ export default function PackageSection() {
                             </div>
                             <div className="inner-box">
                                 <div className="image">
-                                    <img src="images/package/package-image8.png" alt="image"/>
+                                    <img src="/images/package/package-image8.png" alt="image"/>
                                 </div>
                                 <div className="content">
                                     <h3 className="title"><Link href="/page-pricing">Aroma therapy</Link> <span
@@ -154,7 +154,7 @@ export default function PackageSection() {
                         <div className="col-lg-6 package-block">
                             <div className="inner-box mb-50">
                                 <div className="image">
-                                    <img src="images/package/package-image1.png" alt="image"/>
+                                    <img src="/images/package/package-image1.png" alt="image"/>
                                 </div>
                                 <div className="content">
                                     <h3 className="title"><Link href="/page-pricing">Aroma therapy</Link> <span
@@ -166,7 +166,7 @@ export default function PackageSection() {
                             </div>
                             <div className="inner-box mb-50">
                                 <div className="image">
-                                    <img src="images/package/package-image2.png" alt="image"/>
+                                    <img src="/images/package/package-image2.png" alt="image"/>
                                 </div>
                                 <div className="content">
                                     <h3 className="title"><Link href="/page-pricing">Sauna relax</Link> <span
@@ -178,7 +178,7 @@ export default function PackageSection() {
                             </div>
                             <div className="inner-box mb-50">
                                 <div className="image">
-                                    <img src="images/package/package-image3.png" alt="image"/>
+                                    <img src="/images/package/package-image3.png" alt="image"/>
                                 </div>
                                 <div className="content">
                                     <h3 className="title"><Link href="/page-pricing">Geothermal spa</Link> <span
@@ -190,7 +190,7 @@ export default function PackageSection() {
                             </div>
                             <div className="inner-box">
                                 <div className="image">
-                                    <img src="images/package/package-image4.png" alt="image"/>
+                                    <img src="/images/package/package-image4.png" alt="image"/>
                                 </div>
                                 <div className="content">
                                     <h3 className="title"><Link href="/page-pricing">Aroma therapy</Link> <span
@@ -205,7 +205,7 @@ export default function PackageSection() {
                         <div className="col-lg-6 package-block">
                             <div className="inner-box mb-50">
                                 <div className="image">
-                                    <img src="images/package/package-image5.png" alt="image"/>
+                                    <img src="/images/package/package-image5.png" alt="image"/>
                                 </div>
                                 <div className="content">
                                     <h3 className="title"><Link href="/page-pricing">Aroma therapy</Link> <span
@@ -217,7 +217,7 @@ export default function PackageSection() {
                             </div>
                             <div className="inner-box mb-50">
                                 <div className="image">
-                                    <img src="images/package/package-image6.png" alt="image"/>
+                                    <img src="/images/package/package-image6.png" alt="image"/>
                                 </div>
                                 <div className="content">
                                     <h3 className="title"><Link href="/page-pricing">Sauna relax</Link> <span
@@ -229,7 +229,7 @@ export default function PackageSection() {
                             </div>
                             <div className="inner-box mb-50">
                                 <div className="image">
-                                    <img src="images/package/package-image7.png" alt="image"/>
+                                    <img src="/images/package/package-image7.png" alt="image"/>
                                 </div>
                                 <div className="content">
                                     <h3 className="title"><Link href="/page-pricing">Geothermal spa</Link> <span
@@ -241,7 +241,7 @@ export default function PackageSection() {
                             </div>
                             <div className="inner-box">
                                 <div className="image">
-                                    <img src="images/package/package-image8.png" alt="image"/>
+                                    <img src="/images/package/package-image8.png" alt="image"/>
                                 </div>
                                 <div className="content">
                                     <h3 className="title"><Link href="/page-pricing">Aroma therapy</Link> <span

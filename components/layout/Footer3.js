@@ -6,11 +6,11 @@ const Footer = () => {
         <>
         <footer className="footer-two-area">
             <div className="footer__shape">
-                <img src="images/shape/footer-shape-left.png" alt="shape"/>
+                <img src="/images/shape/footer-shape-left.png" alt="shape"/>
             </div>
             <div className="container">
                 <div className="footer-two__head pt-80">
-                    <Link href="/" className="logo"><img src="images/logo/logo-light.png" alt="logo"/></Link>
+                    <Link href="/" className="logo"><img src="/images/logo/logo-light.png" alt="logo"/></Link>
                     <div className="newsletter">
                         <h3 className="title">Newsletter Sign Up</h3>
                         <div className="input">

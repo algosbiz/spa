@@ -41,7 +41,7 @@ export default function Home2_News() {
         <>
 			<section id="news" className="blog-section pb-130">
 				<div className="shape">
-					<img className="animation__sunMove" src="images/shape/blog-shape.png" alt="shape"/>
+					<img className="animation__sunMove" src="/images/shape/blog-shape.png" alt="shape"/>
 				</div>
 				<div className="container">
 					<div className="section-header mb-60 center">
@@ -78,7 +78,7 @@ export default function Home2_News() {
 								<div className="inner-box">
 									<div className="image-box">
 										<div className="image">
-											<img src="images/blog/blog-image1.jpg" alt="imag"/>
+											<img src="/images/blog/blog-image1.jpg" alt="imag"/>
 										</div>
 									</div>
 									<div className="content-box">
@@ -92,7 +92,7 @@ export default function Home2_News() {
 								<div className="inner-box">
 									<div className="image-box">
 										<div className="image">
-											<img src="images/blog/blog-image2.jpg" alt="imag"/>
+											<img src="/images/blog/blog-image2.jpg" alt="imag"/>
 										</div>
 									</div>
 									<div className="content-box">
@@ -106,7 +106,7 @@ export default function Home2_News() {
 								<div className="inner-box">
 									<div className="image-box">
 										<div className="image">
-											<img src="images/blog/blog-image3.jpg" alt="imag"/>
+											<img src="/images/blog/blog-image3.jpg" alt="imag"/>
 										</div>
 									</div>
 									<div className="content-box">
@@ -120,7 +120,7 @@ export default function Home2_News() {
 								<div className="inner-box">
 									<div className="image-box">
 										<div className="image">
-											<img src="images/blog/blog-image1.jpg" alt="imag"/>
+											<img src="/images/blog/blog-image1.jpg" alt="imag"/>
 										</div>
 									</div>
 									<div className="content-box">
@@ -134,7 +134,7 @@ export default function Home2_News() {
 								<div className="inner-box">
 									<div className="image-box">
 										<div className="image">
-											<img src="images/blog/blog-image2.jpg" alt="imag"/>
+											<img src="/images/blog/blog-image2.jpg" alt="imag"/>
 										</div>
 									</div>
 									<div className="content-box">

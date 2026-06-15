@@ -6,13 +6,13 @@ export default function Home3_Banner() {
         <>
         <section className="banner-three-area section__decoration-top section__decoration-bottom">
             <div className="banner-three__shape-one">
-                <img className="animation__arryUpDown" src="images/shape/banner-three-shape.png" alt="image"/>
+                <img className="animation__arryUpDown" src="/images/shape/banner-three-shape.png" alt="image"/>
             </div>
             <div className="banner-three__shape-two">
-                <img className="animation__rotate" src="images/shape/banner-three-shape2.png" alt="image"/>
+                <img className="animation__rotate" src="/images/shape/banner-three-shape2.png" alt="image"/>
             </div>
             <div className="banner-three__bg">
-                <img src="images/bg/banner-three-bg.png" alt="image"/>
+                <img src="/images/bg/banner-three-bg.png" alt="image"/>
             </div>
             <div className="container">
                 <div className="banner-three__content">
@@ -56,7 +56,7 @@ export default function Home3_Banner() {
                 </div>
             </div>
             <div className="banner-three__image">
-                <img className="animation__arryLeftRight" src="images/banner/banner-three-image.png" alt="image"/>
+                <img className="animation__arryLeftRight" src="/images/banner/banner-three-image.png" alt="image"/>
             </div>
         </section>
         </>

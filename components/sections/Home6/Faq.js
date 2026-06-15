@@ -14,7 +14,7 @@ export default function Home6_Faq({
                     <div className="row g-4">
                         <div className="col-xxl-6 image-column">
                             <div className="inner-column gsap__parallax">
-                                <img src="images/faq/faq-image.jpg" alt="image" />
+                                <img src="/images/faq/faq-image.jpg" alt="image" />
                                 <h2 className="title">{imageTitle}</h2>
                             </div>
                         </div>
@@ -53,7 +53,7 @@ export default function Home6_Faq({
                                     <Accordion items={items} />
                                 </div>
                                 <div className="shape">
-                                    <img className="bobble__animation" src="images/faq/shape.png" alt="image" />
+                                    <img className="bobble__animation" src="/images/faq/shape.png" alt="image" />
                                 </div>
                             </div>
                         </div>

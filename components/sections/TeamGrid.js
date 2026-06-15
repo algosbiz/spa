@@ -61,7 +61,7 @@ export default function TeamGrid() {
                 {data.map((item, teammGrid) => (
                     <div key={teammGrid} className="col-lg-3 col-md-6 team-block mb-50">
                         <div className="inner-box">
-                            <div className="image"><img src={`images/team/${item.img}`} alt="Image" /></div>
+                            <div className="image"><img src={`/images/team/${item.img}`} alt="Image" /></div>
                             <ul className="socials">
                                 <li>
                                     <Link href="#0">
@@ -101,7 +101,7 @@ export default function TeamGrid() {
                                 </li>
                             </ul>
                             <div className="content">
-                            <div className="shape"><img src={`images/team/${item.img1}`} alt="Image" /></div>
+                            <div className="shape"><img src={`/images/team/${item.img1}`} alt="Image" /></div>
                             <h4 className="title"><Link href="/team-details">{item.title}</Link></h4>
                             <span>{item.desig}</span>
                             </div>

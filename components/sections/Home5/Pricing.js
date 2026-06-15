@@ -54,7 +54,7 @@ export default function Home5_Pricing({ showMore = false }) {
               >
                 <div className="inner-box">
                   <div className="shape">
-                    <img src="images/pricing/shape.png" alt="image" />
+                    <img src="/images/pricing/shape.png" alt="image" />
                   </div>
                   <div className="icon">
                     <svg
@@ -229,7 +229,7 @@ export default function Home5_Pricing({ showMore = false }) {
               >
                 <div className="inner-box">
                   <div className="shape">
-                    <img src="images/pricing/shape.png" alt="image" />
+                    <img src="/images/pricing/shape.png" alt="image" />
                   </div>
                   <div className="icon">
                     <svg
@@ -307,7 +307,7 @@ export default function Home5_Pricing({ showMore = false }) {
               >
                 <div className="inner-box">
                   <div className="shape">
-                    <img src="images/pricing/shape.png" alt="image" />
+                    <img src="/images/pricing/shape.png" alt="image" />
                   </div>
                   <div className="icon">
                     <svg
@@ -402,7 +402,7 @@ export default function Home5_Pricing({ showMore = false }) {
               >
                 <div className="inner-box">
                   <div className="shape">
-                    <img src="images/pricing/shape.png" alt="image" />
+                    <img src="/images/pricing/shape.png" alt="image" />
                   </div>
                   <div className="icon">
                     <svg

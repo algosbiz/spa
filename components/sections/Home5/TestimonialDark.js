@@ -23,13 +23,13 @@ export default function Home3_Testimonial() {
         <>
         <section className="testimonial-section-two pt-130 pb-130">
             <div className="shape1">
-                <img className="animation__arryUpDown" src="images/shape/testimonial-two-shape-left.png" alt="image"/>
+                <img className="animation__arryUpDown" src="/images/shape/testimonial-two-shape-left.png" alt="image"/>
             </div>
             <div className="shape2">
-                <img className="animation__arryLeftRight" src="images/shape/testimonial-two-shape-right.png" alt="image"/>
+                <img className="animation__arryLeftRight" src="/images/shape/testimonial-two-shape-right.png" alt="image"/>
             </div>
             <div className="shape3">
-                <img className="bobble__animation" src="images/shape/testimonial-three-shape-center.png" alt="image"/>
+                <img className="bobble__animation" src="/images/shape/testimonial-three-shape-center.png" alt="image"/>
             </div>
             <div className="container">
                 <div className="outer-box">
@@ -50,16 +50,16 @@ export default function Home3_Testimonial() {
                         data-wow-duration="1500ms">
                         <div className="swiper-wrapper">
                             <SwiperSlide className="swiper-slide">
-                                <img src="images/testimonial/testimonial-two-image1.png" alt="image"/>
+                                <img src="/images/testimonial/testimonial-two-image1.png" alt="image"/>
                             </SwiperSlide>
                             <SwiperSlide className="swiper-slide">
-                                <img src="images/testimonial/testimonial-two-image2.png" alt="image"/>
+                                <img src="/images/testimonial/testimonial-two-image2.png" alt="image"/>
                             </SwiperSlide>
                             <SwiperSlide className="swiper-slide">
-                                <img src="images/testimonial/testimonial-two-image3.png" alt="image"/>
+                                <img src="/images/testimonial/testimonial-two-image3.png" alt="image"/>
                             </SwiperSlide>
                             <SwiperSlide className="swiper-slide">
-                                <img src="images/testimonial/testimonial-two-image1.png" alt="image"/>
+                                <img src="/images/testimonial/testimonial-two-image1.png" alt="image"/>
                             </SwiperSlide>
                         </div>
                     </Swiper>

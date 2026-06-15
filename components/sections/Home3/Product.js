@@ -80,7 +80,7 @@ export default function Home3_Product() {
                         <SwiperSlide className="swiper-slide product-block-three">
                             <div className="inner-box">
                                 <div className="image">
-                                    <Link href="/shop-products"><img src="images/product/product-image1.png"
+                                    <Link href="/shop-products"><img src="/images/product/product-image1.png"
                                             alt="image"/></Link>
                                     <div className="info">
                                         <Link href="#0">
@@ -129,7 +129,7 @@ export default function Home3_Product() {
                         <SwiperSlide className="swiper-slide product-block-three">
                             <div className="inner-box">
                                 <div className="image">
-                                    <Link href="/shop-products"><img src="images/product/product-image2.png"
+                                    <Link href="/shop-products"><img src="/images/product/product-image2.png"
                                             alt="image"/></Link>
                                     <div className="info">
                                         <Link href="#0">
@@ -178,7 +178,7 @@ export default function Home3_Product() {
                         <SwiperSlide className="swiper-slide product-block-three">
                             <div className="inner-box">
                                 <div className="image">
-                                    <Link href="/shop-products"><img src="images/product/product-image3.png"
+                                    <Link href="/shop-products"><img src="/images/product/product-image3.png"
                                             alt="image"/></Link>
                                     <div className="info">
                                         <Link href="#0">
@@ -227,7 +227,7 @@ export default function Home3_Product() {
                         <SwiperSlide className="swiper-slide product-block-three">
                             <div className="inner-box">
                                 <div className="image">
-                                    <Link href="/shop-products"><img src="images/product/product-image4.png"
+                                    <Link href="/shop-products"><img src="/images/product/product-image4.png"
                                             alt="image"/></Link>
                                     <div className="info">
                                         <Link href="#0">
@@ -276,7 +276,7 @@ export default function Home3_Product() {
                         <SwiperSlide className="swiper-slide product-block-three">
                             <div className="inner-box">
                                 <div className="image">
-                                    <Link href="/shop-products"><img src="images/product/product-image5.png"
+                                    <Link href="/shop-products"><img src="/images/product/product-image5.png"
                                             alt="image"/></Link>
                                     <div className="info">
                                         <Link href="#0">

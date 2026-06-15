@@ -80,7 +80,7 @@ export default function Home2_Services() {
                             <div className="inner-box">
                                 <div className="image-box">
                                 <div className="image">
-                                    <img src="images/service/service-two-image1.png" alt="image"/>
+                                    <img src="/images/service/service-two-image1.png" alt="image"/>
                                 </div>
                                     <div className="icon">
                                         <svg width="43" height="46" viewBox="0 0 43 46" fill="none"
@@ -138,7 +138,7 @@ export default function Home2_Services() {
                                     <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.</p>
                                 </div>
                                 <div className="shape">
-                                    <img src="images/service/shape.png" alt="shape"/>
+                                    <img src="/images/service/shape.png" alt="shape"/>
                                 </div>
                                 <Link href="/page-service-details" className="arry-icon">
                                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
@@ -156,7 +156,7 @@ export default function Home2_Services() {
                             <div className="inner-box">
                                 <div className="image-box">
                                     <div className="image">
-                                        <img src="images/service/service-two-image2.png" alt="image"/>
+                                        <img src="/images/service/service-two-image2.png" alt="image"/>
                                     </div>
                                     <div className="icon">
                                         <svg width="39" height="40" viewBox="0 0 39 40" fill="none"
@@ -265,7 +265,7 @@ export default function Home2_Services() {
                                     <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.</p>
                                 </div>
                                 <div className="shape">
-                                    <img src="images/service/shape.png" alt="shape"/>
+                                    <img src="/images/service/shape.png" alt="shape"/>
                                 </div>
                                 <Link href="/page-service-details" className="arry-icon">
                                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
@@ -283,7 +283,7 @@ export default function Home2_Services() {
                             <div className="inner-box">
                                 <div className="image-box">
                                 <div className="image">
-                                    <img src="images/service/service-two-image3.png" alt="image"/>
+                                    <img src="/images/service/service-two-image3.png" alt="image"/>
                                 </div>
                                     <div className="icon">
                                         <svg width="46" height="45" viewBox="0 0 46 45" fill="none"
@@ -323,7 +323,7 @@ export default function Home2_Services() {
                                     <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.</p>
                                 </div>
                                 <div className="shape">
-                                    <img src="images/service/shape.png" alt="shape"/>
+                                    <img src="/images/service/shape.png" alt="shape"/>
                                 </div>
                                 <Link href="/page-service-details" className="arry-icon">
                                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
@@ -341,7 +341,7 @@ export default function Home2_Services() {
                             <div className="inner-box">
                                 <div className="image-box">
                                     <div className="image">
-                                        <img src="images/service/service-two-image1.png" alt="image"/>
+                                        <img src="/images/service/service-two-image1.png" alt="image"/>
                                     </div>
                                     <div className="icon">
                                         <svg width="43" height="46" viewBox="0 0 43 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -398,7 +398,7 @@ export default function Home2_Services() {
                                     <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.</p>
                                 </div>
                                 <div className="shape">
-                                    <img src="images/service/shape.png" alt="shape"/>
+                                    <img src="/images/service/shape.png" alt="shape"/>
                                 </div>
                                 <Link href="#0" className="arry-icon">
                                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -80,7 +80,7 @@ export default function Home2_Product() {
                                     <div className="inner-box">
                                         <div className="image">
                                             <Link href="/shop-product-details">
-                                                <img src="images/product/product-image1.png" alt="image"/>
+                                                <img src="/images/product/product-image1.png" alt="image"/>
                                             </Link>
                                             <div className="star">
                                                 <i className="fa-solid fa-star"></i>
@@ -136,7 +136,7 @@ export default function Home2_Product() {
                                 <SwiperSlide className="swiper-slide product-block">
                                     <div className="inner-box">
                                         <div className="image">
-                                            <Link href="/shop-product-details"><img src="images/product/product-image2.png" alt="image"/></Link>
+                                            <Link href="/shop-product-details"><img src="/images/product/product-image2.png" alt="image"/></Link>
                                             <div className="star">
                                                 <i className="fa-solid fa-star"></i>
                                                 <i className="fa-solid fa-star"></i>
@@ -192,7 +192,7 @@ export default function Home2_Product() {
                                     <div className="inner-box">
                                         <div className="image">
                                             <Link href="/shop-product-details">
-                                                <img src="images/product/product-image3.png" alt="image"/>
+                                                <img src="/images/product/product-image3.png" alt="image"/>
                                             </Link>
                                             <div className="star">
                                                 <i className="fa-solid fa-star"></i>
@@ -249,7 +249,7 @@ export default function Home2_Product() {
                                     <div className="inner-box">
                                         <div className="image">
                                             <Link href="/shop-product-details">
-                                                <img src="images/product/product-image1.png" alt="image"/>
+                                                <img src="/images/product/product-image1.png" alt="image"/>
                                             </Link>
                                             <div className="star">
                                                 <i className="fa-solid fa-star"></i>

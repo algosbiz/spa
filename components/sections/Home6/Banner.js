@@ -4,18 +4,18 @@ import Link from 'next/link';
 export default function Home6_Banner() {
     return (
         <>
-        <section id="home" className="banner-six-area paralax__animation" style={{ backgroundImage: `url(images/banner/banner-six-bg.jpg)` }}>
+        <section id="home" className="banner-six-area paralax__animation" style={{ backgroundImage: `url(/images/banner/banner-six-bg.jpg)` }}>
             <div className="banner-six__shape-one">
-                <img className="animation__arryUpDown" src="images/shape/banner-six-shape.png" alt="image"/>
+                <img className="animation__arryUpDown" src="/images/shape/banner-six-shape.png" alt="image"/>
             </div>
             <div className="banner-six__shape-two">
-                <img className="animation__floatBob" src="images/shape/banner-six-shape2.png" alt="image"/>
+                <img className="animation__floatBob" src="/images/shape/banner-six-shape2.png" alt="image"/>
             </div>
             <div className="banner-six__shape-three">
-                <img className="animation__arryLeftRight" src="images/shape/banner-six-shape3.png" alt="image"/>
+                <img className="animation__arryLeftRight" src="/images/shape/banner-six-shape3.png" alt="image"/>
             </div>
             <div className="banner-six__bg">
-                <img src="images/bg/banner-three-bg.png" alt="image"/>
+                <img src="/images/bg/banner-three-bg.png" alt="image"/>
             </div>
             <div className="container">
                 <div className="banner-six__content">
@@ -66,11 +66,11 @@ export default function Home6_Banner() {
                 </div>
             </div>
             <div className="banner-six__image wow">
-                <img src="images/banner/banner-six-image.png" alt="image"/>
+                <img src="/images/banner/banner-six-image.png" alt="image"/>
             </div>
             <div className="banner-six__image-bg wow bounceInRight" data-wow-delay="700ms"
                 data-wow-duration="1500ms">
-                <img data-depth="0.03" src="images/banner/banner-six-image-bg.png" alt="image"/>
+                <img data-depth="0.03" src="/images/banner/banner-six-image-bg.png" alt="image"/>
             </div>
         </section>
         </>

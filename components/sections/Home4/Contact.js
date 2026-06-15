@@ -34,12 +34,12 @@ export default function Home4_Contact() {
                     <div className="col-lg-6 image-column">
                         <div className="inner-column gsap__parallax-zoom">
                             <div className="image-box">
-                                <img src="images/contact/contact-four-image.jpg" alt="image"/>
+                                <img src="/images/contact/contact-four-image.jpg" alt="image"/>
                             </div>
                         </div>
                     </div>
                     <div className="col-lg-6 form-column">
-                        <div className="inner-column" style={{ backgroundImage: `url(images/contact/bg-shape.png)` }}>
+                        <div className="inner-column" style={{ backgroundImage: `url(/images/contact/bg-shape.png)` }}>
                             <div className="section-header mb-20">
                                 <h4 className="sub-title color-light wow fadeInUp" data-wow-delay="00ms"
                                     data-wow-duration="1500ms">

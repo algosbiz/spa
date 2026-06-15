@@ -31,28 +31,28 @@ export default function Home5() {
                 {/* <Marquee /> */}
                 <Testimonial testimonialsData={[
                     {
-                        image: "images/testimonial/testimonial-two-image1.png",
+                        image: "/images/testimonial/testimonial-two-image1.png",
                         name: "Putu Ayu",
                         designation: "Loyal Customer",
                         text: "Layanan di sini sangat luar biasa! Saya merasa jauh lebih segar setelah melakukan perawatan massage. Terapisnya sangat profesional.",
                         stars: 5
                     },
                     {
-                        image: "images/testimonial/testimonial-two-image2.png",
+                        image: "/images/testimonial/testimonial-two-image2.png",
                         name: "Made Suardana",
                         designation: "Happy Client",
                         text: "Tempat yang sangat tenang dan nyaman. Fasilitasnya sangat lengkap dan stafnya ramah-ramah. Sangat direkomendasikan!",
                         stars: 5
                     },
                     {
-                        image: "images/testimonial/testimonial-two-image3.png",
+                        image: "/images/testimonial/testimonial-two-image3.png",
                         name: "Nyoman Sari",
                         designation: "Relaxed Guest",
                         text: "Saya sering ke sini untuk spa bulanan. Hasilnya selalu memuaskan dan harga yang ditawarkan sangat kompetitif.",
                         stars: 5
                     },
                     {
-                        image: "images/testimonial/testimonial-two-image1.png",
+                        image: "/images/testimonial/testimonial-two-image1.png",
                         name: "Ketut Wijaya",
                         designation: "New Client",
                         text: "Pertama kali ke sini dan langsung suka! Pelayanannya cepat dan hasilnya instan terasa di tubuh.",
