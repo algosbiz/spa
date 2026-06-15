@@ -16,29 +16,32 @@ import News from "../components/sections/Home2/News";
 import Instagram from "../components/sections/Home2/Instagram";
 import AboutReverse from "../components/sections/Home1/AboutReverse";
 import About from "../components/sections/Home1/About";
-
+import ReserveCta from "../components/sections/Home1/ReserveCta";
 export default function Home2() {
     return (
-        <>
-            <Layout HeaderStyle="one" FooterStyle="two">
-                <Banner />
-                <AboutOld />
-                <Pricing />
-                {/* <Marquee /> */}
-                {/* <Product /> */}
-                <Funfact />
-                {/* <News /> */}
-                {/* <Instagram /> */}
+      <>
+        <Layout HeaderStyle="one" FooterStyle="two">
+          <Banner />
+          <AboutOld />
+          <Pricing />
+          {/* <Marquee /> */}
+          {/* <Product /> */}
+          <Funfact />
+          {/* <News /> */}
+          {/* <Instagram /> */}
 
-                <Testimonial />
-                {/* <Team /> */}
-                {/* <Contact /> */}
-                <About />
-                <AboutReverse />
-                <About />
-                <Faq />
-                <Services />
-            </Layout>
-        </>
+          <Testimonial />
+          {/* <Team /> */}
+          {/* <Contact /> */}
+          <About />
+          <AboutReverse />
+          <About />
+          <Faq />
+          <Services />
+          <div className="section__decoration-top section__decoration-bottom bg-sub pt-100 pb-100">
+            <ReserveCta />
+          </div>
+        </Layout>
+      </>
     );
 }

@@ -9,6 +9,7 @@ import PageTitle from "../components/sections/PageTitle";
 import Pricing from "../components/sections/Home5/Pricing";
 import PackagePricing from "../components/sections/Home5/PackagePricing";
 import PackageSection from "@/components/sections/Home1/Package";
+import PackageIntroText from "../components/sections/Home1/PackageIntroText";
 import Banner from "../components/sections/Home2/Banner";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 
@@ -21,6 +22,7 @@ export default function Home() {
         <Video />
         {/* <AboutReverse /> */}
         <PackageSection />
+        <PackageIntroText />
         {/* <Pricing /> */}
         <PackagePricing />
         {/* <MarqueeSwiper /> */}
