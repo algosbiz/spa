@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Home3_Pricing() {
     return (
         <>
-        <section className="pricing-section-three bg-sub-two section__decoration-top section__decoration-bottom pt-130 pb-170">
+        <section className="pricing-section-three bg-sub section__decoration-top section__decoration-bottom pt-130 pb-170">
             <div className="shape1">
                 <img className="animation__arryUpDown" src="/images/shape/pricing-three-shape-left.png" alt="image"/>
             </div>

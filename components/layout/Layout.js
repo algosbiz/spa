@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import BackToTop from '../elements/BackToTop';
+import WhatsAppButton from '../elements/WhatsAppButton';
 import Footer from './Footer';
 import Footer2 from './Footer2';
 import Footer3 from './Footer3';
@@ -86,6 +87,7 @@ const Layout = ({ children, HeaderStyle, FooterStyle, styleMode}) => {
             </div>
             {/* <BackToTop /> */}
 
+            <WhatsAppButton />
             <BackToTop />
         </>
     );

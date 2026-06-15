@@ -293,3 +293,32 @@ Scroll To Top style
     background: var(--theme-color-dark);
     color: #ffffff;
 }
+
+.whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 72px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    color: var(--theme-color-white);
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--theme-color1);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.10);
+	transition: all 0.3s;
+    @include media-breakpoint-down(xxl){
+        bottom: 122px;
+    }
+}
+
+.whatsapp-float:hover {
+    background: var(--theme-color-dark);
+    color: #ffffff;
+}
