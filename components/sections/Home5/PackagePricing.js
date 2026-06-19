@@ -875,11 +875,11 @@ const ctaContent = {
     text: "Experience the deep soothing warmth of heated stones placed along your body, easing tight muscles and calming your mind. Available in-spa or at your doorstep.",
     cta: "Feel the warmth and let go of stress — reserve your hot stone session.",
   },
-  "Manicure and Pedicure Packages": {
-    headline: "Pamper Your Hands and Feet",
-    text: "Treat your hands and feet to a full grooming and massage experience. Our manicure and pedicure packages leave you feeling polished and refreshed, in-spa or at home.",
-    cta: "Look and feel your best — book your mani-pedi package today.",
-  },
+  // "Manicure and Pedicure Packages": {
+  //   headline: "Pamper Your Hands and Feet",
+  //   text: "Treat your hands and feet to a full grooming and massage experience. Our manicure and pedicure packages leave you feeling polished and refreshed, in-spa or at home.",
+  //   cta: "Look and feel your best — book your mani-pedi package today.",
+  // },
   "Thai Massage Packages": {
     headline: "Stretch, Release, and Recharge",
     text: "Let gentle stretching and rhythmic pressure relieve stiffness and restore your energy. Our Thai massage packages are available in-spa or as a convenient home service.",

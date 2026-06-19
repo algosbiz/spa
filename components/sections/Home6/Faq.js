@@ -6,19 +6,22 @@ export default function Home6_Faq({
     subTitle = "Get to know us",
     title = (<>All About Your Spa Day</>),
     items,
+    showImage = true,
 }) {
     return (
         <>
             <section className="faq-section pt-100 pb-100">
                 <div className="outer-box">
                     <div className="row g-4">
-                        <div className="col-xxl-6 image-column">
-                            <div className="inner-column gsap__parallax">
-                                <img src="/images/faq/faq-image.jpg" alt="image" />
-                                <h2 className="title">{imageTitle}</h2>
+                        {showImage && (
+                            <div className="col-xxl-6 image-column">
+                                <div className="inner-column gsap__parallax">
+                                    <img src="/images/faq/faq-image.jpg" alt="image" />
+                                    <h2 className="title">{imageTitle}</h2>
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-xxl-6 content-column">
+                        )}
+                        <div className={showImage ? "col-xxl-6 content-column" : "col-12 content-column"}>
                             <div className="inner-column">
                                 <div className="section-header">
                                     <h4 className="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">

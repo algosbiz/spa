@@ -159,72 +159,141 @@ export default function PackageSection() {
     const tab2Col2 = servicesTab2.slice(halfLength2);
 
     return (
-        <section className="package-section section__decoration-top section__decoration-bottom bg-sub pt-170 pb-170">
-            <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                <img className="sway_Y__animationY" src="/images/shape/package-shape-left.png" alt="image" />
-            </div>
-            <div className="shape2">
-                <img className="sway__animation" src="/images/shape/package-shape-right.png" alt="image" />
-            </div>
-            <div className="container">
-                <div className="section-header mb-60 center">
-                    <h4 className="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-                        Best Price
-                    </h4>
-                    <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Our Flexible
-                        Pricing Plan</h2>
+      <section className="package-section section__decoration-top section__decoration-bottom bg-sub pt-170 pb-170">
+        <div
+          className="shape1 wow slideInLeft"
+          data-wow-delay="200ms"
+          data-wow-duration="1500ms"
+        >
+          <img
+            className="sway_Y__animationY"
+            src="/images/shape/banner-five-shape1.png"
+            alt="image"
+          />
+        </div>
+        <div className="shape2">
+          <img
+            className="sway__animation"
+            src="/images/shape/package-shape-right.png"
+            alt="image"
+          />
+        </div>
+        <div className="container">
+          <div className="section-header mb-60 center">
+            <h4
+              className="sub-title wow fadeInUp"
+              data-wow-delay="00ms"
+              data-wow-duration="1500ms"
+            >
+              Best Price
+            </h4>
+            <h2
+              className="title wow fadeInUp"
+              data-wow-delay="200ms"
+              data-wow-duration="1500ms"
+            >
+              Our Flexible Pricing Plan
+            </h2>
+          </div>
+          <div className="package-tab mb-60">
+            <ul className="nav nav-tabs" id="myTab" role="tablist">
+              <li className="nav-item" role="presentation">
+                <button
+                  className={activeIndex === 1 ? "nav-link active" : "nav-link"}
+                  onClick={() => handleOnClick(1)}
+                  id="item1-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#item1"
+                  role="tab"
+                  aria-controls="item1"
+                  aria-selected="true"
+                >
+                  <div className="icon-box"></div>
+                  <h6 className="title">Home Service Fee</h6>
+                </button>
+              </li>
+              <li className="nav-item" role="presentation">
+                <button
+                  className={activeIndex === 2 ? "nav-link active" : "nav-link"}
+                  onClick={() => handleOnClick(2)}
+                  id="item2-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#item2"
+                  role="tab"
+                  aria-controls="item2"
+                  aria-selected="false"
+                >
+                  <div className="icon-box"></div>
+                  <h6 className="title">Extra 75K/Therapist</h6>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div className="tab-content" id="myTabContent">
+            <div
+              className={
+                activeIndex === 1
+                  ? "tab-pane fade show active"
+                  : "tab-pane fade show"
+              }
+              id="item1"
+              role="tabpanel"
+              aria-labelledby="item1-tab"
+            >
+              <div className="row g-5">
+                <div className="col-lg-6 package-block">
+                  {tab1Col1.map((item, idx) => (
+                    <PackageItem
+                      key={item.id}
+                      item={item}
+                      isLast={idx === tab1Col1.length - 1}
+                    />
+                  ))}
                 </div>
-                <div className="package-tab mb-60">
-                    <ul className="nav nav-tabs" id="myTab" role="tablist">
-                        <li className="nav-item" role="presentation">
-                            <button className={activeIndex === 1 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick(1)} id="item1-tab" data-bs-toggle="tab" data-bs-target="#item1" role="tab"
-                                aria-controls="item1" aria-selected="true">
-                                <div className="icon-box">
-                                </div>
-                                <h6 className="title">Home Service Fee</h6>
-                            </button>
-                        </li>
-                        <li className="nav-item" role="presentation">
-                            <button className={activeIndex === 2 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick(2)} id="item2-tab" data-bs-toggle="tab" data-bs-target="#item2" role="tab"
-                                aria-controls="item2" aria-selected="false">
-                                <div className="icon-box">
-                                </div>
-                                <h6 className="title">Extra 75K/Therapist</h6>
-                            </button>
-                        </li>
-                    </ul>
+                <div className="col-lg-6 package-block">
+                  {tab1Col2.map((item, idx) => (
+                    <PackageItem
+                      key={item.id}
+                      item={item}
+                      isLast={idx === tab1Col2.length - 1}
+                    />
+                  ))}
                 </div>
-                <div className="tab-content" id="myTabContent">
-                    <div className={activeIndex === 1 ? "tab-pane fade show active" : "tab-pane fade show"} id="item1" role="tabpanel" aria-labelledby="item1-tab">
-                        <div className="row g-5">
-                            <div className="col-lg-6 package-block">
-                                {tab1Col1.map((item, idx) => (
-                                    <PackageItem key={item.id} item={item} isLast={idx === tab1Col1.length - 1} />
-                                ))}
-                            </div>
-                            <div className="col-lg-6 package-block">
-                                {tab1Col2.map((item, idx) => (
-                                    <PackageItem key={item.id} item={item} isLast={idx === tab1Col2.length - 1} />
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                    <div className={activeIndex === 2 ? "tab-pane fade show active" : "tab-pane fade show"} id="item2" role="tabpanel" aria-labelledby="item2-tab">
-                        <div className="row g-5">
-                            <div className="col-lg-6 package-block">
-                                {tab2Col1.map((item, idx) => (
-                                    <PackageItem key={item.id} item={item} isLast={idx === tab2Col1.length - 1} />
-                                ))}
-                            </div>
-                            <div className="col-lg-6 package-block">
-                                {tab2Col2.map((item, idx) => (
-                                    <PackageItem key={item.id} item={item} isLast={idx === tab2Col2.length - 1} />
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-        </section>
+            <div
+              className={
+                activeIndex === 2
+                  ? "tab-pane fade show active"
+                  : "tab-pane fade show"
+              }
+              id="item2"
+              role="tabpanel"
+              aria-labelledby="item2-tab"
+            >
+              <div className="row g-5">
+                <div className="col-lg-6 package-block">
+                  {tab2Col1.map((item, idx) => (
+                    <PackageItem
+                      key={item.id}
+                      item={item}
+                      isLast={idx === tab2Col1.length - 1}
+                    />
+                  ))}
+                </div>
+                <div className="col-lg-6 package-block">
+                  {tab2Col2.map((item, idx) => (
+                    <PackageItem
+                      key={item.id}
+                      item={item}
+                      isLast={idx === tab2Col2.length - 1}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     );
 }
