@@ -51,11 +51,6 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
                                 </div>
                                 <div className="blog-details__content">
                                     <ul className="list-unstyled blog-details__meta">
-                                        <li>
-                                            <a href="#">
-                                                <i className="fas fa-user-circle"></i> {post?.author || 'Admin'}
-                                            </a>
-                                        </li>
                                         {post?.category && (
                                             <li>
                                                 <a href="#">

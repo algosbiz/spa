@@ -80,7 +80,7 @@ export default function Home4_Funfact() {
                         </h4>
                         <h2 className="title wow fadeInUp color-light" data-wow-delay="200ms" data-wow-duration="1500ms">
                             Your Journey to Relaxation Begins Here</h2>
-                        <Link href="/contact" className="btn-two mt-50 wow text-font fadeInUp" data-wow-delay="400ms"
+                        <Link href="https://wa.me/6287863175144" target="_blank" rel="noopener noreferrer" className="btn-two mt-50 wow text-font fadeInUp" data-wow-delay="400ms"
                             data-wow-duration="1500ms">Book Now
                             <span className="icon_box">
                                 <i className="fa-regular icon_first fa-arrow-right-long"></i>

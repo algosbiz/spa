@@ -12,7 +12,7 @@ export default function Home2_Banner({
     title = "Pure Tranquility",
     image = "/images/banner/banner-two-image1.jpg",
     buttonText = "Book Now",
-    buttonLink = "/contact",
+    buttonLink = "https://wa.me/6287863175144",
 }) {
     const swiperOptions = {
         modules: [Pagination],
@@ -62,7 +62,7 @@ export default function Home2_Banner({
                                         {subTitle}
                                     </h4>
                                     <h1 className="title" data-animation="fadeInUp" data-delay=".5s"><span>{titleSpan}</span> {title}</h1>
-                                    <Link href={buttonLink} className="btn-two-light mt-50" data-animation="fadeInUp" data-delay="1s">{buttonText}
+                                    <Link href={buttonLink} target="_blank" rel="noopener noreferrer" className="btn-two-light mt-50" data-animation="fadeInUp" data-delay="1s">{buttonText}
                                         <span className="icon_box">
                                             <i className="fa-regular icon_first fa-arrow-right-long"></i>
                                             <i className="fa-regular icon_second fa-arrow-right-long"></i>

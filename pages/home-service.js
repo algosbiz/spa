@@ -16,7 +16,8 @@ export default function HomeServicePage() {
         <Layout HeaderStyle="five" FooterStyle="two">
           {/* Custom Banner with different shape and titles */}
           <HomeServiceBanner />
-          <AboutOld />
+          {/* <AboutOld /> */}
+          <Video />
           {/* Custom Home Service Info details */}
           <HomeServiceInfo />
           <PackageSection />

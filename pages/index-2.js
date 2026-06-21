@@ -37,9 +37,11 @@ export default function Home2() {
           <AboutReverse />
           <About />
           <Faq />
-          <Services />
-          <div className="section__decoration-top section__decoration-bottom bg-sub pt-100 pb-100">
+          <div className=" pt-100 pb-100">
             <ReserveCta />
+          </div>
+          <div className="section__decoration-top section__decoration-bottom bg-sub ">
+            <Services />
           </div>
         </Layout>
       </>

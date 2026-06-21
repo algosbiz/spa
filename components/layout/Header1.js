@@ -1,12 +1,44 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import NavLinks from './NavLinks';
 import MobileMenu from './MobileMenu';
 
+// Searchable site destinations (pages + treatments). Add entries here to extend search.
+const SEARCH_INDEX = [
+    { title: 'Home', href: '/', keywords: 'home main spa bali moon' },
+    { title: 'Pricelist', href: '/pricing', keywords: 'price pricing cost packages rates list' },
+    { title: 'Balinese Massage', href: '/index-2', keywords: 'treatment balinese massage body relax' },
+    { title: 'Reservation', href: '/reservation', keywords: 'reserve reservation appointment book booking' },
+    { title: 'Blog', href: '/blog', keywords: 'blog news articles posts tips' },
+    { title: 'Contact', href: '/contact', keywords: 'contact reach phone email location address whatsapp' },
+    { title: 'Massage in Seminyak', href: '/massage-seminyak', keywords: 'massage seminyak outcall home service' },
+    { title: 'Massage in Kuta', href: '/massage-kuta', keywords: 'massage kuta outcall home service' },
+    { title: 'Hotel & Villa Massage', href: '/massage-hotel-villa', keywords: 'hotel villa massage outcall home service' },
+    { title: 'Day Spa Seminyak', href: '/day-spa-seminyak', keywords: 'day spa facial cream bath seminyak treatment' },
+    { title: 'Home Service', href: '/home-service', keywords: 'home service outcall massage whatsapp booking' },
+    { title: 'FAQ', href: '/faq', keywords: 'faq frequently asked questions help' },
+    { title: 'Privacy Policy', href: '/privacy-policy', keywords: 'privacy policy data personal' },
+    { title: 'Terms & Conditions', href: '/terms-conditions', keywords: 'terms conditions rules booking' },
+];
+
 const Header1 = ({ scroll }) => {
+    const router = useRouter();
     const [searchToggle, setSearchToggle] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
     const [sidebarToggle, setSidebarToggle] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
+    const searchRef = useRef(null);
+    const searchInputRef = useRef(null);
+
+    const query = searchQuery.trim().toLowerCase();
+    const searchResults = query
+        ? SEARCH_INDEX.filter(
+              (item) =>
+                  item.title.toLowerCase().includes(query) ||
+                  item.keywords.includes(query)
+          )
+        : [];
 
     useEffect(() => {
         // Get the mode from localStorage
@@ -23,8 +55,47 @@ const Header1 = ({ scroll }) => {
         }
     }, []);
 
-    const handleToggleSearch = () => setSearchToggle(!searchToggle);
+    const handleToggleSearch = () => setSearchToggle((prev) => !prev);
     const handleToggleSidebar = () => setSidebarToggle(!sidebarToggle);
+
+    const closeSearch = () => {
+        setSearchToggle(false);
+        setSearchQuery('');
+    };
+
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+        if (searchResults.length > 0) {
+            router.push(searchResults[0].href);
+            closeSearch();
+        }
+    };
+
+    // Focus the input as soon as the search opens.
+    useEffect(() => {
+        if (searchToggle && searchInputRef.current) {
+            searchInputRef.current.focus();
+        }
+    }, [searchToggle]);
+
+    // Close the search on Escape or a click outside the panel.
+    useEffect(() => {
+        if (!searchToggle) return;
+        const onKeyDown = (e) => {
+            if (e.key === 'Escape') closeSearch();
+        };
+        const onMouseDown = (e) => {
+            if (searchRef.current && !searchRef.current.contains(e.target)) {
+                closeSearch();
+            }
+        };
+        document.addEventListener('keydown', onKeyDown);
+        document.addEventListener('mousedown', onMouseDown);
+        return () => {
+            document.removeEventListener('keydown', onKeyDown);
+            document.removeEventListener('mousedown', onMouseDown);
+        };
+    }, [searchToggle]);
 
     return (
         <>
@@ -41,7 +112,40 @@ const Header1 = ({ scroll }) => {
                             </nav>
                         </div>
                         <div className="menu-btns">
-                            <button className="search-trigger d-none d-lg-block" onClick={handleToggleSearch}><i className="fa-light fa-magnifying-glass"></i></button>
+                            <div className="header-search d-none d-lg-block" ref={searchRef}>
+                                <button className="search-trigger" onClick={handleToggleSearch} aria-label="Search" aria-expanded={searchToggle}>
+                                    <i className={`fa-light ${searchToggle ? 'fa-xmark' : 'fa-magnifying-glass'}`}></i>
+                                </button>
+                                <div className={`header-search__dropdown ${searchToggle ? 'is-open' : ''}`}>
+                                    <form className="header-search__form" onSubmit={handleSearchSubmit}>
+                                        <i className="fa-light fa-magnifying-glass header-search__form-icon"></i>
+                                        <input
+                                            ref={searchInputRef}
+                                            type="search"
+                                            className="header-search__input"
+                                            placeholder="Search treatments, pages..."
+                                            value={searchQuery}
+                                            onChange={(e) => setSearchQuery(e.target.value)}
+                                        />
+                                    </form>
+                                    {query && (
+                                        <ul className="header-search__results">
+                                            {searchResults.length > 0 ? (
+                                                searchResults.map((item) => (
+                                                    <li key={item.href}>
+                                                        <Link href={item.href} className="header-search__result" onClick={closeSearch}>
+                                                            <i className="fa-light fa-arrow-right-long"></i>
+                                                            <span>{item.title}</span>
+                                                        </Link>
+                                                    </li>
+                                                ))
+                                            ) : (
+                                                <li className="header-search__empty">No results for &ldquo;{searchQuery.trim()}&rdquo;</li>
+                                            )}
+                                        </ul>
+                                    )}
+                                </div>
+                            </div>
                             <Link href="/contact" className="book-now d-none d-xxl-inline-block">Book An Apoinment
                                 <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clipPath="url(#clip0_1_441)">
@@ -110,20 +214,117 @@ const Header1 = ({ scroll }) => {
             </div>
             {/* <!-- Sidebar area end here --> */}
 
-            {/* <!-- Fullscreen search area start here --> */}
-            <div className={`search-wrap light-area ${searchToggle ? 'd-block' : ''}`}>
-                <div className="search-inner">
-                    <i className="fa-light fa-xmark search-close" id="search-close" onClick={handleToggleSearch}></i>
-                    <div className="search-cell">
-                        <form method="get">
-                            <div className="search-field-holder">
-                                <input type="search" className="main-search-input" placeholder="Search..."/>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            {/* <!-- Fullscreen search area end here --> */}
+            <style jsx>{`
+                .header-search {
+                    position: relative;
+                    display: inline-flex;
+                    align-items: center;
+                }
+                .header-search .search-trigger {
+                    background: transparent;
+                    border: 0;
+                    padding: 0;
+                    line-height: 1;
+                    cursor: pointer;
+                    color: var(--headings-color, #2f2924);
+                    transition: color 0.25s ease;
+                }
+                .header-search .search-trigger:hover {
+                    color: #a78627;
+                }
+                .header-search__dropdown {
+                    position: absolute;
+                    top: calc(100% + 18px);
+                    right: 0;
+                    width: 340px;
+                    max-width: calc(100vw - 40px);
+                    background: #ffffff;
+                    border: 1px solid rgba(95, 90, 84, 0.12);
+                    border-radius: 14px;
+                    box-shadow: 0 24px 60px rgba(31, 27, 22, 0.16);
+                    padding: 14px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(-10px);
+                    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+                    z-index: 1050;
+                }
+                .header-search__dropdown.is-open {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                }
+                .header-search__form {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                }
+                .header-search__form-icon {
+                    position: absolute;
+                    left: 16px;
+                    font-size: 15px;
+                    color: #a78627;
+                    pointer-events: none;
+                }
+                .header-search__input {
+                    width: 100%;
+                    height: 48px;
+                    border: 1px solid rgba(95, 90, 84, 0.18);
+                    border-radius: 10px;
+                    background: #faf8f4;
+                    padding: 0 16px 0 42px;
+                    font-size: 15px;
+                    color: #2f2924;
+                    font-family: var(--text-font);
+                    outline: none;
+                    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+                }
+                .header-search__input:focus {
+                    border-color: #a78627;
+                    box-shadow: 0 0 0 3px rgba(167, 134, 39, 0.12);
+                }
+                .header-search__input::placeholder {
+                    color: #9a948c;
+                }
+                .header-search__results {
+                    list-style: none;
+                    margin: 10px 0 0;
+                    padding: 0;
+                    max-height: 320px;
+                    overflow-y: auto;
+                }
+                .header-search__result {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 11px 12px;
+                    border-radius: 8px;
+                    color: #2f2924;
+                    font-size: 14px;
+                    font-family: var(--text-font);
+                    text-decoration: none;
+                    transition: background-color 0.2s ease, color 0.2s ease;
+                }
+                .header-search__result i {
+                    font-size: 13px;
+                    color: #a78627;
+                    transition: transform 0.2s ease;
+                }
+                .header-search__result:hover {
+                    background: #f4efe3;
+                    color: #a78627;
+                }
+                .header-search__result:hover i {
+                    transform: translateX(3px);
+                }
+                .header-search__empty {
+                    padding: 14px 12px;
+                    text-align: center;
+                    color: #9a948c;
+                    font-size: 14px;
+                    font-family: var(--text-font);
+                }
+            `}</style>
 
         </>
     );

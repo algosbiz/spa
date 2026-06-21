@@ -85,7 +85,7 @@ export default function Home4_Banner() {
                         Rejuvenate You Today
                     </h4>
                     <h1 className="title wow fadeInUp" data-wow-delay="500ms"><span>Where Comfort</span> Meets Luxury</h1>
-                    <Link href="/contact" className="btn-two wow fadeInUp mt-50" data-wow-delay="1s">Book Now
+                    <Link href="https://wa.me/6287863175144" target="_blank" rel="noopener noreferrer" className="btn-two wow fadeInUp mt-50" data-wow-delay="1s">Book Now
                         <span className="icon_box">
                             <i className="fa-regular icon_first fa-arrow-right-long"></i>
                             <i className="fa-regular icon_second fa-arrow-right-long"></i>

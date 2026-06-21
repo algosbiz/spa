@@ -31,20 +31,31 @@ function MyApp({ Component, pageProps }) {
                         <span data-text-preloader="A" className="letters-loading">
                             A
                         </span>
-                        <span data-text-preloader="R" className="letters-loading">
-                            R
-                        </span>
-                        <span data-text-preloader="E" className="letters-loading">
-                            E
-                        </span>
-                        <span data-text-preloader="L" className="letters-loading">
-                            L
+                        <span className="letters-loading word-space">&nbsp;</span>
+                        <span data-text-preloader="B" className="letters-loading">
+                            B
                         </span>
                         <span data-text-preloader="A" className="letters-loading">
                             A
                         </span>
-                        <span data-text-preloader="X" className="letters-loading">
-                            X
+                        <span data-text-preloader="L" className="letters-loading">
+                            L
+                        </span>
+                        <span data-text-preloader="I" className="letters-loading">
+                            I
+                        </span>
+                        <span className="letters-loading word-space">&nbsp;</span>
+                        <span data-text-preloader="M" className="letters-loading">
+                            M
+                        </span>
+                        <span data-text-preloader="O" className="letters-loading">
+                            O
+                        </span>
+                        <span data-text-preloader="O" className="letters-loading">
+                            O
+                        </span>
+                        <span data-text-preloader="N" className="letters-loading">
+                            N
                         </span>
                     </div>
                     <p className="text-center">Loading...</p>

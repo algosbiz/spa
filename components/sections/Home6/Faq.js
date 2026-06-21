@@ -10,7 +10,7 @@ export default function Home6_Faq({
 }) {
     return (
         <>
-            <section className="faq-section pt-100 pb-100">
+            <section className="faq-section pt-100">
                 <div className="outer-box">
                     <div className="row g-4">
                         {showImage && (
