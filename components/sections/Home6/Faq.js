@@ -10,7 +10,7 @@ export default function Home6_Faq({
 }) {
     return (
         <>
-            <section className="faq-section pt-100">
+            <section className="faq-section pt-100 pb-100">
                 <div className="outer-box">
                     <div className="row g-4">
                         {showImage && (
@@ -55,9 +55,7 @@ export default function Home6_Faq({
                                 <div className="faq-accordion wow fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
                                     <Accordion items={items} />
                                 </div>
-                                <div className="shape">
-                                    <img className="bobble__animation" src="/images/faq/shape.png" alt="image" />
-                                </div>
+
                             </div>
                         </div>
                     </div>

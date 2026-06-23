@@ -3190,32 +3190,19 @@ figure {
   padding: 10px 30px;
   display: inline-block;
   border-radius: 30px;
-  background-color: var(--theme-color2);
-  color: var(--theme-color-white);
+  background-color: transparent;
+  color: var(--theme-color1);
+  border: 2px solid var(--theme-color1);
   font-family: var(--text-font);
   text-transform: capitalize;
   font-weight: 400;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
+  transition: all 0.4s ease;
 }
 
-.btn-three::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: "";
+.btn-three:hover {
   background-color: var(--theme-color1);
-  z-index: -1;
-  border-radius: 30px;
-  transition: all 0.3s;
-  transform: scaleX(0);
-}
-
-.btn-three:hover::after {
-  transform: scaleX(1);
+  color: var(--theme-color-white);
+  box-shadow: 0 4px 15px rgba(167, 134, 39, 0.35);
 }
 
 .btn-video {
@@ -3423,17 +3410,18 @@ Whatsapp Float style
   height: 56px;
   font-size: 30px;
   line-height: 56px;
-  color: var(--theme-color-white);
+  color: var(--theme-color1);
   text-align: center;
   cursor: pointer;
-  background-color: var(--theme-color1);
+  background-color: transparent;
+  border: 2px solid var(--theme-color1);
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
 }
 
 @media (max-width: 1399.98px) {
@@ -3443,8 +3431,10 @@ Whatsapp Float style
 }
 
 .whatsapp-float:hover {
-  background: var(--theme-color-dark);
-  color: #ffffff;
+  background-color: var(--theme-color1);
+  color: var(--theme-color-white);
+  box-shadow: 0 4px 15px rgba(167, 134, 39, 0.35);
+  transform: scale(1.05);
 }
 
 .progress-area .progress {
@@ -6602,8 +6592,8 @@ textarea.form-control {
 }
 
 .faq-section .content-column .inner-column {
-  padding: 90px;
-  background-color: var(--theme-color-gray);
+  padding: 0;
+  background-color: transparent;
   border-radius: 30px;
   height: 100%;
   position: relative;
@@ -13335,8 +13325,8 @@ Page Title
 }
 
 .blog-details__tags span {
-  color: #0e2207;
-  font-size: 20px;
+  color: var(--theme-color1);
+  font-size: 18px;
   margin-right: 14px;
   font-weight: var(--body-font-weight-bold);
 }
@@ -13344,24 +13334,31 @@ Page Title
 .blog-details__tags a {
   position: relative;
   font-size: 12px;
-  background-color: var(--theme-color2);
-  color: var(--theme-color-light);
+  background-color: #faf7f1;
+  color: var(--theme-color1);
+  border: 1px solid rgba(167, 134, 39, 0.25);
   display: inline-block;
-  padding: 5px 30px 5px;
+  padding: 6px 22px;
   font-weight: var(--body-font-weight-bold);
-  -webkit-transition: all 500ms ease;
-  transition: all 500ms ease;
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
   border-radius: 35px;
+  letter-spacing: 0.3px;
 }
 
 .blog-details__tags a:hover {
   background-color: var(--theme-color1);
   color: var(--theme-color-light);
+  border-color: var(--theme-color1);
   text-decoration: none;
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(167, 134, 39, 0.25);
 }
 
 .blog-details__tags a+a {
-  margin-left: 6px;
+  margin-left: 8px;
+  margin-top: 6px;
 }
 
 .blog-details__social-list {

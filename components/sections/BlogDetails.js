@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 const FALLBACK_IMAGE = '/images/resource/news-details.jpg';
 
@@ -12,6 +12,14 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
     });
 
     const [submitting, setSubmitting] = useState(false);
+
+    // Search state
+    const [searchQuery, setSearchQuery] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
+    const [searching, setSearching] = useState(false);
+    const [showResults, setShowResults] = useState(false);
+    const searchRef = useRef(null);
+    const debounceRef = useRef(null);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -27,6 +35,57 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
             setFormData({ form_name: "", form_email: "", form_message: "", form_botcheck: "" });
         }, 1000);
     };
+
+    // Debounced search
+    const doSearch = useCallback(async (q) => {
+        if (!q || q.trim().length < 2) {
+            setSearchResults([]);
+            setShowResults(false);
+            setSearching(false);
+            return;
+        }
+        setSearching(true);
+        try {
+            const res = await fetch(`/api/search-posts?q=${encodeURIComponent(q.trim())}`);
+            const data = await res.json();
+            setSearchResults(data.posts || []);
+            setShowResults(true);
+        } catch {
+            setSearchResults([]);
+        } finally {
+            setSearching(false);
+        }
+    }, []);
+
+    const handleSearchInput = (e) => {
+        const val = e.target.value;
+        setSearchQuery(val);
+        if (debounceRef.current) clearTimeout(debounceRef.current);
+        if (!val || val.trim().length < 2) {
+            setSearchResults([]);
+            setShowResults(false);
+            return;
+        }
+        setSearching(true);
+        debounceRef.current = setTimeout(() => doSearch(val), 400);
+    };
+
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+        if (debounceRef.current) clearTimeout(debounceRef.current);
+        doSearch(searchQuery);
+    };
+
+    // Close dropdown on outside click
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (searchRef.current && !searchRef.current.contains(e.target)) {
+                setShowResults(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
 
     const date = post?.published_at ? new Date(post.published_at) : null;
     const day = date ? date.toLocaleDateString('en-GB', { day: '2-digit' }) : '';
@@ -77,9 +136,7 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
                                             ))}
                                         </p>
                                         <div className="blog-details__social-list">
-                                            <a href="#"><i className="fa fa-x"></i></a>
                                             <a href="#"><i className="fab fa-facebook"></i></a>
-                                            <a href="#"><i className="fab fa-pinterest-p"></i></a>
                                             <a href="#"><i className="fab fa-instagram"></i></a>
                                         </div>
                                     </div>
@@ -117,13 +174,49 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
                         </div>
                         <div className="col-xl-4 col-lg-5">
                             <div className="sidebar">
-                                <div className="sidebar__single sidebar__search">
-                                    <form action="#" className="sidebar__search-form">
-                                        <input type="search" placeholder="Search here" />
+                                <div className="sidebar__single sidebar__search" ref={searchRef}>
+                                    <form className="sidebar__search-form" onSubmit={handleSearchSubmit}>
+                                        <input
+                                            type="search"
+                                            placeholder="Search here"
+                                            value={searchQuery}
+                                            onChange={handleSearchInput}
+                                            onFocus={() => { if (searchResults.length > 0) setShowResults(true); }}
+                                        />
                                         <button type="submit">
                                             <i className="fa-classic fa-light fa-magnifying-glass fa-fw"></i>
                                         </button>
                                     </form>
+                                    {/* Search results dropdown */}
+                                    {showResults && (
+                                        <div className="sidebar-search-results">
+                                            {searching && (
+                                                <div className="sidebar-search-results__loading">Searching...</div>
+                                            )}
+                                            {!searching && searchResults.length === 0 && (
+                                                <div className="sidebar-search-results__empty">No posts found.</div>
+                                            )}
+                                            {!searching && searchResults.length > 0 && (
+                                                <ul className="sidebar-search-results__list">
+                                                    {searchResults.map((sr) => (
+                                                        <li key={sr.id}>
+                                                            <Link href={`/blog/${sr.slug}`} onClick={() => setShowResults(false)}>
+                                                                <div className="sidebar-search-results__item">
+                                                                    {sr.cover_image && (
+                                                                        <img src={sr.cover_image} alt={sr.title} />
+                                                                    )}
+                                                                    <div className="sidebar-search-results__text">
+                                                                        <strong>{sr.title}</strong>
+                                                                        {sr.excerpt && <p>{sr.excerpt.slice(0, 80)}…</p>}
+                                                                    </div>
+                                                                </div>
+                                                            </Link>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
+                                        </div>
+                                    )}
                                 </div>
                                 <div className="sidebar__single sidebar__post">
                                     <h3 className="sidebar__title">Latest Posts</h3>
@@ -170,9 +263,87 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
                 }
                 .blog-details__rich blockquote { border-left: 3px solid #b8952e; padding: .4em 1.2em; margin: 1.2em 0; color: #6b5e4e; font-style: italic; background: #faf7f1; }
                 .blog-details__rich a { color: #b8952e; text-decoration: underline; }
+
+                /* Search results dropdown */
+                .sidebar__search { position: relative; }
+                .sidebar-search-results {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    background: #fff;
+                    border: 1px solid #ece9e0;
+                    border-top: none;
+                    border-radius: 0 0 10px 10px;
+                    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+                    z-index: 100;
+                    max-height: 380px;
+                    overflow-y: auto;
+                }
+                .sidebar-search-results__loading,
+                .sidebar-search-results__empty {
+                    padding: 16px 20px;
+                    color: #999;
+                    font-size: 14px;
+                    text-align: center;
+                }
+                .sidebar-search-results__list {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                }
+                .sidebar-search-results__list li {
+                    border-bottom: 1px solid #f5f2ec;
+                }
+                .sidebar-search-results__list li:last-child {
+                    border-bottom: none;
+                }
+                .sidebar-search-results__list li a {
+                    display: block;
+                    padding: 12px 16px;
+                    transition: background 0.2s ease;
+                    text-decoration: none;
+                    color: inherit;
+                }
+                .sidebar-search-results__list li a:hover {
+                    background: #faf7f1;
+                }
+                .sidebar-search-results__item {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                }
+                .sidebar-search-results__item img {
+                    width: 50px;
+                    height: 50px;
+                    object-fit: cover;
+                    border-radius: 8px;
+                    flex-shrink: 0;
+                }
+                .sidebar-search-results__text {
+                    min-width: 0;
+                }
+                .sidebar-search-results__text strong {
+                    display: block;
+                    font-size: 14px;
+                    line-height: 1.3;
+                    color: #1c1a1d;
+                    margin-bottom: 2px;
+                }
+                .sidebar-search-results__text p {
+                    margin: 0;
+                    font-size: 12px;
+                    color: #999;
+                    line-height: 1.4;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
             `}</style>
         </>
     );
 };
 
 export default BlogDetails;
+
+
