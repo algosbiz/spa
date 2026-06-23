@@ -8167,12 +8167,18 @@ textarea.form-control {
 }
 
 .pricing-section-five.bg-sub::after {
-  background-color: transparent;
-  background: url(../images/shape/section-shape-bottom.png) no-repeat center bottom;
+  background: transparent;
   top: auto;
   bottom: 0;
   height: 74px;
   z-index: 1;
+}
+
+/* Torn-paper bottom edge only on a section explicitly marked with
+   section__decoration-bottom (i.e. the last package group), so the
+   stacked cream groups read as one continuous sheet. */
+.pricing-section-five.bg-sub.section__decoration-bottom::after {
+  background: url(../images/shape/section-shape-bottom.png) no-repeat center bottom;
 }
 
 .pricing-block-five .inner-box {
