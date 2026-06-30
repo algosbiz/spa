@@ -162,11 +162,13 @@ export default function Home2() {
             buttonText="Book Now"
             buttonLink={bookingUrl}
           />
-          <Faq
-            subTitle="Frequently Asked Questions"
-            title={<>Everything You Need to Know</>}
-            items={faqItems}
-          />
+          <div className="balinese-massage-faq">
+            <Faq
+              subTitle="Frequently Asked Questions"
+              title={<>Everything You Need to Know</>}
+              items={faqItems}
+            />
+          </div>
           <div className=" pt-100 pb-100">
             <ReserveCta
               title="Enjoy Balinese Massage Wherever You Feel Most Comfortable"
@@ -178,6 +180,14 @@ export default function Home2() {
             <Services />
           </div>
         </Layout>
+        <style jsx global>{`
+          @media (min-width: 1400px) {
+            .balinese-massage-faq .faq-section .content-column .inner-column {
+              padding-right: 32px;
+              padding-left: 32px;
+            }
+          }
+        `}</style>
       </>
     );
 }
