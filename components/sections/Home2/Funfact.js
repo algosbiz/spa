@@ -4,7 +4,7 @@ import CounterUp2 from '../../elements/CounterUp2.js';
 import CounterUp3 from '../../elements/CounterUp3.js';
 import CounterUp4 from '../../elements/CounterUp4.js';
 
-export default function Home2_Funfact() {
+export default function Home2_Funfact({ items }) {
     const percentage1 = 20;
     const percentage2 = 100;
     const percentage3 = 509;
@@ -44,9 +44,9 @@ export default function Home2_Funfact() {
                                 </div>
                                 <div className="content">
                                     <h3 className="title">
-                                        <CounterUp4 count={percentage1} time={3} />
+                                        {items ? items[0].title : <CounterUp4 count={percentage1} time={3} />}
                                     </h3>
-                                    <span>Experience</span>
+                                    <span>{items ? items[0].text : "Experience"}</span>
                                 </div>
                             </div>
                         </div>
@@ -74,9 +74,9 @@ export default function Home2_Funfact() {
                                 </div>
                                 <div className="content">
                                     <h3 className="title">
-                                        <CounterUp2 count={percentage2} time={3} />
+                                        {items ? items[1].title : <CounterUp2 count={percentage2} time={3} />}
                                     </h3>
-                                    <span>Natural Products</span>
+                                    <span>{items ? items[1].text : "Natural Products"}</span>
                                 </div>
                             </div>
                         </div>
@@ -92,9 +92,9 @@ export default function Home2_Funfact() {
                                 </div>
                                 <div className="content">
                                     <h3 className="title">
-                                        <CounterUp count={percentage3} time={3} />
+                                        {items ? items[2].title : <CounterUp count={percentage3} time={3} />}
                                     </h3>
-                                    <span>Satisfied Clients</span>
+                                    <span>{items ? items[2].text : "Satisfied Clients"}</span>
                                 </div>
                             </div>
                         </div>
@@ -128,9 +128,9 @@ export default function Home2_Funfact() {
                                 </div>
                                 <div className="content">
                                     <h3 className="title">
-                                        <CounterUp3 count={percentage4} time={3} />
+                                        {items ? items[3].title : <CounterUp3 count={percentage4} time={3} />}
                                     </h3>
-                                    <span>Specialists in The Team</span>
+                                    <span>{items ? items[3].text : "Specialists in The Team"}</span>
                                 </div>
                             </div>
                         </div>

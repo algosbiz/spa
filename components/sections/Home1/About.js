@@ -11,6 +11,7 @@ const CheckIcon = () => (
 );
 
 export default function Home1_About({
+    subTitle = "About",
     title = (<>New solutions with organic oil free products</>),
     text = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas magna mi ut arcu. Phasellus nec odio orci. Nunc id massa ante. Suspendisse sit amet neque euismod, convallis quam eget,",
     featuresLeft = [
@@ -64,7 +65,7 @@ export default function Home1_About({
                                                     fill="#A78627" />
                                             </g>
                                         </svg>
-                                        About
+                                        {subTitle}
                                     </h4>
                                     <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{title}</h2>
                                     <p className="text wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">{text}</p>

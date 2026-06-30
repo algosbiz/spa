@@ -28,7 +28,7 @@ const MobileMenu = () => {
                 <li>
                     <Link href="#0">Treatments</Link>
                     <ul className={isActive.key === 2 ? "sub-menu d-block" : "d-none"}>
-                        <li><Link href="/index-2">Balinese Massage</Link></li>
+                        <li><Link href="/balinese-massage">Balinese Massage</Link></li>
                     </ul>
                     <div className={isActive.key === 2 ? "dropdown-btn active" : "dropdown-btn"} onClick={() => handleClick(2)}><i className="fa fa-angle-down" /></div>
                 </li>

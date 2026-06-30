@@ -1,7 +1,39 @@
 import React from 'react'
 import Link from 'next/link'
 
-export default function Home3_Pricing() {
+const defaultPackages = [
+    {
+        price: "$19",
+        suffix: "/ Hr",
+        name: "Massage & Treatments",
+        treatments: ["1. Relaxing Spa", "2. Oil Massage", "3. Cupping Massage", "4. Hand & Feet"],
+    },
+    {
+        price: "$59",
+        suffix: "/ Hr",
+        name: "Massage & Treatments",
+        treatments: ["1. Relaxing Spa", "2. Oil Massage", "3. Cupping Massage", "4. Hand & Feet"],
+    },
+    {
+        price: "$89",
+        suffix: "/ Hr",
+        name: "Massage & Treatments",
+        treatments: ["1. Relaxing Spa", "2. Oil Massage", "3. Cupping Massage", "4. Hand & Feet"],
+    },
+    {
+        price: "$119",
+        suffix: "/ Hr",
+        name: "Massage & Treatments",
+        treatments: ["1. Relaxing Spa", "2. Oil Massage", "3. Cupping Massage", "4. Hand & Feet"],
+    },
+];
+
+export default function Home3_Pricing({
+    subTitle = "Best Price",
+    title = <>Our Flexible Price</>,
+    text = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas magna mi ut arcu. Phasellus nec odio orci. Nunc id massa ante. Suspendisse sit amet neque euismod, convallis quam eget,",
+    packages = defaultPackages,
+}) {
     return (
         <>
         <section className="pricing-section-three bg-sub section__decoration-top section__decoration-bottom pt-130 pb-170">
@@ -38,15 +70,12 @@ export default function Home3_Pricing() {
                                         fill="#A78627" />
                                 </g>
                             </svg>
-                            Best Price
+                            {subTitle}
                         </h4>
-                        <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Our Flexible
-                            Price</h2>
+                        <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{title}</h2>
                     </div>
                     <div className="flex-text wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
-                        <p>Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas
-                            magna mi ut arcu. Phasellus nec odio orci. Nunc id massa ante. Suspendisse sit amet neque
-                            euismod, convallis quam eget,</p>
+                        <p>{text}</p>
                     </div>
                 </div>
                 <div className="outer-box mb-50">
@@ -58,13 +87,10 @@ export default function Home3_Pricing() {
                         <div className="col-lg-4 col-xl-3 pricing-block">
                             <div className="inner-box">
                                 <div className="shape"> <img src="/images/pricing/shape.png" alt="image"/> </div>
-                                <h2 className="price">$19 <span>/ Hr</span></h2>
-                                <h6>Massage & Treatments</h6>
+                                <h2 className="price">{packages[0].price} {packages[0].suffix && <span>{packages[0].suffix}</span>}</h2>
+                                <h6>{packages[0].name}</h6>
                                 <ul>
-                                    <li>1. Relaxing Spa</li>
-                                    <li>2. Oil Massage</li>
-                                    <li>3. Cupping Massage</li>
-                                    <li>4. Hand & Feet</li>
+                                    {packages[0].treatments.map((treatment) => <li key={treatment}>{treatment}</li>)}
                                 </ul>
                                 <Link href="https://wa.me/6287863175144" target="_blank" rel="noopener noreferrer" className="btn-two mt-35">Book Now
                                     <span className="icon_box">
@@ -81,13 +107,10 @@ export default function Home3_Pricing() {
                         <div className="col-lg-4 col-xl-3 order-2 order-lg-1 pricing-block">
                             <div className="inner-box">
                                 <div className="shape"><img src="/images/pricing/shape.png" alt="image"/></div>
-                                <h2 className="price">$59 <span>/ Hr</span></h2>
-                                <h6>Massage & Treatments</h6>
+                                <h2 className="price">{packages[1].price} {packages[1].suffix && <span>{packages[1].suffix}</span>}</h2>
+                                <h6>{packages[1].name}</h6>
                                 <ul>
-                                    <li>1. Relaxing Spa</li>
-                                    <li>2. Oil Massage</li>
-                                    <li>3. Cupping Massage</li>
-                                    <li>4. Hand & Feet</li>
+                                    {packages[1].treatments.map((treatment) => <li key={treatment}>{treatment}</li>)}
                                 </ul>
                                 <Link href="https://wa.me/6287863175144" target="_blank" rel="noopener noreferrer" className="btn-two mt-35">Book Now
                                     <span className="icon_box">
@@ -111,13 +134,10 @@ export default function Home3_Pricing() {
                         <div className="col-lg-4 col-xl-3 pricing-block">
                             <div className="inner-box">
                                 <div className="shape"> <img src="/images/pricing/shape.png" alt="image"/> </div>
-                                <h2 className="price">$89 <span>/ Hr</span></h2>
-                                <h6>Massage & Treatments</h6>
+                                <h2 className="price">{packages[2].price} {packages[2].suffix && <span>{packages[2].suffix}</span>}</h2>
+                                <h6>{packages[2].name}</h6>
                                 <ul>
-                                    <li>1. Relaxing Spa</li>
-                                    <li>2. Oil Massage</li>
-                                    <li>3. Cupping Massage</li>
-                                    <li>4. Hand & Feet</li>
+                                    {packages[2].treatments.map((treatment) => <li key={treatment}>{treatment}</li>)}
                                 </ul>
                                 <Link href="https://wa.me/6287863175144" target="_blank" rel="noopener noreferrer" className="btn-two mt-35">Book Now
                                     <span className="icon_box">
@@ -134,13 +154,10 @@ export default function Home3_Pricing() {
                         <div className="col-lg-4 col-xl-3 order-2 order-lg-1 pricing-block">
                             <div className="inner-box">
                                 <div className="shape"><img src="/images/pricing/shape.png" alt="image"/></div>
-                                <h2 className="price">$119 <span>/ Hr</span></h2>
-                                <h6>Massage & Treatments</h6>
+                                <h2 className="price">{packages[3].price} {packages[3].suffix && <span>{packages[3].suffix}</span>}</h2>
+                                <h6>{packages[3].name}</h6>
                                 <ul>
-                                    <li>1. Relaxing Spa</li>
-                                    <li>2. Oil Massage</li>
-                                    <li>3. Cupping Massage</li>
-                                    <li>4. Hand & Feet</li>
+                                    {packages[3].treatments.map((treatment) => <li key={treatment}>{treatment}</li>)}
                                 </ul>
                                 <Link href="https://wa.me/6287863175144" target="_blank" rel="noopener noreferrer" className="btn-two mt-35">Book Now
                                     <span className="icon_box">

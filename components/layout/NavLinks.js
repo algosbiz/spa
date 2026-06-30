@@ -10,7 +10,7 @@ const NavLinks = () => {
             <li>
                 <Link href="/#0">Treatments <i className="fa-solid fa-angle-down"></i></Link>
                 <ul className="sub-menu">
-                    <li><Link href="/index-2">Balinese Massage</Link></li>
+                    <li><Link href="/balinese-massage">Balinese Massage</Link></li>
                 </ul>
             </li>
             <li><Link href="/reservation">Reservation</Link></li>

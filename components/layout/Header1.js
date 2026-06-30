@@ -8,7 +8,7 @@ import MobileMenu from './MobileMenu';
 const SEARCH_INDEX = [
     { title: 'Home', href: '/', keywords: 'home main spa bali moon' },
     { title: 'Pricelist', href: '/pricing', keywords: 'price pricing cost packages rates list' },
-    { title: 'Balinese Massage', href: '/index-2', keywords: 'treatment balinese massage body relax' },
+    { title: 'Balinese Massage', href: '/balinese-massage', keywords: 'treatment balinese massage body relax' },
     { title: 'Reservation', href: '/reservation', keywords: 'reserve reservation appointment book booking' },
     { title: 'Blog', href: '/blog', keywords: 'blog news articles posts tips' },
     { title: 'Contact', href: '/contact', keywords: 'contact reach phone email location address whatsapp' },
