@@ -45,15 +45,15 @@ export default function Home1_AboutReverse({
                                     <img src="/images/about/about-image.png" alt="image" />
                                 </div>
                                 <div className="info">
-                                    <h4><span className="count">25</span> <span>+</span> Years</h4>
-                                    <h4 className="title">Experience</h4>
+                                    <p className="info-line"><span className="count">25</span> <span>+</span> Years</p>
+                                    <p className="info-line title">Experience</p>
                                 </div>
                             </div>
                         </div>
                         <div className="col-lg-7 content-column">
                             <div className="inner-column" style={{ marginLeft: 'auto' }}>
                                 <div className="section-header">
-                                    <h4 className="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                    <p className="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
                                         <svg className="icon" width="25" height="26" viewBox="0 0 25 26" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <g clipPath="url(#clip0_1_475)">
@@ -78,7 +78,7 @@ export default function Home1_AboutReverse({
                                             </g>
                                         </svg>
                                         {subTitle}
-                                    </h4>
+                                    </p>
                                     <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{title}</h2>
                                     <p className="text wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">{text}</p>
                                 </div>

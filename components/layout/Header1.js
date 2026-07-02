@@ -185,11 +185,11 @@ const Header1 = ({ scroll }) => {
                         <MobileMenu />
                     </div>
                     <div className="d-none d-lg-block">
-                        <h5 className="mb-20" style={{ color: "#2f2924" }}>About Us</h5>
+                        <p className="mb-20" style={{ color: "#2f2924", fontFamily: "var(--title-font)", fontSize: "20px", fontWeight: 500, lineHeight: "30px" }}>About Us</p>
                         <p className="sidebar__text" style={{ color: "#5f5a54" }}>Spa Bali Moon offers high-quality traditional massages and spa therapies, with outcall and home services by skilled therapists specializing in Balinese Body Massage.</p>
                     </div>
                     <div className="sidebar__contact-info mt-30">
-                        <h5 className="mb-20" style={{ color: "#2f2924" }}>Contact Info</h5>
+                        <p className="mb-20" style={{ color: "#2f2924", fontFamily: "var(--title-font)", fontSize: "20px", fontWeight: 500, lineHeight: "30px" }}>Contact Info</p>
                         <ul>
                             <li><i className="fa-solid fa-location-dot" style={{ color: "#A78627" }}></i> <Link href="/#0" style={{ color: "#5f5a54" }}>Jl. Panggung Sari No. 30, Seminyak, Bali</Link></li>
                             <li className="py-2"><i className="fa-solid fa-phone-volume" style={{ color: "#A78627" }}></i> <Link href="tel:+6287863175144" style={{ color: "#5f5a54" }}>+62 878-6317-5144</Link></li>

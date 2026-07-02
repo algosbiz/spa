@@ -24,7 +24,7 @@ export default function Home6_Faq({
                         <div className={showImage ? "col-xxl-6 content-column" : "col-12 content-column"}>
                             <div className="inner-column">
                                 <div className="section-header">
-                                    <h4 className="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                    <p className="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
                                         <svg className="icon" width="25" height="26" viewBox="0 0 25 26" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <g clipPath="url(#clip0_1_475)">
@@ -49,7 +49,7 @@ export default function Home6_Faq({
                                             </g>
                                         </svg>
                                         {subTitle}
-                                    </h4>
+                                    </p>
                                     <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{title}</h2>
                                 </div>
                                 <div className="faq-accordion wow fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">

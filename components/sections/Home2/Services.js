@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 export default function Home2_Services({
     subTitle = "Services",
     title = (<>Our Services Will Make <br /> You Glow</>),
+    animateHeading = true,
 }) {
     const swiperOptions = {
         modules: [Autoplay, Navigation],
@@ -50,7 +51,10 @@ export default function Home2_Services({
             <section id="services" className="service-section-two section__decoration-top section__decoration-bottom pt-130 pb-100">
                 <div className="container">
                     <div className="section-header mb-60 center">
-                        <h4 className="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <p
+                            className={`sub-title${animateHeading ? " wow fadeInUp" : ""}`}
+                            {...(animateHeading ? { "data-wow-delay": "00ms", "data-wow-duration": "1500ms" } : {})}
+                        >
                             <svg className="icon" width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clipPath="url(#clip0_1_475)">
                                     <path
@@ -74,8 +78,11 @@ export default function Home2_Services({
                                 </g>
                             </svg>
                             {subTitle}
-                        </h4>
-                        <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{title}</h2>
+                        </p>
+                        <h2
+                            className={`title${animateHeading ? " wow fadeInUp" : ""}`}
+                            {...(animateHeading ? { "data-wow-delay": "200ms", "data-wow-duration": "1500ms" } : {})}
+                        >{title}</h2>
                     </div>
                     <Swiper {...swiperOptions} className="swiper service-slider-two">
                         <div className="swiper-wrapper">

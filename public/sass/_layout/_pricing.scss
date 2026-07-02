@@ -74,6 +74,23 @@
 				font-weight: 500;
 			}
 		}
+		.package-price {
+			color: var(--headings-color);
+			font-family: var(--title-font);
+			font-size: 55px;
+			font-weight: 300;
+			line-height: 65px;
+			white-space: nowrap;
+			@include breakpoint(max-md) {
+				font-size: 30px;
+				line-height: 40px;
+			}
+		}
+		.package-name {
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 28px;
+		}
 		ul {
 			li {
 				color: var(--headings-color);
@@ -85,7 +102,7 @@
 			.price {
 				color: var(--theme-color-white);
 			}
-			h6 {
+			.package-name {
 				color: var(--theme-color-white);
 			}
 			ul {

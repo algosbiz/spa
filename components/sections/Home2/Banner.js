@@ -13,6 +13,7 @@ export default function Home2_Banner({
     image = "/images/banner/banner-two-image1.jpg",
     buttonText = "Book Now",
     buttonLink = "https://wa.me/6287863175144",
+    animateContent = true,
 }) {
     const swiperOptions = {
         modules: [Pagination],
@@ -35,7 +36,10 @@ export default function Home2_Banner({
                             <div className="slide-bg" style={{ backgroundImage: `url(${image})` }}></div>
                             <div className="container">
                                 <div className=" banner-two__content">
-                                    <h4 className="sub-title" data-animation="fadeInUp" data-delay=".3s">
+                                    <p
+                                        className="sub-title"
+                                        {...(animateContent ? { "data-animation": "fadeInUp", "data-delay": ".3s" } : {})}
+                                    >
                                         <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <g clipPath="url(#clip0_1_451)">
@@ -60,9 +64,18 @@ export default function Home2_Banner({
                                             </g>
                                         </svg>
                                         {subTitle}
-                                    </h4>
-                                    <h1 className="title" data-animation="fadeInUp" data-delay=".5s"><span>{titleSpan}</span> {title}</h1>
-                                    <Link href={buttonLink} target="_blank" rel="noopener noreferrer" className="btn-two-light mt-50" data-animation="fadeInUp" data-delay="1s">{buttonText}
+                                    </p>
+                                    <h1
+                                        className="title"
+                                        {...(animateContent ? { "data-animation": "fadeInUp", "data-delay": ".5s" } : {})}
+                                    ><span>{titleSpan}</span> {title}</h1>
+                                    <Link
+                                        href={buttonLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn-two-light mt-50"
+                                        {...(animateContent ? { "data-animation": "fadeInUp", "data-delay": "1s" } : {})}
+                                    >{buttonText}
                                         <span className="icon_box">
                                             <i className="fa-regular icon_first fa-arrow-right-long"></i>
                                             <i className="fa-regular icon_second fa-arrow-right-long"></i>

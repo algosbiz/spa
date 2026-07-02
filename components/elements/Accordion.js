@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const AccordionItem = ({ question, answer, isOpen, onClick }) => (
   <div className="accordion-item">
-    <h2 className="accordion-header">
+    <h3 className="accordion-header">
       <button
         className={`accordion-button ${isOpen ? "" : "collapsed"}`}
         type="button"
@@ -10,7 +10,7 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => (
       >
         {question}
       </button>
-    </h2>
+    </h3>
     <div className={`accordion-collapse collapse ${isOpen ? "show" : ""}`}>
       <div className="accordion-body">
         <p>{answer}</p>

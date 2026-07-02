@@ -46,7 +46,7 @@ export default function Home3_Pricing({
             <div className="container">
                 <div className="section-header__flex mb-60">
                     <div>
-                        <h4 className="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <p className="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
                             <svg className="icon" width="25" height="26" viewBox="0 0 25 26" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g clipPath="url(#clip0_1_475)">
@@ -71,7 +71,7 @@ export default function Home3_Pricing({
                                 </g>
                             </svg>
                             {subTitle}
-                        </h4>
+                        </p>
                         <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{title}</h2>
                     </div>
                     <div className="flex-text wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
@@ -87,8 +87,8 @@ export default function Home3_Pricing({
                         <div className="col-lg-4 col-xl-3 pricing-block">
                             <div className="inner-box">
                                 <div className="shape"> <img src="/images/pricing/shape.png" alt="image"/> </div>
-                                <h2 className="price">{packages[0].price} {packages[0].suffix && <span>{packages[0].suffix}</span>}</h2>
-                                <h6>{packages[0].name}</h6>
+                                <p className="price package-price">{packages[0].price} {packages[0].suffix && <span>{packages[0].suffix}</span>}</p>
+                                <h3 className="package-name">{packages[0].name}</h3>
                                 <ul>
                                     {packages[0].treatments.map((treatment) => <li key={treatment}>{treatment}</li>)}
                                 </ul>
@@ -107,8 +107,8 @@ export default function Home3_Pricing({
                         <div className="col-lg-4 col-xl-3 order-2 order-lg-1 pricing-block">
                             <div className="inner-box">
                                 <div className="shape"><img src="/images/pricing/shape.png" alt="image"/></div>
-                                <h2 className="price">{packages[1].price} {packages[1].suffix && <span>{packages[1].suffix}</span>}</h2>
-                                <h6>{packages[1].name}</h6>
+                                <p className="price package-price">{packages[1].price} {packages[1].suffix && <span>{packages[1].suffix}</span>}</p>
+                                <h3 className="package-name">{packages[1].name}</h3>
                                 <ul>
                                     {packages[1].treatments.map((treatment) => <li key={treatment}>{treatment}</li>)}
                                 </ul>
@@ -134,8 +134,8 @@ export default function Home3_Pricing({
                         <div className="col-lg-4 col-xl-3 pricing-block">
                             <div className="inner-box">
                                 <div className="shape"> <img src="/images/pricing/shape.png" alt="image"/> </div>
-                                <h2 className="price">{packages[2].price} {packages[2].suffix && <span>{packages[2].suffix}</span>}</h2>
-                                <h6>{packages[2].name}</h6>
+                                <p className="price package-price">{packages[2].price} {packages[2].suffix && <span>{packages[2].suffix}</span>}</p>
+                                <h3 className="package-name">{packages[2].name}</h3>
                                 <ul>
                                     {packages[2].treatments.map((treatment) => <li key={treatment}>{treatment}</li>)}
                                 </ul>
@@ -154,8 +154,8 @@ export default function Home3_Pricing({
                         <div className="col-lg-4 col-xl-3 order-2 order-lg-1 pricing-block">
                             <div className="inner-box">
                                 <div className="shape"><img src="/images/pricing/shape.png" alt="image"/></div>
-                                <h2 className="price">{packages[3].price} {packages[3].suffix && <span>{packages[3].suffix}</span>}</h2>
-                                <h6>{packages[3].name}</h6>
+                                <p className="price package-price">{packages[3].price} {packages[3].suffix && <span>{packages[3].suffix}</span>}</p>
+                                <h3 className="package-name">{packages[3].name}</h3>
                                 <ul>
                                     {packages[3].treatments.map((treatment) => <li key={treatment}>{treatment}</li>)}
                                 </ul>

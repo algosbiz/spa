@@ -86,6 +86,7 @@ export default function Home2() {
             subTitle="Ancient Healing"
             titleSpan="Balinese Massage"
             title="Treatment"
+            animateContent={false}
           />
           <AboutOld
             subTitle="A Traditional Wellness"
@@ -96,15 +97,19 @@ export default function Home2() {
             feature2Title="Adjustable Pressure"
             feature2Text="Suitable for both gentle relaxation and firmer muscle relief sessions."
           />
-          <Pricing
-            subTitle="Find Yours"
-            title="Our Package Options"
-            text="Balinese massage is often combined with treatments such as facials, cream baths, and nail care to create a more complete spa experience. Our treatment packages are created for guests looking to relax, refresh, and make the most of their massage time in Bali."
-            packages={packageOptions}
-          />
+          <div className="balinese-massage-pricing">
+            <Pricing
+              subTitle="Find Yours"
+              title="Our Package Options"
+              text="Balinese massage is often combined with treatments such as facials, cream baths, and nail care to create a more complete spa experience. Our treatment packages are created for guests looking to relax, refresh, and make the most of their massage time in Bali."
+              packages={packageOptions}
+            />
+          </div>
           {/* <Marquee /> */}
           {/* <Product /> */}
-          <Funfact items={serviceHighlights} />
+          <div className="balinese-massage-funfact">
+            <Funfact items={serviceHighlights} />
+          </div>
           {/* <News /> */}
           {/* <Instagram /> */}
 
@@ -177,10 +182,56 @@ export default function Home2() {
             />
           </div>
           <div className="section__decoration-top section__decoration-bottom bg-sub ">
-            <Services />
+            <Services animateHeading={false} />
           </div>
         </Layout>
         <style jsx global>{`
+          .balinese-massage-pricing .pricing-section-three > .container,
+          .balinese-massage-funfact .funfact-section > .container {
+            max-width: 1200px;
+          }
+
+          .balinese-massage-pricing .pricing-section-three .shape2 {
+            bottom: 30px;
+          }
+
+          @media (min-width: 992px) {
+            .balinese-massage-pricing
+              .pricing-section-three
+              .pricing-block
+              .inner-box {
+              padding: 20px;
+            }
+
+            .balinese-massage-pricing
+              .pricing-section-three
+              .image-column {
+              display: flex;
+            }
+
+            .balinese-massage-pricing
+              .pricing-section-three
+              .image-column
+              .image-box {
+              flex: 1;
+              position: relative;
+              min-height: 0;
+            }
+
+            .balinese-massage-pricing
+              .pricing-section-three
+              .image-column
+              .image-box
+              img {
+              position: absolute;
+              inset: 0;
+              display: block;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
           @media (min-width: 1400px) {
             .balinese-massage-faq .faq-section .content-column .inner-column {
               padding-right: 32px;

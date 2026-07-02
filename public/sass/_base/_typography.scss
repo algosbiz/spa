@@ -577,7 +577,7 @@ br {
 		border: none;
 		border-radius: 0px;
 		margin-bottom: 10px;
-		h2 {
+		.accordion-header {
 			button {
 				font-size: 22px;
 				line-height: 35px;
@@ -649,6 +649,7 @@ br {
 			font-size: 20px;
 			line-height: 30px;
 			font-weight: 400;
+			font-family: var(--title-font);
 			@include flex;
 			gap: 10px;
 			text-transform: capitalize;
