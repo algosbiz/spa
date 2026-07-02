@@ -82,12 +82,13 @@ export default function Home2() {
     return (
       <>
         <Layout HeaderStyle="one" FooterStyle="two">
-          <Banner
-            subTitle="Ancient Healing"
-            titleSpan="Balinese Massage"
-            title="Treatment"
-            animateContent={false}
-          />
+          <div className="balinese-massage-banner">
+            <Banner
+              subTitle="Ancient Healing"
+              titleSpan="Balinese Massage"
+              title="Treatment"
+            />
+          </div>
           <AboutOld
             subTitle="A Traditional Wellness"
             title={<>The Story: What Makes Balinese Massage Unique?</>}
@@ -181,11 +182,19 @@ export default function Home2() {
               closingText="Reserve a session that fits your plans and enjoy authentic Balinese relaxation wherever you stay in Bali"
             />
           </div>
-          <div className="section__decoration-top section__decoration-bottom bg-sub ">
-            <Services animateHeading={false} />
+          <div className="balinese-massage-services section__decoration-top section__decoration-bottom bg-sub ">
+            <Services title="Our Services Will Make You Glow" />
           </div>
         </Layout>
         <style jsx global>{`
+          .balinese-massage-banner .banner-two__content .title {
+            max-width: 1200px;
+          }
+
+          .balinese-massage-banner .banner-two__content .title span {
+            display: inline;
+          }
+
           .balinese-massage-pricing .pricing-section-three > .container,
           .balinese-massage-funfact .funfact-section > .container {
             max-width: 1200px;
@@ -237,6 +246,15 @@ export default function Home2() {
               padding-right: 32px;
               padding-left: 32px;
             }
+          }
+
+          .balinese-massage-services
+            .service-section-two
+            .section-header
+            .title {
+            max-width: 720px;
+            margin-right: auto;
+            margin-left: auto;
           }
         `}</style>
       </>
