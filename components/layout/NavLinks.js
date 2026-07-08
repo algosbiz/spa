@@ -11,6 +11,12 @@ const NavLinks = () => {
                 <Link href="/#0">Treatments <i className="fa-solid fa-angle-down"></i></Link>
                 <ul className="sub-menu">
                     <li><Link href="/balinese-massage">Balinese Massage</Link></li>
+                    <li><Link href="/bali-moon-facial">Bali Moon Facial</Link></li>
+                    <li><Link href="/body-scrub">Body Scrub</Link></li>
+                    <li><Link href="/cellulite-massage">Cellulite Massage</Link></li>
+                    <li><Link href="/couple-massage">Couple Massage</Link></li>
+                    <li><Link href="/virgin-coconut-oil-massage">Coconut Oil Massage</Link></li>
+                    <li><Link href="/hair-creambath">Hair Creambath</Link></li>
                 </ul>
             </li>
             <li><Link href="/reservation">Reservation</Link></li>

@@ -78,100 +78,43 @@ export default function Home3_Pricing({
                         <p>{text}</p>
                     </div>
                 </div>
-                <div className="outer-box mb-50">
-                    <div className="row g-4">
-                        <div className="col-lg-8 col-xl-9 image-column">
-                            <div className="image-box"> <img src="/images/pricing/pricing-three-image1.jpg" alt="image"/>
+                {packages.map((packageItem, index) => {
+                    const isReversed = index % 2 === 1;
+                    const imageSrc = isReversed ? "/images/pricing/pricing-three-image2.jpg" : "/images/pricing/pricing-three-image1.jpg";
+
+                    return (
+                        <div className={`outer-box ${index < packages.length - 1 ? "mb-50" : ""}`} key={`${packageItem.name}-${packageItem.price}`}>
+                            <div className="row g-4">
+                                {!isReversed && (
+                                    <div className="col-lg-8 col-xl-9 image-column">
+                                        <div className="image-box"><img src={imageSrc} alt="image"/></div>
+                                    </div>
+                                )}
+                                <div className={`col-lg-4 col-xl-3 pricing-block ${isReversed ? "order-2 order-lg-1" : ""}`}>
+                                    <div className="inner-box">
+                                        <div className="shape"><img src="/images/pricing/shape.png" alt="image"/></div>
+                                        <p className="price package-price">{packageItem.price} {packageItem.suffix && <span>{packageItem.suffix}</span>}</p>
+                                        <h3 className="package-name">{packageItem.name}</h3>
+                                        <ul>
+                                            {packageItem.treatments.map((treatment) => <li key={treatment}>{treatment}</li>)}
+                                        </ul>
+                                        <Link href="https://wa.me/6287863175144" target="_blank" rel="noopener noreferrer" className="btn-two mt-35">Book Now
+                                            <span className="icon_box">
+                                                <i className="fa-regular icon_first fa-arrow-right-long"></i>
+                                                <i className="fa-regular icon_second fa-arrow-right-long"></i>
+                                            </span>
+                                        </Link>
+                                    </div>
+                                </div>
+                                {isReversed && (
+                                    <div className="col-lg-8 col-xl-9 image-column order-1 order-lg-2">
+                                        <div className="image-box"><img src={imageSrc} alt="image"/></div>
+                                    </div>
+                                )}
                             </div>
                         </div>
-                        <div className="col-lg-4 col-xl-3 pricing-block">
-                            <div className="inner-box">
-                                <div className="shape"> <img src="/images/pricing/shape.png" alt="image"/> </div>
-                                <p className="price package-price">{packages[0].price} {packages[0].suffix && <span>{packages[0].suffix}</span>}</p>
-                                <h3 className="package-name">{packages[0].name}</h3>
-                                <ul>
-                                    {packages[0].treatments.map((treatment) => <li key={treatment}>{treatment}</li>)}
-                                </ul>
-                                <Link href="https://wa.me/6287863175144" target="_blank" rel="noopener noreferrer" className="btn-two mt-35">Book Now
-                                    <span className="icon_box">
-                                        <i className="fa-regular icon_first fa-arrow-right-long"></i>
-                                        <i className="fa-regular icon_second fa-arrow-right-long"></i>
-                                    </span>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="outer-box mb-50">
-                    <div className="row g-4">
-                        <div className="col-lg-4 col-xl-3 order-2 order-lg-1 pricing-block">
-                            <div className="inner-box">
-                                <div className="shape"><img src="/images/pricing/shape.png" alt="image"/></div>
-                                <p className="price package-price">{packages[1].price} {packages[1].suffix && <span>{packages[1].suffix}</span>}</p>
-                                <h3 className="package-name">{packages[1].name}</h3>
-                                <ul>
-                                    {packages[1].treatments.map((treatment) => <li key={treatment}>{treatment}</li>)}
-                                </ul>
-                                <Link href="https://wa.me/6287863175144" target="_blank" rel="noopener noreferrer" className="btn-two mt-35">Book Now
-                                    <span className="icon_box">
-                                        <i className="fa-regular icon_first fa-arrow-right-long"></i>
-                                        <i className="fa-regular icon_second fa-arrow-right-long"></i>
-                                    </span>
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="col-lg-8 col-xl-9 image-column order-1 order-lg-2">
-                            <div className="image-box"><img src="/images/pricing/pricing-three-image2.jpg" alt="image"/></div>
-                        </div>
-                    </div>
-                </div>
-                <div className="outer-box mb-50">
-                    <div className="row g-4">
-                        <div className="col-lg-8 col-xl-9 image-column">
-                            <div className="image-box"> <img src="/images/pricing/pricing-three-image1.jpg" alt="image"/>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-xl-3 pricing-block">
-                            <div className="inner-box">
-                                <div className="shape"> <img src="/images/pricing/shape.png" alt="image"/> </div>
-                                <p className="price package-price">{packages[2].price} {packages[2].suffix && <span>{packages[2].suffix}</span>}</p>
-                                <h3 className="package-name">{packages[2].name}</h3>
-                                <ul>
-                                    {packages[2].treatments.map((treatment) => <li key={treatment}>{treatment}</li>)}
-                                </ul>
-                                <Link href="https://wa.me/6287863175144" target="_blank" rel="noopener noreferrer" className="btn-two mt-35">Book Now
-                                    <span className="icon_box">
-                                        <i className="fa-regular icon_first fa-arrow-right-long"></i>
-                                        <i className="fa-regular icon_second fa-arrow-right-long"></i>
-                                    </span>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="outer-box">
-                    <div className="row g-4">
-                        <div className="col-lg-4 col-xl-3 order-2 order-lg-1 pricing-block">
-                            <div className="inner-box">
-                                <div className="shape"><img src="/images/pricing/shape.png" alt="image"/></div>
-                                <p className="price package-price">{packages[3].price} {packages[3].suffix && <span>{packages[3].suffix}</span>}</p>
-                                <h3 className="package-name">{packages[3].name}</h3>
-                                <ul>
-                                    {packages[3].treatments.map((treatment) => <li key={treatment}>{treatment}</li>)}
-                                </ul>
-                                <Link href="https://wa.me/6287863175144" target="_blank" rel="noopener noreferrer" className="btn-two mt-35">Book Now
-                                    <span className="icon_box">
-                                        <i className="fa-regular icon_first fa-arrow-right-long"></i>
-                                        <i className="fa-regular icon_second fa-arrow-right-long"></i>
-                                    </span>
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="col-lg-8 col-xl-9 image-column order-1 order-lg-2">
-                            <div className="image-box"><img src="/images/pricing/pricing-three-image2.jpg" alt="image"/></div>
-                        </div>
-                    </div>
-                </div>
+                    );
+                })}
             </div>
         </section>
         </>

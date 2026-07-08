@@ -23,7 +23,7 @@ export default function Home5() {
       <Layout HeaderStyle="one" FooterStyle="two">
         <Banner />
         <Step />
-        <Services />
+
         <About />
         <Feature />
 
@@ -70,6 +70,7 @@ export default function Home5() {
         <Pricing showMore />
         {/* <Contact /> */}
         {/* <News /> */}
+        <Services />
         <Faq
           showImage={false}
           subTitle="Get to know us"
