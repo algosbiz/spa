@@ -189,7 +189,7 @@ export default function HairCreambath() {
         }
 
         .hair-creambath-pricing .pricing-section-three .shape2 {
-          bottom: 30px;
+          bottom: 70px;
         }
 
         @media (min-width: 992px) {

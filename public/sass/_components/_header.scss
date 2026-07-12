@@ -342,17 +342,28 @@
 				padding: 10px 30px;
 				font-weight: 800;
 				font-family: var(--text-font);
-				color: var(--theme-color-white);
-				background-color: var(--theme-color1);
+				color: var(--theme-color1);
+				background-color: transparent;
+				border: 1px solid var(--theme-color1);
 				border-radius: 35px;
+				transition: all 0.3s;
 				svg {
 					margin-left: 10px;
 					margin-top: -5px;
 					transition: all 0.3s;
+					path {
+						fill: var(--theme-color1);
+						transition: fill 0.3s;
+					}
 				}
 				&:hover {
+					color: var(--theme-color-white);
+					background-color: var(--theme-color1);
 					svg {
 						transform: rotate(-360deg);
+						path {
+							fill: var(--theme-color-white);
+						}
 					}
 				}
 			}

@@ -189,7 +189,7 @@ export default function CoupleMassage() {
         }
 
         .couple-massage-pricing .pricing-section-three .shape2 {
-          bottom: 30px;
+          bottom: 70px;
         }
 
         @media (min-width: 992px) {

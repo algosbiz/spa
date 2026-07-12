@@ -4145,9 +4145,11 @@ textarea.form-control {
   padding: 10px 30px;
   font-weight: 800;
   font-family: var(--text-font);
-  color: var(--theme-color-white);
-  background-color: var(--theme-color1);
+  color: var(--theme-color1);
+  background-color: transparent;
+  border: 1px solid var(--theme-color1);
   border-radius: 35px;
+  transition: all 0.3s;
 }
 
 .header__main .menu-btns .book-now svg {
@@ -4155,9 +4157,21 @@ textarea.form-control {
   margin-top: -5px;
   transition: all 0.3s;
 }
+.header__main .menu-btns .book-now svg path {
+  fill: var(--theme-color1);
+  transition: fill 0.3s;
+}
+
+.header__main .menu-btns .book-now:hover {
+  color: var(--theme-color-white);
+  background-color: var(--theme-color1);
+}
 
 .header__main .menu-btns .book-now:hover svg {
   transform: rotate(-360deg);
+}
+.header__main .menu-btns .book-now:hover svg path {
+  fill: var(--theme-color-white);
 }
 
 .header__main .menu-btns .shop-cart {
@@ -8152,7 +8166,7 @@ textarea.form-control {
 
 .pricing-section-three .shape2 {
   position: absolute;
-  bottom: 0px;
+  bottom: 70px;
   right: 10px;
   z-index: -1;
 }
