@@ -33,12 +33,13 @@ export default function Home3_Pricing({
     title = <>Our Flexible Price</>,
     text = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas magna mi ut arcu. Phasellus nec odio orci. Nunc id massa ante. Suspendisse sit amet neque euismod, convallis quam eget,",
     packages = defaultPackages,
+    leftShapeSrc = "/images/shape/pricing-three-shape-left.png",
 }) {
     return (
         <>
         <section className="pricing-section-three bg-sub section__decoration-top section__decoration-bottom pt-130 pb-170">
             <div className="shape1">
-                <img className="animation__arryUpDown" src="/images/shape/pricing-three-shape-left.png" alt="image"/>
+                <img className="animation__arryUpDown" src={leftShapeSrc} alt="image"/>
             </div>
             <div className="shape2">
                 <img className="animation__arryLeftRight" src="/images/shape/pricing-three-shape-right.png" alt="image"/>

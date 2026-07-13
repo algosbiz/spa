@@ -104,6 +104,7 @@ export default function Home2() {
               title="Our Package Options"
               text="Balinese massage is often combined with treatments such as facials, cream baths, and nail care to create a more complete spa experience. Our treatment packages are created for guests looking to relax, refresh, and make the most of their massage time in Bali."
               packages={packageOptions}
+              leftShapeSrc="/images/shape/testimonial-two-shape-left.png"
             />
           </div>
           {/* <Marquee /> */}
@@ -201,7 +202,7 @@ export default function Home2() {
           }
 
           .balinese-massage-pricing .pricing-section-three .shape2 {
-            bottom: 30px;
+            bottom: 70px;
           }
 
           @media (min-width: 992px) {

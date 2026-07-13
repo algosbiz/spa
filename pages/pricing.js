@@ -21,7 +21,9 @@ export default function Home() {
         <Banner />
         <Video />
         {/* <AboutReverse /> */}
-        <PackageSection />
+        <div className="pricing-package-section">
+          <PackageSection />
+        </div>
         <PackageIntroText />
         {/* <Pricing /> */}
         <PackagePricing />
@@ -33,6 +35,11 @@ export default function Home() {
           <ReserveCta />
         </div>
       </Layout>
+      <style jsx global>{`
+        .pricing-package-section .package-section .shape2 {
+          bottom: 60px;
+        }
+      `}</style>
     </>
   );
 }

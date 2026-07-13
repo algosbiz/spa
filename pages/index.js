@@ -67,10 +67,14 @@ export default function Home5() {
         <PackageSection />
         <PackageIntroText />
         {/* <Video /> */}
-        <Pricing showMore />
+        <div className="homepage-pricing-services-join homepage-pricing-section">
+          <Pricing showMore />
+        </div>
         {/* <Contact /> */}
         {/* <News /> */}
-        <Services />
+        <div className="homepage-pricing-services-join homepage-services-section">
+          <Services />
+        </div>
         <Faq
           showImage={false}
           subTitle="Get to know us"
@@ -102,6 +106,16 @@ export default function Home5() {
           <ReserveCta />
         </div>
       </Layout>
+      <style jsx global>{`
+        .homepage-pricing-section .pricing-section-five {
+          padding-bottom: 0 !important;
+        }
+
+        .homepage-pricing-section .pricing-section-five::after,
+        .homepage-services-section .service-section::before {
+          display: none;
+        }
+      `}</style>
     </>
   );
 }
