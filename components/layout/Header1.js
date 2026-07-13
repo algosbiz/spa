@@ -3,18 +3,17 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import NavLinks from './NavLinks';
 import MobileMenu from './MobileMenu';
+import { TREATMENT_LINKS } from '../../lib/treatments';
 
 // Searchable site destinations (pages + treatments). Add entries here to extend search.
 const SEARCH_INDEX = [
     { title: 'Home', href: '/', keywords: 'home main spa bali moon' },
     { title: 'Pricelist', href: '/pricing', keywords: 'price pricing cost packages rates list' },
-    { title: 'Balinese Massage', href: '/balinese-massage', keywords: 'treatment balinese massage body relax' },
-    { title: 'Bali Moon Facial', href: '/bali-moon-facial', keywords: 'treatment facial bali moon skin rejuvenation tea tree gold mask skincare' },
-    { title: 'Body Scrub', href: '/body-scrub', keywords: 'treatment body scrub skin renewal exfoliation lulur coconut chocolate strawberry bengkoang jasmine green tea spa sari' },
-    { title: 'Cellulite Massage', href: '/cellulite-massage', keywords: 'treatment cellulite massage body contouring smoother skin circulation lymphatic thighs hips buttocks abdomen' },
-    { title: 'Couple Massage', href: '/couple-massage', keywords: 'treatment couple massage couples two pax honeymoon anniversary side by side shared wellness' },
-    { title: 'Virgin Coconut Oil Massage', href: '/virgin-coconut-oil-massage', keywords: 'treatment virgin cold press coconut oil massage natural nourishment skin hydration moisturising relaxation' },
-    { title: 'Hair Creambath', href: '/hair-creambath', keywords: 'treatment hair creambath cream bath scalp wellness ginseng avocado aloe vera loreal conditioning' },
+    ...TREATMENT_LINKS.map((item) => ({
+        title: item.title,
+        href: item.href,
+        keywords: `treatment ${item.keywords}`,
+    })),
     { title: 'Reservation', href: '/reservation', keywords: 'reserve reservation appointment book booking' },
     { title: 'Blog', href: '/blog', keywords: 'blog news articles posts tips' },
     { title: 'Contact', href: '/contact', keywords: 'contact reach phone email location address whatsapp' },
@@ -28,11 +27,13 @@ const SEARCH_INDEX = [
     { title: 'Terms & Conditions', href: '/terms-conditions', keywords: 'terms conditions rules booking' },
 ];
 
+const SIDEBAR_TRANSITION_FALLBACK_MS = 400;
+
 const Header1 = ({ scroll }) => {
     const router = useRouter();
     const [searchToggle, setSearchToggle] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
-    const [sidebarToggle, setSidebarToggle] = useState(false);
+    const [sidebarState, setSidebarState] = useState('closed');
     const [darkMode, setDarkMode] = useState(false);
     const searchRef = useRef(null);
     const searchInputRef = useRef(null);
@@ -62,7 +63,30 @@ const Header1 = ({ scroll }) => {
     }, []);
 
     const handleToggleSearch = () => setSearchToggle((prev) => !prev);
-    const handleToggleSidebar = () => setSidebarToggle(!sidebarToggle);
+    const handleOpenSidebar = () => setSidebarState('open');
+    const handleCloseSidebar = () => setSidebarState('closing');
+
+    const handleSidebarTransitionEnd = (event) => {
+        if (
+            event.target === event.currentTarget &&
+            event.propertyName === 'transform' &&
+            sidebarState === 'closing'
+        ) {
+            setSidebarState('closed');
+        }
+    };
+
+    // Complete the close even when reduced-motion disables transition events.
+    useEffect(() => {
+        if (sidebarState !== 'closing') return;
+
+        const timeout = window.setTimeout(
+            () => setSidebarState('closed'),
+            SIDEBAR_TRANSITION_FALLBACK_MS
+        );
+
+        return () => window.clearTimeout(timeout);
+    }, [sidebarState]);
 
     const closeSearch = () => {
         setSearchToggle(false);
@@ -166,7 +190,14 @@ const Header1 = ({ scroll }) => {
                                     </defs>
                                 </svg>
                             </Link>
-                            <button onClick={handleToggleSidebar} className="menubars" type="button" data-bs-toggle="offcanvas" data-bs-target="#menubar">
+                            <button
+                                onClick={handleOpenSidebar}
+                                className="menubars d-block d-lg-none"
+                                type="button"
+                                aria-controls="menubar"
+                                aria-expanded={sidebarState === 'open'}
+                                aria-label="Open menu"
+                            >
                                 <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M8.55566 11H1.55566C1.29045 11 1.03609 11.1054 0.848557 11.2929C0.661021 11.4804 0.555664 11.7348 0.555664 12V19C0.555664 19.2652 0.661021 19.5196 0.848557 19.7071C1.03609 19.8946 1.29045 20 1.55566 20H8.55566C8.82088 20 9.07523 19.8946 9.26277 19.7071C9.45031 19.5196 9.55566 19.2652 9.55566 19V12C9.55566 11.7348 9.45031 11.4804 9.26277 11.2929C9.07523 11.1054 8.82088 11 8.55566 11ZM7.55566 18H2.55566V13H7.55566V18ZM19.5557 0H12.5557C12.2904 0 12.0361 0.105357 11.8486 0.292893C11.661 0.48043 11.5557 0.734784 11.5557 1V8C11.5557 8.26522 11.661 8.51957 11.8486 8.70711C12.0361 8.89464 12.2904 9 12.5557 9H19.5557C19.8209 9 20.0752 8.89464 20.2628 8.70711C20.4503 8.51957 20.5557 8.26522 20.5557 8V1C20.5557 0.734784 20.4503 0.48043 20.2628 0.292893C20.0752 0.105357 19.8209 0 19.5557 0ZM18.5557 7H13.5557V2H18.5557V7ZM19.5557 11H12.5557C12.2904 11 12.0361 11.1054 11.8486 11.2929C11.661 11.4804 11.5557 11.7348 11.5557 12V19C11.5557 19.2652 11.661 19.5196 11.8486 19.7071C12.0361 19.8946 12.2904 20 12.5557 20H19.5557C19.8209 20 20.0752 19.8946 20.2628 19.7071C20.4503 19.5196 20.5557 19.2652 20.5557 19V12C20.5557 11.7348 20.4503 11.4804 20.2628 11.2929C20.0752 11.1054 19.8209 11 19.5557 11ZM18.5557 18H13.5557V13H18.5557V18ZM8.55566 0H1.55566C1.29045 0 1.03609 0.105357 0.848557 0.292893C0.661021 0.48043 0.555664 0.734784 0.555664 1V8C0.555664 8.26522 0.661021 8.51957 0.848557 8.70711C1.03609 8.89464 1.29045 9 1.55566 9H8.55566C8.82088 9 9.07523 8.89464 9.26277 8.70711C9.45031 8.51957 9.55566 8.26522 9.55566 8V1C9.55566 0.734784 9.45031 0.48043 9.26277 0.292893C9.07523 0.105357 8.82088 0 8.55566 0ZM7.55566 7H2.55566V2H7.55566V7Z"
@@ -180,10 +211,16 @@ const Header1 = ({ scroll }) => {
             {/* <!-- Header area end here --> */}
 
             {/* <!-- Sidebar area start here --> */}
-            <div className={`sidebar-area sidebar-area--white offcanvas offcanvas-end ${sidebarToggle ? 'show' : ''}`} id="menubar" style={{ backgroundColor: "#ffffff", borderLeft: "1px solid rgba(95, 90, 84, 0.12)" }}>
+            <div
+                className={`sidebar-area sidebar-area--white offcanvas offcanvas-end ${sidebarState === 'open' ? 'show' : ''} ${sidebarState === 'closing' ? 'hiding' : ''}`}
+                id="menubar"
+                aria-hidden={sidebarState === 'closed'}
+                onTransitionEnd={handleSidebarTransitionEnd}
+                style={{ backgroundColor: "#ffffff", borderLeft: "1px solid rgba(95, 90, 84, 0.12)" }}
+            >
                 <div className="offcanvas-header">
                     <Link href="/" className="logo"> <img src="/images/logo/SMBtitle.svg" alt="logo"/></Link>
-                    <button type="button" className="btn-close" onClick={handleToggleSidebar}><i
+                    <button type="button" className="btn-close" onClick={handleCloseSidebar}><i
                             className="fa-regular fa-xmark"></i></button>
                 </div>
                 <div className="offcanvas-body sidebar__body">

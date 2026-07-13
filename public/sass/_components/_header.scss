@@ -560,18 +560,25 @@
 		}
 	}
 	&__contact-info {
-		ul {
-			li {
-				&:not(:last-child) {
-					margin-bottom: 10px;
-				}
-				i {
-					color: var(--theme-color-white);
-					margin-right: 8px;
-				}
-				a {
-					color: var(--text-color2);
-				}
+			ul {
+				li {
+					display: flex;
+					align-items: flex-start;
+					gap: 12px;
+					&:not(:last-child) {
+						margin-bottom: 10px;
+					}
+					i {
+						color: var(--theme-color-white);
+						flex: 0 0 18px;
+						margin-top: 6px;
+						text-align: center;
+					}
+					a {
+						flex: 1 1 auto;
+						min-width: 0;
+						color: var(--text-color2);
+					}
 			}
 		}
 	}

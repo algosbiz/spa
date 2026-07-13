@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
+import { TREATMENT_LINKS } from "../../lib/treatments";
 
 const MobileMenu = () => {
     const [isActive, setIsActive] = useState({
@@ -20,6 +21,8 @@ const MobileMenu = () => {
         }
     };
 
+    const treatmentsExpanded = isActive.key === 2;
+
     return (
         <>
             <ul>
@@ -27,16 +30,32 @@ const MobileMenu = () => {
                 <li><Link href="/pricing">Pricelist</Link></li>
                 <li>
                     <Link href="#0">Treatments</Link>
-                    <ul className={isActive.key === 2 ? "sub-menu d-block" : "d-none"}>
-                        <li><Link href="/balinese-massage">Balinese Massage</Link></li>
-                        <li><Link href="/bali-moon-facial">Bali Moon Facial</Link></li>
-                        <li><Link href="/body-scrub">Body Scrub</Link></li>
-                        <li><Link href="/cellulite-massage">Cellulite Massage</Link></li>
-                        <li><Link href="/couple-massage">Couple Massage</Link></li>
-                        <li><Link href="/virgin-coconut-oil-massage">Coconut Oil Massage</Link></li>
-                        <li><Link href="/hair-creambath">Hair Creambath</Link></li>
-                    </ul>
-                    <div className={isActive.key === 2 ? "dropdown-btn active" : "dropdown-btn"} onClick={() => handleClick(2)}><i className="fa fa-angle-down" /></div>
+                    <div
+                        className={`mobile-submenu ${treatmentsExpanded ? "is-open" : ""}`}
+                        aria-hidden={!treatmentsExpanded}
+                    >
+                        <ul className="sub-menu">
+                            {TREATMENT_LINKS.map((item) => (
+                                <li key={item.href}><Link href={item.href}>{item.title}</Link></li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div
+                        className={treatmentsExpanded ? "dropdown-btn active" : "dropdown-btn"}
+                        onClick={() => handleClick(2)}
+                        role="button"
+                        tabIndex={0}
+                        aria-label="Toggle treatments menu"
+                        aria-expanded={treatmentsExpanded}
+                        onKeyDown={(event) => {
+                            if (event.key === "Enter" || event.key === " ") {
+                                event.preventDefault();
+                                handleClick(2);
+                            }
+                        }}
+                    >
+                        <i className="fa fa-angle-down" />
+                    </div>
                 </li>
                 <li>
                     <Link href="/reservation">Reservation</Link>
@@ -44,6 +63,52 @@ const MobileMenu = () => {
                 <li><Link href="/blog">Blog</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
             </ul>
+            <style jsx>{`
+                .mobile-submenu {
+                    clear: both;
+                    display: grid;
+                    grid-template-rows: 0fr;
+                    width: 100%;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(-6px);
+                    transition:
+                        grid-template-rows 400ms cubic-bezier(0.4, 0, 0.2, 1),
+                        opacity 220ms ease,
+                        transform 320ms cubic-bezier(0.4, 0, 0.2, 1),
+                        visibility 0s linear 400ms;
+                }
+
+                .mobile-submenu.is-open {
+                    grid-template-rows: 1fr;
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                    transition-delay: 0s;
+                }
+
+                .mobile-submenu .sub-menu {
+                    display: flow-root !important;
+                    min-height: 0;
+                    margin: 0;
+                    overflow: hidden;
+                }
+
+                .dropdown-btn i {
+                    transition: transform 320ms cubic-bezier(0.4, 0, 0.2, 1);
+                }
+
+                .dropdown-btn.active i {
+                    transform: rotate(180deg);
+                }
+
+                @media (prefers-reduced-motion: reduce) {
+                    .mobile-submenu,
+                    .dropdown-btn i {
+                        transition-duration: 0.01ms;
+                    }
+                }
+            `}</style>
         </>
     );
 };
