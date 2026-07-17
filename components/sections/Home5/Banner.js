@@ -1,6 +1,10 @@
 import React from 'react';
 
-export default function Home5_Banner() {
+export default function Home5_Banner({
+    title = "Experience",
+    highlightedTitle = "Bliss, Embrace",
+    text = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas magna mi ut arcu.",
+}) {
     return (
         <>
         <section id="home" className="banner-five-area section__decoration-bottom paralax__animation mb-130">
@@ -13,13 +17,12 @@ export default function Home5_Banner() {
             <div className="container">
                 <div className="banner-five__wrp">
                     <div className="banner-five__content">
-                        <h1 className="title">Experience <span>Bliss, Embrace</span></h1>
+                        <h1 className="title">{title} <span>{highlightedTitle}</span></h1>
                         <div className="info">
                             <a href="https://wa.me/6287863031503" target="_blank" rel="noopener noreferrer" className="video-btn wow zoomIn" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', borderColor: '#a78627' }}>
                                 <i className="fa-brands fa-whatsapp" style={{ color: '#a78627', fontSize: '45px' }}></i>
                             </a>
-                            <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur
-                                ligula, eget egestas magna mi ut arcu.</p>
+                            <p className="text">{text}</p>
                             <div className="arry">
                                 <img className="animation__arryUpDown" src="/images/banner/banner-five-arry.png" alt="image"/>
                             </div>

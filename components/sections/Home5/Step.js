@@ -1,6 +1,25 @@
 import React from 'react'
 
-export default function Home5_Step() {
+const defaultSteps = [
+    {
+        title: "Make an Appointment",
+        text: "Suspendisse sit amet neque euismod, convallis quam eget, dignissim massa. Aliquam blandit risus purus, in congue",
+    },
+    {
+        title: "Get Consultation",
+        text: "Suspendisse sit amet neque euismod, convallis quam eget, dignissim massa. Aliquam blandit risus purus, in congue",
+    },
+    {
+        title: "Arrive and Relax",
+        text: "Suspendisse sit amet neque euismod, convallis quam eget, dignissim massa. Aliquam blandit risus purus, in congue",
+    },
+];
+
+export default function Home5_Step({
+    subTitle = "3 Easy Step",
+    title = "How It Works?",
+    steps = defaultSteps,
+}) {
     return (
         <>
             <section id="projects" className="step-section pt-30 pb-130">
@@ -36,9 +55,9 @@ export default function Home5_Step() {
                                         fill="#A78627" />
                                 </g>
                             </svg>
-                            3 Easy Step
+                            {subTitle}
                         </h4>
-                        <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">How It Works?</h2>
+                        <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{title}</h2>
                     </div>
                     <div className="outer-box">
                         <div className="step-line">
@@ -96,9 +115,8 @@ export default function Home5_Step() {
                                         </svg>
                                     </div>
                                     <div className="content">
-                                        <h3 className="title">Make an Appointment</h3>
-                                        <p className="text">Suspendisse sit amet neque euismod, convallis quam eget, dignissim
-                                            massa. Aliquam blandit risus purus, in congue</p>
+                                        <h3 className="title">{steps[0].title}</h3>
+                                        <p className="text">{steps[0].text}</p>
                                     </div>
                                 </div>
                             </div>
@@ -127,9 +145,8 @@ export default function Home5_Step() {
                                         </svg>
                                     </div>
                                     <div className="content">
-                                        <h3 className="title">Get Consultation</h3>
-                                        <p className="text">Suspendisse sit amet neque euismod, convallis quam eget, dignissim
-                                            massa. Aliquam blandit risus purus, in congue</p>
+                                        <h3 className="title">{steps[1].title}</h3>
+                                        <p className="text">{steps[1].text}</p>
                                     </div>
                                 </div>
                             </div>
@@ -172,9 +189,8 @@ export default function Home5_Step() {
                                         </svg>
                                     </div>
                                     <div className="content">
-                                        <h3 className="title">Arrive and Relax</h3>
-                                        <p className="text">Suspendisse sit amet neque euismod, convallis quam eget, dignissim
-                                            massa. Aliquam blandit risus purus, in congue</p>
+                                        <h3 className="title">{steps[2].title}</h3>
+                                        <p className="text">{steps[2].text}</p>
                                     </div>
                                 </div>
                             </div>

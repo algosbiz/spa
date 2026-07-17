@@ -1,7 +1,18 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function Home1_Services() {
+const defaultServices = [
+    { title: "Stone spa", text: "Risus commodo viverra maecenas accumsan lacus vel facilisis.", href: "/page-service-details" },
+    { title: "Body Therapy", text: "Risus commodo viverra maecenas accumsan lacus vel facilisis.", href: "/page-service-details" },
+    { title: "Facials", text: "Risus commodo viverra maecenas accumsan lacus vel facilisis.", href: "/page-service-details" },
+    { title: "Medicine", text: "Risus commodo viverra maecenas accumsan lacus vel facilisis.", href: "/page-service-details" },
+];
+
+export default function Home1_Services({
+    subTitle = "Features",
+    title = (<>Our Services Will Make <br /> You Glow</>),
+    services = defaultServices,
+}) {
 
     return (
         <>
@@ -38,9 +49,9 @@ export default function Home1_Services() {
                                     fill="#A78627" />
                             </g>
                         </svg>
-                        Features
+                        {subTitle}
                     </h4>
-                    <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Our Services Will Make <br /> You Glow</h2>
+                    <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{title}</h2>
                 </div>
                 <div className="row g-5">
                     <div className="col-lg-3 service-block col-md-6 wow fadeInDown" data-wow-delay="00ms" data-wow-duration="1500ms">
@@ -118,10 +129,8 @@ export default function Home1_Services() {
                                         fill="#A78627" />
                                 </svg>
                             </div>
-                            <h4 className="title"><Link href="/page-service-details">Stone spa</Link></h4>
-                            <p className="text">
-                                Risus commodo viverra maecenas accumsan lacus vel facilisis.
-                            </p>
+                            <h4 className="title"><Link href={services[0].href}>{services[0].title}</Link></h4>
+                            <p className="text">{services[0].text}</p>
                         </div>
                     </div>
                     <div className="col-lg-3 service-block col-md-6 wow fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
@@ -216,8 +225,8 @@ export default function Home1_Services() {
                                         fill="#A78627" />
                                 </svg>
                             </div>
-                            <h4 className="title"><Link href="/page-service-details">Body Therapy</Link></h4>
-                            <p className="text">Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                            <h4 className="title"><Link href={services[1].href}>{services[1].title}</Link></h4>
+                            <p className="text">{services[1].text}</p>
                         </div>
                     </div>
                     <div className="col-lg-3 service-block col-md-6 wow fadeInDown" data-wow-delay="400ms" data-wow-duration="1500ms">
@@ -331,8 +340,8 @@ export default function Home1_Services() {
                                         fill="#A78627" />
                                 </svg>
                             </div>
-                            <h4 className="title"><Link href="/page-service-details">Facials</Link></h4>
-                            <p className="text">Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                            <h4 className="title"><Link href={services[2].href}>{services[2].title}</Link></h4>
+                            <p className="text">{services[2].text}</p>
                         </div>
                     </div>
                     <div className="col-lg-3 service-block col-md-6 wow fadeInDown" data-wow-delay="600ms" data-wow-duration="1500ms">
@@ -415,8 +424,8 @@ export default function Home1_Services() {
                                         fill="#A78627" />
                                 </svg>
                             </div>
-                            <h4 className="title"><Link href="/page-service-details">Medicine</Link></h4>
-                            <p className="text">Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                            <h4 className="title"><Link href={services[3].href}>{services[3].title}</Link></h4>
+                            <p className="text">{services[3].text}</p>
                         </div>
                     </div>
                 </div>

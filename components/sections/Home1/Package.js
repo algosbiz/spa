@@ -92,6 +92,7 @@ const servicesTab2 = [
 
 const PackageItem = ({ item, isLast }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const hasDetails = Boolean(item.benefits?.length || item.options?.length);
 
     return (
         <div className={`inner-box ${!isLast ? 'mb-50' : ''}`}>
@@ -100,12 +101,14 @@ const PackageItem = ({ item, isLast }) => {
             </div>
             <div className="content">
                 <h3 className="title">
-                    <a href="#" onClick={(e) => { e.preventDefault(); setIsOpen(!isOpen); }} style={{ cursor: 'pointer' }}>
-                        {item.name} {isOpen ? <i className="fa-solid fa-angle-up ms-1" style={{ fontSize: '14px' }}></i> : <i className="fa-solid fa-angle-down ms-1" style={{ fontSize: '14px' }}></i>}
-                    </a>
+                    {hasDetails ? (
+                        <a href="#" onClick={(e) => { e.preventDefault(); setIsOpen(!isOpen); }} style={{ cursor: 'pointer' }}>
+                            {item.name} {isOpen ? <i className="fa-solid fa-angle-up ms-1" style={{ fontSize: '14px' }}></i> : <i className="fa-solid fa-angle-down ms-1" style={{ fontSize: '14px' }}></i>}
+                        </a>
+                    ) : item.name}
                 </h3>
                 {item.desc && <p className="text" style={{ marginTop: '2px', marginBottom: '0', fontSize: '14px', color: '#5f5a54' }}>{item.desc}</p>}
-                <div
+                {hasDetails && <div
                     className="pricing-dropdown"
                     style={{
                         padding: isOpen ? '5px 0 10px' : '0',
@@ -131,32 +134,37 @@ const PackageItem = ({ item, isLast }) => {
                         </div>
                     )}
                     <ul className="list-unstyled mb-0" style={{ paddingLeft: '0' }}>
-                        {item.options.map((opt, idx) => (
+                        {(item.options || []).map((opt, idx) => (
                             <li key={idx} className="d-flex justify-content-between align-items-center pb-2 mb-2" style={{ borderBottom: '1px solid #e1e1e1' }}>
                                 <span style={{ fontFamily: 'var(--subtitle-font)', fontSize: '18px', color: '#6A6F73' }}>{opt.time}</span>
                                 <span style={{ fontFamily: 'var(--title-font)', fontSize: '24px', fontWeight: '500', color: 'var(--title-color)' }}>{opt.price}</span>
                             </li>
                         ))}
                     </ul>
-                </div>
+                </div>}
             </div>
         </div>
     );
 };
 
-export default function PackageSection() {
+export default function PackageSection({
+    subTitle = "Best Price",
+    title = "Our Flexible Pricing Plan",
+    firstServices = servicesTab1,
+    secondServices = servicesTab2,
+}) {
     const [activeIndex, setActiveIndex] = useState(1);
     const handleOnClick = (index) => {
         setActiveIndex(index);
     };
 
-    const halfLength1 = Math.ceil(servicesTab1.length / 2);
-    const tab1Col1 = servicesTab1.slice(0, halfLength1);
-    const tab1Col2 = servicesTab1.slice(halfLength1);
+    const halfLength1 = Math.ceil(firstServices.length / 2);
+    const tab1Col1 = firstServices.slice(0, halfLength1);
+    const tab1Col2 = firstServices.slice(halfLength1);
 
-    const halfLength2 = Math.ceil(servicesTab2.length / 2);
-    const tab2Col1 = servicesTab2.slice(0, halfLength2);
-    const tab2Col2 = servicesTab2.slice(halfLength2);
+    const halfLength2 = Math.ceil(secondServices.length / 2);
+    const tab2Col1 = secondServices.slice(0, halfLength2);
+    const tab2Col2 = secondServices.slice(halfLength2);
 
     return (
       <section className="package-section section__decoration-top section__decoration-bottom bg-sub pt-170 pb-170">
@@ -185,14 +193,14 @@ export default function PackageSection() {
               data-wow-delay="00ms"
               data-wow-duration="1500ms"
             >
-              Best Price
+              {subTitle}
             </h4>
             <h2
               className="title wow fadeInUp"
               data-wow-delay="200ms"
               data-wow-duration="1500ms"
             >
-              Our Flexible Pricing Plan
+              {title}
             </h2>
           </div>
           <div className="package-tab mb-60">

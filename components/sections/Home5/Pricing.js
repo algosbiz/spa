@@ -1,7 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
 
-export default function Home5_Pricing({ showMore = false }) {
+export default function Home5_Pricing({
+    showMore = false,
+    subTitle = "Best Price",
+    title = "Our Flexible Pricing Plan",
+    text = "We offer multiple spa packages at our spa or as a day spa at home. Some guests know what they want, while others wish to combine treatments. We provide the help, so you can enjoy a laid-back and cozy experience, whether alone, with a partner, or with friends.",
+    ctaText = "More Services",
+}) {
     return (
       <>
         <section
@@ -14,30 +20,26 @@ export default function Home5_Pricing({ showMore = false }) {
                 data-wow-delay="00ms"
                 data-wow-duration="1500ms"
               >
-                Best Price
+                {subTitle}
               </h4>
               <h2
                 className="title wow fadeInUp"
                 data-wow-delay="200ms"
                 data-wow-duration="1500ms"
               >
-                Our Flexible Pricing Plan
+                {title}
               </h2>
               <p
                 className="wow fadeInUp"
                 data-wow-delay="400ms"
                 data-wow-duration="1500ms"
               >
-                We offer multiple spa packages at our spa or as a day spa at
-                home. Some guests know what they want, while others wish to
-                combine treatments. We provide the help, so you can enjoy a
-                laid-back and cozy experience, whether alone, with a partner, or
-                with friends.
+                {text}
               </p>
               {showMore && (
                 <div className="mt-30 wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
                   <Link href="/pricing" className="btn-two">
-                    More Services
+                    {ctaText}
                     <span className="icon_box">
                       <i className="fa-regular icon_first fa-arrow-right-long"></i>
                       <i className="fa-regular icon_second fa-arrow-right-long"></i>
