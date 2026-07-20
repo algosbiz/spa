@@ -45,7 +45,7 @@ export default function Home1_AboutReverse({
                                     <img src="/images/about/about-image.png" alt="image" />
                                 </div>
                                 <div className="info">
-                                    <p className="info-line"><span className="count">25</span> <span>+</span> Years</p>
+                                    <p className="info-line"><span className="count">17</span> <span>+</span> Years</p>
                                     <p className="info-line title">Experience</p>
                                 </div>
                             </div>

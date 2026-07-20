@@ -14403,7 +14403,11 @@ Sidebar
 .contact-details__info li .icon {
   height: 80px;
   width: 80px;
-  background-color: var(--theme-color1);
+  min-width: 80px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 80px;
+  flex: 0 0 80px;
+  background-color: var(--theme-color2);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14425,7 +14429,7 @@ Sidebar
 }
 
 .contact-details__info li:hover .icon {
-  background-color: var(--theme-color2);
+  background-color: var(--theme-color1);
 }
 
 .contact-details__info li:hover .icon span {

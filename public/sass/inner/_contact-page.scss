@@ -20,7 +20,9 @@
     .icon {
       height: 80px;
       width: 80px;
-      background-color: var(--theme-color1);
+      min-width: 80px;
+      flex: 0 0 80px;
+      background-color: var(--theme-color2);
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -41,7 +43,7 @@
     }
     &:hover {
       .icon {
-        background-color: var(--theme-color2);
+        background-color: var(--theme-color1);
         span {
           color: var(--theme-color-light);
         }

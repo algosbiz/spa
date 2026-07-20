@@ -1,7 +1,34 @@
 import { useState, useEffect, useRef } from 'react';
 import { Turnstile } from '@marsidev/react-turnstile';
 
-export default function ContactForm() {
+const defaultContactItems = [
+    {
+        icon: 'fa-phone-plus',
+        title: 'Have any question?',
+        href: 'tel:+6287863175144',
+        text: 'Call/WA +62 878-6317-5144',
+    },
+    {
+        icon: 'fa-envelope',
+        title: 'Write email',
+        href: 'mailto:info@spabalimoon.com',
+        text: 'info@spabalimoon.com',
+    },
+    {
+        icon: 'fa-location-dot',
+        title: 'Visit anytime',
+        text: 'Jl. Panggung Sari No. 30, Seminyak, Bali',
+    },
+];
+
+export default function ContactForm({
+    formSubTitle = 'Send us email',
+    formTitle = 'Feel free to write',
+    infoSubTitle = 'Need any help?',
+    infoTitle = 'Get in touch',
+    infoText = 'Spa Bali Moon offers high-quality traditional massages and spa therapies. Reach out to us to book your relaxing session.',
+    contactItems = defaultContactItems,
+}) {
 
     const [formData, setFormData] = useState({
         form_name: "",
@@ -106,8 +133,8 @@ export default function ContactForm() {
                     <div className="row">
                         <div className="col-xl-7 col-lg-6">
                             <div className="sec-title mb-50">
-                                <span className="sub-title">Send us email</span>
-                                <h2>Feel free to write</h2>
+                                <span className="sub-title">{formSubTitle}</span>
+                                <h2>{formTitle}</h2>
                             </div>
                             <form id="contact_form" name="contact_form" onSubmit={handleSubmit} onReset={handleReset}>
                                 <div className="row">
@@ -218,38 +245,22 @@ export default function ContactForm() {
                         <div className="col-xl-5 col-lg-6">
                             <div className="contact-details__right">
                                 <div className="sec-title">
-                                    <span className="sub-title">Need any help?</span>
-                                    <h2>Get in touch</h2>
-                                    <div className="text">Spa Bali Moon offers high-quality traditional massages and spa therapies. Reach out to us to book your relaxing session.</div>
+                                    <span className="sub-title">{infoSubTitle}</span>
+                                    <h2>{infoTitle}</h2>
+                                    <div className="text">{infoText}</div>
                                 </div>
                                 <ul className="list-unstyled contact-details__info">
-                                    <li className="d-block d-sm-flex align-items-sm-center ">
-                                    <div className="icon">
-                                        <span className="fa-classic fa-light fa-phone-plus fa-fw"></span>
-                                    </div>
-                                    <div className="text ml-xs--0 mt-xs-10">
-                                        <h6>Have any question?</h6>
-                                        <a href="tel:+6287863175144"><span>Call/WA</span> +62 878-6317-5144</a>
-                                    </div>
-                                    </li>
-                                    <li className="d-block d-sm-flex align-items-sm-center ">
-                                    <div className="icon">
-                                        <span className="fa-classic fa-light fa-envelope fa-fw"></span>
-                                    </div>
-                                    <div className="text ml-xs--0 mt-xs-10">
-                                        <h6>Write email</h6>
-                                        <a href="mailto:info@spabalimoon.com">info@spabalimoon.com</a>
-                                    </div>
-                                    </li>
-                                    <li className="d-block d-sm-flex align-items-sm-center ">
-                                    <div className="icon">
-                                        <span className="fa-classic fa-light fa-location-dot fa-fw"></span>
-                                    </div>
-                                    <div className="text ml-xs--0 mt-xs-10">
-                                        <h6>Visit anytime</h6>
-                                        <span>Jl. Panggung Sari No. 30, Seminyak, Bali</span>
-                                    </div>
-                                    </li>
+                                    {contactItems.map((item) => (
+                                        <li key={item.title} className="d-block d-sm-flex align-items-sm-center ">
+                                            <div className="icon">
+                                                <span className={`fa-classic fa-light ${item.icon} fa-fw`}></span>
+                                            </div>
+                                            <div className="text ml-xs--0 mt-xs-10">
+                                                <h6>{item.title}</h6>
+                                                {item.href ? <a href={item.href}>{item.text}</a> : <span>{item.text}</span>}
+                                            </div>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>

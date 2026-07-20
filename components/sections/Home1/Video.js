@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import ModalVideo from 'react-modal-video';
 
-export default function Home1_Video() {
+export default function Home1_Video({
+    topSubTitle = "Massage Therapy",
+    topTitle = "Areas of Expertise",
+    topText = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas magna mi ut arcu. Phasellus nec. Velit orci consectetur ligula, eget egestas magna mi ut arcu. Phasellus nec.",
+    contentSubTitle = "Our Core Services",
+    contentTitle = "Revitalize Your Body and Soul",
+    contentText = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas magna mi ut arcu. Phasellus nec. Velit orci consectetur ligula, eget egestas magna mi ut arcu. Phasellus nec.",
+    firstStat = (<>Helping Since <br /> 2012</>),
+    secondStat = (<>Trusted by <br /> Thousands</>),
+}) {
     const [isOpen, setOpen] = useState(false);
     return (
         <>
@@ -12,30 +21,23 @@ export default function Home1_Video() {
                 <div className="container">
                     <div className="section-header mb-60 center">
                         <h4 className="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-                            Massage Therapy
+                            {topSubTitle}
                         </h4>
-                        <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Areas
-                            of Expertise</h2>
+                        <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{topTitle}</h2>
 
-                        <p className="text wow fadeInUp" data-wow-delay="500ms" data-wow-duration="1500ms">Proin
-                            efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget
-                            egestas magna mi ut arcu. Phasellus nec. Velit orci consectetur ligula, eget egestas
-                            magna mi ut arcu. Phasellus nec.</p>
+                        <p className="text wow fadeInUp" data-wow-delay="500ms" data-wow-duration="1500ms">{topText}</p>
                     </div>
                     <div className="row align-items-center g-4">
                         <div className="col-lg-6 video-column">
                             <div className="inner-box">
                                 <div className="section-header mb-30">
                                     <h4 className="sub-title wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-                                        Our Core Services
+                                        {contentSubTitle}
                                     </h4>
                                     <h2 className="title wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
-                                        Revitalize Your Body and Soul
+                                        {contentTitle}
                                     </h2>
-                                    <p className="text wow fadeInUp" data-wow-delay="500ms" data-wow-duration="1500ms">Proin
-                                        efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget
-                                        egestas magna mi ut arcu. Phasellus nec. Velit orci consectetur ligula, eget egestas
-                                        magna mi ut arcu. Phasellus nec.</p>
+                                    <p className="text wow fadeInUp" data-wow-delay="500ms" data-wow-duration="1500ms">{contentText}</p>
                                 </div>
                                 <div className="image gsap__parallax-zoom">
                                     <img src="/images/video/video-image2.jpg" alt="image" />
@@ -107,7 +109,7 @@ export default function Home1_Video() {
                                             </svg>
                                         </li>
                                         <li>
-                                            <h3>Helping Since <br /> 2012</h3>
+                                            <h3>{firstStat}</h3>
                                         </li>
                                     </ul>
                                     <ul className="wow fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
@@ -133,7 +135,7 @@ export default function Home1_Video() {
                                             </svg>
                                         </li>
                                         <li>
-                                            <h3>Trusted by <br /> Thousands</h3>
+                                            <h3>{secondStat}</h3>
                                         </li>
                                     </ul>
                                 </div>

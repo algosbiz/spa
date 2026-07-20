@@ -10,31 +10,50 @@ import AboutReverse from "../components/sections/Home1/AboutReverse";
 import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 
+const bookingUrl = "https://wa.me/6287863175144";
+
+const serviceHighlights = [
+    { title: "Balinese", text: "Techniques" },
+    { title: "Experienced", text: "Therapists" },
+    { title: "Flexible", text: "Treatments" },
+    { title: "In-Spa &", text: "Home Service" },
+];
+
 const faqItems = [
     {
-        question: "What is included in a day spa experience in Seminyak?",
+        question: "What does a day spa in Seminyak usually include?",
         answer:
-            "A day spa experience can combine several treatments — Balinese massage, a cream bath, a facial and body care — so you can relax, refresh your skin and unwind in a single visit. We help you choose the combination that best suits your needs.",
+            "A day spa visit may include one or more services such as massage, facial care, body scrubs, Cream Bath, reflexology, manicure, or pedicure. The exact services depend on the treatments you select and how much time you want to spend at the spa.",
     },
     {
-        question: "How long should I spend at a day spa?",
+        question: "How many hours should I spend at a day spa?",
         answer:
-            "Most guests spend anywhere from one to a few hours with us, depending on the treatments chosen. There's no rush — we plan your session around the time you have available.",
+            "There is no fixed duration. A single treatment may take around 60 to 90 minutes, while several services can be arranged into a longer visit lasting a few hours.",
     },
     {
-        question: "Can I customize my treatments?",
+        question: "Can I choose my own treatments?",
         answer:
-            "Yes. Every treatment can be tailored to your body's condition and preferences, from the pressure of your massage to the products used in your facial or cream bath.",
+            "Yes. You can select individual services or choose from available spa packages. If you are unsure which treatments work well together, our team can help you plan a visit around your schedule and preferences.",
     },
     {
-        question: "Is it possible to book a day spa at my villa or hotel?",
+        question: "What is a good spa treatment after a flight?",
         answer:
-            "Absolutely. We offer a home service so you can enjoy our day spa treatments in your villa or hotel in Seminyak and nearby areas, for a small additional travel fee of 75k per therapist.",
+            "A relaxing full-body massage is often a good place to begin after travelling. Depending on how you feel, you can follow it with a facial, body scrub, Cream Bath, or foot treatment for a more extensive visit.",
     },
     {
-        question: "Do I need to book in advance?",
+        question: "Can I book a day spa at my hotel or villa?",
         answer:
-            "Booking ahead is recommended to secure your preferred time and therapist, but we always do our best to accommodate same-day requests when we have availability.",
+            "Selected treatments can be arranged as home service in Seminyak and nearby areas. Our therapists bring the equipment required for the services included in your booking.",
+    },
+    {
+        question: "Do I need to reserve a day spa appointment in advance?",
+        answer:
+            "Advance reservations are recommended, especially during weekends, holidays, and busy periods in Seminyak. This helps us arrange your preferred treatments and appointment time.",
+    },
+    {
+        question: "How can I arrange a home service booking?",
+        answer:
+            "Send us a message on WhatsApp with your preferred treatments, location, date, and time. Our team will confirm availability and provide the details needed for your appointment.",
     },
 ];
 
@@ -43,48 +62,56 @@ export default function DaySpaSeminyak() {
         <>
             <Layout HeaderStyle="one" FooterStyle="two">
                 <Banner
-                    subTitle="A Day for the Best Spa Treatments in Seminyak"
-                    titleSpan="Day Spa"
+                    subTitle="Take the Day Slowly"
+                    titleSpan="Day Spa in"
                     title="Seminyak"
+                    buttonText="Book Now"
                 />
                 <AboutOld
-                    subTitle="Day Spa Seminyak"
-                    title={<>Our Day Spa in <br /> Seminyak</>}
-                    text="Our Day Spa Seminyak offers a complete wellness experience that relaxes the body, refreshes the skin, and calms the mind. A selection of our authentic Balinese therapies, cream baths, facials, and full body massages allows each guest to enjoy the treatments that best suit their needs. With skilled therapists, a peaceful Seminyak setting, and home service options, every visit leaves you feeling renewed and deeply relaxed."
-                    feature1Title="Cream Baths & Facials"
-                    feature1Text="Nourishing cream baths and facials with volcanic clay and collagen to cleanse, hydrate and refresh your skin."
-                    feature2Title="Full Body Massage"
-                    feature2Text="Authentic Balinese massage that eases muscle tension, improves circulation and helps you fully relax."
+                    subTitle="A Little More Time"
+                    title={<>What Makes a Day Spa Visit Different?</>}
+                    text="A day spa visit gives you time to enjoy more than one form of care without having to rush from one appointment to the next. At Spa Bali Moon, a visit can include a traditional Balinese massage, facial, body scrub, Cream Bath, reflexology, or beauty service depending on what you are looking for."
+                    feature1Title="Care from Head to Toe"
+                    feature1Text="Choose from massage, skin care, body treatments, hair care, and beauty services during one visit."
+                    feature2Title="Made Around Your Time"
+                    feature2Text="Build a shorter visit around one or two treatments or stay longer with a selection of services that suit your day."
                 />
-                <Funfact />
+                <Funfact items={serviceHighlights} />
                 <About
-                    title={<>Authentic Balinese Spa Treatments</>}
-                    text="We bring you closer to the essence of Bali through authentic treatments inspired by local traditions. Using natural oils, gentle pressure, and flowing techniques, each session is designed to relax the body and calm the mind. Our treatments can be tailored to your needs, whether you are looking to release tension, refresh your skin, or simply take a quiet break from your day."
+                    subTitle="Shape the Visit"
+                    title={<>How Can You Spend Your Day at the Spa?</>}
+                    text="There is no single way to enjoy a day spa in Seminyak. A guest recovering from a long flight may begin with a gentle massage, while someone preparing for a special occasion may prefer to focus on skin and beauty care."
                     featuresLeft={[
-                        "Natural oils & gentle pressure",
-                        "Inspired by local traditions",
-                        "Tailored to your needs",
+                        "Balinese Massage for traditional full-body care",
+                        "Aromatherapy Massage for gentle relaxation with essential oils",
+                        "Sport and Deep Tissue Massage for tired or tight muscles",
+                        "Body Scrub to refresh and smooth the skin",
                     ]}
                     featuresRight={[
-                        "Releases tension",
-                        "Refreshes the skin",
-                        "Calms the mind",
+                        "Facials to cleanse and care for the complexion",
+                        "Cream Bath for the hair, scalp, and a soothing head massage",
+                        "Foot Reflexology for focused pressure-point care",
+                        "Manicure and Pedicure for polished hands and feet",
                     ]}
-                    buttonText="View Prices"
+                    buttonText="Book Now"
+                    buttonLink={bookingUrl}
                 />
                 <AboutReverse
-                    title={<>Cream Baths, Facials &amp; Body Care</>}
-                    text="Our day spa experience includes treatments that care for your hair and skin as much as your body. Cream bath sessions use nourishing ingredients like avocado and essential oils to restore shine and softness. Our facials, including volcanic clay and collagen treatments, are designed to cleanse, hydrate, and leave your skin feeling refreshed. Each session is a combination of care and relaxation that supports your overall wellness."
+                    subTitle="Make a Day of It"
+                    title={<>Is a Longer Spa Visit Worth the Time?</>}
+                    text="Giving yourself more than an hour allows different types of care to work together. A massage can help your body release physical tension, while a facial or body scrub brings attention to the skin."
                     featuresLeft={[
-                        "Avocado cream baths",
-                        "Essential oil hair care",
-                        "Restores shine & softness",
+                        "More time to relax during your holiday",
+                        "Multiple treatments in one visit",
+                        "Massage, body care, facials, and beauty treatments",
                     ]}
                     featuresRight={[
-                        "Volcanic clay facials",
-                        "Collagen treatments",
-                        "Cleanses & hydrates skin",
+                        "Suitable for solo guests, couples, and groups",
+                        "Spa packages available",
+                        "Selected home service treatments available",
                     ]}
+                    buttonText="Book Now"
+                    buttonLink={bookingUrl}
                 />
                 <About
                     title={<>Skilled Therapists in a Comfortable Seminyak Space</>}
@@ -107,13 +134,14 @@ export default function DaySpaSeminyak() {
                 />
                 <Faq
                     imageTitle="Your Seminyak Day Spa"
-                    subTitle="Good to know"
-                    title={<>Frequently Asked Questions</>}
+                    subTitle="Frequently Asked Questions"
+                    title={<>Everything You Need to Know</>}
                     items={faqItems}
                 />
                 <ReserveCta
-                    title="Make Space to Unwind at a Day Spa in Seminyak"
-                    text="A visit to Spa Bali Moon is a simple way to reset after a full day in Seminyak. Our treatments are designed to ease physical strain and bring your body back to a more relaxed state. Available both in-spa and as a home service, each session helps you feel lighter and comfortable in your body."
+                    title="Leave Room in Your Bali Holiday for Yourself"
+                    text="Seminyak offers plenty to fill a day, from beaches and boutiques to restaurants and late evenings. A visit to Spa Bali Moon gives you a reason to slow the pace and spend a little longer being looked after. Choose a massage, add the body or beauty care that appeals to you, and enjoy a few hours that leave you feeling rested, refreshed, and ready for whatever comes next."
+                    closingText="Visit Spa Bali Moon in Seminyak or arrange selected services at your hotel, villa, or private accommodation through our home service."
                 />
             </Layout>
         </>
