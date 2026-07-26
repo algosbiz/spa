@@ -32,7 +32,7 @@ const services = [
     { name: "Shiatsu Massage", image: "/images/service/service-image1.jpg", icon: "/images/spa/Shiatsu.svg" }
 ];
 
-export default function Home1_Feature() {
+export default function Home1_Feature({ images = [] }) {
     const swiperOptions = {
         modules: [Autoplay, Pagination, Navigation],
         slidesPerView: 2,
@@ -78,7 +78,7 @@ export default function Home1_Feature() {
                             <SwiperSlide key={index} className="feature-block swiper-slide">
                                 <div className="inner-box">
                                     <div className="image-box">
-                                        <img src={service.image} alt={service.name} />
+                                        <img src={images[index] || service.image} alt={service.name} />
                                     </div>
                                     <div className="content-box">
                                         <div className="icon">

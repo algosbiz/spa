@@ -8,7 +8,10 @@ export default function BlogPage({ posts }) {
     return (
         <>
             <Layout HeaderStyle="one" FooterStyle="two">
-                <PageTitle pageName="Blog" />
+                <PageTitle
+                    pageName="Blog"
+                    backgroundImage="/images/blog/blog-1.webp"
+                />
                 <NewsGrid posts={posts} />
             </Layout>
         </>

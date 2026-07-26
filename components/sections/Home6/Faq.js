@@ -7,6 +7,7 @@ export default function Home6_Faq({
     title = (<>All About Your Spa Day</>),
     items,
     showImage = true,
+    image = "/images/faq/faq-image.jpg",
 }) {
     return (
         <>
@@ -16,7 +17,7 @@ export default function Home6_Faq({
                         {showImage && (
                             <div className="col-xxl-6 image-column">
                                 <div className="inner-column gsap__parallax">
-                                    <img src="/images/faq/faq-image.jpg" alt="image" />
+                                    <img src={image} alt="Spa facial treatment" />
                                     <h2 className="title">{imageTitle}</h2>
                                 </div>
                             </div>

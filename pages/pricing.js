@@ -172,6 +172,7 @@ export default function Home() {
           titleSpan="Spa Treatments for"
           title="Every Kind of Day"
           buttonText="Book Now"
+          image="/images/pricelist/pricelist-1.webp"
         />
         <Video
           topSubTitle="Start With What You Need"
@@ -182,6 +183,8 @@ export default function Home() {
           contentText="Spa Bali Moon brings massage, body care, facials, and beauty services together in one place. Choose a familiar treatment, try something new during your Bali stay, or ask our team for help finding the right option."
           firstStat={<>Established Since <br /> 2009</>}
           secondStat={<>In-Spa &amp; <br /> Home Service</>}
+          contentImage="/images/pricelist/pricelist-2.webp"
+          featureImage="/images/pricelist/pricelist-3.webp"
         />
         {/* <AboutReverse /> */}
         <div className="pricing-package-section">
@@ -207,6 +210,7 @@ export default function Home() {
         <Faq
           subTitle="Frequently Asked Questions"
           title={<>Everything You Need to Know</>}
+          image="/images/pricelist/pricelist-4.webp"
           items={[
             {
               question: "1. How do I choose the right treatment?",
@@ -245,6 +249,7 @@ export default function Home() {
             title="Take a Proper Break from Your Bali Itinerary"
             text="Some treatments are chosen because your muscles need attention. Others are for tired skin, overworked feet, a scalp that needs care, or simply the feeling that you have been moving from one plan to the next without stopping. Browse the Spa Bali Moon price list to find the treatment that fits your day."
             closingText="Visit us in Seminyak or arrange selected treatments at your villa or hotel."
+            backgroundImage="/images/pricelist/pricelist-5.webp"
           />
         </div>
       </Layout>

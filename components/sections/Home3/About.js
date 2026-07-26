@@ -17,6 +17,8 @@ export default function Home3_About({
     features = defaultFeatures,
     ctaText = "Discover More",
     ctaHref = "/pricing",
+    primaryImage = "/images/about/about-three-image1.png",
+    secondaryImage = "/images/about/about-three-image2.png",
 }) {
     return (
         <>
@@ -29,9 +31,9 @@ export default function Home3_About({
                     <div className="col-xl-6 image-column">
                         <div className="inner-column">
                             <div className="image">
-                                <img className="image1" src="/images/about/about-three-image1.png" alt="image"/>
+                                <img className="image1" src={primaryImage} alt="Spa massage treatment"/>
                             </div>
-                            <img className="image2" src="/images/about/about-three-image2.png" alt="image"/>
+                            <img className="image2" src={secondaryImage} alt="Spa treatment room"/>
                             <div className="info">
                                 <img data-depth="0.01" src="/images/about/about-three-info.png" alt="image"/>
                             </div>

@@ -4,6 +4,8 @@ export default function Home5_Banner({
     title = "Experience",
     highlightedTitle = "Bliss, Embrace",
     text = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas magna mi ut arcu.",
+    primaryImage = "/images/banner/banner-five-image1.jpg",
+    secondaryImage = "/images/banner/banner-five-image2.jpg",
 }) {
     return (
         <>
@@ -30,10 +32,10 @@ export default function Home5_Banner({
                     </div>
                     <div className="banner-five__image-left">
                         <div className="gsap__parallax">
-                            <img src="/images/banner/banner-five-image1.jpg" alt="image"/>
+                            <img src={primaryImage} alt="Spa towels and candles"/>
                         </div>
-                        <img className="shape" data-depth="0.03" src="/images/banner/banner-five-image2.jpg"
-                            alt="image"/>
+                        <img className="shape" data-depth="0.03" src={secondaryImage}
+                            alt="Hot stone spa treatment"/>
                     </div>
                     <div className="banner-five__image-right">
                         <div className="gsap__parallax">

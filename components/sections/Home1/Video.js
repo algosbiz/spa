@@ -10,6 +10,8 @@ export default function Home1_Video({
     contentText = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas magna mi ut arcu. Phasellus nec. Velit orci consectetur ligula, eget egestas magna mi ut arcu. Phasellus nec.",
     firstStat = (<>Helping Since <br /> 2012</>),
     secondStat = (<>Trusted by <br /> Thousands</>),
+    contentImage = "/images/video/video-image2.jpg",
+    featureImage = "/images/video/video-image1.jpg",
 }) {
     const [isOpen, setOpen] = useState(false);
     return (
@@ -40,7 +42,7 @@ export default function Home1_Video({
                                     <p className="text wow fadeInUp" data-wow-delay="500ms" data-wow-duration="1500ms">{contentText}</p>
                                 </div>
                                 <div className="image gsap__parallax-zoom">
-                                    <img src="/images/video/video-image2.jpg" alt="image" />
+                                    <img src={contentImage} alt="Spa body treatment" />
                                     <div className="btn-video video-pulse">
                                         <a className="video-popup wow zoomIn" onClick={() => setOpen(true)}>
                                             <svg width="82" height="82" viewBox="0 0 82 82" fill="none"
@@ -143,7 +145,7 @@ export default function Home1_Video({
                         </div>
                         <div className="col-lg-6 image-column">
                             <div className="inner-column wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                                <img data-tilt data-tilt-max="3" src="/images/video/video-image1.jpg" alt="image" />
+                                <img data-tilt data-tilt-max="3" src={featureImage} alt="Relaxing spa setting" />
                             </div>
                         </div>
                     </div>

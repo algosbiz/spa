@@ -109,6 +109,11 @@ const differentiators = [
   },
 ];
 
+const treatmentImages = Array.from(
+  { length: 23 },
+  (_, index) => `/images/homepage/homepage-${index + 5}.webp`
+);
+
 export default function Home5() {
   return (
     <>
@@ -117,6 +122,8 @@ export default function Home5() {
           title="Traditional Spa &"
           highlightedTitle="Massage in Seminyak"
           text="Since 2009, Spa Bali Moon has welcomed travellers and local guests with professional massage, beauty, and wellness treatments in Seminyak. Our experienced therapists provide a wide range of traditional Balinese therapies, body treatments, and beauty services at our spa or through convenient home service."
+          primaryImage="/images/homepage/homepage-1.webp"
+          secondaryImage="/images/homepage/homepage-2.webp"
         />
         <Step
           subTitle="Start Here"
@@ -136,8 +143,10 @@ export default function Home5() {
             "Personalised treatment recommendations",
           ]}
           ctaHref="/page-services"
+          primaryImage="/images/homepage/homepage-3.webp"
+          secondaryImage="/images/homepage/homepage-4.webp"
         />
-        <Feature />
+        <Feature images={treatmentImages} />
         <Testimonial
           testimonialsData={[
             {
@@ -235,6 +244,7 @@ export default function Home5() {
             title="A Better Way to Experience Wellness in Bali"
             text="Bali is made for exploring, from beach mornings and surfing sessions to long afternoons discovering the island. After a full day, giving your body time to recover can make every part of your holiday even more enjoyable. At Spa Bali Moon, you'll find professional massage, beauty, and wellness treatments that help ease tired muscles, refresh your skin, and create a welcome pause from a busy itinerary."
             closingText="Visit our spa in Seminyak or enjoy the same trusted care through our home service, delivered by experienced therapists directly to your villa or hotel."
+            backgroundImage="/images/homepage/homepage-28.webp"
           />
         </div>
       </Layout>
