@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -79,17 +80,21 @@ const faqItems = [
 ];
 
 export default function LymphaticMassage() {
+  const treatmentImages = createTreatmentImageSet("lymphaticmassage", durationOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="lymphatic-massage-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Restore Your Flow"
             titleSpan="Lymphatic Massage"
             title="in Bali"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Hidden Network"
           title={<>What Does the Lymphatic System Actually Do?</>}
           text="The lymphatic system is a network of vessels and lymph nodes that helps move excess fluid, transport immune cells, and remove everyday waste from body tissues. Unlike the circulatory system, it relies on breathing, movement, and muscle activity to keep lymph flowing. When this flow slows, fluid may build up, causing heaviness, puffiness, or mild swelling. Lymphatic Massage uses slow, rhythmic techniques to encourage natural lymph flow and help the body feel lighter and more balanced."
@@ -100,6 +105,7 @@ export default function LymphaticMassage() {
         />
         <div className="lymphatic-massage-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Find Yours"
             title="Our Duration Options"
             text="Every session follows gentle lymphatic drainage principles, with longer durations allowing our therapists to work more thoroughly across different drainage pathways. Each treatment offers a calm, unhurried experience, whether you're easing fluid retention after travel or simply enjoying deeper relaxation."
@@ -112,6 +118,7 @@ export default function LymphaticMassage() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="Body Recovery"
           title={<>When Lymphatic Massage Helps</>}
           text="Fluid retention can occur after travel, prolonged sitting, intense activity, or limited movement, often creating a feeling of heaviness in the body. Lymphatic Massage supports natural drainage pathways to encourage fluid movement and promote a lighter, more comfortable feeling."
@@ -129,6 +136,7 @@ export default function LymphaticMassage() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Guided Pathways"
           title={<>Where Does Lymphatic Massage Work on the Body?</>}
           text="Instead of concentrating only on muscles, Lymphatic Massage follows the body's natural drainage routes. Gentle movements begin around the main lymph node regions before continuing across areas where fluid commonly collects, allowing the treatment to work with the body's own circulation rather than against it."
@@ -147,6 +155,7 @@ export default function LymphaticMassage() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="The Experience"
           title={<>What to Expect from a Lymphatic Massage</>}
           text="Our treatment begins with a brief consultation to identify areas where swelling, fluid retention, or heaviness are most noticeable. Using natural massage oil together with a slimming cream, our therapist performs slow, wave-like movements that follow the direction of lymph flow instead of applying deep pressure into the muscles."
@@ -165,6 +174,7 @@ export default function LymphaticMassage() {
         />
         <div className="lymphatic-massage-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Gentle Drainage"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -173,6 +183,7 @@ export default function LymphaticMassage() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Renew Balance from the Inside Out with Lymphatic Massage"
             text="Lymphatic Massage uses gentle, rhythmic techniques to support the body's natural drainage pathways and encourage a lighter, more balanced feeling. This restorative treatment is ideal after travel, periods of reduced movement, or times when the body feels heavy from fluid retention. Enjoy personalised care from our experienced therapists at our spa or in the comfort of your home, villa, or hotel across Seminyak and nearby areas."
             closingText="Reserve a session designed around your wellness needs and experience gentle relaxation wherever you stay in Bali."

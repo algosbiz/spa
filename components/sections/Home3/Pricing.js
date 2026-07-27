@@ -34,6 +34,7 @@ export default function Home3_Pricing({
     text = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas magna mi ut arcu. Phasellus nec odio orci. Nunc id massa ante. Suspendisse sit amet neque euismod, convallis quam eget,",
     packages = defaultPackages,
     leftShapeSrc = "/images/shape/pricing-three-shape-left.png",
+    images = [],
 }) {
     return (
         <>
@@ -81,7 +82,7 @@ export default function Home3_Pricing({
                 </div>
                 {packages.map((packageItem, index) => {
                     const isReversed = index % 2 === 1;
-                    const imageSrc = isReversed ? "/images/pricing/pricing-three-image2.jpg" : "/images/pricing/pricing-three-image1.jpg";
+                    const imageSrc = images[index] || (isReversed ? "/images/pricing/pricing-three-image2.jpg" : "/images/pricing/pricing-three-image1.jpg");
 
                     return (
                         <div className={`outer-box ${index < packages.length - 1 ? "mb-50" : ""}`} key={`${packageItem.name}-${packageItem.price}`}>

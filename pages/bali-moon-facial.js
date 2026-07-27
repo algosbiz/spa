@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -72,17 +73,21 @@ const faqItems = [
 ];
 
 export default function BaliMoonFacial() {
+  const treatmentImages = createTreatmentImageSet("balimoonfacial", packageOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="bali-moon-facial-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Skin Rejuvenation"
             titleSpan="Bali Moon Facial"
             title="Treatment"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="A Personalized Experience"
           title={<>What Makes Bali Moon Facial Different?</>}
           text="Bali Moon Facial is our signature facial treatment designed to refresh, hydrate, and support healthy-looking skin while providing a relaxing spa experience. The treatment combines gentle cleansing, steaming, exfoliation, lymphatic facial massage using Argan Oil, and a targeted mask selected according to your skin's needs."
@@ -93,6 +98,7 @@ export default function BaliMoonFacial() {
         />
         <div className="bali-moon-facial-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Find Yours"
             title="Our Package Options"
             text="Bali Moon Facial is often combined with massage, hair treatments, and nail care to create a complete self-care experience. Our treatment packages are designed for guests looking to relax while giving their skin additional attention during their time in Bali."
@@ -105,6 +111,7 @@ export default function BaliMoonFacial() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="Skin Goals"
           title={<>What Does a Facial Help With?</>}
           text="While every skin type behaves differently, regular facial treatments are commonly used to help manage surface impurities, maintain hydration, and support overall skin condition. Many guests also choose facials as part of their monthly skincare routine or after spending time in the sun, travelling, or experiencing changes in climate."
@@ -122,6 +129,7 @@ export default function BaliMoonFacial() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Your Skin Type"
           title={<>Which Mask is Right for Your Skin?</>}
           text="Different skin concerns require different approaches. During your appointment, we help determine which mask best suits your skin's current condition and treatment goals."
@@ -139,6 +147,7 @@ export default function BaliMoonFacial() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="Inside the Treatment"
           title={<>From Cleansing to Rose Water: Inside Your Facial Session</>}
           text="Every Bali Moon Facial follows a carefully structured treatment process designed to prepare, nourish, and soothe the skin. Each step builds on the previous one to help maximise comfort while supporting better product absorption and skin hydration."
@@ -157,6 +166,7 @@ export default function BaliMoonFacial() {
         />
         <div className="bali-moon-facial-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Refresh Your Skin"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -165,6 +175,7 @@ export default function BaliMoonFacial() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Professional Facial Care at Your Spa, Villa, or Hotel"
             text="Enjoy the convenience of professional facial treatments without changing your plans for the day. Bali Moon Facial is available both in our spa and through home service appointments, allowing you to enjoy personalised skincare in the environment where you feel most comfortable. Home service is available for an additional IDR 75,000 per therapist within Seminyak and nearby areas."
             closingText="Reserve your appointment and give your skin the attention it deserves."

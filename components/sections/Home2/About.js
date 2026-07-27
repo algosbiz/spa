@@ -9,6 +9,8 @@ export default function Home2_About({
     feature1Text = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.",
     feature2Title = "Face Treatments",
     feature2Text = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.",
+    primaryImage = "/images/about/about-two-image.png",
+    secondaryImage = "/images/about/about-two-image2.png",
 }) {
     return (
         <>
@@ -26,10 +28,10 @@ export default function Home2_About({
                         <div className="inner-column">
                             <div className="image-box">
                                 <div className="image" data-depth="0.03">
-                                    <img src="/images/about/about-two-image.png" alt="image"/>
+                                    <img src={primaryImage} alt="Spa treatment"/>
                                 </div>
-                                <img data-depth="0.05" className="circle-image" src="/images/about/about-two-image2.png"
-                                    alt="image"/>
+                                <img data-depth="0.05" className="circle-image" src={secondaryImage}
+                                    alt="Spa treatment detail"/>
                             </div>
                             <Link href="/pricing" className="circle-btn"><svg width="31" height="31" viewBox="0 0 31 31"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">

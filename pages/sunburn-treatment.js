@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -61,17 +62,21 @@ const faqItems = [
 ];
 
 export default function SunburnTreatment() {
+  const treatmentImages = createTreatmentImageSet("sunburntreatment", treatmentOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="sunburn-treatment-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="After Sun Care"
             titleSpan="Sunburn"
             title="Treatment"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Skin Recovery"
           title={<>Why Does Sunburned Skin Need Gentle Treatment?</>}
           text="After prolonged sun exposure, the skin can become warm, dehydrated, tight, and more sensitive than usual. A Sunburn Treatment uses cooling ingredients such as aloe vera together with gentle application techniques to calm overheated skin without adding unnecessary pressure. The goal is to restore comfort, replenish moisture, and support the skin's natural recovery process after time in Bali's tropical sun."
@@ -82,6 +87,7 @@ export default function SunburnTreatment() {
         />
         <div className="sunburn-treatment-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Treatment Details"
             title="A Dedicated Session for Sun-Exposed Skin"
             text="Our Sunburn Treatment is provided as a focused one-hour session, giving the skin time to cool, rehydrate, and recover comfortably after beach days, outdoor activities, or extended sun exposure."
@@ -94,6 +100,7 @@ export default function SunburnTreatment() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="The Benefits"
           title={<>How Can a Sunburn Treatment Help?</>}
           text="Sunburn Treatment is designed to improve comfort rather than provide deep massage. Cooling botanical ingredients and gentle techniques work together to calm skin that has become stressed by ultraviolet exposure while supporting healthy moisture levels during recovery."
@@ -111,6 +118,7 @@ export default function SunburnTreatment() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Areas of Care"
           title={<>Which Parts of the Body Are Commonly Treated?</>}
           text="Every sunburn is different. Our therapists focus on the areas most affected by sun exposure while adapting the treatment according to your skin's condition and comfort throughout the session."
@@ -128,6 +136,7 @@ export default function SunburnTreatment() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="The Experience"
           title={<>What to Expect from a Sunburn Treatment</>}
           text="Our therapist first assesses the condition of your skin before applying cooling aloe vera and soothing botanical products to the affected areas. Gentle, slow movements help spread the products evenly without creating unnecessary friction, while cool compresses may be used to enhance comfort. Every step is performed with sensitive skin in mind, allowing your body to relax while your skin begins its recovery."
@@ -146,6 +155,7 @@ export default function SunburnTreatment() {
         />
         <div className="sunburn-treatment-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="After Sun Care"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -154,6 +164,7 @@ export default function SunburnTreatment() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Give Your Skin the Recovery Time It Deserves"
             text="Hours spent surfing, swimming, sightseeing, or relaxing under Bali's sunshine can leave your skin feeling warmer and more sensitive than expected. Our Sunburn Treatment provides gentle after-sun care using cooling aloe vera and hydrating botanical ingredients to restore comfort without placing additional stress on the skin. Relax at our spa or enjoy the same soothing treatment from your villa or hotel through our available home service."
             closingText="Reserve your Sunburn Treatment and let your skin recover comfortably."

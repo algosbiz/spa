@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -120,17 +121,21 @@ const faqItems = [
 ];
 
 export default function Waxing() {
+  const treatmentImages = createTreatmentImageSet("waxing", waxingOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="waxing-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Smooth Finish"
             titleSpan="Waxing Treatment"
             title="in Bali"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Beyond Shaving"
           title={<>What Is Professional Waxing Treatment?</>}
           text="Waxing Treatment is a professional hair removal method that removes hair from the root, leaving skin smoother for longer than shaving. Our therapists use quality wax products and hygienic techniques to treat different areas, including arms, legs, and sensitive areas such as Brazilian waxing, with care and comfort in mind."
@@ -141,6 +146,7 @@ export default function Waxing() {
         />
         <div className="waxing-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Find Yours"
             title="Our Waxing Options"
             text="Every area of the body has different needs, which is why Spa Bali Moon provides various waxing options for both everyday grooming and special occasions. Each service is performed carefully to help you achieve smooth and well-maintained skin."
@@ -153,6 +159,7 @@ export default function Waxing() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="Hair Removal"
           title={<>Why Do Guests Choose Waxing Treatment in Bali?</>}
           text="Many guests choose professional waxing because it provides a cleaner and longer-lasting alternative to shaving. It is especially popular among travellers who want smooth skin before beach activities, holidays, events, or simply as part of their regular self-care routine."
@@ -170,6 +177,7 @@ export default function Waxing() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Treatment Areas"
           title={<>Which Areas Can Be Treated with Waxing?</>}
           text="Waxing can be customized based on your grooming needs, from smaller facial areas to larger body sections. Our therapists select the appropriate waxing technique according to the treatment area to maintain comfort and effective results."
@@ -187,6 +195,7 @@ export default function Waxing() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="Waxing Process"
           title={<>How Does a Waxing Treatment Work?</>}
           text="Our Waxing Treatment begins with preparing the skin before applying suitable wax based on the treatment area. We use Mancine Strawberry Hard Wax for sensitive areas and olive oil strip wax for larger sections to help remove hair effectively while maintaining skin comfort. After the waxing process, simple aftercare guidance is provided to help keep your skin smooth."
@@ -205,6 +214,7 @@ export default function Waxing() {
         />
         <div className="waxing-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Waxing Treatment"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -213,6 +223,7 @@ export default function Waxing() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Smooth Skin Starts with the Right Care at Spa Bali Moon"
             text="Whether preparing for a beach holiday, a special occasion, or maintaining your regular grooming routine, our Waxing Treatment helps keep your skin smooth and refreshed. With careful techniques, quality products, and personalized service, you can enjoy professional waxing at our spa or through selected home service options around Seminyak."
             closingText="Reserve your Waxing Treatment and enjoy smooth, well-maintained skin."

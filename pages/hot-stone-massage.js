@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -86,17 +87,21 @@ const faqItems = [
 ];
 
 export default function HotStoneMassage() {
+  const treatmentImages = createTreatmentImageSet("hotstonemassage", packageOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="hot-stone-massage-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Warm Stone Therapy"
             titleSpan="Traditional Hot Stone"
             title="Massage"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="The Experience"
           title={<>Why Does Hot Stone Massage Feel Different?</>}
           text="Hot Stone Massage combines traditional massage techniques with smooth heated basalt stones to create a deeply relaxing treatment. The warmth allows muscles to soften before deeper massage techniques are applied, making it easier to release tension without excessive pressure. This treatment is often chosen by guests seeking both physical relaxation and a calming wellness experience."
@@ -107,6 +112,7 @@ export default function HotStoneMassage() {
         />
         <div className="hot-stone-massage-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Find Yours"
             title="Our Package Options"
             text="Hot Stone Massage pairs naturally with treatments that extend relaxation from head to toe. Our carefully selected packages combine soothing warmth with facial care, body treatments, or beauty services, making them ideal for guests looking for a more complete spa experience during their stay in Bali."
@@ -119,6 +125,7 @@ export default function HotStoneMassage() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="Treatment Benefits"
           title={<>How Can Hot Stone Massage Support Your Wellbeing?</>}
           text="The combination of therapeutic warmth and massage techniques creates benefits that go beyond muscle relaxation alone. Many guests choose Hot Stone Massage after travelling, busy schedules, or physically demanding activities because the treatment helps the body relax naturally while encouraging overall comfort."
@@ -136,6 +143,7 @@ export default function HotStoneMassage() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Heat Therapy"
           title={<>Where Are the Warm Stones Used?</>}
           text="Different stone sizes are selected depending on the treatment area. Larger stones provide broad warming across major muscle groups, while smaller stones deliver focused attention to areas where tension commonly develops."
@@ -153,6 +161,7 @@ export default function HotStoneMassage() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="The Experience"
           title={<>What Happens During a Hot Stone Massage</>}
           text="The session begins with heated basalt stones placed on selected areas to gradually warm the muscles before massage begins. Throughout the treatment, our therapists alternate between flowing hand techniques and warm stone massage while adjusting the temperature for your comfort. Smaller stones may also be used to address areas of deeper muscular tension before the session concludes with a calming finish."
@@ -171,6 +180,7 @@ export default function HotStoneMassage() {
         />
         <div className="hot-stone-massage-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Warm Stone Therapy"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -179,6 +189,7 @@ export default function HotStoneMassage() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Warmth That Helps the Body Fully Unwind"
             text="Sometimes the body doesn't need stronger pressure, it simply needs warmth that allows muscles to let go naturally. Hot Stone Massage offers a slower, deeply comforting experience that combines therapeutic heat with skilled massage techniques to ease tension and restore a lasting sense of balance. Visit our spa or enjoy the same relaxing treatment from your villa or hotel through our convenient home service."
             closingText="Reserve your Hot Stone Massage package and enjoy warmth-led relaxation."

@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -79,17 +80,21 @@ const faqItems = [
 ];
 
 export default function FootMassage() {
+  const treatmentImages = createTreatmentImageSet("footmassage", sessionOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="foot-massage-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Light Steps Ahead"
             titleSpan="Foot Massage"
             title="Treatment"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Every Step Counts"
           title={<>Foot Massage for Daily Comfort and Recovery</>}
           text="Your feet absorb constant pressure throughout the day, whether from walking, standing, travelling, or exercising. Foot Massage focuses on the muscles, joints, and soft tissues of the feet and lower legs using relaxing massage techniques inspired by traditional reflexology. The treatment helps ease built-up tension, improve local circulation, and restore comfort, making it a popular choice after long days exploring Bali or spending hours on your feet."
@@ -100,6 +105,7 @@ export default function FootMassage() {
         />
         <div className="foot-massage-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Session Options"
             title="Choose the Right Duration"
             text="Different session lengths allow our therapist to focus on specific areas or provide more detailed care for both the feet and lower legs. Whether you need a quick refresh or a longer recovery session, each treatment is adjusted to your comfort."
@@ -112,6 +118,7 @@ export default function FootMassage() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="Common Situations"
           title={<>When Is a Foot Massage Most Helpful?</>}
           text="Foot Massage is often chosen when the feet feel tired from daily movement or extended periods of activity. Many guests book this treatment after travelling, walking around Bali, or spending long hours standing, giving their feet dedicated care that full-body massages may not always provide."
@@ -129,6 +136,7 @@ export default function FootMassage() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Areas of Focus"
           title={<>Where Does Foot Massage Work?</>}
           text="Rather than treating the feet as one single area, the massage focuses on different structures that commonly hold tension. By addressing each part individually, the treatment creates a more balanced feeling throughout the feet and lower legs."
@@ -146,6 +154,7 @@ export default function FootMassage() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="Massage Approach"
           title={<>How Our Foot Massage Is Performed</>}
           text="Each session combines smooth massage strokes, circular movements, warm natural oils, and reflexology-inspired pressure techniques to relieve tension throughout the feet and lower legs. Special attention is given to the arches, heels, and areas that commonly become sore after walking or standing. The pressure remains comfortable throughout the treatment and can be adjusted to suit your preferences."
@@ -164,6 +173,7 @@ export default function FootMassage() {
         />
         <div className="foot-massage-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Foot Recovery"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -172,6 +182,7 @@ export default function FootMassage() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Give Your Feet the Attention They Rarely Receive"
             text="Your feet support every walk, every adventure, and every journey, yet they're often the last part of the body we think to care for. A dedicated Foot Massage helps ease accumulated tension, restore everyday comfort, and leave you feeling lighter with every step. Choose an appointment at our spa or enjoy the same professional treatment through our home service in selected villas and hotels around Seminyak."
             closingText="Reserve your session and step back into your day feeling lighter."

@@ -26,6 +26,7 @@ export default function Home1_AboutReverse({
     ],
     buttonText = "Learn More",
     buttonLink = "/pricing",
+    image = "/images/about/about-image.png",
 }) {
     return (
         <>
@@ -42,7 +43,7 @@ export default function Home1_AboutReverse({
                             <div className="inner-column wow fadeInLeft" data-tilt data-tilt-max="3" data-wow-delay="200ms"
                                 data-wow-duration="1500ms" style={{ float: 'left' }}>
                                 <div className="image-box">
-                                    <img src="/images/about/about-image.png" alt="image" />
+                                    <img src={image} alt="Spa treatment" />
                                 </div>
                                 <div className="info">
                                     <p className="info-line"><span className="count">17</span> <span>+</span> Years</p>

@@ -17,6 +17,7 @@ import Instagram from "../components/sections/Home2/Instagram";
 import AboutReverse from "../components/sections/Home1/AboutReverse";
 import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -79,17 +80,21 @@ const faqItems = [
 ];
 
 export default function Home2() {
+  const treatmentImages = createTreatmentImageSet("balinesemassage", packageOptions.length);
     return (
       <>
         <Layout HeaderStyle="one" FooterStyle="two">
           <div className="balinese-massage-banner">
             <Banner
+              image={treatmentImages.hero}
               subTitle="Ancient Healing"
               titleSpan="Balinese Massage"
               title="Treatment"
             />
           </div>
           <AboutOld
+            primaryImage={treatmentImages.intro[0]}
+            secondaryImage={treatmentImages.intro[1]}
             subTitle="A Traditional Wellness"
             title={<>The Story: What Makes Balinese Massage Unique?</>}
             text="Balinese massage is a traditional treatment influenced by healing practices from Bali, Java, India, and China. The treatment combines acupressure, gentle stretching, skin rolling, and flowing strokes to help reduce tension, improve circulation, and encourage relaxation. Our therapists adapt the pressure and focus areas according to your comfort and preferences."
@@ -100,6 +105,7 @@ export default function Home2() {
           />
           <div className="balinese-massage-pricing">
             <Pricing
+              images={treatmentImages.pricing}
               subTitle="Find Yours"
               title="Our Package Options"
               text="Balinese massage is often combined with treatments such as facials, cream baths, and nail care to create a more complete spa experience. Our treatment packages are created for guests looking to relax, refresh, and make the most of their massage time in Bali."
@@ -119,6 +125,7 @@ export default function Home2() {
           {/* <Team /> */}
           {/* <Contact /> */}
           <About
+            image={treatmentImages.details[0]}
             subTitle="The Benefits"
             title={<>Why Guests Choose Balinese Massage</>}
             text="Our Balinese massage is commonly chosen by travellers, office workers, and active individuals because it combines relaxation techniques with muscle-focused work in a single treatment."
@@ -136,6 +143,7 @@ export default function Home2() {
             buttonLink={bookingUrl}
           />
           <AboutReverse
+            image={treatmentImages.details[1]}
             subTitle="Suitable For"
             title={<>Who Is Balinese Massage Best For?</>}
             text="This treatment is suitable for many different lifestyles and travel situations. Our therapists frequently recommend Balinese massage for guests looking for both relaxation and physical recovery."
@@ -153,6 +161,7 @@ export default function Home2() {
             buttonLink={bookingUrl}
           />
           <About
+            image={treatmentImages.details[2]}
             subTitle="The Experience"
             title={<>What to Expect from a Balinese Massage</>}
             text="A Balinese massage session begins with a short consultation regarding pressure preferences and areas that require extra attention. Massage oil is used to support smooth movements and muscle relaxation. The same treatment experience is also available through our home service for guests staying in villas, hotels, or private accommodations."
@@ -171,6 +180,7 @@ export default function Home2() {
           />
           <div className="balinese-massage-faq">
             <Faq
+              image={treatmentImages.faq}
               subTitle="Frequently Asked Questions"
               title={<>Everything You Need to Know</>}
               items={faqItems}
@@ -178,6 +188,7 @@ export default function Home2() {
           </div>
           <div className=" pt-100 pb-100">
             <ReserveCta
+              backgroundImage={treatmentImages.cta}
               title="Enjoy Balinese Massage Wherever You Feel Most Comfortable"
               text="Experience traditional Balinese massage in the comfort of your home, villa, or hotel without compromising on quality or convenience. Home service is available for an additional IDR 75,000 per therapist within Seminyak and nearby areas, while in-spa appointments can be scheduled throughout the day."
               closingText="Reserve a session that fits your plans and enjoy authentic Balinese relaxation wherever you stay in Bali"

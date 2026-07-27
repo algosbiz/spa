@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -92,17 +93,21 @@ const faqItems = [
 ];
 
 export default function ThaiMassage() {
+  const treatmentImages = createTreatmentImageSet("thaimassage", packageOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="thai-massage-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Active Release"
             titleSpan="Traditional Thai Massage"
             title="in Bali"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Get to Know"
           title={<>What Makes Traditional Thai Massage Unique?</>}
           text="Traditional Thai Massage is an ancient wellness technique that combines rhythmic pressure, assisted stretching, and controlled body movements to improve flexibility and ease physical tension. Unlike oil-based massage styles that focus mainly on flowing strokes, Thai Massage uses guided stretches and pressure points to encourage better mobility, body awareness, and overall relaxation."
@@ -113,6 +118,7 @@ export default function ThaiMassage() {
         />
         <div className="thai-massage-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Choose Yours"
             title="Our Package Options"
             text="Enjoy a complete Thai Massage experience combined with other relaxing treatments at Spa Bali Moon. Each package is created to provide a balanced wellness session, combining traditional Thai techniques with facial, nail, and body treatments."
@@ -125,6 +131,7 @@ export default function ThaiMassage() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="Body Benefits"
           title={<>Why Do Guests Choose Thai Massage in Bali?</>}
           text="Traditional Thai Massage is often chosen by guests who want a more active approach to relaxation. The combination of pressure and stretching helps the body feel more open, especially after travelling, exercising, or spending long hours sitting."
@@ -142,6 +149,7 @@ export default function ThaiMassage() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Focus Areas"
           title={<>Which Parts of the Body Are Treated During Thai Massage?</>}
           text="Thai Massage works with the entire body through pressure techniques and assisted movements. Our therapists focus on areas that commonly feel restricted from posture, travel, or active routines, helping create a greater sense of balance and ease throughout the session."
@@ -158,6 +166,7 @@ export default function ThaiMassage() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="Massage Technique"
           title={<>How Does Traditional Thai Massage Work?</>}
           text="Traditional Thai Massage combines steady pressure, stretching, and rhythmic movements without the use of massage oil. Our therapists use hands, thumbs, palms, and body weight techniques to work through areas of tension while carefully guiding the body through comfortable stretches. Each movement follows a slow and controlled approach to help improve relaxation and flexibility."
@@ -176,6 +185,7 @@ export default function ThaiMassage() {
         />
         <div className="thai-massage-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Thai Massage"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -184,6 +194,7 @@ export default function ThaiMassage() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Increase Your Flexibility with Traditional Thai Massage at Spa Bali Moon"
             text="After long flights, busy adventures, or active days in Bali, the body can begin to feel tight and restricted. Traditional Thai Massage combines rhythmic pressure and assisted stretching to help ease stiffness, improve flexibility, and bring back a lighter feeling of movement. Enjoy your session at Spa Bali Moon or request our home service option at selected villas and hotels around Seminyak."
             closingText="Reserve your Thai Massage package and move through Bali feeling lighter."

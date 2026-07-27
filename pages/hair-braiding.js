@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -84,17 +85,21 @@ const faqItems = [
 ];
 
 export default function HairBraiding() {
+  const treatmentImages = createTreatmentImageSet("hairbraiding", sessionOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="hair-braiding-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Creative Hairstyles"
             titleSpan="Hair Braiding"
             title="in Bali"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="More Than a Hairstyle"
           title={<>Hair Braiding for Style, Comfort, and Everyday Wear</>}
           text="Hair braiding is more than a fashion trend. It is a practical hairstyle that helps keep hair neat, manageable, and protected throughout busy days in Bali. From beach clubs and sightseeing to special events and everyday activities, braided hairstyles reduce tangling in humid weather while offering a personalised look that suits different hair lengths, and occasions."
@@ -105,6 +110,7 @@ export default function HairBraiding() {
         />
         <div className="hair-braiding-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Hair Length Options"
             title="Choose the Style That Fits Your Hair"
             text="Pricing is based on hair length, allowing enough time to create neat, balanced braids while adapting the technique to your preferred style and overall hair volume."
@@ -117,6 +123,7 @@ export default function HairBraiding() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="Very Popular"
           title={<>Why Many Visitors Choose Hair Braiding in Bali</>}
           text="Braided hairstyles have become one of the most popular beauty services in Bali because they combine style with practicality. They help keep hair comfortable in warm, humid weather while reducing the need for daily styling, making them ideal for beach days, sightseeing, outdoor adventures, and special occasions."
@@ -134,6 +141,7 @@ export default function HairBraiding() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Braid Collection"
           title={<>Explore Our Most Popular Hair Braiding Styles</>}
           text="Every hairstyle creates a different look and level of hold. Whether you prefer a clean everyday braid or something more detailed for a special occasion, we'll help you choose a style that matches your hair type, plans, and personal preference."
@@ -153,6 +161,7 @@ export default function HairBraiding() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="Your Custom Style"
           title={<>Every Braid Starts with the Right Plan</>}
           text="Before braiding begins, we discuss your preferred hairstyle, braid size, hair length, and whether you'd like to include extensions. Each section of hair is carefully prepared before braiding to create an even, comfortable finish. Once complete, we'll also share simple aftercare tips to help your hairstyle stay neat for longer."
@@ -171,6 +180,7 @@ export default function HairBraiding() {
         />
         <div className="hair-braiding-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Braid Styles"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -179,6 +189,7 @@ export default function HairBraiding() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="A Hairstyle That Keeps Up with Your Bali Plans"
             text="From beach mornings and sunset dinners to island tours and special celebrations, the right hairstyle lets you enjoy every moment without constantly fixing your hair. Our Hair Braiding service combines personalised styling with practical comfort, creating braids that are made to suit your holiday, your plans, and your personal style. Visit our spa to create a look that's comfortable to wear, easy to maintain, and ready for wherever Bali takes you next."
             closingText="Reserve your Hair Braiding appointment and create a style made for your Bali plans."

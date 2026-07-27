@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -87,17 +88,21 @@ const faqItems = [
 ];
 
 export default function ManicurePedicure() {
+  const treatmentImages = createTreatmentImageSet("manicurepedicure", packageOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="manicure-pedicure-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Polish and Pamper"
             titleSpan="Manicure & Pedicure"
             title="Treatment"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Essentials Care"
           title={<>More Than Beautiful Nails</>}
           text="A professional Manicure & Pedicure focuses on both appearance and nail health. Beyond shaping and polishing, the treatment includes nail cleaning, cuticle care, skin conditioning, and hydration to help keep hands and feet looking neat while maintaining everyday comfort. Suitable for regular maintenance or as part of a relaxing spa visit, it offers practical care with lasting results."
@@ -108,6 +113,7 @@ export default function ManicurePedicure() {
         />
         <div className="manicure-pedicure-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Find Yours"
             title="Our Package Options"
             text="Complete your nail care with spa treatments that help you feel refreshed from head to toe. Our packages combine professional manicure and pedicure services with massage, facial, or hair care, creating a balanced wellness experience during your stay in Bali."
@@ -120,6 +126,7 @@ export default function ManicurePedicure() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="The Reason"
           title={<>Why Is Regular Nail Care Important?</>}
           text="Hands and feet are exposed to daily activities that can leave nails brittle, cuticles dry, and skin rough over time. Regular Manicure & Pedicure treatments help maintain healthy nails, improve skin condition, and keep hands and feet looking clean, comfortable, and well cared for."
@@ -137,6 +144,7 @@ export default function ManicurePedicure() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="What's Included"
           title={<>Professional Care from Nails to Skin</>}
           text="Our Manicure & Pedicure treatment combines essential nail care with skin conditioning to create a complete maintenance routine. Every step is performed carefully to improve both comfort and appearance."
@@ -154,6 +162,7 @@ export default function ManicurePedicure() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="The Process"
           title={<>What Can You Expect During Your Appointment?</>}
           text="Our therapist begins by assessing your nails before cleaning, shaping, and caring for the cuticles. After the nails are prepared, the skin is moisturised using nourishing products, followed by your selected polish or gel finish if included. Every stage is completed with attention to hygiene, comfort, and long-lasting results."
@@ -172,6 +181,7 @@ export default function ManicurePedicure() {
         />
         <div className="manicure-pedicure-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Nail Care"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -180,6 +190,7 @@ export default function ManicurePedicure() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Keep Your Hands and Feet Looking Their Best"
             text="Well-groomed nails are about more than appearance, they also contribute to everyday comfort and confidence. Whether you're preparing for a special occasion, recovering after days of exploring Bali, or simply taking time for yourself, our Manicure & Pedicure treatments provide professional care in a calm and relaxing environment. Enjoy your appointment at our spa or choose our convenient home service for villas and hotels throughout Seminyak and surrounding areas."
             closingText="Reserve your Manicure & Pedicure treatment and enjoy polished, comfortable care."

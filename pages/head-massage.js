@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -79,17 +80,21 @@ const faqItems = [
 ];
 
 export default function HeadMassage() {
+  const treatmentImages = createTreatmentImageSet("headmassage", durationOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="head-massage-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Stress-Free Therapy"
             titleSpan="Head Massage"
             title="Treatment"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Scalp & Head Care"
           title={<>What Is a Head Massage?</>}
           text="Head Massage is a wellness treatment that focuses on the scalp, temples, neck, and upper shoulders using slow, rhythmic massage techniques. While commonly chosen for relaxation, it also helps ease muscle tightness around the head and neck caused by prolonged sitting, screen time, travelling, or everyday stress."
@@ -100,6 +105,7 @@ export default function HeadMassage() {
         />
         <div className="head-massage-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Find Yours"
             title="Our Duration Options"
             text="Whether you need a short break between activities or a longer session to fully unwind, our Head Massage is available in several durations. Each treatment can be adjusted according to your preferred pressure and the areas that need extra attention."
@@ -112,6 +118,7 @@ export default function HeadMassage() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="Daily Relief"
           title={<>How Can a Head Massage Help?</>}
           text="Although Head Massage is often associated with relaxation, many guests also choose it to reduce physical tension around the scalp and neck after work, travel, or mentally demanding days. Gentle massage techniques encourage the body to slow down while creating a lighter, more comfortable feeling throughout the upper body."
@@ -129,6 +136,7 @@ export default function HeadMassage() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Treatment Focus"
           title={<>Which Areas Receive the Most Attention?</>}
           text="Rather than concentrating on the scalp alone, a Head Massage also includes nearby muscles that commonly contribute to feelings of tightness. Treating these connected areas creates a more balanced and comfortable experience."
@@ -146,6 +154,7 @@ export default function HeadMassage() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="Massage Techniques"
           title={<>What to Expect During a Head Massage Session</>}
           text="Our therapist begins with gentle movements across the scalp before gradually working through the temples, neck, and upper shoulders. Different massage techniques are combined throughout the session, including circular movements, rhythmic pressure, kneading, and slow strokes that help release built-up tension while maintaining a calm, comfortable pace."
@@ -164,6 +173,7 @@ export default function HeadMassage() {
         />
         <div className="head-massage-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Scalp Care"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -172,6 +182,7 @@ export default function HeadMassage() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Refresh Your Mind While Caring for Your Body"
             text="Busy travel schedules, long hours in front of a screen, or simply keeping up with daily activities can leave tension concentrated around the head and neck. A professional Head Massage offers a simple way to slow down, release built-up tightness, and enjoy a greater sense of comfort without committing to a full-body treatment. Visit our spa or enjoy the same relaxing experience through our home service at selected villas and hotels around Seminyak."
             closingText="Reserve your Head Massage session and give your upper body time to unwind."

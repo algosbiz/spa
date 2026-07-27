@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -79,17 +80,21 @@ const faqItems = [
 ];
 
 export default function VirginCoconutOilMassage() {
+  const treatmentImages = createTreatmentImageSet("coconutoilmassage", sessionOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="coconut-oil-massage-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Natural Nourishment"
             titleSpan="Virgin Cold Press"
             title="Coconut Oil Massage"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Pure Coconut Care"
           title={<>The Benefits of Virgin Coconut Oil Massage</>}
           text="Virgin cold-pressed coconut oil is made from fresh coconuts without high heat, helping preserve its natural properties. In massage therapy, it is valued for its smooth texture, skin-conditioning benefits, and suitability for most skin types. Combined with relaxing massage techniques, it creates a treatment that supports both muscle relaxation and skin nourishment."
@@ -100,6 +105,7 @@ export default function VirginCoconutOilMassage() {
         />
         <div className="coconut-oil-massage-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Choose Your Session"
             title="Session Duration & Pricing"
             text="Our Virgin Cold Press Coconut Oil Massage is available in multiple session durations, making it easy to choose the treatment that best fits your schedule. Each session uses pure cold-pressed coconut oil to support skin hydration while enhancing the comfort of the massage."
@@ -112,6 +118,7 @@ export default function VirginCoconutOilMassage() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="Why Coconut Oil?"
           title={<>More Than Just Massage Oil</>}
           text="Virgin coconut oil has long been used in tropical wellness traditions because of its natural moisturising properties and smooth texture. While the massage techniques help relax the body, the oil provides an added layer of skin care that many guests appreciate, especially after spending time in Bali's sun and tropical climate."
@@ -129,6 +136,7 @@ export default function VirginCoconutOilMassage() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Ideal For"
           title={<>Who Usually Chooses This Massage?</>}
           text="This treatment is often selected by guests who want more than muscle relaxation. The nourishing properties of virgin coconut oil make it especially popular among travellers looking to restore skin comfort while enjoying a calming massage experience."
@@ -146,6 +154,7 @@ export default function VirginCoconutOilMassage() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="Treatment Process"
           title={<>Why Virgin Coconut Oil Works So Well for Massage</>}
           text="Virgin cold-pressed coconut oil stays smooth throughout the treatment, allowing massage techniques to flow naturally without frequent reapplication. Its lightweight consistency helps the therapist perform long, continuous strokes while leaving the skin feeling soft, comfortable, and naturally moisturised after the session."
@@ -164,6 +173,7 @@ export default function VirginCoconutOilMassage() {
         />
         <div className="coconut-oil-massage-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Pure Coconut Care"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -172,6 +182,7 @@ export default function VirginCoconutOilMassage() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Experience the Natural Comfort of Virgin Coconut Oil"
             text="Sometimes the simplest ingredients create the most relaxing experiences. Our Virgin Cold Press Coconut Oil Massage combines traditional massage techniques with pure coconut oil to leave both your body and skin feeling refreshed. Enjoy your treatment at our spa or through home service in your villa or hotel, with appointments available throughout Seminyak and nearby areas."
             closingText="Let yourself unwind with one of Bali's most naturally nourishing massage experiences."

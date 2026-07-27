@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -79,17 +80,21 @@ const faqItems = [
 ];
 
 export default function NailArt() {
+  const treatmentImages = createTreatmentImageSet("nailart", serviceOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="nail-art-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Creative Design"
             titleSpan="Nail Art & Gel Nails"
             title="in Seminyak"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Personal Style"
           title={<>Why Do Many Guests Choose Gel Nail Art?</>}
           text="Gel Nail Art combines creative design with a durable gel finish that helps nails stay neat and polished for longer than regular nail polish. Many guests choose this treatment before holidays, weddings, special events, or simply to enjoy beautiful nails throughout their stay in Bali. At Spa Bali Moon, every design is applied carefully to protect the natural nail while creating a personalised look that matches your style."
@@ -100,6 +105,7 @@ export default function NailArt() {
         />
         <div className="nail-art-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Service Options"
             title="Choose the Finish You Prefer"
             text="Our nail services include fresh colour, decorative nail art, and long lasting gel finishes, giving you different options to suit your personal style and any occasion."
@@ -112,6 +118,7 @@ export default function NailArt() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="Beauty Benefits"
           title={<>What Makes Gel Nail Art So Popular?</>}
           text="Beautiful nails are more than decoration. Gel Nail Art helps create a polished appearance while protecting the design from everyday wear. Many guests choose it because it combines creativity, durability, and professional finishing in a single treatment."
@@ -129,6 +136,7 @@ export default function NailArt() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Design Possibilities"
           title={<>Find Nail Art Style That Matches You</>}
           text="Every guest has a different style preference. Our therapists can create clean minimalist looks, elegant classic finishes, or detailed artistic designs based on your inspiration and the condition of your natural nails."
@@ -146,6 +154,7 @@ export default function NailArt() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="Application Process"
           title={<>How Is Gel Nail Art Applied?</>}
           text="Each appointment begins with nail preparation to create a smooth foundation before colour or gel is applied. Designs are built layer by layer using professional products, then cured under a UV or LED lamp to achieve a durable finish. Throughout the session, our nail artists work carefully to keep both the design and your natural nails in excellent condition."
@@ -164,6 +173,7 @@ export default function NailArt() {
         />
         <div className="nail-art-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Gel Nail Art"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -172,6 +182,7 @@ export default function NailArt() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Experience Beautiful Nails That Last Beyond Your Bali Holiday"
             text="Whether you're preparing for a beach holiday, a romantic dinner, a wedding, or simply want beautifully finished nails, our Nail Art service offers personalised designs created with professional care and long-lasting gel products. Every appointment is tailored to your preferred style while keeping your natural nails healthy and comfortable."
             closingText="Leave with polished nails that feel as beautiful as they look."

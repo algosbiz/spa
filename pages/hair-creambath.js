@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -72,17 +73,21 @@ const faqItems = [
 ];
 
 export default function HairCreambath() {
+  const treatmentImages = createTreatmentImageSet("creambath", packageOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="hair-creambath-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Hair & Scalp Wellness"
             titleSpan="Hair Creambath"
             title="Treatment"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Traditional Hair Care"
           title={<>The Ritual Behind a Cream Bath Treatment</>}
           text="A creambath is a popular Indonesian hair and scalp treatment that combines nourishing hair cream with a gentle scalp massage. Unlike a regular hair mask, this treatment focuses on both the hair strands and scalp, helping improve softness, moisture, and overall hair condition. Commonly enjoyed after sun exposure, swimming, or frequent styling, a creambath offers a relaxing way to refresh and care for your hair."
@@ -93,6 +98,7 @@ export default function HairCreambath() {
         />
         <div className="hair-creambath-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Find Yours"
             title="Our Package Options"
             text="Our Cream Bath packages combine nourishing hair care with relaxing spa treatments for a more complete wellness experience. From facial care and massage to body treatments, each combination is designed to help you refresh your hair, relax your body, and enjoy more during your spa visit in Bali."
@@ -105,6 +111,7 @@ export default function HairCreambath() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="Ingredient Guide"
           title={<>Which Creambath Formula is Right for You?</>}
           text="Each creambath formula is designed with different ingredients to support specific hair concerns. Choosing the right option helps ensure your treatment matches your hair type, condition, and desired results."
@@ -122,6 +129,7 @@ export default function HairCreambath() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Hair Benefits"
           title={<>How Does a Cream Bath Care for Your Hair?</>}
           text="Our creambath provides focused care for both the hair and scalp by combining nourishing cream with a relaxing scalp massage. It is commonly chosen to help refresh hair that feels dry, dull, or affected by sun exposure, humidity, swimming, and daily styling."
@@ -139,6 +147,7 @@ export default function HairCreambath() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="The Ritual"
           title={<>Inside a Traditional Creambath Session</>}
           text="Our Creambath session combines hair conditioning with a relaxing scalp treatment. The process begins with selecting a suitable cream formula based on your hair needs, followed by a gentle application from the roots to the ends. A soothing scalp massage helps the cream absorb while releasing tension, then the treatment is completed with a rinse and finishing step to leave the hair feeling soft, refreshed, and manageable."
@@ -157,6 +166,7 @@ export default function HairCreambath() {
         />
         <div className="hair-creambath-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Refresh Your Hair"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -165,6 +175,7 @@ export default function HairCreambath() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Restore Your Hair After Bali's Tropical Days"
             text="Sun exposure, ocean water, and humidity can affect the way your hair feels and looks. A Creambath treatment helps replenish moisture, soften dry strands, and provide relaxing scalp care through nourishing creams and gentle massage techniques. Enjoy your session at our spa or request a home service at your villa or hotel for a convenient hair care experience during your stay in Bali."
             closingText="Refresh your hair and enjoy a calming self-care moment designed around your needs."

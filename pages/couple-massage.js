@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -72,17 +73,21 @@ const faqItems = [
 ];
 
 export default function CoupleMassage() {
+  const treatmentImages = createTreatmentImageSet("couplemassage", packageOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="couple-massage-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Together in Relaxation"
             titleSpan="Couple Massage"
             title="Treatment"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Shared Wellness"
           title={<>The Couples Massage Experience</>}
           text="A Couple Massage is a shared spa experience where two guests receive treatments side by side, each with their own therapist. While it's popular with couples, it's also suitable for friends and family members who want to relax together. Each guest can choose their preferred pressure, creating a personalised treatment within the same relaxing environment."
@@ -93,6 +98,7 @@ export default function CoupleMassage() {
         />
         <div className="couple-massage-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Find Yours"
             title="Our Package Options"
             text="Every couple enjoys relaxation differently, which is why we offer several massage styles for two. Whether you prefer gentle Balinese techniques, deeper muscle work, or a warm candle ritual, each experience is designed to help you slow down and enjoy quality time together."
@@ -105,6 +111,7 @@ export default function CoupleMassage() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="Shared Moments"
           title={<>Why Is Couple Massage So Popular in Bali?</>}
           text="For many visitors, a Couple Massage is more than a spa treatment. It offers dedicated time to unwind together after sightseeing, beach activities, or long travel days. The experience is especially popular among honeymooners, anniversary celebrations, birthdays, and anyone looking to enjoy a relaxing moment with someone special."
@@ -122,6 +129,7 @@ export default function CoupleMassage() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Suitable For"
           title={<>Couple Massage isn't Just for Couples</>}
           text="Although the name suggests a romantic experience, Couple Massage simply means two people receiving treatments together. Our therapists welcome all guests who wish to enjoy a shared wellness session in a calm and comfortable environment."
@@ -139,6 +147,7 @@ export default function CoupleMassage() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="Your Visit"
           title={<>A Personalised Experience for Two</>}
           text="Your experience begins with a short consultation where each guest can discuss preferred pressure and any areas needing extra attention. Two therapists perform the treatments simultaneously, allowing both guests to relax together while receiving personalised care. Sessions are available at our spa or through home service for villas and hotels across selected areas of Seminyak."
@@ -157,6 +166,7 @@ export default function CoupleMassage() {
         />
         <div className="couple-massage-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Relax Together"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -165,6 +175,7 @@ export default function CoupleMassage() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Make Time for Each Other While You're in Bali"
             text="A Couple Massage is a simple way to enjoy quality time while also giving your body a chance to relax. Many guests book this experience during their holiday, honeymoon, anniversary, or even as a wellness activity with friends or family. Sessions are available in our spa or through home service at villas and hotels, with an additional IDR 75,000 per therapist within Seminyak and nearby areas."
             closingText="Create a memorable wellness experience together and let our therapists take care of the rest."

@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -82,17 +83,21 @@ const faqItems = [
 ];
 
 export default function BodyScrub() {
+  const treatmentImages = createTreatmentImageSet("bodyscrub", packageOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="body-scrub-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Skin Renewal"
             titleSpan="Body Scrub"
             title="Treatment"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Natural Exfoliation"
           title={<>Why Do So Many Guests Add a Body Scrub to Their Bali Stay?</>}
           text="Body scrub is an exfoliating treatment to remove dead skin cells, lift daily buildup, and help restore smoother skin texture. In Bali, sun exposure, saltwater, humidity, and outdoor activities can leave the skin feeling dry or dull over time. Our therapists use natural exfoliants inspired by traditional Balinese lulur rituals to gently refresh the skin while creating a relaxing treatment experience."
@@ -103,6 +108,7 @@ export default function BodyScrub() {
         />
         <div className="body-scrub-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Find Yours"
             title="Our Package Options"
             text="Body scrubs are often combined with massage, facials, and beauty treatments to create a complete wellness session. Our packages are designed for guests looking to refresh both body and mind while enjoying their time in Bali."
@@ -115,6 +121,7 @@ export default function BodyScrub() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="The Results"
           title={<>What Can Regular Exfoliation Help With?</>}
           text="Exfoliation is commonly included in skincare routines to help remove dead skin cells that naturally accumulate on the surface of the skin. Many guests choose body scrubs after beach days, outdoor activities, or before special occasions when they want their skin to feel smoother and look more refreshed."
@@ -132,6 +139,7 @@ export default function BodyScrub() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Choosing Your Scrub"
           title={<>Which Natural Scrub Matches Your Skin Goals?</>}
           text="Each scrub ingredient creates a slightly different treatment experience while delivering the same gentle exfoliating effect. The choice often comes down to fragrance preferences and the type of skin support you are looking for."
@@ -149,6 +157,7 @@ export default function BodyScrub() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="Inside the Treatment"
           title={<>What Happens During a Body Scrub Session?</>}
           text="The treatment begins with your choice of scrub ingredients before gentle circular massage movements are used to exfoliate the body evenly. Additional attention is often given to rougher areas such as elbows, knees, and feet before the scrub is removed to reveal smoother and cleaner-feeling skin underneath. The same treatment experience is also available through our villa and hotel home service appointments."
@@ -167,6 +176,7 @@ export default function BodyScrub() {
         />
         <div className="body-scrub-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Renew Your Skin"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -175,6 +185,7 @@ export default function BodyScrub() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Give Your Skin a Fresh Start After Days in the Bali Sun"
             text="Long days spent at the beach, by the pool, or exploring Bali can leave the skin feeling dry, rough, or tired. Our Body Scrub treatment helps lift away buildup and dead skin cells while leaving the skin smoother, softer, and more comfortable to the touch. Treatments are available at our spa or through home service appointments for guests staying in villas and hotels throughout Seminyak and nearby areas."
             closingText="Reserve your appointment and enjoy refreshed, smoother-feeling skin."

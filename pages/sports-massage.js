@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -70,17 +71,21 @@ const faqItems = [
 ];
 
 export default function SportsMassage() {
+  const treatmentImages = createTreatmentImageSet("sportsmassage", sportsMassageOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="sports-massage-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Active Recovery"
             titleSpan="Sport Massage Treatment"
             title=""
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Movement & Recovery"
           title={<>What Makes Sport Massage Different from a Regular Massage?</>}
           text="Sport Massage is a targeted treatment designed for active bodies experiencing frequent movement, physical effort, and muscle strain. Through controlled pressure, stretching, and rhythmic movements, it focuses on areas that become tight after exercise, training, surfing, or active travel, helping the body feel more flexible, balanced, and ready for the next activity."
@@ -91,6 +96,7 @@ export default function SportsMassage() {
         />
         <div className="sports-massage-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Choose Yours"
             title="Our Session Options"
             text="Different activities place different demands on the body. A shorter session works well for focused recovery, while a longer treatment allows more time to work through multiple areas affected by training, travel, or repetitive movement."
@@ -103,6 +109,7 @@ export default function SportsMassage() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="Active Bodies"
           title={<>Who Can Benefit from Sport Massage?</>}
           text="Sport Massage is not limited to professional athletes. Anyone who regularly challenges their body through movement can benefit from a treatment focused on muscle comfort and recovery."
@@ -120,6 +127,7 @@ export default function SportsMassage() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Targeted Treatment"
           title={<>Areas That Receive the Most Attention During Sport Massage</>}
           text="Our therapists adjust the treatment based on your activity and the areas that feel most affected. Common focus areas include large muscle groups that experience repeated use during exercise, sports, and daily movement."
@@ -129,6 +137,7 @@ export default function SportsMassage() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="Recovery Technique"
           title={<>What Happens During a Sport Massage?</>}
           text="The session begins with a short consultation to understand your activity level and areas needing attention. Our therapist combines techniques such as kneading, compression, stretching, and controlled pressure to ease muscle tightness while adjusting the intensity to your comfort and goals."
@@ -147,6 +156,7 @@ export default function SportsMassage() {
         />
         <div className="sports-massage-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Sport Massage"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -155,6 +165,7 @@ export default function SportsMassage() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Renew Your Body After Every Challenge"
             text="An active lifestyle asks a lot from your body. Long training sessions, outdoor adventures, and busy days exploring Bali can leave muscles feeling tired and restricted. Sport Massage at Spa Bali Moon provides focused care through controlled pressure and recovery techniques that help you feel more comfortable, mobile, and refreshed. Enjoy your treatment at our spa in Seminyak or experience the convenience of our home service at selected hotels and villas around Bali."
             closingText="Reserve your Sport Massage and feel ready for your next activity."

@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -69,7 +70,7 @@ const faqItems = [
   },
 ];
 
-const DurationPricing = () => (
+const DurationPricing = ({ images = [] }) => (
   <section className="cellulite-pricing-section bg-sub section__decoration-top section__decoration-bottom pt-130 pb-130">
     <div className="container">
       <div className="section-header__flex mb-60">
@@ -88,11 +89,11 @@ const DurationPricing = () => (
         </div>
       </div>
       <div className="row g-4">
-        {sessionOptions.map((option) => (
+        {sessionOptions.map((option, index) => (
           <div className="col-lg-6" key={option.duration}>
             <div className="cellulite-pricing-card">
               <div className="cellulite-pricing-card__image">
-                <img src="/images/pricing/pricing-three-image1.jpg" alt="Cellulite massage treatment" />
+                <img src={images[index] || "/images/pricing/pricing-three-image1.jpg"} alt="Cellulite massage treatment" />
               </div>
               <div className="cellulite-pricing-card__content">
                 <p className="cellulite-pricing-card__price">{option.price}</p>
@@ -120,17 +121,21 @@ const DurationPricing = () => (
 );
 
 export default function CelluliteMassage() {
+  const treatmentImages = createTreatmentImageSet("cellulitemassage", sessionOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="cellulite-massage-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Body Contouring"
             titleSpan="Cellulite Massage"
             title="Treatment"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Smoother Skin Support"
           title={<>Can Massage Help Improve the Appearance of Cellulite?</>}
           text="Cellulite massage is a targeted body treatment designed to support circulation, encourage lymphatic movement, and improve the appearance of uneven skin texture commonly associated with cellulite. The treatment uses firm, controlled techniques that focus on areas such as the thighs, hips, buttocks, and abdomen where cellulite often develops. Our therapists adjust the intensity according to your comfort level and treatment goals."
@@ -139,13 +144,14 @@ export default function CelluliteMassage() {
           feature2Title="Firm Pressure"
           feature2Text="Uses controlled movements designed to stimulate circulation and tissue mobility."
         />
-        <DurationPricing />
+        <DurationPricing images={treatmentImages.pricing} />
         <div className="cellulite-massage-funfact">
           <Funfact items={serviceHighlights} />
         </div>
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="Understanding Cellulite"
           title={<>Why Does Cellulite Form in the First Place?</>}
           text="Cellulite develops when fat deposits beneath the skin push against connective tissue, creating the uneven or dimpled appearance many people notice on the thighs, hips, or buttocks. Factors such as genetics, hormones, circulation, lifestyle, and fluid retention can all contribute to its appearance."
@@ -163,6 +169,7 @@ export default function CelluliteMassage() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Treatment Benefits"
           title={<>How Cellulite Massage Supports Your Wellness</>}
           text="While cellulite massage is not intended as a medical treatment or permanent solution, many guests choose it as part of their body wellness routine because of its potential benefits for circulation, tissue mobility, and skin texture."
@@ -180,6 +187,7 @@ export default function CelluliteMassage() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="Inside the Session"
           title={<>How the Treatment Works</>}
           text="During the treatment, our therapists use firm and repetitive movements across selected areas of the body to stimulate circulation and work with the underlying tissues. Pressure levels can be adjusted throughout the session to maintain comfort while still providing an effective treatment experience. Home service appointments are also available for guests staying in villas and hotels."
@@ -198,6 +206,7 @@ export default function CelluliteMassage() {
         />
         <div className="cellulite-massage-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Smooth Skin Support"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -206,6 +215,7 @@ export default function CelluliteMassage() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Support Smoother Skin Wherever You Prefer to Relax"
             text="Whether you visit our spa or prefer the privacy of your villa or hotel, our cellulite massage treatment can be arranged around your schedule. Home service is available for an additional IDR 75,000 per therapist within Seminyak and nearby areas, allowing you to enjoy focused body care without interrupting your plans in Bali."
             closingText="Reserve your session and let our therapists help you create a treatment plan that fits your comfort and body goals."

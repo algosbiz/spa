@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -79,17 +80,21 @@ const faqItems = [
 ];
 
 export default function TraditionalMassage() {
+  const treatmentImages = createTreatmentImageSet("traditionalmassage", sessionOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="traditional-massage-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Firm Body Care"
             titleSpan="Traditional Massage"
             title="Treatment"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Traditional Wellness Support"
           title={<>What Makes Traditional Massage Different?</>}
           text="Traditional Massage is a hands-on body treatment that uses firmer pressure, kneading movements, and focused techniques to release muscle tension throughout the body. Unlike lighter relaxation massages, this treatment works more directly on areas that feel stiff or overworked, helping improve comfort, mobility, and overall body relaxation."
@@ -100,6 +105,7 @@ export default function TraditionalMassage() {
         />
         <div className="traditional-massage-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Select Yours"
             title="Our Session Options"
             text="Our Traditional Massage session provides enough time for therapists to work through areas that hold tension. Choose a shorter treatment for focused relaxation or a longer session for more complete body care."
@@ -112,6 +118,7 @@ export default function TraditionalMassage() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="Gentle Relief"
           title={<>Why Do Guests Choose Traditional Massage?</>}
           text="Traditional Massage is popular among guests who prefer a stronger touch compared to gentle relaxation treatments. It is often selected after busy schedules, long journeys, physical activities, or when the body feels heavy from daily tension."
@@ -129,6 +136,7 @@ export default function TraditionalMassage() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Treatment Focus"
           title={<>Which Areas Receive the Most Attention?</>}
           text="Muscle tension often develops in areas that carry repeated pressure throughout the day. During Traditional Massage, our therapists adjust their approach based on your body condition and focus on areas that need extra care."
@@ -146,6 +154,7 @@ export default function TraditionalMassage() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="The Approach"
           title={<>Inside a Traditional Massage Session</>}
           text="Traditional Massage combines firm hand movements with warm oil application to create smoother and more comfortable techniques. Our therapists use kneading, pressing, and acupressure-inspired movements to release areas of tightness while maintaining communication throughout the session. Pressure can be adjusted based on your comfort and body response."
@@ -164,6 +173,7 @@ export default function TraditionalMassage() {
         />
         <div className="traditional-massage-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Traditional Massage"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -172,6 +182,7 @@ export default function TraditionalMassage() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Restore Your Body After Long Days in Bali"
             text="Travel, outdoor activities, and daily movement can leave muscles feeling tight and tired. Traditional Massage offers a stronger yet balanced approach using firm techniques to release tension, improve comfort, and help the body feel refreshed again. Enjoy your treatment at Spa Bali Moon or request our home service option for a relaxing experience at your villa or hotel."
             closingText="Reserve your Traditional Massage session and restore comfort after long days in Bali."

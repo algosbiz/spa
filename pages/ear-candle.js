@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -66,17 +67,21 @@ const faqItems = [
 ];
 
 export default function EarCandle() {
+  const treatmentImages = createTreatmentImageSet("earcandle", sessionOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="ear-candle-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Gentle Ear Care"
             titleSpan="Ear Candle"
             title="Treatment"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Wellness for the Senses"
           title={<>What Is an Ear Candle Treatment?</>}
           text="Ear Candle, also known as Ear Candling, is a traditional wellness treatment that uses a hollow candle placed at the outer ear area while gentle warmth creates a calming sensation. Often combined with light massage around the ears, temples, and neck, this treatment is chosen by guests looking for a relaxing moment after travelling, long flights, or busy daily routines."
@@ -87,6 +92,7 @@ export default function EarCandle() {
         />
         <div className="ear-candle-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Treatment Overview"
             title="One Relaxing Ear Candle Session"
             text="Our Ear Candle treatment is offered in one session that provides a calm and comfortable wellness experience. The treatment is suitable for first-time guests and can also be combined with other spa services during your visit."
@@ -99,6 +105,7 @@ export default function EarCandle() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="Common Uses"
           title={<>When Is Ear Candle Commonly Chosen?</>}
           text="Ear Candle is commonly chosen by guests looking for a gentle wellness treatment after long flights, extended travel, or busy schedules. Many also include it alongside massage treatments as part of a more complete spa visit, enjoying the calming warmth and relaxing attention around the ears, temples, and neck."
@@ -116,6 +123,7 @@ export default function EarCandle() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Treatment Focus"
           title={<>Areas Included During an Ear Candle Session</>}
           text="Although the hollow candle is positioned only at the outer ear, the treatment also includes gentle attention to nearby areas that contribute to overall comfort. Relaxing massage around the temples, jaw, and upper neck complements the session, creating a soothing experience beyond the ear itself."
@@ -133,6 +141,7 @@ export default function EarCandle() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="Step by Step"
           title={<>How Is Ear Candle Performed?</>}
           text="The treatment begins with a brief consultation before the therapist carefully positions the hollow ear candle at the outer ear. Throughout the session, the flame is continuously monitored while gentle massage around the ears, temples, jaw, and neck may be included to enhance relaxation. Every step is performed with comfort and safety in mind."
@@ -151,6 +160,7 @@ export default function EarCandle() {
         />
         <div className="ear-candle-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Gentle Ear Care"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -159,6 +169,7 @@ export default function EarCandle() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Restore a Sense of Comfort Around Your Ears"
             text="Sometimes the smallest treatments can make the biggest difference in how you feel. Ear Candle is a gentle wellness ritual that many guests choose to unwind, relax around the head and ear area, and take a quiet break from a busy holiday schedule. Available at our spa or as a home service for selected villas and hotels throughout Seminyak and nearby areas."
             closingText="Reserve your session and enjoy a calm wellness break during your Bali stay."

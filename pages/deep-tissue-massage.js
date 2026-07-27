@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -70,17 +71,21 @@ const faqItems = [
 ];
 
 export default function DeepTissueMassage() {
+  const treatmentImages = createTreatmentImageSet("deeptissuemassage", sessionOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="deep-tissue-massage-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Muscle Recovery"
             titleSpan="Deep Tissue Massage"
             title="Treatment"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Therapeutic Care"
           title={<>Deep Tissue Massage: for Deeper Muscle Tension</>}
           text="Deep Tissue Massage is a therapeutic technique that uses slow, firm pressure to target deeper layers of muscles and connective tissues. Unlike a relaxing massage that focuses on gentle movements, this treatment is designed for areas affected by stiffness, repetitive activities, exercise, poor posture, or prolonged sitting. The controlled pressure works on areas of tension while supporting easier movement and improved flexibility."
@@ -91,6 +96,7 @@ export default function DeepTissueMassage() {
         />
         <div className="deep-tissue-massage-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Session Options"
             title="Choose Your Duration"
             text="The right session length depends on your treatment goals and the number of areas requiring attention. Shorter sessions work well for focused areas, while longer sessions allow more time for detailed muscle work."
@@ -103,6 +109,7 @@ export default function DeepTissueMassage() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="Common Reasons"
           title={<>Why Do People Get Deep Tissue Massage?</>}
           text="Deep Tissue Massage is often selected by guests who feel that regular massage does not provide enough focus on areas of strong tension. The technique is especially popular among active travellers, office workers, and individuals who experience recurring muscle tightness."
@@ -120,6 +127,7 @@ export default function DeepTissueMassage() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Target Areas"
           title={<>Which Parts of the Body Are Commonly Treated?</>}
           text="Muscle tension does not always appear in the same place for everyone. During a Deep Tissue Massage session, our therapists usually focus on areas affected by posture, movement patterns, and physical activities."
@@ -137,6 +145,7 @@ export default function DeepTissueMassage() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="Massage Techniques"
           title={<>How Does Deep Tissue Massage Work?</>}
           text="Deep Tissue Massage uses specific manual techniques to work on areas where muscle tension commonly builds. Our therapists apply sustained pressure, slow muscle stripping movements, cross-fiber techniques, and targeted trigger point work while adjusting intensity based on your body's response."
@@ -155,6 +164,7 @@ export default function DeepTissueMassage() {
         />
         <div className="deep-tissue-massage-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Muscle Recovery"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -163,6 +173,7 @@ export default function DeepTissueMassage() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Release Built-Up Muscle Tension During Your Bali Stay"
             text="Long flights, active adventures, desk work, and daily movement around Bali can leave certain muscles feeling tight and restricted. Our Deep Tissue Massage provides focused care through controlled pressure and specialised techniques designed for areas that need deeper attention. Enjoy your treatment at our spa or request a home service at your villa or hotel within selected areas."
             closingText="Reserve your session and let our therapists focus on the areas that need deeper care."

@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -79,17 +80,21 @@ const faqItems = [
 ];
 
 export default function ShiatsuMassage() {
+  const treatmentImages = createTreatmentImageSet("shiatsumassage", durationOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="shiatsu-massage-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Japanese Wellness"
             titleSpan="Traditional Shiatsu"
             title="Massage"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Understanding Shiatsu"
           title={<>What Makes Shiatsu Different from Other Massage Techniques?</>}
           text="Shiatsu is a traditional Japanese bodywork technique that uses finger, thumb, and palm pressure on specific points across the body rather than long oil massage strokes. Often combined with gentle stretching, Shiatsu focuses on relieving muscle tension, encouraging natural body movement, and promoting overall physical balance."
@@ -100,6 +105,7 @@ export default function ShiatsuMassage() {
         />
         <div className="shiatsu-massage-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Choose Yours"
             title="Our Duration Options"
             text="Our Shiatsu Massage is available in different durations, allowing our therapists to tailor each session to your body's condition and areas of tension."
@@ -112,6 +118,7 @@ export default function ShiatsuMassage() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="The Reason"
           title={<>Why Do People Choose Shiatsu Massage?</>}
           text="Shiatsu is often chosen by guests who prefer a structured massage technique that focuses on pressure points instead of continuous oil massage. It is suitable for people experiencing muscular tightness, physical fatigue, or those looking for a traditional Japanese wellness approach."
@@ -129,6 +136,7 @@ export default function ShiatsuMassage() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Treatment Focus"
           title={<>Which Areas Does Shiatsu Commonly Target?</>}
           text="Rather than concentrating on only one muscle group, Shiatsu follows pressure points throughout the body while paying extra attention to areas where tension commonly develops from daily activities and posture."
@@ -146,6 +154,7 @@ export default function ShiatsuMassage() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="The Method"
           title={<>How Is a Shiatsu Massage Performed?</>}
           text="Shiatsu is performed using steady finger, thumb, and palm pressure combined with gentle stretching techniques. Instead of long gliding movements, our therapists work gradually across specific pressure points while adjusting intensity according to your body's response. The treatment follows a calm rhythm to encourage comfort throughout the entire session."
@@ -164,6 +173,7 @@ export default function ShiatsuMassage() {
         />
         <div className="shiatsu-massage-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Shiatsu Massage"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -172,6 +182,7 @@ export default function ShiatsuMassage() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Experience the Traditional Japanese Approach to Body Wellness"
             text="Shiatsu offers a different massage experience from conventional oil massage by combining pressure point therapy with mindful body movement. Whether you're recovering after travel, easing everyday muscle tension, or simply curious about traditional Japanese wellness, our therapists tailor every session to your comfort and needs."
             closingText="Restore balance through one of Japan's most recognised therapeutic massage techniques."

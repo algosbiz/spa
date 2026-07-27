@@ -10,6 +10,7 @@ import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
+import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -79,17 +80,21 @@ const faqItems = [
 ];
 
 export default function FootReflexology() {
+  const treatmentImages = createTreatmentImageSet("footreflexology", sessionOptions.length);
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
         <div className="foot-reflexology-banner">
           <Banner
+            image={treatmentImages.hero}
             subTitle="Natural Balance"
             titleSpan="Foot Reflexology"
             title="Treatment"
           />
         </div>
         <AboutOld
+          primaryImage={treatmentImages.intro[0]}
+          secondaryImage={treatmentImages.intro[1]}
           subTitle="Understanding Reflexology"
           title={<>What Is Foot Reflexology and How Does It Work?</>}
           text="Foot Reflexology is a traditional wellness therapy that applies controlled pressure to specific reflex points on the feet, which are traditionally believed to correspond with different areas of the body. Using a structured reflex-point technique, the treatment helps encourage relaxation, supports circulation in the feet, and relieves the sensation of tiredness after travel, long walks, or daily activities."
@@ -100,6 +105,7 @@ export default function FootReflexology() {
         />
         <div className="foot-reflexology-pricing">
           <Pricing
+            images={treatmentImages.pricing}
             subTitle="Session Options"
             title="Choose the Session That Fits You"
             text="Every Foot Reflexology session follows the same structured pressure-point technique, while longer durations allow additional time to work across more reflex areas at a relaxed pace. Select the option that best matches your comfort and schedule."
@@ -112,6 +118,7 @@ export default function FootReflexology() {
 
         <Testimonial />
         <About
+          image={treatmentImages.details[0]}
           subTitle="Why Guests Choose It"
           title={<>A Simple Way to Refresh Tired Feet</>}
           text="Hours of walking, standing, travelling, or exploring Bali often leave the feet feeling sore and heavy. Foot Reflexology is commonly chosen as a comfortable wellness treatment that focuses on specific pressure points while creating a deeply relaxing experience from the feet upward."
@@ -129,6 +136,7 @@ export default function FootReflexology() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          image={treatmentImages.details[1]}
           subTitle="Reflex Points"
           title={<>Where Does Foot Reflexology Focus?</>}
           text="Rather than massaging every part of the foot equally, Foot Reflexology follows a structured map of reflex points. Different areas receive controlled pressure according to traditional reflexology principles while maintaining a relaxing and comfortable treatment."
@@ -146,6 +154,7 @@ export default function FootReflexology() {
           buttonLink={bookingUrl}
         />
         <About
+          image={treatmentImages.details[2]}
           subTitle="The Technique"
           title={<>What Is a Foot Reflexology Session Like?</>}
           text="Each session begins with gentle warm-up movements before our therapist applies steady thumb and finger pressure to carefully selected reflex points across the feet. The treatment follows a structured sequence rather than random massage strokes, allowing consistent pressure while keeping the experience comfortable and relaxing throughout the session."
@@ -164,6 +173,7 @@ export default function FootReflexology() {
         />
         <div className="foot-reflexology-faq">
           <Faq
+            image={treatmentImages.faq}
             imageTitle="Reflex Points"
             subTitle="Frequently Asked Questions"
             title={<>Everything You Need to Know</>}
@@ -172,6 +182,7 @@ export default function FootReflexology() {
         </div>
         <div className="pt-100 pb-100">
           <ReserveCta
+            backgroundImage={treatmentImages.cta}
             title="Restore Comfort to Every Step"
             text="Long days exploring Bali often begin with excitement and end with tired, overworked feet. Foot Reflexology offers a relaxing way to pause, helping your feet recover through carefully applied pressure-point techniques in a calm and comfortable setting. Visit our spa or enjoy the same professional treatment from your villa or hotel with our convenient home service."
             closingText="Reserve your Foot Reflexology session and bring comfort back to every step."

@@ -26,6 +26,7 @@ export default function Home1_About({
     ],
     buttonText = "Learn More",
     buttonLink = "/pricing",
+    image = "/images/about/about-image.png",
 }) {
     return (
         <>
@@ -101,7 +102,7 @@ export default function Home1_About({
                             <div className="inner-column wow fadeInLeft" data-tilt data-tilt-max="3" data-wow-delay="200ms"
                                 data-wow-duration="1500ms">
                                 <div className="image-box">
-                                    <img src="/images/about/about-image.png" alt="image" />
+                                    <img src={image} alt="Spa treatment" />
                                 </div>
                                 {/* <div className="info">
                                     <h4><span className="count">25</span> <span>+</span> Years</h4>

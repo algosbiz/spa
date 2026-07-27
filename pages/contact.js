@@ -13,6 +13,7 @@ export default function Home() {
             titleSpan="Book Your Spa"
             title="Experience in Seminyak"
             buttonText="Contact Us"
+            image="/images/contact/contact-1.webp"
           />
           <ContactInner
             formSubTitle="Get in Touch"
