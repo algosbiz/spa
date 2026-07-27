@@ -6597,20 +6597,19 @@ textarea.form-control {
 }
 
 .faq-section .image-column .inner-column .title {
-  font-size: 110px;
-  line-height: 120px;
+  font-size: clamp(28px, 4vw, 76px);
+  line-height: 1;
   font-weight: 500;
   color: var(--theme-color-white);
   position: absolute;
   left: 50px;
   bottom: 40px;
   z-index: 1;
+  white-space: nowrap;
 }
 
 @media (max-width: 767px) {
   .faq-section .image-column .inner-column .title {
-    font-size: 60px;
-    line-height: 60px;
     left: 20px;
     bottom: 20px;
   }
@@ -6618,7 +6617,6 @@ textarea.form-control {
 
 @media (max-width: 500px) {
   .faq-section .image-column .inner-column .title {
-    font-size: 48px;
     left: 20px;
     bottom: 20px;
   }

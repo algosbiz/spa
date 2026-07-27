@@ -35,22 +35,20 @@
 				content: "";
 			}
 			.title {
-				font-size: 110px;
-				line-height: 120px;
+				font-size: clamp(28px, 4vw, 76px);
+				line-height: 1;
 				font-weight: 500;
 				color: var(--theme-color-white);
 				position: absolute;
 				left: 50px;
 				bottom: 40px;
 				z-index: 1;
+				white-space: nowrap;
 				@include breakpoint(max-md) {
-					font-size: 60px;
-					line-height: 60px;
 					left: 20px;
 					bottom: 20px;
 				}
 				@include breakpoint(max-xs) {
-					font-size: 48px;
 					left: 20px;
 					bottom: 20px;
 				}
