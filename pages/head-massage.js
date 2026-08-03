@@ -48,7 +48,7 @@ const serviceHighlights = [
   { title: "Scalp", text: "Care" },
   { title: "Neck", text: "Relaxation" },
   { title: "Adjustable", text: "Pressure" },
-  { title: "Home Service", text: "Available" },
+  { title: "Outcall", text: "Available" },
 ];
 
 const faqItems = [

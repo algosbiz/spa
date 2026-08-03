@@ -48,7 +48,7 @@ const serviceHighlights = [
   { title: "Creative", text: "Designs" },
   { title: "Quality", text: "Gel Products" },
   { title: "Natural", text: "Nail Care" },
-  { title: "Home Service", text: "Available" },
+  { title: "Outcall", text: "Available" },
 ];
 
 const faqItems = [

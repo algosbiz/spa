@@ -41,7 +41,7 @@ const serviceHighlights = [
   { title: "Natural", text: "Ingredients" },
   { title: "Multiple", text: "Scrub Choices" },
   { title: "Customized", text: "Packages" },
-  { title: "Home Service", text: "Available" },
+  { title: "Outcall", text: "Available" },
 ];
 
 const faqItems = [

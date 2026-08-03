@@ -6,18 +6,21 @@ import BlogDetails from "../../components/sections/BlogDetails";
 import { getPostBySlug, getAllPublishedSlugs, getPublishedPosts } from "@/lib/posts";
 import { sanitizeHtml } from "@/lib/sanitize";
 
-export default function BlogDetailPage({ post, recentPosts }) {
+export default function GuideDetailPage({ post, recentPosts }) {
     const metaTitle = post.seo_title || post.title;
     const metaDesc = post.seo_description || post.excerpt || '';
+    const canonicalUrl = `https://spabalimoon.com/guide/${post.slug}`;
 
     return (
         <>
             <Head>
                 <title>{metaTitle}</title>
                 {metaDesc && <meta name="description" content={metaDesc} />}
+                <link rel="canonical" href={canonicalUrl} />
                 <meta property="og:title" content={metaTitle} />
                 {metaDesc && <meta property="og:description" content={metaDesc} />}
                 {post.cover_image && <meta property="og:image" content={post.cover_image} />}
+                <meta property="og:url" content={canonicalUrl} />
                 <meta property="og:type" content="article" />
             </Head>
             <Layout HeaderStyle="one" FooterStyle="two">
@@ -37,7 +40,7 @@ export async function getStaticPaths() {
     }
     return {
         paths: slugs.map((slug) => ({ params: { slug } })),
-        fallback: 'blocking', // new posts render on first request without a full rebuild
+        fallback: 'blocking',
     };
 }
 
@@ -53,13 +56,12 @@ export async function getStaticProps({ params }) {
         return { notFound: true, revalidate: 30 };
     }
 
-    // Sanitize the admin HTML server-side before it ever reaches the browser.
     post.content_html = sanitizeHtml(post.content_html);
 
     let recentPosts = [];
     try {
         const all = await getPublishedPosts(4);
-        recentPosts = all.filter((p) => p.slug !== post.slug).slice(0, 3);
+        recentPosts = all.filter((item) => item.slug !== post.slug).slice(0, 3);
     } catch (e) {
         console.error('recentPosts failed:', e.message);
     }

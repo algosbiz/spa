@@ -152,6 +152,8 @@ export default function PackageSection({
     title = "Our Flexible Pricing Plan",
     firstServices = servicesTab1,
     secondServices = servicesTab2,
+    firstTabLabel = "Home Service Fee",
+    secondTabLabel = "Extra 75K/Therapist",
 }) {
     const [activeIndex, setActiveIndex] = useState(1);
     const handleOnClick = (index) => {
@@ -217,7 +219,7 @@ export default function PackageSection({
                   aria-selected="true"
                 >
                   <div className="icon-box"></div>
-                  <h6 className="title">Home Service Fee</h6>
+                  <h6 className="title">{firstTabLabel}</h6>
                 </button>
               </li>
               <li className="nav-item" role="presentation">
@@ -232,7 +234,7 @@ export default function PackageSection({
                   aria-selected="false"
                 >
                   <div className="icon-box"></div>
-                  <h6 className="title">Extra 75K/Therapist</h6>
+                  <h6 className="title">{secondTabLabel}</h6>
                 </button>
               </li>
             </ul>

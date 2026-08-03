@@ -53,53 +53,15 @@ const Footer = () => {
                 <img src="/images/shape/footer-shape-left.png" alt="shape"/>
             </div>
             <div className="container">
-                <div className="footer-two__head">
-                    <Link href="/" className="logo"><img src="/images/logo/SMBtitle.svg" alt="Spa Bali Moon"/></Link>
-                    <div className="newsletter">
-                        <h3 className="title">Join Our Newsletter</h3>
-                        <form className="input" onSubmit={handleSubscribe} style={{ position: 'relative' }}>
-                            <input 
-                                type="email" 
-                                placeholder="Your Email" 
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                disabled={status === 'loading'}
-                                required
-                            />
-                            <button type="submit" disabled={status === 'loading'}>
-                                {status === 'loading' ? 'Sending...' : 'Subscribe'}
-                            </button>
-                        </form>
-                        {message && (
-                            <p style={{ 
-                                marginTop: '10px', 
-                                fontSize: '14px', 
-                                color: status === 'success' ? '#28a745' : '#dc3545',
-                                transition: 'opacity 0.3s ease'
-                            }}>
-                                {message}
-                            </p>
-                        )}
-                    </div>
-                </div>
                 <div className="row g-5">
-                    <div className="col-md-6 col-xl-4">
+                    <div className="col-md-6 col-xl-3">
                         <div className="footer__item">
                             <div className="footer-about">
                                 <div>
+                                    <Link href="/" className="logo footer__brand">
+                                        <img src="/images/logo/SMBtitle.svg" alt="Spa Bali Moon"/>
+                                    </Link>
                                     <p className="text">Spa Bali Moon offers high-quality traditional massages and spa therapies, with outcall and home services by skilled therapists specializing in Balinese Body Massage.</p>
-                                    <div className="footer__payments">
-                                        <h3 className="title" style={{ marginBottom: '20px' }}>We accept payment</h3>
-                                        <div className="footer__payment-list">
-                                            <span className="footer__payment-card" aria-label="Mastercard">
-                                                <i className="fa-brands fa-cc-mastercard"></i>
-                                            </span>
-                                            <span className="footer__payment-card" aria-label="Visa">
-                                                <i className="fa-brands fa-cc-visa"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
@@ -119,17 +81,7 @@ const Footer = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="col-md-6 col-xl-3">
-                        <div className="footer__item">
-                            <h3 className="title">Home Services</h3>
-                            <ul className="links">
-                                <li><Link href="/massage-hotel-villa">Massage Hotel &amp; Villa</Link></li>
-                                <li><Link href="/massage-seminyak">Massage Seminyak</Link></li>
-                                <li><Link href="/massage-kuta">Massage Kuta</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-md-6 col-xl-3">
+                    <div className="col-md-6 col-xl-2">
                         <div className="footer__item">
                             <h3 className="title">Opening Times</h3>
                             <ul className="time-table">
@@ -149,6 +101,54 @@ const Footer = () => {
                                     <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>75k / therapist</span>
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+                    <div className="col-md-6 col-xl-2">
+                        <div className="footer__item">
+                            <h3 className="title">Home Services</h3>
+                            <ul className="links">
+                                <li><Link href="/massage-hotel-villa">Massage Hotel &amp; Villa</Link></li>
+                                <li><Link href="/massage-seminyak">Massage Seminyak</Link></li>
+                                <li><Link href="/massage-kuta">Massage Kuta</Link></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="col-md-12 col-xl-3">
+                        <div className="footer__item">
+                            <h3 className="title">Join Our Newsletter</h3>
+                            <div className="newsletter footer__newsletter">
+                                <form className="input" onSubmit={handleSubscribe}>
+                                    <input
+                                        type="email"
+                                        placeholder="Your Email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        disabled={status === 'loading'}
+                                        required
+                                    />
+                                    <button type="submit" disabled={status === 'loading'}>
+                                        {status === 'loading' ? 'Sending...' : 'Subscribe'}
+                                    </button>
+                                </form>
+                                {message ? (
+                                    <p className="footer__newsletter-note" style={{ color: status === 'success' ? '#28a745' : '#dc3545' }}>
+                                        {message}
+                                    </p>
+                                ) : (
+                                    <p className="footer__newsletter-note">We Won&apos;t Spam. We Hate It More Than You Do.</p>
+                                )}
+                            </div>
+                            <div className="footer__payments">
+                                <h3 className="title">Accepted Payments:</h3>
+                                <div className="footer__payment-list">
+                                    <span className="footer__payment-card" aria-label="Mastercard">
+                                        <i className="fa-brands fa-cc-mastercard"></i>
+                                    </span>
+                                    <span className="footer__payment-card" aria-label="Visa">
+                                        <i className="fa-brands fa-cc-visa"></i>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

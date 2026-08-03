@@ -13,36 +13,36 @@ const lotusIcon = (
     </svg>
 );
 
-export default function HomeServiceInfo() {
+export default function HomeServiceInfo({ plain = false }) {
     const listItems = [
         {
             title: "Professional & Experienced Therapists",
-            desc: "Our therapists are well-trained and experienced in giving Balinese massage and other spa treatments using proper methods for the people at them."
+            desc: "Our trained therapists provide Balinese massage and selected spa treatments with attentive techniques suited to each guest."
         },
         {
             title: "Clean & Hygienic Practice",
-            desc: "We conduct every session in strict compliance with hygiene standards. For a safe and comfortable experience, we ensure clean linens, sanitized equipment, and high-quality massage oils."
+            desc: "Every appointment is prepared with clean linens, sanitised equipment, and quality massage oils for a safe and comfortable experience."
         },
         {
             title: "Full Spa Setup Provided to You",
-            desc: "We enter with massage beds, towels, oils, and all instruments. There is nothing that needs to be prepped for your appointment."
+            desc: "Therapists bring the massage setup, towels, oils, and treatment essentials, so you do not need to prepare equipment before the session."
         },
         {
             title: "On-Time & Reliable Service",
-            desc: "We respect your time by coming on time with the agreed schedule so that you can start our treatment as planned."
+            desc: "Your appointment time and location are confirmed in advance so the therapist can arrive prepared and begin as scheduled."
         },
         {
             title: "Flexible Scheduling",
-            desc: "Massage Home service is available daily from 9:00 AM till 11:00 PM. It is also very convenient and easy to work into your timetable."
+            desc: "Home service is available daily from 9:00 AM to 11:00 PM, making it easier to arrange a treatment around your Bali plans."
         },
         {
             title: "Simple Booking via WhatsApp",
-            desc: "Booking is prompt and simple by contacting us on WhatsApp and sharing your preferred treatment, time, and location with our team."
+            desc: "Send your preferred treatment, time, number of guests, and location through WhatsApp, and our team will confirm the booking details."
         }
     ];
 
     return (
-        <section className="home-service-info-area pt-100 pb-100" style={{ backgroundColor: '#fcfaf6', position: 'relative', overflow: 'hidden', zIndex: 1 }}>
+        <section className="home-service-info-area pt-100 pb-100" style={{ backgroundColor: plain ? 'transparent' : '#fcfaf6', position: 'relative', overflow: 'hidden', zIndex: 1 }}>
             {/* Elegant Floating Background Leaf Shapes (Unique to this section) */}
             <div className="shape1" style={{ position: 'absolute', left: 0, top: '15%', zIndex: -1 }}>
                 <img src="/images/shape/about-left-shape.png" alt="shape" />

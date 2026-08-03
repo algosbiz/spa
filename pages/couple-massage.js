@@ -41,7 +41,7 @@ const serviceHighlights = [
   { title: "Private", text: "Room Available" },
   { title: "Flexible", text: "Booking" },
   { title: "Customized", text: "Packages" },
-  { title: "Home Service", text: "Available" },
+  { title: "Outcall", text: "Available" },
 ];
 
 const faqItems = [

@@ -14,6 +14,7 @@ const SEARCH_INDEX = [
         href: item.href,
         keywords: `treatment ${item.keywords}`,
     })),
+    { title: 'Outcall', href: '/outcall-home-service-massage', keywords: 'outcall home service massage hotel villa private accommodation' },
     { title: 'Reservation', href: '/reservation', keywords: 'reserve reservation appointment book booking' },
     { title: 'Blog', href: '/blog', keywords: 'blog news articles posts tips' },
     { title: 'Contact', href: '/contact', keywords: 'contact reach phone email location address whatsapp' },

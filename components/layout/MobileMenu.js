@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TREATMENT_LINKS } from "../../lib/treatments";
 
 const MobileMenu = () => {
@@ -7,6 +7,7 @@ const MobileMenu = () => {
         status: false,
         key: "",
     });
+    const [blogPosts, setBlogPosts] = useState([]);
 
     const handleClick = (key) => {
         if (isActive.key === key) {
@@ -22,6 +23,20 @@ const MobileMenu = () => {
     };
 
     const treatmentsExpanded = isActive.key === 2;
+    const blogExpanded = isActive.key === 6;
+
+    useEffect(() => {
+        const controller = new AbortController();
+
+        fetch('/api/search-posts?menu=1', { signal: controller.signal })
+            .then((response) => (response.ok ? response.json() : { posts: [] }))
+            .then((data) => setBlogPosts(data.posts || []))
+            .catch((error) => {
+                if (error.name !== 'AbortError') setBlogPosts([]);
+            });
+
+        return () => controller.abort();
+    }, []);
 
     return (
         <>
@@ -57,10 +72,45 @@ const MobileMenu = () => {
                         <i className="fa fa-angle-down" />
                     </div>
                 </li>
+                <li><Link href="/outcall-home-service-massage">Outcall</Link></li>
                 <li>
                     <Link href="/reservation">Reservation</Link>
                 </li>
-                <li><Link href="/blog">Blog</Link></li>
+                <li>
+                    <Link href="/blog">Blog</Link>
+                    {blogPosts.length > 0 && (
+                        <>
+                            <div
+                                className={`mobile-submenu ${blogExpanded ? "is-open" : ""}`}
+                                aria-hidden={!blogExpanded}
+                            >
+                                <ul className="sub-menu">
+                                    {blogPosts.map((post) => (
+                                        <li key={post.id || post.slug}>
+                                            <Link href={`/guide/${post.slug}`}>{post.title}</Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div
+                                className={blogExpanded ? "dropdown-btn active" : "dropdown-btn"}
+                                onClick={() => handleClick(6)}
+                                role="button"
+                                tabIndex={0}
+                                aria-label="Toggle blog menu"
+                                aria-expanded={blogExpanded}
+                                onKeyDown={(event) => {
+                                    if (event.key === "Enter" || event.key === " ") {
+                                        event.preventDefault();
+                                        handleClick(6);
+                                    }
+                                }}
+                            >
+                                <i className="fa fa-angle-down" />
+                            </div>
+                        </>
+                    )}
+                </li>
                 <li><Link href="/contact">Contact</Link></li>
             </ul>
             <style jsx>{`

@@ -56,7 +56,7 @@ const serviceHighlights = [
   { title: "Nail", text: "Care" },
   { title: "Cuticle", text: "Treatment" },
   { title: "Gel Colour", text: "Available" },
-  { title: "Home Service", text: "Available" },
+  { title: "Outcall", text: "Available" },
 ];
 
 const faqItems = [

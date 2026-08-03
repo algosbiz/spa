@@ -10,6 +10,8 @@ export default function Home2_Banner({
     subTitle = "Rejuvenate You Today",
     titleSpan = "Indulge in",
     title = "Pure Tranquility",
+    text = "",
+    openingText = "",
     image = "/images/banner/banner-two-image1.jpg",
     buttonText = "Book Now",
     buttonLink = "https://wa.me/6287863175144",
@@ -62,12 +64,14 @@ export default function Home2_Banner({
                                         {subTitle}
                                     </p>
                                     <h1 className="title" data-animation="fadeInUp" data-delay=".5s"><span>{titleSpan}</span> {title}</h1>
+                                    {text && <p className="text" data-animation="fadeInUp" data-delay=".7s">{text}</p>}
                                     <Link href={buttonLink} target="_blank" rel="noopener noreferrer" className="btn-two-light mt-50" data-animation="fadeInUp" data-delay="1s">{buttonText}
                                         <span className="icon_box">
                                             <i className="fa-regular icon_first fa-arrow-right-long"></i>
                                             <i className="fa-regular icon_second fa-arrow-right-long"></i>
                                         </span>
                                     </Link>
+                                    {openingText && <p className="opening-times" data-animation="fadeInUp" data-delay="1.1s">{openingText}</p>}
                                 </div>
                             </div>
                         </SwiperSlide>

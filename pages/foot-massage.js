@@ -48,7 +48,7 @@ const serviceHighlights = [
   { title: "Experienced", text: "Therapists" },
   { title: "Gentle", text: "Pressure" },
   { title: "Natural Oil", text: "Massage" },
-  { title: "Home Service", text: "Available" },
+  { title: "Outcall", text: "Available" },
 ];
 
 const faqItems = [

@@ -48,7 +48,7 @@ const serviceHighlights = [
   { title: "Pure", text: "Coconut Oil" },
   { title: "Flexible", text: "Booking" },
   { title: "Adjustable", text: "Pressure" },
-  { title: "Home Service", text: "Available" },
+  { title: "Outcall", text: "Available" },
 ];
 
 const faqItems = [

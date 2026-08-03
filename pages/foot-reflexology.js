@@ -48,7 +48,7 @@ const serviceHighlights = [
   { title: "Reflex", text: "Point Therapy" },
   { title: "Flexible", text: "Booking" },
   { title: "Gentle", text: "Pressure" },
-  { title: "Home Service", text: "Available" },
+  { title: "Outcall", text: "Available" },
 ];
 
 const faqItems = [

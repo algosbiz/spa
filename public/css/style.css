@@ -3512,7 +3512,184 @@ textarea.form-control {
 }
 
 #preloader .animation-preloader {
+  width: min(90vw, 900px);
+  text-align: center;
   z-index: 1000;
+}
+
+/* Keep the reused about layouts balanced on the Outcall page. The source
+   photography is portrait-oriented, while these component masks are not. */
+
+/* A torn edge introduces a cream paper panel.  The Spa Packages overview is
+   the lead-in to prices, not a second paper panel, so keep it on the white
+   page and reserve the torn cream treatment for the price section below. */
+.outcall-page > .about-section.section__decoration-top.section__decoration-bottom.bg-sub {
+  background-color: transparent !important;
+}
+
+.outcall-page > .about-section.section__decoration-top.section__decoration-bottom::before,
+.outcall-page > .about-section.section__decoration-top.section__decoration-bottom::after {
+  display: none;
+}
+
+/* The treatment overview is the preceding cream paper panel.  It sits after
+   the white highlights section and before the white package overview. */
+.outcall-page > .funfact-section + .about-section {
+  background-color: var(--theme-color-gray);
+}
+
+.outcall-page > .funfact-section + .about-section::before,
+.outcall-page > .funfact-section + .about-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.outcall-page > .funfact-section + .about-section::before {
+  top: 0;
+  height: 76px;
+  background: url(../images/shape/section-shape-top.png) no-repeat center top;
+}
+
+.outcall-page > .funfact-section + .about-section::after {
+  bottom: 0;
+  height: 74px;
+  background: url(../images/shape/section-shape-bottom.png) no-repeat center bottom;
+}
+
+/* FAQ is the final cream paper panel before the booking call-to-action. */
+.outcall-page > .home-service-info-area + .faq-section {
+  position: relative;
+  z-index: 1;
+  background-color: var(--theme-color-gray);
+}
+
+.outcall-page > .home-service-info-area + .faq-section::before,
+.outcall-page > .home-service-info-area + .faq-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.outcall-page > .home-service-info-area + .faq-section::before {
+  top: 0;
+  height: 76px;
+  background: url(../images/shape/section-shape-top.png) no-repeat center top;
+}
+
+.outcall-page > .home-service-info-area + .faq-section::after {
+  bottom: 0;
+  height: 74px;
+  background: url(../images/shape/section-shape-bottom.png) no-repeat center bottom;
+}
+
+.outcall-page .about-section-two .row,
+.outcall-page .about-section .row {
+  align-items: center;
+}
+
+.outcall-page .about-section-two .image-column .inner-column,
+.outcall-page .about-section .image-column .inner-column,
+.outcall-page .about-section .content-column .inner-column {
+  margin-right: auto;
+  margin-left: auto !important;
+}
+
+.outcall-page .about-section-two .image-column .inner-column {
+  max-width: 520px;
+}
+
+.outcall-page .about-section .image-column .inner-column {
+  width: 100%;
+  float: none !important;
+}
+
+.outcall-page .about-section-two .image-column .image-box .image {
+  width: 100%;
+  aspect-ratio: 520 / 530;
+}
+
+.outcall-page .about-section-two .image-column .image-box .circle-image {
+  display: none;
+}
+
+.outcall-page .about-section-two .image-column .inner-column .circle-btn {
+  display: none;
+}
+
+.outcall-page .about-section-two .content-column .section-header {
+  margin-bottom: 30px !important;
+}
+
+.outcall-page .about-section-two .content-column .inner-column .inner-box {
+  gap: 18px;
+}
+
+.outcall-page .about-section-two .content-column .inner-column .inner-box.mb-30 {
+  margin-bottom: 20px !important;
+}
+
+.outcall-page .about-section-two .image-column .image-box .image img,
+.outcall-page .about-section .image-column .inner-column .image-box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.outcall-page .about-section .image-column .inner-column .image-box {
+  width: 100%;
+  aspect-ratio: 570 / 496;
+}
+
+.outcall-page .faq-section .row {
+  align-items: flex-start;
+}
+
+.outcall-page .faq-section .image-column .inner-column {
+  width: 100%;
+  height: clamp(420px, 36vw, 560px);
+  min-height: 0;
+}
+
+@media (max-width: 1199px) {
+  .outcall-page .about-section-two .image-column .inner-column {
+    margin-bottom: 35px;
+  }
+}
+
+@media (max-width: 991px) {
+  .outcall-page .about-section .content-column {
+    order: 1;
+  }
+
+  .outcall-page .about-section .image-column {
+    order: 2;
+  }
+
+  .outcall-page .about-section .image-column .inner-column {
+    max-width: 570px;
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  .outcall-page .faq-section .image-column .inner-column {
+    height: 340px;
+  }
+}
+
+
+#preloader .animation-preloader .preloader-mark {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 22px;
+  position: relative;
 }
 
 #preloader .animation-preloader .spinner {
@@ -3520,22 +3697,36 @@ textarea.form-control {
   border-radius: 50%;
   border: 3px solid rgba(51, 51, 51, 0.5);
   border-top-color: var(--theme-color1);
-  width: 120px;
-  height: 120px;
-  margin: 30px auto;
+  position: absolute;
+  inset: 0;
+}
+
+#preloader .animation-preloader .preloader-logo {
+  width: 48px;
+  height: 38px;
+  object-fit: contain;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media (max-width: 991px) {
-  #preloader .animation-preloader .spinner {
-    width: 60px;
-    height: 60px;
-    margin: 10px auto;
+  #preloader .animation-preloader .preloader-mark {
+    width: 68px;
+    height: 68px;
+    margin-bottom: 16px;
+  }
+
+  #preloader .animation-preloader .preloader-logo {
+    width: 38px;
+    height: 30px;
   }
 }
 
 #preloader .animation-preloader .txt-loading {
-  font-size: 100px;
-  line-height: 100px;
+  font-size: clamp(36px, 4vw, 60px);
+  line-height: 1.05;
   font-weight: 700;
   font-family: var(--title-font);
   text-align: center;
@@ -3544,8 +3735,7 @@ textarea.form-control {
 
 @media (max-width: 991px) {
   #preloader .animation-preloader .txt-loading {
-    font-size: 40px;
-    line-height: 40px;
+    font-size: clamp(26px, 7vw, 36px);
   }
 }
 
@@ -3595,17 +3785,18 @@ textarea.form-control {
 }
 
 #preloader p {
-  margin-top: 20px;
-  font-size: 18px;
+  margin-top: 14px;
+  font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 10px;
+  letter-spacing: 7px;
   color: var(--theme-color1);
 }
 
 @media (max-width: 991px) {
   #preloader p {
-    font-size: 14px;
+    font-size: 12px;
+    letter-spacing: 5px;
     margin-top: 10px;
   }
 }
@@ -4839,6 +5030,14 @@ textarea.form-control {
   line-height: 36px;
   margin-top: 25px;
   max-width: 630px;
+}
+
+.banner-two__content .opening-times {
+  color: var(--theme-color-white);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  margin-top: 25px;
 }
 
 .banner-two__content .arry-btn {
@@ -10368,13 +10567,18 @@ textarea.form-control {
 
 .footer__newsletter .input {
   max-width: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .footer__newsletter .input input {
+  width: 100%;
   background: #fff !important;
   border: 1px solid rgba(179, 146, 66, 0.7) !important;
+  border-radius: 30px;
   color: #5f5a54 !important;
-  padding-right: 145px !important;
+  padding: 15px 145px 15px 30px !important;
 }
 
 .footer__newsletter .input input::placeholder {
@@ -10382,6 +10586,7 @@ textarea.form-control {
 }
 
 .footer__newsletter .input button {
+  position: absolute;
   top: 50% !important;
   right: 6px !important;
   transform: translateY(-50%);
@@ -10395,9 +10600,18 @@ textarea.form-control {
 }
 
 .footer__newsletter-note {
-  margin-top: 12px;
+  margin-top: 8px;
   margin-bottom: 0;
+  line-height: 1.5;
   color: #7b7267;
+}
+
+.footer__newsletter + .footer__payments {
+  margin-top: 14px;
+}
+
+.footer__newsletter + .footer__payments .title {
+  margin-bottom: 12px;
 }
 
 .footer__payment-list,

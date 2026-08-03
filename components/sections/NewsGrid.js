@@ -32,7 +32,7 @@ const NewsGrid = ({ posts = [] }) => {
                             <div className="inner-box">
                                 <div className="image-box">
                                     <div className="image">
-                                        <Link href={`/blog/${post.slug}`}>
+                                        <Link href={`/guide/${post.slug}`}>
                                             <img src={post.cover_image || FALLBACK_IMAGE} alt={post.title} />
                                         </Link>
                                     </div>
@@ -43,9 +43,9 @@ const NewsGrid = ({ posts = [] }) => {
                                         {post.category ? <span className="dot">{post.category}</span> : null}
                                     </h6>
                                     <h4 className="title">
-                                        <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                                        <Link href={`/guide/${post.slug}`}>{post.title}</Link>
                                     </h4>
-                                    <Link className="readMore-btn" href={`/blog/${post.slug}`}>
+                                    <Link className="readMore-btn" href={`/guide/${post.slug}`}>
                                         Read More
                                     </Link>
                                 </div>

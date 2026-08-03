@@ -48,7 +48,7 @@ const serviceHighlights = [
   { title: "Popular", text: "Braid Styles" },
   { title: "Custom", text: "Designs" },
   { title: "Extension", text: "Options" },
-  { title: "Home Service", text: "Available" },
+  { title: "Outcall", text: "Available" },
 ];
 
 const faqItems = [

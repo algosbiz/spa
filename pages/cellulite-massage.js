@@ -39,7 +39,7 @@ const serviceHighlights = [
   { title: "Targeted", text: "Treatment Areas" },
   { title: "Adjustable", text: "Pressure Levels" },
   { title: "Experienced", text: "Therapists" },
-  { title: "Home Service", text: "Available" },
+  { title: "Outcall", text: "Available" },
 ];
 
 const faqItems = [

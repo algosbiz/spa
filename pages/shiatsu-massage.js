@@ -48,7 +48,7 @@ const serviceHighlights = [
   { title: "Traditional", text: "Japanese Technique" },
   { title: "Pressure", text: "Point Therapy" },
   { title: "Gentle", text: "Stretching" },
-  { title: "Home Service", text: "Available" },
+  { title: "Outcall", text: "Available" },
 ];
 
 const faqItems = [

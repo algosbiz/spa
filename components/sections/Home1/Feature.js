@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { homepageTreatments } from '@/lib/homepageTreatments';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -32,7 +33,26 @@ const services = [
     { name: "Shiatsu Massage", image: "/images/service/service-image1.jpg", icon: "/images/spa/Shiatsu.svg" }
 ];
 
-export default function Home1_Feature({ images = [] }) {
+const homepageTreatmentByName = new Map(
+    homepageTreatments.map((treatment) => [treatment.name, treatment])
+);
+
+const linkedServices = services.map((service) => {
+    const treatment = homepageTreatmentByName.get(service.name);
+    return treatment
+        ? { ...service, href: treatment.href, image: treatment.image }
+        : service;
+});
+
+export default function Home1_Feature({
+    images = [],
+    services: serviceItems = linkedServices,
+    excludeHref,
+    showHeader = false,
+    subTitle = "Services",
+    title = "Our Services Will Make You Glow",
+}) {
+    const visibleServices = serviceItems.filter((service) => service.href !== excludeHref);
     const swiperOptions = {
         modules: [Autoplay, Pagination, Navigation],
         slidesPerView: 2,
@@ -70,12 +90,18 @@ export default function Home1_Feature({ images = [] }) {
 
     return (
         <>
-        <section id="projects" className="feature-section pb-100">
+        <section id="projects" className={`feature-section pb-100${showHeader ? ' pt-130' : ''}`}>
             <div className="container">
+                {showHeader && (
+                    <div className="section-header mb-60 center">
+                        <h4 className="sub-title">{subTitle}</h4>
+                        <h2 className="title">{title}</h2>
+                    </div>
+                )}
                 <Swiper {...swiperOptions} className="swiper feature-slider">
                     <div className="swiper-wrapper">
-                        {services.map((service, index) => (
-                            <SwiperSlide key={index} className="feature-block swiper-slide">
+                        {visibleServices.map((service, index) => (
+                            <SwiperSlide key={service.href || service.name} className="feature-block swiper-slide">
                                 <div className="inner-box">
                                     <div className="image-box">
                                         <img src={images[index] || service.image} alt={service.name} />
@@ -86,7 +112,7 @@ export default function Home1_Feature({ images = [] }) {
                                         </div>
                                         <div className="info">
                                             <h6 className="sub-title">From $50 | 60 mins</h6>
-                                            <h3><Link href="/service-details">{service.name}</Link></h3>
+                                            <h3><Link href={service.href || "/page-service-details"}>{service.name}</Link></h3>
                                             <p className="text">Relax and rejuvenate your body and soul.</p>
                                         </div>
                                     </div>

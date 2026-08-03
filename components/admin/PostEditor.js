@@ -264,7 +264,7 @@ export default function PostEditor({ initialPost }) {
 
                     <label className="pe-label">Slug (URL)</label>
                     <div className="pe-slug-row">
-                        <span className="pe-slug-prefix">/blog/</span>
+                            <span className="pe-slug-prefix">/guide/</span>
                         <input
                             className="pe-input"
                             value={slug}

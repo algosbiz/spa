@@ -1,15 +1,30 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { TREATMENT_MENU_COLUMNS } from '../../lib/treatments';
 
 const NavLinks = () => {
     const router = useRouter();
+    const [blogPosts, setBlogPosts] = useState([]);
     const currentPath = (router.asPath || '').split(/[?#]/)[0].replace(/\/$/, '') || '/';
     const isActiveHref = (href) => currentPath === (href.replace(/\/$/, '') || '/');
     const isTreatmentsActive = TREATMENT_MENU_COLUMNS.some((column) =>
         column.some((item) => isActiveHref(item.href))
     );
+    const isBlogActive = currentPath === '/blog' || currentPath.startsWith('/guide/');
+
+    useEffect(() => {
+        const controller = new AbortController();
+
+        fetch('/api/search-posts?menu=1', { signal: controller.signal })
+            .then((response) => (response.ok ? response.json() : { posts: [] }))
+            .then((data) => setBlogPosts(data.posts || []))
+            .catch((error) => {
+                if (error.name !== 'AbortError') setBlogPosts([]);
+            });
+
+        return () => controller.abort();
+    }, []);
 
     return (
 
@@ -36,8 +51,20 @@ const NavLinks = () => {
                     ))}
                 </ul>
             </li>
+            <li><Link href="/outcall-home-service-massage">Outcall</Link></li>
             <li><Link href="/reservation">Reservation</Link></li>
-            <li><Link href="/blog">Blog</Link></li>
+            <li className={`blog-menu-item${isBlogActive ? ' is-active' : ''}`}>
+                <Link href="/blog">Blog {blogPosts.length > 0 && <i className="fa-solid fa-angle-down"></i>}</Link>
+                {blogPosts.length > 0 && (
+                    <ul className="sub-menu blog-dropdown-menu">
+                        {blogPosts.map((post) => (
+                            <li key={post.id || post.slug}>
+                                <Link href={`/guide/${post.slug}`}>{post.title}</Link>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </li>
             <li><Link href="/contact">Contact</Link></li>
         </ul>
         <style jsx global>{`
@@ -123,6 +150,34 @@ const NavLinks = () => {
 
             .header__main .main-menu ul li.treatments-menu-item.is-active > a,
             .header__main .main-menu ul li.treatments-menu-item.is-active > a i {
+                color: var(--theme-color1) !important;
+            }
+
+            .header__main .main-menu ul li.blog-menu-item.is-active > a,
+            .header__main .main-menu ul li.blog-menu-item.is-active > a i {
+                color: var(--theme-color1) !important;
+            }
+
+            .header__main .main-menu ul li .blog-dropdown-menu {
+                left: 50%;
+                width: 380px;
+                max-height: 420px;
+                overflow-y: auto;
+                transform: translate(-50%, 10px);
+            }
+
+            .header__main .main-menu ul li:hover .blog-dropdown-menu {
+                transform: translate(-50%, 0);
+            }
+
+            .header__main .main-menu ul li .blog-dropdown-menu li a {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .header__main .main-menu ul li.blog-menu-item .blog-dropdown-menu li:hover > a,
+            .header__main .main-menu ul li.blog-menu-item .blog-dropdown-menu li > a:focus-visible {
                 color: var(--theme-color1) !important;
             }
 

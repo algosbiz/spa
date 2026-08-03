@@ -56,7 +56,7 @@ const serviceHighlights = [
   { title: "Traditional", text: "Thai Technique" },
   { title: "Guided", text: "Stretching" },
   { title: "Body", text: "Mobility" },
-  { title: "Home Service", text: "Available" },
+  { title: "Outcall", text: "Available" },
 ];
 
 const faqItems = [

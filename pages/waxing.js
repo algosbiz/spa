@@ -84,7 +84,7 @@ const serviceHighlights = [
   { title: "Private", text: "Treatment Room" },
   { title: "Quality", text: "Wax Products" },
   { title: "Various", text: "Options" },
-  { title: "Home Service", text: "Available" },
+  { title: "Outcall", text: "Available" },
 ];
 
 const faqItems = [

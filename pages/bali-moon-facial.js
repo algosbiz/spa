@@ -41,7 +41,7 @@ const serviceHighlights = [
   { title: "For All", text: "Skin Types" },
   { title: "Personalized", text: "Mask Selection" },
   { title: "Customized", text: "Packages" },
-  { title: "Home Service", text: "Available" },
+  { title: "Outcall", text: "Available" },
 ];
 
 const faqItems = [

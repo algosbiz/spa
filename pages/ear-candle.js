@@ -30,7 +30,7 @@ const serviceHighlights = [
   { title: "Controlled", text: "Warmth" },
   { title: "Outer", text: "Ear Care" },
   { title: "Head", text: "Comfort" },
-  { title: "Home Service", text: "Available" },
+  { title: "Outcall", text: "Available" },
 ];
 
 const faqItems = [

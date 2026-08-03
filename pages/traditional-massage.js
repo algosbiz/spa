@@ -48,7 +48,7 @@ const serviceHighlights = [
   { title: "Traditional", text: "Techniques" },
   { title: "Adjustable", text: "Pressure" },
   { title: "Warm Oil", text: "Application" },
-  { title: "Home Service", text: "Available" },
+  { title: "Outcall", text: "Available" },
 ];
 
 const faqItems = [

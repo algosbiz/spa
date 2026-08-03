@@ -20,7 +20,14 @@ function MyApp({ Component, pageProps }) {
         ) : (
             <div id="preloader">
                 <div className="animation-preloader">
-                    <div className="spinner"/>
+                    <div className="preloader-mark">
+                        <div className="spinner"/>
+                        <img
+                            className="preloader-logo"
+                            src="/images/logo/sbm.webp"
+                            alt="Spa Bali Moon logo"
+                        />
+                    </div>
                     <div className="txt-loading">
                         <span data-text-preloader="S" className="letters-loading">
                             S

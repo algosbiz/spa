@@ -1,7 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
+import Feature from '../Home1/Feature';
+import { homepageTreatments } from '@/lib/homepageTreatments';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -10,6 +13,22 @@ export default function Home2_Services({
     subTitle = "Services",
     title = (<>Our Services Will Make <br /> You Glow</>),
 }) {
+    const router = useRouter();
+    const currentTreatmentHref = homepageTreatments.find((treatment) =>
+        treatment.href === router.pathname || treatment.href === `/seminyak${router.pathname}`
+    )?.href;
+
+    if (currentTreatmentHref) {
+        return (
+            <Feature
+                showHeader
+                subTitle={subTitle}
+                title={title}
+                excludeHref={currentTreatmentHref}
+            />
+        );
+    }
+
     const swiperOptions = {
         modules: [Autoplay, Navigation],
         slidesPerView: 3,

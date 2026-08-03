@@ -70,7 +70,7 @@ export default function AdminDashboard({ initialPosts }) {
                                     <tr key={p.id}>
                                         <td>
                                             <Link href={`/admin/edit/${p.id}`} className="title-link">{p.title}</Link>
-                                            <div className="slug">/blog/{p.slug}</div>
+                                            <div className="slug">/guide/{p.slug}</div>
                                         </td>
                                         <td>
                                             <span className={`badge ${p.status}`}>{p.status === 'published' ? 'Published' : 'Draft'}</span>
@@ -79,7 +79,7 @@ export default function AdminDashboard({ initialPosts }) {
                                         <td>{fmt(p.updated_at)}</td>
                                         <td className="row-actions">
                                             {p.status === 'published' && (
-                                                <a href={`/blog/${p.slug}`} target="_blank" rel="noreferrer" className="link">View</a>
+                                                <a href={`/guide/${p.slug}`} target="_blank" rel="noreferrer" className="link">View</a>
                                             )}
                                             <Link href={`/admin/edit/${p.id}`} className="link">Edit</Link>
                                             <button className="link danger" onClick={() => remove(p)} disabled={busyId === p.id}>

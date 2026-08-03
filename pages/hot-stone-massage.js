@@ -55,7 +55,7 @@ const serviceHighlights = [
   { title: "Heated", text: "Basalt Stones" },
   { title: "Muscle", text: "Relaxation" },
   { title: "Customized", text: "Packages" },
-  { title: "Home Service", text: "Available" },
+  { title: "Outcall", text: "Available" },
 ];
 
 const faqItems = [

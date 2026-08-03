@@ -200,7 +200,7 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
                                                 <ul className="sidebar-search-results__list">
                                                     {searchResults.map((sr) => (
                                                         <li key={sr.id}>
-                                                            <Link href={`/blog/${sr.slug}`} onClick={() => setShowResults(false)}>
+                                                            <Link href={`/guide/${sr.slug}`} onClick={() => setShowResults(false)}>
                                                                 <div className="sidebar-search-results__item">
                                                                     {sr.cover_image && (
                                                                         <img src={sr.cover_image} alt={sr.title} />
@@ -231,7 +231,7 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
                                                         <span className="sidebar__post-content-meta">
                                                             <i className="fas fa-user-circle"></i>{rp.author || 'Admin'}
                                                         </span>
-                                                        <Link href={`/blog/${rp.slug}`}>{rp.title}</Link>
+                                                        <Link href={`/guide/${rp.slug}`}>{rp.title}</Link>
                                                     </h3>
                                                 </div>
                                             </li>

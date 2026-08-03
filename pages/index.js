@@ -5,12 +5,13 @@ import About from "../components/sections/Home3/About";
 import Services from "../components/sections/Home1/Services";
 import Pricing from "../components/sections/Home5/Pricing";
 import Step from "../components/sections/Home5/Step";
-import PackageSection from "@/components/sections/Home1/Package";
+import TreatmentCatalog from "@/components/sections/Home1/TreatmentCatalog";
 import Faq from "../components/sections/Home6/Faq";
 import PackageIntroText from "../components/sections/Home1/PackageIntroText";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Feature from "../components/sections/Home1/Feature";
 import Testimonial from "../components/sections/Home3/Testimonial";
+import { homepageTreatments } from "@/lib/homepageTreatments";
 
 const bookingSteps = [
   {
@@ -24,65 +25,6 @@ const bookingSteps = [
   {
     title: "Relax Your Way",
     text: "Visit our spa in Seminyak or enjoy the same professional treatment from the comfort of your villa or accommodation.",
-  },
-];
-
-const signatureTreatments = [
-  {
-    id: 1,
-    name: "Couple Massage",
-    desc: "Relax side by side with a shared massage experience designed for couples, friends, or family members seeking quality time together.",
-    image: "/images/package/package-image1.png",
-    options: [],
-  },
-  {
-    id: 2,
-    name: "Shiatsu Massage",
-    desc: "Traditional Japanese pressure point therapy performed without oil to help release tension and restore the body's natural balance.",
-    image: "/images/package/package-image2.png",
-    options: [],
-  },
-  {
-    id: 3,
-    name: "Thai Massage",
-    desc: "Assisted stretching and rhythmic pressure work together to improve flexibility, mobility, and overall body movement.",
-    image: "/images/package/package-image3.png",
-    options: [],
-  },
-  {
-    id: 4,
-    name: "Cream Bath",
-    desc: "A nourishing hair and scalp treatment that conditions the hair while helping you unwind through a relaxing scalp massage.",
-    image: "/images/package/package-image4.png",
-    options: [],
-  },
-  {
-    id: 5,
-    name: "Body Scrub",
-    desc: "Natural exfoliation that removes dead skin cells, leaving the skin smoother, softer, and ready to absorb moisture more effectively.",
-    image: "/images/package/package-image5.png",
-    options: [],
-  },
-  {
-    id: 6,
-    name: "Manicure & Pedicure",
-    desc: "Professional hand and foot care that keeps nails neat while helping maintain healthy-looking skin and cuticles.",
-    image: "/images/package/package-image6.png",
-    options: [],
-  },
-  {
-    id: 7,
-    name: "Hot Stone Massage",
-    desc: "Warm volcanic stones combined with massage techniques help ease muscle tightness and create a deeply relaxing experience.",
-    image: "/images/package/package-image7.png",
-    options: [],
-  },
-  {
-    id: 8,
-    name: "Facial Care",
-    desc: "Personalised facial treatments that cleanse, hydrate, and refresh the skin to support a healthier, more radiant complexion.",
-    image: "/images/package/package-image8.png",
-    options: [],
   },
 ];
 
@@ -130,22 +72,24 @@ export default function Home5() {
           title="How Do You Book Your Spa Experience?"
           steps={bookingSteps}
         />
-        <About
-          subTitle="Beyond Relaxation"
-          title={<>Why Spa Is Part of the Bali Experience</>}
-          text="A spa treatment is more than a chance to relax. After long flights, sightseeing, surfing, or time in the tropical sun, your body needs time to recover. Spa Bali Moon offers massage, beauty, and body care treatments that ease muscle tension, refresh tired skin, and helping you feel refreshed with treatments chosen to suit your body and your time in Bali."
-          features={[
-            "Established since 2009",
-            "Traditional & modern massage treatments",
-            "Beauty and facial services",
-            "In-spa and home service available",
-            "Experienced Balinese therapists",
-            "Personalised treatment recommendations",
-          ]}
-          ctaHref="/page-services"
-          primaryImage="/images/homepage/homepage-3.webp"
-          secondaryImage="/images/homepage/homepage-4.webp"
-        />
+        <div className="homepage-about-paper-section section__decoration-top section__decoration-bottom bg-sub">
+          <About
+            subTitle="Beyond Relaxation"
+            title={<>Why Spa Is Part of the Bali Experience</>}
+            text="A spa treatment is more than a chance to relax. After long flights, sightseeing, surfing, or time in the tropical sun, your body needs time to recover. Spa Bali Moon offers massage, beauty, and body care treatments that ease muscle tension, refresh tired skin, and helping you feel refreshed with treatments chosen to suit your body and your time in Bali."
+            features={[
+              "Established since 2009",
+              "Traditional & modern massage treatments",
+              "Beauty and facial services",
+              "In-spa and home service available",
+              "Experienced Balinese therapists",
+              "Personalised treatment recommendations",
+            ]}
+            ctaHref="/page-services"
+            primaryImage="/images/homepage/homepage-3.webp"
+            secondaryImage="/images/homepage/homepage-4.webp"
+          />
+        </div>
         <Feature images={treatmentImages} />
         <Testimonial
           testimonialsData={[
@@ -179,11 +123,10 @@ export default function Home5() {
             },
           ]}
         />
-        <PackageSection
+        <TreatmentCatalog
           subTitle="Signature Collection"
           title="Find Your Perfect Spa Experience"
-          firstServices={signatureTreatments}
-          secondServices={signatureTreatments}
+          treatments={homepageTreatments}
         />
         <PackageIntroText
           subTitle="More to Enjoy"
@@ -271,10 +214,21 @@ export default function Home5() {
           padding-bottom: 0 !important;
         }
 
+        .homepage-about-paper-section + .feature-section {
+          padding-top: 90px;
+        }
+
         .homepage-pricing-section .pricing-section-five::after,
         .homepage-services-section .service-section::before {
           display: none;
         }
+
+        @media (max-width: 767px) {
+          .homepage-about-paper-section + .feature-section {
+            padding-top: 60px;
+          }
+        }
+
       `}</style>
     </>
   );

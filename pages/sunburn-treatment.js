@@ -30,7 +30,7 @@ const serviceHighlights = [
   { title: "Aloe Vera", text: "Infusion" },
   { title: "Cooling", text: "Hydration" },
   { title: "Sensitive", text: "Skin Friendly" },
-  { title: "Home Service", text: "Available" },
+  { title: "Outcall", text: "Available" },
 ];
 
 const faqItems = [
