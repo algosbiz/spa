@@ -190,7 +190,7 @@
 		}
 	}
 	&-area--white-simple {
-		background: #f7f3ee;
+		background: #ffffff;
 		.footer__shape {
 			opacity: 0.14;
 			filter: invert(1) brightness(0.55);
@@ -307,17 +307,23 @@
 .footer__newsletter {
 	width: 100%;
 	.input {
+		position: relative;
+		width: 100%;
 		max-width: 100%;
+		z-index: 1;
 		input {
+			width: 100%;
 			background: #fff !important;
 			border: 1px solid rgba(179, 146, 66, 0.7) !important;
+			border-radius: 30px;
 			color: #5f5a54 !important;
-			padding-right: 145px !important;
+			padding: 15px 145px 15px 30px !important;
 			&::placeholder {
 				color: #b0a79c;
 			}
 		}
 		button {
+			position: absolute;
 			top: 50% !important;
 			right: 6px !important;
 			transform: translateY(-50%);

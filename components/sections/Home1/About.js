@@ -1,5 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
+import {
+    getTreatmentLeafShape,
+    getTreatmentRightLeafShape,
+} from '@/lib/treatmentLeaves'
 
 const CheckIcon = () => (
     <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
@@ -27,15 +31,26 @@ export default function Home1_About({
     buttonText = "Learn More",
     buttonLink = "/pricing",
     image = "/images/about/about-image.png",
+    leftShapeSrc,
+    rightShapeSrc,
 }) {
+    const resolvedLeftShape = leftShapeSrc || getTreatmentLeafShape(
+        image,
+        "/images/shape/about-left-shape.png"
+    )
+    const resolvedRightShape = rightShapeSrc || getTreatmentRightLeafShape(
+        image,
+        "/images/shape/about-right-shape.png"
+    )
+
     return (
         <>
             <section id="about" className="about-section pt-130 pb-100">
                 <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <img src="/images/shape/about-left-shape.png" alt="image" />
+                    <img src={resolvedLeftShape} alt="" aria-hidden="true" />
                 </div>
                 <div className="shape2 wow slideInRight" data-wow-delay="400ms" data-wow-duration="1500ms">
-                    <img className="sway_Y__animation" src="/images/shape/about-right-shape.png" alt="image" />
+                    <img className="sway_Y__animation" src={resolvedRightShape} alt="" aria-hidden="true" />
                 </div>
                 <div className="container">
                     <div className="row g-4">

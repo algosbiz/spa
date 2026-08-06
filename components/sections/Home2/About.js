@@ -1,5 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
+import {
+    getTreatmentLeafShape,
+    getTreatmentRightLeafShape,
+} from '@/lib/treatmentLeaves'
 
 export default function Home2_About({
     subTitle = "About",
@@ -11,15 +15,26 @@ export default function Home2_About({
     feature2Text = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.",
     primaryImage = "/images/about/about-two-image.png",
     secondaryImage = "/images/about/about-two-image2.png",
+    leftShapeSrc,
+    rightShapeSrc,
 }) {
+    const resolvedLeftShape = leftShapeSrc || getTreatmentLeafShape(
+        primaryImage,
+        "/images/shape/about-two-left.png"
+    )
+    const resolvedRightShape = rightShapeSrc || getTreatmentRightLeafShape(
+        primaryImage,
+        "/images/shape/about-two-right.png"
+    )
+
     return (
         <>
         <section id="about" className="about-section-two pt-130 pb-100 paralax__animation">
             <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                <img className="animation__arryUpDown" src="/images/shape/about-two-left.png" alt="image"/>
+                <img className="animation__arryUpDown" src={resolvedLeftShape} alt="" aria-hidden="true"/>
             </div>
             <div className="shape2">
-                <img className="animation__floatBob" src="/images/shape/about-two-right.png" alt="image"/>
+                <img className="animation__floatBob" src={resolvedRightShape} alt="" aria-hidden="true"/>
             </div>
             <div className="container">
                 <div className="row g-4">

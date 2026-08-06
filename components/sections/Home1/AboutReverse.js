@@ -1,5 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
+import {
+    getTreatmentLeafShape,
+    getTreatmentRightLeafShape,
+} from '@/lib/treatmentLeaves'
 
 const CheckIcon = () => (
     <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
@@ -27,15 +31,26 @@ export default function Home1_AboutReverse({
     buttonText = "Learn More",
     buttonLink = "/pricing",
     image = "/images/about/about-image.png",
+    leftShapeSrc,
+    rightShapeSrc,
 }) {
+    const resolvedLeftShape = leftShapeSrc || getTreatmentLeafShape(
+        image,
+        "/images/shape/banner-six-shape.png"
+    )
+    const resolvedRightShape = rightShapeSrc || getTreatmentRightLeafShape(
+        image,
+        "/images/shape/mirror-left-shape.png"
+    )
+
     return (
         <>
             <section id="about" className="about-section section__decoration-top section__decoration-bottom bg-sub pt-130 pb-130">
                 <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms" style={{ bottom: '120px' }}>
-                    <img src="/images/shape/banner-six-shape.png" alt="image" />
+                    <img src={resolvedLeftShape} alt="" aria-hidden="true" />
                 </div>
                 <div className="shape2 wow slideInRight" data-wow-delay="400ms" data-wow-duration="1500ms">
-                    <img className="sway_Y__animation" src="/images/shape/mirror-left-shape.png" alt="image" />
+                    <img className="sway_Y__animation" src={resolvedRightShape} alt="" aria-hidden="true" />
                 </div>
                 <div className="container">
                     <div className="row g-4">
