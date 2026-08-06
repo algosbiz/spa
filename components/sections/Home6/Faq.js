@@ -8,7 +8,14 @@ export default function Home6_Faq({
     items,
     showImage = true,
     image = "/images/faq/faq-image.jpg",
+    columns = 1,
 }) {
+    const shouldSplit = columns === 2 && Array.isArray(items);
+    const midpoint = shouldSplit ? Math.ceil(items.length / 2) : 0;
+    const itemColumns = shouldSplit
+        ? [items.slice(0, midpoint), items.slice(midpoint)]
+        : [];
+
     return (
         <>
             <section className="faq-section pt-100 pb-100">
@@ -53,8 +60,20 @@ export default function Home6_Faq({
                                     </p>
                                     <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{title}</h2>
                                 </div>
-                                <div className="faq-accordion wow fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
-                                    <Accordion items={items} />
+                                <div className={`faq-accordion wow fadeInDown ${shouldSplit ? "faq-grid" : ""}`} data-wow-delay="200ms" data-wow-duration="1500ms">
+                                    {shouldSplit ? (
+                                        <div className="row g-4">
+                                            {itemColumns.map((columnItems, index) => (
+                                                <div className="col-lg-6" key={index}>
+                                                    <div className="faq-grid-column">
+                                                        <Accordion items={columnItems} defaultOpenIndex={null} />
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <Accordion items={items} />
+                                    )}
                                 </div>
 
                             </div>

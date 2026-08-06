@@ -97,7 +97,7 @@ const PackageItem = ({ item, isLast }) => {
     return (
         <div className={`inner-box ${!isLast ? 'mb-50' : ''}`}>
             <div className="image">
-                <img src={item.image} alt="image" />
+                <img src={item.image} alt={item.name} />
             </div>
             <div className="content">
                 <h3 className="title">
@@ -154,19 +154,17 @@ export default function PackageSection({
     secondServices = servicesTab2,
     firstTabLabel = "Home Service Fee",
     secondTabLabel = "Extra 75K/Therapist",
+    tabs,
 }) {
-    const [activeIndex, setActiveIndex] = useState(1);
+    const [activeIndex, setActiveIndex] = useState(0);
     const handleOnClick = (index) => {
         setActiveIndex(index);
     };
 
-    const halfLength1 = Math.ceil(firstServices.length / 2);
-    const tab1Col1 = firstServices.slice(0, halfLength1);
-    const tab1Col2 = firstServices.slice(halfLength1);
-
-    const halfLength2 = Math.ceil(secondServices.length / 2);
-    const tab2Col1 = secondServices.slice(0, halfLength2);
-    const tab2Col2 = secondServices.slice(halfLength2);
+    const pricingTabs = tabs || [
+      { label: firstTabLabel, services: firstServices },
+      { label: secondTabLabel, services: secondServices },
+    ];
 
     return (
       <section className="package-section section__decoration-top section__decoration-bottom bg-sub pt-170 pb-170">
@@ -207,101 +205,64 @@ export default function PackageSection({
           </div>
           <div className="package-tab mb-60">
             <ul className="nav nav-tabs" id="myTab" role="tablist">
-              <li className="nav-item" role="presentation">
-                <button
-                  className={activeIndex === 1 ? "nav-link active" : "nav-link"}
-                  onClick={() => handleOnClick(1)}
-                  id="item1-tab"
-                  data-bs-toggle="tab"
-                  data-bs-target="#item1"
-                  role="tab"
-                  aria-controls="item1"
-                  aria-selected="true"
-                >
-                  <div className="icon-box"></div>
-                  <h6 className="title">{firstTabLabel}</h6>
-                </button>
-              </li>
-              <li className="nav-item" role="presentation">
-                <button
-                  className={activeIndex === 2 ? "nav-link active" : "nav-link"}
-                  onClick={() => handleOnClick(2)}
-                  id="item2-tab"
-                  data-bs-toggle="tab"
-                  data-bs-target="#item2"
-                  role="tab"
-                  aria-controls="item2"
-                  aria-selected="false"
-                >
-                  <div className="icon-box"></div>
-                  <h6 className="title">{secondTabLabel}</h6>
-                </button>
-              </li>
+              {pricingTabs.map((tab, index) => (
+                <li className="nav-item" role="presentation" key={tab.label}>
+                  <button
+                    className={activeIndex === index ? "nav-link active" : "nav-link"}
+                    onClick={() => handleOnClick(index)}
+                    id={`package-item-${index}-tab`}
+                    type="button"
+                    role="tab"
+                    aria-controls={`package-item-${index}`}
+                    aria-selected={activeIndex === index}
+                  >
+                    <div className="icon-box"></div>
+                    <h6 className="title">
+                      {tab.label}
+                      {tabs && (
+                        <span className="icon_box" aria-hidden="true">
+                          <i className="fa-regular icon_first fa-arrow-right-long"></i>
+                          <i className="fa-regular icon_second fa-arrow-right-long"></i>
+                        </span>
+                      )}
+                    </h6>
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="tab-content" id="myTabContent">
-            <div
-              className={
-                activeIndex === 1
-                  ? "tab-pane fade show active"
-                  : "tab-pane fade show"
-              }
-              id="item1"
-              role="tabpanel"
-              aria-labelledby="item1-tab"
-            >
-              <div className="row g-5">
-                <div className="col-lg-6 package-block">
-                  {tab1Col1.map((item, idx) => (
-                    <PackageItem
-                      key={item.id}
-                      item={item}
-                      isLast={idx === tab1Col1.length - 1}
-                    />
-                  ))}
+            {pricingTabs.map((tab, index) => {
+              const halfLength = Math.ceil(tab.services.length / 2);
+              const columns = [
+                tab.services.slice(0, halfLength),
+                tab.services.slice(halfLength),
+              ];
+
+              return (
+                <div
+                  className={activeIndex === index ? "tab-pane fade show active" : "tab-pane fade"}
+                  id={`package-item-${index}`}
+                  role="tabpanel"
+                  aria-labelledby={`package-item-${index}-tab`}
+                  key={tab.label}
+                >
+                  <div className="row g-5">
+                    {columns.map((services, columnIndex) => (
+                      <div className="col-lg-6 package-block" key={columnIndex}>
+                        {services.map((item, itemIndex) => (
+                          <PackageItem
+                            key={item.id}
+                            item={item}
+                            isLast={itemIndex === services.length - 1}
+                          />
+                        ))}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="col-lg-6 package-block">
-                  {tab1Col2.map((item, idx) => (
-                    <PackageItem
-                      key={item.id}
-                      item={item}
-                      isLast={idx === tab1Col2.length - 1}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div
-              className={
-                activeIndex === 2
-                  ? "tab-pane fade show active"
-                  : "tab-pane fade show"
-              }
-              id="item2"
-              role="tabpanel"
-              aria-labelledby="item2-tab"
-            >
-              <div className="row g-5">
-                <div className="col-lg-6 package-block">
-                  {tab2Col1.map((item, idx) => (
-                    <PackageItem
-                      key={item.id}
-                      item={item}
-                      isLast={idx === tab2Col1.length - 1}
-                    />
-                  ))}
-                </div>
-                <div className="col-lg-6 package-block">
-                  {tab2Col2.map((item, idx) => (
-                    <PackageItem
-                      key={item.id}
-                      item={item}
-                      isLast={idx === tab2Col2.length - 1}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>

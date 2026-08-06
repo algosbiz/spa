@@ -92,4 +92,44 @@
 		}
 	}
 }
+
+.outcall-page {
+	.faq-section {
+		.content-column.col-12 {
+			max-width: 1480px;
+			margin: 0 auto;
+			.section-header {
+				margin-bottom: 45px;
+				text-align: center;
+				.sub-title {
+					width: 100%;
+					justify-content: center;
+				}
+			}
+		}
+		.faq-grid {
+			.faq-grid-column {
+				height: 100%;
+				padding: 12px 32px;
+				background-color: var(--theme-color-white);
+				border: 1px solid rgba(var(--theme-color-black-rgb), 0.08);
+				border-radius: 20px;
+				box-shadow: 0 10px 35px rgba(var(--theme-color-black-rgb), 0.04);
+			}
+			.accordion-item:last-child {
+				border-bottom: none;
+			}
+			@include breakpoint(max-md) {
+				.faq-grid-column {
+					padding: 6px 20px;
+				}
+				.accordion .accordion-item .accordion-header button {
+					padding-right: 38px;
+					font-size: 18px;
+					line-height: 1.5;
+				}
+			}
+		}
+	}
+}
 // Faq area end here ***

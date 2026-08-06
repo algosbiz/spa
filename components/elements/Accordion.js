@@ -42,8 +42,8 @@ const defaultData = [
   },
 ];
 
-const Accordion = ({ items = defaultData }) => {
-  const [openIndex, setOpenIndex] = useState(0);
+const Accordion = ({ items = defaultData, defaultOpenIndex = 0 }) => {
+  const [openIndex, setOpenIndex] = useState(defaultOpenIndex);
 
   const data = items;
 
