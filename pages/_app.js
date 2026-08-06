@@ -21,50 +21,13 @@ function MyApp({ Component, pageProps }) {
             <div id="preloader">
                 <div className="animation-preloader">
                     <div className="preloader-mark">
-                        <div className="spinner"/>
                         <img
                             className="preloader-logo"
                             src="/images/logo/sbm.webp"
                             alt="Spa Bali Moon logo"
                         />
                     </div>
-                    <div className="txt-loading">
-                        <span data-text-preloader="S" className="letters-loading">
-                            S
-                        </span>
-                        <span data-text-preloader="P" className="letters-loading">
-                            P
-                        </span>
-                        <span data-text-preloader="A" className="letters-loading">
-                            A
-                        </span>
-                        <span className="letters-loading word-space">&nbsp;</span>
-                        <span data-text-preloader="B" className="letters-loading">
-                            B
-                        </span>
-                        <span data-text-preloader="A" className="letters-loading">
-                            A
-                        </span>
-                        <span data-text-preloader="L" className="letters-loading">
-                            L
-                        </span>
-                        <span data-text-preloader="I" className="letters-loading">
-                            I
-                        </span>
-                        <span className="letters-loading word-space">&nbsp;</span>
-                        <span data-text-preloader="M" className="letters-loading">
-                            M
-                        </span>
-                        <span data-text-preloader="O" className="letters-loading">
-                            O
-                        </span>
-                        <span data-text-preloader="O" className="letters-loading">
-                            O
-                        </span>
-                        <span data-text-preloader="N" className="letters-loading">
-                            N
-                        </span>
-                    </div>
+                    <div className="preloader-brand">Spa Bali Moon</div>
                     <p className="text-center">Loading...</p>
                 </div>
                 <div className="loader">
