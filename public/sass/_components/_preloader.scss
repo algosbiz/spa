@@ -15,7 +15,7 @@
 		text-align: center;
 
 		.preloader-mark {
-			width: clamp(220px, 24vw, 360px);
+			width: clamp(160px, 14vw, 200px);
 			height: auto;
 			margin: 0 auto 16px;
 		}
@@ -33,13 +33,13 @@
 			font-weight: 500;
 			font-family: var(--title-font);
 			letter-spacing: 0.06em;
-			color: var(--theme-color2);
+			color: var(--theme-color1);
 			user-select: none;
 		}
 
 		@include breakpoint(max-sm) {
 			.preloader-mark {
-				width: clamp(170px, 55vw, 220px);
+				width: clamp(140px, 42vw, 180px);
 				margin-bottom: 12px;
 			}
 

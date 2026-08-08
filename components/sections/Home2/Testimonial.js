@@ -1,22 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Thumbs, Pagination } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/thumbs';
 
 export default function Home2_Testimonial() {
-    const [thumbsSwiper, setThumbsSwiper] = useState(null); // State to store the thumbs swiper
     const swiperOptions = {
-        modules: [Autoplay, Thumbs, Pagination],
+        modules: [Autoplay],
         slidesPerView: 1,
         autoplay: {
             delay: 50000,
             disableOnInteraction: false,
         },
         loop: true,
-        thumbs: thumbsSwiper ? { swiper: thumbsSwiper } : undefined,
     };
 
     return (
@@ -29,40 +26,10 @@ export default function Home2_Testimonial() {
                     <img className="animation__arryLeftRight" src="/images/shape/testimonial-two-shape-right.png" alt="image" />
                 </div>
                 <div className="shape3">
-                    <img className="bobble__animation" src="/images/shape/testimonial-two-shape-center.png" alt="image" />
+                    <img className="bobble__animation" src="/images/logo/sbm.webp" alt="Spa Bali Moon watermark" />
                 </div>
                 <div className="container">
                     <div className="outer-box">
-                        <Swiper
-                            onSwiper={setThumbsSwiper} // Set the swiper instance
-                            direction="horizontal"
-                            slidesPerView={3}
-                            spaceBetween={0}
-                            breakpoints={{
-                                0: {
-                                    direction: "horizontal"
-                                },
-                                768: {
-                                    direction: "horizontal"
-                                }
-                            }}
-                            className="swiper testimonial-slider-thumb-two wow fadeInUp" data-wow-delay="200ms"
-                            data-wow-duration="1500ms">
-                            <div className="swiper-wrapper">
-                                <SwiperSlide className="swiper-slide">
-                                    <img src="/images/testimonial/testimonial-two-image1.png" alt="image" />
-                                </SwiperSlide>
-                                <SwiperSlide className="swiper-slide">
-                                    <img src="/images/testimonial/testimonial-two-image2.png" alt="image" />
-                                </SwiperSlide>
-                                <SwiperSlide className="swiper-slide">
-                                    <img src="/images/testimonial/testimonial-two-image3.png" alt="image" />
-                                </SwiperSlide>
-                                <SwiperSlide className="swiper-slide">
-                                    <img src="/images/testimonial/testimonial-two-image1.png" alt="image" />
-                                </SwiperSlide>
-                            </div>
-                        </Swiper>
                         <Swiper {...swiperOptions} className="swiper testimonial-slider-two wow fadeInDown" data-wow-delay="200ms"
                             data-wow-duration="1500ms">
                             <div className="swiper-wrapper">

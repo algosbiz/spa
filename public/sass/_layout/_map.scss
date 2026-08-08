@@ -2,6 +2,28 @@
 .map-section {
 	overflow: hidden;
 }
+
+.map-section--contact {
+	background-color: var(--theme-color-gray);
+	padding-top: 130px;
+	padding-bottom: 130px;
+
+	iframe {
+		display: block;
+	}
+
+	&::before,
+	&::after {
+		z-index: 2;
+		pointer-events: none;
+	}
+
+	@include breakpoint(max-md) {
+		padding-top: 90px;
+		padding-bottom: 90px;
+	}
+}
+
 .map-block {
 	iframe {
 		filter: grayscale(100%);

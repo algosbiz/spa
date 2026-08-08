@@ -102,9 +102,6 @@ export default function BookTreatment() {
                                         ))}
                                     </ul>
                                 </div>
-                                <p className="text" style={{ fontWeight: 700, textAlign: 'center', marginTop: '15px' }}>
-                                    Home service extra 75k per therapist
-                                </p>
                             </div>
                         </div>
 
@@ -134,6 +131,24 @@ export default function BookTreatment() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div className="text-center mt-40 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <a
+                            href="https://wa.me/6287863175144"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-one"
+                        >
+                            Book Now
+                            <span className="icon_box">
+                                <i className="fa-regular icon_first fa-arrow-right-long"></i>
+                                <i className="fa-regular icon_second fa-arrow-right-long"></i>
+                            </span>
+                        </a>
+                        <p className="text mt-15" style={{ fontWeight: 700 }}>
+                            Home service extra 75k per therapist
+                        </p>
                     </div>
                 </div>
             </section>

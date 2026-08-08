@@ -22,7 +22,7 @@ function TreatmentItem({ item, isOpen, onToggle }) {
             aria-controls={panelId}
             aria-label={`${isOpen ? "Hide" : "Show"} pricing for ${item.name}`}
           >
-            <span aria-hidden="true">{isOpen ? "−" : "+"}</span>
+            <i className="fa-solid fa-angle-down" aria-hidden="true"></i>
           </button>
         </div>
         <p className="treatment-catalog__description">{item.desc}</p>
@@ -188,9 +188,17 @@ export default function TreatmentCatalog({
           background: transparent;
           color: var(--title-color);
           font-family: Arial, sans-serif;
-          font-size: 28px;
+          font-size: 18px;
           line-height: 1;
           transition: color 0.25s ease, background-color 0.25s ease;
+        }
+
+        .treatment-catalog__toggle i {
+          transition: transform 0.25s ease;
+        }
+
+        .treatment-catalog__item.is-open .treatment-catalog__toggle i {
+          transform: rotate(180deg);
         }
 
         .treatment-catalog__toggle:hover,
@@ -242,17 +250,20 @@ export default function TreatmentCatalog({
           gap: 20px;
         }
 
+        .treatment-catalog__option-main strong,
+        .treatment-catalog__option-main span {
+          font-family: var(--text-font);
+          font-size: 16px;
+          font-weight: 700;
+        }
+
         .treatment-catalog__option-main strong {
           color: var(--title-color);
-          font-size: 16px;
         }
 
         .treatment-catalog__option-main span {
           flex-shrink: 0;
           color: var(--theme-color1);
-          font-family: var(--title-font);
-          font-size: 18px;
-          font-weight: 600;
         }
 
         .treatment-catalog__option ul {
@@ -321,7 +332,8 @@ export default function TreatmentCatalog({
         @media (prefers-reduced-motion: reduce) {
           .treatment-catalog__dropdown,
           .treatment-catalog__image img,
-          .treatment-catalog__toggle {
+          .treatment-catalog__toggle,
+          .treatment-catalog__toggle i {
             transition: none;
           }
         }
@@ -329,4 +341,3 @@ export default function TreatmentCatalog({
     </section>
   );
 }
-

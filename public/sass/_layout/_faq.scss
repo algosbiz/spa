@@ -119,13 +119,17 @@
 			.accordion-item:last-child {
 				border-bottom: none;
 			}
+			.accordion .accordion-item .accordion-header button {
+				padding-right: 38px;
+				font-size: 18px;
+				line-height: 1.45;
+			}
 			@include breakpoint(max-md) {
 				.faq-grid-column {
 					padding: 6px 20px;
 				}
 				.accordion .accordion-item .accordion-header button {
-					padding-right: 38px;
-					font-size: 18px;
+					font-size: 16px;
 					line-height: 1.5;
 				}
 			}

@@ -29,7 +29,7 @@ export default function Home2_Testimonial() {
                 <img className="animation__arryLeftRight" src="/images/shape/testimonial-two-shape-right.png" alt="image"/>
             </div>
             <div className="shape3">
-                <img className="bobble__animation" src="/images/shape/testimonial-two-shape-center.png" alt="image"/>
+                <img className="bobble__animation" src="/images/logo/sbm.webp" alt="Spa Bali Moon watermark"/>
             </div>
             <div className="container">
                 <div className="outer-box">

@@ -90,7 +90,7 @@ const servicesTab2 = [
     { id: 12, name: 'Thai Massage', defaultPrice: '$60', desc: 'Ancient yoga-like stretching for flexibility.', image: '/images/package/package-image2.png', options: defaultOptions },
 ];
 
-const PackageItem = ({ item, isLast }) => {
+const PackageItem = ({ item, isLast, outcallPricing }) => {
     const [isOpen, setIsOpen] = useState(false);
     const hasDetails = Boolean(item.benefits?.length || item.options?.length);
 
@@ -102,9 +102,23 @@ const PackageItem = ({ item, isLast }) => {
             <div className="content">
                 <h3 className="title">
                     {hasDetails ? (
-                        <a href="#" onClick={(e) => { e.preventDefault(); setIsOpen(!isOpen); }} style={{ cursor: 'pointer' }}>
-                            {item.name} {isOpen ? <i className="fa-solid fa-angle-up ms-1" style={{ fontSize: '14px' }}></i> : <i className="fa-solid fa-angle-down ms-1" style={{ fontSize: '14px' }}></i>}
-                        </a>
+                        outcallPricing ? (
+                            <button
+                                type="button"
+                                className="outcall-package-toggle"
+                                onClick={() => setIsOpen(!isOpen)}
+                                aria-expanded={isOpen}
+                            >
+                                <span>{item.name}</span>
+                                <span className="outcall-package-toggle__icon" aria-hidden="true">
+                                    <i className="fa-solid fa-angle-down"></i>
+                                </span>
+                            </button>
+                        ) : (
+                            <a href="#" onClick={(e) => { e.preventDefault(); setIsOpen(!isOpen); }} style={{ cursor: 'pointer' }}>
+                                {item.name} {isOpen ? <i className="fa-solid fa-angle-up ms-1" style={{ fontSize: '14px' }}></i> : <i className="fa-solid fa-angle-down ms-1" style={{ fontSize: '14px' }}></i>}
+                            </a>
+                        )
                     ) : item.name}
                 </h3>
                 {item.desc && <p className="text" style={{ marginTop: '2px', marginBottom: '0', fontSize: '14px', color: '#5f5a54' }}>{item.desc}</p>}
@@ -137,7 +151,12 @@ const PackageItem = ({ item, isLast }) => {
                         {(item.options || []).map((opt, idx) => (
                             <li key={idx} className="d-flex justify-content-between align-items-center pb-2 mb-2" style={{ borderBottom: '1px solid #e1e1e1' }}>
                                 <span style={{ fontFamily: 'var(--subtitle-font)', fontSize: '18px', color: '#6A6F73' }}>{opt.time}</span>
-                                <span style={{ fontFamily: 'var(--title-font)', fontSize: '24px', fontWeight: '500', color: 'var(--title-color)' }}>{opt.price}</span>
+                                <span
+                                    className={outcallPricing ? 'outcall-package-price' : undefined}
+                                    style={outcallPricing ? undefined : { fontFamily: 'var(--title-font)', fontSize: '24px', fontWeight: '500', color: 'var(--title-color)' }}
+                                >
+                                    {opt.price}
+                                </span>
                             </li>
                         ))}
                     </ul>
@@ -155,6 +174,7 @@ export default function PackageSection({
     firstTabLabel = "Home Service Fee",
     secondTabLabel = "Extra 75K/Therapist",
     tabs,
+    outcallPricing = false,
 }) {
     const [activeIndex, setActiveIndex] = useState(0);
     const handleOnClick = (index) => {
@@ -167,7 +187,7 @@ export default function PackageSection({
     ];
 
     return (
-      <section className="package-section section__decoration-top section__decoration-bottom bg-sub pt-170 pb-170">
+      <section className={`package-section section__decoration-top section__decoration-bottom bg-sub pt-170 pb-170${outcallPricing ? ' outcall-package-pricing' : ''}`}>
         <div
           className="shape1 wow slideInLeft"
           data-wow-delay="200ms"
@@ -255,6 +275,7 @@ export default function PackageSection({
                             key={item.id}
                             item={item}
                             isLast={itemIndex === services.length - 1}
+                            outcallPricing={outcallPricing}
                           />
                         ))}
                       </div>
@@ -265,6 +286,103 @@ export default function PackageSection({
             })}
           </div>
         </div>
+        {outcallPricing && (
+          <style jsx global>{`
+            .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 16px;
+              width: 100%;
+              padding: 0;
+              border: 0;
+              background: transparent;
+              color: var(--title-color);
+              font-family: var(--title-font);
+              font-size: 22px;
+              font-weight: 500;
+              line-height: 1.25;
+              text-align: left;
+            }
+
+            .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle > span:first-child {
+              min-width: 0;
+              color: inherit;
+              font-size: inherit;
+              font-weight: inherit;
+              white-space: normal;
+            }
+
+            .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle__icon {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              width: 34px;
+              height: 34px;
+              flex: 0 0 34px;
+              border-radius: 50%;
+              color: var(--title-color);
+              font-size: 18px;
+              transition: color 0.25s ease, background-color 0.25s ease;
+            }
+
+            .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle__icon i {
+              transition: transform 0.25s ease;
+            }
+
+            .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle[aria-expanded="true"] .outcall-package-toggle__icon,
+            .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle:hover .outcall-package-toggle__icon,
+            .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle:focus-visible .outcall-package-toggle__icon {
+              color: #fff;
+              background: var(--theme-color1);
+            }
+
+            .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle[aria-expanded="true"] .outcall-package-toggle__icon i {
+              transform: rotate(180deg);
+            }
+
+            .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle:focus-visible {
+              outline: none;
+            }
+
+            .outcall-package-pricing .outcall-package-price {
+              flex-shrink: 0;
+              color: var(--theme-color1);
+              font-family: var(--title-font);
+              font-size: 19px;
+              font-weight: 500;
+              line-height: 1.25;
+            }
+
+            @media (max-width: 575px) {
+              .outcall-package-pricing .package-block .inner-box .content .title {
+                width: 100%;
+              }
+
+              .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle {
+                font-size: 18px;
+              }
+
+              .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle__icon {
+                width: 30px;
+                height: 30px;
+                flex-basis: 30px;
+                font-size: 16px;
+              }
+
+              .outcall-package-pricing .outcall-package-price {
+                font-size: 17px;
+              }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+              .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle__icon,
+              .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle__icon i {
+                transition: none;
+              }
+            }
+          `}</style>
+        )}
       </section>
     );
 }

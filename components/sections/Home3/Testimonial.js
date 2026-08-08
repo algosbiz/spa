@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Thumbs, Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/thumbs';
 
 const defaultTestimonials = [
     {
@@ -38,9 +37,8 @@ const defaultTestimonials = [
 ];
 
 export default function Home3_Testimonial({ testimonialsData = defaultTestimonials }) {
-    const [thumbsSwiper, setThumbsSwiper] = useState(null); // State to store the thumbs swiper
     const swiperOptions = {
-        modules: [Autoplay, Thumbs, Pagination],
+        modules: [Autoplay, Pagination],
         slidesPerView: 1,
         autoplay: {
             delay: 5000,
@@ -50,7 +48,6 @@ export default function Home3_Testimonial({ testimonialsData = defaultTestimonia
         pagination: {
             clickable: true,
         },
-        thumbs: thumbsSwiper ? { swiper: thumbsSwiper } : undefined,
     };
 
     return (
@@ -63,33 +60,10 @@ export default function Home3_Testimonial({ testimonialsData = defaultTestimonia
                     <img className="animation__arryLeftRight" src="/images/shape/testimonial-two-shape-right.png" alt="image" />
                 </div>
                 <div className="shape3">
-                    <img className="bobble__animation" src="/images/shape/testimonial-three-shape-center.png" alt="image" />
+                    <img className="bobble__animation" src="/images/logo/sbm.webp" alt="Spa Bali Moon watermark" />
                 </div>
                 <div className="container">
                     <div className="outer-box">
-                        <Swiper
-                            onSwiper={setThumbsSwiper} // Set the swiper instance
-                            direction="horizontal"
-                            slidesPerView={3}
-                            spaceBetween={0}
-                            breakpoints={{
-                                0: {
-                                    direction: "horizontal"
-                                },
-                                768: {
-                                    direction: "horizontal"
-                                }
-                            }}
-                            className="swiper testimonial-slider-thumb-two wow fadeInUp" data-wow-delay="200ms"
-                            data-wow-duration="1500ms">
-                            <div className="swiper-wrapper">
-                                {testimonialsData.map((item, index) => (
-                                    <SwiperSlide key={index} className="swiper-slide">
-                                        <img src={item.image} alt={item.name} />
-                                    </SwiperSlide>
-                                ))}
-                            </div>
-                        </Swiper>
                         <Swiper {...swiperOptions} className="swiper testimonial-slider-two wow fadeInDown" data-wow-delay="200ms"
                             data-wow-duration="1500ms">
                             <div className="swiper-wrapper">

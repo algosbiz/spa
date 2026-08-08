@@ -42,13 +42,14 @@
 			}
 
 			.info {
-				color: var(--theme-color-white);
+				color: var(--theme-color2);
 				padding: 28px 25px;
-				background-color: var(--theme-color2);
+				background-color: var(--theme-color-cream);
+				border: 2px solid var(--theme-color2);
 				display: inline-block;
 				text-align: center;
 				position: absolute;
-				bottom: 0;
+				bottom: 8px;
 				left: 0;
 				border-radius: 30px;
 
@@ -57,7 +58,7 @@
 					font-weight: 300;
 					font-family: var(--title-font);
 					font-size: 22px;
-					color: var(--theme-color-white);
+					color: var(--theme-color2);
 					@include breakpoint(max-md) {
 						font-size: 18px;
 					}
@@ -71,6 +72,14 @@
 				.title {
 					letter-spacing: 4px;
 					margin-top: 5px;
+				}
+
+				&.info--gold {
+					border-color: var(--theme-color1);
+
+					.info-line {
+						color: var(--theme-color1);
+					}
 				}
 			}
 		}

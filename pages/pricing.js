@@ -14,6 +14,41 @@ import Banner from "../components/sections/Home2/Banner";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 
+const pricingTreatmentImages = {
+  "Aloe Vera Massage": "/images/homepage/homepage-12.webp",
+  "Aromatherapy Massage": "/images/homepage/homepage-1.webp",
+  "Bali Moon Tea Tree Facial": "/images/services/balimoonfacial/balimoonfacial-1.webp",
+  "Bali Moon Gold Facial": "/images/services/balimoonfacial/balimoonfacial-2.webp",
+  "Balinese Massage - Relaxing": "/images/services/balinesemassage/balinesemassage-1.webp",
+  "Back Massage": "/images/services/traditionalmassage/traditionalmassage-1.webp",
+  "Body Scrub": "/images/services/bodyscrub/bodyscrub-1.webp",
+  "Biokos Facial": "/images/services/balimoonfacial/balimoonfacial-3.webp",
+  "Creambath & Hair Mask": "/images/services/creambath/creambath-1.webp",
+  "Couple Massage": "/images/services/couplemassage/couplemassage-1.webp",
+  "Couple Traditional Massage": "/images/services/couplemassage/couplemassage-2.webp",
+  "Couple Deep Tissue Massage": "/images/services/couplemassage/couplemassage-3.webp",
+  "Couple Warm Candle Oil Massages.": "/images/services/couplemassage/couplemassage-4.webp",
+  "Cellulite Massage": "/images/services/cellulitemassage/cellulitemassage-1.webp",
+  "Deep Tissue Massage": "/images/services/deeptissuemassage/deeptissuemassage-1.webp",
+  "Ear Candle": "/images/services/earcandle/earcandle-1.webp",
+  "Foot Reflexology": "/images/services/footreflexology/footreflexology-1.webp",
+  "Foot Massage": "/images/services/footmassage/footmassage-1.webp",
+  "Four Hand Massage": "/images/homepage/homepage-3.webp",
+  "Herbal Massage": "/images/homepage/homepage-25.webp",
+  "Hot Stone Massage": "/images/services/hotstonemassage/hotstonemassage-1.webp",
+  "Head Massage": "/images/services/headmassage/headmassage-1.webp",
+  "Lymphatic Massage": "/images/services/lymphaticmassage/lymphaticmassage-1.webp",
+  "Manicure Pedicure": "/images/services/manicurepedicure/manicurepedicure-1.webp",
+  "Organic Warm Candle Oil Massage": "/images/homepage/homepage-7.webp",
+  "Four Hand Warm Candle": "/images/homepage/homepage-7.webp",
+  "Shiatsu Massage": "/images/services/shiatsumassage/shiatsumassage-1.webp",
+  "Sport Massage": "/images/services/sportsmassage/sportsmassage-1.webp",
+  "Traditional Massage - Strong": "/images/services/traditionalmassage/traditionalmassage-2.webp",
+  "Thai Massage": "/images/services/thaimassage/thaimassage-1.webp",
+  "Virgin Cold-Press Coconut Oil Massage": "/images/services/coconutoilmassage/coconutoilmassage-1.webp",
+  "Waxing": "/images/services/waxing/waxing-1.webp",
+};
+
 const pricingTreatments = [
   {
     name: "Aloe Vera Massage",
@@ -158,7 +193,7 @@ const pricingTreatments = [
 ].map((treatment, index) => ({
   ...treatment,
   id: index + 1,
-  image: `/images/package/package-image${(index % 8) + 1}.png`,
+  image: pricingTreatmentImages[treatment.name],
   options: [],
 }));
 

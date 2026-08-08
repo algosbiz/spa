@@ -267,7 +267,7 @@ export default function ContactForm({
                     </div>
                 </div>
             </section>
-            <section className="map-section">
+            <section className="map-section map-section--contact section__decoration-top section__decoration-bottom">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.3276299088775!2d115.15814147462666!3d-8.678060388355467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2471415de2293%3A0xe1802d70253e801f!2sSpa%20Bali%20Moon!5e1!3m2!1sen!2sid!4v1778467217568!5m2!1sen!2sid"
                     className="map w-100"

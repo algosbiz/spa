@@ -12,7 +12,10 @@ import ReserveCta from "../components/sections/Home1/ReserveCta";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
-const option = (time, price) => ({ time, price });
+const option = (time, price) => ({
+  time,
+  price: price.replace(/\bIDR\s*/i, ""),
+});
 
 const treatment = (id, name, desc, image, options, benefits) => ({
   id,
@@ -666,6 +669,7 @@ export default function OutcallHomeServiceMassage() {
               subTitle="Prices"
               title="Professional Care with Thoughtful Details Focused on Comfort and Relaxation"
               tabs={pricingTabs}
+              outcallPricing
             />
           </div>
           <HomeServiceInfo plain />

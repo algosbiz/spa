@@ -119,10 +119,10 @@ export default function Home1_About({
                                 <div className="image-box">
                                     <img src={image} alt="Spa treatment" />
                                 </div>
-                                {/* <div className="info">
-                                    <h4><span className="count">25</span> <span>+</span> Years</h4>
-                                    <h4 className="title">Experience</h4>
-                                </div> */}
+                                <div className="info info--gold">
+                                    <p className="info-line"><span className="count">17</span> <span>+</span> Years</p>
+                                    <p className="info-line title">Experience</p>
+                                </div>
                             </div>
                         </div>
                     </div>
