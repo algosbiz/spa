@@ -611,6 +611,8 @@ export default function OutcallHomeServiceMassage() {
             feature2Text="Select your preferred treatment and book a spa session delivered to your location."
             primaryImage="/images/homepage/homepage-2.webp"
             secondaryImage="/images/homepage/homepage-4.webp"
+            showBrandCard
+            removeBottomPadding
           />
           <Funfact items={outcallHighlights} />
           <About
@@ -673,19 +675,21 @@ export default function OutcallHomeServiceMassage() {
             />
           </div>
           <HomeServiceInfo plain />
-          <Faq
-            subTitle="Frequently Asked Questions"
-            title={<>Home Service Massage</>}
-            items={faqItems}
-            showImage={false}
-            columns={2}
-          />
-          <ReserveCta
-            title="Home Service Massage in Seminyak"
-            text="Professional spa treatments are available at your home, hotel, or villa. An additional IDR 75,000 per therapist applies for home service in Seminyak and nearby areas."
-            closingText="For in-spa treatments, bookings should be made on-site based on your preferred time."
-            backgroundImage="/images/homepage/homepage-28.webp"
-          />
+          <div className="outcall-closing-panel">
+            <Faq
+              subTitle="Frequently Asked Questions"
+              title={<>Home Service Massage</>}
+              items={faqItems}
+              showImage={false}
+              columns={2}
+            />
+            <ReserveCta
+              title="Home Service Massage in Seminyak"
+              text="Professional spa treatments are available at your home, hotel, or villa. An additional IDR 75,000 per therapist applies for home service in Seminyak and nearby areas."
+              closingText="For in-spa treatments, bookings should be made on-site based on your preferred time."
+              backgroundImage="/images/homepage/homepage-28.webp"
+            />
+          </div>
         </main>
       </Layout>
     </>

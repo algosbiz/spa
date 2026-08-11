@@ -12,6 +12,7 @@ import 'swiper/css/pagination';
 export default function Home2_Services({
     subTitle = "Services",
     title = (<>Our Services Will Make <br /> You Glow</>),
+    paperBackground = false,
 }) {
     const router = useRouter();
     const currentTreatmentHref = homepageTreatments.find((treatment) =>
@@ -19,7 +20,7 @@ export default function Home2_Services({
     )?.href;
 
     if (currentTreatmentHref) {
-        return (
+        const featureSection = (
             <Feature
                 showHeader
                 subTitle={subTitle}
@@ -27,6 +28,12 @@ export default function Home2_Services({
                 excludeHref={currentTreatmentHref}
             />
         );
+
+        return paperBackground ? (
+            <div className="section__decoration-top section__decoration-bottom bg-sub">
+                {featureSection}
+            </div>
+        ) : featureSection;
     }
 
     const swiperOptions = {
@@ -37,7 +44,9 @@ export default function Home2_Services({
             delay: 5000,
             disableOnInteraction: false,
         },
-        loop: true,
+        loop: false,
+        rewind: true,
+        watchOverflow: true,
         navigation: {
             nextEl: '.service-arry-next-two',
             prevEl: '.service-arry-prev-two',
@@ -66,7 +75,10 @@ export default function Home2_Services({
 
     return (
         <>
-            <section id="services" className="service-section-two section__decoration-top section__decoration-bottom pt-130 pb-100">
+            <section
+                id="services"
+                className={`service-section-two section__decoration-top section__decoration-bottom pt-130 pb-100${paperBackground ? " service-section-two--paper bg-sub" : ""}`}
+            >
                 <div className="container">
                     <div className="section-header mb-60 center">
                         <p className="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
@@ -156,7 +168,7 @@ export default function Home2_Services({
                                         </div>
                                     </div>
                                     <div className="content">
-                                        <h3 className="title"><Link href="/page-service-details">Foot Reflexology</Link></h3>
+                                        <h3 className="title"><Link href="/foot-reflexology">Foot Reflexology</Link></h3>
                                         <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.</p>
                                     </div>
                                     <div className="shape">
@@ -283,7 +295,7 @@ export default function Home2_Services({
                                         </div>
                                     </div>
                                     <div className="content">
-                                        <h3 className="title"><Link href="/page-service-details">Head Message</Link></h3>
+                                        <h3 className="title"><Link href="/head-massage">Head Massage</Link></h3>
                                         <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.</p>
                                     </div>
                                     <div className="shape">
@@ -341,7 +353,7 @@ export default function Home2_Services({
                                         </div>
                                     </div>
                                     <div className="content">
-                                        <h3 className="title"><Link href="/page-service-details">Stone Message</Link></h3>
+                                        <h3 className="title"><Link href="/hot-stone-massage">Hot Stone Massage</Link></h3>
                                         <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.</p>
                                     </div>
                                     <div className="shape">
@@ -359,6 +371,7 @@ export default function Home2_Services({
                                     </Link>
                                 </div>
                             </SwiperSlide>
+                            {/* Legacy duplicate slide intentionally excluded from the slider.
                             <SwiperSlide className="swiper-slide service-block-two">
                                 <div className="inner-box">
                                     <div className="image-box">
@@ -433,6 +446,7 @@ export default function Home2_Services({
                                     </Link>
                                 </div>
                             </SwiperSlide>
+                            */}
                         </div>
                     </Swiper>
                 </div>

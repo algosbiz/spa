@@ -63,6 +63,7 @@ export default function MassageSeminyak() {
                     buttonText="Book Now"
                 />
                 <AboutOld
+                    removeBottomPadding
                     subTitle="Find Your Balance"
                     title={<>What Makes a Massage in Seminyak Part of a Bali Stay?</>}
                     text="After a day of beach time, exploring, shopping, or enjoying Seminyak, your body may need time to slow down and recover. A professional massage offers the chance to relax and reconnect with your body"
@@ -124,18 +125,22 @@ export default function MassageSeminyak() {
                         "Easy WhatsApp booking",
                     ]}
                 />
-                <Faq
-                    imageTitle="Seminyak Day Spa"
-                    subTitle="Frequently Asked Questions"
-                    title={<>Everything You Need to Know</>}
-                    items={faqItems}
-                />
+                <div className="location-faq-paper section__decoration-top section__decoration-bottom bg-sub pb-100">
+                    <Faq
+                        largeTopPadding
+                        imageTitle="Seminyak Day Spa"
+                        subTitle="Frequently Asked Questions"
+                        title={<>Everything You Need to Know</>}
+                        items={faqItems}
+                    />
+                </div>
                 <ReserveCta
                     title="Make Space for Yourself in Seminyak"
                     text="Between beach mornings, busy afternoons, and evenings spent discovering the best of Bali, a massage can create a quiet pause in the middle of your stay. Spa Bali Moon offers traditional Balinese therapies, targeted massage treatments, beauty care, and relaxing spa experiences for guests who want to rest, recover, or simply enjoy some uninterrupted time for themselves."
                     closingText="Visit our spa in Seminyak or arrange selected treatments at your hotel, villa, or private accommodation through our home service."
                 />
                 <Services
+                    paperBackground
                     subTitle="Our Treatments"
                     title={<>Massage Services in <br /> Seminyak</>}
                 />

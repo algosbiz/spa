@@ -349,6 +349,16 @@ const icons = [
   ),
 ];
 
+const packageIconByCardTitle = {
+  "Thai Massage": "/images/icon/icon-spa/Thai Massage.png",
+  "Cream Bath": "/images/icon/icon-spa/Cream Bath.png",
+  "Body Scrub": "/images/icon/icon-spa/Body Scrub.png",
+  "Hot Stone": "/images/icon/icon-spa/Hot Stone.png",
+  "Bali Moon Facial": "/images/icon/icon-spa/Biokos Facial.png",
+  "Mani Pedi": "/images/icon/icon-spa/menipedi.png",
+  "Couple Massage": "/images/icon/icon-spa/Couple Massage.png",
+};
+
 const categories = [
   {
     "subTitle": "Relax and Revitalize",
@@ -855,6 +865,7 @@ export default function Home5_PackagePricing() {
       {sortedCategories.map((cat, ci) => {
         const isFirst = ci === 0;
         const isLast = ci === sortedCategories.length - 1;
+        const iconSrc = packageIconByCardTitle[cat.cardTitle];
         // One continuous cream sheet: the torn-paper edge shows only at the very
         // top (first group) and very bottom (last group), nothing in between.
         const decoration = `${isFirst ? 'section__decoration-top' : ''} ${isLast ? 'section__decoration-bottom' : ''}`.trim();
@@ -903,7 +914,13 @@ export default function Home5_PackagePricing() {
                         <div className="shape">
                           <img src="/images/pricing/shape.png" alt="image" />
                         </div>
-                        <div className="icon">{icons[pi]}</div>
+                        <div className="icon">
+                          {iconSrc ? (
+                            <img src={iconSrc} alt={`${cat.cardTitle} icon`} />
+                          ) : (
+                            icons[pi % icons.length]
+                          )}
+                        </div>
                         <h4>
                           {cat.cardTitle} <br /> Package {String.fromCharCode(65 + pi)}
                         </h4>
@@ -934,4 +951,3 @@ export default function Home5_PackagePricing() {
     </>
   );
 }
-

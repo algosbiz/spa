@@ -9,6 +9,7 @@ export default function Home6_Faq({
     showImage = true,
     image = "/images/faq/faq-image.jpg",
     columns = 1,
+    largeTopPadding = false,
 }) {
     const shouldSplit = columns === 2 && Array.isArray(items);
     const midpoint = shouldSplit ? Math.ceil(items.length / 2) : 0;
@@ -18,7 +19,7 @@ export default function Home6_Faq({
 
     return (
         <>
-            <section className="faq-section pt-100 pb-100">
+            <section className={`faq-section ${largeTopPadding ? "pt-130" : "pt-100"}`}>
                 <div className="outer-box">
                     <div className="row g-4">
                         {showImage && (

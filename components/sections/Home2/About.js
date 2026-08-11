@@ -15,6 +15,8 @@ export default function Home2_About({
     feature2Text = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.",
     primaryImage = "/images/about/about-two-image.png",
     secondaryImage = "/images/about/about-two-image2.png",
+    showBrandCard = false,
+    removeBottomPadding = false,
     leftShapeSrc,
     rightShapeSrc,
 }) {
@@ -29,7 +31,10 @@ export default function Home2_About({
 
     return (
         <>
-        <section id="about" className="about-section-two pt-130 pb-100 paralax__animation">
+        <section
+            id="about"
+            className={`about-section-two pt-130 paralax__animation${removeBottomPadding ? "" : " pb-100"}`}
+        >
             <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
                 <img className="animation__arryUpDown" src={resolvedLeftShape} alt="" aria-hidden="true"/>
             </div>
@@ -57,6 +62,15 @@ export default function Home2_About({
                                     </g>
                                 </svg>
                             </Link>
+                            {showBrandCard && (
+                                <div className="brand-card" aria-hidden="true">
+                                    <img
+                                        className="brand-lotus-icon"
+                                        src="/images/logo/sbm.webp"
+                                        alt=""
+                                    />
+                                </div>
+                            )}
                         </div>
                     </div>
                     <div className="col-xl-5 content-column">

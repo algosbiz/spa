@@ -214,16 +214,26 @@
 		.icon {
 			width: 85px;
 			height: 85px;
-			line-height: 85px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			text-align: center;
 			background-color: var(--theme-color-gray);
 			border-radius: 50%;
 			margin: 0 auto;
 			margin-bottom: 20px;
-			svg {
+			svg,
+			img {
 				transition: 0.9s;
+				object-fit: contain;
+			}
+			svg {
 				width: 46px;
 				height: 46px;
+			}
+			img {
+				width: 66px;
+				height: 66px;
 			}
 		}
 		h4 {
@@ -277,7 +287,8 @@
 		}
 		&:hover {
 			.icon {
-				svg {
+				svg,
+				img {
 					transform: rotateY(360deg);
 				}
 			}

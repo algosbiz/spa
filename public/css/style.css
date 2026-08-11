@@ -3611,15 +3611,23 @@ textarea.form-control {
   background: url(../images/shape/section-shape-bottom.png) no-repeat center bottom;
 }
 
-/* FAQ is the final cream paper panel before the booking call-to-action. */
-.outcall-page > .home-service-info-area + .faq-section {
+/* Keep the final FAQ and booking call-to-action on one cream paper panel. */
+.outcall-page > .outcall-closing-panel {
   position: relative;
   z-index: 1;
+  overflow: hidden;
+  padding-bottom: 100px;
   background-color: var(--theme-color-gray);
 }
 
-.outcall-page > .home-service-info-area + .faq-section::before,
-.outcall-page > .home-service-info-area + .faq-section::after {
+@media (max-width: 767px) {
+  .outcall-page > .outcall-closing-panel {
+    padding-bottom: 50px;
+  }
+}
+
+.outcall-page > .outcall-closing-panel::before,
+.outcall-page > .outcall-closing-panel::after {
   content: "";
   position: absolute;
   left: 0;
@@ -3627,16 +3635,23 @@ textarea.form-control {
   pointer-events: none;
 }
 
-.outcall-page > .home-service-info-area + .faq-section::before {
+.outcall-page > .outcall-closing-panel::before {
   top: 0;
   height: 76px;
   background: url(../images/shape/section-shape-top.png) no-repeat center top;
 }
 
-.outcall-page > .home-service-info-area + .faq-section::after {
+.outcall-page > .outcall-closing-panel::after {
   bottom: 0;
   height: 74px;
   background: url(../images/shape/section-shape-bottom.png) no-repeat center bottom;
+}
+
+.outcall-page > .outcall-closing-panel > .faq-section,
+.outcall-page > .outcall-closing-panel > .reserve-cta-section {
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
 }
 
 .outcall-page .about-section-two .row,
@@ -5982,13 +5997,13 @@ textarea.form-control {
 
 .about-section .image-column .inner-column .info {
   color: var(--theme-color2);
-  padding: 28px 25px;
+  padding: 31px 25px;
   background-color: var(--theme-color-cream);
   border: 2px solid var(--theme-color2);
   display: inline-block;
   text-align: center;
   position: absolute;
-  bottom: 8px;
+  bottom: 0;
   left: 0;
   border-radius: 30px;
 }
@@ -6148,6 +6163,41 @@ textarea.form-control {
   .about-section-two .image-column .inner-column .circle-btn svg {
     width: 16px;
     height: 16px;
+  }
+}
+
+.about-section-two .image-column .inner-column .brand-card {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: var(--theme-color-cream);
+  border: 2px solid var(--theme-color2);
+  border-radius: 26px;
+}
+
+.about-section-two .image-column .inner-column .brand-card .brand-lotus-icon {
+  width: 44px;
+  height: 44px;
+  flex-basis: 44px;
+}
+
+@media (max-width: 500px) {
+  .about-section-two .image-column .inner-column .brand-card {
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+  }
+
+  .about-section-two .image-column .inner-column .brand-card .brand-lotus-icon {
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
   }
 }
 
@@ -6861,7 +6911,7 @@ textarea.form-control {
 }
 
 .faq-section .image-column .inner-column .title {
-  font-size: clamp(22px, 3.3vw, 68px);
+  font-size: clamp(20px, 2.6vw, 52px);
   line-height: 1;
   font-weight: 500;
   color: var(--theme-color-white);
@@ -8680,7 +8730,9 @@ textarea.form-control {
 .pricing-block-five .inner-box .icon {
   width: 85px;
   height: 85px;
-  line-height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   background-color: var(--theme-color-gray);
   border-radius: 50%;
@@ -8688,10 +8740,20 @@ textarea.form-control {
   margin-bottom: 20px;
 }
 
-.pricing-block-five .inner-box .icon svg {
+.pricing-block-five .inner-box .icon svg,
+.pricing-block-five .inner-box .icon img {
   transition: 0.9s;
+  object-fit: contain;
+}
+
+.pricing-block-five .inner-box .icon svg {
   width: 46px;
   height: 46px;
+}
+
+.pricing-block-five .inner-box .icon img {
+  width: 66px;
+  height: 66px;
 }
 
 .pricing-block-five .inner-box h4 {
@@ -8744,7 +8806,8 @@ textarea.form-control {
   flex-shrink: 0;
 }
 
-.pricing-block-five .inner-box:hover .icon svg {
+.pricing-block-five .inner-box:hover .icon svg,
+.pricing-block-five .inner-box:hover .icon img {
   transform: rotateY(360deg);
 }
 
@@ -9348,6 +9411,11 @@ textarea.form-control {
   opacity: 1;
   visibility: visible;
   bottom: -35px;
+}
+
+.service-section-two--paper .service-block-two .inner-box .image-box .image {
+  mask-image: url(../images/service/service-two-image-mask-portrait.svg);
+  mask-size: 100% 100%;
 }
 
 .service-section-three {

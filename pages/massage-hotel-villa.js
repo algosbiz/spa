@@ -63,6 +63,7 @@ export default function MassageHotelVilla() {
                     buttonText="Book Now"
                 />
                 <AboutOld
+                    removeBottomPadding
                     subTitle="Your Way to Relax"
                     title={<>What Is an In-Room Massage?</>}
                     text="An in-room massage brings the spa experience directly to your hotel, villa, or private accommodation. Instead of travelling across Seminyak for an appointment, our experienced therapists come to you with professional massage and spa treatments, helping you relax and enjoy your treatment in a space where you already feel comfortable."
@@ -123,18 +124,22 @@ export default function MassageHotelVilla() {
                         "English-speaking team",
                     ]}
                 />
-                <Faq
-                    imageTitle="Relax In Your Room"
-                    subTitle="Frequently Asked Questions"
-                    title={<>Everything You Need to Know</>}
-                    items={faqItems}
-                />
+                <div className="location-faq-paper section__decoration-top section__decoration-bottom bg-sub pb-100">
+                    <Faq
+                        largeTopPadding
+                        imageTitle="Relax In Your Room"
+                        subTitle="Frequently Asked Questions"
+                        title={<>Everything You Need to Know</>}
+                        items={faqItems}
+                    />
+                </div>
                 <ReserveCta
                     title="Bring the Spa Experience to Your Hotel or Villa"
                     text="Your Bali itinerary does not need to end when you return to your accommodation. Our therapists bring professional massage and selected spa treatments directly to your hotel, villa, or private accommodation in Seminyak and nearby areas."
                     closingText="Choose your treatment, send us a message on WhatsApp, and let Spa Bali Moon create a more relaxing part of your stay without requiring you to leave your room."
                 />
                 <Services
+                    paperBackground
                     subTitle="Our Treatments"
                     title={<>Massage Services for <br /> Your Stay</>}
                 />

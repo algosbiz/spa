@@ -235,6 +235,13 @@
 		}
 	}
 }
+
+.service-section-two--paper {
+	.service-block-two .inner-box .image-box .image {
+		mask-image: url(../images/service/service-two-image-mask-portrait.svg);
+		mask-size: 100% 100%;
+	}
+}
 // Service two area end here ***
 
 // Service three area start here ***

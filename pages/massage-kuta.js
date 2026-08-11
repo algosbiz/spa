@@ -63,6 +63,7 @@ export default function MassageKuta() {
                     buttonText="Book Now"
                 />
                 <AboutOld
+                    removeBottomPadding
                     subTitle="A Moment to Reset"
                     title={<>What Can a Massage in Kuta Help With?</>}
                     text="Kuta is known for long beach days, surfing, sightseeing, and a lively holiday atmosphere, but all that activity can leave the body feeling stiff, heavy, or overtired. A professional massage offers a chance to slow down, release built-up tension, and feel more comfortable again."
@@ -123,18 +124,22 @@ export default function MassageKuta() {
                         "English-speaking team",
                     ]}
                 />
-                <Faq
-                    imageTitle="Unwind In Kuta"
-                    subTitle="Frequently Asked Questions"
-                    title={<>Everything You Need to Know</>}
-                    items={faqItems}
-                />
+                <div className="location-faq-paper section__decoration-top section__decoration-bottom bg-sub pb-100">
+                    <Faq
+                        largeTopPadding
+                        imageTitle="Unwind In Kuta"
+                        subTitle="Frequently Asked Questions"
+                        title={<>Everything You Need to Know</>}
+                        items={faqItems}
+                    />
+                </div>
                 <ReserveCta
                     title="Take Time to Feel Better in Kuta"
                     text="When your body begins to feel the pace of it all, a professional massage can offer a welcome pause. At Spa Bali Moon, you can choose from traditional Balinese therapies, targeted recovery treatments, and relaxing beauty services to help you feel lighter, more comfortable, and ready to enjoy the rest of your stay."
                     closingText="Visit us for your treatment or ask about selected home service options at your hotel or villa in nearby areas."
                 />
                 <Services
+                    paperBackground
                     subTitle="Our Treatments"
                     title={<>Massage Services in <br /> Kuta</>}
                 />
