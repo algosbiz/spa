@@ -120,11 +120,28 @@ export default function BodyScrub() {
         </div>
 
         <Testimonial />
+        <AboutReverse
+          image={treatmentImages.intro[1]}
+          subTitle="Treatment Timing"
+          title={<>When Is the Best Time to Use a Body Scrub?</>}
+          text="There is no single best time to use a body scrub. It depends on your skin condition, daily activities, and spa routine. A body scrub may be especially suitable:"
+          featuresLeft={[
+            "Before a special occasion",
+            "After outdoor activities",
+            "When your skin feels rough or dull",
+          ]}
+          featuresRight={[
+            "Before another spa treatment",
+            "As part of your regular skincare routine",
+          ]}
+          buttonText="Book Now"
+          buttonLink={bookingUrl}
+        />
         <About
           image={treatmentImages.details[0]}
           subTitle="The Results"
-          title={<>What Can Regular Exfoliation Help With?</>}
-          text="Exfoliation is commonly included in skincare routines to help remove dead skin cells that naturally accumulate on the surface of the skin. Many guests choose body scrubs after beach days, outdoor activities, or before special occasions when they want their skin to feel smoother and look more refreshed."
+          title={<>What Are the Main Body Scrub Benefits?</>}
+          text="Many guests choose body scrubs after beach days, outdoor activities, or before special occasions. A regular body scrub can help refresh the skin and support a smoother feel by:"
           featuresLeft={[
             "Helps remove dead skin cells and buildup",
             "Supports smoother skin texture",

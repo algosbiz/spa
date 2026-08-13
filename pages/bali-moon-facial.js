@@ -46,29 +46,24 @@ const serviceHighlights = [
 
 const faqItems = [
   {
-    question: "Which skin types are suitable for Bali Moon Facial?",
+    question: "What Is a Bali Moon Facial?",
     answer:
-      "The treatment is suitable for most skin types. Tea Tree Mask is generally recommended for oily or blemish-prone skin, while Gold Mask is often chosen for hydration and radiance.",
+      "A Bali Moon Facial is a relaxing facial treatment designed to cleanse, refresh, and nourish the skin while providing a soothing spa experience in Seminyak, Bali.",
   },
   {
-    question: "Can I choose between the Tea Tree and Gold Masks?",
+    question: "Can a facial help after spending time in the Bali sun?",
     answer:
-      "Yes. Guests are welcome to choose their preferred mask, and our therapists can also provide recommendations based on your skin concerns.",
+      "Yes. After days of sightseeing, swimming, or sun exposure, a facial can help cleanse the skin, restore moisture, and leave your complexion feeling refreshed. Many visitors choose a facial as part of their post-holiday self-care routine.",
   },
   {
-    question: "How long does a facial session take?",
+    question: "What Are the Benefits of a Bali Moon Facial?",
     answer:
-      "Most sessions take approximately 60 to 75 minutes depending on the treatment selected and your skin's needs.",
+      "A Bali Moon Facial can help cleanse the skin, remove surface impurities, improve hydration, and leave the skin feeling refreshed and rejuvenated.",
   },
   {
-    question: "Is the treatment suitable for sensitive skin?",
+    question: "Where Can I Get a Bali Moon Facial in Seminyak?",
     answer:
-      "Yes. The treatment includes soothing ingredients such as Aloe Vera, Chamomile, and Cucumber, and can be adjusted for sensitive skin when required.",
-  },
-  {
-    question: "How often should I have a facial treatment?",
-    answer:
-      "Many guests choose to schedule facial treatments every three to four weeks to help maintain hydration, skin clarity, and overall skin condition.",
+      "You can enjoy a Bali Moon Facial at Spa Bali Moon in Seminyak, Bali, as a relaxing spa experience designed to combine professional facial care with the calming atmosphere of a Balinese spa.",
   },
 ];
 
@@ -114,7 +109,7 @@ export default function BaliMoonFacial() {
           image={treatmentImages.details[0]}
           subTitle="Skin Goals"
           title={<>What Does a Facial Help With?</>}
-          text="While every skin type behaves differently, regular facial treatments are commonly used to help manage surface impurities, maintain hydration, and support overall skin condition. Many guests also choose facials as part of their monthly skincare routine or after spending time in the sun, travelling, or experiencing changes in climate."
+          text="While every skin type behaves differently, regular facial treatments are commonly used to help manage surface impurities, maintain hydration, and support overall skin condition. Guests choose facial treatments for a variety of skincare goals, such as:"
           featuresLeft={[
             "Supports hydration and moisture balance",
             "Helps remove excess oil and impurities",
@@ -149,8 +144,8 @@ export default function BaliMoonFacial() {
         <About
           image={treatmentImages.details[2]}
           subTitle="Inside the Treatment"
-          title={<>From Cleansing to Rose Water: Inside Your Facial Session</>}
-          text="Every Bali Moon Facial follows a carefully structured treatment process designed to prepare, nourish, and soothe the skin. Each step builds on the previous one to help maximise comfort while supporting better product absorption and skin hydration."
+          title={<>What to Expect During Your Facial</>}
+          text="Your facial follows a series of carefully selected steps designed to cleanse, exfoliate, nourish, and refresh your skin:"
           featuresLeft={[
             "Milk cleanser to remove surface buildup",
             "Warm steam to soften and prepare the pores",

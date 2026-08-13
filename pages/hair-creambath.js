@@ -70,6 +70,21 @@ const faqItems = [
     answer:
       "Absolutely. Creambath is one of the most popular treatments after swimming or sun exposure because it helps restore moisture and improve hair softness.",
   },
+  {
+    question: "Does a hair creambath include a scalp massage?",
+    answer:
+      "Yes. A traditional creambath typically includes a relaxing scalp massage as part of the treatment. The massage can help you unwind while the hair cream is applied and worked through the hair and scalp.",
+  },
+  {
+    question: "What is the difference between a creambath and a regular hair wash?",
+    answer:
+      "A regular hair wash primarily focuses on cleansing the hair and scalp, while a creambath is a more intensive conditioning and relaxation treatment. A creambath typically combines hair cream application with a scalp massage and is designed to provide both hair care and relaxation.",
+  },
+  {
+    question: "Should I wash my hair before a creambath?",
+    answer:
+      "You generally do not need to wash your hair immediately before your appointment. The therapist can assess your hair and scalp as part of the treatment process. Avoid applying excessive styling products before your appointment so the treatment can be performed comfortably.",
+  },
 ];
 
 export default function HairCreambath() {
@@ -114,7 +129,7 @@ export default function HairCreambath() {
           image={treatmentImages.details[0]}
           subTitle="Ingredient Guide"
           title={<>Which Creambath Formula is Right for You?</>}
-          text="Each creambath formula is designed with different ingredients to support specific hair concerns. Choosing the right option helps ensure your treatment matches your hair type, condition, and desired results."
+          text="Each creambath formula uses different ingredients to address common hair and scalp needs, from moisture and softness to scalp comfort and manageability. Depending on your hair condition and what you want from the treatment, you may prefer:"
           featuresLeft={[
             "Ginseng to support healthier-looking hair",
             "Avocado for moisture and softness",
@@ -132,7 +147,7 @@ export default function HairCreambath() {
           image={treatmentImages.details[1]}
           subTitle="Hair Benefits"
           title={<>How Does a Cream Bath Care for Your Hair?</>}
-          text="Our creambath provides focused care for both the hair and scalp by combining nourishing cream with a relaxing scalp massage. It is commonly chosen to help refresh hair that feels dry, dull, or affected by sun exposure, humidity, swimming, and daily styling."
+          text="Depending on your hair condition, the treatment can help improve how your hair feels and looks, particularly when it has been affected by dryness, styling, sun exposure, or swimming. Benefits may include:"
           featuresLeft={[
             "Helps improve hair moisture and softness",
             "Supports a smoother, healthier-looking appearance",

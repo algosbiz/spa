@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import Layout from "../components/layout/Layout";
 import Banner from "../components/sections/Home2/Banner";
 import AboutOld from "../components/sections/Home2/About";
@@ -514,54 +515,39 @@ const outcallHighlights = [
 
 const faqItems = [
   {
-    question: "What is outcall massage?",
+    question: "What is an outcall massage?",
     answer:
-      "An outcall massage is a professional massage service where a therapist travels to your hotel, villa, or private accommodation instead of you visiting a spa. Spa Bali Moon offers professional outcall massage services, allowing guests to enjoy authentic Balinese massage and wellness treatments without leaving their location.",
+      "An outcall massage is a professional treatment delivered by a therapist who travels to you, rather than you visiting the spa. Our therapists come to your villa, hotel room, or private residence with everything needed for the session. It is also known as home service or mobile massage.",
   },
   {
-    question: "Can I Book a Home Service Massage in Seminyak?",
+    question: "Do I need to prepare anything?",
     answer:
-      "Yes. Home service massage is available for guests staying in Seminyak, Canggu, North Kuta, Kuta, Jimbaran, Uluwatu, Nusa Dua, Sanur, Denpasar, and selected nearby areas. Bookings can be made through our website or via WhatsApp for availability, scheduling, and service-area confirmation.",
+      "No. Our therapists bring the massage bed, clean linens, towels, and oils. All you need is a space of roughly two by two metres; a bedroom, terrace, or living area can all work well. If you have a preference for where the session takes place, tell us when you book.",
   },
   {
-    question: "What Areas Does Spa Bali Moon Serve?",
+    question: "What does the therapist bring?",
     answer:
-      "The spa is based in Seminyak, and home service massage may be available in Seminyak, Canggu, Ubud, Uluwatu, Nusa Dua, Kuta, Jimbaran, Sanur, Denpasar, and selected nearby areas. Availability may vary depending on your location, therapist scheduling, and travel distance.",
+      "A portable massage bed, freshly laundered linens and towels, professional massage oils, and any equipment specific to your chosen treatment. Nothing is reused between guests. You do not need to supply towels, sheets, or anything else.",
   },
   {
-    question: "Is Spa Bali Moon's Home Massage Service Legitimate?",
+    question: "How long does setup take?",
     answer:
-      "Yes. We are an established spa studio offering both in-spa and home massage services. Guests can book directly through our spa or WhatsApp, and experienced therapists provide professional massage services at villas, hotels, and private accommodations.",
+      "Around five to ten minutes on arrival, and a similar time to pack down afterwards. Your treatment time begins once setup is complete, so a booked 60-minute massage is a full 60 minutes of treatment.",
   },
   {
-    question: "Who Is Spa Bali Moon Suitable For?",
+    question: "Which areas do you cover for home service?",
     answer:
-      "Our services are suitable for a wide range of guests, including couples, friends, solo travellers, athletes, and those seeking relaxation or wellness treatments during their stay in Bali.",
+      "Our spa is in Seminyak, and home service is available across Seminyak, Kerobokan, Petitenget, Canggu, and North Kuta. We also travel to Kuta, Jimbaran, Uluwatu, Nusa Dua, Sanur, Denpasar, and Ubud, subject to therapist availability and travel time. Message us with your location and we will confirm.",
   },
   {
-    question: "How Much Does a Home Massage Cost at Spa Bali Moon?",
+    question: "What if my hotel doesn't allow outside therapists?",
     answer:
-      "Massage treatments start from IDR 159K for a 60-minute session, with premium treatments and longer sessions available at higher rates. An additional home service fee of IDR 75K per therapist applies for villas, hotels, and private accommodations in Seminyak and surrounding areas.",
+      "Some hotels and resorts restrict external therapists, particularly larger properties with their own spa. Please check with reception before booking. Private villas and guesthouses rarely have this restriction. If your property does not permit home service, you are very welcome at our Seminyak spa instead.",
   },
   {
-    question: "How Can I Tell If a Home Massage Service Is Legitimate?",
+    question: "Which massage is best after a long flight?",
     answer:
-      "Spa Bali Moon operates from Jl. Pangkung Sari No. 30, Seminyak, Bali, and accepts bookings through its official website and WhatsApp at +62 878-6317-5144, giving guests a reliable way to arrange professional massage treatments.",
-  },
-  {
-    question: "What Types of Massage Can I Book for a Home Service?",
-    answer:
-      "Popular options include Balinese massage, Thai massage, deep tissue massage, sports massage, lymphatic massage, and relaxing aromatherapy treatments. Choose the treatment that best suits your goals, whether you are seeking relaxation, muscle recovery, or a traditional spa experience.",
-  },
-  {
-    question: "How Does Spa Bali Moon Ensure a Safe and Professional Experience?",
-    answer:
-      "Guests can expect professional service, transparent treatment information, and a dedicated team focused on providing a comfortable and reliable spa experience, whether visiting the spa or booking a home massage service.",
-  },
-  {
-    question: "How Does Spa Bali Moon Ensure a Comfortable Home Massage Experience?",
-    answer:
-      "Before your appointment, we confirm your preferred treatment, pressure level, session duration, and any areas that require special attention. Booking details and applicable service fees are confirmed in advance so you can relax in the comfort of your villa, hotel, or private accommodation.",
+      "A one-hour Balinese or aromatherapy massage suits most guests arriving in Bali. Both use steady, flowing pressure rather than deep work, which helps with circulation and sleep after a long journey. Foot reflexology is a good shorter option if your legs and feet feel swollen.",
   },
 ];
 
@@ -606,7 +592,15 @@ export default function OutcallHomeServiceMassage() {
               </>
             }
             feature1Title="Easy Booking via WhatsApp"
-            feature1Text="Check available treatments and arrange your spa session easily through WhatsApp."
+            feature1Text={
+              <>
+                Check{" "}
+                <Link href="https://spa-ten-ochre.vercel.app/#0">
+                  available treatments
+                </Link>{" "}
+                and arrange your spa session easily through WhatsApp.
+              </>
+            }
             feature2Title="Spa Treatments at Your Place"
             feature2Text="Select your preferred treatment and book a spa session delivered to your location."
             primaryImage="/images/homepage/homepage-2.webp"
@@ -617,8 +611,8 @@ export default function OutcallHomeServiceMassage() {
           <Funfact items={outcallHighlights} />
           <About
             subTitle="Spa & Beauty Service"
-            title={<>Massage & Body Treatments</>}
-            text="We offer a calm and comfortable environment where you can relax and select the treatment that fits your needs. Our selection includes classic Balinese techniques, Japanese Shiatsu, beauty care, and treatment options for couples."
+            title={<>Outcall Massage &amp; Body Treatments</>}
+            text="Enjoy professional massage and body treatments in the comfort of your villa, hotel, or accommodation. Choose from our selection of treatments:"
             featuresLeft={[
               "Couple Massage — Relax side by side while sharing a massage experience together.",
               "Shiatsu — Release muscle tension using gentle Japanese pressure-point techniques.",
@@ -638,20 +632,7 @@ export default function OutcallHomeServiceMassage() {
           <AboutReverse
             subTitle="Reserve Your Home Service Massage"
             title={<>Get Your Massage Service at Home</>}
-            text={
-              <>
-                Professional Balinese massage and spa treatments are available
-                throughout the day at your home, hotel, or villa, with flexible
-                appointment times and responsive booking support. Our therapists
-                can accommodate both individual and group bookings with
-                appropriate pricing.
-                <br />
-                <br />
-                Discover calming treatments available at our spa or as a home
-                service. View our price list and contact us for quick assistance
-                with rates and therapist availability when you are ready to book.
-              </>
-            }
+            text="Enjoy professional Balinese massage and spa treatments at your home, hotel, or villa throughout the day. With flexible appointment times and responsive booking support, the process is simple and convenient. When booking a home service, you can expect:"
             featuresLeft={[
               "Individual and group bookings",
               "Flexible appointment times",

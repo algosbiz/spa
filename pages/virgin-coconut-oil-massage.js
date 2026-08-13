@@ -77,6 +77,16 @@ const faqItems = [
     answer:
       "Relaxation is one of its main benefits, but many guests also choose this treatment because the virgin coconut oil helps keep the skin feeling soft, smooth, and moisturised.",
   },
+  {
+    question: "Is virgin coconut oil massage suitable for dry skin?",
+    answer:
+      "It can be a suitable option for people with dry or dehydrated-feeling skin because coconut oil helps moisturise and soften the skin. However, individual skin types can respond differently to oils, so guests with known sensitivities should inform their therapist before treatment.",
+  },
+  {
+    question: "Can virgin coconut oil massage help with muscle tension?",
+    answer:
+      "The massage techniques used during the treatment can help relax tight or tired muscles and promote an overall sense of physical relaxation. The benefits depend on the massage pressure, techniques used, and individual needs rather than the coconut oil itself.",
+  },
 ];
 
 export default function VirginCoconutOilMassage() {
@@ -121,7 +131,7 @@ export default function VirginCoconutOilMassage() {
           image={treatmentImages.details[0]}
           subTitle="Why Coconut Oil?"
           title={<>More Than Just Massage Oil</>}
-          text="Virgin coconut oil has long been used in tropical wellness traditions because of its natural moisturising properties and smooth texture. While the massage techniques help relax the body, the oil provides an added layer of skin care that many guests appreciate, especially after spending time in Bali's sun and tropical climate."
+          text="Virgin coconut oil has long been used in tropical wellness traditions because of its natural moisturising properties and smooth texture. In addition, guests may enjoy coconut oil because:"
           featuresLeft={[
             "Helps soften dry skin",
             "Leaves the skin feeling moisturised",
@@ -139,7 +149,7 @@ export default function VirginCoconutOilMassage() {
           image={treatmentImages.details[1]}
           subTitle="Ideal For"
           title={<>Who Usually Chooses This Massage?</>}
-          text="This treatment is often selected by guests who want more than muscle relaxation. The nourishing properties of virgin coconut oil make it especially popular among travellers looking to restore skin comfort while enjoying a calming massage experience."
+          text="While the massage itself focuses on relaxation, the use of virgin coconut oil can make the treatment appealing to guests with different skincare and wellness preferences. This massage may be a good fit for:"
           featuresLeft={[
             "Guests with dry-feeling skin",
             "Visitors after sun exposure",
@@ -157,7 +167,7 @@ export default function VirginCoconutOilMassage() {
           image={treatmentImages.details[2]}
           subTitle="Treatment Process"
           title={<>Why Virgin Coconut Oil Works So Well for Massage</>}
-          text="Virgin cold-pressed coconut oil stays smooth throughout the treatment, allowing massage techniques to flow naturally without frequent reapplication. Its lightweight consistency helps the therapist perform long, continuous strokes while leaving the skin feeling soft, comfortable, and naturally moisturised after the session."
+          text="Virgin coconut oil works well for massage because its smooth texture supports continuous movements and helps reduce friction during treatment. It also leaves the skin feeling soft and moisturised, making it useful for:"
           featuresLeft={[
             "Smooth application from start to finish",
             "Supports long, flowing massage strokes",

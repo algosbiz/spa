@@ -277,6 +277,51 @@ export default function Home() {
               answer:
                 "Advance booking is recommended, particularly during busy periods. Contact us on WhatsApp with your preferred treatment and time so we can check availability.",
             },
+            {
+              question: '7. What does "K" mean in the prices?',
+              answer:
+                '"K" means thousand Indonesian Rupiah. A treatment listed at 159K costs IDR 159,000. All prices on this page are in Indonesian Rupiah (IDR).',
+            },
+            {
+              question: "8. What is your cheapest treatment?",
+              answer:
+                "The lowest-priced options are the 30-minute traditional massage and 30-minute back massage at IDR 90,000, and the 30-minute foot reflexology at IDR 99,000. For a full hour, Balinese massage at IDR 159,000 is the most affordable full-body treatment.",
+            },
+            {
+              question: "9. Are prices per person or per booking?",
+              answer:
+                'Individual treatments are priced per person. Couple treatments are priced for two people together; the "2 pax" label means the listed price covers both guests. For example, a one-hour couple Balinese massage at IDR 319,000 is the total for two people, not per person.',
+            },
+            {
+              question: "10. How much extra is home service?",
+              answer:
+                "Home service costs an additional IDR 75,000 per therapist on top of the treatment price. The treatment itself is charged at the same rate as in-spa. For a couple booking with two therapists, the outcall fee is IDR 150,000 total.",
+            },
+            {
+              question: "11. Which areas do you cover for outcall massage?",
+              answer:
+                "Seminyak and surrounding areas. For villas, hotels, or residences further out, message us on WhatsApp with your location and we will confirm availability and any additional travel cost before you book.",
+            },
+            {
+              question: "12. Is tipping expected?",
+              answer:
+                "Tipping is not required and is never added automatically. It is appreciated but entirely at your discretion, and our therapists are paid regardless.",
+            },
+            {
+              question: "13. Do prices differ between the website and in the spa?",
+              answer:
+                "No. The prices listed on this page are our current rates and apply both in-spa and for home service, with the outcall fee added separately for home visits. If you are ever quoted a different price, please tell us before your treatment.",
+            },
+            {
+              question: "14. Are towels, oils, and amenities included?",
+              answer:
+                "Yes. Every treatment includes clean towels, professional-grade massage oil, and use of a private treatment room. There is no additional charge for amenities.",
+            },
+            {
+              question: "15. Can I choose the pressure or a specific therapist?",
+              answer:
+                "Yes. Tell your therapist your preferred pressure at the start and adjust it at any point during the session. If you have a therapist you have booked before, request them by name on WhatsApp and we will do our best to accommodate.",
+            },
           ]}
         />
         <div className="section__decoration-top section__decoration-bottom bg-sub pt-100 pb-100">

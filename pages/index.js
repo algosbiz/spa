@@ -76,7 +76,7 @@ export default function Home5() {
           <About
             subTitle="Beyond Relaxation"
             title={<>Why Spa Is Part of the Bali Experience</>}
-            text="A spa treatment is more than a chance to relax. After long flights, sightseeing, surfing, or time in the tropical sun, your body needs time to recover. Spa Bali Moon offers massage, beauty, and body care treatments that ease muscle tension, refresh tired skin, and helping you feel refreshed with treatments chosen to suit your body and your time in Bali."
+            text="After long flights, sightseeing, surfing, or time in the tropical sun, your body needs time to recover. We offer massage, beauty, and body care treatments that ease muscle tension, refresh tired skin, and help you feel refreshed with treatments chosen to suit your body and your time in Bali. Here’s what makes us a trusted choice:"
             features={[
               "Established since 2009",
               "Traditional & modern massage treatments",
@@ -179,6 +179,11 @@ export default function Home5() {
               question: "5. How do I choose the right treatment?",
               answer:
                 "Tell us how you're feeling or what you'd like to achieve, whether that's relaxation, muscle recovery, skin care, or simply time to unwind. We'll happily recommend the most suitable treatment for you.",
+            },
+            {
+              question: "6. Is Spa Bali Moon a licensed spa?",
+              answer:
+                "Yes. We are an established spa operating from a physical location at Jl. Pangkung Sari No. 30, Seminyak, and have served guests in Bali since 2009. Our home service is delivered by the same therapists who work in our spa, and you are welcome to visit us in person before booking.",
             },
           ]}
         />

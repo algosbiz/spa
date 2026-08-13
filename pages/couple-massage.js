@@ -70,6 +70,11 @@ const faqItems = [
     answer:
       "Yes. It is one of our most popular experiences for honeymoon trips, anniversaries, birthdays, and other special occasions, offering a relaxing way to spend quality time together.",
   },
+  {
+    question: "What massage treatments are suitable for a couple massage?",
+    answer:
+      "Popular options include Balinese massage, aromatherapy massage, hot stone massage, and other relaxing body treatments. The best choice depends on your preferred pressure, relaxation goals, and the treatments available at the spa.",
+  },
 ];
 
 export default function CoupleMassage() {
@@ -114,7 +119,7 @@ export default function CoupleMassage() {
           image={treatmentImages.details[0]}
           subTitle="Shared Moments"
           title={<>Why Is Couple Massage So Popular in Bali?</>}
-          text="For many visitors, a Couple Massage is more than a spa treatment. It offers dedicated time to unwind together after sightseeing, beach activities, or long travel days. The experience is especially popular among honeymooners, anniversary celebrations, birthdays, and anyone looking to enjoy a relaxing moment with someone special."
+          text="Couple Massage is popular in Bali because it offers couples a relaxing way to spend quality time together, whether they are celebrating a special occasion or taking a break during their holiday. Some of the main reasons include:"
           featuresLeft={[
             "Popular for honeymoon trips",
             "A favourite anniversary activity",
@@ -132,7 +137,7 @@ export default function CoupleMassage() {
           image={treatmentImages.details[1]}
           subTitle="Suitable For"
           title={<>Couple Massage isn't Just for Couples</>}
-          text="Although the name suggests a romantic experience, Couple Massage simply means two people receiving treatments together. Our therapists welcome all guests who wish to enjoy a shared wellness session in a calm and comfortable environment."
+          text="A Couple Massage can be enjoyed by two people who want to relax side by side, regardless of their relationship. This makes it a suitable choice for:"
           featuresLeft={[
             "Romantic couples",
             "Honeymooners",
@@ -149,8 +154,8 @@ export default function CoupleMassage() {
         <About
           image={treatmentImages.details[2]}
           subTitle="Your Visit"
-          title={<>A Personalised Experience for Two</>}
-          text="Your experience begins with a short consultation where each guest can discuss preferred pressure and any areas needing extra attention. Two therapists perform the treatments simultaneously, allowing both guests to relax together while receiving personalised care. Sessions are available at our spa or through home service for villas and hotels across selected areas of Seminyak."
+          title={<>What to Expect During Your Couple Massage</>}
+          text="Your Couple Massage is arranged so that both guests can enjoy the treatment together while still having their individual preferences considered. From the initial consultation to the treatment itself, each part of the experience is designed to provide comfort, privacy, and personalised attention. The experience includes:"
           featuresLeft={[
             "Brief consultation before treatment",
             "Individual pressure preferences",

@@ -68,6 +68,16 @@ const faqItems = [
     answer:
       "Many guests choose regular sessions over several weeks as part of their body wellness routine, as results are generally gradual rather than immediate.",
   },
+  {
+    question: "Who is cellulite massage suitable for?",
+    answer:
+      "Cellulite massage may be suitable for adults who want to include targeted body massage in their wellness and skincare routine, particularly those concerned about the appearance of cellulite on areas such as the thighs, hips, buttocks, or abdomen. It can also be suitable for people who enjoy firm massage techniques and want a relaxing body treatment focused on specific areas.",
+  },
+  {
+    question: "What is the difference between cellulite and stretch marks?",
+    answer:
+      "Cellulite and stretch marks are different skin concerns. Cellulite creates a dimpled or uneven appearance on the skin, commonly around the thighs, buttocks, hips, and abdomen. Stretch marks are lines or streaks that develop when the skin stretches or changes rapidly, often appearing during periods of growth, weight changes, or pregnancy. Cellulite massage is primarily focused on the appearance and feel of cellulite and is not a treatment for removing stretch marks.",
+  },
 ];
 
 const DurationPricing = ({ images = [] }) => (
@@ -154,7 +164,7 @@ export default function CelluliteMassage() {
           image={treatmentImages.details[0]}
           subTitle="Understanding Cellulite"
           title={<>Why Does Cellulite Form in the First Place?</>}
-          text="Cellulite develops when fat deposits beneath the skin push against connective tissue, creating the uneven or dimpled appearance many people notice on the thighs, hips, or buttocks. Factors such as genetics, hormones, circulation, lifestyle, and fluid retention can all contribute to its appearance."
+          text="Cellulite develops when fat deposits beneath the skin push against connective tissue, creating the uneven or dimpled appearance many people notice on the thighs, hips, or buttocks. Several common factors are associated with its appearance:"
           featuresLeft={[
             "Commonly appears on thighs and buttocks",
             "Can affect people of different body types",
@@ -172,7 +182,7 @@ export default function CelluliteMassage() {
           image={treatmentImages.details[1]}
           subTitle="Treatment Benefits"
           title={<>How Cellulite Massage Supports Your Wellness</>}
-          text="While cellulite massage is not intended as a medical treatment or permanent solution, many guests choose it as part of their body wellness routine because of its potential benefits for circulation, tissue mobility, and skin texture."
+          text="Cellulite massage combines targeted massage techniques with focused pressure and rhythmic movements to address areas where cellulite commonly appears. Some of the reasons why many people choose cellulite massage include:"
           featuresLeft={[
             "Supports healthy circulation",
             "Encourages lymphatic movement",
@@ -190,7 +200,7 @@ export default function CelluliteMassage() {
           image={treatmentImages.details[2]}
           subTitle="Inside the Session"
           title={<>How the Treatment Works</>}
-          text="During the treatment, our therapists use firm and repetitive movements across selected areas of the body to stimulate circulation and work with the underlying tissues. Pressure levels can be adjusted throughout the session to maintain comfort while still providing an effective treatment experience. Home service appointments are also available for guests staying in villas and hotels."
+          text="Each session is designed to provide focused attention to the selected areas while allowing the treatment intensity to be adjusted according to your comfort. The process generally includes:"
           featuresLeft={[
             "Consultation regarding treatment areas",
             "Focused work on selected body zones",
