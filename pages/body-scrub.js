@@ -92,7 +92,7 @@ export default function BodyScrub() {
             image={treatmentImages.hero}
             subTitle="Skin Renewal"
             titleSpan="Body Scrub"
-            title="Treatment"
+            title="Seminyak"
           />
         </div>
         <AboutOld

@@ -6140,7 +6140,7 @@ textarea.form-control {
   text-align: center;
   border-radius: 50%;
   transition: all 0.3s;
-  background-color: var(--theme-color2);
+  background-color: var(--theme-color-gray);
   position: absolute;
   bottom: 0;
   right: 0;

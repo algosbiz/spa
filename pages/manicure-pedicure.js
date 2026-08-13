@@ -97,7 +97,7 @@ export default function ManicurePedicure() {
             image={treatmentImages.hero}
             subTitle="Polish and Pamper"
             titleSpan="Manicure & Pedicure"
-            title="Treatment"
+            title="Seminyak"
           />
         </div>
         <AboutOld

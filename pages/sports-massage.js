@@ -79,7 +79,7 @@ export default function SportsMassage() {
           <Banner
             image={treatmentImages.hero}
             subTitle="Active Recovery"
-            titleSpan="Sport Massage Treatment"
+            titleSpan="Sport Massage Seminyak"
             title=""
           />
         </div>

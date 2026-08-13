@@ -77,7 +77,7 @@ export default function BaliMoonFacial() {
             image={treatmentImages.hero}
             subTitle="Skin Rejuvenation"
             titleSpan="Bali Moon Facial"
-            title="Treatment"
+            title="Seminyak"
           />
         </div>
         <AboutOld

@@ -89,7 +89,7 @@ export default function FootReflexology() {
             image={treatmentImages.hero}
             subTitle="Natural Balance"
             titleSpan="Foot Reflexology"
-            title="Treatment"
+            title="Seminyak"
           />
         </div>
         <AboutOld

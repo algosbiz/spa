@@ -76,7 +76,7 @@ export default function EarCandle() {
             image={treatmentImages.hero}
             subTitle="Gentle Ear Care"
             titleSpan="Ear Candle"
-            title="Treatment"
+            title="Seminyak"
           />
         </div>
         <AboutOld

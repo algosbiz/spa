@@ -84,7 +84,7 @@ export default function Home2() {
               image={treatmentImages.hero}
               subTitle="Ancient Healing"
               titleSpan="Balinese Massage"
-              title="Treatment"
+              title="Seminyak"
             />
           </div>
           <AboutOld

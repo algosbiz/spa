@@ -174,7 +174,7 @@
 
 			.circle-btn {
 				@include radius(100px, 100px, 98px);
-				background-color: var(--theme-color2);
+				background-color: var(--theme-color-gray);
 				position: absolute;
 				bottom: 0;
 				right: 0;

@@ -97,7 +97,7 @@ export default function HairCreambath() {
             image={treatmentImages.hero}
             subTitle="Hair & Scalp Wellness"
             titleSpan="Hair Creambath"
-            title="Treatment"
+            title="Seminyak"
           />
         </div>
         <AboutOld

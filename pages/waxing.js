@@ -129,7 +129,7 @@ export default function Waxing() {
           <Banner
             image={treatmentImages.hero}
             subTitle="Smooth Finish"
-            titleSpan="Waxing Treatment"
+            titleSpan="Waxing Seminyak"
             title="in Bali"
           />
         </div>

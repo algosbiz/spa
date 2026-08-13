@@ -87,7 +87,7 @@ export default function CoupleMassage() {
             image={treatmentImages.hero}
             subTitle="Together in Relaxation"
             titleSpan="Couple Massage"
-            title="Treatment"
+            title="Seminyak"
           />
         </div>
         <AboutOld

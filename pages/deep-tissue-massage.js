@@ -80,7 +80,7 @@ export default function DeepTissueMassage() {
             image={treatmentImages.hero}
             subTitle="Muscle Recovery"
             titleSpan="Deep Tissue Massage"
-            title="Treatment"
+            title="Seminyak"
           />
         </div>
         <AboutOld

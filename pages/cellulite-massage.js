@@ -140,7 +140,7 @@ export default function CelluliteMassage() {
             image={treatmentImages.hero}
             subTitle="Body Contouring"
             titleSpan="Cellulite Massage"
-            title="Treatment"
+            title="Seminyak"
           />
         </div>
         <AboutOld

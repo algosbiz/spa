@@ -89,7 +89,7 @@ export default function HeadMassage() {
             image={treatmentImages.hero}
             subTitle="Stress-Free Therapy"
             titleSpan="Head Massage"
-            title="Treatment"
+            title="Seminyak"
           />
         </div>
         <AboutOld

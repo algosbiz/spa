@@ -71,7 +71,7 @@ export default function SunburnTreatment() {
             image={treatmentImages.hero}
             subTitle="After Sun Care"
             titleSpan="Sunburn"
-            title="Treatment"
+            title="Seminyak"
           />
         </div>
         <AboutOld

@@ -89,7 +89,7 @@ export default function TraditionalMassage() {
             image={treatmentImages.hero}
             subTitle="Firm Body Care"
             titleSpan="Traditional Massage"
-            title="Treatment"
+            title="Seminyak"
           />
         </div>
         <AboutOld
