@@ -61,6 +61,7 @@ export default function MassageHotelVilla() {
                     titleSpan="Hotel Villa"
                     title="Massage in Seminyak"
                     buttonText="Book Now"
+                    image="/images/services/massagehotelvilla/massagehotelvilla-1.webp"
                 />
                 <AboutOld
                     removeBottomPadding
@@ -71,6 +72,8 @@ export default function MassageHotelVilla() {
                     feature1Text="Enjoy a professional massage without leaving your hotel, villa, or private accommodation."
                     feature2Title="Experienced Therapists"
                     feature2Text="Skilled therapists bring professional massage and spa directly to your accommodation."
+                    primaryImage="/images/services/massagehotelvilla/massagehotelvilla-2.webp"
+                    secondaryImage="/images/services/massagehotelvilla/massagehotelvilla-3.webp"
                 />
                 <Funfact items={serviceHighlights} />
                 <Testimonial />
@@ -90,6 +93,7 @@ export default function MassageHotelVilla() {
                     ]}
                     buttonText="Book Now"
                     buttonLink={bookingUrl}
+                    image="/images/services/massagehotelvilla/massagehotelvilla-4.webp"
                 />
                 <AboutReverse
                     subTitle="Made for Your Stay"
@@ -109,6 +113,7 @@ export default function MassageHotelVilla() {
                     ]}
                     buttonText="Book Now"
                     buttonLink={bookingUrl}
+                    image="/images/services/massagehotelvilla/massagehotelvilla-5.webp"
                 />
                 <About
                     title={<>Booking Your Hotel &amp; Villa Massage</>}
@@ -123,6 +128,7 @@ export default function MassageHotelVilla() {
                         "Cash & card accepted",
                         "English-speaking team",
                     ]}
+                    image="/images/services/massagehotelvilla/massagehotelvilla-6.webp"
                 />
                 <div className="location-faq-paper section__decoration-top section__decoration-bottom bg-sub pb-100">
                     <Faq
@@ -131,12 +137,14 @@ export default function MassageHotelVilla() {
                         subTitle="Frequently Asked Questions"
                         title={<>Everything You Need to Know</>}
                         items={faqItems}
+                        image="/images/services/massagehotelvilla/massagehotelvilla-7.webp"
                     />
                 </div>
                 <ReserveCta
                     title="Bring the Spa Experience to Your Hotel or Villa"
                     text="Your Bali itinerary does not need to end when you return to your accommodation. Our therapists bring professional massage and selected spa treatments directly to your hotel, villa, or private accommodation in Seminyak and nearby areas."
                     closingText="Choose your treatment, send us a message on WhatsApp, and let Spa Bali Moon create a more relaxing part of your stay without requiring you to leave your room."
+                    backgroundImage="/images/services/massagehotelvilla/massagehotelvilla-8.webp"
                 />
                 <Services
                     paperBackground

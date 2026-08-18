@@ -61,6 +61,7 @@ export default function MassageSeminyak() {
                     titleSpan="Massage in"
                     title="Seminyak"
                     buttonText="Book Now"
+                    image="/images/services/massageseminyak/massageseminyak-1.webp"
                 />
                 <AboutOld
                     removeBottomPadding
@@ -71,6 +72,8 @@ export default function MassageSeminyak() {
                     feature1Text="Carefully applied massage techniques help ease tightness that can build up through travel."
                     feature2Title="Make Time to Recover"
                     feature2Text="A calm treatment environment allows the body to rest, while the massage is adjusted to your preferred pressure."
+                    primaryImage="/images/services/massageseminyak/massageseminyak-2.webp"
+                    secondaryImage="/images/services/massageseminyak/massageseminyak-3.webp"
                 />
                 <Funfact items={serviceHighlights} />
                 <Testimonial />
@@ -92,6 +95,7 @@ export default function MassageSeminyak() {
                     ]}
                     buttonText="Book Now"
                     buttonLink={bookingUrl}
+                    image="/images/services/massageseminyak/massageseminyak-4.webp"
                 />
                 <AboutReverse
                     subTitle="Complete Experience"
@@ -110,6 +114,7 @@ export default function MassageSeminyak() {
                     ]}
                     buttonText="Book Now"
                     buttonLink={bookingUrl}
+                    image="/images/services/massageseminyak/massageseminyak-5.webp"
                 />
                 <About
                     title={<>Why Seminyak Visitors Book With Us</>}
@@ -124,6 +129,7 @@ export default function MassageSeminyak() {
                         "Cash & card accepted",
                         "Easy WhatsApp booking",
                     ]}
+                    image="/images/services/massageseminyak/massageseminyak-6.webp"
                 />
                 <div className="location-faq-paper section__decoration-top section__decoration-bottom bg-sub pb-100">
                     <Faq
@@ -132,12 +138,14 @@ export default function MassageSeminyak() {
                         subTitle="Frequently Asked Questions"
                         title={<>Everything You Need to Know</>}
                         items={faqItems}
+                        image="/images/services/massageseminyak/massageseminyak-7.webp"
                     />
                 </div>
                 <ReserveCta
                     title="Make Space for Yourself in Seminyak"
                     text="Between beach mornings, busy afternoons, and evenings spent discovering the best of Bali, a massage can create a quiet pause in the middle of your stay. Spa Bali Moon offers traditional Balinese therapies, targeted massage treatments, beauty care, and relaxing spa experiences for guests who want to rest, recover, or simply enjoy some uninterrupted time for themselves."
                     closingText="Visit our spa in Seminyak or arrange selected treatments at your hotel, villa, or private accommodation through our home service."
+                    backgroundImage="/images/services/massageseminyak/massageseminyak-8.webp"
                 />
                 <Services
                     paperBackground

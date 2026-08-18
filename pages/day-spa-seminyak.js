@@ -66,6 +66,7 @@ export default function DaySpaSeminyak() {
                     titleSpan="Day Spa in"
                     title="Seminyak"
                     buttonText="Book Now"
+                    image="/images/services/dayspaseminyak/dayspa-1.webp"
                 />
                 <AboutOld
                     subTitle="A Little More Time"
@@ -75,6 +76,8 @@ export default function DaySpaSeminyak() {
                     feature1Text="Choose from massage, skin care, body treatments, hair care, and beauty services during one visit."
                     feature2Title="Made Around Your Time"
                     feature2Text="Build a shorter visit around one or two treatments or stay longer with a selection of services that suit your day."
+                    primaryImage="/images/services/dayspaseminyak/dayspa-2.webp"
+                    secondaryImage="/images/services/dayspaseminyak/dayspa-3.webp"
                 />
                 <Funfact items={serviceHighlights} />
                 <About
@@ -95,6 +98,7 @@ export default function DaySpaSeminyak() {
                     ]}
                     buttonText="Book Now"
                     buttonLink={bookingUrl}
+                    image="/images/services/dayspaseminyak/dayspa-4.webp"
                 />
                 <AboutReverse
                     subTitle="Make a Day of It"
@@ -112,6 +116,7 @@ export default function DaySpaSeminyak() {
                     ]}
                     buttonText="Book Now"
                     buttonLink={bookingUrl}
+                    image="/images/services/dayspaseminyak/dayspa-5.webp"
                 />
                 <About
                     title={<>Skilled Therapists in a Comfortable Seminyak Space</>}
@@ -126,6 +131,7 @@ export default function DaySpaSeminyak() {
                         "Couple-friendly spaces",
                         "Home service available",
                     ]}
+                    image="/images/services/dayspaseminyak/dayspa-6.webp"
                 />
                 <Testimonial />
                 <Services
@@ -137,11 +143,13 @@ export default function DaySpaSeminyak() {
                     subTitle="Frequently Asked Questions"
                     title={<>Everything You Need to Know</>}
                     items={faqItems}
+                    image="/images/services/dayspaseminyak/dayspa-7.webp"
                 />
                 <ReserveCta
                     title="Leave Room in Your Bali Holiday for Yourself"
                     text="Seminyak offers plenty to fill a day, from beaches and boutiques to restaurants and late evenings. A visit to Spa Bali Moon gives you a reason to slow the pace and spend a little longer being looked after. Choose a massage, add the body or beauty care that appeals to you, and enjoy a few hours that leave you feeling rested, refreshed, and ready for whatever comes next."
                     closingText="Visit Spa Bali Moon in Seminyak or arrange selected services at your hotel, villa, or private accommodation through our home service."
+                    backgroundImage="/images/services/dayspaseminyak/dayspa-8.webp"
                 />
             </Layout>
         </>

@@ -61,6 +61,7 @@ export default function MassageKuta() {
                     titleSpan="Massage"
                     title="Kuta"
                     buttonText="Book Now"
+                    image="/images/services/massagekuta/massagekuta-1.webp"
                 />
                 <AboutOld
                     removeBottomPadding
@@ -71,6 +72,8 @@ export default function MassageKuta() {
                     feature1Text="Targeted massage techniques help release tightness after long days of exploring Bali."
                     feature2Title="Gentle Finish"
                     feature2Text="Slow, flowing movements and carefully adjusted pressure help the body relax."
+                    primaryImage="/images/services/massagekuta/massagekuta-2.webp"
+                    secondaryImage="/images/services/massagekuta/massagekuta-3.webp"
                 />
                 <Funfact items={serviceHighlights} />
                 <Testimonial />
@@ -92,6 +95,7 @@ export default function MassageKuta() {
                     ]}
                     buttonText="Book Now"
                     buttonLink={bookingUrl}
+                    image="/images/services/massagekuta/massagekuta-4.webp"
                 />
                 <AboutReverse
                     subTitle="Complete Experience"
@@ -109,6 +113,7 @@ export default function MassageKuta() {
                     ]}
                     buttonText="Book Now"
                     buttonLink={bookingUrl}
+                    image="/images/services/massagekuta/massagekuta-5.webp"
                 />
                 <About
                     title={<>Booking a Massage in Kuta</>}
@@ -123,6 +128,7 @@ export default function MassageKuta() {
                         "Cash & card accepted",
                         "English-speaking team",
                     ]}
+                    image="/images/services/massagekuta/massagekuta-6.webp"
                 />
                 <div className="location-faq-paper section__decoration-top section__decoration-bottom bg-sub pb-100">
                     <Faq
@@ -131,12 +137,14 @@ export default function MassageKuta() {
                         subTitle="Frequently Asked Questions"
                         title={<>Everything You Need to Know</>}
                         items={faqItems}
+                        image="/images/services/massagekuta/massagekuta-7.webp"
                     />
                 </div>
                 <ReserveCta
                     title="Take Time to Feel Better in Kuta"
                     text="When your body begins to feel the pace of it all, a professional massage can offer a welcome pause. At Spa Bali Moon, you can choose from traditional Balinese therapies, targeted recovery treatments, and relaxing beauty services to help you feel lighter, more comfortable, and ready to enjoy the rest of your stay."
                     closingText="Visit us for your treatment or ask about selected home service options at your hotel or villa in nearby areas."
+                    backgroundImage="/images/services/massagekuta/massagekuta-8.webp"
                 />
                 <Services
                     paperBackground
