@@ -37,11 +37,27 @@ const homepageTreatmentByName = new Map(
     homepageTreatments.map((treatment) => [treatment.name, treatment])
 );
 
+const treatmentNameAliases = {
+    "Bali Moon Facial": "Bali Moon Tea Tree Facial",
+    "Coconut Oil Massage": "Virgin Cold-Press Coconut Oil Massage",
+    "Couple Massage": "Couple Massage Balinese",
+    "Cream Bath": "Hair Cream Bath",
+    "Hot Stone Massage": "Warm Stone Massage",
+    "Sunburn Treatment": "Aloe Vera Massage",
+};
+
+const standaloneServiceHrefs = {
+    "Hair Braiding": "/seminyak/hair-braiding",
+    "Nail Art": "/seminyak/nail-art",
+};
+
 const linkedServices = services.map((service) => {
-    const treatment = homepageTreatmentByName.get(service.name);
+    const treatment = homepageTreatmentByName.get(
+        treatmentNameAliases[service.name] || service.name
+    );
     return treatment
         ? { ...service, href: treatment.href, image: treatment.image }
-        : service;
+        : { ...service, href: standaloneServiceHrefs[service.name] };
 });
 
 export default function Home1_Feature({

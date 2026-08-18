@@ -9,6 +9,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+const footReflexology = homepageTreatments.find(({ href }) => href === '/seminyak/foot-reflexology');
+const headMassage = homepageTreatments.find(({ href }) => href === '/seminyak/head-massage');
+const hotStoneMassage = homepageTreatments.find(({ href }) => href === '/seminyak/hot-stone-massage');
+
 export default function Home2_Services({
     subTitle = "Services",
     title = (<>Our Services Will Make <br /> You Glow</>),
@@ -168,13 +172,13 @@ export default function Home2_Services({
                                         </div>
                                     </div>
                                     <div className="content">
-                                        <h3 className="title"><Link href="/foot-reflexology">Foot Reflexology</Link></h3>
-                                        <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.</p>
+                                        <h3 className="title"><Link href={footReflexology.href}>{footReflexology.name}</Link></h3>
+                                        <p className="text">{footReflexology.desc}</p>
                                     </div>
                                     <div className="shape">
                                         <img src="/images/service/shape.png" alt="shape" />
                                     </div>
-                                    <Link href="/page-service-details" className="arry-icon">
+                                    <Link href={footReflexology.href} className="arry-icon" aria-label={`View ${footReflexology.name}`}>
                                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <g clipPath="url(#clip0_1_1417)">
@@ -295,13 +299,13 @@ export default function Home2_Services({
                                         </div>
                                     </div>
                                     <div className="content">
-                                        <h3 className="title"><Link href="/head-massage">Head Massage</Link></h3>
-                                        <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.</p>
+                                        <h3 className="title"><Link href={headMassage.href}>{headMassage.name}</Link></h3>
+                                        <p className="text">{headMassage.desc}</p>
                                     </div>
                                     <div className="shape">
                                         <img src="/images/service/shape.png" alt="shape" />
                                     </div>
-                                    <Link href="/page-service-details" className="arry-icon">
+                                    <Link href={headMassage.href} className="arry-icon" aria-label={`View ${headMassage.name}`}>
                                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <g clipPath="url(#clip0_1_1417)">
@@ -353,13 +357,13 @@ export default function Home2_Services({
                                         </div>
                                     </div>
                                     <div className="content">
-                                        <h3 className="title"><Link href="/hot-stone-massage">Hot Stone Massage</Link></h3>
-                                        <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.</p>
+                                        <h3 className="title"><Link href={hotStoneMassage.href}>{hotStoneMassage.name}</Link></h3>
+                                        <p className="text">{hotStoneMassage.desc}</p>
                                     </div>
                                     <div className="shape">
                                         <img src="/images/service/shape.png" alt="shape" />
                                     </div>
-                                    <Link href="/page-service-details" className="arry-icon">
+                                    <Link href={hotStoneMassage.href} className="arry-icon" aria-label={`View ${hotStoneMassage.name}`}>
                                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <g clipPath="url(#clip0_1_1417)">

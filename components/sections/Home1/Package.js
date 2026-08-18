@@ -152,7 +152,7 @@ const PackageItem = ({ item, isLast, outcallPricing }) => {
                             <li key={idx} className="d-flex justify-content-between align-items-center pb-2 mb-2" style={{ borderBottom: '1px solid #e1e1e1' }}>
                                 <span style={{ fontFamily: 'var(--subtitle-font)', fontSize: '18px', color: '#6A6F73' }}>{opt.time}</span>
                                 <span
-                                    className={outcallPricing ? 'outcall-package-price' : undefined}
+                                    className={outcallPricing ? 'outcall-package-price' : 'package-item-price'}
                                     style={outcallPricing ? undefined : { fontFamily: 'var(--title-font)', fontSize: '24px', fontWeight: '500', color: 'var(--title-color)' }}
                                 >
                                     {opt.price}

@@ -17,30 +17,31 @@ import Faq from "../components/sections/Home6/Faq";
 const pricingTreatmentImages = {
   "Aloe Vera Massage": "/images/homepage/homepage-12.webp",
   "Aromatherapy Massage": "/images/homepage/homepage-1.webp",
-  "Bali Moon Tea Tree Facial": "/images/services/balimoonfacial/balimoonfacial-1.webp",
   "Bali Moon Gold Facial": "/images/services/balimoonfacial/balimoonfacial-2.webp",
+  "Bali Moon Tea Tree Facial": "/images/services/balimoonfacial/balimoonfacial-1.webp",
   "Balinese Massage - Relaxing": "/images/services/balinesemassage/balinesemassage-1.webp",
   "Back Massage": "/images/services/traditionalmassage/traditionalmassage-1.webp",
-  "Body Scrub": "/images/services/bodyscrub/bodyscrub-1.webp",
   "Biokos Facial": "/images/services/balimoonfacial/balimoonfacial-3.webp",
+  "Body Scrub": "/images/services/bodyscrub/bodyscrub-1.webp",
   "Creambath & Hair Mask": "/images/services/creambath/creambath-1.webp",
-  "Couple Massage": "/images/services/couplemassage/couplemassage-1.webp",
-  "Couple Traditional Massage": "/images/services/couplemassage/couplemassage-2.webp",
+  "Couple Balinese Massage": "/images/services/couplemassage/couplemassage-1.webp",
   "Couple Deep Tissue Massage": "/images/services/couplemassage/couplemassage-3.webp",
-  "Couple Warm Candle Oil Massages.": "/images/services/couplemassage/couplemassage-4.webp",
+  "Couple Massage Packages": "/images/services/couplemassage/couplemassage-1.webp",
+  "Couple Traditional Massage": "/images/services/couplemassage/couplemassage-2.webp",
+  "Couple Warm Candle Oil Massages": "/images/services/couplemassage/couplemassage-4.webp",
   "Cellulite Massage": "/images/services/cellulitemassage/cellulitemassage-1.webp",
   "Deep Tissue Massage": "/images/services/deeptissuemassage/deeptissuemassage-1.webp",
   "Ear Candle": "/images/services/earcandle/earcandle-1.webp",
   "Foot Reflexology": "/images/services/footreflexology/footreflexology-1.webp",
   "Foot Massage": "/images/services/footmassage/footmassage-1.webp",
   "Four Hand Massage": "/images/homepage/homepage-3.webp",
+  "Four Hand Warm Candle": "/images/homepage/homepage-7.webp",
   "Herbal Massage": "/images/homepage/homepage-25.webp",
-  "Hot Stone Massage": "/images/services/hotstonemassage/hotstonemassage-1.webp",
   "Head Massage": "/images/services/headmassage/headmassage-1.webp",
+  "Hot Stone Massage": "/images/services/hotstonemassage/hotstonemassage-1.webp",
   "Lymphatic Massage": "/images/services/lymphaticmassage/lymphaticmassage-1.webp",
   "Manicure Pedicure": "/images/services/manicurepedicure/manicurepedicure-1.webp",
   "Organic Warm Candle Oil Massage": "/images/homepage/homepage-7.webp",
-  "Four Hand Warm Candle": "/images/homepage/homepage-7.webp",
   "Shiatsu Massage": "/images/services/shiatsumassage/shiatsumassage-1.webp",
   "Sport Massage": "/images/services/sportsmassage/sportsmassage-1.webp",
   "Traditional Massage - Strong": "/images/services/traditionalmassage/traditionalmassage-2.webp",
@@ -49,14 +50,22 @@ const pricingTreatmentImages = {
   "Waxing": "/images/services/waxing/waxing-1.webp",
 };
 
+const priceOption = (time, price) => ({ time, price: `IDR ${price}` });
+
 const pricingTreatments = [
   {
     name: "Aloe Vera Massage",
     desc: "A soothing treatment that helps calm the skin, reduce irritation, and support gentle recovery after travel or sun exposure.",
+    options: [priceOption("1 Hour", "199K")],
   },
   {
     name: "Aromatherapy Massage",
     desc: "A calming treatment that uses essential oils and gentle strokes to ease tension and support circulation.",
+    options: [
+      priceOption("1 Hour", "169K"),
+      priceOption("1.5 Hours", "239K"),
+      priceOption("2 Hours", "339K"),
+    ],
   },
   {
     name: "Bali Moon Tea Tree Facial",
@@ -67,6 +76,7 @@ const pricingTreatments = [
       "Soothes and refreshes the skin",
       "Maintains balanced hydration",
     ],
+    options: [priceOption("Price", "196K")],
   },
   {
     name: "Bali Moon Gold Facial",
@@ -77,124 +87,267 @@ const pricingTreatments = [
       "Provides deep hydration",
       "Enhances overall skin vitality",
     ],
+    options: [priceOption("Price", "269K")],
   },
   {
     name: "Balinese Massage - Relaxing",
     desc: "A holistic treatment that combines flowing movements, gentle stretches, and aromatherapy to encourage deep relaxation.",
+    options: [
+      priceOption("1 Hour", "159K"),
+      priceOption("1.5 Hours", "239K"),
+      priceOption("2 Hours", "330K"),
+      priceOption("1 Hour Aloe Vera", "195K"),
+    ],
   },
   {
     name: "Back Massage",
     desc: "A focused treatment that targets back tension to improve circulation and restore comfort.",
+    options: [
+      priceOption("30 Minutes", "90K"),
+      priceOption("1 Hour", "169K"),
+      priceOption("1.5 Hours", "259K"),
+      priceOption("2 Hours", "339K"),
+    ],
   },
   {
     name: "Body Scrub",
     desc: "A refreshing treatment that gently exfoliates the skin, leaving it smooth, clean, and renewed.",
+    options: [
+      priceOption("Body Massage & Scrub · Start From", "169K"),
+      priceOption("Chocolate", "169K"),
+      priceOption("Coconut", "169K"),
+      priceOption("Strawberry", "169K"),
+      priceOption("Bengkoang", "169K"),
+      priceOption("Jasmine", "169K"),
+      priceOption("Green Tea", "169K"),
+      priceOption("Spa Sari", "169K"),
+    ],
   },
   {
     name: "Biokos Facial",
     desc: "Spa Facials For Dry, Normal & Oily Face. A customized facial treatment for dry, normal, or oily skin, including a facial massage and mask.",
+    options: [
+      priceOption("Biokos", "179K"),
+      priceOption("Mustika Ratu", "169K"),
+      priceOption("Sari Ayu", "169K"),
+      priceOption("Viva", "169K"),
+    ],
   },
   {
     name: "Creambath & Hair Mask",
     desc: "A nourishing hair treatment that includes cleansing, conditioning, and a relaxing head massage.",
+    options: [
+      priceOption("Ginseng", "165K"),
+      priceOption("Avocado", "165K"),
+      priceOption("Aloe Vera", "165K"),
+      priceOption("L'Oreal", "195K"),
+      priceOption("NR", "165K"),
+      priceOption("Hair Mask", "165K"),
+    ],
   },
   {
-    name: "Couple Massage",
+    name: "Couple Balinese Massage",
     desc: "A shared treatment that allows you and your partner to relax together in a calm and comfortable setting.",
+    options: [
+      priceOption("1 Hour · Balinese Massage · 2 Pax", "319K"),
+      priceOption("1.5 Hours · Balinese Massage · 2 Pax", "479K"),
+      priceOption("2 Hours · Balinese Massage · 2 Pax", "659K"),
+    ],
   },
   {
     name: "Couple Traditional Massage",
     desc: "A shared treatment with firmer pressure, allowing both of you to release tension side by side.",
+    options: [
+      priceOption("1 Hour · Traditional Massage · 2 Pax", "339K"),
+      priceOption("1.5 Hours · Traditional Massage · 2 Pax", "519K"),
+      priceOption("2 Hours · Traditional Massage · 2 Pax", "679K"),
+    ],
   },
   {
     name: "Couple Deep Tissue Massage",
     desc: "A deeper-pressure shared treatment focused on easing muscle tightness and improving comfort.",
+    options: [
+      priceOption("1 Hour · Deep Tissue Massage · 2 Pax", "539K"),
+      priceOption("1.5 Hours · Deep Tissue Massage · 2 Pax", "719K"),
+    ],
   },
   {
-    name: "Couple Warm Candle Oil Massages.",
+    name: "Couple Warm Candle Oil Massages",
     desc: "A warming treatment for two using melted candle oils to soften muscles and create a soothing shared experience.",
+    options: [
+      priceOption("1 Hour · Warm Candle Massage · 2 Pax", "539K"),
+      priceOption("1.5 Hours · Warm Candle Massage · 2 Pax", "799K"),
+      priceOption("2 Hours · Warm Candle Massage · 2 Pax", "999K"),
+    ],
+  },
+  {
+    name: "Couple Massage Packages",
+    options: [
+      priceOption("Package A · 1 Hour Balinese Massage · 2 pax + 30 Mins Ear Candle", "639K"),
+      priceOption("Package B · 1 Hour Balinese Massage · 2 pax + 1 Hour Bali Moon Facial", "709K"),
+      priceOption("Package C · 1 Hour Warm Candle · 2 pax + 30 Mins Ear Candle", "849K"),
+      priceOption("Package D · 1 Hour Warm Candle · 2 pax + 1 Hour Bali Moon Facial", "929K"),
+    ],
   },
   {
     name: "Cellulite Massage",
     desc: "A targeted treatment that helps stimulate circulation and support firmer-looking skin.",
+    options: [priceOption("1 Hour", "350K"), priceOption("1.5 Hours", "450K")],
   },
   {
     name: "Deep Tissue Massage",
     desc: "A therapeutic treatment that uses deeper pressure to ease muscle stiffness and release tension.",
+    options: [priceOption("1 Hour", "269K"), priceOption("1.5 Hours", "359K")],
   },
   {
     name: "Ear Candle",
     desc: "A gentle traditional treatment designed to promote comfort and relaxation.",
+    options: [priceOption("30 Minutes", "159K")],
   },
   {
     name: "Foot Reflexology",
     desc: "A focused treatment applying pressure to reflex points on the feet to support circulation and relaxation.",
+    options: [
+      priceOption("30 Minutes", "99K"),
+      priceOption("1 Hour", "169K"),
+      priceOption("1.5 Hours", "239K"),
+    ],
   },
   {
     name: "Foot Massage",
     desc: "A relieving treatment that focuses on the soles, heels, and ankles to reduce stiffness.",
+    options: [
+      priceOption("1 Hour", "159K"),
+      priceOption("1.5 Hours", "239K"),
+      priceOption("2 Hours", "330K"),
+    ],
   },
   {
     name: "Four Hand Massage",
     desc: "A coordinated treatment performed by two therapists working in harmony for deeper relaxation.",
+    options: [
+      priceOption("1 Hour", "339K"),
+      priceOption("1.5 Hours", "499K"),
+      priceOption("2 Hours", "669K"),
+    ],
   },
   {
     name: "Herbal Massage",
-    desc: "A comforting treatment using herbal techniques to support relaxation, circulation, and muscle relief.",
+    desc: "A comforting massage using herbal techniques to support relaxation, circulation, and muscle relief.",
+    options: [priceOption("1 Hour", "199K"), priceOption("2 Hours", "399K")],
   },
   {
     name: "Hot Stone Massage",
     desc: "A soothing treatment using heated basalt stones to relax muscles and encourage circulation.",
+    options: [priceOption("1.5 Hours", "299K"), priceOption("2 Hours", "439K")],
   },
   {
     name: "Head Massage",
     desc: "A calming treatment that helps release tension around the head and scalp.",
+    options: [
+      priceOption("1 Hour", "159K"),
+      priceOption("1.5 Hours", "239K"),
+      priceOption("2 Hours", "330K"),
+    ],
   },
   {
     name: "Lymphatic Massage",
     desc: "A gentle treatment that supports natural drainage, circulation, and overall body balance.",
+    options: [
+      priceOption("1 Hour", "300K"),
+      priceOption("1.5 Hours", "440K"),
+      priceOption("2 Hours", "580K"),
+    ],
   },
   {
     name: "Manicure Pedicure",
     desc: "A grooming treatment for hands and feet, including nail care, cuticle work, and polish.",
+    options: [
+      priceOption("Manicure & Pedicure", "238K"),
+      priceOption("Manicure", "99K"),
+      priceOption("Pedicure", "139K"),
+      priceOption("Nail Gel Color Feet & Hands", "138K"),
+      priceOption("Nail Remover Feet & Hands", "98K"),
+      priceOption("Nail Gel Feet & Hands", "438K"),
+    ],
   },
   {
     name: "Organic Warm Candle Oil Massage",
     desc: "A warming treatment using natural candle oils to relax muscles and ease tension.",
+    options: [
+      priceOption("1 Hour · Warm Candle Wax Balinese", "269K"),
+      priceOption("1.5 Hours · Warm Candle Wax Balinese", "399K"),
+      priceOption("2 Hours · Warm Candle Wax Balinese", "499K"),
+    ],
   },
   {
     name: "Four Hand Warm Candle",
     desc: "A deeply relaxing treatment where two therapists work together using warmed oils.",
+    options: [
+      priceOption("1 Hour · Four Hand Warm Candle", "539K"),
+      priceOption("1.5 Hours · Four Hand Warm Candle", "799K"),
+      priceOption("2 Hours · Four Hand Warm Candle", "999K"),
+    ],
   },
   {
     name: "Shiatsu Massage",
     desc: "A traditional Japanese treatment using oil-free pressure-point techniques to release tension.",
+    options: [
+      priceOption("30 Minutes", "119K"),
+      priceOption("1 Hour", "219K"),
+      priceOption("1.5 Hours", "329K"),
+    ],
   },
   {
     name: "Sport Massage",
     desc: "A focused treatment designed to relieve muscle tightness and support mobility.",
+    options: [priceOption("1 Hour", "269K"), priceOption("1.5 Hours", "359K")],
   },
   {
     name: "Traditional Massage - Strong",
     desc: "A firmer treatment using deeper pressure for a more intense muscle release.",
+    options: [
+      priceOption("30 Minutes", "90K"),
+      priceOption("1 Hour", "169K"),
+      priceOption("1.5 Hours", "259K"),
+      priceOption("2 Hours", "339K"),
+    ],
   },
   {
     name: "Thai Massage",
     desc: "A traditional oil-free treatment using assisted stretches and deep pressure techniques.",
+    options: [
+      priceOption("30 Minutes", "133K"),
+      priceOption("1 Hour", "259K"),
+      priceOption("1.5 Hours", "379K"),
+    ],
   },
   {
     name: "Virgin Cold-Press Coconut Oil Massage",
     desc: "A nourishing treatment using pure coconut oil to relax muscles and soften the skin.",
+    options: [
+      priceOption("1 Hour", "300K"),
+      priceOption("1.5 Hours", "440K"),
+      priceOption("2 Hours", "580K"),
+    ],
   },
   {
     name: "Waxing",
     desc: "A hair removal treatment using hot wax to leave the skin smooth and clean.",
+    options: [
+      priceOption("Arms", "159K"),
+      priceOption("Under Arms", "99K"),
+      priceOption("Back · Start From", "139K"),
+      priceOption("Full Back", "299K"),
+      priceOption("Half Legs", "149K"),
+      priceOption("Full Legs", "299K"),
+      priceOption("Waxing Brazilian", "269K"),
+    ],
   },
 ].map((treatment, index) => ({
   ...treatment,
   id: index + 1,
   image: pricingTreatmentImages[treatment.name],
-  options: [],
 }));
 
 export default function Home() {
@@ -336,6 +489,16 @@ export default function Home() {
       <style jsx global>{`
         .pricing-package-section .package-section .shape2 {
           bottom: 60px;
+        }
+
+        .pricing-package-section .package-item-price {
+          flex-shrink: 0;
+          color: var(--theme-color1) !important;
+          font-family: var(--text-font) !important;
+          font-size: 16px !important;
+          font-weight: 700 !important;
+          line-height: 1.4;
+          white-space: nowrap;
         }
       `}</style>
     </>

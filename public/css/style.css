@@ -3239,6 +3239,36 @@ svg.icon[viewBox="0 0 25 26"] > *,
   background-color: var(--theme-color1);
 }
 
+.reserve-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 32px;
+  border: 1px solid var(--theme-color1);
+  border-radius: 999px;
+  background-color: var(--theme-color-white);
+  color: var(--theme-color1);
+  font-family: var(--text-font);
+  font-weight: 600;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.reserve-cta-button i {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.reserve-cta-button:hover {
+  background-color: var(--theme-color1);
+  color: var(--theme-color-white);
+}
+
+.reserve-cta-button:hover i {
+  transform: translate(3px, 3px);
+}
+
 .btn-three {
   padding: 10px 30px;
   display: inline-block;
@@ -6063,6 +6093,10 @@ textarea.form-control {
   margin-bottom: 20px;
 }
 
+.treatment-leaf-shape--right {
+  transform: scaleX(-1);
+}
+
 .about-section-two {
   overflow: hidden;
   position: relative;
@@ -6136,11 +6170,15 @@ textarea.form-control {
 .about-section-two .image-column .inner-column .circle-btn {
   width: 100px;
   height: 100px;
-  line-height: 98px;
+  line-height: 1;
   text-align: center;
   border-radius: 50%;
   transition: all 0.3s;
-  background-color: var(--theme-color-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 2px solid var(--theme-color1);
   position: absolute;
   bottom: 0;
   right: 0;
@@ -9345,8 +9383,8 @@ textarea.form-control {
   text-align: center;
   border-radius: 50%;
   transition: all 0.3s;
-  border: 5px solid var(--theme-color-gray);
-  background-color: var(--theme-color1);
+  border: 2px solid var(--theme-color1);
+  background-color: #fff;
   position: absolute;
   top: 0;
   right: 0;
@@ -9355,6 +9393,14 @@ textarea.form-control {
 
 .service-block-two .inner-box .image-box .icon svg {
   transition: 0.9s;
+}
+
+.service-block-two .inner-box .image-box .icon svg [fill=white] {
+  fill: var(--theme-color1);
+}
+
+.service-block-two .inner-box .image-box .icon svg [stroke=white] {
+  stroke: var(--theme-color1);
 }
 
 .service-block-two .inner-box .content {
@@ -9382,11 +9428,15 @@ textarea.form-control {
 .service-block-two .inner-box .arry-icon {
   width: 55px;
   height: 55px;
-  line-height: 50px;
+  line-height: 1;
   text-align: center;
   border-radius: 50%;
   transition: all 0.3s;
-  background-color: var(--theme-color2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 2px solid var(--theme-color1);
   position: absolute;
   bottom: -20px;
   left: 50%;
@@ -9395,16 +9445,30 @@ textarea.form-control {
   visibility: hidden;
 }
 
+.service-block-two .inner-box .arry-icon svg path {
+  fill: var(--theme-color1);
+}
+
 .service-block-two .inner-box .arry-icon:hover {
-  background-color: var(--theme-color1);
+  background-color: #fff;
 }
 
 .service-block-two .inner-box:hover .icon {
-  background-color: var(--theme-color2);
+  background-color: var(--theme-color1);
+  border-color: var(--theme-color1);
+  border-width: 2px;
 }
 
 .service-block-two .inner-box:hover .icon svg {
   transform: rotateY(360deg);
+}
+
+.service-block-two .inner-box:hover .icon svg [fill=white] {
+  fill: #fff;
+}
+
+.service-block-two .inner-box:hover .icon svg [stroke=white] {
+  stroke: #fff;
 }
 
 .service-block-two .inner-box:hover .arry-icon {

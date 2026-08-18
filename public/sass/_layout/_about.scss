@@ -110,6 +110,10 @@
 }
 // About area end here ***
 
+.treatment-leaf-shape--right {
+	transform: scaleX(-1);
+}
+
 // About two area start here ***
 .about-section-two {
 	overflow: hidden;
@@ -174,7 +178,12 @@
 
 			.circle-btn {
 				@include radius(100px, 100px, 98px);
-				background-color: var(--theme-color-gray);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				line-height: 1;
+				background-color: #fff;
+				border: 2px solid var(--theme-color1);
 				position: absolute;
 				bottom: 0;
 				right: 0;

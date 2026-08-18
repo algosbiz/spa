@@ -170,14 +170,20 @@
 			}
 			.icon {
 				@include radius(85px, 85px, 75px);
-				border: 5px solid var(--theme-color-gray);
-				background-color: var(--theme-color1);
+				border: 2px solid var(--theme-color1);
+				background-color: #fff;
 				position: absolute;
 				top: 0;
 				right: 0;
 				transition: all 0.3s;
 				svg {
 					transition: 0.9s;
+					[fill="white"] {
+						fill: var(--theme-color1);
+					}
+					[stroke="white"] {
+						stroke: var(--theme-color1);
+					}
 				}
 			}
 		}
@@ -202,16 +208,23 @@
 			z-index: -1;
 		}
 		.arry-icon {
-			@include radius(55px, 55px, 50px);
-			background-color: var(--theme-color2);
+			@include radius(55px, 55px, 1);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: #fff;
+			border: 2px solid var(--theme-color1);
 			position: absolute;
 			bottom: -20px;
 			left: 50%;
 			transform: translateX(-50%);
 			opacity: 0;
 			visibility: hidden;
+			svg path {
+				fill: var(--theme-color1);
+			}
 			&:hover {
-				background-color: var(--theme-color1);
+				background-color: #fff;
 			}
 		}
 		padding: 30px;
@@ -222,9 +235,17 @@
 		z-index: 1;
 		&:hover {
 			.icon {
-				background-color: var(--theme-color2);
+				background-color: var(--theme-color1);
+				border-color: var(--theme-color1);
+				border-width: 2px;
 				svg {
 					transform: rotateY(360deg);
+					[fill="white"] {
+						fill: #fff;
+					}
+					[stroke="white"] {
+						stroke: #fff;
+					}
 				}
 			}
 			.arry-icon {

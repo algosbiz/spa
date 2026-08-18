@@ -3,6 +3,7 @@ import Link from 'next/link'
 import {
     getTreatmentLeafShape,
     getTreatmentRightLeafShape,
+    isTreatmentLeafShape,
 } from '@/lib/treatmentLeaves'
 
 const CheckIcon = () => (
@@ -50,7 +51,9 @@ export default function Home1_AboutReverse({
                     <img src={resolvedLeftShape} alt="" aria-hidden="true" />
                 </div>
                 <div className="shape2 wow slideInRight" data-wow-delay="400ms" data-wow-duration="1500ms">
-                    <img className="sway_Y__animation" src={resolvedRightShape} alt="" aria-hidden="true" />
+                    <div className={isTreatmentLeafShape(resolvedRightShape) ? "treatment-leaf-shape--right" : undefined}>
+                        <img className="sway_Y__animation" src={resolvedRightShape} alt="" aria-hidden="true" />
+                    </div>
                 </div>
                 <div className="container">
                     <div className="row g-4">

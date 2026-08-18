@@ -40,6 +40,7 @@ const nextConfig = {
       { source: '/page-testimonial', destination: '/testimonials', permanent: true },
       { source: '/page-team', destination: '/team', permanent: true },
       { source: '/page-team-details', destination: '/team-details', permanent: true },
+      { source: '/day-spa-seminyak', destination: '/seminyak/day-spa', permanent: true },
       // Treatment pages now live below the Seminyak location path.
       ...treatmentSlugs.map((slug) => ({
         source: `/${slug}`,

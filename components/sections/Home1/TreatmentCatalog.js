@@ -1,18 +1,32 @@
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
 
-function TreatmentItem({ item, isOpen, onToggle }) {
-  const panelId = `treatment-pricing-${item.href.replace(/^\//, "")}`;
+const catalogCategories = [
+  { id: "massage", label: "Massage" },
+  { id: "beauty", label: "Beauty" },
+  { id: "couple", label: "For Couple" },
+  { id: "couple-package", label: "Couple Package" },
+];
+
+function TreatmentItem({ item, itemKey, isOpen, onToggle }) {
+  const panelId = `treatment-pricing-${itemKey}`;
+  const isBookingLink = item.href === "/contact";
 
   return (
     <article className={`treatment-catalog__item${isOpen ? " is-open" : ""}`}>
-      <Link href={item.href} className="treatment-catalog__image" aria-label={`View ${item.name}`}>
-        <img src={item.image} alt={item.name} />
-      </Link>
+      {item.href ? (
+        <Link href={item.href} className="treatment-catalog__image" aria-label={`View ${item.name}`}>
+          <img src={item.image} alt={item.name} />
+        </Link>
+      ) : (
+        <div className="treatment-catalog__image">
+          <img src={item.image} alt={item.name} />
+        </div>
+      )}
       <div className="treatment-catalog__content">
         <div className="treatment-catalog__heading">
           <h3 className="title">
-            <Link href={item.href}>{item.name}</Link>
+            {item.href ? <Link href={item.href}>{item.name}</Link> : item.name}
           </h3>
           <button
             type="button"
@@ -49,10 +63,12 @@ function TreatmentItem({ item, isOpen, onToggle }) {
                 </div>
               ))}
             </div>
-            <Link href={item.href} className="treatment-catalog__details-link">
-              View {item.name} details
-              <i className="fa-regular fa-arrow-right" aria-hidden="true"></i>
-            </Link>
+            {item.href ? (
+              <Link href={item.href} className="treatment-catalog__details-link">
+                {isBookingLink ? `Book ${item.name}` : `View ${item.name} details`}
+                <i className="fa-regular fa-arrow-right" aria-hidden="true"></i>
+              </Link>
+            ) : null}
           </div>
         </div>
       </div>
@@ -66,9 +82,12 @@ export default function TreatmentCatalog({
   treatments = [],
 }) {
   const [openTreatment, setOpenTreatment] = useState(null);
-  const sortedTreatments = useMemo(
-    () => [...treatments].sort((a, b) => a.name.localeCompare(b.name)),
-    [treatments]
+  const [activeCategory, setActiveCategory] = useState("massage");
+  const filteredTreatments = useMemo(
+    () => treatments
+      .filter((item) => item.category === activeCategory)
+      .sort((a, b) => a.name.localeCompare(b.name)),
+    [activeCategory, treatments]
   );
 
   return (
@@ -93,23 +112,50 @@ export default function TreatmentCatalog({
           </h2>
         </div>
 
-        <div className="treatment-catalog__fee mb-60" aria-label="Home service fee">
+        <div className="treatment-catalog__fee" aria-label="Home service fee">
           <strong>Home Service Fee</strong>
           <span>Extra 75K/Therapist</span>
         </div>
 
+        <div className="treatment-catalog__categories" aria-label="Treatment categories">
+          {catalogCategories.map((category) => {
+            const isActive = activeCategory === category.id;
+
+            return (
+              <button
+                type="button"
+                key={category.id}
+                className={`treatment-catalog__category${isActive ? " is-active" : ""}`}
+                aria-pressed={isActive}
+                onClick={() => {
+                  setActiveCategory(category.id);
+                  setOpenTreatment(null);
+                }}
+              >
+                <span>{category.label}</span>
+                <i className="fa-regular fa-arrow-right-long" aria-hidden="true"></i>
+              </button>
+            );
+          })}
+        </div>
+
         <div className="row g-5 align-items-start">
-          {sortedTreatments.map((item) => (
-            <div className="col-lg-6 package-block" key={item.href}>
-              <TreatmentItem
-                item={item}
-                isOpen={openTreatment === item.href}
-                onToggle={() =>
-                  setOpenTreatment((current) => (current === item.href ? null : item.href))
-                }
-              />
-            </div>
-          ))}
+          {filteredTreatments.map((item) => {
+            const itemKey = item.id || item.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
+            return (
+              <div className="col-lg-6 package-block" key={itemKey}>
+                <TreatmentItem
+                  item={item}
+                  itemKey={itemKey}
+                  isOpen={openTreatment === itemKey}
+                  onToggle={() =>
+                    setOpenTreatment((current) => (current === itemKey ? null : itemKey))
+                  }
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
 
@@ -122,6 +168,51 @@ export default function TreatmentCatalog({
           color: var(--title-color);
           font-family: var(--title-font);
           font-size: 18px;
+        }
+
+        .treatment-catalog__categories {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 16px;
+          margin: 34px 0 60px;
+        }
+
+        .treatment-catalog__category {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 16px;
+          min-height: 58px;
+          padding: 12px 32px;
+          border: 1px solid var(--theme-color1);
+          border-radius: 999px;
+          background: transparent;
+          color: var(--theme-color1);
+          font-family: var(--title-font);
+          font-size: 17px;
+          font-weight: 600;
+          line-height: 1.2;
+          transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .treatment-catalog__category i {
+          font-size: 16px;
+          transition: transform 0.25s ease;
+        }
+
+        .treatment-catalog__category:hover,
+        .treatment-catalog__category:focus-visible,
+        .treatment-catalog__category.is-active {
+          color: #fff;
+          background: var(--theme-color1);
+          outline: none;
+        }
+
+        .treatment-catalog__category:hover i,
+        .treatment-catalog__category:focus-visible i {
+          transform: translateX(3px);
         }
 
         .treatment-catalog__item {
@@ -309,6 +400,17 @@ export default function TreatmentCatalog({
             gap: 6px;
           }
 
+          .treatment-catalog__categories {
+            gap: 10px;
+            margin: 28px 0 48px;
+          }
+
+          .treatment-catalog__category {
+            min-height: 48px;
+            padding: 10px 20px;
+            font-size: 15px;
+          }
+
           .treatment-catalog__item {
             gap: 14px;
           }
@@ -332,6 +434,8 @@ export default function TreatmentCatalog({
         @media (prefers-reduced-motion: reduce) {
           .treatment-catalog__dropdown,
           .treatment-catalog__image img,
+          .treatment-catalog__category,
+          .treatment-catalog__category i,
           .treatment-catalog__toggle,
           .treatment-catalog__toggle i {
             transition: none;

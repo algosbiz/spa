@@ -3,6 +3,7 @@ import Link from 'next/link'
 import {
     getTreatmentLeafShape,
     getTreatmentRightLeafShape,
+    isTreatmentLeafShape,
 } from '@/lib/treatmentLeaves'
 
 export default function Home2_About({
@@ -39,7 +40,9 @@ export default function Home2_About({
                 <img className="animation__arryUpDown" src={resolvedLeftShape} alt="" aria-hidden="true"/>
             </div>
             <div className="shape2">
-                <img className="animation__floatBob" src={resolvedRightShape} alt="" aria-hidden="true"/>
+                <div className={isTreatmentLeafShape(resolvedRightShape) ? "treatment-leaf-shape--right" : undefined}>
+                    <img className="animation__floatBob" src={resolvedRightShape} alt="" aria-hidden="true"/>
+                </div>
             </div>
             <div className="container">
                 <div className="row g-4">

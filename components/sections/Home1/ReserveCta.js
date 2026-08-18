@@ -114,15 +114,12 @@ export default function Home1_ReserveCta({
 
                         <Link
                             href="/contact"
-                            className="btn-two-light mt-30 wow fadeInUp"
+                            className="reserve-cta-button mt-30 wow fadeInUp"
                             data-wow-delay="500ms"
                             data-wow-duration="1500ms"
                         >
                             Reserve
-                            <span className="icon_box">
-                                <i className="fa-regular icon_first fa-arrow-right-long"></i>
-                                <i className="fa-regular icon_second fa-arrow-right-long"></i>
-                            </span>
+                            <i className="fa-light fa-arrow-down-right" aria-hidden="true"></i>
                         </Link>
                     </div>
                 </div>

@@ -21,7 +21,7 @@ const SEARCH_INDEX = [
     { title: 'Massage in Seminyak', href: '/massage-seminyak', keywords: 'massage seminyak outcall home service' },
     { title: 'Massage in Kuta', href: '/massage-kuta', keywords: 'massage kuta outcall home service' },
     { title: 'Hotel & Villa Massage', href: '/massage-hotel-villa', keywords: 'hotel villa massage outcall home service' },
-    { title: 'Day Spa Seminyak', href: '/day-spa-seminyak', keywords: 'day spa facial cream bath seminyak treatment' },
+    { title: 'Day Spa Seminyak', href: '/seminyak/day-spa', keywords: 'day spa facial cream bath seminyak treatment' },
     { title: 'Home Service', href: '/home-service', keywords: 'home service outcall massage whatsapp booking' },
     { title: 'FAQ', href: '/faq', keywords: 'faq frequently asked questions help' },
     { title: 'Privacy Policy', href: '/privacy-policy', keywords: 'privacy policy data personal' },
@@ -177,7 +177,7 @@ const Header1 = ({ scroll }) => {
                                     )}
                                 </div>
                             </div>
-                            <Link href="/contact" className="book-now d-none d-xxl-inline-block">Book An Apoinment
+                            <Link href="/contact" className="book-now d-none d-xxl-inline-block">Book An Appoinment
                                 <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clipPath="url(#clip0_1_441)">
                                         <path
