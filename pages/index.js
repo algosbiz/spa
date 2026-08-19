@@ -85,7 +85,7 @@ export default function Home5() {
               "Experienced Balinese therapists",
               "Personalised treatment recommendations",
             ]}
-            ctaHref="/page-services"
+            ctaHref="/seminyak/pricing"
             primaryImage="/images/homepage/homepage-3.webp"
             secondaryImage="/images/homepage/homepage-4.webp"
           />
@@ -150,11 +150,12 @@ export default function Home5() {
             services={differentiators}
           />
         </div>
-        <Faq
-          showImage={false}
-          subTitle="Frequently Asked Questions"
-          title={<>Everything You Need to Know</>}
-          items={[
+        <div className="homepage-faq-section">
+          <Faq
+            showImage={false}
+            subTitle="Frequently Asked Questions"
+            title={<>Everything You Need to Know</>}
+            items={[
             {
               question: "1. Do I need to make an appointment?",
               answer:
@@ -185,9 +186,10 @@ export default function Home5() {
               answer:
                 "Yes. We are an established spa operating from a physical location at Jl. Pangkung Sari No. 30, Seminyak, and have served guests in Bali since 2009. Our home service is delivered by the same therapists who work in our spa, and you are welcome to visit us in person before booking.",
             },
-          ]}
-        />
-        <div className="section__decoration-top section__decoration-bottom bg-sub pt-100 pb-100">
+            ]}
+          />
+        </div>
+        <div className="homepage-closing-section section__decoration-top section__decoration-bottom bg-sub">
           <ReserveCta
             title="A Better Way to Experience Wellness in Bali"
             text="Bali is made for exploring, from beach mornings and surfing sessions to long afternoons discovering the island. After a full day, giving your body time to recover can make every part of your holiday even more enjoyable. At Spa Bali Moon, you'll find professional massage, beauty, and wellness treatments that help ease tired muscles, refresh your skin, and create a welcome pause from a busy itinerary."
@@ -219,8 +221,20 @@ export default function Home5() {
           padding-bottom: 0 !important;
         }
 
+        .homepage-faq-section .faq-section {
+          padding-bottom: 100px;
+        }
+
+        .homepage-closing-section .reserve-cta-section {
+          padding: 100px 0 !important;
+        }
+
         .homepage-about-paper-section + .feature-section {
           padding-top: 90px;
+        }
+
+        .homepage-about-paper-section .about-section-three .image-column .inner-column {
+          align-items: flex-end;
         }
 
         .homepage-pricing-section .pricing-section-five::after,
@@ -231,6 +245,14 @@ export default function Home5() {
         @media (max-width: 767px) {
           .homepage-about-paper-section + .feature-section {
             padding-top: 60px;
+          }
+
+          .homepage-faq-section .faq-section {
+            padding-bottom: 18px;
+          }
+
+          .homepage-closing-section .reserve-cta-section {
+            padding: 0 !important;
           }
         }
 

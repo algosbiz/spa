@@ -175,14 +175,17 @@ export default function Home2() {
           />
           <div className="balinese-massage-faq">
             <Faq
+              removeTopPadding
+              paperDecoration
               image={treatmentImages.faq}
               subTitle="Frequently Asked Questions"
               title={<>Everything You Need to Know</>}
               items={faqItems}
             />
           </div>
-          <div className=" pt-100 pb-100">
+          <div>
             <ReserveCta
+              standardSpacing
               backgroundImage={treatmentImages.cta}
               title="Enjoy Balinese Massage Wherever You Feel Most Comfortable"
               text="Experience traditional Balinese massage in the comfort of your home, villa, or hotel without compromising on quality or convenience. Home service is available for an additional IDR 75,000 per therapist within Seminyak and nearby areas, while in-spa appointments can be scheduled throughout the day."

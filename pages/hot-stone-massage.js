@@ -180,6 +180,8 @@ export default function HotStoneMassage() {
         />
         <div className="hot-stone-massage-faq">
           <Faq
+            removeTopPadding
+            paperDecoration
             image={treatmentImages.faq}
             imageTitle="Warm Stone Therapy"
             subTitle="Frequently Asked Questions"
@@ -187,8 +189,9 @@ export default function HotStoneMassage() {
             items={faqItems}
           />
         </div>
-        <div className="pt-100 pb-100">
+        <div>
           <ReserveCta
+            standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Warmth That Helps the Body Fully Unwind"
             text="Sometimes the body doesn't need stronger pressure, it simply needs warmth that allows muscles to let go naturally. Hot Stone Massage offers a slower, deeply comforting experience that combines therapeutic heat with skilled massage techniques to ease tension and restore a lasting sense of balance. Visit our spa or enjoy the same relaxing treatment from your villa or hotel through our convenient home service."

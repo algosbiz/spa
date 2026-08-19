@@ -38,7 +38,7 @@ export default function Home5_Pricing({
               </p>
               {showMore && (
                 <div className="mt-30 wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
-                  <Link href="/pricing" className="btn-two">
+                  <Link href="/seminyak/pricing" className="btn-two">
                     {ctaText}
                     <span className="icon_box">
                       <i className="fa-regular icon_first fa-arrow-right-long"></i>

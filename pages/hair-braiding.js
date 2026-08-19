@@ -180,6 +180,8 @@ export default function HairBraiding() {
         />
         <div className="hair-braiding-faq">
           <Faq
+            removeTopPadding
+            paperDecoration
             image={treatmentImages.faq}
             imageTitle="Braid Styles"
             subTitle="Frequently Asked Questions"
@@ -187,8 +189,9 @@ export default function HairBraiding() {
             items={faqItems}
           />
         </div>
-        <div className="pt-100 pb-100">
+        <div>
           <ReserveCta
+            standardSpacing
             backgroundImage={treatmentImages.cta}
             title="A Hairstyle That Keeps Up with Your Bali Plans"
             text="From beach mornings and sunset dinners to island tours and special celebrations, the right hairstyle lets you enjoy every moment without constantly fixing your hair. Our Hair Braiding service combines personalised styling with practical comfort, creating braids that are made to suit your holiday, your plans, and your personal style. Visit our spa to create a look that's comfortable to wear, easy to maintain, and ready for wherever Bali takes you next."

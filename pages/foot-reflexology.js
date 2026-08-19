@@ -173,6 +173,8 @@ export default function FootReflexology() {
         />
         <div className="foot-reflexology-faq">
           <Faq
+            removeTopPadding
+            paperDecoration
             image={treatmentImages.faq}
             imageTitle="Reflex Points"
             subTitle="Frequently Asked Questions"
@@ -180,8 +182,9 @@ export default function FootReflexology() {
             items={faqItems}
           />
         </div>
-        <div className="pt-100 pb-100">
+        <div>
           <ReserveCta
+            standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Restore Comfort to Every Step"
             text="Long days exploring Bali often begin with excitement and end with tired, overworked feet. Foot Reflexology offers a relaxing way to pause, helping your feet recover through carefully applied pressure-point techniques in a calm and comfortable setting. Visit our spa or enjoy the same professional treatment from your villa or hotel with our convenient home service."

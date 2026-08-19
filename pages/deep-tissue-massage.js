@@ -164,6 +164,8 @@ export default function DeepTissueMassage() {
         />
         <div className="deep-tissue-massage-faq">
           <Faq
+            removeTopPadding
+            paperDecoration
             image={treatmentImages.faq}
             imageTitle="Muscle Recovery"
             subTitle="Frequently Asked Questions"
@@ -171,8 +173,9 @@ export default function DeepTissueMassage() {
             items={faqItems}
           />
         </div>
-        <div className="pt-100 pb-100">
+        <div>
           <ReserveCta
+            standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Release Built-Up Muscle Tension During Your Bali Stay"
             text="Long flights, active adventures, desk work, and daily movement around Bali can leave certain muscles feeling tight and restricted. Our Deep Tissue Massage provides focused care through controlled pressure and specialised techniques designed for areas that need deeper attention. Enjoy your treatment at our spa or request a home service at your villa or hotel within selected areas."

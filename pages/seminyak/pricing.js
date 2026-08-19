@@ -1,18 +1,18 @@
 import React from 'react';
-import Layout from "../components/layout/Layout";
-import AboutReverse from "../components/sections/Home1/AboutReverse";
-import MarqueeSwiper from "../components/sections/Home1/MarqueeSwiper";
-import Video from "../components/sections/Home1/Video";
-import Contact from "../components/sections/Home1/Contact";
-import Testimonial from "../components/sections/Home3/Testimonial";
-import PageTitle from "../components/sections/PageTitle";
-import Pricing from "../components/sections/Home5/Pricing";
-import PackagePricing from "../components/sections/Home5/PackagePricing";
+import Layout from "../../components/layout/Layout";
+import AboutReverse from "../../components/sections/Home1/AboutReverse";
+import MarqueeSwiper from "../../components/sections/Home1/MarqueeSwiper";
+import Video from "../../components/sections/Home1/Video";
+import Contact from "../../components/sections/Home1/Contact";
+import Testimonial from "../../components/sections/Home3/Testimonial";
+import PageTitle from "../../components/sections/PageTitle";
+import Pricing from "../../components/sections/Home5/Pricing";
+import PackagePricing from "../../components/sections/Home5/PackagePricing";
 import PackageSection from "@/components/sections/Home1/Package";
-import PackageIntroText from "../components/sections/Home1/PackageIntroText";
-import Banner from "../components/sections/Home2/Banner";
-import ReserveCta from "../components/sections/Home1/ReserveCta";
-import Faq from "../components/sections/Home6/Faq";
+import PackageIntroText from "../../components/sections/Home1/PackageIntroText";
+import Banner from "../../components/sections/Home2/Banner";
+import ReserveCta from "../../components/sections/Home1/ReserveCta";
+import Faq from "../../components/sections/Home6/Faq";
 
 const pricingTreatmentImages = {
   "Aloe Vera Massage": "/images/homepage/homepage-12.webp",
@@ -24,18 +24,13 @@ const pricingTreatmentImages = {
   "Biokos Facial": "/images/services/balimoonfacial/balimoonfacial-3.webp",
   "Body Scrub": "/images/services/bodyscrub/bodyscrub-1.webp",
   "Creambath & Hair Mask": "/images/services/creambath/creambath-1.webp",
-  "Couple Balinese Massage": "/images/services/couplemassage/couplemassage-1.webp",
-  "Couple Deep Tissue Massage": "/images/services/couplemassage/couplemassage-3.webp",
-  "Couple Massage Packages": "/images/services/couplemassage/couplemassage-1.webp",
-  "Couple Traditional Massage": "/images/services/couplemassage/couplemassage-2.webp",
-  "Couple Warm Candle Oil Massages": "/images/services/couplemassage/couplemassage-4.webp",
+  "Couple Massage": "/images/services/couplemassage/couplemassage-1.webp",
   "Cellulite Massage": "/images/services/cellulitemassage/cellulitemassage-1.webp",
   "Deep Tissue Massage": "/images/services/deeptissuemassage/deeptissuemassage-1.webp",
   "Ear Candle": "/images/services/earcandle/earcandle-1.webp",
   "Foot Reflexology": "/images/services/footreflexology/footreflexology-1.webp",
   "Foot Massage": "/images/services/footmassage/footmassage-1.webp",
   "Four Hand Massage": "/images/homepage/homepage-3.webp",
-  "Four Hand Warm Candle": "/images/homepage/homepage-7.webp",
   "Herbal Massage": "/images/homepage/homepage-25.webp",
   "Head Massage": "/images/services/headmassage/headmassage-1.webp",
   "Hot Stone Massage": "/images/services/hotstonemassage/hotstonemassage-1.webp",
@@ -146,47 +141,52 @@ const pricingTreatments = [
     ],
   },
   {
-    name: "Couple Balinese Massage",
-    desc: "A shared treatment that allows you and your partner to relax together in a calm and comfortable setting.",
-    options: [
-      priceOption("1 Hour · Balinese Massage · 2 Pax", "319K"),
-      priceOption("1.5 Hours · Balinese Massage · 2 Pax", "479K"),
-      priceOption("2 Hours · Balinese Massage · 2 Pax", "659K"),
-    ],
-  },
-  {
-    name: "Couple Traditional Massage",
-    desc: "A shared treatment with firmer pressure, allowing both of you to release tension side by side.",
-    options: [
-      priceOption("1 Hour · Traditional Massage · 2 Pax", "339K"),
-      priceOption("1.5 Hours · Traditional Massage · 2 Pax", "519K"),
-      priceOption("2 Hours · Traditional Massage · 2 Pax", "679K"),
-    ],
-  },
-  {
-    name: "Couple Deep Tissue Massage",
-    desc: "A deeper-pressure shared treatment focused on easing muscle tightness and improving comfort.",
-    options: [
-      priceOption("1 Hour · Deep Tissue Massage · 2 Pax", "539K"),
-      priceOption("1.5 Hours · Deep Tissue Massage · 2 Pax", "719K"),
-    ],
-  },
-  {
-    name: "Couple Warm Candle Oil Massages",
-    desc: "A warming treatment for two using melted candle oils to soften muscles and create a soothing shared experience.",
-    options: [
-      priceOption("1 Hour · Warm Candle Massage · 2 Pax", "539K"),
-      priceOption("1.5 Hours · Warm Candle Massage · 2 Pax", "799K"),
-      priceOption("2 Hours · Warm Candle Massage · 2 Pax", "999K"),
-    ],
-  },
-  {
-    name: "Couple Massage Packages",
-    options: [
-      priceOption("Package A · 1 Hour Balinese Massage · 2 pax + 30 Mins Ear Candle", "639K"),
-      priceOption("Package B · 1 Hour Balinese Massage · 2 pax + 1 Hour Bali Moon Facial", "709K"),
-      priceOption("Package C · 1 Hour Warm Candle · 2 pax + 30 Mins Ear Candle", "849K"),
-      priceOption("Package D · 1 Hour Warm Candle · 2 pax + 1 Hour Bali Moon Facial", "929K"),
+    name: "Couple Massage",
+    children: [
+      {
+        name: "Couple Balinese Massage",
+        desc: "A shared treatment that allows you and your partner to relax together in a calm and comfortable setting.",
+        options: [
+          priceOption("1 Hour · Balinese Massage · 2 Pax", "319K"),
+          priceOption("1.5 Hours · Balinese Massage · 2 Pax", "479K"),
+          priceOption("2 Hours · Balinese Massage · 2 Pax", "659K"),
+        ],
+      },
+      {
+        name: "Couple Traditional Massage",
+        desc: "A shared treatment with firmer pressure, allowing both of you to release tension side by side.",
+        options: [
+          priceOption("1 Hour · Traditional Massage · 2 Pax", "339K"),
+          priceOption("1.5 Hours · Traditional Massage · 2 Pax", "519K"),
+          priceOption("2 Hours · Traditional Massage · 2 Pax", "679K"),
+        ],
+      },
+      {
+        name: "Couple Deep Tissue Massage",
+        desc: "A deeper-pressure shared treatment focused on easing muscle tightness and improving comfort.",
+        options: [
+          priceOption("1 Hour · Deep Tissue Massage · 2 Pax", "539K"),
+          priceOption("1.5 Hours · Deep Tissue Massage · 2 Pax", "719K"),
+        ],
+      },
+      {
+        name: "Couple Warm Candle Oil Massages",
+        desc: "A warming treatment for two using melted candle oils to soften muscles and create a soothing shared experience.",
+        options: [
+          priceOption("1 Hour · Warm Candle Massage · 2 Pax", "539K"),
+          priceOption("1.5 Hours · Warm Candle Massage · 2 Pax", "799K"),
+          priceOption("2 Hours · Warm Candle Massage · 2 Pax", "999K"),
+        ],
+      },
+      {
+        name: "Couple Massage Packages",
+        options: [
+          priceOption("Package A · 1 Hour Balinese Massage · 2 pax + 30 Mins Ear Candle", "639K"),
+          priceOption("Package B · 1 Hour Balinese Massage · 2 pax + 1 Hour Bali Moon Facial", "709K"),
+          priceOption("Package C · 1 Hour Warm Candle · 2 pax + 30 Mins Ear Candle", "849K"),
+          priceOption("Package D · 1 Hour Warm Candle · 2 pax + 1 Hour Bali Moon Facial", "929K"),
+        ],
+      },
     ],
   },
   {
@@ -279,14 +279,16 @@ const pricingTreatments = [
       priceOption("1.5 Hours · Warm Candle Wax Balinese", "399K"),
       priceOption("2 Hours · Warm Candle Wax Balinese", "499K"),
     ],
-  },
-  {
-    name: "Four Hand Warm Candle",
-    desc: "A deeply relaxing treatment where two therapists work together using warmed oils.",
-    options: [
-      priceOption("1 Hour · Four Hand Warm Candle", "539K"),
-      priceOption("1.5 Hours · Four Hand Warm Candle", "799K"),
-      priceOption("2 Hours · Four Hand Warm Candle", "999K"),
+    children: [
+      {
+        name: "Four Hand Warm Candle",
+        desc: "A deeply relaxing treatment where two therapists work together using warmed oils.",
+        options: [
+          priceOption("1 Hour · Four Hand Warm Candle", "539K"),
+          priceOption("1.5 Hours · Four Hand Warm Candle", "799K"),
+          priceOption("2 Hours · Four Hand Warm Candle", "999K"),
+        ],
+      },
     ],
   },
   {
@@ -381,6 +383,7 @@ export default function Home() {
             title="Our Massages Price List"
             firstServices={pricingTreatments}
             secondServices={pricingTreatments}
+            spreadDropdownArrow
           />
         </div>
         <PackageIntroText
@@ -395,11 +398,12 @@ export default function Home() {
 
         {/* <Contact /> */}
         <Testimonial />
-        <Faq
-          subTitle="Frequently Asked Questions"
-          title={<>Everything You Need to Know</>}
-          image="/images/pricelist/pricelist-4.webp"
-          items={[
+        <div className="pricing-faq-section">
+          <Faq
+            subTitle="Frequently Asked Questions"
+            title={<>Everything You Need to Know</>}
+            image="/images/pricelist/pricelist-4.webp"
+            items={[
             {
               question: "1. How do I choose the right treatment?",
               answer:
@@ -475,9 +479,10 @@ export default function Home() {
               answer:
                 "Yes. Tell your therapist your preferred pressure at the start and adjust it at any point during the session. If you have a therapist you have booked before, request them by name on WhatsApp and we will do our best to accommodate.",
             },
-          ]}
-        />
-        <div className="section__decoration-top section__decoration-bottom bg-sub pt-100 pb-100">
+            ]}
+          />
+        </div>
+        <div className="pricing-closing-section section__decoration-top section__decoration-bottom bg-sub">
           <ReserveCta
             title="Take a Proper Break from Your Bali Itinerary"
             text="Some treatments are chosen because your muscles need attention. Others are for tired skin, overworked feet, a scalp that needs care, or simply the feeling that you have been moving from one plan to the next without stopping. Browse the Spa Bali Moon price list to find the treatment that fits your day."
@@ -491,6 +496,14 @@ export default function Home() {
           bottom: 60px;
         }
 
+        .pricing-faq-section .faq-section {
+          padding-bottom: 100px;
+        }
+
+        .pricing-closing-section .reserve-cta-section {
+          padding: 100px 0 !important;
+        }
+
         .pricing-package-section .package-item-price {
           flex-shrink: 0;
           color: var(--theme-color1) !important;
@@ -499,6 +512,16 @@ export default function Home() {
           font-weight: 700 !important;
           line-height: 1.4;
           white-space: nowrap;
+        }
+
+        @media (max-width: 767px) {
+          .pricing-faq-section .faq-section {
+            padding-bottom: 18px;
+          }
+
+          .pricing-closing-section .reserve-cta-section {
+            padding: 0 !important;
+          }
         }
       `}</style>
     </>

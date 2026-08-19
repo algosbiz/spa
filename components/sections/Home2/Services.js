@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import Feature from '../Home1/Feature';
 import { homepageTreatments } from '@/lib/homepageTreatments';
+import { TREATMENT_LINKS } from '@/lib/treatments';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -19,7 +20,7 @@ export default function Home2_Services({
     paperBackground = false,
 }) {
     const router = useRouter();
-    const currentTreatmentHref = homepageTreatments.find((treatment) =>
+    const currentTreatmentHref = TREATMENT_LINKS.find((treatment) =>
         treatment.href === router.pathname || treatment.href === `/seminyak${router.pathname}`
     )?.href;
 

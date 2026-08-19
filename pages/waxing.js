@@ -214,6 +214,8 @@ export default function Waxing() {
         />
         <div className="waxing-faq">
           <Faq
+            removeTopPadding
+            paperDecoration
             image={treatmentImages.faq}
             imageTitle="Waxing Treatment"
             subTitle="Frequently Asked Questions"
@@ -221,8 +223,9 @@ export default function Waxing() {
             items={faqItems}
           />
         </div>
-        <div className="pt-100 pb-100">
+        <div>
           <ReserveCta
+            standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Smooth Skin Starts with the Right Care at Spa Bali Moon"
             text="Whether preparing for a beach holiday, a special occasion, or maintaining your regular grooming routine, our Waxing Treatment helps keep your skin smooth and refreshed. With careful techniques, quality products, and personalized service, you can enjoy professional waxing at our spa or through selected home service options around Seminyak."

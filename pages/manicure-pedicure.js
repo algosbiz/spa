@@ -181,6 +181,8 @@ export default function ManicurePedicure() {
         />
         <div className="manicure-pedicure-faq">
           <Faq
+            removeTopPadding
+            paperDecoration
             image={treatmentImages.faq}
             imageTitle="Nail Care"
             subTitle="Frequently Asked Questions"
@@ -188,8 +190,9 @@ export default function ManicurePedicure() {
             items={faqItems}
           />
         </div>
-        <div className="pt-100 pb-100">
+        <div>
           <ReserveCta
+            standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Keep Your Hands and Feet Looking Their Best"
             text="Well-groomed nails are about more than appearance, they also contribute to everyday comfort and confidence. Whether you're preparing for a special occasion, recovering after days of exploring Bali, or simply taking time for yourself, our Manicure & Pedicure treatments provide professional care in a calm and relaxing environment. Enjoy your appointment at our spa or choose our convenient home service for villas and hotels throughout Seminyak and surrounding areas."

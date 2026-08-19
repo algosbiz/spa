@@ -185,6 +185,8 @@ export default function ThaiMassage() {
         />
         <div className="thai-massage-faq">
           <Faq
+            removeTopPadding
+            paperDecoration
             image={treatmentImages.faq}
             imageTitle="Thai Massage"
             subTitle="Frequently Asked Questions"
@@ -192,8 +194,9 @@ export default function ThaiMassage() {
             items={faqItems}
           />
         </div>
-        <div className="pt-100 pb-100">
+        <div>
           <ReserveCta
+            standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Increase Your Flexibility with Traditional Thai Massage at Spa Bali Moon"
             text="After long flights, busy adventures, or active days in Bali, the body can begin to feel tight and restricted. Traditional Thai Massage combines rhythmic pressure and assisted stretching to help ease stiffness, improve flexibility, and bring back a lighter feeling of movement. Enjoy your session at Spa Bali Moon or request our home service option at selected villas and hotels around Seminyak."

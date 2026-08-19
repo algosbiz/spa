@@ -34,7 +34,8 @@ const nextConfig = {
       { source: '/news/:slug', destination: '/guide/:slug', permanent: true },
       { source: '/blog/:slug', destination: '/guide/:slug', permanent: true },
       // Renamed pages -> cleaner routes
-      { source: '/page-about', destination: '/pricing', permanent: true },
+      { source: '/page-about', destination: '/seminyak/pricing', permanent: true },
+      { source: '/pricing', destination: '/seminyak/pricing', permanent: true },
       { source: '/page-contact', destination: '/contact', permanent: true },
       { source: '/page-faq', destination: '/faq', permanent: true },
       { source: '/page-testimonial', destination: '/testimonials', permanent: true },

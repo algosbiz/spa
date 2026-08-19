@@ -31,7 +31,7 @@ const NavLinks = () => {
         <>
         <ul>
             <li><Link href="/">Home</Link></li>
-            <li><Link href="/pricing">Pricelist</Link></li>
+            <li><Link href="/seminyak/pricing">Pricelist</Link></li>
             <li className={`treatments-menu-item${isTreatmentsActive ? ' is-active' : ''}`}>
                 <Link href="/#0">Treatments <i className="fa-solid fa-angle-down"></i></Link>
                 <ul className="sub-menu treatment-mega-menu">

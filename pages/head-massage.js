@@ -173,6 +173,8 @@ export default function HeadMassage() {
         />
         <div className="head-massage-faq">
           <Faq
+            removeTopPadding
+            paperDecoration
             image={treatmentImages.faq}
             imageTitle="Scalp Care"
             subTitle="Frequently Asked Questions"
@@ -180,8 +182,9 @@ export default function HeadMassage() {
             items={faqItems}
           />
         </div>
-        <div className="pt-100 pb-100">
+        <div>
           <ReserveCta
+            standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Refresh Your Mind While Caring for Your Body"
             text="Busy travel schedules, long hours in front of a screen, or simply keeping up with daily activities can leave tension concentrated around the head and neck. A professional Head Massage offers a simple way to slow down, release built-up tightness, and enjoy a greater sense of comfort without committing to a full-body treatment. Visit our spa or enjoy the same relaxing experience through our home service at selected villas and hotels around Seminyak."

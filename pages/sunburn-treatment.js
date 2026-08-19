@@ -155,6 +155,8 @@ export default function SunburnTreatment() {
         />
         <div className="sunburn-treatment-faq">
           <Faq
+            removeTopPadding
+            paperDecoration
             image={treatmentImages.faq}
             imageTitle="After Sun Care"
             subTitle="Frequently Asked Questions"
@@ -162,8 +164,9 @@ export default function SunburnTreatment() {
             items={faqItems}
           />
         </div>
-        <div className="pt-100 pb-100">
+        <div>
           <ReserveCta
+            standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Give Your Skin the Recovery Time It Deserves"
             text="Hours spent surfing, swimming, sightseeing, or relaxing under Bali's sunshine can leave your skin feeling warmer and more sensitive than expected. Our Sunburn Treatment provides gentle after-sun care using cooling aloe vera and hydrating botanical ingredients to restore comfort without placing additional stress on the skin. Relax at our spa or enjoy the same soothing treatment from your villa or hotel through our available home service."

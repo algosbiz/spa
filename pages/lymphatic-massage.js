@@ -174,6 +174,8 @@ export default function LymphaticMassage() {
         />
         <div className="lymphatic-massage-faq">
           <Faq
+            removeTopPadding
+            paperDecoration
             image={treatmentImages.faq}
             imageTitle="Gentle Drainage"
             subTitle="Frequently Asked Questions"
@@ -181,8 +183,9 @@ export default function LymphaticMassage() {
             items={faqItems}
           />
         </div>
-        <div className="pt-100 pb-100">
+        <div>
           <ReserveCta
+            standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Renew Balance from the Inside Out with Lymphatic Massage"
             text="Lymphatic Massage uses gentle, rhythmic techniques to support the body's natural drainage pathways and encourage a lighter, more balanced feeling. This restorative treatment is ideal after travel, periods of reduced movement, or times when the body feels heavy from fluid retention. Enjoy personalised care from our experienced therapists at our spa or in the comfort of your home, villa, or hotel across Seminyak and nearby areas."

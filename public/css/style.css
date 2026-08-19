@@ -2145,6 +2145,54 @@ svg.icon[viewBox="0 0 25 26"] > *,
   background: url(../images/shape/section-shape-bottom.png) no-repeat center bottom;
 }
 
+@media (max-width: 767px) {
+  /* The torn artwork is 74-76px tall. Its visible edge sits near the middle
+     of that image, so paper content needs a larger inset than an adjacent
+     plain section to create the same visual gap on both sides. */
+  .section__decoration-top {
+    padding-top: 90px !important;
+  }
+
+  .section__decoration-bottom {
+    padding-bottom: 90px !important;
+  }
+
+  /* Some paper panels are wrappers around a section that already owns its
+     spacing. Let the wrapper provide the safe area instead of doubling it. */
+  .section__decoration-top > :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section) {
+    padding-top: 0 !important;
+  }
+
+  .section__decoration-bottom > :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section) {
+    padding-bottom: 0 !important;
+  }
+
+  /* A plain section following the bottom tear only needs the remaining
+     18px: roughly 34px of the artwork is already visible below the paper
+     edge, producing the same ~52px visual clearance as the top tear. */
+  .section__decoration-bottom + :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section) {
+    padding-top: 18px !important;
+  }
+
+  /* Keep non-paper treatment sections visually balanced when they sit
+     directly between torn-paper panels. */
+  .about-section--treatment:has(+ .section__decoration-top),
+  .about-section--treatment:has(+ div > .faq-section--paper) {
+    padding-bottom: 18px !important;
+  }
+
+  .section__decoration-bottom + .about-section--treatment {
+    padding-top: 18px !important;
+  }
+
+  /* Treatment CTA sections are separated from the FAQ and Services paper
+     panels by neutral div wrappers, so normalize both of their outer edges. */
+  .reserve-cta-section.pt-100 {
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+  }
+}
+
 .section__decoration-left,
 .section__decoration-right {
   position: absolute;
@@ -3700,9 +3748,17 @@ textarea.form-control {
   max-width: 520px;
 }
 
+.outcall-page .about-section-two .image-column .inner-column .brand-card {
+  background-color: var(--theme-color-white);
+}
+
 .outcall-page .about-section .image-column .inner-column {
   width: 100%;
   float: none !important;
+}
+
+.outcall-page .about-section .image-column .inner-column .info {
+  background-color: var(--theme-color-light);
 }
 
 .outcall-page .about-section-two .image-column .image-box .image {
@@ -6026,10 +6082,10 @@ textarea.form-control {
 }
 
 .about-section .image-column .inner-column .info {
-  color: var(--theme-color2);
+  color: var(--theme-color1);
   padding: 31px 25px;
   background-color: var(--theme-color-cream);
-  border: 2px solid var(--theme-color2);
+  border: 2px solid var(--theme-color1);
   display: inline-block;
   text-align: center;
   position: absolute;
@@ -6043,7 +6099,7 @@ textarea.form-control {
   font-weight: 300;
   font-family: var(--title-font);
   font-size: 22px;
-  color: var(--theme-color2);
+  color: var(--theme-color1);
 }
 
 @media (max-width: 767px) {
@@ -6068,6 +6124,133 @@ textarea.form-control {
 
 .about-section .image-column .inner-column .info.info--gold .info-line {
   color: var(--theme-color1);
+}
+
+/* The treatment photography uses the matching 570:496 mask. Enlarging the
+   frame and sizing the card from the mask notch keeps its top/right gutters
+   equal in both the regular and reversed treatment layouts. */
+.about-section--treatment .image-column .inner-column {
+  width: 100%;
+  max-width: 690px;
+  aspect-ratio: 570 / 496;
+}
+
+.about-section--treatment .image-column .inner-column .image-box {
+  width: 100%;
+  height: 100%;
+}
+
+.about-section--treatment .image-column .inner-column .image-box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-section--treatment .image-column .inner-column .info {
+  --treatment-card-gap: 24px;
+  width: calc(37.894737% - var(--treatment-card-gap));
+  height: calc(30.040323% - var(--treatment-card-gap));
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1400px) {
+  .about-section--treatment .image-column .inner-column {
+    width: 690px;
+    max-width: none;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .about-section--treatment .image-column .inner-column .info {
+    --treatment-card-gap: 16px;
+  }
+
+  .about-section--treatment .image-column .inner-column .info .info-line {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .about-section--treatment .image-column .inner-column .info .info-line span {
+    font-size: 20px;
+  }
+
+  .about-section--treatment .image-column .inner-column .info .title {
+    letter-spacing: 3px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .about-section--treatment .image-column .inner-column .info {
+    --treatment-card-gap: 12px;
+    border-radius: 22px;
+  }
+
+  .about-section--treatment .image-column .inner-column .info .info-line {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .about-section--treatment .image-column .inner-column .info .info-line span {
+    font-size: 18px;
+  }
+
+  .about-section--treatment .image-column .inner-column .info .title {
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 991px) {
+  .about-section--treatment .image-column .inner-column {
+    float: none !important;
+    margin-right: auto;
+    margin-left: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-section--treatment .image-column .inner-column .info {
+    --treatment-card-gap: 12px;
+    border-radius: 20px;
+  }
+
+  .about-section--treatment .image-column .inner-column .info .info-line {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .about-section--treatment .image-column .inner-column .info .info-line span {
+    font-size: 18px;
+  }
+
+  .about-section--treatment .image-column .inner-column .info .title {
+    letter-spacing: 2px;
+    margin-top: 3px;
+  }
+}
+
+@media (max-width: 575px) {
+  .about-section--treatment .image-column .inner-column .info {
+    --treatment-card-gap: 10px;
+    border-radius: 16px;
+  }
+
+  .about-section--treatment .image-column .inner-column .info .info-line {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .about-section--treatment .image-column .inner-column .info .info-line span {
+    font-size: 16px;
+  }
+
+  .about-section--treatment .image-column .inner-column .info .title {
+    letter-spacing: 1.5px;
+  }
 }
 
 .about-section .content-column .inner-column {
@@ -6095,6 +6278,59 @@ textarea.form-control {
 
 .treatment-leaf-shape--right {
   transform: scaleX(-1);
+}
+
+/* Keep treatment leaf artwork in the outer gutter so it never competes with
+   headings, feature lists, or buttons inside the content container. */
+.treatment-leaf-position--left,
+.treatment-leaf-position--right {
+  --treatment-leaf-edge-offset: -256px;
+  pointer-events: none;
+}
+
+.about-section .shape1.treatment-leaf-position--left,
+.about-section-two .shape1.treatment-leaf-position--left {
+  left: var(--treatment-leaf-edge-offset);
+}
+
+.about-section .shape2.treatment-leaf-position--right,
+.about-section-two .shape2.treatment-leaf-position--right {
+  right: var(--treatment-leaf-edge-offset);
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .treatment-leaf-position--left,
+  .treatment-leaf-position--right {
+    --treatment-leaf-edge-offset: max(-256px, calc((100vw - 540px) / 2 - 232px));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .treatment-leaf-position--left,
+  .treatment-leaf-position--right {
+    --treatment-leaf-edge-offset: max(-256px, calc((100vw - 720px) / 2 - 232px));
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .treatment-leaf-position--left,
+  .treatment-leaf-position--right {
+    --treatment-leaf-edge-offset: max(-256px, calc((100vw - 960px) / 2 - 232px));
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .treatment-leaf-position--left,
+  .treatment-leaf-position--right {
+    --treatment-leaf-edge-offset: max(-256px, calc((100vw - 1140px) / 2 - 232px));
+  }
+}
+
+@media (min-width: 1400px) {
+  .treatment-leaf-position--left,
+  .treatment-leaf-position--right {
+    --treatment-leaf-edge-offset: max(-256px, calc((100vw - 1434px) / 2 - 232px));
+  }
 }
 
 .about-section-two {
@@ -6215,7 +6451,7 @@ textarea.form-control {
   bottom: 0;
   z-index: 2;
   background-color: var(--theme-color-cream);
-  border: 2px solid var(--theme-color2);
+  border: 2px solid var(--theme-color1);
   border-radius: 26px;
 }
 
@@ -6993,6 +7229,49 @@ textarea.form-control {
 @media (max-width: 767px) {
   .faq-section .content-column .inner-column {
     padding: 30px 15px;
+  }
+
+  .faq-section .section-header .sub-title {
+    gap: 8px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .faq-section .section-header .sub-title .icon {
+    width: 22px;
+    height: 23px;
+    flex: 0 0 22px;
+  }
+
+  .faq-section .section-header .title {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .faq-section .faq-accordion .accordion .accordion-header button {
+    padding: 15px 34px 15px 0;
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+  .faq-section .faq-accordion .accordion .accordion-button::before {
+    top: 15px;
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .faq-section .faq-accordion .accordion .accordion-body {
+    padding: 0 0 15px;
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  /* The paper section already owns its bottom safe area. Avoid stacking the
+     FAQ panel's mobile inset on top of the torn-paper spacing. */
+  .faq-section--paper .content-column .inner-column {
+    padding-bottom: 0;
   }
 }
 

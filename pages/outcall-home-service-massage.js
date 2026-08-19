@@ -18,14 +18,80 @@ const option = (time, price) => ({
   price: price.replace(/\bIDR\s*/i, ""),
 });
 
-const treatment = (id, name, desc, image, options, benefits) => ({
+const treatment = (id, name, desc, image, options, benefits, children) => ({
   id,
   name,
   desc,
   image,
   options,
   benefits,
+  children,
 });
+
+const childTreatment = (name, desc, options) => ({ name, desc, options });
+
+const coupleBalineseOptions = [
+  option("1 Hour – Balinese Massage · 2 pax", "IDR 319K"),
+  option("1.5 Hours – Balinese Massage · 2 pax", "IDR 479K"),
+  option("2 Hours – Balinese Massage · 2 pax", "IDR 659K"),
+];
+
+const coupleTraditionalOptions = [
+  option("1 Hour – Traditional Massage · 2 pax", "IDR 339K"),
+  option("1.5 Hours – Traditional Massage · 2 pax", "IDR 519K"),
+  option("2 Hours – Traditional Massage · 2 pax", "IDR 679K"),
+];
+
+const coupleDeepTissueOptions = [
+  option("1 Hour – Deep Tissue Massage · 2 pax", "IDR 539K"),
+  option("1.5 Hours – Deep Tissue Massage · 2 pax", "IDR 719K"),
+];
+
+const coupleWarmCandleOptions = [
+  option("1 Hour – Warm Candle Massage · 2 pax", "IDR 539K"),
+  option("1.5 Hours – Warm Candle Massage · 2 pax", "IDR 799K"),
+  option("2.5 Hours – Warm Candle Massage · 2 pax", "IDR 999K"),
+];
+
+const couplePackageOptions = [
+  option(
+    "Package A · 1.5 Hours – Balinese Massage + Ear Candle · 2 pax",
+    "IDR 639K"
+  ),
+  option(
+    "Package B · 2.5 Hours – Balinese Massage + Bali Moon Facial · 2 pax",
+    "IDR 709K"
+  ),
+  option(
+    "Package C · 1.5 Hours – Warm Candle + Ear Candle · 2 pax",
+    "IDR 849K"
+  ),
+  option(
+    "Package D · 2.5 Hours – Warm Candle + Bali Moon Facial · 2 pax",
+    "IDR 929K"
+  ),
+];
+
+const couplePackageChildren = [
+  childTreatment("Couple Massage Package A", "", [
+    option("1.5 Hours – Balinese Massage + Ear Candle · 2 pax", "IDR 639K"),
+  ]),
+  childTreatment("Couple Massage Package B", "", [
+    option(
+      "2.5 Hours – Balinese Massage + Bali Moon Facial · 2 pax",
+      "IDR 709K"
+    ),
+  ]),
+  childTreatment("Couple Massage Package C", "", [
+    option("1.5 Hours – Warm Candle + Ear Candle · 2 pax", "IDR 849K"),
+  ]),
+  childTreatment("Couple Massage Package D", "", [
+    option(
+      "2.5 Hours – Warm Candle + Bali Moon Facial · 2 pax",
+      "IDR 929K"
+    ),
+  ]),
+];
 
 const mostPopularTreatments = [
   treatment(
@@ -92,7 +158,7 @@ const mostPopularTreatments = [
   ),
   treatment(
     "popular-sports",
-    "Sports Massage",
+    "Sport Massage",
     "Targeted to ease muscle soreness, reduce stiffness, and support physical recovery.",
     "/images/homepage/homepage-8.webp",
     [option("1 Hour", "IDR 269K"), option("1.5 Hours", "IDR 359K")]
@@ -173,6 +239,41 @@ const massageTreatments = [
     [option("1 Hour", "IDR 350K"), option("1.5 Hours", "IDR 450K")]
   ),
   treatment(
+    "massage-couple",
+    "Couple Massage",
+    "",
+    "/images/homepage/homepage-21.webp",
+    [],
+    undefined,
+    [
+      childTreatment(
+        "Couple Massage Balinese",
+        "Performed side by side using steady pressure and flowing techniques for shared relaxation.",
+        coupleBalineseOptions
+      ),
+      childTreatment(
+        "Couple Traditional Massage",
+        "Applied with firmer pressure to help reduce tension while relaxing together.",
+        coupleTraditionalOptions
+      ),
+      childTreatment(
+        "Couple Deep Tissue Massage",
+        "Delivered with deeper pressure for two, aimed at easing tight muscles and improving comfort.",
+        coupleDeepTissueOptions
+      ),
+      childTreatment(
+        "Couple Massage Warm Candle",
+        "Using gently warmed candle oils to help soften muscles and create a calming shared experience.",
+        coupleWarmCandleOptions
+      ),
+      childTreatment(
+        "Couple Massage Packages",
+        "A well-balanced couple’s massage package created for relaxing together.",
+        couplePackageOptions
+      ),
+    ]
+  ),
+  treatment(
     "massage-deep-tissue",
     "Deep Tissue Massage",
     "Focused on deeper pressure to help release muscle knots and support better movement.",
@@ -193,12 +294,12 @@ const massageTreatments = [
   treatment(
     "massage-four-hand-candle",
     "Four Hand Warm Candle",
-    "Performed by two therapists in synchronized movements for deeper relaxation.",
+    "Performed by two therapists working in synchronized movements for deeper relaxation.",
     "/images/homepage/homepage-7.webp",
     [
-      option("1 Hour", "IDR 539K"),
-      option("1.5 Hours", "IDR 799K"),
-      option("2 Hours", "IDR 999K"),
+      option("1 Hour – Four Hand Warm Candle", "IDR 539K"),
+      option("1.5 Hours – Four Hand Warm Candle", "IDR 799K"),
+      option("2 Hours – Four Hand Warm Candle", "IDR 999K"),
     ]
   ),
   treatment(
@@ -265,7 +366,7 @@ const massageTreatments = [
   ),
   treatment(
     "massage-sports",
-    "Sports Massage",
+    "Sport Massage",
     "Targeted to ease muscle soreness, reduce stiffness, and support physical recovery.",
     "/images/homepage/homepage-8.webp",
     [option("1 Hour", "IDR 269K"), option("1.5 Hours", "IDR 359K")]
@@ -369,7 +470,7 @@ const beautyTreatments = [
   treatment(
     "beauty-biokos-facial",
     "Biokos Facial",
-    "Custom facial care for dry, normal, or oily skin, including facial massage and mask application.",
+    "Spa facials for dry, normal, and oily skin, with custom care including facial massage and mask application.",
     "/images/homepage/homepage-9.webp",
     [
       option("Biokos", "IDR 179K"),
@@ -432,11 +533,11 @@ const beautyTreatments = [
     [
       option("Arms", "IDR 159K"),
       option("Under Arms", "IDR 99K"),
-      option("Back", "Starts from IDR 139K"),
+      option("Back", "Start from 139K"),
       option("Full Back", "IDR 299K"),
       option("Half Legs", "IDR 149K"),
       option("Full Legs", "IDR 299K"),
-      option("Brazilian", "IDR 269K"),
+      option("Waxing Brazilian", "IDR 269K"),
     ]
   ),
 ];
@@ -444,58 +545,40 @@ const beautyTreatments = [
 const coupleTreatments = [
   treatment(
     "couple-balinese",
-    "Couple Balinese Massage",
-    "Performed side by side using steady pressure and flowing techniques for shared relaxation.",
+    "Couple Massage",
+    "Designed for two to relax together while easing the body and sharing a calm moment.",
     "/images/homepage/homepage-21.webp",
-    [
-      option("1 Hour · 2 guests", "IDR 319K"),
-      option("1.5 Hours · 2 guests", "IDR 479K"),
-      option("2 Hours · 2 guests", "IDR 659K"),
-    ]
+    coupleBalineseOptions
   ),
   treatment(
     "couple-traditional",
     "Couple Traditional Massage",
     "Applied with firmer pressure to help reduce tension while relaxing together.",
     "/images/homepage/homepage-21.webp",
-    [
-      option("1 Hour · 2 guests", "IDR 339K"),
-      option("1.5 Hours · 2 guests", "IDR 519K"),
-      option("2 Hours · 2 guests", "IDR 679K"),
-    ]
+    coupleTraditionalOptions
   ),
   treatment(
     "couple-deep-tissue",
     "Couple Deep Tissue Massage",
     "Delivered with deeper pressure for two, aimed at easing tight muscles and improving comfort.",
     "/images/homepage/homepage-21.webp",
-    [
-      option("1 Hour · 2 guests", "IDR 539K"),
-      option("1.5 Hours · 2 guests", "IDR 719K"),
-    ]
+    coupleDeepTissueOptions
   ),
   treatment(
     "couple-warm-candle",
-    "Couple Warm Candle Massage",
+    "Couple Massage Warm Candle",
     "Using gently warmed candle oils to help soften muscles and create a calming shared experience.",
     "/images/homepage/homepage-21.webp",
-    [
-      option("1 Hour · 2 guests", "IDR 539K"),
-      option("1.5 Hours · 2 guests", "IDR 799K"),
-      option("2.5 Hours · 2 guests", "IDR 999K"),
-    ]
+    coupleWarmCandleOptions
   ),
   treatment(
     "couple-packages",
-    "Couple Massage Packages",
-    "Well-balanced couple massage packages created for relaxing together.",
+    "Couple Packages",
+    "",
     "/images/homepage/homepage-21.webp",
-    [
-      option("Package A · Balinese Massage + Ear Candle", "IDR 639K"),
-      option("Package B · Balinese Massage + Bali Moon Facial", "IDR 709K"),
-      option("Package C · Warm Candle + Ear Candle", "IDR 849K"),
-      option("Package D · Warm Candle + Bali Moon Facial", "IDR 929K"),
-    ]
+    [],
+    undefined,
+    couplePackageChildren
   ),
 ];
 

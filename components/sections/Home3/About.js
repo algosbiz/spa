@@ -16,7 +16,7 @@ export default function Home3_About({
     text = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas magna mi ut arcu. Phasellus nec odio orci. Nunc id massa ante. Suspendisse sit amet neque euismod, convallis quam eget,",
     features = defaultFeatures,
     ctaText = "Discover More",
-    ctaHref = "/pricing",
+    ctaHref = "/seminyak/pricing",
     primaryImage = "/images/about/about-three-image1.png",
     secondaryImage = "/images/about/about-three-image2.png",
 }) {

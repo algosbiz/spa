@@ -30,7 +30,7 @@ export default function Home1_AboutReverse({
         "Use of soft towel and bathrobe",
     ],
     buttonText = "Learn More",
-    buttonLink = "/pricing",
+    buttonLink = "/seminyak/pricing",
     image = "/images/about/about-image.png",
     leftShapeSrc,
     rightShapeSrc,
@@ -43,15 +43,18 @@ export default function Home1_AboutReverse({
         image,
         "/images/shape/mirror-left-shape.png"
     )
+    const hasTreatmentLeftShape = isTreatmentLeafShape(resolvedLeftShape)
+    const hasTreatmentRightShape = isTreatmentLeafShape(resolvedRightShape)
+    const hasTreatmentImage = typeof image === "string" && image.startsWith("/images/services/")
 
     return (
         <>
-            <section id="about" className="about-section section__decoration-top section__decoration-bottom bg-sub pt-130 pb-130">
-                <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms" style={{ bottom: '120px' }}>
+            <section id="about" className={`about-section section__decoration-top section__decoration-bottom bg-sub pt-130 pb-130${hasTreatmentImage ? " about-section--treatment" : ""}`}>
+                <div className={`shape1 wow slideInLeft${hasTreatmentLeftShape ? " treatment-leaf-position--left" : ""}`} data-wow-delay="200ms" data-wow-duration="1500ms" style={{ bottom: '120px' }}>
                     <img src={resolvedLeftShape} alt="" aria-hidden="true" />
                 </div>
-                <div className="shape2 wow slideInRight" data-wow-delay="400ms" data-wow-duration="1500ms">
-                    <div className={isTreatmentLeafShape(resolvedRightShape) ? "treatment-leaf-shape--right" : undefined}>
+                <div className={`shape2 wow slideInRight${hasTreatmentRightShape ? " treatment-leaf-position--right" : ""}`} data-wow-delay="400ms" data-wow-duration="1500ms">
+                    <div className={hasTreatmentRightShape ? "treatment-leaf-shape--right" : undefined}>
                         <img className="sway_Y__animation" src={resolvedRightShape} alt="" aria-hidden="true" />
                     </div>
                 </div>

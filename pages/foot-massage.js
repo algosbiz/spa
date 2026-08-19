@@ -173,6 +173,8 @@ export default function FootMassage() {
         />
         <div className="foot-massage-faq">
           <Faq
+            removeTopPadding
+            paperDecoration
             image={treatmentImages.faq}
             imageTitle="Foot Recovery"
             subTitle="Frequently Asked Questions"
@@ -180,8 +182,9 @@ export default function FootMassage() {
             items={faqItems}
           />
         </div>
-        <div className="pt-100 pb-100">
+        <div>
           <ReserveCta
+            standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Give Your Feet the Attention They Rarely Receive"
             text="Your feet support every walk, every adventure, and every journey, yet they're often the last part of the body we think to care for. A dedicated Foot Massage helps ease accumulated tension, restore everyday comfort, and leave you feeling lighter with every step. Choose an appointment at our spa or enjoy the same professional treatment through our home service in selected villas and hotels around Seminyak."

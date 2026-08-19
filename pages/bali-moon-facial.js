@@ -161,6 +161,8 @@ export default function BaliMoonFacial() {
         />
         <div className="bali-moon-facial-faq">
           <Faq
+            removeTopPadding
+            paperDecoration
             image={treatmentImages.faq}
             imageTitle="Refresh Your Skin"
             subTitle="Frequently Asked Questions"
@@ -168,8 +170,9 @@ export default function BaliMoonFacial() {
             items={faqItems}
           />
         </div>
-        <div className="pt-100 pb-100">
+        <div>
           <ReserveCta
+            standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Professional Facial Care at Your Spa, Villa, or Hotel"
             text="Enjoy the convenience of professional facial treatments without changing your plans for the day. Bali Moon Facial is available both in our spa and through home service appointments, allowing you to enjoy personalised skincare in the environment where you feel most comfortable. Home service is available for an additional IDR 75,000 per therapist within Seminyak and nearby areas."

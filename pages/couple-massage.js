@@ -171,6 +171,8 @@ export default function CoupleMassage() {
         />
         <div className="couple-massage-faq">
           <Faq
+            removeTopPadding
+            paperDecoration
             image={treatmentImages.faq}
             imageTitle="Relax Together"
             subTitle="Frequently Asked Questions"
@@ -178,8 +180,9 @@ export default function CoupleMassage() {
             items={faqItems}
           />
         </div>
-        <div className="pt-100 pb-100">
+        <div>
           <ReserveCta
+            standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Make Time for Each Other While You're in Bali"
             text="A Couple Massage is a simple way to enjoy quality time while also giving your body a chance to relax. Many guests book this experience during their holiday, honeymoon, anniversary, or even as a wellness activity with friends or family. Sessions are available in our spa or through home service at villas and hotels, with an additional IDR 75,000 per therapist within Seminyak and nearby areas."

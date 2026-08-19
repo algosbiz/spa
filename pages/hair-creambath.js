@@ -181,6 +181,8 @@ export default function HairCreambath() {
         />
         <div className="hair-creambath-faq">
           <Faq
+            removeTopPadding
+            paperDecoration
             image={treatmentImages.faq}
             imageTitle="Refresh Your Hair"
             subTitle="Frequently Asked Questions"
@@ -188,8 +190,9 @@ export default function HairCreambath() {
             items={faqItems}
           />
         </div>
-        <div className="pt-100 pb-100">
+        <div>
           <ReserveCta
+            standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Restore Your Hair After Bali's Tropical Days"
             text="Sun exposure, ocean water, and humidity can affect the way your hair feels and looks. A Creambath treatment helps replenish moisture, soften dry strands, and provide relaxing scalp care through nourishing creams and gentle massage techniques. Enjoy your session at our spa or request a home service at your villa or hotel for a convenient hair care experience during your stay in Bali."

@@ -29,6 +29,8 @@ export default function Home2_About({
         primaryImage,
         "/images/shape/about-two-right.png"
     )
+    const hasTreatmentLeftShape = isTreatmentLeafShape(resolvedLeftShape)
+    const hasTreatmentRightShape = isTreatmentLeafShape(resolvedRightShape)
 
     return (
         <>
@@ -36,11 +38,11 @@ export default function Home2_About({
             id="about"
             className={`about-section-two pt-130 paralax__animation${removeBottomPadding ? "" : " pb-100"}`}
         >
-            <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+            <div className={`shape1 wow slideInLeft${hasTreatmentLeftShape ? " treatment-leaf-position--left" : ""}`} data-wow-delay="200ms" data-wow-duration="1500ms">
                 <img className="animation__arryUpDown" src={resolvedLeftShape} alt="" aria-hidden="true"/>
             </div>
-            <div className="shape2">
-                <div className={isTreatmentLeafShape(resolvedRightShape) ? "treatment-leaf-shape--right" : undefined}>
+            <div className={`shape2${hasTreatmentRightShape ? " treatment-leaf-position--right" : ""}`}>
+                <div className={hasTreatmentRightShape ? "treatment-leaf-shape--right" : undefined}>
                     <img className="animation__floatBob" src={resolvedRightShape} alt="" aria-hidden="true"/>
                 </div>
             </div>
@@ -56,7 +58,7 @@ export default function Home2_About({
                                 <img data-depth="0.05" className="circle-image" src={secondaryImage}
                                     alt="Spa treatment detail"/>
                             </div>
-                            <Link href="/pricing" className="circle-btn"><svg width="31" height="31" viewBox="0 0 31 31"
+                            <Link href="/seminyak/pricing" className="circle-btn"><svg width="31" height="31" viewBox="0 0 31 31"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clipPath="url(#clip0_1_1364)">
                                         <path

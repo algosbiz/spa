@@ -90,9 +90,10 @@ const servicesTab2 = [
     { id: 12, name: 'Thai Massage', defaultPrice: '$60', desc: 'Ancient yoga-like stretching for flexibility.', image: '/images/package/package-image2.png', options: defaultOptions },
 ];
 
-const PackageItem = ({ item, isLast, outcallPricing }) => {
+const PackageItem = ({ item, isLast, outcallPricing, spreadDropdownArrow }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const hasDetails = Boolean(item.benefits?.length || item.options?.length);
+    const hasDetails = Boolean(item.benefits?.length || item.options?.length || item.children?.length);
+    const useSpreadToggle = outcallPricing || spreadDropdownArrow;
 
     return (
         <div className={`inner-box ${!isLast ? 'mb-50' : ''}`}>
@@ -102,15 +103,15 @@ const PackageItem = ({ item, isLast, outcallPricing }) => {
             <div className="content">
                 <h3 className="title">
                     {hasDetails ? (
-                        outcallPricing ? (
+                        useSpreadToggle ? (
                             <button
                                 type="button"
-                                className="outcall-package-toggle"
+                                className="package-row-toggle"
                                 onClick={() => setIsOpen(!isOpen)}
                                 aria-expanded={isOpen}
                             >
                                 <span>{item.name}</span>
-                                <span className="outcall-package-toggle__icon" aria-hidden="true">
+                                <span className="package-row-toggle__icon" aria-hidden="true">
                                     <i className="fa-solid fa-angle-down"></i>
                                 </span>
                             </button>
@@ -126,7 +127,7 @@ const PackageItem = ({ item, isLast, outcallPricing }) => {
                     className="pricing-dropdown"
                     style={{
                         padding: isOpen ? '5px 0 10px' : '0',
-                        maxHeight: isOpen ? '500px' : '0',
+                        maxHeight: isOpen ? '4000px' : '0',
                         opacity: isOpen ? 1 : 0,
                         overflow: 'hidden',
                         transition: 'all 0.4s ease-in-out',
@@ -160,6 +161,46 @@ const PackageItem = ({ item, isLast, outcallPricing }) => {
                             </li>
                         ))}
                     </ul>
+                    {(item.children || []).map((child) => (
+                        <section
+                            className="package-child-service"
+                            key={child.name}
+                            style={{
+                                marginTop: '20px',
+                                padding: '18px 0 0 18px',
+                                borderTop: '1px solid #e1e1e1',
+                                borderLeft: '2px solid var(--theme-color1)'
+                            }}
+                        >
+                            <h4 style={{ marginBottom: child.desc ? '7px' : '12px', fontSize: '18px', lineHeight: '1.35' }}>
+                                {child.name}
+                            </h4>
+                            {child.desc && (
+                                <p style={{ marginBottom: '12px', color: '#5f5a54', fontSize: '13px', lineHeight: '1.55' }}>
+                                    {child.desc}
+                                </p>
+                            )}
+                            <ul className="list-unstyled mb-0" style={{ paddingLeft: '0' }}>
+                                {(child.options || []).map((opt, idx) => (
+                                    <li
+                                        key={`${child.name}-${idx}`}
+                                        className="d-flex justify-content-between align-items-center pb-2 mb-2"
+                                        style={{ gap: '18px', borderBottom: '1px solid #e1e1e1' }}
+                                    >
+                                        <span style={{ fontFamily: 'var(--subtitle-font)', fontSize: '16px', color: '#6A6F73' }}>
+                                            {opt.time}
+                                        </span>
+                                        <span
+                                            className={outcallPricing ? 'outcall-package-price' : 'package-item-price'}
+                                            style={outcallPricing ? undefined : { flexShrink: 0, fontFamily: 'var(--title-font)', fontSize: '20px', fontWeight: '500', color: 'var(--title-color)' }}
+                                        >
+                                            {opt.price}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </section>
+                    ))}
                 </div>}
             </div>
         </div>
@@ -175,8 +216,10 @@ export default function PackageSection({
     secondTabLabel = "Extra 75K/Therapist",
     tabs,
     outcallPricing = false,
+    spreadDropdownArrow = false,
 }) {
     const [activeIndex, setActiveIndex] = useState(0);
+    const useSpreadToggle = outcallPricing || spreadDropdownArrow;
     const handleOnClick = (index) => {
         setActiveIndex(index);
     };
@@ -187,7 +230,7 @@ export default function PackageSection({
     ];
 
     return (
-      <section className={`package-section section__decoration-top section__decoration-bottom bg-sub pt-170 pb-170${outcallPricing ? ' outcall-package-pricing' : ''}`}>
+      <section className={`package-section section__decoration-top section__decoration-bottom bg-sub pt-170 pb-170${outcallPricing ? ' outcall-package-pricing' : ''}${useSpreadToggle ? ' package-spread-toggles' : ''}`}>
         <div
           className="shape1 wow slideInLeft"
           data-wow-delay="200ms"
@@ -276,6 +319,7 @@ export default function PackageSection({
                             item={item}
                             isLast={itemIndex === services.length - 1}
                             outcallPricing={outcallPricing}
+                            spreadDropdownArrow={spreadDropdownArrow}
                           />
                         ))}
                       </div>
@@ -286,9 +330,9 @@ export default function PackageSection({
             })}
           </div>
         </div>
-        {outcallPricing && (
+        {useSpreadToggle && (
           <style jsx global>{`
-            .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle {
+            .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle {
               display: flex;
               align-items: center;
               justify-content: space-between;
@@ -305,7 +349,7 @@ export default function PackageSection({
               text-align: left;
             }
 
-            .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle > span:first-child {
+            .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle > span:first-child {
               min-width: 0;
               color: inherit;
               font-size: inherit;
@@ -313,7 +357,7 @@ export default function PackageSection({
               white-space: normal;
             }
 
-            .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle__icon {
+            .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle__icon {
               display: inline-flex;
               align-items: center;
               justify-content: center;
@@ -326,22 +370,22 @@ export default function PackageSection({
               transition: color 0.25s ease, background-color 0.25s ease;
             }
 
-            .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle__icon i {
+            .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle__icon i {
               transition: transform 0.25s ease;
             }
 
-            .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle[aria-expanded="true"] .outcall-package-toggle__icon,
-            .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle:hover .outcall-package-toggle__icon,
-            .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle:focus-visible .outcall-package-toggle__icon {
+            .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle[aria-expanded="true"] .package-row-toggle__icon,
+            .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle:hover .package-row-toggle__icon,
+            .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle:focus-visible .package-row-toggle__icon {
               color: #fff;
               background: var(--theme-color1);
             }
 
-            .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle[aria-expanded="true"] .outcall-package-toggle__icon i {
+            .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle[aria-expanded="true"] .package-row-toggle__icon i {
               transform: rotate(180deg);
             }
 
-            .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle:focus-visible {
+            .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle:focus-visible {
               outline: none;
             }
 
@@ -355,15 +399,15 @@ export default function PackageSection({
             }
 
             @media (max-width: 575px) {
-              .outcall-package-pricing .package-block .inner-box .content .title {
+              .package-spread-toggles .package-block .inner-box .content .title {
                 width: 100%;
               }
 
-              .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle {
+              .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle {
                 font-size: 18px;
               }
 
-              .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle__icon {
+              .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle__icon {
                 width: 30px;
                 height: 30px;
                 flex-basis: 30px;
@@ -376,8 +420,8 @@ export default function PackageSection({
             }
 
             @media (prefers-reduced-motion: reduce) {
-              .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle__icon,
-              .outcall-package-pricing .package-block .inner-box .content .title .outcall-package-toggle__icon i {
+              .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle__icon,
+              .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle__icon i {
                 transition: none;
               }
             }

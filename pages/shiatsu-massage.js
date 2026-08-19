@@ -173,6 +173,8 @@ export default function ShiatsuMassage() {
         />
         <div className="shiatsu-massage-faq">
           <Faq
+            removeTopPadding
+            paperDecoration
             image={treatmentImages.faq}
             imageTitle="Shiatsu Massage"
             subTitle="Frequently Asked Questions"
@@ -180,8 +182,9 @@ export default function ShiatsuMassage() {
             items={faqItems}
           />
         </div>
-        <div className="pt-100 pb-100">
+        <div>
           <ReserveCta
+            standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Experience the Traditional Japanese Approach to Body Wellness"
             text="Shiatsu offers a different massage experience from conventional oil massage by combining pressure point therapy with mindful body movement. Whether you're recovering after travel, easing everyday muscle tension, or simply curious about traditional Japanese wellness, our therapists tailor every session to your comfort and needs."

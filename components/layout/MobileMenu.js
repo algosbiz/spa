@@ -42,7 +42,7 @@ const MobileMenu = () => {
         <>
             <ul>
                 <li><Link href="/">Home</Link></li>
-                <li><Link href="/pricing">Pricelist</Link></li>
+                <li><Link href="/seminyak/pricing">Pricelist</Link></li>
                 <li>
                     <Link href="#0">Treatments</Link>
                     <div

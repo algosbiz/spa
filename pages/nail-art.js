@@ -173,6 +173,8 @@ export default function NailArt() {
         />
         <div className="nail-art-faq">
           <Faq
+            removeTopPadding
+            paperDecoration
             image={treatmentImages.faq}
             imageTitle="Gel Nail Art"
             subTitle="Frequently Asked Questions"
@@ -180,8 +182,9 @@ export default function NailArt() {
             items={faqItems}
           />
         </div>
-        <div className="pt-100 pb-100">
+        <div>
           <ReserveCta
+            standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Experience Beautiful Nails That Last Beyond Your Bali Holiday"
             text="Whether you're preparing for a beach holiday, a romantic dinner, a wedding, or simply want beautifully finished nails, our Nail Art service offers personalised designs created with professional care and long-lasting gel products. Every appointment is tailored to your preferred style while keeping your natural nails healthy and comfortable."

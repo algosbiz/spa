@@ -156,6 +156,8 @@ export default function SportsMassage() {
         />
         <div className="sports-massage-faq">
           <Faq
+            removeTopPadding
+            paperDecoration
             image={treatmentImages.faq}
             imageTitle="Sport Massage"
             subTitle="Frequently Asked Questions"
@@ -163,8 +165,9 @@ export default function SportsMassage() {
             items={faqItems}
           />
         </div>
-        <div className="pt-100 pb-100">
+        <div>
           <ReserveCta
+            standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Renew Your Body After Every Challenge"
             text="An active lifestyle asks a lot from your body. Long training sessions, outdoor adventures, and busy days exploring Bali can leave muscles feeling tired and restricted. Sport Massage at Spa Bali Moon provides focused care through controlled pressure and recovery techniques that help you feel more comfortable, mobile, and refreshed. Enjoy your treatment at our spa in Seminyak or experience the convenience of our home service at selected hotels and villas around Bali."

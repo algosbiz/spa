@@ -8,7 +8,7 @@ import { TREATMENT_LINKS } from '../../lib/treatments';
 // Searchable site destinations (pages + treatments). Add entries here to extend search.
 const SEARCH_INDEX = [
     { title: 'Home', href: '/', keywords: 'home main spa bali moon' },
-    { title: 'Pricelist', href: '/pricing', keywords: 'price pricing cost packages rates list' },
+    { title: 'Pricelist', href: '/seminyak/pricing', keywords: 'price pricing cost packages rates list' },
     ...TREATMENT_LINKS.map((item) => ({
         title: item.title,
         href: item.href,

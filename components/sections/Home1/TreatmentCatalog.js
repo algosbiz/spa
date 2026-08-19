@@ -85,10 +85,20 @@ export default function TreatmentCatalog({
   const [activeCategory, setActiveCategory] = useState("massage");
   const filteredTreatments = useMemo(
     () => treatments
-      .filter((item) => item.category === activeCategory)
+      .filter((item) =>
+        (item.categories || [item.category]).includes(activeCategory)
+      )
       .sort((a, b) => a.name.localeCompare(b.name)),
     [activeCategory, treatments]
   );
+  const treatmentColumns = useMemo(() => {
+    const splitIndex = Math.ceil(filteredTreatments.length / 2);
+
+    return [
+      filteredTreatments.slice(0, splitIndex),
+      filteredTreatments.slice(splitIndex),
+    ];
+  }, [filteredTreatments]);
 
   return (
     <section className="package-section treatment-catalog section__decoration-top section__decoration-bottom bg-sub pt-170 pb-170">
@@ -140,22 +150,26 @@ export default function TreatmentCatalog({
         </div>
 
         <div className="row g-5 align-items-start">
-          {filteredTreatments.map((item) => {
-            const itemKey = item.id || item.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+          {treatmentColumns.map((column, columnIndex) => (
+            <div className="col-lg-6 treatment-catalog__column" key={`column-${columnIndex}`}>
+              {column.map((item) => {
+                const itemKey = item.id || item.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
-            return (
-              <div className="col-lg-6 package-block" key={itemKey}>
-                <TreatmentItem
-                  item={item}
-                  itemKey={itemKey}
-                  isOpen={openTreatment === itemKey}
-                  onToggle={() =>
-                    setOpenTreatment((current) => (current === itemKey ? null : itemKey))
-                  }
-                />
-              </div>
-            );
-          })}
+                return (
+                  <div className="package-block" key={itemKey}>
+                    <TreatmentItem
+                      item={item}
+                      itemKey={itemKey}
+                      isOpen={openTreatment === itemKey}
+                      onToggle={() =>
+                        setOpenTreatment((current) => (current === itemKey ? null : itemKey))
+                      }
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          ))}
         </div>
       </div>
 
@@ -222,6 +236,12 @@ export default function TreatmentCatalog({
           height: 100%;
           padding: 4px 0 28px;
           border-bottom: 1px solid rgba(95, 90, 84, 0.14);
+        }
+
+        .treatment-catalog__column {
+          display: flex;
+          flex-direction: column;
+          gap: 48px;
         }
 
         .treatment-catalog__image {
