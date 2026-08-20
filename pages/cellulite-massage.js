@@ -1,17 +1,16 @@
 import React from "react";
-import Link from "next/link";
 import Layout from "../components/layout/Layout";
 import Banner from "../components/sections/Home2/Banner";
 import AboutOld from "../components/sections/Home2/About";
 import Funfact from "../components/sections/Home2/Funfact";
 import Testimonial from "../components/sections/Home2/Testimonial";
+import Pricing from "../components/sections/Home3/Pricing";
 import AboutReverse from "../components/sections/Home1/AboutReverse";
 import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
-import { formatPrice } from "@/lib/formatPrice";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -81,58 +80,14 @@ const faqItems = [
   },
 ];
 
-const DurationPricing = ({ images = [] }) => (
-  <section className="cellulite-pricing-section bg-sub section__decoration-top section__decoration-bottom pt-130 pb-130">
-    <div className="container">
-      <div className="section-header__flex mb-60">
-        <div>
-          <p className="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-            Choose Your Session
-          </p>
-          <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-            Treatment Duration &amp; Pricing
-          </h2>
-        </div>
-        <div className="flex-text wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
-          <p>
-            Every cellulite massage session is tailored to your body and treatment goals. Choose the session length that best suits the areas you&apos;d like us to focus on. Longer sessions allow more time to work across multiple areas while maintaining steady and targeted techniques.
-          </p>
-        </div>
-      </div>
-      <div className="row g-4">
-        {sessionOptions.map((option, index) => (
-          <div className="col-lg-6" key={option.duration}>
-            <div className="cellulite-pricing-card">
-              <div className="cellulite-pricing-card__image">
-                <img src={images[index] || "/images/pricing/pricing-three-image1.jpg"} alt="Cellulite massage treatment" />
-              </div>
-              <div className="cellulite-pricing-card__content">
-                <p className="cellulite-pricing-card__price">{formatPrice(option.price)}</p>
-                <h3>{option.duration}</h3>
-                <p className="cellulite-pricing-card__label">Recommended for:</p>
-                <ul>
-                  {option.recommendations.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-                <Link href={bookingUrl} target="_blank" rel="noopener noreferrer" className="btn-two mt-30">
-                  Book Now
-                  <span className="icon_box">
-                    <i className="fa-regular icon_first fa-arrow-right-long"></i>
-                    <i className="fa-regular icon_second fa-arrow-right-long"></i>
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
 export default function CelluliteMassage() {
   const treatmentImages = createTreatmentImageSet("cellulitemassage", sessionOptions.length);
+  const pricingOptions = sessionOptions.map(({ duration, price, recommendations }) => ({
+    name: duration,
+    price,
+    treatments: recommendations,
+  }));
+
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two">
@@ -155,7 +110,16 @@ export default function CelluliteMassage() {
           feature2Title="Firm Pressure"
           feature2Text="Uses controlled movements designed to stimulate circulation and tissue mobility."
         />
-        <DurationPricing images={treatmentImages.pricing} />
+        <div className="cellulite-massage-pricing">
+          <Pricing
+            images={treatmentImages.pricing}
+            subTitle="Choose Your Session"
+            title="Treatment Duration & Pricing"
+            text="Every cellulite massage session is tailored to your body and treatment goals. Choose the session length that best suits the areas you'd like us to focus on. Longer sessions allow more time to work across multiple areas while maintaining steady and targeted techniques."
+            packages={pricingOptions}
+            leftShapeSrc="/images/shape/testimonial-two-shape-left.png"
+          />
+        </div>
         <div className="cellulite-massage-funfact">
           <Funfact items={serviceHighlights} />
         </div>
@@ -248,68 +212,49 @@ export default function CelluliteMassage() {
           display: inline;
         }
 
-        .cellulite-massage-funfact .funfact-section > .container,
-        .cellulite-pricing-section > .container {
+        .cellulite-massage-pricing .pricing-section-three > .container,
+        .cellulite-massage-funfact .funfact-section > .container {
           max-width: 1200px;
         }
 
-        .cellulite-pricing-card {
-          display: grid;
-          grid-template-columns: minmax(0, 1fr);
-          height: 100%;
-          overflow: hidden;
-          background: #ffffff;
-          border: 1px solid rgba(167, 134, 39, 0.18);
-        }
-
-        .cellulite-pricing-card__image {
-          min-height: 260px;
-          position: relative;
-        }
-
-        .cellulite-pricing-card__image img {
-          position: absolute;
-          inset: 0;
-          display: block;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .cellulite-pricing-card__content {
-          padding: 34px;
-        }
-
-        .cellulite-pricing-card__price {
-          color: #a78627;
-          font-size: 28px;
-          font-weight: 700;
-          line-height: 1.2;
-          margin-bottom: 12px;
-        }
-
-        .cellulite-pricing-card h3 {
-          margin-bottom: 18px;
-        }
-
-        .cellulite-pricing-card__label {
-          color: #1d1d1d;
-          font-weight: 600;
-          margin-bottom: 10px;
-        }
-
-        .cellulite-pricing-card ul {
-          margin: 0;
-          padding-left: 20px;
-        }
-
-        .cellulite-pricing-card li {
-          margin-bottom: 8px;
+        .cellulite-massage-pricing .pricing-section-three .shape2 {
+          bottom: 70px;
         }
 
         @media (min-width: 992px) {
-          .cellulite-pricing-card {
-            grid-template-columns: 1fr 1fr;
+          .cellulite-massage-pricing
+            .pricing-section-three
+            .pricing-block
+            .inner-box {
+            padding: 20px;
+          }
+
+          .cellulite-massage-pricing
+            .pricing-section-three
+            .image-column {
+            display: flex;
+          }
+
+          .cellulite-massage-pricing
+            .pricing-section-three
+            .image-column
+            .image-box {
+            flex: 1;
+            position: relative;
+            min-height: 0;
+          }
+
+          .cellulite-massage-pricing
+            .pricing-section-three
+            .image-column
+            .image-box
+            img {
+            position: absolute;
+            inset: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
           }
         }
 
