@@ -2145,6 +2145,41 @@ svg.icon[viewBox="0 0 25 26"] > *,
   background: url(../images/shape/section-shape-bottom.png) no-repeat center bottom;
 }
 
+/* The torn-paper artwork occupies roughly 40px of the section's apparent
+   whitespace. Preserve each section's intended spacing rhythm on desktop by
+   adding that visual safe area to decorated panels. */
+@media (min-width: 768px) {
+  .section__decoration-top.pt-100,
+  .section__decoration-top > .pt-100 {
+    padding-top: 140px !important;
+  }
+
+  .section__decoration-bottom.pb-100,
+  .section__decoration-bottom > .pb-100 {
+    padding-bottom: 140px !important;
+  }
+
+  .section__decoration-top.pt-130,
+  .section__decoration-top > .pt-130 {
+    padding-top: 170px !important;
+  }
+
+  .section__decoration-bottom.pb-130,
+  .section__decoration-bottom > .pb-130 {
+    padding-bottom: 170px !important;
+  }
+
+  .section__decoration-top.pt-170,
+  .section__decoration-top > .pt-170 {
+    padding-top: 210px !important;
+  }
+
+  .section__decoration-bottom.pb-170,
+  .section__decoration-bottom > .pb-170 {
+    padding-bottom: 210px !important;
+  }
+}
+
 @media (max-width: 767px) {
   /* The torn artwork is 74-76px tall. Its visible edge sits near the middle
      of that image, so paper content needs a larger inset than an adjacent

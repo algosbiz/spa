@@ -756,3 +756,20 @@ svg.icon[viewBox="0 0 25 26"],
 	}
 }
 // Section header area end here ***
+
+// The torn-paper artwork occupies roughly 40px of the section's apparent
+// whitespace. Preserve each section's intended spacing rhythm on desktop by
+// adding that visual safe area to the utilities used by decorated panels.
+@media (min-width: 768px) {
+	@each $space in 100, 130, 170 {
+		.section__decoration-top.pt-#{$space},
+		.section__decoration-top > .pt-#{$space} {
+			padding-top: #{$space + 40}px !important;
+		}
+
+		.section__decoration-bottom.pb-#{$space},
+		.section__decoration-bottom > .pb-#{$space} {
+			padding-bottom: #{$space + 40}px !important;
+		}
+	}
+}
