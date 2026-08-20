@@ -29,11 +29,13 @@ export default function Home1_ReserveCta({
     closingText = "Reserve a time that suits you and let our experts at the Day Spa take care of you.",
     backgroundImage = "/images/bg/contact-five-bg.jpg",
     standardSpacing = false,
+    topSpacing = 70,
+    bottomSpacing = 70,
 }) {
     return (
         <section
             className={`reserve-cta-section${standardSpacing ? " pt-100 pb-100" : ""}`}
-            style={{ padding: standardSpacing ? undefined : '70px 0', overflow: 'hidden' }}
+            style={{ padding: standardSpacing ? undefined : `${topSpacing}px 0 ${bottomSpacing}px`, overflow: 'hidden' }}
         >
             <div className="container">
                 <div

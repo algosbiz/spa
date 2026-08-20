@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { formatPrice } from '@/lib/formatPrice'
 
 const defaultPackages = [
     {
@@ -95,7 +96,7 @@ export default function Home3_Pricing({
                                 <div className={`col-lg-4 col-xl-3 pricing-block ${isReversed ? "order-2 order-lg-1" : ""}`}>
                                     <div className="inner-box">
                                         <div className="shape"><img src="/images/pricing/shape.png" alt="image"/></div>
-                                        <p className="price package-price">{packageItem.price} {packageItem.suffix && <span>{packageItem.suffix}</span>}</p>
+                                        <p className="price package-price">{formatPrice(packageItem.price)} {packageItem.suffix && <span>{packageItem.suffix}</span>}</p>
                                         <h3 className="package-name">{packageItem.name}</h3>
                                         <ul>
                                             {packageItem.treatments.map((treatment) => <li key={treatment}>{treatment}</li>)}

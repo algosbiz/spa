@@ -209,7 +209,7 @@ export default function Home5_Pricing({
                     </svg>
                   </div>
                   <h4>Balinese Massage <br /> Package A</h4>
-                  <h2 className="price">IDR 449K</h2>
+                  <h2 className="price">449K</h2>
                   <ul>
                     <li><span className="duration">1 Hr</span><span className="service">Balinese Massage</span></li>
                     <li><span className="duration">1 Hr</span><span className="service">Mani &amp; Pedi</span></li>
@@ -287,7 +287,7 @@ export default function Home5_Pricing({
                     </svg>
                   </div>
                   <h4>Balinese Massage <br /> Package B</h4>
-                  <h2 className="price">IDR 549K</h2>
+                  <h2 className="price">549K</h2>
                   <ul>
                     <li><span className="duration">1 Hr</span><span className="service">Balinese Massage</span></li>
                     <li><span className="duration">1 Hr</span><span className="service">Mani &amp; Pedi</span></li>
@@ -382,7 +382,7 @@ export default function Home5_Pricing({
                     </svg>
                   </div>
                   <h4>Balinese Massage <br /> Package C</h4>
-                  <h2 className="price">IDR 449K</h2>
+                  <h2 className="price">449K</h2>
                   <ul>
                     <li><span className="duration">1 Hr</span><span className="service">Balinese Massage</span></li>
                     <li><span className="duration">30 Mins</span><span className="service">Cream bath</span></li>
@@ -477,7 +477,7 @@ export default function Home5_Pricing({
                     </svg>
                   </div>
                   <h4>Balinese Massage <br /> Package D</h4>
-                  <h2 className="price">IDR 399K</h2>
+                  <h2 className="price">399K</h2>
                   <ul>
                     <li><span className="duration">1 Hr</span><span className="service">Balinese Massage</span></li>
                     <li><span className="duration">30 Mins</span><span className="service">Manicure</span></li>

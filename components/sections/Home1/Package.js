@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { formatPrice } from '@/lib/formatPrice';
 
 const defaultOptions = [
     { time: '30 mins', price: '$50' },
@@ -156,7 +157,7 @@ const PackageItem = ({ item, isLast, outcallPricing, spreadDropdownArrow }) => {
                                     className={outcallPricing ? 'outcall-package-price' : 'package-item-price'}
                                     style={outcallPricing ? undefined : { fontFamily: 'var(--title-font)', fontSize: '24px', fontWeight: '500', color: 'var(--title-color)' }}
                                 >
-                                    {opt.price}
+                                    {formatPrice(opt.price)}
                                 </span>
                             </li>
                         ))}
@@ -194,7 +195,7 @@ const PackageItem = ({ item, isLast, outcallPricing, spreadDropdownArrow }) => {
                                             className={outcallPricing ? 'outcall-package-price' : 'package-item-price'}
                                             style={outcallPricing ? undefined : { flexShrink: 0, fontFamily: 'var(--title-font)', fontSize: '20px', fontWeight: '500', color: 'var(--title-color)' }}
                                         >
-                                            {opt.price}
+                                            {formatPrice(opt.price)}
                                         </span>
                                     </li>
                                 ))}

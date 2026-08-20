@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-export default function Home2_Testimonial() {
+export default function Home2_Testimonial({ paperDecoration = true }) {
     const swiperOptions = {
         modules: [Autoplay],
         slidesPerView: 1,
@@ -18,7 +18,7 @@ export default function Home2_Testimonial() {
 
     return (
         <>
-            <section className="testimonial-section-two section__decoration-top section__decoration-bottom bg-sub pt-170 pb-170">
+            <section className={`testimonial-section-two${paperDecoration ? " section__decoration-top section__decoration-bottom bg-sub" : ""} pt-170 pb-170`}>
                 <div className="shape1">
                     <img className="animation__arryUpDown" src="/images/shape/testimonial-two-shape-left.png" alt="image" />
                 </div>

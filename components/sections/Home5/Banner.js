@@ -11,7 +11,7 @@ export default function Home5_Banner({
         <>
         <section id="home" className="banner-five-area section__decoration-bottom paralax__animation mb-130">
             <div className="banner-five__shape-one parallaxLeftScroll">
-                <img src="/images/shape/banner-five-shape1.png" alt="image"/>
+                <img src="/images/shape/about-two-left.png" alt="" aria-hidden="true"/>
             </div>
             <div className="banner-five__shape-two parallaxLeftScroll">
                 <img className="animation__arryLeftRight" src="/images/shape/banner-five-shape2.png" alt="image"/>

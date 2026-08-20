@@ -11,6 +11,7 @@ import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
+import { formatPrice } from "@/lib/formatPrice";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -106,7 +107,7 @@ const DurationPricing = ({ images = [] }) => (
                 <img src={images[index] || "/images/pricing/pricing-three-image1.jpg"} alt="Cellulite massage treatment" />
               </div>
               <div className="cellulite-pricing-card__content">
-                <p className="cellulite-pricing-card__price">{option.price}</p>
+                <p className="cellulite-pricing-card__price">{formatPrice(option.price)}</p>
                 <h3>{option.duration}</h3>
                 <p className="cellulite-pricing-card__label">Recommended for:</p>
                 <ul>

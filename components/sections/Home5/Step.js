@@ -24,7 +24,7 @@ export default function Home5_Step({
         <>
             <section id="projects" className="step-section pt-30 pb-130">
                 <div className="shape1 slideInLeft wow">
-                    <img className="sway_Y__animationY" src="/images/shape/step-shape-left.png" alt="image" />
+                    <img className="sway_Y__animationY" src="/images/shape/package-four-shape-left.png" alt="" aria-hidden="true" />
                 </div>
                 <div className="shape2">
                     <img className="animation__rotateAndScale" src="/images/shape/step-shape-right.png" alt="image" />

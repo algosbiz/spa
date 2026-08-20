@@ -6574,6 +6574,14 @@ textarea.form-control {
   z-index: 1;
 }
 
+.about-section-three .image-column .inner-column .info .info-stars-gold {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
 @media (max-width: 575px) {
   .about-section-three .image-column .inner-column .info img {
     width: 180px;
@@ -6584,6 +6592,15 @@ textarea.form-control {
   position: absolute;
   top: -40px;
   left: -190px;
+}
+
+.about-section-three .image-column .inner-column .shape-one .about-leaf-gold {
+  display: block;
+  width: 308px;
+  height: 326px;
+  background-color: var(--theme-color1);
+  -webkit-mask: url(../images/about/shape1.png) no-repeat center/contain;
+  mask: url(../images/about/shape1.png) no-repeat center/contain;
 }
 
 @media (max-width: 575px) {

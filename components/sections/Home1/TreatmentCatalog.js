@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
+import { formatPrice } from "@/lib/formatPrice";
 
 const catalogCategories = [
   { id: "massage", label: "Massage" },
@@ -51,7 +52,7 @@ function TreatmentItem({ item, itemKey, isOpen, onToggle }) {
                 <div className="treatment-catalog__option" key={`${option.label}-${option.price}`}>
                   <div className="treatment-catalog__option-main">
                     <strong>{option.label}</strong>
-                    <span>{option.price}</span>
+                    <span>{formatPrice(option.price)}</span>
                   </div>
                   {option.details?.length ? (
                     <ul>

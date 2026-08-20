@@ -1,6 +1,25 @@
 import React from 'react'
 import Link from 'next/link'
 
+const ReviewStarsGold = () => (
+    <svg
+        className="info-stars-gold"
+        viewBox="0 0 303 192"
+        aria-hidden="true"
+        focusable="false"
+    >
+        <rect x="55" y="32" width="135" height="29" rx="3" fill="#fafafa" />
+        {[60, 85, 110, 135, 160].map((x) => (
+            <polygon
+                key={x}
+                points="10.5,0 13.7,6.6 21,7.6 15.7,12.7 17,20 10.5,16.5 4,20 5.3,12.7 0,7.6 7.3,6.6"
+                transform={`translate(${x} 36)`}
+                fill="var(--theme-color1)"
+            />
+        ))}
+    </svg>
+)
+
 const defaultFeatures = [
     "Entrance to the Blue Lagoon",
     "Silica mud mask (face and body)",
@@ -36,9 +55,10 @@ export default function Home3_About({
                             <img className="image2" src={secondaryImage} alt="Spa treatment room"/>
                             <div className="info">
                                 <img data-depth="0.01" src="/images/about/about-three-info.png" alt="image"/>
+                                <ReviewStarsGold />
                             </div>
                             <div className="shape-one">
-                                <img className="animation__arryUpDown" src="/images/about/shape1.png" alt="image"/>
+                                <span className="about-leaf-gold animation__arryUpDown" aria-hidden="true" />
                             </div>
                             <div className="shape-two">
                                 <img data-depth="0.03" src="/images/about/shape2.png" alt="image"/>

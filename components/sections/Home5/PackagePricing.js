@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { formatPrice } from '@/lib/formatPrice'
 
 // Package data taken from the reference images. The card/section styling mirrors
 // components/sections/Home5/Pricing.js (the SVG icons below are copied from it).
@@ -924,7 +925,7 @@ export default function Home5_PackagePricing() {
                         <h4>
                           {cat.cardTitle} <br /> Package {String.fromCharCode(65 + pi)}
                         </h4>
-                        <h2 className="price">{pkg.price}</h2>
+                        <h2 className="price">{formatPrice(pkg.price)}</h2>
                         <ul>
                           {pkg.items.map((it, ii) => (
                             <li key={ii}>
