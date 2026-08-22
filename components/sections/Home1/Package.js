@@ -231,7 +231,7 @@ export default function PackageSection({
     ];
 
     return (
-      <section className={`package-section section__decoration-top section__decoration-bottom bg-sub pt-170 pb-170${outcallPricing ? ' outcall-package-pricing' : ''}${useSpreadToggle ? ' package-spread-toggles' : ''}`}>
+      <section className={`package-section section__decoration-top section__decoration-bottom bg-sub pt-130 pb-130${outcallPricing ? ' outcall-package-pricing' : ''}${useSpreadToggle ? ' package-spread-toggles' : ''}`}>
         <div
           className="shape1 wow slideInLeft"
           data-wow-delay="200ms"

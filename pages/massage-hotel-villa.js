@@ -141,6 +141,7 @@ export default function MassageHotelVilla() {
                     />
                 </div>
                 <ReserveCta
+                    standardSpacing
                     title="Bring the Spa Experience to Your Hotel or Villa"
                     text="Your Bali itinerary does not need to end when you return to your accommodation. Our therapists bring professional massage and selected spa treatments directly to your hotel, villa, or private accommodation in Seminyak and nearby areas."
                     closingText="Choose your treatment, send us a message on WhatsApp, and let Spa Bali Moon create a more relaxing part of your stay without requiring you to leave your room."

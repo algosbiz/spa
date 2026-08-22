@@ -191,6 +191,7 @@ export default function Home5() {
         </div>
         <div className="homepage-closing-section section__decoration-top section__decoration-bottom bg-sub">
           <ReserveCta
+            standardSpacing
             title="A Better Way to Experience Wellness in Bali"
             text="Bali is made for exploring, from beach mornings and surfing sessions to long afternoons discovering the island. After a full day, giving your body time to recover can make every part of your holiday even more enjoyable. At Spa Bali Moon, you'll find professional massage, beauty, and wellness treatments that help ease tired muscles, refresh your skin, and create a welcome pause from a busy itinerary."
             closingText="Visit our spa in Seminyak or enjoy the same trusted care through our home service, delivered by experienced therapists directly to your villa or hotel."
@@ -225,12 +226,8 @@ export default function Home5() {
           padding-bottom: 100px;
         }
 
-        .homepage-closing-section .reserve-cta-section {
-          padding: 100px 0 !important;
-        }
-
         .homepage-about-paper-section + .feature-section {
-          padding-top: 90px;
+          padding-top: 130px;
         }
 
         .homepage-about-paper-section .about-section-three .image-column .inner-column {
@@ -243,17 +240,10 @@ export default function Home5() {
         }
 
         @media (max-width: 767px) {
-          .homepage-about-paper-section + .feature-section {
-            padding-top: 60px;
-          }
-
           .homepage-faq-section .faq-section {
             padding-bottom: 18px;
           }
 
-          .homepage-closing-section .reserve-cta-section {
-            padding: 0 !important;
-          }
         }
 
       `}</style>

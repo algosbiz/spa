@@ -484,6 +484,7 @@ export default function Home() {
         </div>
         <div className="pricing-closing-section section__decoration-top section__decoration-bottom bg-sub">
           <ReserveCta
+            standardSpacing
             title="Take a Proper Break from Your Bali Itinerary"
             text="Some treatments are chosen because your muscles need attention. Others are for tired skin, overworked feet, a scalp that needs care, or simply the feeling that you have been moving from one plan to the next without stopping. Browse the Spa Bali Moon price list to find the treatment that fits your day."
             closingText="Visit us in Seminyak or arrange selected treatments at your villa or hotel."
@@ -498,10 +499,6 @@ export default function Home() {
 
         .pricing-faq-section .faq-section {
           padding-bottom: 100px;
-        }
-
-        .pricing-closing-section .reserve-cta-section {
-          padding: 100px 0 !important;
         }
 
         .pricing-package-section .package-item-price {
@@ -519,9 +516,6 @@ export default function Home() {
             padding-bottom: 18px;
           }
 
-          .pricing-closing-section .reserve-cta-section {
-            padding: 0 !important;
-          }
         }
       `}</style>
     </>

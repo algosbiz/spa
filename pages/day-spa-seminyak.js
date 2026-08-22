@@ -167,25 +167,6 @@ export default function DaySpaSeminyak() {
             />
           </div>
         </Layout>
-        <style jsx global>{`
-          @media (min-width: 768px) {
-            .banner-two-area + .about-section-two,
-            .banner-two-area + .about-section-two + .funfact-section,
-            .day-spa-shape-visit + .about-section,
-            .day-spa-skilled-therapists + .testimonial-section-two {
-              padding-top: 100px !important;
-              padding-bottom: 100px !important;
-            }
-
-            .day-spa-shape-visit > .about-section,
-            .day-spa-skilled-therapists > .about-section,
-            .faq-section--paper,
-            .day-spa-services > .feature-section {
-              padding-top: 140px !important;
-              padding-bottom: 140px !important;
-            }
-          }
-        `}</style>
       </>
     );
 }

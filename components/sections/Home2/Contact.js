@@ -3,7 +3,7 @@ import React from 'react';
 export default function Home2_Contact() {
     return (
         <>
-        <section id="contact" className="contact-section-two section__decoration-top section__decoration-bottom"
+        <section id="contact" className="contact-section-two section__decoration-top section__decoration-bottom pt-100 pb-100"
             style={{backgroundImage: 'url(/images/bg/contact-two-bg.jpg)'}}>
             <div className="container">
                 <div className="row justify-content-end">

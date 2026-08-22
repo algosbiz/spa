@@ -32,6 +32,7 @@ export default function Home1_About({
     buttonText = "Learn More",
     buttonLink = "/seminyak/pricing",
     image = "/images/about/about-image.png",
+    treatmentLayout = false,
     leftShapeSrc,
     rightShapeSrc,
 }) {
@@ -45,11 +46,12 @@ export default function Home1_About({
     )
     const hasTreatmentLeftShape = isTreatmentLeafShape(resolvedLeftShape)
     const hasTreatmentRightShape = isTreatmentLeafShape(resolvedRightShape)
-    const hasTreatmentImage = typeof image === "string" && image.startsWith("/images/services/")
+    const usesTreatmentLayout = treatmentLayout
+        || (typeof image === "string" && image.startsWith("/images/services/"))
 
     return (
         <>
-            <section id="about" className={`about-section pt-130 pb-100${hasTreatmentImage ? " about-section--treatment" : ""}`}>
+            <section id="about" className={`about-section pt-130 pb-100${usesTreatmentLayout ? " about-section--treatment" : ""}`}>
                 <div className={`shape1 wow slideInLeft${hasTreatmentLeftShape ? " treatment-leaf-position--left" : ""}`} data-wow-delay="200ms" data-wow-duration="1500ms">
                     <img src={resolvedLeftShape} alt="" aria-hidden="true" />
                 </div>

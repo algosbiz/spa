@@ -692,27 +692,32 @@ export default function OutcallHomeServiceMassage() {
             removeBottomPadding
           />
           <Funfact items={outcallHighlights} />
-          <About
-            subTitle="Spa & Beauty Service"
-            title={<>Outcall Massage &amp; Body Treatments</>}
-            text="Enjoy professional massage and body treatments in the comfort of your villa, hotel, or accommodation. Choose from our selection of treatments:"
-            featuresLeft={[
-              "Couple Massage — Relax side by side while sharing a massage experience together.",
-              "Shiatsu — Release muscle tension using gentle Japanese pressure-point techniques.",
-              "Thai Massage — Improve flexibility and posture with assisted stretching and acupressure.",
-              "Cream Bath — Revitalize your hair while supporting softness and freshness.",
-            ]}
-            featuresRight={[
-              "Body Scrub — Softly exfoliate the skin and promote smoothness.",
-              "Mani-Pedi — Maintain clean and well-groomed hands and feet with professional care.",
-              "Hot Stone — Soothe muscle tension using warm stones for deeper relaxation.",
-              "Facial Care — Cleanse and refresh the skin to restore a healthy appearance.",
-            ]}
-            buttonText="Book Now"
-            buttonLink={bookingUrl}
-            image="/images/homepage/homepage-3.webp"
-          />
+          <div className="outcall-treatment-panel section__decoration-top section__decoration-bottom bg-sub">
+            <About
+              treatmentLayout
+              subTitle="Spa & Beauty Service"
+              title={<>Outcall Massage &amp; Body Treatments</>}
+              text="Enjoy professional massage and body treatments in the comfort of your villa, hotel, or accommodation. Choose from our selection of treatments:"
+              featuresLeft={[
+                "Couple Massage — Relax side by side while sharing a massage experience together.",
+                "Shiatsu — Release muscle tension using gentle Japanese pressure-point techniques.",
+                "Thai Massage — Improve flexibility and posture with assisted stretching and acupressure.",
+                "Cream Bath — Revitalize your hair while supporting softness and freshness.",
+              ]}
+              featuresRight={[
+                "Body Scrub — Softly exfoliate the skin and promote smoothness.",
+                "Mani-Pedi — Maintain clean and well-groomed hands and feet with professional care.",
+                "Hot Stone — Soothe muscle tension using warm stones for deeper relaxation.",
+                "Facial Care — Cleanse and refresh the skin to restore a healthy appearance.",
+              ]}
+              buttonText="Book Now"
+              buttonLink={bookingUrl}
+              image="/images/homepage/homepage-3.webp"
+            />
+          </div>
           <AboutReverse
+            paperDecoration={false}
+            treatmentLayout
             subTitle="Reserve Your Home Service Massage"
             title={<>Get Your Massage Service at Home</>}
             text="Enjoy professional Balinese massage and spa treatments at your home, hotel, or villa throughout the day. With flexible appointment times and responsive booking support, the process is simple and convenient. When booking a home service, you can expect:"
@@ -739,7 +744,7 @@ export default function OutcallHomeServiceMassage() {
             />
           </div>
           <HomeServiceInfo plain />
-          <div className="outcall-closing-panel">
+          <div className="outcall-closing-panel section__decoration-top section__decoration-bottom bg-sub pb-100">
             <Faq
               subTitle="Frequently Asked Questions"
               title={<>Home Service Massage</>}
@@ -748,6 +753,7 @@ export default function OutcallHomeServiceMassage() {
               columns={2}
             />
             <ReserveCta
+              bottomSpacing={0}
               title="Home Service Massage in Seminyak"
               text="Professional spa treatments are available at your home, hotel, or villa. An additional IDR 75,000 per therapist applies for home service in Seminyak and nearby areas."
               closingText="For in-spa treatments, bookings should be made on-site based on your preferred time."

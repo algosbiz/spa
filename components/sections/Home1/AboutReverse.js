@@ -33,6 +33,7 @@ export default function Home1_AboutReverse({
     buttonLink = "/seminyak/pricing",
     image = "/images/about/about-image.png",
     paperDecoration = true,
+    treatmentLayout = false,
     leftShapeSrc,
     rightShapeSrc,
 }) {
@@ -46,11 +47,12 @@ export default function Home1_AboutReverse({
     )
     const hasTreatmentLeftShape = isTreatmentLeafShape(resolvedLeftShape)
     const hasTreatmentRightShape = isTreatmentLeafShape(resolvedRightShape)
-    const hasTreatmentImage = typeof image === "string" && image.startsWith("/images/services/")
+    const usesTreatmentLayout = treatmentLayout
+        || (typeof image === "string" && image.startsWith("/images/services/"))
 
     return (
         <>
-            <section id="about" className={`about-section${paperDecoration ? " section__decoration-top section__decoration-bottom bg-sub" : ""} pt-130 pb-130${hasTreatmentImage ? " about-section--treatment" : ""}`}>
+            <section id="about" className={`about-section${paperDecoration ? " section__decoration-top section__decoration-bottom bg-sub" : ""} pt-130 pb-130${usesTreatmentLayout ? " about-section--treatment" : ""}`}>
                 <div className={`shape1 wow slideInLeft${hasTreatmentLeftShape ? " treatment-leaf-position--left" : ""}`} data-wow-delay="200ms" data-wow-duration="1500ms" style={{ bottom: '120px' }}>
                     <img src={resolvedLeftShape} alt="" aria-hidden="true" />
                 </div>

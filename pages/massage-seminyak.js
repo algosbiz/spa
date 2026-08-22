@@ -142,6 +142,7 @@ export default function MassageSeminyak() {
                     />
                 </div>
                 <ReserveCta
+                    standardSpacing
                     title="Make Space for Yourself in Seminyak"
                     text="Between beach mornings, busy afternoons, and evenings spent discovering the best of Bali, a massage can create a quiet pause in the middle of your stay. Spa Bali Moon offers traditional Balinese therapies, targeted massage treatments, beauty care, and relaxing spa experiences for guests who want to rest, recover, or simply enjoy some uninterrupted time for themselves."
                     closingText="Visit our spa in Seminyak or arrange selected treatments at your hotel, villa, or private accommodation through our home service."

@@ -757,19 +757,53 @@ svg.icon[viewBox="0 0 25 26"],
 }
 // Section header area end here ***
 
-// The torn-paper artwork occupies roughly 40px of the section's apparent
-// whitespace. Preserve each section's intended spacing rhythm on desktop by
-// adding that visual safe area to the utilities used by decorated panels.
+// The torn-paper artwork occupies roughly 40px of a section's apparent
+// whitespace. Give every decorated content panel the same 130px visual
+// clearance, regardless of the spacing utility used by its component.
 @media (min-width: 768px) {
-	@each $space in 100, 130, 170 {
-		.section__decoration-top.pt-#{$space},
-		.section__decoration-top > .pt-#{$space} {
-			padding-top: #{$space + 40}px !important;
-		}
+	.section__decoration-top:is(.pt-100, .pt-130, .pt-170),
+	.section__decoration-top > :is(.pt-100, .pt-130, .pt-170) {
+		padding-top: 170px !important;
+	}
 
-		.section__decoration-bottom.pb-#{$space},
-		.section__decoration-bottom > .pb-#{$space} {
-			padding-bottom: #{$space + 40}px !important;
-		}
+	.section__decoration-bottom:is(.pb-100, .pb-130, .pb-170),
+	.section__decoration-bottom > :is(.pb-100, .pb-130, .pb-170) {
+		padding-bottom: 170px !important;
+	}
+}
+
+@media (max-width: 767px) {
+	.section__decoration-top {
+		padding-top: 90px !important;
+	}
+
+	.section__decoration-bottom {
+		padding-bottom: 90px !important;
+	}
+
+	.section__decoration-top > :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section) {
+		padding-top: 0 !important;
+	}
+
+	.section__decoration-bottom > :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section) {
+		padding-bottom: 0 !important;
+	}
+
+	.section__decoration-bottom + :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section) {
+		padding-top: 18px !important;
+	}
+
+	.about-section--treatment:has(+ .section__decoration-top),
+	.about-section--treatment:has(+ div > .faq-section--paper) {
+		padding-bottom: 18px !important;
+	}
+
+	.section__decoration-bottom + .about-section--treatment {
+		padding-top: 18px !important;
+	}
+
+	.reserve-cta-section.pt-100 {
+		padding-top: 18px !important;
+		padding-bottom: 18px !important;
 	}
 }

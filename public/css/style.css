@@ -2145,38 +2145,18 @@ svg.icon[viewBox="0 0 25 26"] > *,
   background: url(../images/shape/section-shape-bottom.png) no-repeat center bottom;
 }
 
-/* The torn-paper artwork occupies roughly 40px of the section's apparent
-   whitespace. Preserve each section's intended spacing rhythm on desktop by
-   adding that visual safe area to decorated panels. */
+/* The torn-paper artwork occupies roughly 40px of a section's apparent
+   whitespace. Give every decorated content panel the same 130px visual
+   clearance, regardless of the spacing utility used by its component. */
 @media (min-width: 768px) {
-  .section__decoration-top.pt-100,
-  .section__decoration-top > .pt-100 {
-    padding-top: 140px !important;
-  }
-
-  .section__decoration-bottom.pb-100,
-  .section__decoration-bottom > .pb-100 {
-    padding-bottom: 140px !important;
-  }
-
-  .section__decoration-top.pt-130,
-  .section__decoration-top > .pt-130 {
+  .section__decoration-top:is(.pt-100, .pt-130, .pt-170),
+  .section__decoration-top > :is(.pt-100, .pt-130, .pt-170) {
     padding-top: 170px !important;
   }
 
-  .section__decoration-bottom.pb-130,
-  .section__decoration-bottom > .pb-130 {
+  .section__decoration-bottom:is(.pb-100, .pb-130, .pb-170),
+  .section__decoration-bottom > :is(.pb-100, .pb-130, .pb-170) {
     padding-bottom: 170px !important;
-  }
-
-  .section__decoration-top.pt-170,
-  .section__decoration-top > .pt-170 {
-    padding-top: 210px !important;
-  }
-
-  .section__decoration-bottom.pb-170,
-  .section__decoration-bottom > .pb-170 {
-    padding-bottom: 210px !important;
   }
 }
 
@@ -3685,79 +3665,9 @@ textarea.form-control {
 /* Keep the reused about layouts balanced on the Outcall page. The source
    photography is portrait-oriented, while these component masks are not. */
 
-/* A torn edge introduces a cream paper panel.  The Spa Packages overview is
-   the lead-in to prices, not a second paper panel, so keep it on the white
-   page and reserve the torn cream treatment for the price section below. */
-.outcall-page > .about-section.section__decoration-top.section__decoration-bottom.bg-sub {
-  background-color: transparent !important;
-}
-
-.outcall-page > .about-section.section__decoration-top.section__decoration-bottom::before,
-.outcall-page > .about-section.section__decoration-top.section__decoration-bottom::after {
-  display: none;
-}
-
-/* The treatment overview is the preceding cream paper panel.  It sits after
-   the white highlights section and before the white package overview. */
-.outcall-page > .funfact-section + .about-section {
-  background-color: var(--theme-color-gray);
-}
-
-.outcall-page > .funfact-section + .about-section::before,
-.outcall-page > .funfact-section + .about-section::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  pointer-events: none;
-}
-
-.outcall-page > .funfact-section + .about-section::before {
-  top: 0;
-  height: 76px;
-  background: url(../images/shape/section-shape-top.png) no-repeat center top;
-}
-
-.outcall-page > .funfact-section + .about-section::after {
-  bottom: 0;
-  height: 74px;
-  background: url(../images/shape/section-shape-bottom.png) no-repeat center bottom;
-}
-
 /* Keep the final FAQ and booking call-to-action on one cream paper panel. */
 .outcall-page > .outcall-closing-panel {
-  position: relative;
-  z-index: 1;
   overflow: hidden;
-  padding-bottom: 100px;
-  background-color: var(--theme-color-gray);
-}
-
-@media (max-width: 767px) {
-  .outcall-page > .outcall-closing-panel {
-    padding-bottom: 50px;
-  }
-}
-
-.outcall-page > .outcall-closing-panel::before,
-.outcall-page > .outcall-closing-panel::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  pointer-events: none;
-}
-
-.outcall-page > .outcall-closing-panel::before {
-  top: 0;
-  height: 76px;
-  background: url(../images/shape/section-shape-top.png) no-repeat center top;
-}
-
-.outcall-page > .outcall-closing-panel::after {
-  bottom: 0;
-  height: 74px;
-  background: url(../images/shape/section-shape-bottom.png) no-repeat center bottom;
 }
 
 .outcall-page > .outcall-closing-panel > .faq-section,
@@ -7975,8 +7885,6 @@ textarea.form-control {
 
 .map-section--contact {
   background-color: var(--theme-color-gray);
-  padding-top: 130px;
-  padding-bottom: 130px;
 }
 
 .map-section--contact iframe {
@@ -7987,13 +7895,6 @@ textarea.form-control {
 .map-section--contact::after {
   z-index: 2;
   pointer-events: none;
-}
-
-@media (max-width: 767px) {
-  .map-section--contact {
-    padding-top: 90px;
-    padding-bottom: 90px;
-  }
 }
 
 .map-block iframe {
