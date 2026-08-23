@@ -175,7 +175,8 @@ export default function SportsMassage() {
           />
         </div>
         <div className="sports-massage-services section__decoration-top section__decoration-bottom bg-sub">
-          <Services title="Our Services Will Make You Glow" />
+          {/* <Services title="Our Services Will Make You Glow" /> */}
+          <Services title="Our Services Will Make You Glow" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

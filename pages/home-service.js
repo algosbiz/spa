@@ -10,6 +10,7 @@ import HomeServiceBanner from "../components/sections/HomeService/Banner";
 import HomeServiceInfo from "../components/sections/HomeService/Info";
 import PackageSection from "@/components/sections/Home1/Package";
 import Video from "../components/sections/Home1/Video";
+
 export default function HomeServicePage() {
     return (
       <>
@@ -28,7 +29,7 @@ export default function HomeServicePage() {
           <Testimonial />
           <Faq />
           <Video />
-          <Services />
+          <Services showFullTreatmentSlider />
         </Layout>
       </>
     );

@@ -2145,10 +2145,8 @@ svg.icon[viewBox="0 0 25 26"] > *,
   background: url(../images/shape/section-shape-bottom.png) no-repeat center bottom;
 }
 
-/* The torn-paper artwork occupies roughly 40px of a section's apparent
-   whitespace. Give every decorated content panel the same 130px visual
-   clearance, regardless of the spacing utility used by its component. */
-@media (min-width: 768px) {
+/* Keep the existing compact rhythm on tablet-sized layouts. */
+@media (min-width: 768px) and (max-width: 991px) {
   .section__decoration-top:is(.pt-100, .pt-130, .pt-170),
   .section__decoration-top > :is(.pt-100, .pt-130, .pt-170) {
     padding-top: 170px !important;
@@ -2157,6 +2155,44 @@ svg.icon[viewBox="0 0 25 26"] > *,
   .section__decoration-bottom:is(.pb-100, .pb-130, .pb-170),
   .section__decoration-bottom > :is(.pb-100, .pb-130, .pb-170) {
     padding-bottom: 170px !important;
+  }
+}
+
+/* Desktop torn-paper rhythm: 150px of visible breathing room on each side
+   of the torn edge (roughly 300px content-to-content). The visual edge sits
+   about 40px inside the top artwork and 34px inside the bottom artwork, so
+   the physical padding values differ while the visible areas remain equal. */
+@media (min-width: 992px) {
+  .section__decoration-bottom.mb-130 {
+    margin-bottom: 0 !important;
+  }
+
+  .section__decoration-top:is(.pt-100, .pt-130, .pt-170),
+  .section__decoration-top > :is(.pt-100, .pt-130, .pt-170) {
+    padding-top: 190px !important;
+  }
+
+  .section__decoration-bottom:is(.pb-100, .pb-130, .pb-170),
+  .section__decoration-bottom > :is(.pb-100, .pb-130, .pb-170) {
+    padding-bottom: 184px !important;
+  }
+
+  /* Plain section immediately before a top tear. Support both direct
+     sections and the neutral wrappers used around FAQ and CTA components. */
+  section:not(.section__decoration-bottom):has(+ .section__decoration-top),
+  section:not(.section__decoration-bottom):has(+ * > .section__decoration-top),
+  *:has(+ .section__decoration-top) > section:last-child:not(.section__decoration-bottom),
+  *:has(+ * > .section__decoration-top) > section:last-child:not(.section__decoration-bottom) {
+    padding-bottom: 110px !important;
+  }
+
+  /* Plain section immediately after a bottom tear. The extra 34px already
+     visible below the artwork completes this side's 150px visual area. */
+  .section__decoration-bottom + section:not(.section__decoration-top),
+  .section__decoration-bottom + * > section:first-child:not(.section__decoration-top),
+  *:has(> .section__decoration-bottom) + section:not(.section__decoration-top),
+  *:has(> .section__decoration-bottom) + * > section:first-child:not(.section__decoration-top) {
+    padding-top: 116px !important;
   }
 }
 
@@ -9542,6 +9578,19 @@ textarea.form-control {
   color: var(--theme-color2);
 }
 
+.service-section-two .service-navigation-icon {
+  display: flex;
+}
+
+.service-section-two .service-navigation-icon--previous {
+  transform: rotate(180deg);
+}
+
+.service-section-two .service-navigation-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
 @media (max-width: 991px) {
   .service-section-two .service-arry-prev-two {
     display: none;
@@ -9627,6 +9676,13 @@ textarea.form-control {
   transition: 0.9s;
 }
 
+.service-block-two .inner-box .image-box .icon .service-treatment-icon {
+  width: 43px;
+  height: 46px;
+  object-fit: contain;
+  transition: filter 0.3s, transform 0.9s;
+}
+
 .service-block-two .inner-box .image-box .icon svg [fill=white] {
   fill: var(--theme-color1);
 }
@@ -9692,6 +9748,11 @@ textarea.form-control {
 }
 
 .service-block-two .inner-box:hover .icon svg {
+  transform: rotateY(360deg);
+}
+
+.service-block-two .inner-box:hover .icon .service-treatment-icon {
+  filter: brightness(0) invert(1);
   transform: rotateY(360deg);
 }
 

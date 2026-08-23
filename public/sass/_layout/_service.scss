@@ -121,6 +121,16 @@
 			display: none;
 		}
 	}
+	.service-navigation-icon {
+		display: flex;
+		&--previous {
+			transform: rotate(180deg);
+		}
+		svg {
+			width: 32px;
+			height: 32px;
+		}
+	}
 	.service-arry-next-two {
 		position: absolute;
 		top: 60%;
@@ -185,6 +195,12 @@
 						stroke: var(--theme-color1);
 					}
 				}
+				.service-treatment-icon {
+					width: 43px;
+					height: 46px;
+					object-fit: contain;
+					transition: filter 0.3s, transform 0.9s;
+				}
 			}
 		}
 		.content {
@@ -238,16 +254,20 @@
 				background-color: var(--theme-color1);
 				border-color: var(--theme-color1);
 				border-width: 2px;
-				svg {
-					transform: rotateY(360deg);
+					svg {
+						transform: rotateY(360deg);
 					[fill="white"] {
 						fill: #fff;
 					}
 					[stroke="white"] {
 						stroke: #fff;
+						}
+					}
+					.service-treatment-icon {
+						filter: brightness(0) invert(1);
+						transform: rotateY(360deg);
 					}
 				}
-			}
 			.arry-icon {
 				opacity: 1;
 				visibility: visible;

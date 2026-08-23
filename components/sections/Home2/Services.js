@@ -14,17 +14,101 @@ const footReflexology = homepageTreatments.find(({ href }) => href === '/seminya
 const headMassage = homepageTreatments.find(({ href }) => href === '/seminyak/head-massage');
 const hotStoneMassage = homepageTreatments.find(({ href }) => href === '/seminyak/hot-stone-massage');
 
+const fullTreatmentSliderIds = [
+    'balinese-massage',
+    'deep-tissue-massage',
+    'sports-massage',
+    'thai-massage',
+    'lymphatic-massage',
+    'shiatsu-massage',
+    'traditional-massage',
+    'virgin-cold-press-coconut-oil-massage',
+    'foot-massage',
+    'body-scrub',
+    'hair-cream-bath',
+    'manicure-pedicure',
+    'couple-massage-balinese',
+];
+
+const treatmentIconById = {
+    'balinese-massage': '/images/spa/Balinese.svg',
+    'body-scrub': '/images/spa/Scrub.svg',
+    'couple-massage-balinese': '/images/spa/Couple.svg',
+    'deep-tissue-massage': '/images/spa/DeepTissue.svg',
+    'foot-massage': '/images/spa/FootMassage.svg',
+    'hair-cream-bath': '/images/spa/CreamBath.svg',
+    'lymphatic-massage': '/images/spa/Lymphatic.svg',
+    'manicure-pedicure': '/images/spa/Manicure.svg',
+    'shiatsu-massage': '/images/spa/Shiatsu.svg',
+    'sports-massage': '/images/spa/sports.svg',
+    'thai-massage': '/images/spa/thai.svg',
+    'traditional-massage': '/images/spa/Balinese.svg',
+    'virgin-cold-press-coconut-oil-massage': '/images/spa/CoconutOil.svg',
+};
+
+const ArrowIcon = () => (
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M25.8282 12.5835L19.9192 6.67445C19.7069 6.42659 19.3339 6.3977 19.0861 6.61001C18.8382 6.82227 18.8093 7.19531 19.0216 7.44316C19.0414 7.46627 19.0629 7.48785 19.0861 7.5076L23.9846 12.4121H0.59088C0.264566 12.4121 0 12.6766 0 13.003C0 13.3294 0.264566 13.5939 0.59088 13.5939H23.9846L19.0861 18.4924C18.8382 18.7047 18.8093 19.0777 19.0216 19.3256C19.2339 19.5734 19.6069 19.6023 19.8548 19.39C19.8779 19.3702 19.8995 19.3487 19.9192 19.3256L25.8282 13.4166C26.0573 13.1862 26.0573 12.8139 25.8282 12.5835Z"
+            fill="currentColor"
+        />
+    </svg>
+);
+
+const AdditionalTreatmentCard = ({ treatment }) => (
+    <div className="inner-box">
+            <div className="image-box">
+                <div className="image">
+                    <img src={treatment.image} alt={treatment.name} />
+                </div>
+                <div className="icon">
+                    <img
+                        className="service-treatment-icon"
+                        src={treatmentIconById[treatment.id]}
+                        alt=""
+                        aria-hidden="true"
+                    />
+                </div>
+            </div>
+            <div className="content">
+                <h3 className="title">
+                    <Link href={treatment.href || '/contact'}>{treatment.name}</Link>
+                </h3>
+                <p className="text">{treatment.desc}</p>
+            </div>
+            <div className="shape">
+                <img src="/images/service/shape.png" alt="" aria-hidden="true" />
+            </div>
+            <Link
+                href={treatment.href || '/contact'}
+                className="arry-icon"
+                aria-label={`View ${treatment.name}`}
+            >
+                <ArrowIcon />
+            </Link>
+    </div>
+);
+
 export default function Home2_Services({
     subTitle = "Services",
     title = (<>Our Services Will Make <br /> You Glow</>),
     paperBackground = false,
+    additionalTreatmentIds = [],
+    showFullTreatmentSlider = false,
+    embedded = false,
 }) {
     const router = useRouter();
     const currentTreatmentHref = TREATMENT_LINKS.find((treatment) =>
         treatment.href === router.pathname || treatment.href === `/seminyak${router.pathname}`
     )?.href;
+    const sliderTreatmentIds = showFullTreatmentSlider
+        ? fullTreatmentSliderIds
+        : additionalTreatmentIds;
+    const additionalTreatments = sliderTreatmentIds
+        .map((id) => homepageTreatments.find((treatment) => treatment.id === id))
+        .filter((treatment) => treatment && treatmentIconById[treatment.id]);
 
-    if (currentTreatmentHref) {
+    if (currentTreatmentHref && !showFullTreatmentSlider) {
         const featureSection = (
             <Feature
                 showHeader
@@ -52,6 +136,7 @@ export default function Home2_Services({
         loop: false,
         rewind: true,
         watchOverflow: true,
+        grabCursor: true,
         navigation: {
             nextEl: '.service-arry-next-two',
             prevEl: '.service-arry-prev-two',
@@ -82,7 +167,7 @@ export default function Home2_Services({
         <>
             <section
                 id="services"
-                className={`service-section-two section__decoration-top section__decoration-bottom pt-130 pb-100${paperBackground ? " service-section-two--paper bg-sub" : ""}`}
+                className={`service-section-two${embedded ? "" : " section__decoration-top section__decoration-bottom"} pt-130 pb-100${paperBackground ? " service-section-two--paper bg-sub" : ""}`}
             >
                 <div className="container">
                     <div className="section-header mb-60 center">
@@ -114,7 +199,6 @@ export default function Home2_Services({
                         <h2 className="title wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{title}</h2>
                     </div>
                     <Swiper {...swiperOptions} className="swiper service-slider-two">
-                        <div className="swiper-wrapper">
                             <SwiperSlide className="swiper-slide service-block-two">
                                 <div className="inner-box">
                                     <div className="image-box">
@@ -376,6 +460,12 @@ export default function Home2_Services({
                                     </Link>
                                 </div>
                             </SwiperSlide>
+
+                            {additionalTreatments.map((treatment) => (
+                                <SwiperSlide key={treatment.id} className="swiper-slide service-block-two">
+                                    <AdditionalTreatmentCard treatment={treatment} />
+                                </SwiperSlide>
+                            ))}
                             {/* Legacy duplicate slide intentionally excluded from the slider.
                             <SwiperSlide className="swiper-slide service-block-two">
                                 <div className="inner-box">
@@ -452,11 +542,18 @@ export default function Home2_Services({
                                 </div>
                             </SwiperSlide>
                             */}
-                        </div>
                     </Swiper>
                 </div>
-                <button className="service-arry-prev-two"><i className="fa-light fa-arrow-left"></i></button>
-                <button className="service-arry-next-two"><i className="fa-light fa-arrow-right"></i></button>
+                <button className="service-arry-prev-two" aria-label="Previous treatments">
+                    <span className="service-navigation-icon service-navigation-icon--previous">
+                        <ArrowIcon />
+                    </span>
+                </button>
+                <button className="service-arry-next-two" aria-label="Next treatments">
+                    <span className="service-navigation-icon">
+                        <ArrowIcon />
+                    </span>
+                </button>
             </section>
         </>
     )
