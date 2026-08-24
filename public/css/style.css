@@ -2177,6 +2177,12 @@ svg.icon[viewBox="0 0 25 26"] > *,
     padding-bottom: 184px !important;
   }
 
+  /* The bottom artwork leaves about 34px visible between its torn edge and
+     the next element. Complete the footer side to the same visual 150px. */
+  .section__decoration-bottom:has(> .service-section-two) + .footer-two-area {
+    padding-top: 116px;
+  }
+
   /* Plain section immediately before a top tear. Support both direct
      sections and the neutral wrappers used around FAQ and CTA components. */
   section:not(.section__decoration-bottom):has(+ .section__decoration-top),
@@ -2197,50 +2203,48 @@ svg.icon[viewBox="0 0 25 26"] > *,
 }
 
 @media (max-width: 767px) {
-  /* The torn artwork is 74-76px tall. Its visible edge sits near the middle
-     of that image, so paper content needs a larger inset than an adjacent
-     plain section to create the same visual gap on both sides. */
+  /* Mobile torn-paper rhythm: 75px of visible breathing room on each side
+     of the torn edge. The top edge sits about 40px inside its artwork and
+     the bottom edge about 34px inside, so the physical values differ. */
   .section__decoration-top {
-    padding-top: 90px !important;
+    padding-top: 115px !important;
   }
 
   .section__decoration-bottom {
-    padding-bottom: 90px !important;
+    padding-bottom: 109px !important;
   }
 
   /* Some paper panels are wrappers around a section that already owns its
      spacing. Let the wrapper provide the safe area instead of doubling it. */
-  .section__decoration-top > :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section) {
+  .section__decoration-top > :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section, .service-section-two) {
     padding-top: 0 !important;
   }
 
-  .section__decoration-bottom > :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section) {
+  .section__decoration-bottom > :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section, .service-section-two) {
     padding-bottom: 0 !important;
   }
 
-  /* A plain section following the bottom tear only needs the remaining
-     18px: roughly 34px of the artwork is already visible below the paper
-     edge, producing the same ~52px visual clearance as the top tear. */
-  .section__decoration-bottom + :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section) {
-    padding-top: 18px !important;
+  /* Plain content before a top tear contributes the remaining 35px; the
+     artwork itself supplies approximately 40px to complete the visual 75px. */
+  section:not(.section__decoration-bottom):has(+ .section__decoration-top),
+  section:not(.section__decoration-bottom):has(+ * > .section__decoration-top),
+  *:has(+ .section__decoration-top) > section:last-child:not(.section__decoration-bottom),
+  *:has(+ * > .section__decoration-top) > section:last-child:not(.section__decoration-bottom) {
+    padding-bottom: 35px !important;
   }
 
-  /* Keep non-paper treatment sections visually balanced when they sit
-     directly between torn-paper panels. */
-  .about-section--treatment:has(+ .section__decoration-top),
-  .about-section--treatment:has(+ div > .faq-section--paper) {
-    padding-bottom: 18px !important;
+  /* The bottom artwork already supplies approximately 34px below its edge;
+     the following white section contributes 41px to complete 75px. */
+  .section__decoration-bottom + section:not(.section__decoration-top),
+  .section__decoration-bottom + * > section:first-child:not(.section__decoration-top),
+  *:has(> .section__decoration-bottom) + section:not(.section__decoration-top),
+  *:has(> .section__decoration-bottom) + * > section:first-child:not(.section__decoration-top) {
+    padding-top: 41px !important;
   }
 
-  .section__decoration-bottom + .about-section--treatment {
-    padding-top: 18px !important;
-  }
-
-  /* Treatment CTA sections are separated from the FAQ and Services paper
-     panels by neutral div wrappers, so normalize both of their outer edges. */
-  .reserve-cta-section.pt-100 {
-    padding-top: 18px !important;
-    padding-bottom: 18px !important;
+  /* The footer follows the final bottom tear directly on treatment pages. */
+  .section__decoration-bottom + .footer-two-area {
+    padding-top: 41px;
   }
 }
 
@@ -9632,6 +9636,35 @@ textarea.form-control {
 
 .service-slider-two {
   padding-bottom: 35px;
+}
+
+/* Treatment names wrap to different line counts. Let the tallest slide set
+   the row height, then stretch every card to that shared height. */
+.section__decoration-bottom:has(> .service-section-two) .service-slider-two {
+  padding-bottom: 0;
+}
+
+.section__decoration-bottom:has(> .service-section-two) .service-slider-two .swiper-wrapper {
+  align-items: stretch;
+}
+
+.section__decoration-bottom:has(> .service-section-two) .service-slider-two .service-block-two {
+  display: flex;
+  height: auto;
+}
+
+.section__decoration-bottom:has(> .service-section-two) .service-slider-two .service-block-two .inner-box {
+  width: 100%;
+  height: 100%;
+}
+
+.section__decoration-bottom:has(> .service-section-two) .service-slider-two .service-block-two .inner-box:hover .arry-icon {
+  width: 45px;
+  height: 45px;
+  bottom: 12px;
+  left: auto;
+  right: 12px;
+  transform: none;
 }
 
 .service-block-two .inner-box {
