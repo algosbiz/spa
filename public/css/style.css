@@ -2178,8 +2178,10 @@ svg.icon[viewBox="0 0 25 26"] > *,
   }
 
   /* The bottom artwork leaves about 34px visible between its torn edge and
-     the next element. Complete the footer side to the same visual 150px. */
-  .section__decoration-bottom:has(> .service-section-two) + .footer-two-area {
+     the footer. Complete every torn-paper ending to the same visual 150px,
+     including pages whose decorated section sits in a neutral wrapper. */
+  .section__decoration-bottom + :is(.footer-area, .footer-two-area),
+  *:has(> .section__decoration-bottom:last-child) + :is(.footer-area, .footer-two-area) {
     padding-top: 116px;
   }
 
@@ -2242,8 +2244,10 @@ svg.icon[viewBox="0 0 25 26"] > *,
     padding-top: 41px !important;
   }
 
-  /* The footer follows the final bottom tear directly on treatment pages. */
-  .section__decoration-bottom + .footer-two-area {
+  /* Complete the footer side to 75px for every mobile torn-paper ending,
+     including a decorated section nested in a neutral wrapper. */
+  .section__decoration-bottom + :is(.footer-area, .footer-two-area),
+  *:has(> .section__decoration-bottom:last-child) + :is(.footer-area, .footer-two-area) {
     padding-top: 41px;
   }
 }

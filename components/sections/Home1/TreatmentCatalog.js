@@ -239,6 +239,11 @@ export default function TreatmentCatalog({
           border-bottom: 1px solid rgba(95, 90, 84, 0.14);
         }
 
+        .treatment-catalog__column .package-block:last-child .treatment-catalog__item {
+          padding-bottom: 0;
+          border-bottom: 0;
+        }
+
         .treatment-catalog__column {
           display: flex;
           flex-direction: column;
