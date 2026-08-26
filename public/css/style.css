@@ -2216,6 +2216,12 @@ svg.icon[viewBox="0 0 25 26"] > *,
     padding-bottom: 109px !important;
   }
 
+  /* Utility margins must not be added on top of the measured torn-paper
+     spacing. This mirrors the desktop rule and keeps both sides at 75px. */
+  .section__decoration-bottom.mb-130 {
+    margin-bottom: 0 !important;
+  }
+
   /* Some paper panels are wrappers around a section that already owns its
      spacing. Let the wrapper provide the safe area instead of doubling it. */
   .section__decoration-top > :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section, .service-section-two) {
@@ -4112,6 +4118,12 @@ textarea.form-control {
   width: 240px;
 }
 
+@media (max-width: 575px) {
+  .logo {
+    width: 210px;
+  }
+}
+
 .logo img {
   width: 100%;
 }
@@ -5513,7 +5525,7 @@ textarea.form-control {
   position: relative;
   z-index: 1;
   padding-top: 190px;
-  padding-bottom: 150px;
+  padding-bottom: 184px;
   background: linear-gradient(256deg, rgba(245, 242, 236, 0.5) 0.9%, #f5f2ec 99.99%);
 }
 
@@ -7550,6 +7562,14 @@ textarea.form-control {
     text-align: center;
     justify-content: center;
     gap: 8px;
+  }
+  .funfact-block .inner-box .title {
+    font-size: 26px;
+    line-height: 36px;
+  }
+  .funfact-block .inner-box .content > span {
+    font-size: 15px;
+    line-height: 24px;
   }
 }
 
@@ -10628,12 +10648,15 @@ textarea.form-control {
   overflow: hidden;
   position: relative;
   z-index: 1;
+}
+
+.testimonial-section-two:not(.section__decoration-top) {
   padding-top: 100px !important;
   padding-bottom: 100px !important;
 }
 
 @media (max-width: 767px) {
-  .testimonial-section-two {
+  .testimonial-section-two:not(.section__decoration-top) {
     padding-top: 60px !important;
     padding-bottom: 60px !important;
   }

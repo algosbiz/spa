@@ -2,6 +2,9 @@
 .logo {
 	display: block;
 	width: 240px;
+	@include breakpoint(max-sm) {
+		width: 210px;
+	}
 	img {
 		width: 100%;
 	}

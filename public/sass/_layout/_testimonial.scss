@@ -76,11 +76,13 @@
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
-	padding-top: 100px !important;
-	padding-bottom: 100px !important;
-	@include breakpoint(max-md) {
-		padding-top: 60px !important;
-		padding-bottom: 60px !important;
+	&:not(.section__decoration-top) {
+		padding-top: 100px !important;
+		padding-bottom: 100px !important;
+		@include breakpoint(max-md) {
+			padding-top: 60px !important;
+			padding-bottom: 60px !important;
+		}
 	}
 	.shape1 {
 		position: absolute;

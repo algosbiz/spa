@@ -34,6 +34,14 @@
 			text-align: center;
 			justify-content: center;
 			gap: 8px;
+			.title {
+				font-size: 26px;
+				line-height: 36px;
+			}
+			.content > span {
+				font-size: 15px;
+				line-height: 24px;
+			}
 		}
 	}
 }

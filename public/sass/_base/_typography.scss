@@ -789,6 +789,14 @@ svg.icon[viewBox="0 0 25 26"],
 		padding-bottom: 184px !important;
 	}
 
+	// The bottom artwork leaves about 34px visible between its torn edge and
+	// the footer. Complete every torn-paper ending to the same visual 150px,
+	// including pages whose decorated section sits in a neutral wrapper.
+	.section__decoration-bottom + :is(.footer-area, .footer-two-area),
+	*:has(> .section__decoration-bottom:last-child) + :is(.footer-area, .footer-two-area) {
+		padding-top: 116px;
+	}
+
 	// Plain section immediately before a top tear. Support both direct
 	// sections and the neutral wrappers used around FAQ and CTA components.
 	section:not(.section__decoration-bottom):has(+ .section__decoration-top),
@@ -809,37 +817,55 @@ svg.icon[viewBox="0 0 25 26"],
 }
 
 @media (max-width: 767px) {
+	// Mobile torn-paper rhythm: 75px of visible breathing room on each side
+	// of the torn edge. The top edge sits about 40px inside its artwork and
+	// the bottom edge about 34px inside, so the physical values differ.
 	.section__decoration-top {
-		padding-top: 90px !important;
+		padding-top: 115px !important;
 	}
 
 	.section__decoration-bottom {
-		padding-bottom: 90px !important;
+		padding-bottom: 109px !important;
 	}
 
-	.section__decoration-top > :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section) {
+	// Utility margins must not be added on top of the measured torn-paper
+	// spacing. This mirrors the desktop rule and keeps both sides at 75px.
+	.section__decoration-bottom.mb-130 {
+		margin-bottom: 0 !important;
+	}
+
+	// Some paper panels are wrappers around a section that already owns its
+	// spacing. Let the wrapper provide the safe area instead of doubling it.
+	.section__decoration-top > :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section, .service-section-two) {
 		padding-top: 0 !important;
 	}
 
-	.section__decoration-bottom > :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section) {
+	.section__decoration-bottom > :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section, .service-section-two) {
 		padding-bottom: 0 !important;
 	}
 
-	.section__decoration-bottom + :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section) {
-		padding-top: 18px !important;
+	// Plain content before a top tear contributes the remaining 35px; the
+	// artwork itself supplies approximately 40px to complete the visual 75px.
+	section:not(.section__decoration-bottom):has(+ .section__decoration-top),
+	section:not(.section__decoration-bottom):has(+ * > .section__decoration-top),
+	*:has(+ .section__decoration-top) > section:last-child:not(.section__decoration-bottom),
+	*:has(+ * > .section__decoration-top) > section:last-child:not(.section__decoration-bottom) {
+		padding-bottom: 35px !important;
 	}
 
-	.about-section--treatment:has(+ .section__decoration-top),
-	.about-section--treatment:has(+ div > .faq-section--paper) {
-		padding-bottom: 18px !important;
+	// The bottom artwork already supplies approximately 34px below its edge;
+	// the following white section contributes 41px to complete 75px.
+	.section__decoration-bottom + section:not(.section__decoration-top),
+	.section__decoration-bottom + * > section:first-child:not(.section__decoration-top),
+	*:has(> .section__decoration-bottom) + section:not(.section__decoration-top),
+	*:has(> .section__decoration-bottom) + * > section:first-child:not(.section__decoration-top) {
+		padding-top: 41px !important;
 	}
 
-	.section__decoration-bottom + .about-section--treatment {
-		padding-top: 18px !important;
-	}
-
-	.reserve-cta-section.pt-100 {
-		padding-top: 18px !important;
-		padding-bottom: 18px !important;
+	// Complete the footer side to 75px for every mobile torn-paper ending,
+	// including a decorated section nested in a neutral wrapper.
+	.section__decoration-bottom + :is(.footer-area, .footer-two-area),
+	*:has(> .section__decoration-bottom:last-child) + :is(.footer-area, .footer-two-area) {
+		padding-top: 41px;
 	}
 }

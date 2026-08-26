@@ -459,7 +459,9 @@
 	&-area {
 		@include section;
 		padding-top: 190px;
-		padding-bottom: 150px;
+		// The bottom tear leaves about 34px below its visible edge. Use the
+		// shared 184px inset so the measurable paper-side gap stays at 150px.
+		padding-bottom: 184px;
 		background: linear-gradient(
 			256deg,
 			rgba(245, 242, 236, 0.5) 0.9%,
