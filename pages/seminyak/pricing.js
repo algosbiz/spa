@@ -13,8 +13,9 @@ import PackageIntroText from "../../components/sections/Home1/PackageIntroText";
 import Banner from "../../components/sections/Home2/Banner";
 import ReserveCta from "../../components/sections/Home1/ReserveCta";
 import Faq from "../../components/sections/Home6/Faq";
+import { getListMenuImage } from "@/lib/listMenuImages";
 
-const pricingTreatmentImages = {
+const pricingTreatmentImages = Object.fromEntries(Object.entries({
   "Aloe Vera Massage": "/images/homepage/homepage-12.webp",
   "Aromatherapy Massage": "/images/homepage/homepage-1.webp",
   "Bali Moon Gold Facial": "/images/services/balimoonfacial/balimoonfacial-2.webp",
@@ -43,7 +44,7 @@ const pricingTreatmentImages = {
   "Thai Massage": "/images/services/thaimassage/thaimassage-1.webp",
   "Virgin Cold-Press Coconut Oil Massage": "/images/services/coconutoilmassage/coconutoilmassage-1.webp",
   "Waxing": "/images/services/waxing/waxing-1.webp",
-};
+}).map(([name, image]) => [name, getListMenuImage(name, image)]));
 
 const priceOption = (time, price) => ({ time, price: `IDR ${price}` });
 

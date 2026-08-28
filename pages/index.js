@@ -51,11 +51,6 @@ const differentiators = [
   },
 ];
 
-const treatmentImages = Array.from(
-  { length: 23 },
-  (_, index) => `/images/homepage/homepage-${index + 5}.webp`
-);
-
 export default function Home5() {
   return (
     <>
@@ -64,8 +59,8 @@ export default function Home5() {
           title="Traditional Spa &"
           highlightedTitle="Massage in Seminyak"
           text="Since 2009, Spa Bali Moon has welcomed travellers and local guests with professional massage, beauty, and wellness treatments in Seminyak. Our experienced therapists provide a wide range of traditional Balinese therapies, body treatments, and beauty services at our spa or through convenient home service."
-          primaryImage="/images/homepage/homepage-1.webp"
-          secondaryImage="/images/homepage/homepage-2.webp"
+          primaryImage="/images/home/homepage-1.webp"
+          secondaryImage="/images/home/homepage-2.webp"
         />
         <Step
           subTitle="Start Here"
@@ -86,11 +81,13 @@ export default function Home5() {
               "Personalised treatment recommendations",
             ]}
             ctaHref="/seminyak/pricing"
-            primaryImage="/images/homepage/homepage-3.webp"
-            secondaryImage="/images/homepage/homepage-4.webp"
+            primaryImage="/images/home/homepage-3.webp"
+            secondaryImage="/images/home/homepage-4.webp"
           />
         </div>
-        <Feature images={treatmentImages} />
+        <div className="homepage-service-slider">
+          <Feature />
+        </div>
         <Testimonial
           testimonialsData={[
             {
@@ -195,7 +192,7 @@ export default function Home5() {
             title="A Better Way to Experience Wellness in Bali"
             text="Bali is made for exploring, from beach mornings and surfing sessions to long afternoons discovering the island. After a full day, giving your body time to recover can make every part of your holiday even more enjoyable. At Spa Bali Moon, you'll find professional massage, beauty, and wellness treatments that help ease tired muscles, refresh your skin, and create a welcome pause from a busy itinerary."
             closingText="Visit our spa in Seminyak or enjoy the same trusted care through our home service, delivered by experienced therapists directly to your villa or hotel."
-            backgroundImage="/images/homepage/homepage-28.webp"
+            backgroundImage="/images/home/homepage-5.webp"
           />
         </div>
       </Layout>
@@ -226,8 +223,23 @@ export default function Home5() {
           padding-bottom: 100px;
         }
 
-        .homepage-about-paper-section + .feature-section {
+        .homepage-about-paper-section + .homepage-service-slider .feature-section {
           padding-top: 130px;
+        }
+
+        .homepage-service-slider .feature-block .inner-box .image-box {
+          width: 44%;
+          max-width: 320px;
+          flex: 0 0 44%;
+          aspect-ratio: 63 / 58;
+        }
+
+        .homepage-service-slider .feature-block .inner-box .image-box img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          object-position: center;
         }
 
         .homepage-about-paper-section .about-section-three .image-column .inner-column {
@@ -242,6 +254,21 @@ export default function Home5() {
         @media (max-width: 767px) {
           .homepage-faq-section .faq-section {
             padding-bottom: 18px;
+          }
+
+          .homepage-service-slider .feature-block .inner-box {
+            flex-direction: column;
+            align-items: stretch;
+          }
+
+          .homepage-service-slider .feature-block .inner-box .image-box {
+            width: 100%;
+            max-width: none;
+            flex: none;
+          }
+
+          .homepage-service-slider .feature-block .inner-box .content-box {
+            gap: 24px;
           }
 
         }

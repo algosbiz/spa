@@ -203,7 +203,7 @@ export default function Home2_Services({
                                 <div className="inner-box">
                                     <div className="image-box">
                                         <div className="image">
-                                            <img src="/images/homepage/homepage-22.webp" alt="Foot Reflexology" />
+                                            <img src={footReflexology.image} alt="Foot Reflexology" />
                                         </div>
                                         <div className="icon">
                                             <svg width="43" height="46" viewBox="0 0 43 46" fill="none"
@@ -279,7 +279,7 @@ export default function Home2_Services({
                                 <div className="inner-box">
                                     <div className="image-box">
                                         <div className="image">
-                                            <img src="/images/homepage/homepage-11.webp" alt="Head Massage" />
+                                            <img src={headMassage.image} alt="Head Massage" />
                                         </div>
                                         <div className="icon">
                                             <svg width="39" height="40" viewBox="0 0 39 40" fill="none"
@@ -406,7 +406,7 @@ export default function Home2_Services({
                                 <div className="inner-box">
                                     <div className="image-box">
                                         <div className="image">
-                                            <img src="/images/homepage/homepage-7.webp" alt="Hot Stone Massage" />
+                                            <img src={hotStoneMassage.image} alt="Hot Stone Massage" />
                                         </div>
                                         <div className="icon">
                                             <svg width="46" height="45" viewBox="0 0 46 45" fill="none"

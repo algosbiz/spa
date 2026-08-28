@@ -10,6 +10,7 @@ import PackageSection from "../components/sections/Home1/Package";
 import HomeServiceInfo from "../components/sections/HomeService/Info";
 import Faq from "../components/sections/Home6/Faq";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
+import { getListMenuImage } from "@/lib/listMenuImages";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -22,7 +23,7 @@ const treatment = (id, name, desc, image, options, benefits, children) => ({
   id,
   name,
   desc,
-  image,
+  image: getListMenuImage(name, image),
   options,
   benefits,
   children,
@@ -686,8 +687,8 @@ export default function OutcallHomeServiceMassage() {
             }
             feature2Title="Spa Treatments at Your Place"
             feature2Text="Select your preferred treatment and book a spa session delivered to your location."
-            primaryImage="/images/homepage/homepage-2.webp"
-            secondaryImage="/images/homepage/homepage-4.webp"
+            primaryImage="/images/outcall/outcall-2.webp"
+            secondaryImage="/images/outcall/outcall-3.webp"
             showBrandCard
             removeBottomPadding
           />
@@ -733,7 +734,7 @@ export default function OutcallHomeServiceMassage() {
             ]}
             buttonText="Book Now"
             buttonLink={bookingUrl}
-            image="/images/homepage/homepage-4.webp"
+            image="/images/outcall/outcall-4.webp"
           />
           <div id="outcall-prices">
             <PackageSection
@@ -757,7 +758,7 @@ export default function OutcallHomeServiceMassage() {
               title="Home Service Massage in Seminyak"
               text="Professional spa treatments are available at your home, hotel, or villa. An additional IDR 75,000 per therapist applies for home service in Seminyak and nearby areas."
               closingText="For in-spa treatments, bookings should be made on-site based on your preferred time."
-              backgroundImage="/images/homepage/homepage-28.webp"
+              backgroundImage="/images/outcall/outcall-5.webp"
             />
           </div>
         </main>
