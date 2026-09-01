@@ -21,7 +21,7 @@ export default function Home6_Faq({
 
     return (
         <>
-            <section className={`faq-section${paperDecoration ? " faq-section--paper section__decoration-top section__decoration-bottom bg-sub pt-130 pb-100" : ""}${removeTopPadding || paperDecoration ? "" : largeTopPadding ? " pt-130" : " pt-100"}`}>
+            <section className={`faq-section${showImage ? "" : " faq-section--no-image"}${paperDecoration ? " faq-section--paper section__decoration-top section__decoration-bottom bg-sub pt-130 pb-100" : ""}${removeTopPadding || paperDecoration ? "" : largeTopPadding ? " pt-130" : " pt-100"}`}>
                 <div className="outer-box">
                     <div className="row g-4">
                         {showImage && (

@@ -98,6 +98,9 @@
 		z-index: 1;
 		&::after {
 			z-index: 1;
+			// Seal the partially transparent final PNG row so the dark hero
+			// cannot create a one-pixel seam beneath the torn-paper artwork.
+			box-shadow: inset 0 -2px 0 var(--theme-color-white);
 		}
 		.swiper-pagination-bullets {
 			position: absolute;

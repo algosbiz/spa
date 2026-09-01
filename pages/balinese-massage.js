@@ -74,7 +74,13 @@ const faqItems = [
   },
 ];
 
-export default function Home2() {
+export default function Home2({
+  bannerShapeImage,
+  introLeftShapeImage,
+  introRightShapeImage,
+  benefitsLeftShapeImage,
+  benefitsRightShapeImage,
+}) {
   const treatmentImages = createTreatmentImageSet("balinesemassage", packageOptions.length);
     return (
       <>
@@ -82,6 +88,7 @@ export default function Home2() {
           <div className="balinese-massage-banner">
             <Banner
               image={treatmentImages.hero}
+              shapeImage={bannerShapeImage}
               subTitle="Ancient Healing"
               titleSpan="Balinese Massage"
               title="Seminyak"
@@ -90,6 +97,8 @@ export default function Home2() {
           <AboutOld
             primaryImage={treatmentImages.intro[0]}
             secondaryImage={treatmentImages.intro[1]}
+            leftShapeSrc={introLeftShapeImage}
+            rightShapeSrc={introRightShapeImage}
             subTitle="A Traditional Wellness"
             title={<>What Makes Balinese Massage Unique?</>}
             text="Balinese massage is a traditional treatment influenced by healing practices from Bali, Java, India, and China. The treatment combines acupressure, gentle stretching, skin rolling, and flowing strokes to help reduce tension, improve circulation, and encourage relaxation. Our therapists adapt the pressure and focus areas according to your comfort and preferences."
@@ -121,6 +130,8 @@ export default function Home2() {
           {/* <Contact /> */}
           <About
             image={treatmentImages.details[0]}
+            leftShapeSrc={benefitsLeftShapeImage}
+            rightShapeSrc={benefitsRightShapeImage}
             subTitle="The Benefits"
             title={<>Why Guests Choose Balinese Massage</>}
             text="Our Balinese massage is commonly chosen by travellers, office workers, and active individuals because it combines relaxation techniques with muscle-focused work in a single treatment. Find the benefits that make Balinese massage a favourite among our guests:"

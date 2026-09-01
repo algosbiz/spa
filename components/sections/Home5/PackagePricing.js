@@ -873,7 +873,7 @@ export default function Home5_PackagePricing() {
         return (
           <section
             key={ci}
-            className={`pricing-section-five bg-sub ${decoration}${isFirst ? ' pt-100' : ' pt-40'}${isLast ? ' pb-100' : ' pb-40'}`}
+            className={`pricing-section-five package-pricing-section bg-sub ${decoration}${isFirst ? ' pt-100' : ' pt-40'}${isLast ? ' pb-100' : ' pb-40'}`}
           >
               <div className="container">
                 <div className="section-header mb-60 center">

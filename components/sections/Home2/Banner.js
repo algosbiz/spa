@@ -13,6 +13,7 @@ export default function Home2_Banner({
     text = "",
     openingText = "",
     image = "/images/banner/banner-two-image1.jpg",
+    shapeImage = "/images/shape/banner-two-shape.png",
     buttonText = "Book Now",
     buttonLink = "https://wa.me/6287863175144",
 }) {
@@ -29,7 +30,7 @@ export default function Home2_Banner({
         <>
             <section className="banner-two-area section__decoration-bottom">
                 <div className="banner-two__shape">
-                    <img src="/images/shape/banner-two-shape.png" alt="shape" />
+                    <img src={shapeImage} alt="" aria-hidden="true" />
                 </div>
                 <Swiper {...swiperOptions} className="swiper  banner-two__slider">
                     <div className="swiper-wrapper">
