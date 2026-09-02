@@ -174,8 +174,7 @@ export default function SunburnTreatment() {
           />
         </div>
         <div className="sunburn-treatment-services section__decoration-top section__decoration-bottom bg-sub">
-          {/* <Services title="Our Services Will Make You Glow" /> */}
-          <Services title="Our Services Will Make You Glow" showFullTreatmentSlider embedded />
+          <Services title="Soothe, Restore, and Explore More" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

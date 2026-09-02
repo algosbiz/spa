@@ -200,8 +200,7 @@ export default function ManicurePedicure() {
           />
         </div>
         <div className="manicure-pedicure-services section__decoration-top section__decoration-bottom bg-sub">
-          {/* <Services title="Our Services Will Make You Glow" /> */}
-          <Services title="Our Services Will Make You Glow" showFullTreatmentSlider embedded />
+          <Services title="Complete Your Care Beyond Nails" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sass": "sass --watch public/scss/style.scss:public/css/style.css"
+    "sass": "sass --watch public/sass/style.scss:public/css/style.css --no-source-map"
   },
   "dependencies": {
     "@marsidev/react-turnstile": "^1.5.2",

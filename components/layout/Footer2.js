@@ -83,33 +83,34 @@ const Footer = () => {
                     </div>
                     <div className="col-md-6 col-xl-2">
                         <div className="footer__item">
-                            <h3 className="title">Opening Times</h3>
+                            <h3 className="title">
+                                <Link href="/seminyak/day-spa" style={{ color: 'inherit' }}>
+                                    Day Spa Seminyak
+                                </Link>
+                            </h3>
                             <ul className="time-table">
-                                <li style={{ display: 'block', marginBottom: '15px', borderBottom: '1px solid rgba(95, 90, 84, 0.1)', paddingBottom: '8px' }}>
-                                    <Link href="/seminyak/day-spa" style={{ fontWeight: '700', color: '#2f2924', fontSize: '16px' }}>Day Spa in Seminyak</Link>
-                                </li>
                                 <li style={{ display: 'flex', flexDirection: 'column', marginBottom: '12px', alignItems: 'flex-start' }}>
                                     <span style={{ fontSize: '14px', marginBottom: '2px' }}>Open Daily:</span>
                                     <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>9am - 11pm</span>
-                                </li>
-                                <li style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                                    <span style={{ fontSize: '14px', marginBottom: '2px' }}>
-                                        <Link href="/home-service" style={{ color: '#5f5a54', textDecoration: 'underline', fontWeight: '500' }}>
-                                            Home service fee:
-                                        </Link>
-                                    </span>
-                                    <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>75k / therapist</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div className="col-md-6 col-xl-2">
                         <div className="footer__item">
-                            <h3 className="title">Home Services</h3>
+                            <h3 className="title">
+                                <Link href="/home-service" style={{ color: 'inherit' }}>
+                                    Home Services
+                                </Link>
+                            </h3>
                             <ul className="links">
                                 <li><Link href="/massage-hotel-villa">Massage Hotel &amp; Villa</Link></li>
                                 <li><Link href="/">Massage Seminyak</Link></li>
                                 <li><Link href="/massage-kuta">Massage Kuta</Link></li>
+                                <li style={{ display: 'flex', flexDirection: 'column', marginTop: '12px', alignItems: 'flex-start' }}>
+                                    <span style={{ fontSize: '14px', marginBottom: '2px' }}>Home service fee:</span>
+                                    <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>75k / therapist</span>
+                                </li>
                             </ul>
                         </div>
                     </div>

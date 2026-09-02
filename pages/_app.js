@@ -14,10 +14,12 @@ function MyApp({ Component, pageProps }) {
             setLoading(false);
         }, 1000);
     }, []);
+    // The page always renders; the preloader is a fixed, full-screen overlay on top of
+    // it. Swapping the two out instead would leave the server HTML empty, so crawlers
+    // (and JSON-LD, and <title>) would see nothing but the loading screen.
     return (<>
-        {!loading ? (
-            <Component {...pageProps} />
-        ) : (
+        <Component {...pageProps} />
+        {loading && (
             <div id="preloader">
                 <div className="animation-preloader">
                     <div className="preloader-mark">

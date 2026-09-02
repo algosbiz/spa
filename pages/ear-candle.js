@@ -177,8 +177,7 @@ export default function EarCandle() {
           closingText="Reserve your session and enjoy a calm wellness break during your Bali stay."
         />
         <div className="ear-candle-services section__decoration-top section__decoration-bottom bg-sub">
-          {/* <Services title="Our Services Will Make You Glow" /> */}
-          <Services title="Our Services Will Make You Glow" showFullTreatmentSlider embedded />
+          <Services title="Explore More Ways to Feel Restored" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

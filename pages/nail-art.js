@@ -192,8 +192,7 @@ export default function NailArt() {
           />
         </div>
         <div className="nail-art-services section__decoration-top section__decoration-bottom bg-sub">
-          {/* <Services title="Our Services Will Make You Glow" /> */}
-          <Services title="Our Services Will Make You Glow" showFullTreatmentSlider embedded />
+          <Services title="Explore More Ways to Perfect Your Bali Glow" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

@@ -192,8 +192,7 @@ export default function TraditionalMassage() {
           />
         </div>
         <div className="traditional-massage-services section__decoration-top section__decoration-bottom bg-sub">
-          {/* <Services title="Our Services Will Make You Glow" /> */}
-          <Services title="Our Services Will Make You Glow" showFullTreatmentSlider embedded />
+          <Services title="Go Beyond Traditional Massage" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

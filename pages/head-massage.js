@@ -192,8 +192,7 @@ export default function HeadMassage() {
           />
         </div>
         <div className="head-massage-services section__decoration-top section__decoration-bottom bg-sub">
-          {/* <Services title="Our Services Will Make You Glow" /> */}
-          <Services title="Our Services Will Make You Glow" showFullTreatmentSlider embedded />
+          <Services title="Relax From Head to Toe" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

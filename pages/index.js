@@ -12,6 +12,38 @@ import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Feature from "../components/sections/Home1/Feature";
 import Testimonial from "../components/sections/Home3/Testimonial";
 import { homepageTreatments } from "@/lib/homepageTreatments";
+import { getGoogleReviews, fallbackGoogleReviews } from "@/lib/googleReviews";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://spabalimoon.com";
+
+// Used until the Google Places API is configured, and whenever Google returns no
+// review long enough to fill a slide.
+const fallbackTestimonials = [
+  {
+    name: "Putu Ayu",
+    designation: "Loyal Customer",
+    text: "Layanan di sini sangat luar biasa! Saya merasa jauh lebih segar setelah melakukan perawatan massage. Terapisnya sangat profesional.",
+    stars: 5,
+  },
+  {
+    name: "Made Suardana",
+    designation: "Happy Client",
+    text: "Tempat yang sangat tenang dan nyaman. Fasilitasnya sangat lengkap dan stafnya ramah-ramah. Sangat direkomendasikan!",
+    stars: 5,
+  },
+  {
+    name: "Nyoman Sari",
+    designation: "Relaxed Guest",
+    text: "Saya sering ke sini untuk spa bulanan. Hasilnya selalu memuaskan dan harga yang ditawarkan sangat kompetitif.",
+    stars: 5,
+  },
+  {
+    name: "Ketut Wijaya",
+    designation: "New Client",
+    text: "Pertama kali ke sini dan langsung suka! Pelayanannya cepat dan hasilnya instan terasa di tubuh.",
+    stars: 5,
+  },
+];
 
 const bookingSteps = [
   {
@@ -51,9 +83,47 @@ const differentiators = [
   },
 ];
 
-export default function Home5() {
+export default function Home5({ googleReviews = fallbackGoogleReviews }) {
+  const testimonials =
+    googleReviews.reviews.length > 0
+      ? googleReviews.reviews.map((review) => ({
+          name: review.name,
+          designation: review.relativeTime ? `Google review · ${review.relativeTime}` : "Google review",
+          text: review.text,
+          stars: Math.round(review.rating),
+          avatar: review.photo,
+          sourceUrl: review.url || googleReviews.reviewsUrl,
+        }))
+      : fallbackTestimonials;
+
+  const ratingSchema = googleReviews.isLive &&
+    googleReviews.userRatingCount > 0 && {
+      "@context": "https://schema.org",
+      "@type": "DaySpa",
+      name: "Spa Bali Moon",
+      url: SITE_URL,
+      image: `${SITE_URL}/images/home/homepage-1.webp`,
+      email: "info@spabalimoon.com",
+      areaServed: "Seminyak, Bali",
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: googleReviews.rating,
+        reviewCount: googleReviews.userRatingCount,
+        bestRating: 5,
+        worstRating: 1,
+      },
+    };
+
   return (
     <>
+      {/* Rendered in the body rather than through next/head, which drops script
+          children. Google accepts JSON-LD in either place. */}
+      {ratingSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ratingSchema) }}
+        />
+      )}
       <Layout HeaderStyle="one" FooterStyle="two">
         <Banner
           title="Traditional Spa &"
@@ -83,43 +153,13 @@ export default function Home5() {
             ctaHref="/seminyak/pricing"
             primaryImage="/images/home/homepage-3.webp"
             secondaryImage="/images/home/homepage-4.webp"
+            googleReviews={googleReviews}
           />
         </div>
         <div className="homepage-service-slider">
           <Feature />
         </div>
-        <Testimonial
-          testimonialsData={[
-            {
-              image: "/images/testimonial/testimonial-two-image1.png",
-              name: "Putu Ayu",
-              designation: "Loyal Customer",
-              text: "Layanan di sini sangat luar biasa! Saya merasa jauh lebih segar setelah melakukan perawatan massage. Terapisnya sangat profesional.",
-              stars: 5,
-            },
-            {
-              image: "/images/testimonial/testimonial-two-image2.png",
-              name: "Made Suardana",
-              designation: "Happy Client",
-              text: "Tempat yang sangat tenang dan nyaman. Fasilitasnya sangat lengkap dan stafnya ramah-ramah. Sangat direkomendasikan!",
-              stars: 5,
-            },
-            {
-              image: "/images/testimonial/testimonial-two-image3.png",
-              name: "Nyoman Sari",
-              designation: "Relaxed Guest",
-              text: "Saya sering ke sini untuk spa bulanan. Hasilnya selalu memuaskan dan harga yang ditawarkan sangat kompetitif.",
-              stars: 5,
-            },
-            {
-              image: "/images/testimonial/testimonial-two-image1.png",
-              name: "Ketut Wijaya",
-              designation: "New Client",
-              text: "Pertama kali ke sini dan langsung suka! Pelayanannya cepat dan hasilnya instan terasa di tubuh.",
-              stars: 5,
-            },
-          ]}
-        />
+        <Testimonial testimonialsData={testimonials} />
         <TreatmentCatalog
           subTitle="Signature Collection"
           title="Find Your Perfect Spa Experience"
@@ -276,4 +316,15 @@ export default function Home5() {
       `}</style>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const googleReviews = await getGoogleReviews();
+
+  return {
+    props: { googleReviews },
+    // Google's terms cap caching of Places data at 30 days; a daily refresh keeps the
+    // rating current while costing ~30 Places requests per month.
+    revalidate: 86400,
+  };
 }

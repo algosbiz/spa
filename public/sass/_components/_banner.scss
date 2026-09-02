@@ -151,13 +151,13 @@
 	}
 	&__content {
 		padding-top: 300px;
-		padding-bottom: 170px;
+		padding-bottom: 161px;
 		position: relative;
 		z-index: 1;
 
 		@include breakpoint(max-lg) {
 			padding-top: 200px;
-			padding-bottom: 130px;
+			padding-bottom: 161px;
 		}
 
 		.sub-title {
@@ -280,14 +280,14 @@
 		}
 	}
 	&__content {
-		padding-top: 240px;
-		padding-bottom: 220px;
+		padding-top: 164px;
+		padding-bottom: 161px;
 		position: relative;
 		z-index: 1;
 
 		@include breakpoint(max-lg) {
-			padding-top: 150px;
-			padding-bottom: 130px;
+			padding-top: 164px;
+			padding-bottom: 161px;
 		}
 
 		.sub-title {
@@ -462,9 +462,9 @@
 	&-area {
 		@include section;
 		padding-top: 190px;
-		// The bottom tear leaves about 34px below its visible edge. Use the
-		// shared 184px inset so the measurable paper-side gap stays at 150px.
-		padding-bottom: 184px;
+		// The lower torn tip leaves an 11px tail in the ruler band. A 161px
+		// physical inset therefore produces the required 150px visual gap.
+		padding-bottom: 161px;
 		background: linear-gradient(
 			256deg,
 			rgba(245, 242, 236, 0.5) 0.9%,

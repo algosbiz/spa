@@ -233,8 +233,7 @@ export default function Waxing() {
           />
         </div>
         <div className="waxing-services section__decoration-top section__decoration-bottom bg-sub">
-          {/* <Services title="Our Services Will Make You Glow" /> */}
-          <Services title="Our Services Will Make You Glow" showFullTreatmentSlider embedded />
+          <Services title="Complete Your Smooth-Skin Ritual" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

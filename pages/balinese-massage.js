@@ -114,7 +114,7 @@ export default function Home2({
               title="Our Package Options"
               text="Balinese massage is often combined with treatments such as facials, cream baths, and nail care to create a more complete spa experience. Our treatment packages are created for guests looking to relax, refresh, and make the most of their massage time in Bali."
               packages={packageOptions}
-              leftShapeSrc="/images/shape/testimonial-two-shape-left.png"
+              leftShapeSrc="/images/shape/leaf1.png"
             />
           </div>
           {/* <Marquee /> */}
@@ -125,7 +125,7 @@ export default function Home2({
           {/* <News /> */}
           {/* <Instagram /> */}
 
-          <Testimonial />
+          <Testimonial rightShapeSrc="/images/shape/leaf2.png" />
           {/* <Team /> */}
           {/* <Contact /> */}
           <About
@@ -204,8 +204,7 @@ export default function Home2({
             />
           </div>
           <div className="balinese-massage-services section__decoration-top section__decoration-bottom bg-sub ">
-            {/* <Services title="Our Services Will Make You Glow" /> */}
-            <Services title="Our Services Will Make You Glow" showFullTreatmentSlider embedded />
+            <Services title="Explore Beyond Your Balinese Massage" showFullTreatmentSlider embedded />
           </div>
         </Layout>
         <style jsx global>{`
@@ -224,6 +223,17 @@ export default function Home2({
 
           .balinese-massage-pricing .pricing-section-three .shape2 {
             bottom: 70px;
+          }
+
+          .balinese-massage-pricing .pricing-section-three .shape1 img {
+            width: 180px;
+            height: auto;
+          }
+
+          .testimonial-section-two .shape2 img[src="/images/shape/leaf2.png"],
+          .about-section img[src="/images/shape/leaf4.png"] {
+            width: 130px;
+            height: auto;
           }
 
           @media (min-width: 992px) {

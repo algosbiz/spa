@@ -757,7 +757,7 @@ svg.icon[viewBox="0 0 25 26"],
 }
 // Section header area end here ***
 
-// Keep the existing compact rhythm on tablet-sized layouts.
+// Keep one 150px visible torn-paper rhythm on tablet-sized layouts.
 @media (min-width: 768px) and (max-width: 991px) {
 	.section__decoration-bottom.mb-130 {
 		margin-bottom: 0 !important;
@@ -765,18 +765,12 @@ svg.icon[viewBox="0 0 25 26"],
 
 	.section__decoration-top:is(.pt-100, .pt-130, .pt-170),
 	.section__decoration-top > :is(.pt-100, .pt-130, .pt-170) {
-		padding-top: 170px !important;
-	}
-
-	// A no-image FAQ has another 90px of internal content padding. Its child
-	// padding is therefore calibrated separately from image-first paper panels.
-	.section__decoration-top > .faq-section.faq-section--no-image:is(.pt-100, .pt-130, .pt-170) {
-		padding-top: 121px !important;
+		padding-top: 164px !important;
 	}
 
 	.section__decoration-bottom:is(.pb-100, .pb-130, .pb-170),
 	.section__decoration-bottom > :is(.pb-100, .pb-130, .pb-170) {
-		padding-bottom: 170px !important;
+		padding-bottom: 161px !important;
 	}
 
 	section:not(.section__decoration-bottom):has(+ .section__decoration-top),
@@ -842,8 +836,8 @@ svg.icon[viewBox="0 0 25 26"],
 
 // Desktop torn-paper rhythm: 150px of visible breathing room on each side
 // of the torn edge (roughly 300px content-to-content). The centered desktop
-// ruler band reaches the top artwork after about 19px, while bottom artwork
-// tails vary by section, so the physical padding values are calibrated per side.
+// ruler band meets the upper torn tip 14px into the top artwork and leaves an
+// 11px tail below the lower tip, so the physical insets are 164px and 161px.
 @media (min-width: 992px) {
 	.section__decoration-bottom.mb-130 {
 		margin-bottom: 0 !important;
@@ -851,18 +845,12 @@ svg.icon[viewBox="0 0 25 26"],
 
 	.section__decoration-top:is(.pt-100, .pt-130, .pt-170),
 	.section__decoration-top > :is(.pt-100, .pt-130, .pt-170) {
-		padding-top: 190px !important;
-	}
-
-	// The FAQ subtitle sits inside a 90px inner panel. With no image before it,
-	// 121px makes the measured torn edge-to-subtitle distance exactly 150px.
-	.section__decoration-top > .faq-section.faq-section--no-image:is(.pt-100, .pt-130, .pt-170) {
-		padding-top: 121px !important;
+		padding-top: 164px !important;
 	}
 
 	.section__decoration-bottom:is(.pb-100, .pb-130, .pb-170),
 	.section__decoration-bottom > :is(.pb-100, .pb-130, .pb-170) {
-		padding-bottom: 184px !important;
+		padding-bottom: 161px !important;
 	}
 
 	// The measured content bands leave about 7px of opaque artwork after the
@@ -947,21 +935,34 @@ svg.icon[viewBox="0 0 25 26"],
 }
 
 @media (max-width: 767px) {
-	// Mobile torn-paper rhythm: 75px of visible breathing room on each side
-	// of the torn edge. The top edge sits about 40px inside its artwork and
-	// the bottom edge about 34px inside, so the physical values differ.
+	// Mobile uses a compact 75px visible torn-paper rhythm. The physical
+	// insets include the transparent/irregular part of each PNG.
 	.section__decoration-top {
-		padding-top: 115px !important;
+		padding-top: 89px !important;
 	}
 
 	.section__decoration-bottom {
-		padding-bottom: 109px !important;
+		padding-bottom: 86px !important;
 	}
 
-	// Every mobile hero uses one combined 75px gap before its first section:
-	// 34px of bottom artwork + 41px from the following section.
-	:is(.banner-two-area, .banner-three-area, .banner-five-area).section__decoration-bottom {
-		padding-bottom: 34px !important;
+	// Banner 2 and 3 own their calibrated inset on the inner content element;
+	// do not add the decorated-section inset a second time on mobile.
+	:is(.banner-two-area, .banner-three-area).section__decoration-bottom {
+		padding-bottom: 0 !important;
+	}
+
+	.banner-three-area.section__decoration-top {
+		padding-top: 0 !important;
+	}
+
+	// Banner 2 and 3 place their paper-safe spacing on the inner content.
+	.banner-two__content {
+		padding-bottom: 86px !important;
+	}
+
+	.banner-three__content {
+		padding-top: 89px !important;
+		padding-bottom: 86px !important;
 	}
 
 	// Utility margins must not be added on top of the measured torn-paper
@@ -980,8 +981,7 @@ svg.icon[viewBox="0 0 25 26"],
 		padding-bottom: 0 !important;
 	}
 
-	// The centered mobile slice of the artwork supplies about 40px, leaving
-	// 35px on the preceding plain section for a 75px visible gap.
+	// Complete the opposite side of a top tear to the same 75px ruler.
 	section:not(.section__decoration-bottom):has(+ .section__decoration-top),
 	section:not(.section__decoration-bottom):has(+ * > .section__decoration-top),
 	*:has(+ .section__decoration-top) > section:last-child:not(.section__decoration-bottom),
@@ -989,44 +989,43 @@ svg.icon[viewBox="0 0 25 26"],
 		padding-bottom: 35px !important;
 	}
 
-	// The centered mobile slice leaves about 8px of opaque paper below the
-	// visible edge; the following section supplies the remaining 67px.
+	// Complete the white side of a bottom tear to the same 75px ruler. In the
+	// centered mobile crop, 34px of opaque PNG remains below the visible edge.
 	.section__decoration-bottom + section:not(.section__decoration-top),
 	.section__decoration-bottom + * > section:first-child:not(.section__decoration-top),
 	*:has(> .section__decoration-bottom) + section:not(.section__decoration-top),
 	*:has(> .section__decoration-bottom) + * > section:first-child:not(.section__decoration-top) {
-		padding-top: 67px !important;
+		padding-top: 41px !important;
 	}
 
-	// Package intro headings have about 8px invisible leading: the centered
-	// artwork tail (8px) + padding (59px) + leading (8px) totals 75px.
+	// Package intro headings have about 8px invisible leading. The mobile
+	// offset is calibrated from the 75px mobile visual ruler.
 	.section__decoration-bottom + .package-intro-text,
 	*:has(> .section__decoration-bottom) + .package-intro-text {
-		padding-top: 59px !important;
+		padding-top: 33px !important;
 	}
 
-	// The centered mobile slice has the same approximately 10px white tail:
-	// 10px tail + 57px padding + 8px leading = 75px from the visible tear.
+	// Include the artwork tail and text leading in the same 75px measurement.
 	.banner-two-area.section__decoration-bottom + .video-section {
-		padding-top: 57px !important;
+		padding-top: 31px !important;
 	}
 
 	// The contact intro starts with 16px Mulish text inside a 28px line box.
 	// Its approximately 6px top leading is not visible to the ruler.
 	.banner-two-area.section__decoration-bottom + .contact-details {
-		padding-top: 61px !important;
+		padding-top: 35px !important;
 	}
 
 	// On Home 3 the 40px marquee icon is vertically centered in a 50px row,
 	// leaving 5px above its first visible pixel.
 	.banner-three-area.section__decoration-bottom + .marquee-area {
-		padding-top: 62px !important;
+		padding-top: 36px !important;
 	}
 
 	// The homepage subtitle logo is 28px high inside a 30px flex line. Remove
 	// its 1px top leading from the section padding used by the ruler.
 	.banner-five-area.section__decoration-bottom + .step-section {
-		padding-top: 66px !important;
+		padding-top: 40px !important;
 	}
 
 	.package-intro-text:has(+ .section__decoration-top),
@@ -1035,10 +1034,10 @@ svg.icon[viewBox="0 0 25 26"],
 	}
 
 	// The testimonial component declares 60px !important later in the bundle.
-	// Keep both sides of any mobile torn edge within the measured 75px cap.
+	// Keep both sides of its torn edge on the measured 75px ruler.
 	.section__decoration-bottom + .testimonial-section-two:not(.section__decoration-top),
 	*:has(> .section__decoration-bottom) + .testimonial-section-two:not(.section__decoration-top) {
-		padding-top: 67px !important;
+		padding-top: 41px !important;
 	}
 
 	.testimonial-section-two:not(.section__decoration-bottom):has(+ .section__decoration-top),
@@ -1046,10 +1045,11 @@ svg.icon[viewBox="0 0 25 26"],
 		padding-bottom: 35px !important;
 	}
 
-	// Complete the footer side to 75px for every mobile torn-paper ending,
-	// including a decorated section nested in a neutral wrapper.
+	// Complete the footer side to 75px for every mobile torn-paper ending.
+	// Bootstrap's negative row margin cancels its first-item gutter, so the
+	// footer uses the same 75 - 34px compensation as other plain sections.
 	.section__decoration-bottom + :is(.footer-area, .footer-two-area),
 	*:has(> .section__decoration-bottom:last-child) + :is(.footer-area, .footer-two-area) {
-		padding-top: 67px;
+		padding-top: 41px;
 	}
 }

@@ -200,8 +200,7 @@ export default function CelluliteMassage() {
           />
         </div>
         <div className="cellulite-massage-services section__decoration-top section__decoration-bottom bg-sub">
-          {/* <Services title="Our Services Will Make You Glow" /> */}
-          <Services title="Our Services Will Make You Glow" showFullTreatmentSlider embedded />
+          <Services title="Continue Your Body-Care Journey" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

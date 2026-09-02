@@ -200,8 +200,7 @@ export default function HairCreambath() {
           />
         </div>
         <div className="hair-creambath-services section__decoration-top section__decoration-bottom bg-sub">
-          {/* <Services title="Our Services Will Make You Glow" /> */}
-          <Services title="Our Services Will Make You Glow" showFullTreatmentSlider embedded />
+          <Services title="Discover More Ways to Nourish and Unwind" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

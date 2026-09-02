@@ -40,6 +40,7 @@ export default function Home3_Testimonial({ testimonialsData = defaultTestimonia
     const swiperOptions = {
         modules: [Autoplay, Pagination],
         slidesPerView: 1,
+        autoHeight: true,
         autoplay: {
             delay: 5000,
             disableOnInteraction: false,
@@ -78,6 +79,11 @@ export default function Home3_Testimonial({ testimonialsData = defaultTestimonia
                                             </div>
                                             <p className="text">{item.text}</p>
                                             <div className="info">
+                                                {item.avatar && (
+                                                    <img className="review-avatar" src={item.avatar} alt=""
+                                                        loading="lazy" referrerPolicy="no-referrer"
+                                                        onError={(event) => { event.currentTarget.style.display = "none"; }} />
+                                                )}
                                                 <h4>{item.name}</h4>
                                                 <span>{item.designation}</span>
                                                 <div className="star">
@@ -85,6 +91,10 @@ export default function Home3_Testimonial({ testimonialsData = defaultTestimonia
                                                         <i key={i} className="fa-solid fa-star"></i>
                                                     ))}
                                                 </div>
+                                                {item.sourceUrl && (
+                                                    <a className="review-source" href={item.sourceUrl} target="_blank"
+                                                        rel="noopener noreferrer">Posted on Google</a>
+                                                )}
                                             </div>
                                         </div>
                                     </SwiperSlide>

@@ -5,7 +5,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-export default function Home2_Testimonial({ paperDecoration = true }) {
+export default function Home2_Testimonial({
+    paperDecoration = true,
+    rightShapeSrc = "/images/shape/testimonial-two-shape-right.png",
+}) {
     const swiperOptions = {
         modules: [Autoplay],
         slidesPerView: 1,
@@ -23,7 +26,7 @@ export default function Home2_Testimonial({ paperDecoration = true }) {
                     <img className="animation__arryUpDown" src="/images/shape/testimonial-two-shape-left.png" alt="image" />
                 </div>
                 <div className="shape2">
-                    <img className="animation__arryLeftRight" src="/images/shape/testimonial-two-shape-right.png" alt="image" />
+                    <img className="animation__arryLeftRight" src={rightShapeSrc} alt="" aria-hidden="true" />
                 </div>
                 <div className="shape3">
                     <img className="bobble__animation" src="/images/logo/sbm.webp" alt="Spa Bali Moon watermark" />

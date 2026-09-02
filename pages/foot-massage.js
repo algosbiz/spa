@@ -192,8 +192,7 @@ export default function FootMassage() {
           />
         </div>
         <div className="foot-massage-services section__decoration-top section__decoration-bottom bg-sub">
-          {/* <Services title="Our Services Will Make You Glow" /> */}
-          <Services title="Our Services Will Make You Glow" showFullTreatmentSlider embedded />
+          <Services title="Give More Than Your Feet a Break" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`
