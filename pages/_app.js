@@ -1,9 +1,11 @@
 import "swiper/css";
 import "swiper/css/navigation";
+import "lenis/dist/lenis.css";
 import '../public/css/bootstrap.min.css';
 import '../public/css/style-dark.css';
 import '../public/css/style.css';
 import { useEffect, useState } from "react";
+import Lenis from "lenis";
 
 function MyApp({ Component, pageProps }) {
     const [loading, setLoading] = useState(true);
@@ -13,6 +15,24 @@ function MyApp({ Component, pageProps }) {
         setTimeout(() => {
             setLoading(false);
         }, 1000);
+    }, []);
+
+    useEffect(() => {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            return;
+        }
+
+        const lenis = new Lenis({
+            autoRaf: true,
+            smoothWheel: true,
+            lerp: 0.1,
+            anchors: true,
+            stopInertiaOnNavigate: true,
+        });
+
+        return () => {
+            lenis.destroy();
+        };
     }, []);
     // The page always renders; the preloader is a fixed, full-screen overlay on top of
     // it. Swapping the two out instead would leave the server HTML empty, so crawlers

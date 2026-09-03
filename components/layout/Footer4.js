@@ -27,7 +27,7 @@ const Footer = () => {
                                 <div className="footer__item">
                                     <h3 className="title">Contact Us</h3>
                                     <ul className="links">
-                                        <li>Address: Jl. Panggung Sari No. 30, Seminyak, Bali</li>
+                                        <li>Address: Jl. Pangkung Sari No. 30, Seminyak, Bali</li>
                                         <li>Phone: +62 878-6317-5144</li>
                                     </ul>
                                     <div className="footer__follow">

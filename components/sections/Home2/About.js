@@ -31,6 +31,7 @@ export default function Home2_About({
     )
     const hasTreatmentLeftShape = isTreatmentLeafShape(resolvedLeftShape)
     const hasTreatmentRightShape = isTreatmentLeafShape(resolvedRightShape)
+    const usesHomepageLeafShape = resolvedLeftShape === "/images/about/shape1.png"
 
     return (
         <>
@@ -39,7 +40,11 @@ export default function Home2_About({
             className={`about-section-two pt-130 paralax__animation${removeBottomPadding ? "" : " pb-100"}`}
         >
             <div className={`shape1 wow slideInLeft${hasTreatmentLeftShape ? " treatment-leaf-position--left" : ""}`} data-wow-delay="200ms" data-wow-duration="1500ms">
-                <img className="animation__arryUpDown" src={resolvedLeftShape} alt="" aria-hidden="true"/>
+                {usesHomepageLeafShape ? (
+                    <span className="about-leaf-gold animation__arryUpDown" aria-hidden="true" />
+                ) : (
+                    <img className="animation__arryUpDown" src={resolvedLeftShape} alt="" aria-hidden="true"/>
+                )}
             </div>
             <div className={`shape2${hasTreatmentRightShape ? " treatment-leaf-position--right" : ""}`}>
                 <div className={hasTreatmentRightShape ? "treatment-leaf-shape--right" : undefined}>

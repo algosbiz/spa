@@ -35,6 +35,8 @@ export default function Home1_About({
     treatmentLayout = false,
     leftShapeSrc,
     rightShapeSrc,
+    badgeTopText,
+    badgeBottomText = "Experience",
 }) {
     const resolvedLeftShape = leftShapeSrc || getTreatmentLeafShape(
         image,
@@ -128,8 +130,10 @@ export default function Home1_About({
                                     <img src={image} alt="Spa treatment" />
                                 </div>
                                 <div className="info info--gold">
-                                    <p className="info-line"><span className="count">17</span> <span>+</span> Years</p>
-                                    <p className="info-line title">Experience</p>
+                                    <p className="info-line">
+                                        {badgeTopText || <><span className="count">17</span> <span>+</span> Years</>}
+                                    </p>
+                                    <p className="info-line title">{badgeBottomText}</p>
                                 </div>
                             </div>
                         </div>

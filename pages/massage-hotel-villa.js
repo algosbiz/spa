@@ -97,6 +97,8 @@ export default function MassageHotelVilla() {
                 />
                 <AboutReverse
                     subTitle="Made for Your Stay"
+                    badgeTopText="Made For"
+                    badgeBottomText="Your Stay"
                     title={<>Treatments That Work Well in Your Hotel or Villa</>}
                     text="The right treatment depends on how you want to feel after your session. A Balinese Massage offers a traditional full-body experience, Sport Massage can help ease tired muscles after physical activity, while body scrubs, facials, cream baths, and beauty treatments allow you to create a more complete in-room spa experience."
                     featuresLeft={[
@@ -116,6 +118,8 @@ export default function MassageHotelVilla() {
                     image="/images/services/massagehotelvilla/massagehotelvilla-5.webp"
                 />
                 <About
+                    badgeTopText="Simple"
+                    badgeBottomText="Booking"
                     title={<>Booking Your Hotel &amp; Villa Massage</>}
                     text="Reserving is simple — send us your hotel or villa address and preferred time, and our therapist will arrive ready to help you relax. A small travel fee of 75k per therapist applies for home and hotel visits."
                     featuresLeft={[

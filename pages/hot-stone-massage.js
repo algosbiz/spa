@@ -145,6 +145,8 @@ export default function HotStoneMassage() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Heat Therapy"
+          badgeTopText="Warm Stone"
+          badgeBottomText="Areas"
           title={<>Where Are the Warm Stones Used?</>}
           text="Different stone sizes are selected depending on the treatment area. Larger stones provide broad warming across major muscle groups, while smaller stones deliver focused attention to areas where tension commonly develops."
           featuresLeft={[
@@ -163,6 +165,8 @@ export default function HotStoneMassage() {
         <About
           image={treatmentImages.details[2]}
           subTitle="The Experience"
+          badgeTopText="Stone"
+          badgeBottomText="Experience"
           title={<>What Happens During a Hot Stone Massage</>}
           text="The session begins with heated basalt stones placed on selected areas to gradually warm the muscles before massage begins. Throughout the treatment, our therapists alternate between flowing hand techniques and warm stone massage while adjusting the temperature for your comfort. Smaller stones may also be used to address areas of deeper muscular tension before the session concludes with a calming finish."
           featuresLeft={[

@@ -123,6 +123,8 @@ export default function BodyScrub() {
         <AboutReverse
           image={treatmentImages.intro[1]}
           subTitle="Treatment Timing"
+          badgeTopText="Best Time"
+          badgeBottomText="To Scrub"
           title={<>When Is the Best Time to Use a Body Scrub?</>}
           text="There is no single best time to use a body scrub. It depends on your skin condition, daily activities, and spa routine. A body scrub may be especially suitable:"
           featuresLeft={[
@@ -158,6 +160,8 @@ export default function BodyScrub() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Choosing Your Scrub"
+          badgeTopText="Find Your"
+          badgeBottomText="Scrub"
           title={<>Which Natural Scrub Matches Your Skin Goals?</>}
           text="Each scrub ingredient creates a slightly different treatment experience while delivering the same gentle exfoliating effect. The choice often comes down to fragrance preferences and the type of skin support you are looking for."
           featuresLeft={[
@@ -176,6 +180,8 @@ export default function BodyScrub() {
         <About
           image={treatmentImages.details[2]}
           subTitle="Inside the Treatment"
+          badgeTopText="Scrub"
+          badgeBottomText="Session"
           title={<>What Happens During a Body Scrub Session?</>}
           text="The treatment begins with your choice of scrub ingredients before gentle circular massage movements are used to exfoliate the body evenly. Additional attention is often given to rougher areas such as elbows, knees, and feet before the scrub is removed to reveal smoother and cleaner-feeling skin underneath. The same treatment experience is also available through our villa and hotel home service appointments."
           featuresLeft={[

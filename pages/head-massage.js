@@ -138,6 +138,8 @@ export default function HeadMassage() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Treatment Focus"
+          badgeTopText="Target"
+          badgeBottomText="Areas"
           title={<>Which Areas Receive the Most Attention?</>}
           text="Rather than concentrating on the scalp alone, a Head Massage also includes nearby muscles that commonly contribute to feelings of tightness. Treating these connected areas creates a more balanced and comfortable experience."
           featuresLeft={[
@@ -156,6 +158,8 @@ export default function HeadMassage() {
         <About
           image={treatmentImages.details[2]}
           subTitle="Massage Techniques"
+          badgeTopText="Massage"
+          badgeBottomText="Techniques"
           title={<>What to Expect During a Head Massage Session</>}
           text="Our therapist begins with gentle movements across the scalp before gradually working through the temples, neck, and upper shoulders. Different massage techniques are combined throughout the session, including circular movements, rhythmic pressure, kneading, and slow strokes that help release built-up tension while maintaining a calm, comfortable pace."
           featuresLeft={[

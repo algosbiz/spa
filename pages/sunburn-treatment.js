@@ -120,6 +120,8 @@ export default function SunburnTreatment() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Areas of Care"
+          badgeTopText="Sunburn"
+          badgeBottomText="Care"
           title={<>Which Parts of the Body Are Commonly Treated?</>}
           text="Every sunburn is different. Our therapists focus on the areas most affected by sun exposure while adapting the treatment according to your skin's condition and comfort throughout the session."
           featuresLeft={[
@@ -138,6 +140,8 @@ export default function SunburnTreatment() {
         <About
           image={treatmentImages.details[2]}
           subTitle="The Experience"
+          badgeTopText="Treatment"
+          badgeBottomText="Experience"
           title={<>What to Expect from a Sunburn Treatment</>}
           text="Our therapist first assesses the condition of your skin before applying cooling aloe vera and soothing botanical products to the affected areas. Gentle, slow movements help spread the products evenly without creating unnecessary friction, while cool compresses may be used to enhance comfort. Every step is performed with sensitive skin in mind, allowing your body to relax while your skin begins its recovery."
           featuresLeft={[

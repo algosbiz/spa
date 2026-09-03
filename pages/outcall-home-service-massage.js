@@ -720,6 +720,8 @@ export default function OutcallHomeServiceMassage() {
             paperDecoration={false}
             treatmentLayout
             subTitle="Reserve Your Home Service Massage"
+            badgeTopText="Home Spa"
+            badgeBottomText="Booking"
             title={<>Get Your Massage Service at Home</>}
             text="Enjoy professional Balinese massage and spa treatments at your home, hotel, or villa throughout the day. With flexible appointment times and responsive booking support, the process is simple and convenient. When booking a home service, you can expect:"
             featuresLeft={[

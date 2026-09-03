@@ -99,6 +99,8 @@ export default function MassageKuta() {
                 />
                 <AboutReverse
                     subTitle="Complete Experience"
+                    badgeTopText="Complete"
+                    badgeBottomText="Experience"
                     title={<>More Than a Full-Body Treatment</>}
                     text="A relaxing spa experience can include more than massage. Add a Bali Moon Facial, Body Scrub, Cream Bath, Manicure, Pedicure, or other beauty treatments to create a more complete session."
                     featuresLeft={[
@@ -116,6 +118,8 @@ export default function MassageKuta() {
                     image="/images/services/massagekuta/massagekuta-5.webp"
                 />
                 <About
+                    badgeTopText="Easy"
+                    badgeBottomText="Booking"
                     title={<>Booking a Massage in Kuta</>}
                     text="Just share your Kuta hotel or address and a preferred time. Our friendly team will confirm quickly and send a therapist ready to help you relax."
                     featuresLeft={[

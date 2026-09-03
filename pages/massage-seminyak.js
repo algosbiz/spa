@@ -99,6 +99,8 @@ export default function MassageSeminyak() {
                 />
                 <AboutReverse
                     subTitle="Complete Experience"
+                    badgeTopText="Complete"
+                    badgeBottomText="Experience"
                     title={<>A Spa Visit Can Be More Than a Massage</>}
                     text="Massage is only one part of the care available at Spa Bali Moon. Guests can add other beauty treatments to create a longer session around their needs. For couples and groups, selected treatments can also be arranged together, making it easier to enjoy a shared spa experience during your time in Seminyak."
                     featuresLeft={[
@@ -117,6 +119,8 @@ export default function MassageSeminyak() {
                     image="/images/services/massageseminyak/massageseminyak-5.webp"
                 />
                 <About
+                    badgeTopText="Why Book"
+                    badgeBottomText="With Us"
                     title={<>Why Seminyak Visitors Book With Us</>}
                     text="We're a local Seminyak team specialising in Balinese Body Massage, with a reputation for punctual, professional and genuinely relaxing service in your own space."
                     featuresLeft={[

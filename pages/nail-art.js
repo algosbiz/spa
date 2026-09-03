@@ -138,6 +138,8 @@ export default function NailArt() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Design Possibilities"
+          badgeTopText="Nail Art"
+          badgeBottomText="Styles"
           title={<>Find Nail Art Style That Matches You</>}
           text="Every guest has a different style preference. Our therapists can create clean minimalist looks, elegant classic finishes, or detailed artistic designs based on your inspiration and the condition of your natural nails."
           featuresLeft={[
@@ -156,6 +158,8 @@ export default function NailArt() {
         <About
           image={treatmentImages.details[2]}
           subTitle="Application Process"
+          badgeTopText="Application"
+          badgeBottomText="Process"
           title={<>How Is Gel Nail Art Applied?</>}
           text="Each appointment begins with nail preparation to create a smooth foundation before colour or gel is applied. Designs are built layer by layer using professional products, then cured under a UV or LED lamp to achieve a durable finish. Throughout the session, our nail artists work carefully to keep both the design and your natural nails in excellent condition."
           featuresLeft={[

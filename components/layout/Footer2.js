@@ -72,7 +72,7 @@ const Footer = () => {
                             <ul className="links">
                                 <li style={{ display: 'flex', flexDirection: 'column', marginBottom: '15px', alignItems: 'flex-start' }}>
                                     <span style={{ fontSize: '14px', marginBottom: '2px' }}>Address:</span>
-                                    <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>Jl. Panggung Sari No. 30, Seminyak, Bali</span>
+                                    <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>Jl. Pangkung Sari No. 30, Seminyak, Bali</span>
                                 </li>
                                 <li style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                                     <span style={{ fontSize: '14px', marginBottom: '2px' }}>Phone:</span>

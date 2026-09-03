@@ -126,6 +126,14 @@
 		top: 60px;
 		left: 0;
 		z-index: -1;
+		.about-leaf-gold {
+			display: block;
+			width: 308px;
+			height: 326px;
+			background-color: var(--theme-color1);
+			-webkit-mask: url(../images/about/shape1.png) no-repeat center / contain;
+			mask: url(../images/about/shape1.png) no-repeat center / contain;
+		}
 		@include breakpoint(max-lg) {
 			display: none;
 		}

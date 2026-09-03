@@ -146,6 +146,8 @@ export default function HairCreambath() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Hair Benefits"
+          badgeTopText="Hair Care"
+          badgeBottomText="Benefits"
           title={<>How Does a Cream Bath Care for Your Hair?</>}
           text="Depending on your hair condition, the treatment can help improve how your hair feels and looks, particularly when it has been affected by dryness, styling, sun exposure, or swimming. Benefits may include:"
           featuresLeft={[
@@ -164,6 +166,8 @@ export default function HairCreambath() {
         <About
           image={treatmentImages.details[2]}
           subTitle="The Ritual"
+          badgeTopText="Hair Care"
+          badgeBottomText="Ritual"
           title={<>Inside a Traditional Creambath Session</>}
           text="Our Creambath session combines hair conditioning with a relaxing scalp treatment. The process begins with selecting a suitable cream formula based on your hair needs, followed by a gentle application from the roots to the ends. A soothing scalp massage helps the cream absorb while releasing tension, then the treatment is completed with a rinse and finishing step to leave the hair feeling soft, refreshed, and manageable."
           featuresLeft={[

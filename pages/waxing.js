@@ -179,6 +179,8 @@ export default function Waxing() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Treatment Areas"
+          badgeTopText="Waxing"
+          badgeBottomText="Areas"
           title={<>Which Areas Can Be Treated with Waxing?</>}
           text="Waxing can be customized based on your grooming needs, from smaller facial areas to larger body sections. Our therapists select the appropriate waxing technique according to the treatment area to maintain comfort and effective results."
           featuresLeft={[
@@ -197,6 +199,8 @@ export default function Waxing() {
         <About
           image={treatmentImages.details[2]}
           subTitle="Waxing Process"
+          badgeTopText="Waxing"
+          badgeBottomText="Process"
           title={<>How Does a Waxing Treatment Work?</>}
           text="Our Waxing Treatment begins with preparing the skin before applying suitable wax based on the treatment area. We use Mancine Strawberry Hard Wax for sensitive areas and olive oil strip wax for larger sections to help remove hair effectively while maintaining skin comfort. After the waxing process, simple aftercare guidance is provided to help keep your skin smooth."
           featuresLeft={[

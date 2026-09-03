@@ -24,16 +24,21 @@ import PageHead from './PageHead';
 
 const Layout = ({ children, HeaderStyle, FooterStyle, styleMode}) => {
     const [searchToggle, setSearchToggled] = useState(false);
-    const [scroll, setScroll] = useState(0)
+    const [scroll, setScroll] = useState(false)
     const handleToggle = () => setSearchToggled(!searchToggle);
+
     useEffect(() => {
-        document.addEventListener("scroll", () => {
-            const scrollCheck = window.scrollY > 100
-            if (scrollCheck !== scroll) {
-                setScroll(scrollCheck)
-            }
-        })
-    })
+        const handleScroll = () => {
+            setScroll(window.scrollY > 100)
+        }
+
+        handleScroll()
+        window.addEventListener("scroll", handleScroll, { passive: true })
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll)
+        }
+    }, [])
 
     const handleOpen = () => {
         document.body.classList.add("mobile-menu-visible");

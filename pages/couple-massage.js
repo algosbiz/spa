@@ -136,6 +136,8 @@ export default function CoupleMassage() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Suitable For"
+          badgeTopText="Made For"
+          badgeBottomText="Every Pair"
           title={<>Couple Massage isn't Just for Couples</>}
           text="A Couple Massage can be enjoyed by two people who want to relax side by side, regardless of their relationship. This makes it a suitable choice for:"
           featuresLeft={[
@@ -154,6 +156,8 @@ export default function CoupleMassage() {
         <About
           image={treatmentImages.details[2]}
           subTitle="Your Visit"
+          badgeTopText="Your"
+          badgeBottomText="Visit"
           title={<>What to Expect During Your Couple Massage</>}
           text="Your Couple Massage is arranged so that both guests can enjoy the treatment together while still having their individual preferences considered. From the initial consultation to the treatment itself, each part of the experience is designed to provide comfort, privacy, and personalised attention. The experience includes:"
           featuresLeft={[

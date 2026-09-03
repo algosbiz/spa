@@ -5,7 +5,7 @@ import AboutOld from "../components/sections/Home2/About";
 import Faq from "../components/sections/Home6/Faq";
 import Funfact from "../components/sections/Home2/Funfact";
 import Testimonial from "../components/sections/Home2/Testimonial";
-import Feature from "../components/sections/Home1/Feature";
+import Services from "../components/sections/Home2/Services";
 import AboutReverse from "../components/sections/Home1/AboutReverse";
 import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
@@ -105,6 +105,8 @@ export default function DaySpaSeminyak() {
           <AboutReverse
             paperDecoration={false}
             subTitle="Make a Day of It"
+            badgeTopText="Longer Spa"
+            badgeBottomText="Visit"
             title={<>Is a Longer Spa Visit Worth the Time?</>}
             text="Giving yourself more than an hour allows different types of care to work together. A massage can help your body release physical tension, while a facial or body scrub brings attention to the skin."
             featuresLeft={[
@@ -123,6 +125,8 @@ export default function DaySpaSeminyak() {
           />
           <div className="day-spa-skilled-therapists section__decoration-top section__decoration-bottom bg-sub">
             <About
+              badgeTopText="Expert"
+              badgeBottomText="Therapists"
               title={<>Skilled Therapists in a Comfortable Seminyak Space</>}
               text="Our therapists are trained to deliver treatments with attention and care, adjusting each session to your body's condition. Located in the heart of Seminyak, Spa Bali Moon offers a calm and welcoming environment with private rooms, including spaces for couples — plus home service options so you can enjoy our day spa in your villa or hotel."
               featuresLeft={[
@@ -156,15 +160,7 @@ export default function DaySpaSeminyak() {
             backgroundImage="/images/services/dayspaseminyak/dayspa-8.webp"
           />
           <div className="day-spa-services section__decoration-top section__decoration-bottom bg-sub">
-            <Feature
-              showHeader
-              subTitle="Services"
-              title={
-                <>
-                  Our Services Will Make <br /> You Glow
-                </>
-              }
-            />
+            <Services showFullTreatmentSlider embedded />
           </div>
         </Layout>
       </>

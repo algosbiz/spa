@@ -32,6 +32,8 @@ export default function Home1_AboutReverse({
     buttonText = "Learn More",
     buttonLink = "/seminyak/pricing",
     image = "/images/about/about-image.png",
+    badgeTopText,
+    badgeBottomText = "Experience",
     paperDecoration = true,
     treatmentLayout = false,
     leftShapeSrc,
@@ -47,6 +49,7 @@ export default function Home1_AboutReverse({
     )
     const hasTreatmentLeftShape = isTreatmentLeafShape(resolvedLeftShape)
     const hasTreatmentRightShape = isTreatmentLeafShape(resolvedRightShape)
+    const usesHomepageLeafShape = resolvedRightShape === "/images/about/shape1.png"
     const usesTreatmentLayout = treatmentLayout
         || (typeof image === "string" && image.startsWith("/images/services/"))
 
@@ -58,7 +61,11 @@ export default function Home1_AboutReverse({
                 </div>
                 <div className={`shape2 wow slideInRight${hasTreatmentRightShape ? " treatment-leaf-position--right" : ""}`} data-wow-delay="400ms" data-wow-duration="1500ms">
                     <div className={hasTreatmentRightShape ? "treatment-leaf-shape--right" : undefined}>
-                        <img className="sway_Y__animation" src={resolvedRightShape} alt="" aria-hidden="true" />
+                        {usesHomepageLeafShape ? (
+                            <span className="about-leaf-gold sway_Y__animation" aria-hidden="true" />
+                        ) : (
+                            <img className="sway_Y__animation" src={resolvedRightShape} alt="" aria-hidden="true" />
+                        )}
                     </div>
                 </div>
                 <div className="container">
@@ -69,9 +76,11 @@ export default function Home1_AboutReverse({
                                 <div className="image-box">
                                     <img src={image} alt="Spa treatment" />
                                 </div>
-                                <div className="info">
-                                    <p className="info-line"><span className="count">17</span> <span>+</span> Years</p>
-                                    <p className="info-line title">Experience</p>
+                                <div className="info info--gold">
+                                    <p className="info-line">
+                                        {badgeTopText || <><span className="count">17</span> <span>+</span> Years</>}
+                                    </p>
+                                    <p className="info-line title">{badgeBottomText}</p>
                                 </div>
                             </div>
                         </div>

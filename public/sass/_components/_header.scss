@@ -472,12 +472,12 @@
 	}
 	&-three {
 		&-area {
-			position: unset;
+			position: sticky;
+			top: 0;
+			width: 100%;
+			z-index: 99;
+			transition: background-color 320ms ease, box-shadow 320ms ease;
 			&.menu-fixed {
-				position: fixed;
-				width: 100%;
-				z-index: 99;
-				top: 0;
 				background-color: var(--theme-color-white);
 				box-shadow: 0px 4px 30px 0px #0000000d;
 			}
@@ -718,6 +718,23 @@
 	}
 
 	
+}
+
+.sidebar-area--white .mobile-menu {
+	ul li a {
+		color: var(--headings-color);
+		border-top-color: rgba(95, 90, 84, 0.18);
+
+		&:hover,
+		&:focus-visible {
+			color: var(--theme-color1);
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		&-three-area {
+			transition: none;
+		}
+	}
 }
 // Mobile menu area end here ***
 

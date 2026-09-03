@@ -37,11 +37,17 @@ export default function Home3_Pricing({
     leftShapeSrc = "/images/shape/pricing-three-shape-left.png",
     images = [],
 }) {
+    const usesHomepageLeafShape = leftShapeSrc === "/images/about/shape1.png"
+
     return (
         <>
         <section className="pricing-section-three bg-sub section__decoration-top section__decoration-bottom pt-130 pb-170">
             <div className="shape1">
-                <img className="animation__arryUpDown" src={leftShapeSrc} alt="image"/>
+                {usesHomepageLeafShape ? (
+                    <span className="about-leaf-gold animation__arryUpDown" aria-hidden="true" />
+                ) : (
+                    <img className="animation__arryUpDown" src={leftShapeSrc} alt="image"/>
+                )}
             </div>
             <div className="shape2">
                 <img className="animation__arryLeftRight" src="/images/shape/pricing-three-shape-right.png" alt="image"/>

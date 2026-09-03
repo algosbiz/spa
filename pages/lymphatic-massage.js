@@ -138,6 +138,8 @@ export default function LymphaticMassage() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Guided Pathways"
+          badgeTopText="Lymphatic"
+          badgeBottomText="Pathways"
           title={<>Where Does Lymphatic Massage Work on the Body?</>}
           text="Instead of concentrating only on muscles, Lymphatic Massage follows the body's natural drainage routes. Gentle movements begin around the main lymph node regions before continuing across areas where fluid commonly collects, allowing the treatment to work with the body's own circulation rather than against it."
           featuresLeft={[
@@ -157,6 +159,8 @@ export default function LymphaticMassage() {
         <About
           image={treatmentImages.details[2]}
           subTitle="The Experience"
+          badgeTopText="Massage"
+          badgeBottomText="Experience"
           title={<>What to Expect from a Lymphatic Massage</>}
           text="Our treatment begins with a brief consultation to identify areas where swelling, fluid retention, or heaviness are most noticeable. Using natural massage oil together with a slimming cream, our therapist performs slow, wave-like movements that follow the direction of lymph flow instead of applying deep pressure into the muscles."
           featuresLeft={[
