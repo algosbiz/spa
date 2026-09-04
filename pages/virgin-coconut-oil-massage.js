@@ -151,7 +151,7 @@ export default function VirginCoconutOilMassage() {
           badgeTopText="Ideal"
           badgeBottomText="For You"
           title={<>Who Usually Chooses This Massage?</>}
-          text="While the massage itself focuses on relaxation, the use of virgin coconut oil can make the treatment appealing to guests with different skincare and wellness preferences. This massage may be a good fit for:"
+          text="While the massage itself focuses on relaxation, the use of virgin coconut oil can make the treatment appealing to guests with different skin-care and wellness preferences. This massage may be a good fit for:"
           featuresLeft={[
             "Guests with dry-feeling skin",
             "Visitors after sun exposure",

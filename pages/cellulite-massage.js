@@ -129,7 +129,7 @@ export default function CelluliteMassage() {
           image={treatmentImages.details[0]}
           subTitle="Understanding Cellulite"
           title={<>Why Does Cellulite Form in the First Place?</>}
-          text="Cellulite develops when fat deposits beneath the skin push against connective tissue, creating the uneven or dimpled appearance many people notice on the thighs, hips, or buttocks. Several common factors are associated with its appearance:"
+          text="Cellulite develops when fat deposits beneath the skin push against connective tissue, creating the uneven or dimpled appearance many people notice on the thighs, hips, or buttocks. But several common factors are associated with its appearance:"
           featuresLeft={[
             "Commonly appears on thighs and buttocks",
             "Can affect people of different body types",

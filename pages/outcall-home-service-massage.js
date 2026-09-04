@@ -606,7 +606,7 @@ const faqItems = [
   {
     question: "Do I need to prepare anything?",
     answer:
-      "No. Our therapists bring the massage bed, clean linens, towels, and oils. All you need is a space of roughly two by two metres; a bedroom, terrace, or living area can all work well. If you have a preference for where the session takes place, tell us when you book.",
+      "No. Our therapists bring the massage bed, clean linens, towels, and oils. All you need is a space of roughly two by two metres and a bedroom, terrace, or living area all work well. If you have a preference for where the session takes place, tell us when you book.",
   },
   {
     question: "What does the therapist bring?",

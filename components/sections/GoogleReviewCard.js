@@ -13,8 +13,8 @@ const GoogleGlyph = () => (
  * Rating summary card. Renders live Google data when it is available and quietly
  * falls back to a flat 5-star card when the Places API is not configured.
  *
- * Google's attribution rules require the card to link back to the place on Google,
- * so the whole card is an anchor.
+ * The card is intentionally a non-interactive preview. The visible Google label and
+ * rating keep the source clear without making the summary card a navigation control.
  */
 function compact(count) {
     return new Intl.NumberFormat("en-US", {
@@ -28,7 +28,6 @@ export default function GoogleReviewCard({
     ratingLabel = "5.0",
     reviewCount = null,
     reviewCountLabel = null,
-    reviewsUrl = "https://www.google.com/maps/search/?api=1&query=Spa+Bali+Moon+Seminyak",
     avatars = [],
     label = "Customer Review",
 }) {
@@ -42,12 +41,10 @@ export default function GoogleReviewCard({
     const badgeLabel = remaining > 0 ? `+${compact(remaining)}` : null;
 
     return (
-        <a
+        <div
             className="google-review-card"
-            href={reviewsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${ratingLabel} out of 5 stars${reviewCountLabel ? ` from ${reviewCountLabel} Google reviews` : ""} — read them on Google`}
+            role="group"
+            aria-label={`${ratingLabel} out of 5 stars${reviewCountLabel ? ` from ${reviewCountLabel} Google reviews` : ""}`}
         >
             {/* Hidden from screen readers — the card's own aria-label already states
                 the score, so repeating it here would read it twice. */}
@@ -95,6 +92,6 @@ export default function GoogleReviewCard({
                 <GoogleGlyph />
                 Reviews on Google
             </span>
-        </a>
+        </div>
     )
 }

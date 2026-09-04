@@ -5239,11 +5239,7 @@ textarea.form-control {
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
   text-align: center;
   text-decoration: none;
-  transition: all 0.3s ease;
-}
-.google-review-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.12);
+  cursor: default;
 }
 .google-review-card img {
   width: auto;
@@ -5531,6 +5527,17 @@ textarea.form-control {
 
 .treatment-leaf-shape--right {
   transform: scaleX(-1);
+}
+
+/* Treatment detail images use a shared masked frame so source image ratios do
+ * not change the frame height or the badge position. */
+.about-section--treatment .image-column .inner-column .image-box {
+  aspect-ratio: 570/496;
+}
+.about-section--treatment .image-column .inner-column .image-box img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-section-two {

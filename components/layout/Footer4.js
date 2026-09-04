@@ -27,8 +27,8 @@ const Footer = () => {
                                 <div className="footer__item">
                                     <h3 className="title">Contact Us</h3>
                                     <ul className="links">
-                                        <li>Address: Jl. Pangkung Sari No. 30, Seminyak, Bali</li>
                                         <li>Phone: +62 878-6317-5144</li>
+                                        <li>Email: spabalimoon@gmail.com</li>
                                     </ul>
                                     <div className="footer__follow">
                                         <h3 className="title">Follow Us</h3>
@@ -49,6 +49,7 @@ const Footer = () => {
                                     <ul className="links">
                                         <li>Day Spa in Seminyak</li>
                                         <li>Open Daily: 9am-11pm</li>
+                                        <li>Address: Jl. Pangkung Sari No. 30, Seminyak, Bali</li>
                                         <li><Link href="/home-service" style={{ color: 'inherit', textDecoration: 'underline' }}><strong>Home service fee</strong></Link> 75k/therapist</li>
                                     </ul>
                                 </div>

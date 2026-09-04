@@ -70,13 +70,13 @@ const Footer = () => {
                         <div className="footer__item">
                             <h3 className="title">Contact Us</h3>
                             <ul className="links">
-                                <li style={{ display: 'flex', flexDirection: 'column', marginBottom: '15px', alignItems: 'flex-start' }}>
-                                    <span style={{ fontSize: '14px', marginBottom: '2px' }}>Address:</span>
-                                    <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>Jl. Pangkung Sari No. 30, Seminyak, Bali</span>
-                                </li>
                                 <li style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                                     <span style={{ fontSize: '14px', marginBottom: '2px' }}>Phone:</span>
                                     <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>+62 878-6317-5144</span>
+                                </li>
+                                <li style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginTop: '12px' }}>
+                                    <span style={{ fontSize: '14px', marginBottom: '2px' }}>Email:</span>
+                                    <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>spabalimoon@gmail.com</span>
                                 </li>
                             </ul>
                         </div>
@@ -85,13 +85,17 @@ const Footer = () => {
                         <div className="footer__item">
                             <h3 className="title">
                                 <Link href="/seminyak/day-spa" style={{ color: 'inherit' }}>
-                                    Day Spa Seminyak
+                                    Our Day Spa
                                 </Link>
                             </h3>
                             <ul className="time-table">
                                 <li style={{ display: 'flex', flexDirection: 'column', marginBottom: '12px', alignItems: 'flex-start' }}>
                                     <span style={{ fontSize: '14px', marginBottom: '2px' }}>Open Daily:</span>
                                     <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>9am - 11pm</span>
+                                </li>
+                                <li style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                                    <span style={{ fontSize: '14px', marginBottom: '2px' }}>Address:</span>
+                                    <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>Jl. Pangkung Sari No. 30, Seminyak, Bali</span>
                                 </li>
                             </ul>
                         </div>

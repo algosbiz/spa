@@ -154,6 +154,25 @@
 	transform: scaleX(-1);
 }
 
+// Treatment detail images use the same masked frame in both About variants.
+// Keep source images with different intrinsic ratios (for example Body Scrub's
+// 630x580 intro image) from changing the frame height and badge position.
+.about-section--treatment {
+	.image-column {
+		.inner-column {
+			.image-box {
+				aspect-ratio: 570 / 496;
+
+				img {
+					display: block;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+}
+
 // About two area start here ***
 .about-section-two {
 	overflow: hidden;
