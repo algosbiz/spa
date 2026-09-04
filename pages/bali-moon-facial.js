@@ -126,8 +126,8 @@ export default function BaliMoonFacial() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Your Skin Type"
-          badgeTopText="Skin Type"
-          badgeBottomText="Match"
+          badgeTopText="Made for"
+          badgeBottomText="Your Skin"
           title={<>Which Mask is Right for Your Skin?</>}
           text="Different skin concerns require different approaches. During your appointment, we help determine which mask best suits your skin's current condition and treatment goals."
           featuresLeft={[
@@ -146,8 +146,8 @@ export default function BaliMoonFacial() {
         <About
           image={treatmentImages.details[2]}
           subTitle="Inside the Treatment"
-          badgeTopText="Treatment"
-          badgeBottomText="Steps"
+          badgeTopText="Layer by"
+          badgeBottomText="Layer"
           title={<>What to Expect During Your Facial</>}
           text="Your facial follows a series of carefully selected steps designed to cleanse, exfoliate, nourish, and refresh your skin:"
           featuresLeft={[

@@ -148,8 +148,8 @@ export default function VirginCoconutOilMassage() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Ideal For"
-          badgeTopText="Ideal"
-          badgeBottomText="For You"
+          badgeTopText="Nourished by"
+          badgeBottomText="Nature"
           title={<>Who Usually Chooses This Massage?</>}
           text="While the massage itself focuses on relaxation, the use of virgin coconut oil can make the treatment appealing to guests with different skin-care and wellness preferences. This massage may be a good fit for:"
           featuresLeft={[
@@ -168,8 +168,8 @@ export default function VirginCoconutOilMassage() {
         <About
           image={treatmentImages.details[2]}
           subTitle="Treatment Process"
-          badgeTopText="Treatment"
-          badgeBottomText="Process"
+          badgeTopText="The Power of"
+          badgeBottomText="Coconut"
           title={<>Why Virgin Coconut Oil Works So Well for Massage</>}
           text="Virgin coconut oil works well for massage because its smooth texture supports continuous movements and helps reduce friction during treatment. It also leaves the skin feeling soft and moisturised, making it useful for:"
           featuresLeft={[

@@ -151,8 +151,8 @@ export default function ThaiMassage() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Focus Areas"
-          badgeTopText="Thai Massage"
-          badgeBottomText="Focus"
+          badgeTopText="More Room"
+          badgeBottomText="to Move"
           title={<>Which Parts of the Body Are Treated During Thai Massage?</>}
           text="Thai Massage works with the entire body through pressure techniques and assisted movements. Our therapists focus on areas that commonly feel restricted from posture, travel, or active routines, helping create a greater sense of balance and ease throughout the session."
           featuresLeft={[
@@ -170,8 +170,8 @@ export default function ThaiMassage() {
         <About
           image={treatmentImages.details[2]}
           subTitle="Massage Technique"
-          badgeTopText="Massage"
-          badgeBottomText="Technique"
+          badgeTopText="Stretch Into"
+          badgeBottomText="Balance"
           title={<>How Does Traditional Thai Massage Work?</>}
           text="Traditional Thai Massage combines steady pressure, stretching, and rhythmic movements without the use of massage oil. Our therapists use hands, thumbs, palms, and body weight techniques to work through areas of tension while carefully guiding the body through comfortable stretches. Each movement follows a slow and controlled approach to help improve relaxation and flexibility."
           featuresLeft={[

@@ -129,8 +129,8 @@ export default function SportsMassage() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Targeted Treatment"
-          badgeTopText="Sport Massage"
-          badgeBottomText="Focus"
+          badgeTopText="Made for"
+          badgeBottomText="Active Recovery"
           title={<>Areas That Receive the Most Attention During Sport Massage</>}
           text="Our therapists adjust the treatment based on your activity and the areas that feel most affected. Common focus areas include large muscle groups that experience repeated use during exercise, sports, and daily movement."
           featuresLeft={["Shoulders and upper back", "Lower back", "Glutes and hips", "Thighs"]}
@@ -141,8 +141,8 @@ export default function SportsMassage() {
         <About
           image={treatmentImages.details[2]}
           subTitle="Recovery Technique"
-          badgeTopText="Recovery"
-          badgeBottomText="Technique"
+          badgeTopText="A Stronger"
+          badgeBottomText="Recovery"
           title={<>What Happens During a Sport Massage?</>}
           text="The session begins with a short consultation to understand your activity level and areas needing attention. Our therapist combines techniques such as kneading, compression, stretching, and controlled pressure to ease muscle tightness while adjusting the intensity to your comfort and goals."
           featuresLeft={[

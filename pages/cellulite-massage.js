@@ -146,8 +146,8 @@ export default function CelluliteMassage() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Treatment Benefits"
-          badgeTopText="Wellness"
-          badgeBottomText="Benefits"
+          badgeTopText="Shape &"
+          badgeBottomText="Support"
           title={<>How Cellulite Massage Supports Your Wellness</>}
           text="Cellulite massage combines targeted massage techniques with focused pressure and rhythmic movements to address areas where cellulite commonly appears. Some of the reasons why many people choose cellulite massage include:"
           featuresLeft={[
@@ -166,8 +166,8 @@ export default function CelluliteMassage() {
         <About
           image={treatmentImages.details[2]}
           subTitle="Inside the Session"
-          badgeTopText="Treatment"
-          badgeBottomText="Method"
+          badgeTopText="The Art"
+          badgeBottomText="of Focus"
           title={<>How the Treatment Works</>}
           text="Each session is designed to provide focused attention to the selected areas while allowing the treatment intensity to be adjusted according to your comfort. The process generally includes:"
           featuresLeft={[

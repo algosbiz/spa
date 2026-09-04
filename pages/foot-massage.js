@@ -138,8 +138,8 @@ export default function FootMassage() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Areas of Focus"
-          badgeTopText="Foot Care"
-          badgeBottomText="Focus"
+          badgeTopText="From Heel"
+          badgeBottomText="to Toe"
           title={<>Where Does Foot Massage Work?</>}
           text="Rather than treating the feet as one single area, the massage focuses on different structures that commonly hold tension. By addressing each part individually, the treatment creates a more balanced feeling throughout the feet and lower legs."
           featuresLeft={[
@@ -158,8 +158,8 @@ export default function FootMassage() {
         <About
           image={treatmentImages.details[2]}
           subTitle="Massage Approach"
-          badgeTopText="Massage"
-          badgeBottomText="Approach"
+          badgeTopText="The Rhythm"
+          badgeBottomText="of Relief"
           title={<>How Our Foot Massage Is Performed</>}
           text="Each session combines smooth massage strokes, circular movements, warm natural oils, and reflexology-inspired pressure techniques to relieve tension throughout the feet and lower legs. Special attention is given to the arches, heels, and areas that commonly become sore after walking or standing. The pressure remains comfortable throughout the treatment and can be adjusted to suit your preferences."
           featuresLeft={[

@@ -125,8 +125,8 @@ export default function EarCandle() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Treatment Focus"
-          badgeTopText="Session"
-          badgeBottomText="Focus"
+          badgeTopText="Beyond the"
+          badgeBottomText="Ear"
           title={<>Areas Included During an Ear Candle Session</>}
           text="Although the hollow candle is positioned only at the outer ear, the treatment also includes gentle attention to nearby areas that contribute to overall comfort. Relaxing massage around the temples, jaw, and upper neck complements the session, creating a soothing experience beyond the ear itself."
           featuresLeft={[
@@ -145,8 +145,8 @@ export default function EarCandle() {
         <About
           image={treatmentImages.details[2]}
           subTitle="Step by Step"
-          badgeTopText="Step By"
-          badgeBottomText="Step"
+          badgeTopText="Handled With"
+          badgeBottomText="Care"
           title={<>How Is Ear Candle Performed?</>}
           text="The treatment begins with a brief consultation before the therapist carefully positions the hollow ear candle at the outer ear. Throughout the session, the flame is continuously monitored while gentle massage around the ears, temples, jaw, and neck may be included to enhance relaxation. Every step is performed with comfort and safety in mind."
           featuresLeft={[

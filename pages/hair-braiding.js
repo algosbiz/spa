@@ -143,8 +143,8 @@ export default function HairBraiding() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Braid Collection"
-          badgeTopText="Braid"
-          badgeBottomText="Styles"
+          badgeTopText="Find Your"
+          badgeBottomText="Style"
           title={<>Explore Our Most Popular Hair Braiding Styles</>}
           text="Every hairstyle creates a different look and level of hold. Whether you prefer a clean everyday braid or something more detailed for a special occasion, we'll help you choose a style that matches your hair type, plans, and personal preference."
           featuresLeft={[
@@ -165,8 +165,8 @@ export default function HairBraiding() {
         <About
           image={treatmentImages.details[2]}
           subTitle="Your Custom Style"
-          badgeTopText="Custom"
-          badgeBottomText="Style"
+          badgeTopText="Planned for"
+          badgeBottomText="Your Look"
           title={<>Every Braid Starts with the Right Plan</>}
           text="Before braiding begins, we discuss your preferred hairstyle, braid size, hair length, and whether you'd like to include extensions. Each section of hair is carefully prepared before braiding to create an even, comfortable finish. Once complete, we'll also share simple aftercare tips to help your hairstyle stay neat for longer."
           featuresLeft={[

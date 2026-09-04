@@ -16,6 +16,7 @@ import News from "../components/sections/Home2/News";
 import Instagram from "../components/sections/Home2/Instagram";
 import AboutReverse from "../components/sections/Home1/AboutReverse";
 import About from "../components/sections/Home1/About";
+import SessionOptions from "../components/sections/Home1/SessionOptions";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
 
@@ -115,7 +116,9 @@ export default function Home2({
               text="Balinese massage is often combined with treatments such as facials, cream baths, and nail care to create a more complete spa experience. Our treatment packages are created for guests looking to relax, refresh, and make the most of their massage time in Bali."
               packages={packageOptions}
               leftShapeSrc="/images/about/shape3.png"
-            />
+            >
+              <SessionOptions images={treatmentImages.pricing.slice(0, 3)} />
+            </Pricing>
           </div>
           {/* <Marquee /> */}
           {/* <Product /> */}
@@ -152,8 +155,8 @@ export default function Home2({
             image={treatmentImages.details[1]}
             rightShapeSrc="/images/about/about-four-shape.png"
             subTitle="Suitable For"
-            badgeTopText="Made For"
-            badgeBottomText="Your Needs"
+            badgeTopText="Your Ideal"
+            badgeBottomText="Match"
             title={<>Who Is Balinese Massage Best For?</>}
             text="This treatment is suitable for many different lifestyles and travel situations. Our therapists frequently recommend Balinese massage for guests looking for:"
             featuresLeft={[
@@ -174,8 +177,8 @@ export default function Home2({
             leftShapeSrc="/images/shape/banner-three-shape.png"
             rightShapeSrc="/images/shape/service-shape-right.png"
             subTitle="The Experience"
-            badgeTopText="Massage"
-            badgeBottomText="Experience"
+            badgeTopText="Feel The"
+            badgeBottomText="Difference"
             title={<>What to Expect from a Balinese Massage</>}
             text="A Balinese massage session begins with a short consultation regarding pressure preferences and areas that require extra attention. Massage oil is used to support smooth movements and muscle relaxation. The same treatment experience is also available through our home service for guests staying in villas, hotels, or private accommodations. Here’s what you can expect during your Balinese massage experience:"
             featuresLeft={[

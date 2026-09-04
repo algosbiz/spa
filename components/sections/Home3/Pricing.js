@@ -36,6 +36,7 @@ export default function Home3_Pricing({
     packages = defaultPackages,
     leftShapeSrc = "/images/shape/pricing-three-shape-left.png",
     images = [],
+    children,
 }) {
     const usesHomepageLeafShape = leftShapeSrc === "/images/about/shape1.png"
 
@@ -53,6 +54,7 @@ export default function Home3_Pricing({
                 <img className="animation__arryLeftRight" src="/images/shape/pricing-three-shape-right.png" alt="image"/>
             </div>
             <div className="container">
+                {children}
                 <div className="section-header__flex mb-60">
                     <div>
                         <p className="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">

@@ -129,8 +129,8 @@ export default function DeepTissueMassage() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Target Areas"
-          badgeTopText="Target"
-          badgeBottomText="Areas"
+          badgeTopText="Where Tension"
+          badgeBottomText="Lives"
           title={<>Which Parts of the Body Are Commonly Treated?</>}
           text="Muscle tension does not always appear in the same place for everyone. During a Deep Tissue Massage session, our therapists usually focus on areas affected by posture, movement patterns, and physical activities."
           featuresLeft={[
@@ -149,8 +149,8 @@ export default function DeepTissueMassage() {
         <About
           image={treatmentImages.details[2]}
           subTitle="Massage Techniques"
-          badgeTopText="Massage"
-          badgeBottomText="Techniques"
+          badgeTopText="Power in"
+          badgeBottomText="Technique"
           title={<>How Does Deep Tissue Massage Work?</>}
           text="Deep Tissue Massage uses specific manual techniques to work on areas where muscle tension commonly builds. Our therapists apply sustained pressure, slow muscle stripping movements, cross-fiber techniques, and targeted trigger point work while adjusting intensity based on your body's response."
           featuresLeft={[

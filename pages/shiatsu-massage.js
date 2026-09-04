@@ -138,8 +138,8 @@ export default function ShiatsuMassage() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Treatment Focus"
-          badgeTopText="Shiatsu"
-          badgeBottomText="Focus"
+          badgeTopText="Guided by"
+          badgeBottomText="Pressure"
           title={<>Which Areas Does Shiatsu Commonly Target?</>}
           text="Rather than concentrating on only one muscle group, Shiatsu follows pressure points throughout the body while paying extra attention to areas where tension commonly develops from daily activities and posture."
           featuresLeft={[
@@ -158,8 +158,8 @@ export default function ShiatsuMassage() {
         <About
           image={treatmentImages.details[2]}
           subTitle="The Method"
-          badgeTopText="Shiatsu"
-          badgeBottomText="Method"
+          badgeTopText="The Shiatsu"
+          badgeBottomText="Rhythm"
           title={<>How Is a Shiatsu Massage Performed?</>}
           text="Shiatsu is performed using steady finger, thumb, and palm pressure combined with gentle stretching techniques. Instead of long gliding movements, our therapists work gradually across specific pressure points while adjusting intensity according to your body's response. The treatment follows a calm rhythm to encourage comfort throughout the entire session."
           featuresLeft={[

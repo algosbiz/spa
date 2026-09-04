@@ -146,8 +146,8 @@ export default function ManicurePedicure() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="What's Included"
-          badgeTopText="Complete"
-          badgeBottomText="Nail Care"
+          badgeTopText="Beauty in"
+          badgeBottomText="the Details"
           title={<>Professional Care from Nails to Skin</>}
           text="Our Manicure & Pedicure treatment combines essential nail care with skin conditioning to create a complete maintenance routine. Every step is performed carefully to improve both comfort and appearance."
           featuresLeft={[
@@ -166,8 +166,8 @@ export default function ManicurePedicure() {
         <About
           image={treatmentImages.details[2]}
           subTitle="The Process"
-          badgeTopText="Nail Care"
-          badgeBottomText="Process"
+          badgeTopText="The Finishing"
+          badgeBottomText="Touch"
           title={<>What Can You Expect During Your Appointment?</>}
           text="Our therapist begins by assessing your nails before cleaning, shaping, and caring for the cuticles. After the nails are prepared, the skin is moisturised using nourishing products, followed by your selected polish or gel finish if included. Every stage is completed with attention to hygiene, comfort, and long-lasting results."
           featuresLeft={[

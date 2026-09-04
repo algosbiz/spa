@@ -138,8 +138,8 @@ export default function TraditionalMassage() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Treatment Focus"
-          badgeTopText="Traditional"
-          badgeBottomText="Focus"
+          badgeTopText="Relief Where"
+          badgeBottomText="You Feel It"
           title={<>Which Areas Receive the Most Attention?</>}
           text="Muscle tension often develops in areas that carry repeated pressure throughout the day. During Traditional Massage, our therapists adjust their approach based on your body condition and focus on areas that need extra care."
           featuresLeft={[
@@ -158,8 +158,8 @@ export default function TraditionalMassage() {
         <About
           image={treatmentImages.details[2]}
           subTitle="The Approach"
-          badgeTopText="Massage"
-          badgeBottomText="Approach"
+          badgeTopText="A Timeless"
+          badgeBottomText="Technique"
           title={<>Inside a Traditional Massage Session</>}
           text="Traditional Massage combines firm hand movements with warm oil application to create smoother and more comfortable techniques. Our therapists use kneading, pressing, and acupressure-inspired movements to release areas of tightness while maintaining communication throughout the session. Pressure can be adjusted based on your comfort and body response."
           featuresLeft={[

@@ -138,8 +138,8 @@ export default function FootReflexology() {
         <AboutReverse
           image={treatmentImages.details[1]}
           subTitle="Reflex Points"
-          badgeTopText="Reflex"
-          badgeBottomText="Points"
+          badgeTopText="The Reflex"
+          badgeBottomText="Map"
           title={<>Where Does Foot Reflexology Focus?</>}
           text="Rather than massaging every part of the foot equally, Foot Reflexology follows a structured map of reflex points. Different areas receive controlled pressure according to traditional reflexology principles while maintaining a relaxing and comfortable treatment."
           featuresLeft={[
@@ -158,8 +158,8 @@ export default function FootReflexology() {
         <About
           image={treatmentImages.details[2]}
           subTitle="The Technique"
-          badgeTopText="Reflexology"
-          badgeBottomText="Technique"
+          badgeTopText="A Guided"
+          badgeBottomText="Sequence"
           title={<>What Is a Foot Reflexology Session Like?</>}
           text="Each session begins with gentle warm-up movements before our therapist applies steady thumb and finger pressure to carefully selected reflex points across the feet. The treatment follows a structured sequence rather than random massage strokes, allowing consistent pressure while keeping the experience comfortable and relaxing throughout the session."
           featuresLeft={[
