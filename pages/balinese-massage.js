@@ -99,7 +99,7 @@ export default function Home2({
             primaryImage={treatmentImages.intro[0]}
             secondaryImage={treatmentImages.intro[1]}
             leftShapeSrc="/images/about/shape1.png"
-            rightShapeSrc={introRightShapeImage}
+            rightShapeSrc="/images/shape/pricing-three-shape-right.png"
             subTitle="A Traditional Wellness"
             title={<>What Makes Balinese Massage Unique?</>}
             text="Balinese massage is a traditional treatment influenced by healing practices from Bali, Java, India, and China. The treatment combines acupressure, gentle stretching, skin rolling, and flowing strokes to help reduce tension, improve circulation, and encourage relaxation. Our therapists adapt the pressure and focus areas according to your comfort and preferences."
@@ -206,7 +206,10 @@ export default function Home2({
               items={faqItems}
             />
           </div>
-          <div>
+          <div id="balinese-massage-services-section" className="balinese-massage-services">
+            <Services title="Explore Beyond Your Balinese Massage" showFullTreatmentSlider embedded />
+          </div>
+          <div id="balinese-massage-paper-section" className="balinese-massage-paper-section section__decoration-top section__decoration-bottom bg-sub">
             <ReserveCta
               standardSpacing
               backgroundImage={treatmentImages.cta}
@@ -214,9 +217,6 @@ export default function Home2({
               text="Experience traditional Balinese massage in the comfort of your home, villa, or hotel without compromising on quality or convenience. Home service is available for an additional IDR 75,000 per therapist within Seminyak and nearby areas, while in-spa appointments can be scheduled throughout the day."
               closingText="Reserve a session that fits your plans and enjoy authentic Balinese relaxation wherever you stay in Bali"
             />
-          </div>
-          <div className="balinese-massage-services section__decoration-top section__decoration-bottom bg-sub ">
-            <Services title="Explore Beyond Your Balinese Massage" showFullTreatmentSlider embedded />
           </div>
         </Layout>
         <style jsx global>{`
@@ -240,6 +240,15 @@ export default function Home2({
           .balinese-massage-pricing .pricing-section-three .shape1 img {
             width: 180px;
             height: auto;
+          }
+
+          .balinese-massage-pricing .pricing-section-three {
+            padding-bottom: 80px;
+          }
+
+          .balinese-massage-pricing .balinese-session-options {
+            margin-top: 80px;
+            margin-bottom: 0;
           }
 
           .testimonial-section-two .shape2 img[src="/images/about/shape2.png"],
@@ -290,6 +299,16 @@ export default function Home2({
             }
           }
 
+          @media (max-width: 767px) {
+            .balinese-massage-pricing .pricing-section-three {
+              padding-bottom: 55px;
+            }
+
+            .balinese-massage-pricing .balinese-session-options {
+              margin-top: 55px;
+            }
+          }
+
           @media (min-width: 1400px) {
             .balinese-massage-faq .faq-section .content-column .inner-column {
               padding-right: 32px;
@@ -304,6 +323,62 @@ export default function Home2({
             max-width: 720px;
             margin-right: auto;
             margin-left: auto;
+          }
+
+          #balinese-massage-services-section > .service-section-two {
+            padding-bottom: 170px !important;
+          }
+
+          #balinese-massage-services-section .service-block-two .inner-box {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+          }
+
+          #balinese-massage-services-section .service-block-two .content {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+          }
+
+          #balinese-massage-services-section .service-block-two .content .title {
+            min-height: 70px;
+          }
+
+          #balinese-massage-services-section .service-block-two .content .text {
+            min-height: 87px;
+          }
+
+          #balinese-massage-paper-section {
+            padding-top: 0 !important;
+          }
+
+          #balinese-massage-paper-section > .reserve-cta-section {
+            padding-top: 170px !important;
+            padding-bottom: 170px !important;
+          }
+
+          @media (max-width: 767px) {
+            #balinese-massage-services-section > .service-section-two {
+              padding-bottom: 90px !important;
+            }
+
+            #balinese-massage-services-section .service-block-two .content .title {
+              min-height: 60px;
+            }
+
+            #balinese-massage-services-section .service-block-two .content .text {
+              min-height: 84px;
+            }
+
+            #balinese-massage-paper-section {
+              padding-top: 0 !important;
+            }
+
+            #balinese-massage-paper-section > .reserve-cta-section {
+              padding-top: 90px !important;
+              padding-bottom: 90px !important;
+            }
           }
         `}</style>
       </>

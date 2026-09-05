@@ -54,7 +54,6 @@ export default function Home3_Pricing({
                 <img className="animation__arryLeftRight" src="/images/shape/pricing-three-shape-right.png" alt="image"/>
             </div>
             <div className="container">
-                {children}
                 <div className="section-header__flex mb-60">
                     <div>
                         <p className="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
@@ -126,6 +125,7 @@ export default function Home3_Pricing({
                         </div>
                     );
                 })}
+                {children}
             </div>
         </section>
         </>

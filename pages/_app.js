@@ -25,7 +25,9 @@ function MyApp({ Component, pageProps }) {
         const lenis = new Lenis({
             autoRaf: true,
             smoothWheel: true,
-            lerp: 0.1,
+            // A slightly lower lerp keeps the smooth scroll feeling relaxed
+            // without making wheel and trackpad navigation feel sluggish.
+            lerp: 0.06,
             anchors: true,
             stopInertiaOnNavigate: true,
         });

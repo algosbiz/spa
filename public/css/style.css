@@ -9211,15 +9211,16 @@ textarea.form-control {
   margin-bottom: 20px;
 }
 .testimonial-block-two .inner-box .text {
-  font-size: 30px;
-  line-height: 42px;
+  font-size: 16px;
+  line-height: 28px;
   color: var(--headings-color);
-  font-family: var(--title-font);
+  font-family: var(--text-font);
+  font-weight: 400;
 }
 @media (max-width: 575px) {
   .testimonial-block-two .inner-box .text {
-    font-size: 20px;
-    line-height: 32px;
+    font-size: 16px;
+    line-height: 28px;
   }
 }
 .testimonial-block-two .inner-box .info {
