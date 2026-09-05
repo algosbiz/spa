@@ -131,6 +131,7 @@ export default function Home2({
           <Testimonial rightShapeSrc="/images/about/shape2.png" />
           {/* <Team /> */}
           {/* <Contact /> */}
+          <div className="balinese-massage-benefits">
           <About
             image={treatmentImages.details[0]}
             leftShapeSrc="/images/about/shape3.png"
@@ -151,6 +152,7 @@ export default function Home2({
             buttonText="Book Now"
             buttonLink={bookingUrl}
           />
+          </div>
           <AboutReverse
             image={treatmentImages.details[1]}
             rightShapeSrc="/images/about/about-four-shape.png"
@@ -242,6 +244,11 @@ export default function Home2({
 
           .testimonial-section-two .shape2 img[src="/images/about/shape2.png"],
           .about-section img[src="/images/shape/leaf4.png"] {
+            width: 130px;
+            height: auto;
+          }
+
+          .balinese-massage-benefits .about-section .shape2 img {
             width: 130px;
             height: auto;
           }

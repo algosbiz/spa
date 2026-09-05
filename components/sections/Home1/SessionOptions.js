@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { formatPrice } from "@/lib/formatPrice";
 
 const defaultSessions = [
   {
@@ -30,6 +31,15 @@ const defaultSessions = [
     ],
   },
 ];
+
+function getSessionBookingUrl(bookingUrl, session) {
+  const url = new URL(bookingUrl);
+  url.searchParams.set(
+    "text",
+    `Hi, I'd like to book a Balinese Massage.\n\nDuration: ${session.duration}\nPrice: ${session.price}\n\nCould you please confirm availability?`
+  );
+  return url.toString();
+}
 
 const ArrowIcon = () => (
   <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -83,24 +93,24 @@ export default function SessionOptions({
                 </div>
               </div>
               <div className="content">
-                <p className="session-option-price">{session.price}</p>
+                <div className="session-option-shape" aria-hidden="true">
+                  <img src="/images/pricing/shape.png" alt="" />
+                </div>
+                <p className="session-option-price">{formatPrice(session.price)}</p>
                 <h3 className="title session-option-duration">{session.duration}</h3>
                 <ul className="session-option-list">
                   {session.details.map((detail) => <li key={detail}>{detail}</li>)}
                 </ul>
+                <Link
+                  href={getSessionBookingUrl(bookingUrl, session)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-two session-option-booking"
+                  aria-label={`Book the ${session.duration} Balinese Massage session`}
+                >
+                  Book Now <ArrowIcon />
+                </Link>
               </div>
-              <div className="shape">
-                <img src="/images/service/shape.png" alt="" aria-hidden="true" />
-              </div>
-              <Link
-                href={bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="arry-icon"
-                aria-label={`Book the ${session.duration} Balinese Massage session`}
-              >
-                <ArrowIcon />
-              </Link>
             </div>
           </div>
         ))}
@@ -152,6 +162,9 @@ export default function SessionOptions({
         .balinese-session-options .session-option-card {
           display: flex;
           flex-direction: column;
+          height: 100%;
+          overflow: hidden;
+          padding-bottom: 30px;
         }
 
         .balinese-session-options .session-option-card .image-box .image {
@@ -166,32 +179,82 @@ export default function SessionOptions({
         }
 
         .balinese-session-options .session-option-card .content {
+          position: relative;
+          z-index: 0;
+          display: flex;
+          flex-direction: column;
           flex: 1;
+          width: 100%;
+          max-width: none;
+          text-align: left;
+        }
+
+        .balinese-session-options .session-option-shape {
+          position: absolute;
+          top: -30px;
+          right: -30px;
+          z-index: -1;
+          pointer-events: none;
+        }
+
+        .balinese-session-options .session-option-shape img {
+          max-width: 100%;
         }
 
         .balinese-session-options .session-option-price {
-          margin: 0 0 4px;
-          color: var(--theme-color1);
+          margin: 0 0 20px;
+          padding-bottom: 20px;
+          color: var(--headings-color);
           font-family: var(--title-font);
-          font-size: 24px;
-          font-weight: 600;
-          line-height: 1.25;
+          font-size: 55px;
+          font-weight: 300;
+          line-height: 65px;
         }
 
-        .balinese-session-options .session-option-duration {
-          margin-bottom: 14px;
+        .balinese-session-options .session-option-card .content .session-option-duration {
+          margin-bottom: 0;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 28px;
         }
 
         .balinese-session-options .session-option-list {
-          margin: 0;
+          margin: 0 0 35px;
           padding: 0;
           list-style: none;
         }
 
         .balinese-session-options .session-option-list li {
-          margin-top: 8px;
-          color: var(--text-color);
-          line-height: 1.55;
+          margin-top: 10px;
+          color: var(--headings-color);
+        }
+
+        .balinese-session-options .session-option-booking {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          align-self: flex-start;
+          gap: 5px;
+          max-width: 100%;
+          margin-top: auto;
+        }
+
+        .balinese-session-options .session-option-booking svg {
+          width: 18px;
+          height: 18px;
+          flex-shrink: 0;
+        }
+
+        .balinese-session-options .session-option-booking:focus-visible {
+          outline: 2px solid var(--headings-color);
+          outline-offset: 4px;
+        }
+
+        @media (max-width: 767px) {
+          .balinese-session-options .session-option-price {
+            font-size: 30px;
+            line-height: 40px;
+          }
         }
 
         @media (max-width: 575px) {
@@ -201,6 +264,10 @@ export default function SessionOptions({
 
           .balinese-session-options .session-option-card {
             padding: 20px;
+          }
+
+          .balinese-session-options .session-option-shape {
+            right: -20px;
           }
         }
       `}</style>
