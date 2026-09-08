@@ -238,14 +238,23 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
         </div>
       </Layout>
       <style jsx global>{`
+        /* The gold second line competed with the logo and the header CTA for
+           attention, so the whole headline is now set in the heading colour. */
+        .banner-five-area .banner-five__content .title,
+        .banner-five-area .banner-five__content .title span {
+          color: var(--headings-color);
+        }
+
         .banner-five-area .banner-five__content .title {
-          font-size: clamp(72px, 5.75vw, 100px);
+          font-size: clamp(72px, 5.75vw, 80px);
           line-height: 1.08;
         }
 
+        /* Capped at the 72px the rule above bottoms out at, so the headline does
+           not jump back up a size when the viewport crosses 992px. */
         @media (max-width: 991px) {
           .banner-five-area .banner-five__content .title {
-            font-size: clamp(54px, 8vw, 80px);
+            font-size: clamp(54px, 8vw, 72px);
           }
         }
 

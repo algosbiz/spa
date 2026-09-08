@@ -3052,18 +3052,7 @@ svg.icon[viewBox="0 0 25 26"] > *,
   border: 1px solid var(--theme-color-white);
 }
 .btn-two, .btn-two-dark, .btn-two-light {
-  background-color: var(--theme-color1);
-  color: var(--theme-color-white);
-}
-.btn-two .icon_first, .btn-two-dark .icon_first, .btn-two-light .icon_first,
-.btn-two .icon_second,
-.btn-two-dark .icon_second,
-.btn-two-light .icon_second {
-  color: var(--theme-color-white) !important;
-}
-.btn-two:hover, .btn-two-dark:hover, .btn-two-light:hover {
-  background-color: var(--theme-color2);
-  border: 1px solid transparent;
+  border-width: 2px;
 }
 .btn-two-light {
   background-color: var(--theme-color-white);
@@ -3084,7 +3073,12 @@ svg.icon[viewBox="0 0 25 26"] > *,
 }
 .btn-two-dark {
   background-color: var(--theme-color2);
+  color: var(--theme-color-white);
   border: none;
+}
+.btn-two-dark .icon_first,
+.btn-two-dark .icon_second {
+  color: var(--theme-color-white) !important;
 }
 .btn-two-dark:hover {
   border: none;
@@ -4030,11 +4024,6 @@ textarea.form-control {
 .header-three-area .container {
   max-width: 1720px;
 }
-@media (prefers-reduced-motion: reduce) {
-  .header-three-area {
-    transition: none;
-  }
-}
 .header-four-area::after {
   position: absolute;
   top: 0;
@@ -4266,6 +4255,11 @@ textarea.form-control {
 }
 .sidebar-area--white .mobile-menu ul li a:hover, .sidebar-area--white .mobile-menu ul li a:focus-visible {
   color: var(--theme-color1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-area--white .mobile-menu-three-area {
+    transition: none;
+  }
 }
 
 .search-wrap {
@@ -5529,8 +5523,6 @@ textarea.form-control {
   transform: scaleX(-1);
 }
 
-/* Treatment detail images use a shared masked frame so source image ratios do
- * not change the frame height or the badge position. */
 .about-section--treatment .image-column .inner-column .image-box {
   aspect-ratio: 570/496;
 }
@@ -5757,6 +5749,11 @@ textarea.form-control {
   right: 0;
   z-index: 1;
   width: 265px;
+}
+@media (min-width: 992px) {
+  .about-section-three .image-column .inner-column .info {
+    width: 320px;
+  }
 }
 @media (max-width: 575px) {
   .about-section-three .image-column .inner-column .info {
@@ -8355,12 +8352,21 @@ textarea.form-control {
   text-align: center;
   border-radius: 50%;
   transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid var(--theme-color1);
   background-color: #fff;
   position: absolute;
   top: 0;
   right: 0;
   transition: all 0.3s;
+}
+.service-block-two .inner-box .image-box .icon > svg,
+.service-block-two .inner-box .image-box .icon > img {
+  flex: 0 0 auto;
+  display: block;
+  margin: auto;
 }
 .service-block-two .inner-box .image-box .icon svg {
   transition: 0.9s;
@@ -8444,9 +8450,8 @@ textarea.form-control {
   bottom: -35px;
 }
 
-.service-section-two--paper .service-block-two .inner-box .image-box .image {
-  mask-image: url(../images/service/service-two-image-mask-portrait.svg);
-  mask-size: 100% 100%;
+.service-section-two--paper .service-block-two .inner-box {
+  border: 1px solid rgba(var(--theme-color1-rgb), 0.35);
 }
 
 .service-section-three {

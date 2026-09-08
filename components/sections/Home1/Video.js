@@ -12,6 +12,9 @@ export default function Home1_Video({
     secondStat = (<>Trusted by <br /> Thousands</>),
     contentImage = "/images/video/video-image2.jpg",
     featureImage = "/images/video/video-image1.jpg",
+    // Pages that have no clip to play pass false, which leaves the still image
+    // on its own rather than a play button that opens an unrelated video.
+    showVideoButton = true,
 }) {
     const [isOpen, setOpen] = useState(false);
     return (
@@ -43,6 +46,7 @@ export default function Home1_Video({
                                 </div>
                                 <div className="image gsap__parallax-zoom">
                                     <img src={contentImage} alt="Spa body treatment" />
+                                    {showVideoButton && (
                                     <div className="btn-video video-pulse">
                                         <a className="video-popup wow zoomIn" onClick={() => setOpen(true)}>
                                             <svg width="82" height="82" viewBox="0 0 82 82" fill="none"
@@ -60,6 +64,7 @@ export default function Home1_Video({
                                             </svg>
                                         </a>
                                     </div>
+                                    )}
                                 </div>
                                 <div className="list mt-40">
                                     <ul className="wow fadeInDown" data-wow-delay="00ms" data-wow-duration="1500ms">
@@ -151,7 +156,9 @@ export default function Home1_Video({
                     </div>
                 </div>
             </section>
-            <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="Fvae8nxzVz4" onClose={() => setOpen(false)} />
+            {showVideoButton && (
+                <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="Fvae8nxzVz4" onClose={() => setOpen(false)} />
+            )}
         </>
     )
 }

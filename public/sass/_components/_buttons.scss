@@ -60,18 +60,12 @@
 			}
 		}
 	}
+	// Primary CTA. The gold fill belongs to the hover state only: at rest the
+	// button is a gold outline over whatever background it sits on, so it reads
+	// the same on white cards, the cream sections and the pricing panels.
 	&-two {
 		@extend .btn-one;
-		background-color: var(--theme-color1);
-		color: var(--theme-color-white);
-		.icon_first,
-		.icon_second {
-			color: var(--theme-color-white) !important;
-		}
-		&:hover {
-			background-color: var(--theme-color2);
-			border: 1px solid transparent;
-		}
+		border-width: 2px;
 		&-light {
 			@extend .btn-two;
 			background-color: var(--theme-color-white);
@@ -93,7 +87,12 @@
 		&-dark {
 			@extend .btn-two;
 			background-color: var(--theme-color2);
+			color: var(--theme-color-white);
 			border: none;
+			.icon_first,
+			.icon_second {
+				color: var(--theme-color-white) !important;
+			}
 			&:hover {
 				border: none;
 				background-color: var(--theme-color1);

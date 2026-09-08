@@ -408,6 +408,7 @@ export default function Home() {
           image="/images/pricelist/pricelist-1.webp"
         />
         <Video
+          showVideoButton={false}
           topSubTitle="Start With What You Need"
           topTitle="Which Treatment Are You Looking For Today?"
           topText="Our treatment menu makes it easy to find the care your body or skin needs, from massage and muscle care to facials, body scrubs, and beauty treatments. Choose the treatment and duration that suit your day."

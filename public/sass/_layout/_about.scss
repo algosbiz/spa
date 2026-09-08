@@ -406,6 +406,13 @@
 				z-index: 1;
 				width: 265px;
 
+				// From lg up the column is wide enough to give the rating card
+				// its own presence: it reaches back over the transparent edge of
+				// the masked portrait instead of hugging the second image.
+				@include breakpoint(lg) {
+					width: 320px;
+				}
+
 				@include breakpoint(max-sm) {
 					width: 180px;
 				}

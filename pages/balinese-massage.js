@@ -122,7 +122,7 @@ export default function Home2({
           </div>
           {/* <Marquee /> */}
           {/* <Product /> */}
-          <div className="balinese-massage-funfact">
+          <div id="balinese-massage-funfact" className="balinese-massage-funfact">
             <Funfact items={serviceHighlights} />
           </div>
           {/* <News /> */}
@@ -221,8 +221,8 @@ export default function Home2({
               standardSpacing
               backgroundImage={treatmentImages.cta}
               title="Enjoy Balinese Massage Wherever You Stay"
-              text="Enjoy Balinese massage at your home, villa, or hotel, with home service available in Seminyak and nearby areas for IDR 75,000 per therapist and in-spa sessions available daily."
-              closingText="Reserve a session that fits your plans and enjoy Balinese relaxation wherever you stay."
+              text="Balinese massage is available at our Seminyak spa and as home service at your villa or hotel, with an additional IDR 75,000 per therapist for locations in Seminyak and nearby areas. Our therapists adjust the pressure to suit you, from a gentle relaxing session through to firmer work on tired muscles and stiff shoulders."
+              closingText="Reserve a session that fits your plans, in our spa or at your villa."
             />
           </div>
           </div>
@@ -256,8 +256,13 @@ export default function Home2({
             height: auto;
           }
 
+          .balinese-massage-testimonial .testimonial-section-two .shape1 img {
+            width: 270px;
+            height: auto;
+          }
+
           .balinese-massage-testimonial .testimonial-section-two .shape2 img {
-            width: 180px;
+            width: 200px;
             height: auto;
           }
 
@@ -276,6 +281,24 @@ export default function Home2({
 
           .balinese-massage-pricing .pricing-section-three {
             padding-bottom: 80px;
+          }
+
+          /* The funfact row sits between two torn-paper edges, so the shared
+             ruler gives it 143px/131px. Tighten it on this page only; the id
+             is what outranks those !important rules. Tablet and the 75px
+             mobile ruler are deliberately left alone. */
+          @media (min-width: 992px) {
+            #balinese-massage-funfact > .funfact-section {
+              padding-top: 120px !important;
+              padding-bottom: 130px !important;
+            }
+          }
+
+          /* White cards on a white section have no edge of their own. A soft
+             gold hairline gives each one a boundary without competing with the
+             gold icon ring. */
+          #balinese-massage-services-section .service-block-two .inner-box {
+            border: 1px solid rgba(var(--theme-color1-rgb), 0.35);
           }
 
           .balinese-massage-pricing .balinese-session-options {

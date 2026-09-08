@@ -758,8 +758,8 @@ export default function OutcallHomeServiceMassage() {
             <ReserveCta
               bottomSpacing={0}
               title="Home Service Massage in Seminyak"
-              text="Professional spa treatments are available at your home, hotel, or villa. An additional IDR 75,000 per therapist applies for home service in Seminyak and nearby areas."
-              closingText="For in-spa treatments, bookings should be made on-site based on your preferred time."
+              text="Professional spa treatments are available at your home, hotel, or villa, with an additional IDR 75,000 per therapist for home service in Seminyak and nearby areas. Choose the treatment and the time that suit your plans, and our therapists will come to you with everything the session needs, including oils and fresh linen."
+              closingText="For in-spa treatments, bookings are made on-site at your preferred time."
               backgroundImage="/images/outcall/outcall-5.webp"
             />
           </div>

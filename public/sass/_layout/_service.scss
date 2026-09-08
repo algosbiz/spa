@@ -208,12 +208,28 @@
 			}
 			.icon {
 				@include radius(85px, 85px, 75px);
+				// The mixin centres on the text baseline, so the glyph lands in a
+				// different spot depending on whether the card supplies an inline
+				// <svg> or an <img>. Centre the box itself instead.
+				display: flex;
+				align-items: center;
+				justify-content: center;
 				border: 2px solid var(--theme-color1);
 				background-color: #fff;
 				position: absolute;
 				top: 0;
 				right: 0;
 				transition: all 0.3s;
+				// The glyph is an inline <svg> on the three fixed cards and an
+				// <img> on the rest. Pin both to the middle of the ring and stop
+				// the flex line from resizing them, so neither box type can drift
+				// out of the circle.
+				> svg,
+				> img {
+					flex: 0 0 auto;
+					display: block;
+					margin: auto;
+				}
 				svg {
 					transition: 0.9s;
 					[fill="white"] {
@@ -306,9 +322,13 @@
 }
 
 .service-section-two--paper {
-	.service-block-two .inner-box .image-box .image {
-		mask-image: url(../images/service/service-two-image-mask-portrait.svg);
-		mask-size: 100% 100%;
+	// The portrait mask this variant used to carry keeps its own 390:520 ratio,
+	// so on a landscape card it shrank to the middle of the box and left the
+	// icon ring stranded in the white space beside the photo. Use the shared
+	// masking, whose notch is cut to fit the ring.
+	.service-block-two .inner-box {
+		// White cards on the paper background need an edge of their own.
+		border: 1px solid rgba(var(--theme-color1-rgb), 0.35);
 	}
 }
 // Service two area end here ***
