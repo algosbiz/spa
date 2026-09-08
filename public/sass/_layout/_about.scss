@@ -1,0 +1,633 @@
+// About area start here ***
+.about-section {
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+
+	.shape1 {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		@include breakpoint(max-sm) {
+			display: none;
+		}
+	}
+
+	.shape2 {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: -1;
+		@include breakpoint(max-md) {
+			display: none;
+		}
+	}
+
+	.image-column {
+		.inner-column {
+			max-width: 570px;
+			float: right;
+			position: relative;
+			z-index: 1;
+
+			.image-box {
+				mask-image: url(../images/about/about-image-mask.png);
+				mask-repeat: no-repeat;
+				mask-size: cover;
+				mask-position: center;
+				img {
+					width: 100%;
+				}
+			}
+
+			.info {
+				color: var(--theme-color2);
+				padding: 31px 25px;
+				width: 210px;
+				height: 143px;
+				background-color: var(--theme-color-cream);
+				border: 2px solid var(--theme-color2);
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				text-align: center;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				border-radius: 30px;
+
+				.info-line {
+					line-height: 35px;
+					font-weight: 300;
+					font-family: var(--title-font);
+					font-size: 22px;
+					color: var(--theme-color2);
+					@include breakpoint(max-md) {
+						font-size: 18px;
+					}
+
+					span {
+						font-weight: 500;
+						font-size: 24px;
+					}
+				}
+
+				.title {
+					letter-spacing: 4px;
+					margin-top: 5px;
+				}
+
+				&.info--gold {
+					border-color: var(--theme-color1);
+
+					.info-line {
+						color: var(--theme-color1);
+					}
+				}
+			}
+
+			@include breakpoint(max-sm) {
+				.image-box {
+					aspect-ratio: 570 / 496;
+
+					img {
+						display: block;
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+
+				.info {
+					width: calc(37.9% - 6px);
+					height: calc(30% - 6px);
+					bottom: 3px;
+					left: 3px;
+					padding: 0 6px;
+					border-radius: clamp(14px, 4vw, 20px);
+
+					.info-line {
+						font-size: clamp(13px, 4vw, 18px);
+						line-height: clamp(22px, 6.5vw, 30px);
+						white-space: nowrap;
+
+						span {
+							font-size: clamp(16px, 4.8vw, 21px);
+						}
+					}
+
+					.title {
+						letter-spacing: clamp(1px, 0.55vw, 2.5px);
+						margin-top: 2px;
+					}
+				}
+			}
+		}
+	}
+
+	.content-column {
+		.inner-column {
+			max-width: 673px;
+
+			.list {
+				@include justify-wrp;
+				gap: 20px;
+
+				ul {
+					li {
+						@include flex;
+						gap: 10px;
+						font-weight: 500;
+
+						&:not(:last-child) {
+							margin-bottom: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+// About area end here ***
+
+.treatment-leaf-shape--right {
+	transform: scaleX(-1);
+}
+
+// Treatment detail images use the same masked frame in both About variants.
+// Keep source images with different intrinsic ratios (for example Body Scrub's
+// 630x580 intro image) from changing the frame height and badge position.
+.about-section--treatment {
+	.image-column {
+		.inner-column {
+			.image-box {
+				aspect-ratio: 570 / 496;
+
+				img {
+					display: block;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+}
+
+// About two area start here ***
+.about-section-two {
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+
+		.shape1 {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			.about-leaf-gold {
+				display: block;
+				width: 308px;
+				height: 326px;
+				background-color: var(--theme-color1);
+				-webkit-mask: url(../images/about/shape1.png) no-repeat center / contain;
+				mask: url(../images/about/shape1.png) no-repeat center / contain;
+			}
+			@include breakpoint(max-sm) {
+				display: none;
+		}
+	}
+
+	.shape2 {
+		position: absolute;
+		bottom: 50px;
+		right: 20px;
+		z-index: -1;
+		@include breakpoint(max-sm) {
+			display: none;
+		}
+	}
+
+	.image-column {
+		.inner-column {
+			position: relative;
+			z-index: 1;
+			max-width: 578px;
+
+			.image-box {
+				.image {
+					mask-image: url(../images/about/about-two-image-mask.png);
+					mask-repeat: no-repeat;
+					mask-size: cover;
+					mask-position: center;
+				}
+
+				.circle-image {
+					position: absolute;
+					top: 100px;
+					right: -160px;
+					border-radius: 50%;
+					width: 330px;
+					height: 330px;
+					object-fit: cover;
+
+					@include breakpoint(max-xxl) {
+						width: 200px;
+						height: 200px;
+						right: -80px;
+
+						@include breakpoint(max-sm) {
+							top: 30px;
+							right: 30px;
+						}
+					}
+				}
+			}
+
+			.circle-btn {
+				@include radius(100px, 100px, 98px);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				line-height: 1;
+				background-color: #fff;
+				border: 2px solid var(--theme-color1);
+				position: absolute;
+				bottom: 0;
+				right: 0;
+
+				&:hover {
+					transform: rotate(-45deg);
+				}
+
+				@include breakpoint(max-xs) {
+					@include radius(50px, 50px, 48px);
+
+					svg {
+						width: 16px;
+						height: 16px;
+					}
+				}
+			}
+
+			.brand-card {
+				width: 90px;
+				height: 90px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				z-index: 2;
+				background-color: var(--theme-color-cream);
+				border: 2px solid var(--theme-color2);
+				border-radius: 26px;
+
+				.brand-lotus-icon {
+					width: 44px;
+					height: 44px;
+					flex-basis: 44px;
+				}
+
+				@include breakpoint(max-xs) {
+					width: 50px;
+					height: 50px;
+					border-radius: 16px;
+
+					.brand-lotus-icon {
+						width: 28px;
+						height: 28px;
+						flex-basis: 28px;
+					}
+				}
+			}
+		}
+	}
+
+	.content-column {
+		.inner-column {
+			.inner-box {
+				display: flex;
+				align-items: center;
+				gap: 25px;
+
+				.icon-box {
+					display: inline-block;
+					position: relative;
+					z-index: 1;
+
+					.icon-bg {
+						fill: var(--theme-color-gray);
+					}
+
+					.icon {
+						@include center;
+						transition: 0.9s;
+					}
+				}
+
+				&:hover {
+					.icon-box {
+						.icon {
+							transform: translate(-50%, -50%) rotateY(360deg);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+// About two area end here ***
+
+// About three area start here ***
+.about-section-three {
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+
+	.shape {
+		position: absolute;
+		bottom: 130px;
+		right: 5px;
+		z-index: -1;
+	}
+
+	.image-column {
+		.inner-column {
+			max-width: 620px;
+			position: relative;
+			z-index: 1;
+			margin-top: 25px;
+			margin-bottom: 60px;
+
+			@include breakpoint(max-sm) {
+				margin-top: 0;
+				margin-bottom: 30px;
+			}
+
+			img {
+				width: 100%;
+				border-radius: 30px;
+			}
+
+			.image {
+				-webkit-mask-image: url(../images/about/about-three-image-mask.png);
+				-webkit-mask-repeat: no-repeat;
+				-webkit-mask-position: center;
+				mask-image: url(../images/about/about-three-image-mask.png);
+				mask-repeat: no-repeat;
+				mask-position: center;
+			}
+
+			.image1 {
+				max-width: 360px;
+
+				@include breakpoint(max-sm) {
+					max-width: 200px;
+				}
+			}
+
+			.image2 {
+				max-width: 237px;
+
+				@include breakpoint(max-sm) {
+					max-width: 120px;
+				}
+			}
+
+			display: flex;
+			// align-items: end;
+			gap: 24px;
+
+			.info {
+				position: absolute;
+				top: 0;
+				right: 0;
+				z-index: 1;
+				width: 265px;
+
+				@include breakpoint(max-sm) {
+					width: 180px;
+				}
+			}
+
+			.shape-one {
+				position: absolute;
+				top: -40px;
+				left: -190px;
+
+				.about-leaf-gold {
+					display: block;
+					width: 308px;
+					height: 326px;
+					background-color: var(--theme-color1);
+					-webkit-mask: url(../images/about/shape1.png) no-repeat center / contain;
+					mask: url(../images/about/shape1.png) no-repeat center / contain;
+				}
+
+				@include breakpoint(max-sm) {
+					display: none;
+				}
+			}
+
+			.shape-two {
+				position: absolute;
+				bottom: -65px;
+				right: -70px;
+
+				@include breakpoint(max-sm) {
+					display: none;
+				}
+			}
+
+			.shape-three {
+				position: absolute;
+				bottom: 90px;
+				right: -160px;
+
+				@include breakpoint(max-sm) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.content-column {
+		.inner-column {
+			max-width: 620px;
+			width: 100%;
+			float: right;
+			position: relative;
+			z-index: 1;
+
+			@include breakpoint(max-xl) {
+				max-width: 100%;
+				float: left;
+			}
+
+			.list {
+				@include justify-wrp;
+				gap: 20px;
+
+				ul {
+					li {
+						@include flex;
+						gap: 10px;
+						font-weight: 500;
+
+						&:not(:last-child) {
+							margin-bottom: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+// About three area end here ***
+
+// About four area start here ***
+.about-section-four {
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+
+	.outer-box {
+		padding: 0 30px;
+		padding-top: 80px;
+		position: relative;
+		z-index: 1;
+		@include breakpoint(max-md) {
+			padding: 0 15px;
+			padding-top: 60px;
+		}
+		.shape {
+			position: absolute;
+			right: 30px;
+			bottom: -130px;
+			z-index: -1;
+			@include breakpoint(max-lg) {
+				display: none;
+			}
+		}
+		&::after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 80%;
+			height: 100%;
+			background-color: var(--theme-color-gray);
+			content: "";
+			z-index: -1;
+			@include breakpoint(max-lg) {
+				display: none;
+			}
+		}
+	}
+
+	.left-column {
+		.inner-column {
+			.image {
+				border-radius: 30px;
+				overflow: hidden;
+				max-width: 714px;
+				@include breakpoint(max-lg) {
+					max-width: 100%;
+				}
+			}
+			.content {
+				max-width: 570px;
+				margin-left: auto;
+				@include breakpoint(max-lg) {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+
+	.right-column {
+		.inner-column {
+			.image {
+				border-radius: 30px;
+				overflow: hidden;
+				max-width: 988px;
+				margin-left: auto;
+			}
+			.content-box {
+				max-width: 645px;
+				position: relative;
+				z-index: 1;
+				.list {
+					@include justify-wrp;
+					gap: 20px;
+					ul {
+						li {
+							@include flex;
+							gap: 10px;
+							font-weight: 500;
+							&:not(:last-child) {
+								margin-bottom: 20px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+// About four area end here ***
+
+// About six area start here ***
+.about-section-six {
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+
+	.shape {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: -1;
+		@include breakpoint(max-sm) {
+			display: none;
+		}
+	}
+
+	.left-column {
+		.inner-column {
+			max-width: 590px;
+			.image {
+				overflow: hidden;
+				border-radius: 30px;
+			}
+			.content-box {
+				max-width: 673px;
+				.list {
+					@include justify-wrp;
+					gap: 20px;
+					ul {
+						li {
+							@include flex;
+							gap: 10px;
+							font-weight: 500;
+							&:not(:last-child) {
+								margin-bottom: 20px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.right-column {
+		.inner-column {
+			.image {
+				overflow: hidden;
+				border-radius: 30px;
+			}
+		}
+	}
+}
+
+// About six area end here ***

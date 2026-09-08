@@ -1,0 +1,1055 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	outline: none;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	font-family: var(--text-font);
+	color: var(--text-color);
+	background-color: var(--theme-color-light);
+	line-height: 28px;
+	font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0;
+	color: var(--headings-color);
+	font-family: var(--title-font);
+}
+
+h1 {
+	font-size: 110px;
+	font-weight: 700;
+	line-height: 130px;
+	@include breakpoint(max-lg) {
+		font-size: 60px;
+		line-height: 75px;
+	}
+	@include breakpoint(max-xs) {
+		font-size: 42px;
+		line-height: 60px;
+	}
+}
+
+h2 {
+	font-size: 55px;
+	font-weight: 300;
+	line-height: 65px;
+	@include breakpoint(max-md) {
+		font-size: 30px;
+		line-height: 40px;
+	}
+}
+
+h3 {
+	font-size: 24px;
+	line-height: 35px;
+	font-weight: 500;
+	@include breakpoint(max-md) {
+		font-size: 20px;
+		line-height: 30px;
+	}
+}
+
+h4 {
+	font-size: 22px;
+	line-height: 32px;
+	font-weight: 500;
+	@include breakpoint(max-md) {
+		font-size: 18px;
+		line-height: 26px;
+	}
+}
+
+h5 {
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 30px;
+}
+
+h6 {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 28px;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	line-height: 29px;
+}
+
+span {
+	display: inline-block;
+	color: inherit;
+}
+
+.splt-txt {
+	span {
+		color: unset;
+	}
+}
+
+a {
+	font-family: var(--title-font);
+	text-decoration: none;
+	display: inline-block;
+	color: inherit;
+	transition: all 0.3s;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+li {
+	list-style: none;
+}
+
+button {
+	border: none;
+	box-shadow: none;
+	background-color: transparent;
+}
+
+figure {
+	margin: 0;
+}
+
+br {
+	@include breakpoint(max-xxl) {
+		display: none;
+	}
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-track {
+	background-color: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #c1c1c1;
+	border: 1px solid transparent;
+	background-clip: content-box;
+	&:hover {
+		background-color: #a8a8a8;
+	}
+}
+
+::placeholder {
+	color: var(--text-color);
+	font-size: 16px;
+}
+// typography area end here ***
+
+// Custom class area start here ***
+// Margin Top ***
+@for $i from 1 through 40 {
+	.mt-#{5 * $i} {
+		margin-top: 5px * $i;
+	}
+}
+/*-- Margin Bottom --*/
+@for $i from 1 through 40 {
+	.mb-#{5 * $i} {
+		margin-bottom: 5px * $i;
+	}
+}
+// Margin Left ***
+@for $i from 1 through 40 {
+	.ml-#{5 * $i} {
+		margin-left: 5px * $i;
+	}
+}
+
+// Margin Right***
+@for $i from 1 through 40 {
+	.mr-#{5 * $i} {
+		margin-right: 5px * $i;
+	}
+}
+
+// Padding Top ***
+@for $i from 1 through 40 {
+	.pt-#{5 * $i} {
+		padding-top: 5px * $i;
+	}
+}
+
+// Padding Bottom ***
+@for $i from 1 through 40 {
+	.pb-#{5 * $i} {
+		padding-bottom: 5px * $i;
+	}
+}
+
+//  Padding Left ***
+@for $i from 1 through 40 {
+	.pl-#{5 * $i} {
+		padding-left: 5px * $i;
+	}
+}
+
+// Padding Right ***
+@for $i from 1 through 40 {
+	.pr-#{5 * $i} {
+		padding-right: 5px * $i;
+	}
+}
+
+@include breakpoint(xxl) {
+	.container {
+		max-width: 1434px;
+	}
+}
+
+@include breakpoint(max-md) {
+	.pt-170 {
+		padding-top: 80px;
+	}
+	.pb-170 {
+		padding-bottom: 80px;
+	}
+	.mt-170 {
+		margin-top: 80px;
+	}
+	.mb-170 {
+		margin-bottom: 80px;
+	}
+	.pt-130 {
+		padding-top: 60px;
+	}
+	.pb-130 {
+		padding-bottom: 60px;
+	}
+	.mt-130 {
+		margin-top: 60px;
+	}
+	.mb-130 {
+		margin-bottom: 60px;
+	}
+	.pt-100 {
+		padding-top: 50px;
+	}
+	.pb-100 {
+		padding-bottom: 50px;
+	}
+	.mt-100 {
+		margin-top: 50px;
+	}
+	.mb-100 {
+		margin-bottom: 50px;
+	}
+	.pt-80 {
+		padding-top: 40px;
+	}
+	.pb-80 {
+		padding-bottom: 40px;
+	}
+	.mt-80 {
+		margin-top: 40px;
+	}
+	.mb-80 {
+		margin-bottom: 40px;
+	}
+	.pt-50 {
+		padding-top: 25px;
+	}
+	.pb-50 {
+		padding-bottom: 25px;
+	}
+	.pt-60 {
+		padding-top: 30px;
+	}
+	.pb-60 {
+		padding-bottom: 30px;
+	}
+	.mt-50 {
+		margin-top: 25px;
+	}
+	.mb-50 {
+		margin-bottom: 25px;
+	}
+	.mt-60 {
+		margin-top: 30px;
+	}
+	.mb-60 {
+		margin-bottom: 30px;
+	}
+}
+
+.bor {
+	border: 1px solid rgba(var(--theme-color-black-rgb), 0.1);
+}
+
+.bor-top {
+	border-top: 1px solid rgba(var(--theme-color-black-rgb), 0.1);
+}
+
+.bor-left {
+	border-left: 1px solid rgba(var(--theme-color-black-rgb), 0.1);
+}
+
+.bor-bottom {
+	border-bottom: 1px solid rgba(var(--theme-color-black-rgb), 0.1);
+}
+
+.bor-right {
+	border-right: 1px solid rgba(var(--theme-color-black-rgb), 0.1);
+}
+
+.text-justify {
+	text-align: justify;
+}
+
+.image {
+	img {
+		width: 100%;
+	}
+}
+
+.color {
+	&-one {
+		color: var(--theme-color1) !important;
+	}
+	&-two {
+		color: var(--theme-color2) !important;
+	}
+	&-dark {
+		color: var(--theme-color-black) !important;
+	}
+
+	&-light {
+		color: var(--theme-color-white) !important;
+	}
+}
+
+.bg {
+	&-one {
+		background-color: var(--theme-color1) !important;
+	}
+	&-two {
+		background-color: var(--theme-color2) !important;
+	}
+	&-dark {
+		background-color: var(--theme-color-black) !important;
+	}
+	&-sub {
+		background-color: var(--theme-color-gray) !important;
+		&-two {
+			background-color: var(--theme-color-gray2) !important;
+		}
+	}
+	&-transparent {
+		background-color: transparent !important;
+	}
+}
+
+.fs-14 {
+	font-size: 14px !important;
+}
+
+.fs-16 {
+	font-size: 16px !important;
+}
+
+.fs-18 {
+	font-size: 18px !important;
+}
+
+.fs-20 {
+	font-size: 20px !important;
+}
+
+.fs-22 {
+	font-size: 22px !important;
+}
+
+.fs-24 {
+	font-size: 24px !important;
+}
+
+.fs-26 {
+	font-size: 26px !important;
+}
+
+.fs-28 {
+	font-size: 28px !important;
+}
+
+.fs-30 {
+	font-size: 30px !important;
+}
+.fs-32 {
+	font-size: 32px !important;
+}
+
+.fw-300 {
+	font-weight: 300 !important;
+}
+
+.fw-400 {
+	font-weight: 400 !important;
+}
+
+.fw-500 {
+	font-weight: 500 !important;
+}
+
+.fw-600 {
+	font-weight: 600 !important;
+}
+
+.fw-700 {
+	font-weight: 700 !important;
+}
+
+.radius30 {
+	overflow: hidden !important;
+	border-radius: 30px !important;
+}
+
+.title-font {
+	font-family: var(--title-font) !important;
+}
+
+.text-font {
+	font-family: var(--text-font) !important;
+}
+
+.shadow {
+	box-shadow: 0px 4px 30px 0px #0000000d !important;
+}
+
+.bg-image {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.transition {
+	transition: all 0.3s;
+}
+
+.hover-link {
+	position: relative;
+	&::before {
+		position: absolute;
+		bottom: 0px;
+		right: 0;
+		width: 0;
+		height: 1px;
+		content: "";
+		background-color: var(--theme-color-black);
+		transition: all 0.3s;
+	}
+	&:hover {
+		&::before {
+			right: unset;
+			left: 0;
+			width: 100%;
+		}
+	}
+	&-light {
+		@extend .hover-link;
+		&::before {
+			background-color: var(--theme-color-white);
+		}
+	}
+}
+
+.overlay {
+	// only use for extend
+	position: relative;
+	z-index: 1;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+	}
+}
+
+.nice-select {
+	width: 100%;
+	border-radius: 10px;
+	height: 58px;
+	line-height: 58px;
+	border: 1px solid transparent;
+	&::after {
+		display: none;
+	}
+	&::before {
+		font-family: "Font Awesome 5 pro";
+		content: "\f107";
+		font-weight: 900;
+		position: absolute;
+		top: 0;
+		right: 15px;
+		color: var(--theme-color-black);
+		transition: all 0.3s;
+	}
+
+	&.open {
+		&::before {
+			transform: rotate(-180deg);
+		}
+	}
+
+	&:focus {
+		border: 1px solid rgba(var(--theme-color-black-rgb), 0.1);
+	}
+	.list {
+		width: 100%;
+	}
+	.current {
+		font-size: 16px;
+		color: var(--theme-color-black);
+	}
+}
+// Custom class area end here ***
+
+// Star area start here ***
+.star {
+	i {
+		color: var(--theme-color1);
+		&.disable {
+			color: var(--text-color);
+			opacity: 40%;
+		}
+	}
+}
+// Star area end here ***
+
+// Pagination area start here ***
+.pegi {
+	@include flex;
+	gap: 35px;
+	.next,
+	.prev {
+		@include radius(48px, 48px, 48px);
+		background-color: var(--theme-color1);
+		color: var(--theme-color-white);
+		font-size: 20px;
+	}
+	&-dots {
+		@include flex;
+		gap: 12px;
+		a {
+			@include radius(10px, 10px, 10px);
+			background-color: #e9f1ee;
+			position: relative;
+			&.active {
+				&::after {
+					content: "";
+					position: absolute;
+					top: -3px;
+					left: -3px;
+					border: 3px solid #256e56;
+					@include radius(16px, 16px, 16px);
+				}
+			}
+		}
+	}
+}
+// Pagination area end here ***
+
+// Accordion area start here ***
+.accordion {
+	.accordion-item {
+		border: none;
+		border-radius: 0px;
+		margin-bottom: 10px;
+		.accordion-header {
+			button {
+				font-size: 22px;
+				line-height: 35px;
+				font-weight: 500;
+				box-shadow: none;
+				border-radius: 0 !important;
+				padding: 20px 0px;
+			}
+		}
+		.accordion-body {
+			padding: 20px 0px;
+			padding-top: 0;
+			color: var(--text-color);
+		}
+	}
+	.accordion-button {
+		background-color: transparent;
+		color: var(--headings-color);
+		&::after {
+			display: none;
+		}
+		&::before {
+			position: absolute;
+			content: "\f068";
+			font-family: "Font Awesome 6 Pro";
+			font-weight: 700;
+			top: 20px;
+			right: 0px;
+			font-size: 18px;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			border-radius: 0px;
+			color: var(--headings-color);
+			background-color: var(--theme-color-gray);
+			text-align: center;
+			transition: all 0.3s;
+		}
+	}
+	.accordion-button.collapsed {
+		background-color: transparent;
+		color: var(--headings-color);
+		&::before {
+			content: "\2b";
+			background-color: transparent;
+			color: var(--headings-color);
+		}
+	}
+}
+// Accordion area end here ***
+
+// DateTimePicker area start here ***
+.dateTimePicker {
+	position: relative;
+	z-index: 1;
+	i {
+		position: absolute;
+		top: 20px;
+		right: 0;
+		color: var(--theme-color-white);
+	}
+}
+// DateTimePicker area end here ***
+
+// Section header area start here ***
+.brand-lotus-icon {
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	flex: 0 0 28px;
+	object-fit: contain;
+}
+
+.brand-lotus-icon-svg,
+svg.icon[viewBox="0 0 25 26"],
+.sub-title > svg[viewBox="0 0 25 25"] {
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	flex: 0 0 28px;
+	background: url("../images/logo/sbm.webp") no-repeat center / contain;
+
+	> * {
+		opacity: 0;
+	}
+}
+
+:is(
+	.banner__content,
+	.banner-two__content,
+	.banner-three__content,
+	.banner-four__content,
+	.banner-six__content
+) .sub-title > svg[viewBox="0 0 25 25"] {
+	width: 44px;
+	height: 44px;
+	flex-basis: 44px;
+	background-size: contain;
+
+	@include breakpoint(max-sm) {
+		width: 40px;
+		height: 40px;
+		flex-basis: 40px;
+	}
+}
+
+.section {
+	&-header {
+		.sub-title {
+			font-size: 20px;
+			line-height: 30px;
+			font-weight: 400;
+			font-family: var(--title-font);
+			@include flex;
+			gap: 10px;
+			text-transform: capitalize;
+			color: var(--text-color);
+		}
+		.title {
+			text-transform: capitalize;
+		}
+		.text {
+			margin-top: 30px;
+		}
+		&.center {
+			text-align: center;
+			.sub-title {
+				justify-content: center;
+			}
+		}
+		&__flex {
+			@extend .section-header;
+			@include justify-wrp;
+			// align-items: end;
+			gap: 20px;
+			.flex-text {
+				max-width: 560px;
+			}
+		}
+	}
+	&-padding {
+		padding: 130px 0;
+	}
+	&-margin {
+		margin: 130px 0;
+	}
+	&__decoration {
+		&-top {
+			position: relative;
+			z-index: 1;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 76px;
+				background: url(../images/shape/section-shape-top.png) no-repeat
+					center top;
+			}
+		}
+		&-bottom {
+			position: relative;
+			z-index: 1;
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 74px;
+				background: url(../images/shape/section-shape-bottom.png) no-repeat
+					center bottom;
+			}
+		}
+	}
+}
+// Section header area end here ***
+
+// Keep one 150px visible torn-paper rhythm on tablet-sized layouts.
+@media (min-width: 768px) and (max-width: 991px) {
+	.section__decoration-bottom.mb-130 {
+		margin-bottom: 0 !important;
+	}
+
+	.section__decoration-top:is(.pt-100, .pt-130, .pt-170),
+	.section__decoration-top > :is(.pt-100, .pt-130, .pt-170) {
+		padding-top: 164px !important;
+	}
+
+	.section__decoration-bottom:is(.pb-100, .pb-130, .pb-170),
+	.section__decoration-bottom > :is(.pb-100, .pb-130, .pb-170) {
+		padding-bottom: 161px !important;
+	}
+
+	section:not(.section__decoration-bottom):has(+ .section__decoration-top),
+	section:not(.section__decoration-bottom):has(+ * > .section__decoration-top),
+	*:has(+ .section__decoration-top) > section:last-child:not(.section__decoration-bottom),
+	*:has(+ * > .section__decoration-top) > section:last-child:not(.section__decoration-bottom) {
+		padding-bottom: 131px !important;
+	}
+
+	.section__decoration-bottom + section:not(.section__decoration-top),
+	.section__decoration-bottom + * > section:first-child:not(.section__decoration-top),
+	*:has(> .section__decoration-bottom) + section:not(.section__decoration-top),
+	*:has(> .section__decoration-bottom) + * > section:first-child:not(.section__decoration-top) {
+		padding-top: 143px !important;
+	}
+
+	// The centered banner slice has about 10px of fully white PNG after the
+	// last visible torn pixel: 132px padding + 8px leading + 10px = 150px.
+	.banner-two-area.section__decoration-bottom + .video-section {
+		padding-top: 132px !important;
+	}
+
+	// Text-first package intros lose about 8px to font leading.
+	.section__decoration-bottom + .package-intro-text,
+	*:has(> .section__decoration-bottom) + .package-intro-text {
+		padding-top: 135px !important;
+	}
+
+	.banner-two-area.section__decoration-bottom + .contact-details {
+		padding-top: 137px !important;
+	}
+
+	.banner-three-area.section__decoration-bottom + .marquee-area {
+		padding-top: 138px !important;
+	}
+
+	.banner-five-area.section__decoration-bottom + .step-section {
+		padding-top: 142px !important;
+	}
+
+	.package-intro-text:has(+ .section__decoration-top),
+	.package-intro-text:has(+ * > .section__decoration-top) {
+		padding-bottom: 104px !important;
+	}
+
+	// The testimonial stylesheet is loaded later with its own !important
+	// spacing. These more specific guards keep paper-edge adjacency authoritative.
+	.section__decoration-bottom + .testimonial-section-two:not(.section__decoration-top),
+	*:has(> .section__decoration-bottom) + .testimonial-section-two:not(.section__decoration-top) {
+		padding-top: 143px !important;
+	}
+
+	.testimonial-section-two:not(.section__decoration-bottom):has(+ .section__decoration-top),
+	*:has(+ .section__decoration-top) > .testimonial-section-two:last-child:not(.section__decoration-bottom) {
+		padding-bottom: 131px !important;
+	}
+
+	.section__decoration-bottom + :is(.footer-area, .footer-two-area),
+	*:has(> .section__decoration-bottom:last-child) + :is(.footer-area, .footer-two-area) {
+		padding-top: 143px;
+	}
+}
+
+// Desktop torn-paper rhythm: 150px of visible breathing room on each side
+// of the torn edge (roughly 300px content-to-content). The centered desktop
+// ruler band meets the upper torn tip 14px into the top artwork and leaves an
+// 11px tail below the lower tip, so the physical insets are 164px and 161px.
+@media (min-width: 992px) {
+	.section__decoration-bottom.mb-130 {
+		margin-bottom: 0 !important;
+	}
+
+	.section__decoration-top:is(.pt-100, .pt-130, .pt-170),
+	.section__decoration-top > :is(.pt-100, .pt-130, .pt-170) {
+		padding-top: 164px !important;
+	}
+
+	.section__decoration-bottom:is(.pb-100, .pb-130, .pb-170),
+	.section__decoration-bottom > :is(.pb-100, .pb-130, .pb-170) {
+		padding-bottom: 161px !important;
+	}
+
+	// The measured content bands leave about 7px of opaque artwork after the
+	// visible edge. Complete every torn-paper ending to the visual 150px,
+	// including pages whose decorated section sits in a neutral wrapper.
+	.section__decoration-bottom + :is(.footer-area, .footer-two-area),
+	*:has(> .section__decoration-bottom:last-child) + :is(.footer-area, .footer-two-area) {
+		padding-top: 143px;
+	}
+
+	// Plain section immediately before a top tear. In the centered desktop ruler
+	// band, about 19px of the irregular artwork completes the visible 150px.
+	// Support both direct sections and neutral wrappers around decorated content.
+	section:not(.section__decoration-bottom):has(+ .section__decoration-top),
+	section:not(.section__decoration-bottom):has(+ * > .section__decoration-top),
+	*:has(+ .section__decoration-top) > section:last-child:not(.section__decoration-bottom),
+	*:has(+ * > .section__decoration-top) > section:last-child:not(.section__decoration-bottom) {
+		padding-bottom: 131px !important;
+	}
+
+	// On pricing, stop the 150px ruler immediately before the first visible
+	// pixels of the torn shape. The asset has about 6px of white lead-in here.
+	.video-section:has(+ .pricing-package-section > .section__decoration-top) {
+		padding-bottom: 144px !important;
+	}
+
+	// Across the pricing FAQ ruler (x 432-949), the first non-opaque pixel of
+	// the next torn shape is 12px down: 138px padding + 12px shape = 150px.
+	.pricing-faq-section:has(+ .pricing-closing-section.section__decoration-top) > .faq-section {
+		padding-bottom: 138px !important;
+	}
+
+	// Plain section immediately after a bottom tear. The relevant content
+	// bands have about 7px of opaque paper below the visible edge: 7 + 143 = 150.
+	.section__decoration-bottom + section:not(.section__decoration-top),
+	.section__decoration-bottom + * > section:first-child:not(.section__decoration-top),
+	*:has(> .section__decoration-bottom) + section:not(.section__decoration-top),
+	*:has(> .section__decoration-bottom) + * > section:first-child:not(.section__decoration-top) {
+		padding-top: 143px !important;
+	}
+
+	// The ruler begins at the last visible torn pixel, not at the transparent
+	// bounds of the PNG: 10px opaque tail + 132px padding + 8px leading = 150px.
+	.banner-two-area.section__decoration-bottom + .video-section {
+		padding-top: 132px !important;
+	}
+
+	.section__decoration-bottom + .package-intro-text,
+	*:has(> .section__decoration-bottom) + .package-intro-text {
+		padding-top: 135px !important;
+	}
+
+	.banner-two-area.section__decoration-bottom + .contact-details {
+		padding-top: 137px !important;
+	}
+
+	.banner-three-area.section__decoration-bottom + .marquee-area {
+		padding-top: 138px !important;
+	}
+
+	.banner-five-area.section__decoration-bottom + .step-section {
+		padding-top: 142px !important;
+	}
+
+	// The final body line in a package intro has about 6px of bottom leading.
+	// Remove it before the next top tear to keep the visible side at 150px.
+	.package-intro-text:has(+ .section__decoration-top),
+	.package-intro-text:has(+ * > .section__decoration-top) {
+		padding-bottom: 104px !important;
+	}
+
+	// Override the later testimonial !important utilities at torn edges.
+	.section__decoration-bottom + .testimonial-section-two:not(.section__decoration-top),
+	*:has(> .section__decoration-bottom) + .testimonial-section-two:not(.section__decoration-top) {
+		padding-top: 143px !important;
+	}
+
+	.testimonial-section-two:not(.section__decoration-bottom):has(+ .section__decoration-top),
+	*:has(+ .section__decoration-top) > .testimonial-section-two:last-child:not(.section__decoration-bottom) {
+		padding-bottom: 131px !important;
+	}
+}
+
+@media (max-width: 767px) {
+	// Mobile uses a compact 75px visible torn-paper rhythm. The physical
+	// insets include the transparent/irregular part of each PNG.
+	.section__decoration-top {
+		padding-top: 89px !important;
+	}
+
+	.section__decoration-bottom {
+		padding-bottom: 86px !important;
+	}
+
+	// Banner 2 and 3 own their calibrated inset on the inner content element;
+	// do not add the decorated-section inset a second time on mobile.
+	:is(.banner-two-area, .banner-three-area).section__decoration-bottom {
+		padding-bottom: 0 !important;
+	}
+
+	.banner-three-area.section__decoration-top {
+		padding-top: 0 !important;
+	}
+
+	// Banner 2 and 3 place their paper-safe spacing on the inner content.
+	.banner-two__content {
+		padding-bottom: 86px !important;
+	}
+
+	.banner-three__content {
+		padding-top: 89px !important;
+		padding-bottom: 86px !important;
+	}
+
+	// Utility margins must not be added on top of the measured torn-paper
+	// spacing. This mirrors the desktop rule and keeps both sides at 75px.
+	.section__decoration-bottom.mb-130 {
+		margin-bottom: 0 !important;
+	}
+
+	// Some paper panels are wrappers around a section that already owns its
+	// spacing. Let the wrapper provide the safe area instead of doubling it.
+	.section__decoration-top > :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section, .service-section-two) {
+		padding-top: 0 !important;
+	}
+
+	.section__decoration-bottom > :is(.feature-section, .faq-section, .about-section, .about-section-two, .about-section-three, .reserve-cta-section, .service-section-two) {
+		padding-bottom: 0 !important;
+	}
+
+	// Complete the opposite side of a top tear to the same 75px ruler.
+	section:not(.section__decoration-bottom):has(+ .section__decoration-top),
+	section:not(.section__decoration-bottom):has(+ * > .section__decoration-top),
+	*:has(+ .section__decoration-top) > section:last-child:not(.section__decoration-bottom),
+	*:has(+ * > .section__decoration-top) > section:last-child:not(.section__decoration-bottom) {
+		padding-bottom: 35px !important;
+	}
+
+	// Complete the white side of a bottom tear to the same 75px ruler. In the
+	// centered mobile crop, 34px of opaque PNG remains below the visible edge.
+	.section__decoration-bottom + section:not(.section__decoration-top),
+	.section__decoration-bottom + * > section:first-child:not(.section__decoration-top),
+	*:has(> .section__decoration-bottom) + section:not(.section__decoration-top),
+	*:has(> .section__decoration-bottom) + * > section:first-child:not(.section__decoration-top) {
+		padding-top: 41px !important;
+	}
+
+	// Package intro headings have about 8px invisible leading. The mobile
+	// offset is calibrated from the 75px mobile visual ruler.
+	.section__decoration-bottom + .package-intro-text,
+	*:has(> .section__decoration-bottom) + .package-intro-text {
+		padding-top: 33px !important;
+	}
+
+	// Include the artwork tail and text leading in the same 75px measurement.
+	.banner-two-area.section__decoration-bottom + .video-section {
+		padding-top: 31px !important;
+	}
+
+	// The contact intro starts with 16px Mulish text inside a 28px line box.
+	// Its approximately 6px top leading is not visible to the ruler.
+	.banner-two-area.section__decoration-bottom + .contact-details {
+		padding-top: 35px !important;
+	}
+
+	// On Home 3 the 40px marquee icon is vertically centered in a 50px row,
+	// leaving 5px above its first visible pixel.
+	.banner-three-area.section__decoration-bottom + .marquee-area {
+		padding-top: 36px !important;
+	}
+
+	// The homepage subtitle logo is 28px high inside a 30px flex line. Remove
+	// its 1px top leading from the section padding used by the ruler.
+	.banner-five-area.section__decoration-bottom + .step-section {
+		padding-top: 40px !important;
+	}
+
+	.package-intro-text:has(+ .section__decoration-top),
+	.package-intro-text:has(+ * > .section__decoration-top) {
+		padding-bottom: 29px !important;
+	}
+
+	// The testimonial component declares 60px !important later in the bundle.
+	// Keep both sides of its torn edge on the measured 75px ruler.
+	.section__decoration-bottom + .testimonial-section-two:not(.section__decoration-top),
+	*:has(> .section__decoration-bottom) + .testimonial-section-two:not(.section__decoration-top) {
+		padding-top: 41px !important;
+	}
+
+	.testimonial-section-two:not(.section__decoration-bottom):has(+ .section__decoration-top),
+	*:has(+ .section__decoration-top) > .testimonial-section-two:last-child:not(.section__decoration-bottom) {
+		padding-bottom: 35px !important;
+	}
+
+	// Complete the footer side to 75px for every mobile torn-paper ending.
+	// Bootstrap's negative row margin cancels its first-item gutter, so the
+	// footer uses the same 75 - 34px compensation as other plain sections.
+	.section__decoration-bottom + :is(.footer-area, .footer-two-area),
+	*:has(> .section__decoration-bottom:last-child) + :is(.footer-area, .footer-two-area) {
+		padding-top: 41px;
+	}
+}

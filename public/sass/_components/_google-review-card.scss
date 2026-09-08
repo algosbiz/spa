@@ -1,0 +1,189 @@
+/*-- Google review card --*/
+.google-review-card {
+	display: block;
+	padding: 22px 24px 18px;
+	border-radius: 20px;
+	background-color: #fafafa;
+	box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+	text-align: center;
+	text-decoration: none;
+	cursor: default;
+
+	// The About column sets `img { width: 100% }` on everything inside it.
+	img {
+		width: auto;
+		border-radius: 0;
+	}
+
+	.google-review-card__rating {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 12px;
+	}
+
+	.google-review-card__score {
+		font-family: var(--title-font);
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 1;
+		color: var(--headings-color);
+	}
+
+	.google-review-card__stars {
+		position: relative;
+		display: inline-block;
+		font-size: 20px;
+		line-height: 1;
+		letter-spacing: 4px;
+		// letter-spacing also trails the last star; trimming it keeps the fill
+		// percentage aligned with the five glyphs rather than 5 glyphs + a gap.
+		margin-right: -4px;
+		white-space: nowrap;
+	}
+
+	.google-review-card__stars-track {
+		color: #e2ddd2;
+	}
+
+	.google-review-card__stars-fill {
+		position: absolute;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+		color: var(--theme-color1);
+	}
+
+	.google-review-card__meta {
+		display: block;
+		margin-top: 14px;
+		font-size: 16px;
+		line-height: 22px;
+		color: #5f5a54;
+
+		strong {
+			margin-left: 6px;
+			color: var(--headings-color);
+			font-weight: 700;
+		}
+	}
+
+	.google-review-card__avatars {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 14px;
+	}
+
+	// Both are positioned so the overlapping circles stack in DOM order — leaving the
+	// badge static would let the positioned avatars paint over it.
+	.google-review-card__avatar,
+	.google-review-card__badge {
+		position: relative;
+		width: 46px;
+		height: 46px;
+		border-radius: 50%;
+		border: 3px solid #fafafa;
+		overflow: hidden;
+		flex: none;
+
+		&:not(:first-child) {
+			margin-left: -14px;
+		}
+	}
+
+	.google-review-card__avatar img {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+
+	// The initial fills its avatar circle and sits underneath the photo; the badge
+	// already is a circle, so sizing it at 100% would stretch it across the row.
+	.google-review-card__initial {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.google-review-card__initial,
+	.google-review-card__badge {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--theme-color1);
+		color: #fff;
+		font-size: 13px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	.google-review-card__source {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 6px;
+		margin-top: 14px;
+		font-size: 12px;
+		letter-spacing: 0.02em;
+		color: #8b857c;
+	}
+
+	.google-review-card__glyph {
+		width: 14px;
+		height: 14px;
+		flex: none;
+	}
+
+	@include breakpoint(max-sm) {
+		padding: 14px 14px 12px;
+		border-radius: 14px;
+
+		.google-review-card__rating {
+			gap: 8px;
+		}
+
+		.google-review-card__stars {
+			font-size: 14px;
+			letter-spacing: 2px;
+			margin-right: -2px;
+		}
+
+		.google-review-card__score {
+			font-size: 15px;
+		}
+
+		.google-review-card__meta {
+			margin-top: 10px;
+			font-size: 13px;
+			line-height: 18px;
+		}
+
+		.google-review-card__avatars {
+			margin-top: 10px;
+		}
+
+		.google-review-card__avatar,
+		.google-review-card__badge {
+			width: 32px;
+			height: 32px;
+			border-width: 2px;
+
+			&:not(:first-child) {
+				margin-left: -10px;
+			}
+		}
+
+		.google-review-card__badge {
+			font-size: 10px;
+		}
+
+		.google-review-card__source {
+			margin-top: 10px;
+			font-size: 10px;
+		}
+	}
+}

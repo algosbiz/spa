@@ -1,0 +1,320 @@
+// Pricing area start here ***
+.pricing-section {
+	overflow: hidden;
+	padding: 0 50px;
+	@include breakpoint(max-lg) {
+		padding: 0px 15px;
+	}
+
+	.image-column {
+		.inner-column {
+			border-radius: 30px;
+			overflow: hidden;
+			height: 100%;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	.content-column {
+		.inner-column {
+			background-color: var(--theme-color1);
+			padding: 120px 100px;
+			border-radius: 30px;
+			position: relative;
+			z-index: 1;
+			@include breakpoint(max-xxxl) {
+				padding: 60px;
+			}
+			@include breakpoint(max-lg) {
+				padding: 60px 30px;
+			}
+			.outer-shape {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: -1;
+				@include breakpoint(max-lg) {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+.pricing-block {
+	.inner-box {
+		position: relative;
+		z-index: 1;
+		padding: 60px;
+		padding-bottom: 35px;
+		border-radius: 30px;
+		overflow: hidden;
+		border: 1px solid var(--theme-color-white);
+		background-color: var(--theme-color-white);
+		@include breakpoint(max-xxxl) {
+			padding: 30px;
+		}
+
+		.shape {
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 1;
+		}
+		.price {
+			margin-bottom: 20px;
+			border-bottom: 1px solid #ffffff4d;
+			padding-bottom: 20px;
+			span {
+				font-size: 22px;
+				font-weight: 500;
+			}
+		}
+		.package-price {
+			color: var(--headings-color);
+			font-family: var(--title-font);
+			font-size: 55px;
+			font-weight: 300;
+			line-height: 65px;
+			white-space: nowrap;
+			@include breakpoint(max-md) {
+				font-size: 30px;
+				line-height: 40px;
+			}
+		}
+		.package-name {
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 28px;
+		}
+		ul {
+			li {
+				color: var(--headings-color);
+				margin-top: 10px;
+			}
+		}
+		&.transparent {
+			background-color: transparent;
+			.price {
+				color: var(--theme-color-white);
+			}
+			.package-name {
+				color: var(--theme-color-white);
+			}
+			ul {
+				li {
+					color: var(--theme-color-white);
+				}
+			}
+		}
+	}
+}
+// Pricing area end here ***
+
+// Pricing three area start here ***
+.pricing-section-three {
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+
+	.shape1 {
+		position: absolute;
+		top: 60px;
+		left: 0;
+		z-index: -1;
+		.about-leaf-gold {
+			display: block;
+			width: 308px;
+			height: 326px;
+			background-color: var(--theme-color1);
+			-webkit-mask: url(../images/about/shape1.png) no-repeat center / contain;
+			mask: url(../images/about/shape1.png) no-repeat center / contain;
+		}
+		@include breakpoint(max-lg) {
+			display: none;
+		}
+	}
+
+	.shape2 {
+		position: absolute;
+		bottom: 70px;
+		right: 10px;
+		z-index: -1;
+		@include breakpoint(max-lg) {
+			display: none;
+		}
+	}
+
+	.outer-box {
+		&:hover {
+			.image-column {
+				.image-box {
+					img {
+						transform: scale(1.1);
+					}
+				}
+			}
+		}
+	}
+
+	.image-column {
+		.image-box {
+			overflow: hidden;
+			border-radius: 30px;
+			img {
+				width: 100%;
+				transition: 1s;
+			}
+		}
+	}
+}
+// Pricing three area end here ***
+
+// Pricing five area start here ***
+.pricing-section-five {
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	&:not(.package-pricing-section)::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #00000099;
+		z-index: -1;
+		content: "";
+	}
+}
+.pricing-block-five {
+	.inner-box {
+		position: relative;
+		z-index: 1;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 60px;
+		padding-bottom: 35px;
+		border-radius: 30px;
+		overflow: hidden;
+		text-align: center;
+		background-color: var(--theme-color-white);
+
+		@include breakpoint(max-xxxl) {
+			padding: 30px;
+		}
+
+		.shape {
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 1;
+		}
+
+		.icon {
+			width: 85px;
+			height: 85px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			background-color: var(--theme-color-gray);
+			border-radius: 50%;
+			margin: 0 auto;
+			margin-bottom: 20px;
+			svg,
+			img {
+				transition: 0.9s;
+				object-fit: contain;
+			}
+			svg {
+				width: 46px;
+				height: 46px;
+			}
+			img {
+				width: 66px;
+				height: 66px;
+			}
+		}
+		h4 {
+			font-size: 24px;
+			line-height: 32px;
+			font-weight: 400;
+			br {
+				display: inline;
+			}
+		}
+		.price {
+			margin: 20px 0 30px;
+			font-size: 26px;
+			line-height: 34px;
+			color: var(--theme-color1);
+			span {
+				font-size: 18px;
+				font-weight: 500;
+				color: var(--theme-color1);
+			}
+		}
+		ul {
+			display: inline-block;
+			text-align: left;
+			margin: 0 auto;
+			flex-grow: 1;
+			li {
+				color: var(--headings-color);
+				margin-top: 18px;
+				font-size: 16px;
+				line-height: 24px;
+				display: flex;
+				align-items: center;
+				gap: 18px;
+				&:first-child {
+					margin-top: 0;
+				}
+				.duration {
+					display: inline-block;
+					min-width: 60px;
+					flex-shrink: 0;
+				}
+				@include breakpoint(max-md) {
+					font-size: 16px;
+					line-height: 26px;
+					.duration {
+						min-width: 70px;
+					}
+				}
+			}
+		}
+		&:hover {
+			.icon {
+				svg,
+				img {
+					transform: rotateY(360deg);
+				}
+			}
+		}
+		&.active {
+			background-color: var(--theme-color1);
+			.icon {
+				background-color: var(--theme-color-white);
+			}
+			.price {
+				color: var(--theme-color-white);
+			}
+			ul {
+				li {
+					color: var(--theme-color-white);
+				}
+			}
+		}
+	}
+}
+// Pricing five area end here ***
