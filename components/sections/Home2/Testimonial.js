@@ -78,9 +78,9 @@ export default function Home2_Testimonial({
 
     return (
         <section className={`testimonial-section-two${paperDecoration ? " section__decoration-top section__decoration-bottom bg-sub" : ""} pt-170 pb-170`}>
-            <div className="shape1"><img className="animation__arryUpDown" src="/images/shape/testimonial-two-shape-left.png" alt="" aria-hidden="true" /></div>
-            <div className="shape2"><img className="animation__arryLeftRight" src={rightShapeSrc} alt="" aria-hidden="true" /></div>
-            <div className="shape3"><img className="bobble__animation" src="/images/logo/sbm.webp" alt="Spa Bali Moon watermark" /></div>
+            <div className="shape1"><img loading="lazy" decoding="async" className="animation__arryUpDown" src="/images/shape/testimonial-two-shape-left.png" alt="" aria-hidden="true" /></div>
+            <div className="shape2"><img loading="lazy" decoding="async" className="animation__arryLeftRight" src={rightShapeSrc} alt="" aria-hidden="true" /></div>
+            <div className="shape3"><img loading="lazy" decoding="async" className="bobble__animation" src="/images/logo/sbm.webp" alt="Spa Bali Moon watermark" /></div>
             <div className="container">
                 <div className="outer-box">
                     <Swiper {...swiperOptions} className="swiper testimonial-slider-two wow fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">

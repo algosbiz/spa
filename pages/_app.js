@@ -12,9 +12,13 @@ function MyApp({ Component, pageProps }) {
 
 
     useEffect(() => {
-        setTimeout(() => {
-            setLoading(false);
-        }, 1000);
+        // Timing is unchanged; the timeout is just tracked so it can be cleared.
+        // (While the stylesheet was still ~1MB, hydration ran long enough that
+        // this teardown landed before the browser had painted the preloader at
+        // all, and first paint slipped to ~1.25s. With the CSS trimmed it paints
+        // at ~0.23s, as intended.)
+        const timer = window.setTimeout(() => setLoading(false), 1000);
+        return () => window.clearTimeout(timer);
     }, []);
 
     useEffect(() => {
@@ -47,6 +51,8 @@ function MyApp({ Component, pageProps }) {
                     <div className="preloader-mark">
                         <img
                             className="preloader-logo"
+                            fetchPriority="high"
+                            decoding="async"
                             src="/images/logo/sbm.webp"
                             alt="Spa Bali Moon logo"
                         />

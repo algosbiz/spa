@@ -1,0 +1,16 @@
+.flowers { position: relative; width: 230px; height: 245px; pointer-events: none; }
+.flowers img { position: absolute; object-fit: contain; animation-play-state: inherit; }
+.petals { top: 0; left: 0; width: 170px; height: 100px; animation: petalDrift 8s ease-in-out infinite alternate; }
+.blossoms { right: 0; bottom: 0; width: 230px; height: 150px; animation: blossomSway 10s ease-in-out infinite alternate; }
+.compact { width: 210px; height: 140px; }
+.compact .blossoms { width: 210px; height: 140px; }
+.clustered { height: 210px; }
+.interactive { pointer-events: auto; transform: translateY(var(--scroll-offset, 0px)); }
+.interactive img { transition: translate 450ms ease; }
+.interactive:hover .petals, .interactive:active .petals { translate: -4px 6px; }
+.interactive:hover .blossoms, .interactive:active .blossoms { translate: 3px -4px; }
+@keyframes petalDrift { from { transform: translateY(0) rotate(-3deg); } to { transform: translateY(9px) rotate(3deg); } }
+@keyframes blossomSway { from { transform: rotate(-2deg); } to { transform: rotate(2deg); } }
+@media (prefers-reduced-motion: reduce) { .flowers img { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .interactive { transform: none; } .interactive img { transition: none; translate: none !important; } }
+@media (max-width: 1399px) { .flowers { display: none; } }

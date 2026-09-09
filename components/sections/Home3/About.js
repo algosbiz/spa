@@ -17,7 +17,7 @@ export default function Home3_About({
     text = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas magna mi ut arcu. Phasellus nec odio orci. Nunc id massa ante. Suspendisse sit amet neque euismod, convallis quam eget,",
     features = defaultFeatures,
     ctaText = "Discover More",
-    ctaHref = "/seminyak/pricing",
+    ctaHref = "/seminyak",
     primaryImage = "/images/about/about-three-image1.png",
     secondaryImage = "/images/about/about-three-image2.png",
     googleReviews = null,
@@ -38,25 +38,25 @@ export default function Home3_About({
         <>
         <section id="about" className="about-section-three pt-130 pb-130 paralax__animation">
             <div className="shape">
-                <img className="animation__floatBob" src="/images/shape/about-three-shape.png" alt="image"/>
+                <img loading="lazy" decoding="async" className="animation__floatBob" src="/images/shape/about-three-shape.png" alt="image"/>
             </div>
             <div className="container">
                 <div className="row g-0 align-items-center">
                     <div className="col-xl-6 image-column">
                         <div className="inner-column">
                             <div className="image">
-                                <img className="image1" src={primaryImage} alt="Spa massage treatment"/>
+                                <img loading="lazy" decoding="async" className="image1" src={primaryImage} alt="Spa massage treatment"/>
                             </div>
-                            <img className="image2" src={secondaryImage} alt="Spa treatment room"/>
+                            <img loading="lazy" decoding="async" className="image2" src={secondaryImage} alt="Spa treatment room"/>
                             {reviewCard}
                             <div className="shape-one">
                                 <span className="about-leaf-gold animation__arryUpDown" aria-hidden="true" />
                             </div>
                             <div className="shape-two">
-                                <img data-depth="0.03" src="/images/about/shape2.png" alt="image"/>
+                                <img loading="lazy" decoding="async" data-depth="0.03" src="/images/about/shape2.png" alt="image"/>
                             </div>
                             <div className="shape-three">
-                                <img className="animation__arryLeftRight" src="/images/about/shape3.png" alt="image"/>
+                                <img loading="lazy" decoding="async" className="animation__arryLeftRight" src="/images/about/shape3.png" alt="image"/>
                             </div>
                         </div>
                     </div>
@@ -152,7 +152,7 @@ export default function Home3_About({
                                     </li>
                                 </ul>
                             </div>
-                            <Link href={ctaHref} className="btn-three mt-40 wow fadeInDown" data-wow-delay="400ms"
+                            <Link href={ctaHref} className="btn-two mt-40 wow fadeInDown" data-wow-delay="400ms"
                                 data-wow-duration="1500ms">{ctaText}</Link>
                         </div>
                     </div>

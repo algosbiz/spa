@@ -8,7 +8,7 @@ import { TREATMENT_LINKS } from '../../lib/treatments';
 // Searchable site destinations (pages + treatments). Add entries here to extend search.
 const SEARCH_INDEX = [
     { title: 'Home', href: '/', keywords: 'home main spa bali moon' },
-    { title: 'Pricelist', href: '/seminyak/pricing', keywords: 'price pricing cost packages rates list' },
+    { title: 'Pricelist', href: '/seminyak', keywords: 'price pricing cost packages rates list' },
     ...TREATMENT_LINKS.map((item) => ({
         title: item.title,
         href: item.href,
@@ -135,7 +135,7 @@ const Header1 = ({ scroll }) => {
                 <div className="header-one__wrp">
                     <div className="header__main">
                         <Link href="/" className="logo">
-                            <img src="/images/logo/SMBtitle.svg" alt="logo"/>
+                            <img src="/images/logo/SMBtitle.svg" alt="logo" width="435" height="80"/>
                         </Link>
                         <div className="main-menu">
                             <nav>
@@ -220,7 +220,7 @@ const Header1 = ({ scroll }) => {
                 style={{ backgroundColor: "#ffffff", borderLeft: "1px solid rgba(95, 90, 84, 0.12)" }}
             >
                 <div className="offcanvas-header">
-                    <Link href="/" className="logo"> <img src="/images/logo/SMBtitle.svg" alt="logo"/></Link>
+                    <Link href="/" className="logo"> <img src="/images/logo/SMBtitle.svg" alt="logo" width="435" height="80"/></Link>
                     <button type="button" className="btn-close" onClick={handleCloseSidebar}><i
                             className="fa-regular fa-xmark"></i></button>
                 </div>

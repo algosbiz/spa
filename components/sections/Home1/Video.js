@@ -21,7 +21,7 @@ export default function Home1_Video({
         <>
             <section className="video-section pt-130 pb-130">
                 <div className="shape">
-                    <img className="animation__arryUpDown" src="/images/shape/video-shape.png" alt="image" />
+                    <img loading="lazy" decoding="async" className="animation__arryUpDown" src="/images/shape/video-shape.png" alt="image" />
                 </div>
                 <div className="container">
                     <div className="section-header mb-60 center">
@@ -45,7 +45,7 @@ export default function Home1_Video({
                                     <p className="text wow fadeInUp" data-wow-delay="500ms" data-wow-duration="1500ms">{contentText}</p>
                                 </div>
                                 <div className="image gsap__parallax-zoom">
-                                    <img src={contentImage} alt="Spa body treatment" />
+                                    <img loading="lazy" decoding="async" src={contentImage} alt="Spa body treatment" />
                                     {showVideoButton && (
                                     <div className="btn-video video-pulse">
                                         <a className="video-popup wow zoomIn" onClick={() => setOpen(true)}>
@@ -150,7 +150,7 @@ export default function Home1_Video({
                         </div>
                         <div className="col-lg-6 image-column">
                             <div className="inner-column wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                                <img data-tilt data-tilt-max="3" src={featureImage} alt="Relaxing spa setting" />
+                                <img loading="lazy" decoding="async" data-tilt data-tilt-max="3" src={featureImage} alt="Relaxing spa setting" />
                             </div>
                         </div>
                     </div>

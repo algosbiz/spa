@@ -33,7 +33,7 @@ const NewsGrid = ({ posts = [] }) => {
                                 <div className="image-box">
                                     <div className="image">
                                         <Link href={`/guide/${post.slug}`}>
-                                            <img src={post.cover_image || FALLBACK_IMAGE} alt={post.title} />
+                                            <img loading="lazy" decoding="async" src={post.cover_image || FALLBACK_IMAGE} alt={post.title} />
                                         </Link>
                                     </div>
                                 </div>

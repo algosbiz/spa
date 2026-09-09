@@ -90,7 +90,7 @@ export default function Home6_Contact() {
                         <div className="col-lg-6 image-column">
                             <div className="inner-column gsap__parallax-zoom">
                                 <div className="image-box">
-                                    <img src="/images/contact/contact-three-image.jpg" alt="image"/>
+                                    <img loading="lazy" decoding="async" src="/images/contact/contact-three-image.jpg" alt="image"/>
                                 </div>
                             </div>
                         </div>
@@ -192,7 +192,7 @@ export default function Home6_Contact() {
                                     <button type="submit">Book Now</button>
                                 </form>
                                 <div className="shape">
-                                    <img className="pxl-image-zoom" src="/images/contact/shape.png" alt="image"/>
+                                    <img loading="lazy" decoding="async" className="pxl-image-zoom" src="/images/contact/shape.png" alt="image"/>
                                 </div>
                             </div>
                         </div>

@@ -30,7 +30,6 @@ CSS TABLE OF CONTENTS
     4.01 --> All Section
 
 ------------------------------------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
 @import url("meanmenu.css");
 @import url("animate.css");
 @import url("fontawesome.css");
@@ -3404,6 +3403,7 @@ textarea.form-control {
   z-index: 9999999;
 }
 #preloader .animation-preloader {
+  position: relative;
   z-index: 1000;
   text-align: center;
 }
@@ -3590,6 +3590,7 @@ textarea.form-control {
 }
 .logo img {
   width: 100%;
+  height: auto;
 }
 
 .header-top-area {
@@ -5414,6 +5415,8 @@ textarea.form-control {
 }
 .about-section .image-column .inner-column {
   max-width: 570px;
+  width: 100%;
+  container-type: inline-size;
   float: right;
   position: relative;
   z-index: 1;
@@ -5423,15 +5426,22 @@ textarea.form-control {
   mask-repeat: no-repeat;
   mask-size: cover;
   mask-position: center;
+  aspect-ratio: 570/496;
 }
 .about-section .image-column .inner-column .image-box img {
+  display: block;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .about-section .image-column .inner-column .info {
   color: var(--theme-color2);
   padding: 31px 25px;
+  padding: 0 4.386cqw;
   width: 210px;
+  width: 36.842cqw;
   height: 143px;
+  height: 25.088cqw;
   background-color: var(--theme-color-cream);
   border: 2px solid var(--theme-color2);
   display: flex;
@@ -5442,12 +5452,15 @@ textarea.form-control {
   bottom: 0;
   left: 0;
   border-radius: 30px;
+  border-radius: 5.263cqw;
 }
 .about-section .image-column .inner-column .info .info-line {
   line-height: 35px;
+  line-height: 6.14cqw;
   font-weight: 300;
   font-family: var(--title-font);
   font-size: 22px;
+  font-size: 3.86cqw;
   color: var(--theme-color2);
 }
 @media (max-width: 767px) {
@@ -5458,10 +5471,13 @@ textarea.form-control {
 .about-section .image-column .inner-column .info .info-line span {
   font-weight: 500;
   font-size: 24px;
+  font-size: 4.211cqw;
 }
 .about-section .image-column .inner-column .info .title {
   letter-spacing: 4px;
+  letter-spacing: 0.702cqw;
   margin-top: 5px;
+  margin-top: 0.877cqw;
 }
 .about-section .image-column .inner-column .info.info--gold {
   border-color: var(--theme-color1);
@@ -5575,7 +5591,7 @@ textarea.form-control {
 .about-section-two .image-column .inner-column .image-box .image {
   mask-image: url(../images/about/about-two-image-mask.png);
   mask-repeat: no-repeat;
-  mask-size: cover;
+  mask-size: 100% 100%;
   mask-position: center;
 }
 .about-section-two .image-column .inner-column .image-box .circle-image {

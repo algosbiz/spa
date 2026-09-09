@@ -11,6 +11,11 @@
 	z-index: 9999999;
 
 	.animation-preloader {
+		// z-index only applies to positioned elements. Without this the white
+		// .loader panels (position: fixed) painted over the logo and wordmark,
+		// so the preloader showed a blank white screen -- and nothing
+		// contentful painted until it was torn down a second later.
+		position: relative;
 		z-index: 1000;
 		text-align: center;
 

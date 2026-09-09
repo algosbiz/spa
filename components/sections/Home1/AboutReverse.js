@@ -30,7 +30,7 @@ export default function Home1_AboutReverse({
         "Use of soft towel and bathrobe",
     ],
     buttonText = "Learn More",
-    buttonLink = "/seminyak/pricing",
+    buttonLink = "/seminyak",
     image = "/images/about/about-image.png",
     badgeTopText,
     badgeBottomText = "Experience",
@@ -38,6 +38,7 @@ export default function Home1_AboutReverse({
     treatmentLayout = false,
     leftShapeSrc,
     rightShapeSrc,
+    rightDecoration,
 }) {
     const resolvedLeftShape = leftShapeSrc || getTreatmentLeafShape(
         image,
@@ -57,15 +58,15 @@ export default function Home1_AboutReverse({
         <>
             <section id="about" className={`about-section${paperDecoration ? " section__decoration-top section__decoration-bottom bg-sub" : ""} pt-130 pb-130${usesTreatmentLayout ? " about-section--treatment" : ""}`}>
                 <div className={`shape1 wow slideInLeft${hasTreatmentLeftShape ? " treatment-leaf-position--left" : ""}`} data-wow-delay="200ms" data-wow-duration="1500ms" style={{ bottom: '120px' }}>
-                    <img src={resolvedLeftShape} alt="" aria-hidden="true" />
+                    <img loading="lazy" decoding="async" src={resolvedLeftShape} alt="" aria-hidden="true" />
                 </div>
                 <div className={`shape2 wow slideInRight${hasTreatmentRightShape ? " treatment-leaf-position--right" : ""}`} data-wow-delay="400ms" data-wow-duration="1500ms">
                     <div className={hasTreatmentRightShape ? "treatment-leaf-shape--right" : undefined}>
-                        {usesHomepageLeafShape ? (
+                        {rightDecoration || (usesHomepageLeafShape ? (
                             <span className="about-leaf-gold sway_Y__animation" aria-hidden="true" />
                         ) : (
-                            <img className="sway_Y__animation" src={resolvedRightShape} alt="" aria-hidden="true" />
-                        )}
+                            <img loading="lazy" decoding="async" className="sway_Y__animation" src={resolvedRightShape} alt="" aria-hidden="true" />
+                        ))}
                     </div>
                 </div>
                 <div className="container">
@@ -74,7 +75,7 @@ export default function Home1_AboutReverse({
                             <div className="inner-column wow fadeInLeft" data-tilt data-tilt-max="3" data-wow-delay="200ms"
                                 data-wow-duration="1500ms" style={{ float: 'left' }}>
                                 <div className="image-box">
-                                    <img src={image} alt="Spa treatment" />
+                                    <img loading="lazy" decoding="async" src={image} alt="Spa treatment" />
                                 </div>
                                 <div className="info info--gold">
                                     <p className="info-line">

@@ -120,11 +120,11 @@ export default function Home1_Feature({
                             <SwiperSlide key={service.href || service.name} className="feature-block swiper-slide">
                                 <div className="inner-box">
                                     <div className="image-box">
-                                        <img src={images[index] || service.image} alt={service.name} />
+                                        <img loading="lazy" decoding="async" src={images[index] || service.image} alt={service.name} />
                                     </div>
                                     <div className="content-box">
                                         <div className="icon">
-                                            <img src={service.icon} alt={service.name} style={{ width: '80px', height: '80px' }} />
+                                            <img loading="lazy" decoding="async" src={service.icon} alt={service.name} style={{ width: '80px', height: '80px' }} />
                                         </div>
                                         <div className="info">
                                             <h6 className="sub-title">From $50 | 60 mins</h6>
@@ -139,8 +139,8 @@ export default function Home1_Feature({
                 </Swiper>
                 <div className="feature-arrys mt-60">
                     <div className="wrp">
-                        <button className="feature-arry-prev"><i className="fa-regular fa-angle-left"></i></button>
-                        <button className="feature-arry-next"><i className="fa-regular fa-angle-right"></i></button>
+                        <button type="button" className="feature-arry-prev" aria-label="Previous slide"><i className="fa-regular fa-angle-left" aria-hidden="true"></i></button>
+                        <button type="button" className="feature-arry-next" aria-label="Next slide"><i className="fa-regular fa-angle-right" aria-hidden="true"></i></button>
                     </div>
                 </div>
             </div>

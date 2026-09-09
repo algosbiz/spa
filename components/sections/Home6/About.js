@@ -6,14 +6,14 @@ export default function Home6_About() {
         <>
         <section id="about" className="about-section-six">
             <div className="shape">
-                <img className="animation__floatBob" src="/images/shape/about-six-shape.png" alt="image"/>
+                <img loading="lazy" decoding="async" className="animation__floatBob" src="/images/shape/about-six-shape.png" alt="image"/>
             </div>
             <div className="container">
                 <div className="row g-5">
                     <div className="col-lg-6 left-column">
                         <div className="inner-column">
                             <div className="image mb-60" data-tilt data-tilt-max="3">
-                                <img className="wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms"
+                                <img loading="lazy" decoding="async" className="wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms"
                                     src="/images/about/about-six-image1.jpg" alt="image"/>
                             </div>
                             <div className="content-box">
@@ -116,7 +116,7 @@ export default function Home6_About() {
                                     egestas magna mi ut arcu. Phasellus nec odio orci. Nunc id massa ante. Suspendisse
                                     sit amet neque euismod, convallis quam eget,</p>
                             </div>
-                            <Link href="/seminyak/pricing" className="btn-two mt-30 wow fadeInDown" data-wow-delay="400ms"
+                            <Link href="/seminyak" className="btn-two mt-30 wow fadeInDown" data-wow-delay="400ms"
                                 data-wow-duration="1500ms">Learn More
                                 <span className="icon_box">
                                     <i className="fa-regular icon_first fa-arrow-right-long"></i>
@@ -124,7 +124,7 @@ export default function Home6_About() {
                                 </span>
                             </Link>
                             <div className="image mt-80" data-tilt data-tilt-max="3">
-                                <img className="wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms"
+                                <img loading="lazy" decoding="async" className="wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms"
                                     src="/images/about/about-six-image2.jpg" alt="image"/>
                             </div>
                         </div>

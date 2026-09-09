@@ -92,6 +92,7 @@ export default function EarCandle() {
         />
         <div className="ear-candle-pricing">
           <Pricing
+            leftShapeSrc="/images/shape/banner-six-shape.png"
             images={treatmentImages.pricing}
             subTitle="Treatment Overview"
             title="One Relaxing Ear Candle Session"

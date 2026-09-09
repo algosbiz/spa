@@ -48,11 +48,11 @@ export default function Home3_Pricing({
                 {usesHomepageLeafShape ? (
                     <span className="about-leaf-gold animation__arryUpDown" aria-hidden="true" />
                 ) : (
-                    <img className="animation__arryUpDown" src={leftShapeSrc} alt="image"/>
+                    <img loading="lazy" decoding="async" className="animation__arryUpDown" src={leftShapeSrc} alt="image"/>
                 )}
             </div>
             <div className="shape2">
-                <img className="animation__arryLeftRight" src="/images/shape/pricing-three-shape-right.png" alt="image"/>
+                <img loading="lazy" decoding="async" className="animation__arryLeftRight" src="/images/shape/pricing-three-shape-right.png" alt="image"/>
             </div>
             <div className="container">
                 {topContent}
@@ -99,12 +99,12 @@ export default function Home3_Pricing({
                             <div className="row g-4">
                                 {!isReversed && (
                                     <div className="col-lg-8 col-xl-9 image-column">
-                                        <div className="image-box"><img src={imageSrc} alt="image"/></div>
+                                        <div className="image-box"><img loading="lazy" decoding="async" src={imageSrc} alt="image"/></div>
                                     </div>
                                 )}
                                 <div className={`col-lg-4 col-xl-3 pricing-block ${isReversed ? "order-2 order-lg-1" : ""}`}>
                                     <div className="inner-box">
-                                        <div className="shape"><img src="/images/pricing/shape.png" alt="image"/></div>
+                                        <div className="shape"><img loading="lazy" decoding="async" src="/images/pricing/shape.png" alt="image"/></div>
                                         <p className="price package-price">{formatPrice(packageItem.price)} {packageItem.suffix && <span>{packageItem.suffix}</span>}</p>
                                         <h3 className="package-name">{packageItem.name}</h3>
                                         <ul>
@@ -120,7 +120,7 @@ export default function Home3_Pricing({
                                 </div>
                                 {isReversed && (
                                     <div className="col-lg-8 col-xl-9 image-column order-1 order-lg-2">
-                                        <div className="image-box"><img src={imageSrc} alt="image"/></div>
+                                        <div className="image-box"><img loading="lazy" decoding="async" src={imageSrc} alt="image"/></div>
                                     </div>
                                 )}
                             </div>

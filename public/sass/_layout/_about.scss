@@ -27,6 +27,13 @@
 	.image-column {
 		.inner-column {
 			max-width: 570px;
+			// A float shrink-to-fits, so without this the column collapsed to the
+			// photo's intrinsic width whenever that was under 570px, taking the
+			// masked notch down with it while the badge kept its fixed size.
+			width: 100%;
+			// Lets the badge below size itself against the frame rather than the
+			// viewport, so it keeps matching the notch at every column width.
+			container-type: inline-size;
 			float: right;
 			position: relative;
 			z-index: 1;
@@ -36,16 +43,27 @@
 				mask-repeat: no-repeat;
 				mask-size: cover;
 				mask-position: center;
+				// The mask is 570x496 and its notch is cut for the badge, so the
+				// frame has to keep that ratio whatever the photo's own ratio is.
+				aspect-ratio: 570 / 496;
 				img {
+					display: block;
 					width: 100%;
+					height: 100%;
+					object-fit: cover;
 				}
 			}
 
 			.info {
 				color: var(--theme-color2);
+				// px first as the fallback; the cqw values reproduce exactly the
+				// same box at the full 570px frame and shrink with it below that.
 				padding: 31px 25px;
+				padding: 0 4.386cqw;
 				width: 210px;
+				width: 36.842cqw;
 				height: 143px;
+				height: 25.088cqw;
 				background-color: var(--theme-color-cream);
 				border: 2px solid var(--theme-color2);
 				display: flex;
@@ -56,12 +74,15 @@
 				bottom: 0;
 				left: 0;
 				border-radius: 30px;
+				border-radius: 5.263cqw;
 
 				.info-line {
 					line-height: 35px;
+					line-height: 6.14cqw;
 					font-weight: 300;
 					font-family: var(--title-font);
 					font-size: 22px;
+					font-size: 3.86cqw;
 					color: var(--theme-color2);
 					@include breakpoint(max-md) {
 						font-size: 18px;
@@ -70,12 +91,15 @@
 					span {
 						font-weight: 500;
 						font-size: 24px;
+						font-size: 4.211cqw;
 					}
 				}
 
 				.title {
 					letter-spacing: 4px;
+					letter-spacing: 0.702cqw;
 					margin-top: 5px;
+					margin-top: 0.877cqw;
 				}
 
 				&.info--gold {
@@ -217,7 +241,12 @@
 				.image {
 					mask-image: url(../images/about/about-two-image-mask.png);
 					mask-repeat: no-repeat;
-					mask-size: cover;
+					// Stretch the mask to the box instead of `cover`. The mask is
+					// 578x601 and carries the bottom-right notch that the arrow
+					// button and the brand card sit in; with `cover` a photo of a
+					// different ratio pushes that notch off the corner and leaves
+					// the badge stranded on the white beside the picture.
+					mask-size: 100% 100%;
 					mask-position: center;
 				}
 

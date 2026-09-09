@@ -100,7 +100,7 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
                         <div className="col-xl-8 col-lg-7">
                             <div className="blog-details__left">
                                 <div className="blog-details__img">
-                                    <img src={post?.cover_image || FALLBACK_IMAGE} alt={post?.title || 'Image'} />
+                                    <img loading="lazy" decoding="async" src={post?.cover_image || FALLBACK_IMAGE} alt={post?.title || 'Image'} />
                                     {date && (
                                         <div className="blog-details__date">
                                             <span className="day">{day}</span>
@@ -203,7 +203,7 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
                                                             <Link href={`/guide/${sr.slug}`} onClick={() => setShowResults(false)}>
                                                                 <div className="sidebar-search-results__item">
                                                                     {sr.cover_image && (
-                                                                        <img src={sr.cover_image} alt={sr.title} />
+                                                                        <img loading="lazy" decoding="async" src={sr.cover_image} alt={sr.title} />
                                                                     )}
                                                                     <div className="sidebar-search-results__text">
                                                                         <strong>{sr.title}</strong>
@@ -224,7 +224,7 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
                                         {recentPosts.map((rp) => (
                                             <li key={rp.id}>
                                                 <div className="sidebar__post-image">
-                                                    <img src={rp.cover_image || '/images/resource/news-1.jpg'} alt={rp.title} />
+                                                    <img loading="lazy" decoding="async" src={rp.cover_image || '/images/resource/news-1.jpg'} alt={rp.title} />
                                                 </div>
                                                 <div className="sidebar__post-content">
                                                     <h3>

@@ -24,7 +24,7 @@ function BackToTop() {
     return (
         <>
             {hasScrolled && (
-                <a className={`scroll-to-top scroll-to-target ${hasScrolled && "d-block"}`} href="#top"><span className="fa fa-angle-up"></span></a>
+                <a className={`scroll-to-top scroll-to-target ${hasScrolled && "d-block"}`} href="#top" aria-label="Back to top"><span className="fa fa-angle-up" aria-hidden="true"></span></a>
             )}
         </>
     );

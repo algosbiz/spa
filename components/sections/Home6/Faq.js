@@ -27,7 +27,7 @@ export default function Home6_Faq({
                         {showImage && (
                             <div className="col-xxl-6 image-column">
                                 <div className="inner-column gsap__parallax">
-                                    <img src={image} alt="Spa facial treatment" />
+                                    <img loading="lazy" decoding="async" src={image} alt="Spa facial treatment" />
                                     <h2 className="title">{imageTitle}</h2>
                                 </div>
                             </div>

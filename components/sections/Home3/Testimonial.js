@@ -55,13 +55,13 @@ export default function Home3_Testimonial({ testimonialsData = defaultTestimonia
         <>
             <section className="testimonial-section-two pt-130 pb-130">
                 <div className="shape1">
-                    <img className="animation__arryUpDown" src="/images/shape/testimonial-two-shape-left.png" alt="image" />
+                    <img loading="lazy" decoding="async" className="animation__arryUpDown" src="/images/shape/testimonial-two-shape-left.png" alt="image" />
                 </div>
                 <div className="shape2">
-                    <img className="animation__arryLeftRight" src="/images/shape/testimonial-two-shape-right.png" alt="image" />
+                    <img loading="lazy" decoding="async" className="animation__arryLeftRight" src="/images/shape/testimonial-two-shape-right.png" alt="image" />
                 </div>
                 <div className="shape3">
-                    <img className="bobble__animation" src="/images/logo/sbm.webp" alt="Spa Bali Moon watermark" />
+                    <img loading="lazy" decoding="async" className="bobble__animation" src="/images/logo/sbm.webp" alt="Spa Bali Moon watermark" />
                 </div>
                 <div className="container">
                     <div className="outer-box">

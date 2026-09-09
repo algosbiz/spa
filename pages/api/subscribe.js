@@ -47,7 +47,7 @@ export default async function handler(req, res) {
             html: `
                 <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f0ebe1;">
                     <div style="background-color: #ffffff; padding: 40px 30px; text-align: center; border-bottom: 3px solid #b8952e;">
-                        <img src="https://spabalimoon.com/images/logo/sbm.webp" alt="${businessName}" style="max-height: 80px; width: auto; margin-bottom: 15px;" />
+                        <img loading="lazy" decoding="async" src="https://spabalimoon.com/images/logo/sbm.webp" alt="${businessName}" style="max-height: 80px; width: auto; margin-bottom: 15px;" />
                         <p style="color: #b8952e; margin: 0; font-size: 13px; letter-spacing: 2px; text-transform: uppercase;">Relax &bull; Rejuvenate &bull; Restore</p>
                     </div>
                     <div style="padding: 35px 30px;">

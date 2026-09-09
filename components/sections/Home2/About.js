@@ -43,12 +43,12 @@ export default function Home2_About({
                 {usesHomepageLeafShape ? (
                     <span className="about-leaf-gold animation__arryUpDown" aria-hidden="true" />
                 ) : (
-                    <img className="animation__arryUpDown" src={resolvedLeftShape} alt="" aria-hidden="true"/>
+                    <img loading="lazy" decoding="async" className="animation__arryUpDown" src={resolvedLeftShape} alt="" aria-hidden="true"/>
                 )}
             </div>
             <div className={`shape2${hasTreatmentRightShape ? " treatment-leaf-position--right" : ""}`}>
                 <div className={hasTreatmentRightShape ? "treatment-leaf-shape--right" : undefined}>
-                    <img className="animation__floatBob" src={resolvedRightShape} alt="" aria-hidden="true"/>
+                    <img loading="lazy" decoding="async" className="animation__floatBob" src={resolvedRightShape} alt="" aria-hidden="true"/>
                 </div>
             </div>
             <div className="container">
@@ -58,12 +58,12 @@ export default function Home2_About({
                         <div className="inner-column">
                             <div className="image-box">
                                 <div className="image" data-depth="0.03">
-                                    <img src={primaryImage} alt="Spa treatment"/>
+                                    <img loading="lazy" decoding="async" src={primaryImage} alt="Spa treatment"/>
                                 </div>
-                                <img data-depth="0.05" className="circle-image" src={secondaryImage}
+                                <img loading="lazy" decoding="async" data-depth="0.05" className="circle-image" src={secondaryImage}
                                     alt="Spa treatment detail"/>
                             </div>
-                            <Link href="/seminyak/pricing" className={`circle-btn${showBrandCard ? " circle-btn--replaced" : ""}`}><svg width="31" height="31" viewBox="0 0 31 31"
+                            <Link href="/seminyak" className={`circle-btn${showBrandCard ? " circle-btn--replaced" : ""}`}><svg width="31" height="31" viewBox="0 0 31 31"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clipPath="url(#clip0_1_1364)">
                                         <path
@@ -74,7 +74,7 @@ export default function Home2_About({
                             </Link>
                             {showBrandCard && (
                                 <div className="brand-card" aria-hidden="true">
-                                    <img
+                                    <img loading="lazy" decoding="async"
                                         className="brand-lotus-icon"
                                         src="/images/logo/sbm.webp"
                                         alt=""

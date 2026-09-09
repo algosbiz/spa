@@ -31,7 +31,9 @@ CSS TABLE OF CONTENTS
 ------------------------------------------------------------------*/
 
 // Google fonts ***
-@import url("https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+// Google Fonts are requested from PageHead via <link rel="preconnect"> +
+// <link rel="stylesheet">; importing them here too only added a slower,
+// chained copy of the same request.
 
 @import url("meanmenu.css");
 @import url("animate.css");

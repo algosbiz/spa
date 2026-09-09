@@ -34,7 +34,7 @@ const Header4 = ({ scroll }) => {
                 <div class="header-one__wrp">
                     <div class="header__main">
                         <Link href="/" class="logo">
-                            <img src="/images/logo/SMBtitle.svg" alt="logo"/>
+                            <img src="/images/logo/SMBtitle.svg" alt="logo" width="435" height="80"/>
                         </Link>
                         <div class="main-menu main-menu-light">
                             <nav>
@@ -60,7 +60,7 @@ const Header4 = ({ scroll }) => {
             {/* <!-- Sidebar area start here --> */}
             <div className={`sidebar-area sidebar-area--white offcanvas offcanvas-end ${sidebarToggle ? 'show' : ''}`} id="menubar" style={{ backgroundColor: "#ffffff", borderLeft: "1px solid rgba(95, 90, 84, 0.12)" }}>
                 <div className="offcanvas-header">
-                    <Link href="/" className="logo"> <img src="/images/logo/SMBtitle.svg" alt="logo"/></Link>
+                    <Link href="/" className="logo"> <img src="/images/logo/SMBtitle.svg" alt="logo" width="435" height="80"/></Link>
                     <button type="button" className="btn-close" onClick={handleToggleSidebar}><i
                             className="fa-regular fa-xmark"></i></button>
                 </div>

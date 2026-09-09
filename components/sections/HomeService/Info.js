@@ -1,7 +1,7 @@
 import React from 'react';
 
 const lotusIcon = (
-    <img className="brand-lotus-icon" src="/images/logo/sbm.webp" alt="" aria-hidden="true" />
+    <img loading="lazy" decoding="async" className="brand-lotus-icon" src="/images/logo/sbm.webp" alt="" aria-hidden="true" />
 );
 
 export default function HomeServiceInfo({ plain = false }) {
@@ -36,10 +36,10 @@ export default function HomeServiceInfo({ plain = false }) {
         <section className="home-service-info-area pt-100 pb-100" style={{ backgroundColor: plain ? 'transparent' : '#fcfaf6', position: 'relative', overflow: 'hidden', zIndex: 1 }}>
             {/* Elegant Floating Background Leaf Shapes (Unique to this section) */}
             <div className="shape1" style={{ position: 'absolute', left: 0, top: '15%', zIndex: -1 }}>
-                <img src="/images/shape/about-left-shape.png" alt="shape" />
+                <img loading="lazy" decoding="async" src="/images/shape/about-left-shape.png" alt="shape" />
             </div>
             <div className="shape2" style={{ position: 'absolute', right: 0, bottom: '15%', zIndex: -1 }}>
-                <img className="sway_Y__animation" src="/images/shape/about-right-shape.png" alt="shape" />
+                <img loading="lazy" decoding="async" className="sway_Y__animation" src="/images/shape/about-right-shape.png" alt="shape" />
             </div>
 
             <div className="container">

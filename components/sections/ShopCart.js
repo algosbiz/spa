@@ -44,7 +44,7 @@ const ShopCart = () => {
                           <Link title="Remove this item" className="remove" href="#">×</Link>
                         </td>
                         <td className="product-thumbnail">
-                          <Link href="#"><img alt="product" src="/images/resource/products/1.jpg" /></Link>
+                          <Link href="#"><img loading="lazy" decoding="async" alt="product" src="/images/resource/products/1.jpg" /></Link>
                         </td>
                         <td className="product-name">
                           <Link href="shop-product-details">Body Message Oil</Link>
@@ -73,7 +73,7 @@ const ShopCart = () => {
                           <Link title="Remove this item" className="remove" href="#">×</Link>
                         </td>
                         <td className="product-thumbnail">
-                          <Link href="#"><img alt="product" src="/images/resource/products/2.jpg" /></Link>
+                          <Link href="#"><img loading="lazy" decoding="async" alt="product" src="/images/resource/products/2.jpg" /></Link>
                         </td>
                         <td className="product-name">
                           <Link href="shop-product-details">Hair Treatment</Link>
@@ -102,7 +102,7 @@ const ShopCart = () => {
                           <Link title="Remove this item" className="remove" href="#">×</Link>
                         </td>
                         <td className="product-thumbnail">
-                          <Link href="#"><img alt="product" src="/images/resource/products/3.jpg" /></Link>
+                          <Link href="#"><img loading="lazy" decoding="async" alt="product" src="/images/resource/products/3.jpg" /></Link>
                         </td>
                         <td className="product-name">
                           <Link href="shop-product-details">Massage Cream</Link>

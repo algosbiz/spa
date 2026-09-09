@@ -38,7 +38,7 @@ export default function Home5_Pricing({
               </p>
               {showMore && (
                 <div className="mt-30 wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
-                  <Link href="/seminyak/pricing" className="btn-two">
+                  <Link href="/seminyak" className="btn-two">
                     {ctaText}
                     <span className="icon_box">
                       <i className="fa-regular icon_first fa-arrow-right-long"></i>
@@ -56,7 +56,7 @@ export default function Home5_Pricing({
               >
                 <div className="inner-box">
                   <div className="shape">
-                    <img src="/images/pricing/shape.png" alt="image" />
+                    <img loading="lazy" decoding="async" src="/images/pricing/shape.png" alt="image" />
                   </div>
                   <div className="icon">
                     <svg
@@ -231,7 +231,7 @@ export default function Home5_Pricing({
               >
                 <div className="inner-box">
                   <div className="shape">
-                    <img src="/images/pricing/shape.png" alt="image" />
+                    <img loading="lazy" decoding="async" src="/images/pricing/shape.png" alt="image" />
                   </div>
                   <div className="icon">
                     <svg
@@ -309,7 +309,7 @@ export default function Home5_Pricing({
               >
                 <div className="inner-box">
                   <div className="shape">
-                    <img src="/images/pricing/shape.png" alt="image" />
+                    <img loading="lazy" decoding="async" src="/images/pricing/shape.png" alt="image" />
                   </div>
                   <div className="icon">
                     <svg
@@ -404,7 +404,7 @@ export default function Home5_Pricing({
               >
                 <div className="inner-box">
                   <div className="shape">
-                    <img src="/images/pricing/shape.png" alt="image" />
+                    <img loading="lazy" decoding="async" src="/images/pricing/shape.png" alt="image" />
                   </div>
                   <div className="icon">
                     <svg

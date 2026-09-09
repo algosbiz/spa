@@ -17,11 +17,11 @@ function TreatmentItem({ item, itemKey, isOpen, onToggle }) {
     <article className={`treatment-catalog__item${isOpen ? " is-open" : ""}`}>
       {item.href ? (
         <Link href={item.href} className="treatment-catalog__image" aria-label={`View ${item.name}`}>
-          <img src={item.image} alt={item.name} />
+          <img loading="lazy" decoding="async" src={item.image} alt={item.name} />
         </Link>
       ) : (
         <div className="treatment-catalog__image">
-          <img src={item.image} alt={item.name} />
+          <img loading="lazy" decoding="async" src={item.image} alt={item.name} />
         </div>
       )}
       <div className="treatment-catalog__content">
@@ -65,7 +65,14 @@ function TreatmentItem({ item, itemKey, isOpen, onToggle }) {
               ))}
             </div>
             {item.href ? (
-              <Link href={item.href} className="treatment-catalog__details-link">
+              <Link
+                href={item.href}
+                className="treatment-catalog__details-link"
+                // The panel is aria-hidden while collapsed, so its link must leave
+                // the tab order too -- otherwise keyboard users land on a control
+                // screen readers have been told does not exist.
+                tabIndex={isOpen ? undefined : -1}
+              >
                 {isBookingLink ? `Book ${item.name}` : `View ${item.name} details`}
                 <i className="fa-regular fa-arrow-right" aria-hidden="true"></i>
               </Link>
@@ -104,14 +111,14 @@ export default function TreatmentCatalog({
   return (
     <section className="package-section treatment-catalog section__decoration-top section__decoration-bottom bg-sub pt-170 pb-170">
       <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-        <img
+        <img loading="lazy" decoding="async"
           className="sway_Y__animationY"
           src="/images/shape/banner-five-shape1.png"
           alt=""
         />
       </div>
       <div className="shape2">
-        <img className="sway__animation" src="/images/shape/package-shape-right.png" alt="" />
+        <img loading="lazy" decoding="async" className="sway__animation" src="/images/shape/package-shape-right.png" alt="" />
       </div>
       <div className="container">
         <div className="section-header mb-60 center">

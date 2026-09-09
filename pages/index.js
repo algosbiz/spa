@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import Layout from "../components/layout/Layout";
 import Banner from "../components/sections/Home5/Banner";
 import About from "../components/sections/Home3/About";
@@ -83,7 +84,50 @@ const differentiators = [
   },
 ];
 
+// FONT TRIAL — temporary. Open the homepage as /?font=playfair (or montserrat,
+// cormorant, inter, manrope) to see that face applied to the whole page, headings
+// and body alike. Without the parameter the page keeps the live Literata/Mulish,
+// so visitors never see the trial. Delete this table, the `fontTrial` lines in
+// the component, and the "FONT TRIAL" style block to remove the feature.
+const FONT_TRIALS = {
+  playfair: {
+    label: "Playfair Display",
+    stack: '"Playfair Display", serif',
+    google: "Playfair+Display:ital,wght@0,400..900;1,400..900",
+  },
+  montserrat: {
+    label: "Montserrat",
+    stack: '"Montserrat", sans-serif',
+    google: "Montserrat:ital,wght@0,100..900;1,100..900",
+  },
+  cormorant: {
+    label: "Cormorant Garamond",
+    stack: '"Cormorant Garamond", serif',
+    google: "Cormorant+Garamond:ital,wght@0,300..700;1,300..700",
+  },
+  inter: {
+    label: "Inter",
+    stack: '"Inter", sans-serif',
+    google: "Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900",
+  },
+  manrope: {
+    label: "Manrope",
+    stack: '"Manrope", sans-serif',
+    google: "Manrope:wght@200..800",
+  },
+};
+
 export default function Home5({ googleReviews = fallbackGoogleReviews }) {
+  // Read the trial face from the URL after mount. This page is statically
+  // generated, so router.query is still empty during hydration; going straight
+  // to window.location keeps server and first client render identical.
+  const [fontKey, setFontKey] = React.useState(null);
+  React.useEffect(() => {
+    const value = new URLSearchParams(window.location.search).get("font");
+    setFontKey(value ? value.toLowerCase() : null);
+  }, []);
+  const fontTrial = (fontKey && FONT_TRIALS[fontKey]) || null;
+
   const testimonials =
     googleReviews.reviews.length > 0
       ? googleReviews.reviews.map((review) => ({
@@ -124,6 +168,16 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ratingSchema) }}
         />
       )}
+      {/* FONT TRIAL — pulls in only the face being trialled, and only when the
+          ?font= parameter is present, so normal visitors download nothing extra. */}
+      {fontTrial && (
+        <Head>
+          <link
+            href={`https://fonts.googleapis.com/css2?family=${fontTrial.google}&display=swap`}
+            rel="stylesheet"
+          />
+        </Head>
+      )}
       <Layout HeaderStyle="one" FooterStyle="two">
         <Banner
           title="Traditional Spa &"
@@ -133,6 +187,7 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
           secondaryImage="/images/home/homepage-2.webp"
         />
         <Step
+          flowerPetals
           subTitle="Start Here"
           title="How Do You Book Your Spa Experience?"
           steps={bookingSteps}
@@ -150,7 +205,7 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
               "Experienced Balinese therapists",
               "Personalised treatment recommendations",
             ]}
-            ctaHref="/seminyak/pricing"
+            ctaHref="/seminyak"
             primaryImage="/images/home/homepage-3.webp"
             secondaryImage="/images/home/homepage-4.webp"
             googleReviews={googleReviews}
@@ -237,6 +292,24 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
           />
         </div>
       </Layout>
+      {/* FONT TRIAL — one face over the whole page, headings and body, so each
+          can be judged on a single full screen. A plain <style> rather than
+          styled-jsx: the compiler rejects interpolation inside a global block. */}
+      {fontTrial && (
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              .page-wrapper, .offcanvas, .sidebar-area {
+                --title-font: ${fontTrial.stack};
+                --text-font: ${fontTrial.stack};
+                /* body resolves --text-font above these elements, so
+                   descendants would keep inheriting the computed Mulish. */
+                font-family: var(--text-font);
+              }
+            `,
+          }}
+        />
+      )}
       <style jsx global>{`
         /* The gold second line competed with the logo and the header CTA for
            attention, so the whole headline is now set in the heading colour. */

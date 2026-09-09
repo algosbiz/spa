@@ -1,4 +1,5 @@
 import React from 'react'
+import FloralDecoration from '../../elements/FloralDecoration';
 
 const defaultSteps = [
     {
@@ -19,15 +20,16 @@ export default function Home5_Step({
     subTitle = "3 Easy Step",
     title = "How It Works?",
     steps = defaultSteps,
+    flowerPetals = false,
 }) {
     return (
         <>
             <section id="projects" className="step-section pt-30 pb-130">
                 <div className="shape1 slideInLeft wow">
-                    <img className="sway_Y__animationY" src="/images/shape/package-four-shape-left.png" alt="" aria-hidden="true" />
+                    <img loading="lazy" decoding="async" className="sway_Y__animationY" src="/images/shape/package-four-shape-left.png" alt="" aria-hidden="true" />
                 </div>
                 <div className="shape2">
-                    <img className="animation__rotateAndScale" src="/images/shape/step-shape-right.png" alt="image" />
+                    {flowerPetals ? <FloralDecoration /> : <img loading="lazy" decoding="async" className="animation__rotateAndScale" src="/images/shape/step-shape-right.png" alt="" aria-hidden="true" />}
                 </div>
                 <div className="container">
                     <div className="section-header center mb-60">
@@ -61,7 +63,7 @@ export default function Home5_Step({
                     </div>
                     <div className="outer-box">
                         <div className="step-line">
-                            <img src="/images/shape/step-line.png" alt="image" />
+                            <img loading="lazy" decoding="async" src="/images/shape/step-line.png" alt="image" />
                         </div>
                         <div className="row g-5">
                             <div className="col-lg-4 step-block">

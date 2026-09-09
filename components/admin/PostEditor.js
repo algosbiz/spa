@@ -310,7 +310,7 @@ export default function PostEditor({ initialPost }) {
                         <label className="pe-label">Cover Image</label>
                         {coverImage ? (
                             <div className="pe-cover">
-                                <img src={coverImage} alt="cover" />
+                                <img loading="lazy" decoding="async" src={coverImage} alt="cover" />
                                 <button type="button" className="pe-btn ghost sm" onClick={() => setCoverImage('')}>
                                     Remove
                                 </button>

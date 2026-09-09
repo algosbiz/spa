@@ -909,11 +909,11 @@ export default function Home5_PackagePricing() {
                     >
                       <div className="inner-box">
                         <div className="shape">
-                          <img src="/images/pricing/shape.png" alt="image" />
+                          <img loading="lazy" decoding="async" src="/images/pricing/shape.png" alt="image" />
                         </div>
                         <div className="icon">
                           {iconSrc ? (
-                            <img src={iconSrc} alt={`${cat.cardTitle} icon`} />
+                            <img loading="lazy" decoding="async" src={iconSrc} alt={`${cat.cardTitle} icon`} />
                           ) : (
                             icons[pi % icons.length]
                           )}

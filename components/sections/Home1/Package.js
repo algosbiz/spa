@@ -99,7 +99,7 @@ const PackageItem = ({ item, isLast, outcallPricing, spreadDropdownArrow }) => {
     return (
         <div className={`inner-box ${!isLast ? 'mb-50' : ''}`}>
             <div className="image">
-                <img src={item.image} alt={item.name} />
+                <img loading="lazy" decoding="async" src={item.image} alt={item.name} />
             </div>
             <div className="content">
                 <h3 className="title">
@@ -238,14 +238,14 @@ export default function PackageSection({
           data-wow-delay="200ms"
           data-wow-duration="1500ms"
         >
-          <img
+          <img loading="lazy" decoding="async"
             className="sway_Y__animationY"
             src="/images/shape/banner-five-shape1.png"
             alt="image"
           />
         </div>
         <div className="shape2">
-          <img
+          <img loading="lazy" decoding="async"
             className="sway__animation"
             src="/images/shape/package-shape-right.png"
             alt="image"

@@ -37,7 +37,7 @@ export default function SessionOptions({ sessions = defaultSessions }) {
       <div className="session-options__header">
         <p className="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
           <span className="session-options__logo-mark" aria-hidden="true">
-            <img src="/images/logo/SMBtitle.svg" alt="" />
+            <img loading="lazy" decoding="async" src="/images/logo/SMBtitle.svg" alt="" />
           </span>
           Flexible Sessions
         </p>
@@ -54,11 +54,11 @@ export default function SessionOptions({ sessions = defaultSessions }) {
           <div className="col-lg-4 col-md-6 service-block-two" key={`${session.duration}-${session.price}`}>
             <div className="inner-box session-option-card">
               <div className="session-option-shape" aria-hidden="true">
-                <img src="/images/pricing/shape.png" alt="" />
+                <img loading="lazy" decoding="async" src="/images/pricing/shape.png" alt="" />
               </div>
               <div className="image-box">
                 <div className="icon">
-                  <img
+                  <img loading="lazy" decoding="async"
                     className="service-treatment-icon"
                     src="/images/spa/Balinese.svg"
                     alt=""

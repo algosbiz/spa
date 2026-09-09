@@ -7,6 +7,10 @@
 	}
 	img {
 		width: 100%;
+		// Paired with the width/height attributes on the <img>: reserves the
+		// right box before the logo loads, so the header no longer grows and
+		// shoves the whole page down (that shift alone was ~0.48 CLS).
+		height: auto;
 	}
 }
 // Logo area end here ***

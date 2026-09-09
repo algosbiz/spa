@@ -101,17 +101,17 @@ const ShopCheckout1 = () => {
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="product-thumbnail"><Link href="shop-product-details"><img alt="product" src="/images/resource/products/1.jpg"/></Link></td>
+                      <td className="product-thumbnail"><Link href="shop-product-details"><img loading="lazy" decoding="async" alt="product" src="/images/resource/products/1.jpg"/></Link></td>
                       <td className="product-name"><Link href="shop-product-details">Body Message Oil</Link> x 2</td>
                       <td><span className="amount">$36.00</span></td>
                     </tr>
                     <tr>
-                      <td className="product-thumbnail"><Link href="shop-product-details"><img alt="product" src="/images/resource/products/2.jpg"/></Link></td>
+                      <td className="product-thumbnail"><Link href="shop-product-details"><img loading="lazy" decoding="async" alt="product" src="/images/resource/products/2.jpg"/></Link></td>
                       <td className="product-name"><Link href="shop-product-details">Hair Treatment</Link> x 3</td>
                       <td><span className="amount">$115.00</span></td>
                     </tr>
                     <tr>
-                      <td className="product-thumbnail"><Link href="shop-product-details"><img alt="product" src="/images/resource/products/3.jpg"/></Link></td>
+                      <td className="product-thumbnail"><Link href="shop-product-details"><img loading="lazy" decoding="async" alt="product" src="/images/resource/products/3.jpg"/></Link></td>
                       <td className="product-name"><Link href="shop-product-details">Massage Cream</Link> x 1</td>
                       <td><span className="amount">$68.00</span></td>
                     </tr>

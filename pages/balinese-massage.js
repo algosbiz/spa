@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
+import useDecorationMotion from "../components/elements/useDecorationMotion";
+import FloralDecoration from "../components/elements/FloralDecoration";
 import Layout from "../components/layout/Layout";
 import Banner from "../components/sections/Home2/Banner";
 import AboutOld from "../components/sections/Home2/About";
@@ -82,11 +84,13 @@ export default function Home2({
   benefitsLeftShapeImage = "/images/shape/about-left-shape.png",
   benefitsRightShapeImage = "/images/shape/about-right-shape.png",
 }) {
+  const decorationRoot = useRef(null);
+  useDecorationMotion(decorationRoot);
   const treatmentImages = createTreatmentImageSet("balinesemassage", packageOptions.length);
     return (
       <>
         <Layout HeaderStyle="one" FooterStyle="two">
-          <div className="balinese-massage-page">
+          <div className="balinese-massage-page" ref={decorationRoot}>
           <div className="balinese-massage-banner">
             <Banner
               image={treatmentImages.hero}
@@ -111,12 +115,12 @@ export default function Home2({
           />
           <div className="balinese-massage-pricing">
             <Pricing
+              leftShapeSrc="/images/shape/package-four-shape-left.png"
               images={treatmentImages.pricing}
               subTitle="Find Yours"
               title="Our Package Options"
               text="Balinese massage is often combined with treatments such as facials, cream baths, and nail care to create a more complete spa experience. Our treatment packages are created for guests looking to relax, refresh, and make the most of their massage time in Bali."
               packages={packageOptions}
-              leftShapeSrc="/images/shape/pricing-three-shape-left.png"
               topContent={<SessionOptions />}
             />
           </div>
@@ -159,7 +163,8 @@ export default function Home2({
           <AboutReverse
             image={treatmentImages.details[1]}
             leftShapeSrc="/images/shape/step-shape-left.png"
-            rightShapeSrc="/images/shape/leaf2.png"
+            rightShapeSrc="/images/shape/banner-six-shape2.png"
+            rightDecoration={<FloralDecoration clustered />}
             subTitle="Suitable For"
             badgeTopText="Your Ideal"
             badgeBottomText="Match"
@@ -182,8 +187,8 @@ export default function Home2({
           <div className="balinese-massage-experience">
           <About
             image={treatmentImages.details[2]}
-            leftShapeSrc="/images/shape/leaf4.png"
-            rightShapeSrc="/images/shape/service-four-shape-right.png"
+            leftShapeSrc="/images/shape/leaf/4a.png"
+            rightShapeSrc="/images/shape/banner-three-shape2.png"
             subTitle="The Experience"
             badgeTopText="Feel The"
             badgeBottomText="Difference"
@@ -236,24 +241,76 @@ export default function Home2({
           }
 
           /* Vary the ornaments within the existing edge positions and spacing. */
+          .balinese-massage-pricing .pricing-section-three .shape1 img {
+            width: 230px;
+            height: auto;
+          }
+
+          .balinese-massage-benefits .about-section .shape2 img {
+            width: 185px;
+            height: auto;
+          }
+
           .balinese-massage-suitable .about-section .shape1 img {
             width: 230px;
             height: auto;
           }
 
-          .balinese-massage-suitable .about-section .shape2 img {
-            width: 160px;
+          .balinese-massage-suitable .about-section .shape2 > div > img {
+            width: 190px;
             height: auto;
           }
 
           .balinese-massage-experience .about-section .shape1 img {
-            width: 150px;
+            width: 180px;
             height: auto;
           }
 
+          .balinese-massage-suitable .about-section > .shape2 {
+            top: 35px;
+            z-index: 2;
+          }
+
           .balinese-massage-experience .about-section .shape2 img {
-            width: 230px;
+            width: 210px;
             height: auto;
+          }
+
+          .balinese-massage-page [data-decoration-motion] {
+            translate: 0 var(--decoration-scroll, 0px);
+            pointer-events: auto;
+            z-index: 2;
+          }
+          .balinese-massage-page [data-decoration-motion] img {
+            animation: balinese-decoration-drift var(--decoration-duration, 9s) ease-in-out infinite alternate;
+            animation-play-state: paused;
+            transition: translate 450ms ease;
+          }
+          .balinese-massage-page [data-motion-visible="true"] img {
+            animation-play-state: running;
+          }
+          .balinese-massage-page [data-decoration-motion]:hover img,
+          .balinese-massage-page [data-decoration-motion]:active img {
+            translate: 3px -5px;
+          }
+          @keyframes balinese-decoration-drift {
+            from { transform: translateY(0) rotate(-1.5deg); }
+            to { transform: translateY(7px) rotate(1.5deg); }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .balinese-massage-page [data-decoration-motion],
+            .balinese-massage-page [data-decoration-motion] img {
+              animation: none !important;
+              transition: none;
+              translate: none !important;
+            }
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .balinese-massage-page section > .shape1 img,
+            .balinese-massage-page section > .shape2 img {
+              animation: none !important;
+            }
           }
 
           .balinese-massage-testimonial .testimonial-section-two .shape1 img {
