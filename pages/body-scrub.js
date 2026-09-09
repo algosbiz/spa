@@ -8,6 +8,7 @@ import Testimonial from "../components/sections/Home2/Testimonial";
 import AboutReverse from "../components/sections/Home1/AboutReverse";
 import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
+import SessionOptions from "../components/sections/Home1/SessionOptions";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
@@ -36,6 +37,16 @@ const packageOptions = [
     treatments: ["30 Mins Body Scrub", "1 Hr Warm Candle", "1 Hr Bali Moon Facial"],
   },
 ];
+
+const scrubVariants = [
+  "Chocolate",
+  "Coconut",
+  "Strawberry",
+  "Bengkoang",
+  "Jasmine",
+  "Green Tea",
+  "Spa Sari",
+].map((variant) => ({ duration: variant, price: "IDR 169K" }));
 
 const serviceHighlights = [
   { title: "Natural", text: "Ingredients" },
@@ -113,6 +124,16 @@ export default function BodyScrub() {
             title="Our Package Options"
             text="Body scrubs are often combined with massage, facials, and beauty treatments to create a complete wellness session. Our packages are designed for guests looking to refresh both body and mind while enjoying their time in Bali."
             packages={packageOptions}
+            topContent={
+              <SessionOptions
+                sessions={scrubVariants}
+                layout="compact"
+                subTitle="Pick Your Scent"
+                title="Body Scrub Options"
+                text="Our Body Scrub is available in a selection of natural-inspired variants, so you can enjoy the same full-body exfoliating treatment with the fragrance and blend you prefer."
+                icon="/images/spa/Scrub.svg"
+              />
+            }
           />
         </div>
         <div className="body-scrub-funfact">

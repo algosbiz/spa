@@ -8,6 +8,7 @@ import Testimonial from "../components/sections/Home2/Testimonial";
 import AboutReverse from "../components/sections/Home1/AboutReverse";
 import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
+import SessionOptions from "../components/sections/Home1/SessionOptions";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
@@ -48,6 +49,63 @@ const packageOptions = [
       "30 Mins Pedicure",
       "30 Mins Manicure",
       "1 Hr Balinese Massage",
+    ],
+  },
+];
+
+const treatmentOptions = [
+  {
+    price: "IDR 238K",
+    duration: "Manicure & Pedicure",
+    details: [
+      "Complete hand and foot care",
+      "Cuticle and nail grooming",
+      "Ideal for a full refresh",
+    ],
+  },
+  {
+    price: "IDR 99K",
+    duration: "Manicure",
+    details: [
+      "Nail and cuticle care",
+      "Hand grooming",
+      "A simple tidy-up",
+    ],
+  },
+  {
+    price: "IDR 139K",
+    duration: "Pedicure",
+    details: [
+      "Nail and cuticle care",
+      "Foot grooming",
+      "Ideal for regular maintenance",
+    ],
+  },
+  {
+    price: "IDR 138K",
+    duration: "Nail Gel Color Feet & Hands",
+    details: [
+      "Gel colour application",
+      "For hands and feet",
+      "A polished colour finish",
+    ],
+  },
+  {
+    price: "IDR 98K",
+    duration: "Nail Remover Feet & Hands",
+    details: [
+      "Gel or nail product removal",
+      "For hands and feet",
+      "Prepares nails for the next service",
+    ],
+  },
+  {
+    price: "IDR 438K",
+    duration: "Nail Gel Feet & Hands",
+    details: [
+      "Gel nail treatment",
+      "For hands and feet",
+      "A longer-lasting finish",
     ],
   },
 ];
@@ -118,6 +176,15 @@ export default function ManicurePedicure() {
             title="Our Package Options"
             text="Complete your nail care with spa treatments that help you feel refreshed from head to toe. Our packages combine professional manicure and pedicure services with massage, facial, or hair care, creating a balanced wellness experience during your stay in Bali."
             packages={packageOptions}
+            topContent={
+              <SessionOptions
+                sessions={treatmentOptions}
+                subTitle="Perfectly Polished"
+                title="Manicure & Pedicure Treatment Options"
+                text="We offers manicure, pedicure, gel colour, gel nail, and removal services for hands and feet. Each option can be booked individually, making it easy to match your appointment with the nail care you need."
+                icon="/images/spa/Manicure.svg"
+              />
+            }
           />
         </div>
         <div className="manicure-pedicure-funfact">

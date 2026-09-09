@@ -8,6 +8,7 @@ import Testimonial from "../components/sections/Home2/Testimonial";
 import AboutReverse from "../components/sections/Home1/AboutReverse";
 import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
+import SessionOptions from "../components/sections/Home1/SessionOptions";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
@@ -34,6 +35,128 @@ const packageOptions = [
     price: "IDR 929K",
     name: "Package D",
     treatments: ["1 Hr Warm Candle 2 Pax", "1 Hr Bali Moon Facial 2 Pax"],
+  },
+];
+
+const coupleSessionGroups = [
+  {
+    title: "Couple Balinese Massage",
+    sessions: [
+      {
+        price: "IDR 319K",
+        duration: "1 Hour · 2 Guests",
+        details: [
+          "Full-body relaxation",
+          "Gentle to medium pressure",
+          "Ideal for a shorter shared session",
+        ],
+      },
+      {
+        price: "IDR 479K",
+        duration: "1.5 Hours · 2 Guests",
+        details: [
+          "More time for full-body care",
+          "Extra attention to tense areas",
+          "A more unhurried massage together",
+        ],
+      },
+      {
+        price: "IDR 659K",
+        duration: "2 Hours · 2 Guests",
+        details: [
+          "Extended full-body treatment",
+          "More time for areas of tension",
+          "Longer shared relaxation",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Couple Traditional Massage",
+    sessions: [
+      {
+        price: "IDR 339K",
+        duration: "1 Hour · 2 Guests",
+        details: [
+          "Full-body traditional massage",
+          "Firm pressure and flowing techniques",
+          "Ideal for everyday body tension",
+        ],
+      },
+      {
+        price: "IDR 519K",
+        duration: "1.5 Hours · 2 Guests",
+        details: [
+          "More time across the full body",
+          "Extra focus on tired muscles",
+          "A deeper traditional massage session",
+        ],
+      },
+      {
+        price: "IDR 679K",
+        duration: "2 Hours · 2 Guests",
+        details: [
+          "Extended traditional bodywork",
+          "More attention to areas that feel tight",
+          "Longer time to relax together",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Couple Deep Tissue Massage",
+    sessions: [
+      {
+        price: "IDR 539K",
+        duration: "1 Hour · 2 Guests",
+        details: [
+          "Firm targeted pressure",
+          "Focus on deeper muscle tension",
+          "Ideal for specific tight areas",
+        ],
+      },
+      {
+        price: "IDR 719K",
+        duration: "1.5 Hours · 2 Guests",
+        details: [
+          "More time for deeper bodywork",
+          "Extended focus on tense muscles",
+          "Ideal for guests wanting stronger pressure",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Couple Warm Candle Massage",
+    sessions: [
+      {
+        price: "IDR 539K",
+        duration: "1 Hour · 2 Guests",
+        details: [
+          "Warm candle oil massage",
+          "Smooth relaxing strokes",
+          "Ideal for a comforting shared session",
+        ],
+      },
+      {
+        price: "IDR 799K",
+        duration: "1.5 Hours · 2 Guests",
+        details: [
+          "Extended warm oil massage",
+          "More time for full-body relaxation",
+          "Extra attention to tired areas",
+        ],
+      },
+      {
+        price: "IDR 999K",
+        duration: "2 Hours · 2 Guests",
+        details: [
+          "Longer warm candle treatment",
+          "Complete full-body relaxation",
+          "More time to slow down together",
+        ],
+      },
+    ],
   },
 ];
 
@@ -108,6 +231,15 @@ export default function CoupleMassage() {
             title="Our Package Options"
             text="Every couple enjoys relaxation differently, which is why we offer several massage styles for two. Whether you prefer gentle Balinese techniques, deeper muscle work, or a warm candle ritual, each experience is designed to help you slow down and enjoy quality time together."
             packages={packageOptions}
+            topContent={
+              <SessionOptions
+                groups={coupleSessionGroups}
+                subTitle="Side by Side"
+                title="Couple Massage Session"
+                text="Share a relaxing treatment side by side with a massage style that suits both of you. Each option is available for two guests, with different techniques and session lengths to match how you want to relax."
+                icon="/images/spa/Couple.svg"
+              />
+            }
           />
         </div>
         <div className="couple-massage-funfact">

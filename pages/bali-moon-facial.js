@@ -8,6 +8,7 @@ import Testimonial from "../components/sections/Home2/Testimonial";
 import AboutReverse from "../components/sections/Home1/AboutReverse";
 import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
+import SessionOptions from "../components/sections/Home1/SessionOptions";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
@@ -34,6 +35,27 @@ const packageOptions = [
     price: "IDR 549K",
     name: "Package D",
     treatments: ["1 Hr Bali Moon Facial", "1 Hr Warm Candle", "30 Mins Body Scrub"],
+  },
+];
+
+const facialOptions = [
+  {
+    price: "IDR 196K",
+    duration: "Bali Moon Tea Tree Facial",
+    details: [
+      "Helps refresh and clarify the skin",
+      "Suitable for oily or blemish-prone skin",
+      "Finished with a calming Tea Tree mask",
+    ],
+  },
+  {
+    price: "IDR 269K",
+    duration: "Bali Moon Gold Facial",
+    details: [
+      "Helps nourish and soften the skin",
+      "Suitable for dull or tired-looking skin",
+      "Finished with a Gold mask for a more radiant look",
+    ],
   },
 ];
 
@@ -98,6 +120,15 @@ export default function BaliMoonFacial() {
             title="Our Package Options"
             text="Bali Moon Facial is often combined with massage, hair treatments, and nail care to create a complete self-care experience. Our treatment packages are designed for guests looking to relax while giving their skin additional attention during their time in Bali."
             packages={packageOptions}
+            topContent={
+              <SessionOptions
+                sessions={facialOptions}
+                subTitle="Your Skin Moment"
+                title="Bali Moon Facial Options"
+                text="We offers two facial treatment options, giving you a simple choice depending on the type of facial you prefer. Both treatments follow our complete facial care routine and are available as individual sessions."
+                icon="/images/spa/Balinese.svg"
+              />
+            }
           />
         </div>
         <div className="bali-moon-facial-funfact">

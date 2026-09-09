@@ -8,6 +8,7 @@ import Testimonial from "../components/sections/Home2/Testimonial";
 import AboutReverse from "../components/sections/Home1/AboutReverse";
 import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
+import SessionOptions from "../components/sections/Home1/SessionOptions";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
@@ -48,6 +49,36 @@ const packageOptions = [
       "1 Hr Thai Massage",
       "1 Hr Cream Bath",
       "30 Mins Body Scrub",
+    ],
+  },
+];
+
+const durationOptions = [
+  {
+    price: "IDR 133K",
+    duration: "30 Minutes",
+    details: [
+      "Focused stretching session",
+      "Quick relief for tight areas",
+      "Ideal for limited time",
+    ],
+  },
+  {
+    price: "IDR 259K",
+    duration: "1 Hour",
+    details: [
+      "More complete body treatment",
+      "Pressure and assisted stretching",
+      "Extra attention to stiff areas",
+    ],
+  },
+  {
+    price: "IDR 379K",
+    duration: "1.5 Hours",
+    details: [
+      "Extended full-body session",
+      "More time for mobility work",
+      "Longer focus on areas of tension",
     ],
   },
 ];
@@ -123,6 +154,15 @@ export default function ThaiMassage() {
             title="Our Package Options"
             text="Enjoy a complete Thai Massage experience combined with other relaxing treatments at Spa Bali Moon. Each package is created to provide a balanced wellness session, combining traditional Thai techniques with facial, nail, and body treatments."
             packages={packageOptions}
+            topContent={
+              <SessionOptions
+                sessions={durationOptions}
+                subTitle="More Freedom to Move"
+                title="Thai Massage Duration Options"
+                text="Thai Massage combines assisted stretching with pressure techniques to support flexibility and ease areas that feel tight from daily movement or travel. Longer sessions allow more time to work through the body and spend extra attention on areas that need it most."
+                icon="/images/spa/thai.svg"
+              />
+            }
           />
         </div>
         <div className="thai-massage-funfact">

@@ -8,6 +8,7 @@ import Testimonial from "../components/sections/Home2/Testimonial";
 import AboutReverse from "../components/sections/Home1/AboutReverse";
 import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
+import SessionOptions from "../components/sections/Home1/SessionOptions";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
@@ -34,6 +35,63 @@ const packageOptions = [
     price: "IDR 539K",
     name: "Package D",
     treatments: ["1 Hr Cream Bath", "1 Hr Thai Massage", "30 Mins Body Scrub"],
+  },
+];
+
+const creamVariants = [
+  {
+    price: "IDR 165K",
+    duration: "Ginseng",
+    details: [
+      "Revitalising hair care",
+      "Scalp and strand treatment",
+      "Relaxing head massage",
+    ],
+  },
+  {
+    price: "IDR 165K",
+    duration: "Avocado",
+    details: [
+      "Nourishing hair treatment",
+      "Conditioning from roots to ends",
+      "Relaxing scalp care",
+    ],
+  },
+  {
+    price: "IDR 165K",
+    duration: "Aloe Vera",
+    details: [
+      "Gentle hair and scalp care",
+      "Conditioning treatment",
+      "Relaxing head massage",
+    ],
+  },
+  {
+    price: "IDR 195K",
+    duration: "L'Oreal",
+    details: [
+      "Professional hair care option",
+      "Conditioning and smoothing treatment",
+      "Relaxing scalp massage",
+    ],
+  },
+  {
+    price: "IDR 165K",
+    duration: "NR",
+    details: [
+      "Complete Creambath treatment",
+      "Hair and scalp care",
+      "Relaxing head massage",
+    ],
+  },
+  {
+    price: "IDR 165K",
+    duration: "Hair Mask",
+    details: [
+      "Conditioning hair treatment",
+      "Applied through the hair lengths",
+      "Finished with relaxing scalp care",
+    ],
   },
 ];
 
@@ -118,6 +176,15 @@ export default function HairCreambath() {
             title="Our Package Options"
             text="Our Cream Bath packages combine nourishing hair care with relaxing spa treatments for a more complete wellness experience. From facial care and massage to body treatments, each combination is designed to help you refresh your hair, relax your body, and enjoy more during your spa visit in Bali."
             packages={packageOptions}
+            topContent={
+              <SessionOptions
+                sessions={creamVariants}
+                subTitle="Scalp to Strand"
+                title="Creambath & Hair Mask Options"
+                text="We offers several Creambath and Hair Mask options using different formulas and product choices. Each treatment includes cleansing, conditioning, and a relaxing head massage, with prices varying by product."
+                icon="/images/spa/CreamBath.svg"
+              />
+            }
           />
         </div>
         <div className="hair-creambath-funfact">

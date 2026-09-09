@@ -8,6 +8,7 @@ import Testimonial from "../components/sections/Home2/Testimonial";
 import AboutReverse from "../components/sections/Home1/AboutReverse";
 import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
+import SessionOptions from "../components/sections/Home1/SessionOptions";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
@@ -47,6 +48,27 @@ const packageOptions = [
     treatments: [
       "1.5 Hr Hot Stone",
       "30 Mins Pedicure",
+    ],
+  },
+];
+
+const durationOptions = [
+  {
+    price: "IDR 299K",
+    duration: "1.5 Hours",
+    details: [
+      "Full-body hot stone massage",
+      "Warmth across major muscle areas",
+      "Extra focus on built-up tension",
+    ],
+  },
+  {
+    price: "IDR 439K",
+    duration: "2 Hours",
+    details: [
+      "Extended hot stone treatment",
+      "More time for deeper relaxation",
+      "Longer focus on tense areas",
     ],
   },
 ];
@@ -117,6 +139,15 @@ export default function HotStoneMassage() {
             title="Our Package Options"
             text="Hot Stone Massage pairs naturally with treatments that extend relaxation from head to toe. Our carefully selected packages combine soothing warmth with facial care, body treatments, or beauty services, making them ideal for guests looking for a more complete spa experience during their stay in Bali."
             packages={packageOptions}
+            topContent={
+              <SessionOptions
+                sessions={durationOptions}
+                subTitle="Warmth That Lasts"
+                title="Hot Stone Massage Duration Options"
+                text="Hot Stone Massage combines heated basalt stones with flowing massage techniques to help the body relax more deeply. Longer sessions allow more time for full-body treatment and focused attention on areas that hold tension."
+                icon="/images/spa/HotStone.svg"
+              />
+            }
           />
         </div>
         <div className="hot-stone-massage-funfact">
