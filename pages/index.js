@@ -84,36 +84,63 @@ const differentiators = [
   },
 ];
 
-// FONT TRIAL — temporary. Open the homepage as /?font=playfair (or montserrat,
-// cormorant, inter, manrope) to see that face applied to the whole page, headings
-// and body alike. Without the parameter the page keeps the live Literata/Mulish,
-// so visitors never see the trial. Delete this table, the `fontTrial` lines in
-// the component, and the "FONT TRIAL" style block to remove the feature.
+// FONT TRIAL — temporary. Open the homepage as /?font=<key> to preview a
+// pairing: `title` drives the headings, `text` the running text and buttons,
+// matching how the live Literata/Mulish setup splits the two roles, so the
+// options can be compared like for like. Without the parameter the page keeps
+// Literata/Mulish, so visitors never see the trial. Delete this table, the
+// `fontTrial` lines in the component, and the "FONT TRIAL" style block to
+// remove the feature.
 const FONT_TRIALS = {
+  // Serif display heading + neutral sans body — the pairing the shortlist
+  // actually describes: Playfair for the hero, Inter for running text.
   playfair: {
-    label: "Playfair Display",
-    stack: '"Playfair Display", serif',
-    google: "Playfair+Display:ital,wght@0,400..900;1,400..900",
+    label: "Playfair Display + Inter",
+    title: '"Playfair Display", serif',
+    text: '"Inter", sans-serif',
+    google:
+      "Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900",
   },
-  montserrat: {
-    label: "Montserrat",
-    stack: '"Montserrat", sans-serif',
-    google: "Montserrat:ital,wght@0,100..900;1,100..900",
-  },
+  // The lighter, more decorative serif, steadied by a geometric sans.
   cormorant: {
-    label: "Cormorant Garamond",
-    stack: '"Cormorant Garamond", serif',
-    google: "Cormorant+Garamond:ital,wght@0,300..700;1,300..700",
+    label: "Cormorant Garamond + Montserrat",
+    title: '"Cormorant Garamond", serif',
+    text: '"Montserrat", sans-serif',
+    google:
+      "Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900",
   },
+  // All-sans option: no serif anywhere, for a flatter, more modern look.
+  montserrat: {
+    label: "Montserrat + Inter",
+    title: '"Montserrat", sans-serif',
+    text: '"Inter", sans-serif',
+    google:
+      "Montserrat:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900",
+  },
+  // Inter and Manrope are body faces, so these two keep the brand heading
+  // (Literata, already loaded site-wide) and swap only the running text. That
+  // isolates the body font instead of confusing it with a heading change.
   inter: {
-    label: "Inter",
-    stack: '"Inter", sans-serif',
-    google: "Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900",
+    label: "Literata + Inter",
+    title: '"Literata", serif',
+    text: '"Inter", sans-serif',
+    google:
+      "Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900",
   },
   manrope: {
-    label: "Manrope",
-    stack: '"Manrope", sans-serif',
+    label: "Literata + Manrope",
+    title: '"Literata", serif',
+    text: '"Manrope", sans-serif',
     google: "Manrope:wght@200..800",
+  },
+  // Pairing: Cormorant for the headings, Barlow Semi Condensed for everything
+  // else. Cormorant is its own family, not the Cormorant Garamond above.
+  "cormorant-barlow": {
+    label: "Cormorant + Barlow Semi Condensed",
+    title: '"Cormorant", serif',
+    text: '"Barlow Semi Condensed", sans-serif',
+    google:
+      "Cormorant:ital,wght@0,300..700;1,300..700&family=Barlow+Semi+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400",
   },
 };
 
@@ -300,8 +327,8 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
           dangerouslySetInnerHTML={{
             __html: `
               .page-wrapper, .offcanvas, .sidebar-area {
-                --title-font: ${fontTrial.stack};
-                --text-font: ${fontTrial.stack};
+                --title-font: ${fontTrial.title || fontTrial.stack};
+                --text-font: ${fontTrial.text || fontTrial.stack};
                 /* body resolves --text-font above these elements, so
                    descendants would keep inheriting the computed Mulish. */
                 font-family: var(--text-font);
@@ -311,6 +338,53 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
         />
       )}
       <style jsx global>{`
+        /* ==========================================================
+           BRAND PAIRING — homepage only for now.
+             Literata -> headings and subheadings
+             Mulish   -> everything read as running text or typed into
+           Written against the theme's two font variables rather than the
+           family names, so the ?font= trial can still swap the pair for a
+           side-by-side comparison. On this page the variables resolve to
+           Literata and Mulish, which is what the rule below asks for.
+
+           Headings, body and form controls already resolved to this pair, so
+           the one visible change is the buttons: the theme styles every <a>
+           with the title font, and its buttons are anchors.
+           .subheading is listed alongside .sub-title, the class this theme
+           actually ships, so the rule keeps working if either is used.
+           ========================================================== */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .subheading,
+        .sub-title {
+          font-family: var(--title-font);
+        }
+
+        body,
+        p,
+        li,
+        input,
+        textarea,
+        button,
+        .btn,
+        /* The theme sets a { font-family: var(--title-font) } globally and its
+           buttons are anchors, not <button>, so a bare .btn matches nothing
+           here. These are the classes it actually ships. */
+        .btn-one,
+        .btn-one-light,
+        .btn-two,
+        .btn-two-light,
+        .btn-two-dark,
+        .btn-three,
+        .reserve-cta-button,
+        .book-now {
+          font-family: var(--text-font);
+        }
+
         /* The gold second line competed with the logo and the header CTA for
            attention, so the whole headline is now set in the heading colour. */
         .banner-five-area .banner-five__content .title,
