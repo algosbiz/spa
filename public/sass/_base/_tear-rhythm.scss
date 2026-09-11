@@ -1,0 +1,260 @@
+// ===========================================================================
+// Torn-paper rhythm, measured rather than assumed.
+//
+// The rule is one number: from the visible torn edge to the first or last
+// thing the eye actually sees -- a line of text's ink, a photo edge, a card
+// border, a button -- is 150px on desktop and 75px on a phone.
+//
+// The paddings below are larger than those numbers because each one also has
+// to swallow the part of the artwork the reader does not read as a gap, plus
+// whatever the section's own first element carries above its ink. That
+// overhead differs per section, which is why one blanket value cannot serve
+// them all and each type gets its own measured figure.
+//
+// These override the generic block in _typography.scss, which puts the
+// section box on the line instead of the content inside it. Imported last so
+// equal-specificity selectors resolve here.
+// ===========================================================================
+
+// The four shapes a "section that sits just before a top tear" can take:
+// directly before it, before a wrapper holding it, or as the last child of
+// the block before either of those.
+@mixin before-tear($selector) {
+	#{$selector}:not(.section__decoration-bottom):has(+ .section__decoration-top),
+	#{$selector}:not(.section__decoration-bottom):has(+ * > .section__decoration-top),
+	*:has(+ .section__decoration-top)
+		> #{$selector}:last-child:not(.section__decoration-bottom),
+	*:has(+ * > .section__decoration-top)
+		> #{$selector}:last-child:not(.section__decoration-bottom) {
+		@content;
+	}
+}
+
+@media (min-width: 992px) {
+	// A decorated section's own insets. Its first line of text sat 151px below
+	// the tear and its last painted element 154px above the next one.
+	.section__decoration-top:is(.pt-100, .pt-130, .pt-170),
+	.section__decoration-top > :is(.pt-100, .pt-130, .pt-170) {
+		padding-top: 163px !important;
+	}
+
+	.section__decoration-bottom:is(.pb-100, .pb-130, .pb-170),
+	.section__decoration-bottom > :is(.pb-100, .pb-130, .pb-170) {
+		padding-bottom: 157px !important;
+	}
+
+	// The review slider ends on a star row and a "Posted on Google" link, both
+	// of which reach lower than a paragraph would.
+	.testimonial-section-two.section__decoration-bottom,
+	.section__decoration-bottom > .testimonial-section-two {
+		padding-bottom: 151px !important;
+	}
+
+	// Banner 2 keeps its safe area on the inner content, so the section rule
+	// above never reaches it.
+	.banner-two__content {
+		padding-bottom: 157px !important;
+	}
+
+	// Sections above a tear, by what each one ends on.
+	@include before-tear(".about-section") {
+		// a Book Now button, whose border is its visible edge
+		padding-bottom: 137px !important;
+	}
+
+	@include before-tear(".reserve-cta-section") {
+		// the photo card's bottom edge
+		padding-bottom: 137px !important;
+	}
+
+	@include before-tear(".funfact-section") {
+		// a row of stats with an icon hanging slightly below the numerals
+		padding-bottom: 135px !important;
+	}
+
+	@include before-tear(".about-section-two") {
+		// its text column stops well above the taller photo column, so the
+		// last ink is much higher than the section box suggests
+		padding-bottom: 118px !important;
+	}
+
+	@include before-tear(".video-section") {
+		padding-bottom: 137px !important;
+	}
+
+	// The price list's intro video sits straight under the banner tear.
+	.banner-two-area.section__decoration-bottom + .video-section {
+		padding-top: 143px !important;
+	}
+
+	// Package cards end on a card border rather than a paragraph.
+	.package-section.section__decoration-bottom {
+		padding-bottom: 151px !important;
+	}
+
+	@include before-tear(".home-service-info-area") {
+		padding-bottom: 137px !important;
+	}
+
+	// The contact form's send button sits well inside its column, so the
+	// section box reaches much further down than the last thing on screen.
+	@include before-tear(".contact-details") {
+		padding-bottom: 89px !important;
+	}
+
+	@include before-tear(".blog-details") {
+		padding-bottom: 137px !important;
+	}
+
+	// The treatment slider ends on its pagination row, which sits a good deal
+	// above where the section box stops.
+	@include before-tear(".service-section-two") {
+		padding-bottom: 102px !important;
+	}
+
+	.banner-two-area.section__decoration-bottom + .contact-details {
+		padding-top: 139px !important;
+	}
+
+	// Without its photo column the FAQ panel starts on the answer card, whose
+	// top edge sits far above where the heading would have been.
+	.section__decoration-top > .faq-section--no-image {
+		padding-top: 187px !important;
+	}
+}
+
+@media (max-width: 767px) {
+	// Only sections that carry their own tear and open on a heading. A paper
+	// panel that is a plain wrapper puts a photo or a card against the tear
+	// instead, and those already measure right -- widening this selector to
+	// every decorated element pushes those 9px too far.
+	section.section__decoration-top:not([class*="banner"]) {
+		padding-top: 98px !important;
+	}
+
+	section.section__decoration-bottom:not([class*="banner"]) {
+		padding-bottom: 96px !important;
+	}
+
+	// Paper panels that wrap a whole section -- a service slider, an about
+	// block -- behave like the decorated sections above: the theme zeroes the
+	// inner padding, so the panel itself carries the safe area.
+	.section__decoration-top:has(> :is(.service-section, .service-section-two, .about-section)) {
+		padding-top: 98px !important;
+	}
+
+	.section__decoration-bottom:has(> :is(.service-section, .service-section-two, .about-section)) {
+		padding-bottom: 96px !important;
+	}
+
+	// Banner 2 keeps its safe area on the inner content, not on the section.
+	.banner-two__content {
+		padding-bottom: 96px !important;
+	}
+
+	// The FAQ opens with a photo on desktop but with its heading on a phone,
+	// and that heading starts far lower inside its own card. Written with the
+	// element so it outranks the decorated-section rule above.
+	section.faq-section.section__decoration-top {
+		padding-top: 115px !important;
+	}
+
+	// Nested in a paper panel the FAQ shares the safe area with its wrapper,
+	// so it only makes up the difference.
+	.section__decoration-top:not(section) > .faq-section {
+		padding-top: 33px !important;
+	}
+
+	@include before-tear(".home-service-info-area") {
+		padding-bottom: 52px !important;
+	}
+
+	@include before-tear(".contact-details") {
+		padding-bottom: 49px !important;
+	}
+
+	@include before-tear(".blog-details") {
+		padding-bottom: 52px !important;
+	}
+
+	@include before-tear(".service-section-two") {
+		padding-bottom: 17px !important;
+	}
+
+	// The "more guides" panel keeps its own section padding on phones, which
+	// lands on top of the panel's safe area.
+	.section__decoration-top > .post-more {
+		padding-top: 9px !important;
+	}
+
+	.section__decoration-bottom > .post-more {
+		padding-bottom: 10px !important;
+	}
+
+	.banner-two-area.section__decoration-bottom + .contact-details {
+		padding-top: 50px !important;
+	}
+
+	// The white side of a bottom tear.
+	.section__decoration-bottom + section:not(.section__decoration-top),
+	.section__decoration-bottom + * > section:first-child:not(.section__decoration-top),
+	*:has(> .section__decoration-bottom) + section:not(.section__decoration-top),
+	*:has(> .section__decoration-bottom)
+		+ * > section:first-child:not(.section__decoration-top) {
+		padding-top: 54px !important;
+	}
+
+	// Above a tear. The stacked phone layout changes what lands last in each
+	// of these, so the desktop figures do not simply scale down.
+	@include before-tear(".about-section") {
+		padding-bottom: 52px !important;
+	}
+
+	@include before-tear(".reserve-cta-section") {
+		padding-bottom: 52px !important;
+	}
+
+	@include before-tear(".funfact-section") {
+		padding-bottom: 48px !important;
+	}
+
+	@include before-tear(".about-section-two") {
+		padding-bottom: 47px !important;
+	}
+
+	@include before-tear(".video-section") {
+		padding-bottom: 52px !important;
+	}
+
+	@include before-tear(".faq-section") {
+		padding-bottom: 52px !important;
+	}
+
+	@include before-tear(".package-intro-text") {
+		padding-bottom: 47px !important;
+	}
+
+	// Two sections whose own rules elsewhere in the bundle set a shorter inset
+	// than the white side of a bottom tear now asks for.
+	.banner-two-area.section__decoration-bottom + .video-section,
+	.section__decoration-bottom + .testimonial-section-two:not(.section__decoration-top),
+	*:has(> .section__decoration-bottom)
+		+ .testimonial-section-two:not(.section__decoration-top) {
+		padding-top: 54px !important;
+	}
+
+	section.package-section.section__decoration-bottom {
+		padding-bottom: 90px !important;
+	}
+
+	// A paper panel wrapping a closing call to action: the theme zeroes the
+	// inner section's padding on phones, but the card inside still needs a
+	// few pixels to land on the ruler.
+	.section__decoration-top:has(> .reserve-cta-section) > .reserve-cta-section {
+		padding-top: 9px !important;
+	}
+
+	.section__decoration-bottom:has(> .reserve-cta-section) > .reserve-cta-section {
+		padding-bottom: 10px !important;
+	}
+}

@@ -1,3 +1,4 @@
+import FloralDecoration from "../components/elements/FloralDecoration";
 import React from "react";
 import Layout from "../components/layout/Layout";
 import Banner from "../components/sections/Home2/Banner";
@@ -11,6 +12,7 @@ import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
+import { seoFor } from "@/lib/seo";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -94,11 +96,14 @@ const faqItems = [
   },
 ];
 
+const PAGE_SEO_ROUTE = "/seminyak/shiatsu-massage";
+const PAGE_SEO = seoFor(PAGE_SEO_ROUTE);
+
 export default function ShiatsuMassage() {
   const treatmentImages = createTreatmentImageSet("shiatsumassage", durationOptions.length);
   return (
     <>
-      <Layout HeaderStyle="one" FooterStyle="two">
+      <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
         <div className="shiatsu-massage-banner">
           <Banner
             image={treatmentImages.hero}
@@ -108,6 +113,8 @@ export default function ShiatsuMassage() {
           />
         </div>
         <AboutOld
+          leftShapeSrc="/images/shape/about-two-left.png"
+          rightShapeSrc="/images/shape/about-two-right.png"
           primaryImage={treatmentImages.intro[0]}
           secondaryImage={treatmentImages.intro[1]}
           subTitle="Understanding Shiatsu"
@@ -120,6 +127,7 @@ export default function ShiatsuMassage() {
         />
         <div className="shiatsu-massage-pricing">
           <Pricing
+            leftShapeSrc="/images/shape/package-four-shape-left.png"
             images={treatmentImages.pricing}
             subTitle="Choose Yours"
             title="Our Duration Options"
@@ -131,8 +139,10 @@ export default function ShiatsuMassage() {
           <Funfact items={serviceHighlights} />
         </div>
 
-        <Testimonial />
+        <Testimonial rightShapeSrc={null} />
         <About
+          leftShapeSrc={null}
+          rightShapeSrc="/images/shape/about-right-shape.png"
           image={treatmentImages.details[0]}
           subTitle="The Reason"
           title={<>Why Do People Choose Shiatsu Massage?</>}
@@ -151,6 +161,9 @@ export default function ShiatsuMassage() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          leftShapeSrc="/images/shape/step-shape-left.png"
+          rightShapeSrc="/images/shape/banner-six-shape2.png"
+          rightDecoration={<FloralDecoration clustered />}
           image={treatmentImages.details[1]}
           subTitle="Treatment Focus"
           badgeTopText="Guided by"
@@ -171,6 +184,7 @@ export default function ShiatsuMassage() {
           buttonLink={bookingUrl}
         />
         <About
+          rightShapeSrc="/images/shape/banner-three-shape2.png"
           image={treatmentImages.details[2]}
           subTitle="The Method"
           badgeTopText="The Shiatsu"
@@ -201,7 +215,14 @@ export default function ShiatsuMassage() {
             items={faqItems}
           />
         </div>
-        <div>
+        <div className="shiatsu-massage-services">
+          <Services
+            leftShapeSrc="/images/shape/service-shape-left.png"
+            rightShapeSrc="/images/shape/service-shape-right.png"
+            title="Discover More Than Shiatsu Massage" showFullTreatmentSlider embedded
+          />
+        </div>
+        <div className="shiatsu-massage-paper-section section__decoration-top section__decoration-bottom bg-sub">
           <ReserveCta
             standardSpacing
             backgroundImage={treatmentImages.cta}
@@ -209,9 +230,6 @@ export default function ShiatsuMassage() {
             text="Shiatsu offers a different massage experience from conventional oil massage by combining pressure point therapy with mindful body movement. Whether you're recovering after travel, easing everyday muscle tension, or simply curious about traditional Japanese wellness, our therapists tailor every session to your comfort and needs."
             closingText="Restore balance through one of Japan's most recognised therapeutic massage techniques."
           />
-        </div>
-        <div className="shiatsu-massage-services section__decoration-top section__decoration-bottom bg-sub">
-          <Services title="Discover More Than Shiatsu Massage" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

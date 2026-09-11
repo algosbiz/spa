@@ -9,6 +9,7 @@ import Services from "../components/sections/Home2/Services";
 import AboutReverse from "../components/sections/Home1/AboutReverse";
 import About from "../components/sections/Home1/About";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
+import { seoFor } from "@/lib/seo";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -52,10 +53,13 @@ const faqItems = [
     },
 ];
 
+const PAGE_SEO_ROUTE = "/massage-kuta";
+const PAGE_SEO = seoFor(PAGE_SEO_ROUTE);
+
 export default function MassageKuta() {
     return (
         <>
-            <Layout HeaderStyle="one" FooterStyle="two">
+            <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
                 <Banner
                     subTitle="After a Day in the Sun"
                     titleSpan="Massage"

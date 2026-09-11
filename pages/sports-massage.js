@@ -1,3 +1,4 @@
+import FloralDecoration from "../components/elements/FloralDecoration";
 import React from "react";
 import Layout from "../components/layout/Layout";
 import Banner from "../components/sections/Home2/Banner";
@@ -11,6 +12,7 @@ import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
+import { seoFor } from "@/lib/seo";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -70,11 +72,14 @@ const faqItems = [
   },
 ];
 
+const PAGE_SEO_ROUTE = "/seminyak/sport-massage";
+const PAGE_SEO = seoFor(PAGE_SEO_ROUTE);
+
 export default function SportsMassage() {
   const treatmentImages = createTreatmentImageSet("sportsmassage", sportsMassageOptions.length);
   return (
     <>
-      <Layout HeaderStyle="one" FooterStyle="two">
+      <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
         <div className="sports-massage-banner">
           <Banner
             image={treatmentImages.hero}
@@ -84,6 +89,8 @@ export default function SportsMassage() {
           />
         </div>
         <AboutOld
+          leftShapeSrc="/images/shape/about-two-left.png"
+          rightShapeSrc="/images/shape/about-two-right.png"
           primaryImage={treatmentImages.intro[0]}
           secondaryImage={treatmentImages.intro[1]}
           subTitle="Movement & Recovery"
@@ -96,6 +103,7 @@ export default function SportsMassage() {
         />
         <div className="sports-massage-pricing">
           <Pricing
+            leftShapeSrc="/images/shape/package-four-shape-left.png"
             images={treatmentImages.pricing}
             subTitle="Choose Yours"
             title="Our Session Options"
@@ -107,8 +115,10 @@ export default function SportsMassage() {
           <Funfact items={serviceHighlights} />
         </div>
 
-        <Testimonial />
+        <Testimonial rightShapeSrc={null} />
         <About
+          leftShapeSrc={null}
+          rightShapeSrc="/images/shape/about-right-shape.png"
           image={treatmentImages.details[0]}
           subTitle="Active Bodies"
           title={<>Who Can Benefit from Sport Massage?</>}
@@ -127,6 +137,9 @@ export default function SportsMassage() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          leftShapeSrc="/images/shape/step-shape-left.png"
+          rightShapeSrc="/images/shape/banner-six-shape2.png"
+          rightDecoration={<FloralDecoration clustered />}
           image={treatmentImages.details[1]}
           subTitle="Targeted Treatment"
           badgeTopText="Made for"
@@ -139,6 +152,7 @@ export default function SportsMassage() {
           buttonLink={bookingUrl}
         />
         <About
+          rightShapeSrc="/images/shape/banner-three-shape2.png"
           image={treatmentImages.details[2]}
           subTitle="Recovery Technique"
           badgeTopText="A Stronger"
@@ -169,7 +183,14 @@ export default function SportsMassage() {
             items={faqItems}
           />
         </div>
-        <div>
+        <div className="sports-massage-services">
+          <Services
+            leftShapeSrc="/images/shape/service-shape-left.png"
+            rightShapeSrc="/images/shape/service-shape-right.png"
+            title="Take Your Recovery Further" showFullTreatmentSlider embedded
+          />
+        </div>
+        <div className="sports-massage-paper-section section__decoration-top section__decoration-bottom bg-sub">
           <ReserveCta
             standardSpacing
             backgroundImage={treatmentImages.cta}
@@ -177,9 +198,6 @@ export default function SportsMassage() {
             text="An active lifestyle asks a lot from your body. Long training sessions, outdoor adventures, and busy days exploring Bali can leave muscles feeling tired and restricted. Sport Massage at Spa Bali Moon provides focused care through controlled pressure and recovery techniques that help you feel more comfortable, mobile, and refreshed. Enjoy your treatment at our spa in Seminyak or experience the convenience of our home service at selected hotels and villas around Bali."
             closingText="Reserve your Sport Massage and feel ready for your next activity."
           />
-        </div>
-        <div className="sports-massage-services section__decoration-top section__decoration-bottom bg-sub">
-          <Services title="Take Your Recovery Further" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

@@ -16,16 +16,16 @@ const SEARCH_INDEX = [
     })),
     { title: 'Outcall', href: '/outcall-home-service-massage', keywords: 'outcall home service massage hotel villa private accommodation' },
     { title: 'Reservation', href: '/reservation', keywords: 'reserve reservation appointment book booking' },
-    { title: 'Blog', href: '/blog', keywords: 'blog news articles posts tips' },
+    { title: 'Blog', href: '/guide', keywords: 'blog news articles posts tips' },
     { title: 'Contact', href: '/contact', keywords: 'contact reach phone email location address whatsapp' },
     { title: 'Massage in Seminyak', href: '/massage-seminyak', keywords: 'massage seminyak outcall home service' },
     { title: 'Massage in Kuta', href: '/massage-kuta', keywords: 'massage kuta outcall home service' },
-    { title: 'Hotel & Villa Massage', href: '/massage-hotel-villa', keywords: 'hotel villa massage outcall home service' },
+    { title: 'Hotel & Villa Massage', href: '/villa-hotel-massage', keywords: 'hotel villa massage outcall home service' },
     { title: 'Day Spa Seminyak', href: '/seminyak/day-spa', keywords: 'day spa facial cream bath seminyak treatment' },
     { title: 'Home Service', href: '/home-service', keywords: 'home service outcall massage whatsapp booking' },
     { title: 'FAQ', href: '/faq', keywords: 'faq frequently asked questions help' },
     { title: 'Privacy Policy', href: '/privacy-policy', keywords: 'privacy policy data personal' },
-    { title: 'Terms & Conditions', href: '/terms-conditions', keywords: 'terms conditions rules booking' },
+    { title: 'Terms & Conditions', href: '/terms-and-conditions', keywords: 'terms conditions rules booking' },
 ];
 
 const SIDEBAR_TRANSITION_FALLBACK_MS = 400;

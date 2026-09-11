@@ -70,7 +70,7 @@ export default function Home2_Testimonial({
         if (googleReviews?.reviews?.length || testimonialsData?.length) return;
 
         let cancelled = false;
-        fetch(`/api/google-reviews?key=${encodeURIComponent(pageKey)}`)
+        fetch(`/api/google-reviews/?key=${encodeURIComponent(pageKey)}`)
             .then((response) => response.ok ? response.json() : null)
             .then((data) => {
                 if (!cancelled && data) {
@@ -102,7 +102,9 @@ export default function Home2_Testimonial({
     return (
         <section className={`testimonial-section-two${paperDecoration ? " section__decoration-top section__decoration-bottom bg-sub" : ""} pt-170 pb-170`}>
             <div className="shape1"><img loading="lazy" decoding="async" className="animation__arryUpDown" src="/images/shape/testimonial-two-shape-left.png" alt="" aria-hidden="true" /></div>
-            <div className="shape2"><img loading="lazy" decoding="async" className="animation__arryLeftRight" src={rightShapeSrc} alt="" aria-hidden="true" /></div>
+            {/* Pass rightShapeSrc={null} to drop the ornament entirely; every
+                caller that passes nothing keeps the default artwork. */}
+            {rightShapeSrc && <div className="shape2"><img loading="lazy" decoding="async" className="animation__arryLeftRight" src={rightShapeSrc} alt="" aria-hidden="true" /></div>}
             <div className="shape3"><img loading="lazy" decoding="async" className="bobble__animation" src="/images/logo/sbm.webp" alt="Spa Bali Moon watermark" /></div>
             <div className="container">
                 <div className="outer-box">

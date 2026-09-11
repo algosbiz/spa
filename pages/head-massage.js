@@ -1,3 +1,4 @@
+import FloralDecoration from "../components/elements/FloralDecoration";
 import React from "react";
 import Layout from "../components/layout/Layout";
 import Banner from "../components/sections/Home2/Banner";
@@ -11,6 +12,7 @@ import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
+import { seoFor } from "@/lib/seo";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -89,11 +91,14 @@ const faqItems = [
   },
 ];
 
+const PAGE_SEO_ROUTE = "/seminyak/head-massage";
+const PAGE_SEO = seoFor(PAGE_SEO_ROUTE);
+
 export default function HeadMassage() {
   const treatmentImages = createTreatmentImageSet("headmassage", durationOptions.length);
   return (
     <>
-      <Layout HeaderStyle="one" FooterStyle="two">
+      <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
         <div className="head-massage-banner">
           <Banner
             image={treatmentImages.hero}
@@ -103,6 +108,8 @@ export default function HeadMassage() {
           />
         </div>
         <AboutOld
+          leftShapeSrc="/images/shape/about-two-left.png"
+          rightShapeSrc="/images/shape/about-two-right.png"
           primaryImage={treatmentImages.intro[0]}
           secondaryImage={treatmentImages.intro[1]}
           subTitle="Scalp & Head Care"
@@ -115,6 +122,7 @@ export default function HeadMassage() {
         />
         <div className="head-massage-pricing">
           <Pricing
+            leftShapeSrc="/images/shape/package-four-shape-left.png"
             images={treatmentImages.pricing}
             subTitle="Find Yours"
             title="Our Duration Options"
@@ -126,8 +134,10 @@ export default function HeadMassage() {
           <Funfact items={serviceHighlights} />
         </div>
 
-        <Testimonial />
+        <Testimonial rightShapeSrc={null} />
         <About
+          leftShapeSrc={null}
+          rightShapeSrc="/images/shape/about-right-shape.png"
           image={treatmentImages.details[0]}
           subTitle="Daily Relief"
           title={<>How Can a Head Massage Help?</>}
@@ -146,6 +156,9 @@ export default function HeadMassage() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          leftShapeSrc="/images/shape/step-shape-left.png"
+          rightShapeSrc="/images/shape/banner-six-shape2.png"
+          rightDecoration={<FloralDecoration clustered />}
           image={treatmentImages.details[1]}
           subTitle="Treatment Focus"
           badgeTopText="Relief Around"
@@ -166,6 +179,7 @@ export default function HeadMassage() {
           buttonLink={bookingUrl}
         />
         <About
+          rightShapeSrc="/images/shape/banner-three-shape2.png"
           image={treatmentImages.details[2]}
           subTitle="Massage Techniques"
           badgeTopText="Rhythm of"
@@ -196,7 +210,14 @@ export default function HeadMassage() {
             items={faqItems}
           />
         </div>
-        <div>
+        <div className="head-massage-services">
+          <Services
+            leftShapeSrc="/images/shape/service-shape-left.png"
+            rightShapeSrc="/images/shape/service-shape-right.png"
+            title="Relax From Head to Toe" showFullTreatmentSlider embedded
+          />
+        </div>
+        <div className="head-massage-paper-section section__decoration-top section__decoration-bottom bg-sub">
           <ReserveCta
             standardSpacing
             backgroundImage={treatmentImages.cta}
@@ -204,9 +225,6 @@ export default function HeadMassage() {
             text="Busy travel schedules, long hours in front of a screen, or simply keeping up with daily activities can leave tension concentrated around the head and neck. A professional Head Massage offers a simple way to slow down, release built-up tightness, and enjoy a greater sense of comfort without committing to a full-body treatment. Visit our spa or enjoy the same relaxing experience through our home service at selected villas and hotels around Seminyak."
             closingText="Reserve your Head Massage session and give your upper body time to unwind."
           />
-        </div>
-        <div className="head-massage-services section__decoration-top section__decoration-bottom bg-sub">
-          <Services title="Relax From Head to Toe" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

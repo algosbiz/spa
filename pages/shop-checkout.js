@@ -6,7 +6,7 @@ import ShopCheckout from "../components/sections/ShopCheckout";
 export default function PageShopCheckout() {
     return (
         <>
-          <Layout HeaderStyle="one" FooterStyle="four">
+          <Layout HeaderStyle="one" FooterStyle="four" robots="noindex, nofollow">
             <PageTitle pageName="Shop Checkout" />
             <ShopCheckout />
           </Layout>

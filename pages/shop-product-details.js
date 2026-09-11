@@ -6,7 +6,7 @@ import ShopDetails from "../components/sections/ShopDetails";
 export default function PageShopDetails() {
     return (
         <>
-          <Layout HeaderStyle="one" FooterStyle="four">
+          <Layout HeaderStyle="one" FooterStyle="four" robots="noindex, nofollow">
             <PageTitle pageName="Shop Details" />
             <ShopDetails />
           </Layout>

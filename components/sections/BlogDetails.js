@@ -3,16 +3,19 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 
 const FALLBACK_IMAGE = '/images/resource/news-details.jpg';
 
-const BlogDetails = ({ post, recentPosts = [] }) => {
-    const [formData, setFormData] = useState({
-        form_name: "",
-        form_email: "",
-        form_message: "",
-        form_botcheck: "",
+// Pinned to UTC so the server and the browser format the same string and
+// hydration doesn't warn about a mismatch near midnight.
+const formatDate = (value) => {
+    if (!value) return '';
+    return new Date(value).toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+        timeZone: 'UTC',
     });
+};
 
-    const [submitting, setSubmitting] = useState(false);
-
+const BlogDetails = ({ post, recentPosts = [], prevPost = null, nextPost = null, morePosts = [] }) => {
     // Search state
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
@@ -20,21 +23,6 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
     const [showResults, setShowResults] = useState(false);
     const searchRef = useRef(null);
     const debounceRef = useRef(null);
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setSubmitting(true);
-        setTimeout(() => {
-            alert("Comment submitted!");
-            setSubmitting(false);
-            setFormData({ form_name: "", form_email: "", form_message: "", form_botcheck: "" });
-        }, 1000);
-    };
 
     // Debounced search
     const doSearch = useCallback(async (q) => {
@@ -46,7 +34,7 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
         }
         setSearching(true);
         try {
-            const res = await fetch(`/api/search-posts?q=${encodeURIComponent(q.trim())}`);
+            const res = await fetch(`/api/search-posts/?q=${encodeURIComponent(q.trim())}`);
             const data = await res.json();
             setSearchResults(data.posts || []);
             setShowResults(true);
@@ -87,9 +75,6 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
-    const date = post?.published_at ? new Date(post.published_at) : null;
-    const day = date ? date.toLocaleDateString('en-GB', { day: '2-digit' }) : '';
-    const month = date ? date.toLocaleDateString('en-GB', { month: 'short' }) : '';
     const tags = Array.isArray(post?.tags) ? post.tags : [];
 
     return (
@@ -99,15 +84,9 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
                     <div className="row">
                         <div className="col-xl-8 col-lg-7">
                             <div className="blog-details__left">
-                                <div className="blog-details__img">
-                                    <img loading="lazy" decoding="async" src={post?.cover_image || FALLBACK_IMAGE} alt={post?.title || 'Image'} />
-                                    {date && (
-                                        <div className="blog-details__date">
-                                            <span className="day">{day}</span>
-                                            <span className="month">{month}</span>
-                                        </div>
-                                    )}
-                                </div>
+                                {/* The cover image is the page-title hero background, so
+                                    repeating it here would show the same photo twice in a
+                                    row. The date it used to carry moves into the meta row. */}
                                 <div className="blog-details__content">
                                     <ul className="list-unstyled blog-details__meta">
                                         {post?.category && (
@@ -115,6 +94,12 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
                                                 <a href="#">
                                                     <i className="fas fa-folder"></i> {post.category}
                                                 </a>
+                                            </li>
+                                        )}
+                                        {post?.published_at && (
+                                            <li>
+                                                <i className="fas fa-calendar-alt"></i>{' '}
+                                                <time dateTime={post.published_at}>{formatDate(post.published_at)}</time>
                                             </li>
                                         )}
                                     </ul>
@@ -142,34 +127,6 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
                                     </div>
                                 )}
 
-                                <div className="comment-one">
-                                    <div className="comment-form">
-                                        <h3 className="comment-form__title mb-4">Leave a Comment</h3>
-                                        <form id="contact_form" name="contact_form" onSubmit={handleSubmit}>
-                                            <div className="row">
-                                                <div className="col-sm-6">
-                                                    <div className="mb-3">
-                                                        <input name="form_name" className="form-control" type="text" placeholder="Enter Name" value={formData.form_name} onChange={handleChange} required />
-                                                    </div>
-                                                </div>
-                                                <div className="col-sm-6">
-                                                    <div className="mb-3">
-                                                        <input name="form_email" className="form-control" type="email" placeholder="Enter Email" value={formData.form_email} onChange={handleChange} required />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="mb-3">
-                                                <textarea name="form_message" className="form-control" rows="5" placeholder="Enter Message" value={formData.form_message} onChange={handleChange} required />
-                                            </div>
-                                            <div className="mb-3">
-                                                <input name="form_botcheck" className="form-control" type="hidden" value={formData.form_botcheck} onChange={handleChange} />
-                                                <button type="submit" className="btn-one" disabled={submitting} data-loading-text="Please wait...">
-                                                    <span className="btn-title">{submitting ? "Please wait..." : "Submit Comment"}</span>
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div className="col-xl-4 col-lg-5">
@@ -245,6 +202,83 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
                 </div>
             </section>
 
+            {(prevPost || nextPost || morePosts.length > 0) && (
+                /* Same torn-paper wrapper the homepage and treatment pages use:
+                   the decoration classes own ::before/::after, bg-sub paints the
+                   cream sheet, and pt-100/pb-100 keep the shared tablet rhythm. */
+                <div className="guide-more-paper section__decoration-top section__decoration-bottom bg-sub">
+                <section className="post-more pt-100 pb-100">
+                    <div className="container">
+                        {(prevPost || nextPost) && (
+                            <nav className="post-nav" aria-label="Other articles">
+                                {prevPost && (
+                                    <Link href={`/guide/${prevPost.slug}`} className="post-nav__link post-nav__link--prev">
+                                        <span className="post-nav__thumb">
+                                            <img
+                                                loading="lazy"
+                                                decoding="async"
+                                                src={prevPost.cover_image || FALLBACK_IMAGE}
+                                                alt=""
+                                            />
+                                        </span>
+                                        <span className="post-nav__text">
+                                            <span className="post-nav__label">Previous</span>
+                                            <span className="post-nav__title">{prevPost.title}</span>
+                                        </span>
+                                    </Link>
+                                )}
+                                {nextPost && (
+                                    <Link href={`/guide/${nextPost.slug}`} className="post-nav__link post-nav__link--next">
+                                        <span className="post-nav__text">
+                                            <span className="post-nav__label">Next</span>
+                                            <span className="post-nav__title">{nextPost.title}</span>
+                                        </span>
+                                        <span className="post-nav__thumb">
+                                            <img
+                                                loading="lazy"
+                                                decoding="async"
+                                                src={nextPost.cover_image || FALLBACK_IMAGE}
+                                                alt=""
+                                            />
+                                        </span>
+                                    </Link>
+                                )}
+                            </nav>
+                        )}
+
+                        {morePosts.length > 0 && (
+                            <>
+                                <h3 className="post-more__title">More Articles</h3>
+                                <div className="post-more__grid">
+                                    {morePosts.map((item) => (
+                                        <Link key={item.id} href={`/guide/${item.slug}`} className="post-more__card">
+                                            <span className="post-more__image">
+                                                <img
+                                                    loading="lazy"
+                                                    decoding="async"
+                                                    src={item.cover_image || FALLBACK_IMAGE}
+                                                    alt={item.title}
+                                                />
+                                            </span>
+                                            <span className="post-more__body">
+                                                <span className="post-more__heading">{item.title}</span>
+                                                {item.published_at && (
+                                                    <time className="post-more__date" dateTime={item.published_at}>
+                                                        {formatDate(item.published_at)}
+                                                    </time>
+                                                )}
+                                                {item.excerpt && <span className="post-more__excerpt">{item.excerpt}</span>}
+                                            </span>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </>
+                        )}
+                    </div>
+                </section>
+                </div>
+            )}
+
             <style jsx global>{`
                 .blog-details__rich { color: #6b5e4e; line-height: 1.8; }
                 .blog-details__rich p { margin-bottom: 1.2em; }
@@ -263,6 +297,129 @@ const BlogDetails = ({ post, recentPosts = [] }) => {
                 }
                 .blog-details__rich blockquote { border-left: 3px solid #b8952e; padding: .4em 1.2em; margin: 1.2em 0; color: #6b5e4e; font-style: italic; background: #faf7f1; }
                 .blog-details__rich a { color: #b8952e; text-decoration: underline; }
+
+                /* ---- Previous / Next + more articles ---- */
+                /* Background and vertical padding come from bg-sub + pt/pb-100
+                   on the wrapper, so the torn-paper edges line up with the rest
+                   of the site. */
+                .post-nav {
+                    display: grid;
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    gap: 24px 40px;
+                    padding-bottom: 32px;
+                    margin-bottom: 48px;
+                    border-bottom: 1px solid #d9d2c6;
+                }
+                /* A lone Previous (oldest post) or Next (newest) keeps its side. */
+                .post-nav__link--next:only-child { grid-column: 2; }
+                .post-nav__link {
+                    display: flex;
+                    align-items: center;
+                    gap: 18px;
+                    text-decoration: none;
+                    color: inherit;
+                }
+                .post-nav__link--next { justify-content: flex-end; text-align: right; }
+                .post-nav__thumb {
+                    flex-shrink: 0;
+                    width: 64px;
+                    height: 64px;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    background: #e7e1d6;
+                }
+                .post-nav__thumb img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                }
+                .post-nav__text { display: block; min-width: 0; }
+                .post-nav__label {
+                    display: block;
+                    font-size: 14px;
+                    letter-spacing: .04em;
+                    color: #9a8f7e;
+                    margin-bottom: 4px;
+                }
+                .post-nav__title {
+                    display: block;
+                    font-size: 18px;
+                    line-height: 1.4;
+                    color: #b8952e;
+                    transition: color .2s ease;
+                }
+                .post-nav__link:hover .post-nav__title { color: #8f7223; }
+
+                .post-more__title {
+                    font-size: 26px;
+                    color: #2f281e;
+                    margin: 0 0 28px;
+                }
+                .post-more__grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+                    gap: 32px;
+                }
+                .post-more__card {
+                    display: block;
+                    text-decoration: none;
+                    color: inherit;
+                }
+                .post-more__image {
+                    display: block;
+                    aspect-ratio: 16 / 10;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    background: #e7e1d6;
+                    margin-bottom: 16px;
+                }
+                .post-more__image img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                    transition: transform .45s ease;
+                }
+                .post-more__card:hover .post-more__image img { transform: scale(1.05); }
+                .post-more__body { display: block; }
+                .post-more__heading {
+                    display: block;
+                    font-size: 19px;
+                    line-height: 1.35;
+                    color: #2f281e;
+                    margin-bottom: 6px;
+                    transition: color .2s ease;
+                }
+                .post-more__card:hover .post-more__heading { color: #b8952e; }
+                .post-more__date {
+                    display: block;
+                    font-size: 14px;
+                    color: #9a8f7e;
+                    margin-bottom: 10px;
+                }
+                .post-more__excerpt {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    font-size: 15px;
+                    line-height: 1.6;
+                    color: #6b5e4e;
+                }
+
+                @media (max-width: 991px) {
+                    .post-more__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+                }
+                @media (max-width: 767px) {
+                    .post-nav {
+                        grid-template-columns: minmax(0, 1fr);
+                        margin-bottom: 36px;
+                    }
+                    .post-nav__link--next:only-child { grid-column: 1; }
+                    .post-nav__link--next { justify-content: flex-start; text-align: left; flex-direction: row-reverse; }
+                    .post-more__grid { grid-template-columns: minmax(0, 1fr); }
+                }
 
                 /* Search results dropdown */
                 .sidebar__search { position: relative; }

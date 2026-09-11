@@ -172,7 +172,7 @@ export default function PostEditor({ initialPost }) {
         setUploadingCover(true);
         setError('');
         try {
-            const res = await fetch('/api/admin/upload', {
+            const res = await fetch('/api/admin/upload/', {
                 method: 'POST',
                 headers: { 'Content-Type': file.type, 'x-filename': file.name },
                 body: file,

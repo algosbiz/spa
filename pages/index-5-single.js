@@ -15,7 +15,7 @@ import News from "../components/sections/Home5/News";
 export default function Home5() {
     return (
         <> 
-            <Layout HeaderStyle="five-single" FooterStyle="three">
+            <Layout HeaderStyle="five-single" FooterStyle="three" robots="noindex, nofollow">
                 <Banner />
                 <About />
                 <Video />

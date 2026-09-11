@@ -1,3 +1,4 @@
+import FloralDecoration from "../components/elements/FloralDecoration";
 import React from "react";
 import Layout from "../components/layout/Layout";
 import Banner from "../components/sections/Home2/Banner";
@@ -11,6 +12,7 @@ import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
+import { seoFor } from "@/lib/seo";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -85,11 +87,14 @@ const faqItems = [
   },
 ];
 
+const PAGE_SEO_ROUTE = "/seminyak/deep-tissue-massage";
+const PAGE_SEO = seoFor(PAGE_SEO_ROUTE);
+
 export default function DeepTissueMassage() {
   const treatmentImages = createTreatmentImageSet("deeptissuemassage", sessionOptions.length);
   return (
     <>
-      <Layout HeaderStyle="one" FooterStyle="two">
+      <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
         <div className="deep-tissue-massage-banner">
           <Banner
             image={treatmentImages.hero}
@@ -99,6 +104,8 @@ export default function DeepTissueMassage() {
           />
         </div>
         <AboutOld
+          leftShapeSrc="/images/shape/about-two-left.png"
+          rightShapeSrc="/images/shape/about-two-right.png"
           primaryImage={treatmentImages.intro[0]}
           secondaryImage={treatmentImages.intro[1]}
           subTitle="Therapeutic Care"
@@ -111,6 +118,7 @@ export default function DeepTissueMassage() {
         />
         <div className="deep-tissue-massage-pricing">
           <Pricing
+            leftShapeSrc="/images/shape/package-four-shape-left.png"
             images={treatmentImages.pricing}
             subTitle="Session Options"
             title="Choose Your Duration"
@@ -122,8 +130,10 @@ export default function DeepTissueMassage() {
           <Funfact items={serviceHighlights} />
         </div>
 
-        <Testimonial />
+        <Testimonial rightShapeSrc={null} />
         <About
+          leftShapeSrc={null}
+          rightShapeSrc="/images/shape/about-right-shape.png"
           image={treatmentImages.details[0]}
           subTitle="Common Reasons"
           title={<>Why Do People Get Deep Tissue Massage?</>}
@@ -142,6 +152,9 @@ export default function DeepTissueMassage() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          leftShapeSrc="/images/shape/step-shape-left.png"
+          rightShapeSrc="/images/shape/banner-six-shape2.png"
+          rightDecoration={<FloralDecoration clustered />}
           image={treatmentImages.details[1]}
           subTitle="Target Areas"
           badgeTopText="Where Tension"
@@ -162,6 +175,7 @@ export default function DeepTissueMassage() {
           buttonLink={bookingUrl}
         />
         <About
+          rightShapeSrc="/images/shape/banner-three-shape2.png"
           image={treatmentImages.details[2]}
           subTitle="Massage Techniques"
           badgeTopText="Power in"
@@ -192,7 +206,14 @@ export default function DeepTissueMassage() {
             items={faqItems}
           />
         </div>
-        <div>
+        <div className="deep-tissue-massage-services">
+          <Services
+            leftShapeSrc="/images/shape/service-shape-left.png"
+            rightShapeSrc="/images/shape/service-shape-right.png"
+            title="Go Beyond Deep Tissue Relief" showFullTreatmentSlider embedded
+          />
+        </div>
+        <div className="deep-tissue-massage-paper-section section__decoration-top section__decoration-bottom bg-sub">
           <ReserveCta
             standardSpacing
             backgroundImage={treatmentImages.cta}
@@ -200,9 +221,6 @@ export default function DeepTissueMassage() {
             text="Long flights, active adventures, desk work, and daily movement around Bali can leave certain muscles feeling tight and restricted. Our Deep Tissue Massage provides focused care through controlled pressure and specialised techniques designed for areas that need deeper attention. Enjoy your treatment at our spa or request a home service at your villa or hotel within selected areas."
             closingText="Reserve your session and let our therapists focus on the areas that need deeper care."
           />
-        </div>
-        <div className="deep-tissue-massage-services section__decoration-top section__decoration-bottom bg-sub">
-          <Services title="Go Beyond Deep Tissue Relief" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

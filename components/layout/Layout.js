@@ -22,7 +22,7 @@ import Header5Single from './Header5Single';
 import Header5Dark from './Header5Dark';
 import PageHead from './PageHead';
 
-const Layout = ({ children, HeaderStyle, FooterStyle, styleMode}) => {
+const Layout = ({ children, HeaderStyle, FooterStyle, styleMode, headTitle, metaDescription, canonicalPath, ogImage, ogType, robots }) => {
     const [searchToggle, setSearchToggled] = useState(false);
     const [scroll, setScroll] = useState(false)
     const handleToggle = () => setSearchToggled(!searchToggle);
@@ -61,7 +61,14 @@ const Layout = ({ children, HeaderStyle, FooterStyle, styleMode}) => {
 
     return (
         <>
-            <PageHead />
+            <PageHead
+                headTitle={headTitle}
+                metaDescription={metaDescription}
+                canonicalPath={canonicalPath}
+                ogImage={ogImage}
+                ogType={ogType}
+                robots={robots}
+            />
             <div className="page-wrapper" id="top">
 
                 {!HeaderStyle && <Header1 handleOpen={handleOpen} handleRemove={handleRemove} searchToggle={searchToggle} handleToggle={handleToggle} scroll={scroll} />}

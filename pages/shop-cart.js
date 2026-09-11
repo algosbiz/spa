@@ -6,7 +6,7 @@ import ShopCart from "../components/sections/ShopCart";
 export default function PageShopCart() {
     return (
         <>
-          <Layout HeaderStyle="one" FooterStyle="four">
+          <Layout HeaderStyle="one" FooterStyle="four" robots="noindex, nofollow">
             <PageTitle pageName="Shop Cart" />
             <ShopCart />
           </Layout>

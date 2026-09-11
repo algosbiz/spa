@@ -1,3 +1,4 @@
+import FloralDecoration from "../components/elements/FloralDecoration";
 import React from "react";
 import Layout from "../components/layout/Layout";
 import Banner from "../components/sections/Home2/Banner";
@@ -11,6 +12,7 @@ import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
+import { seoFor } from "@/lib/seo";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -84,11 +86,14 @@ const faqItems = [
   },
 ];
 
+const PAGE_SEO_ROUTE = "/seminyak/nail-spa";
+const PAGE_SEO = seoFor(PAGE_SEO_ROUTE);
+
 export default function NailArt() {
   const treatmentImages = createTreatmentImageSet("nailart", serviceOptions.length);
   return (
     <>
-      <Layout HeaderStyle="one" FooterStyle="two">
+      <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
         <div className="nail-art-banner">
           <Banner
             image={treatmentImages.hero}
@@ -98,6 +103,8 @@ export default function NailArt() {
           />
         </div>
         <AboutOld
+          leftShapeSrc="/images/shape/about-two-left.png"
+          rightShapeSrc="/images/shape/about-two-right.png"
           primaryImage={treatmentImages.intro[0]}
           secondaryImage={treatmentImages.intro[1]}
           subTitle="Personal Style"
@@ -110,6 +117,7 @@ export default function NailArt() {
         />
         <div className="nail-art-pricing">
           <Pricing
+            leftShapeSrc="/images/shape/package-four-shape-left.png"
             images={treatmentImages.pricing}
             subTitle="Service Options"
             title="Choose the Finish You Prefer"
@@ -121,8 +129,10 @@ export default function NailArt() {
           <Funfact items={serviceHighlights} />
         </div>
 
-        <Testimonial />
+        <Testimonial rightShapeSrc={null} />
         <About
+          leftShapeSrc={null}
+          rightShapeSrc="/images/shape/about-right-shape.png"
           image={treatmentImages.details[0]}
           subTitle="Beauty Benefits"
           title={<>What Makes Gel Nail Art So Popular?</>}
@@ -141,6 +151,9 @@ export default function NailArt() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          leftShapeSrc="/images/shape/step-shape-left.png"
+          rightShapeSrc="/images/shape/banner-six-shape2.png"
+          rightDecoration={<FloralDecoration clustered />}
           image={treatmentImages.details[1]}
           subTitle="Design Possibilities"
           badgeTopText="Your Signature"
@@ -160,6 +173,7 @@ export default function NailArt() {
           buttonLink={bookingUrl}
         />
         <About
+          rightShapeSrc="/images/shape/banner-three-shape2.png"
           image={treatmentImages.details[2]}
           subTitle="Application Process"
           badgeTopText="Built Layer"
@@ -190,7 +204,14 @@ export default function NailArt() {
             items={faqItems}
           />
         </div>
-        <div>
+        <div className="nail-art-services">
+          <Services
+            leftShapeSrc="/images/shape/service-shape-left.png"
+            rightShapeSrc="/images/shape/service-shape-right.png"
+            title="Explore More Ways to Perfect Your Bali Glow" showFullTreatmentSlider embedded
+          />
+        </div>
+        <div className="nail-art-paper-section section__decoration-top section__decoration-bottom bg-sub">
           <ReserveCta
             standardSpacing
             backgroundImage={treatmentImages.cta}
@@ -198,9 +219,6 @@ export default function NailArt() {
             text="Whether you're preparing for a beach holiday, a romantic dinner, a wedding, or simply want beautifully finished nails, our Nail Art service offers personalised designs created with professional care and long-lasting gel products. Every appointment is tailored to your preferred style while keeping your natural nails healthy and comfortable."
             closingText="Leave with polished nails that feel as beautiful as they look."
           />
-        </div>
-        <div className="nail-art-services section__decoration-top section__decoration-bottom bg-sub">
-          <Services title="Explore More Ways to Perfect Your Bali Glow" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

@@ -15,7 +15,7 @@ import Instagram from "../components/sections/Home2/Instagram";
 export default function Home3() {
     return (
         <> 
-            <Layout HeaderStyle="three-single" FooterStyle="two">
+            <Layout HeaderStyle="three-single" FooterStyle="two" robots="noindex, nofollow">
                 <Banner />
                 <Marquee />
                 <Services />

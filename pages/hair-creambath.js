@@ -1,3 +1,4 @@
+import FloralDecoration from "../components/elements/FloralDecoration";
 import React from "react";
 import Layout from "../components/layout/Layout";
 import Banner from "../components/sections/Home2/Banner";
@@ -12,6 +13,7 @@ import SessionOptions from "../components/sections/Home1/SessionOptions";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
+import { seoFor } from "@/lib/seo";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -145,11 +147,14 @@ const faqItems = [
   },
 ];
 
+const PAGE_SEO_ROUTE = "/seminyak/creambath";
+const PAGE_SEO = seoFor(PAGE_SEO_ROUTE);
+
 export default function HairCreambath() {
   const treatmentImages = createTreatmentImageSet("creambath", packageOptions.length);
   return (
     <>
-      <Layout HeaderStyle="one" FooterStyle="two">
+      <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
         <div className="hair-creambath-banner">
           <Banner
             image={treatmentImages.hero}
@@ -159,6 +164,8 @@ export default function HairCreambath() {
           />
         </div>
         <AboutOld
+          leftShapeSrc="/images/shape/about-two-left.png"
+          rightShapeSrc="/images/shape/about-two-right.png"
           primaryImage={treatmentImages.intro[0]}
           secondaryImage={treatmentImages.intro[1]}
           subTitle="Traditional Hair Care"
@@ -171,6 +178,7 @@ export default function HairCreambath() {
         />
         <div className="hair-creambath-pricing">
           <Pricing
+            leftShapeSrc="/images/shape/package-four-shape-left.png"
             images={treatmentImages.pricing}
             subTitle="Find Yours"
             title="Our Package Options"
@@ -191,8 +199,10 @@ export default function HairCreambath() {
           <Funfact items={serviceHighlights} />
         </div>
 
-        <Testimonial />
+        <Testimonial rightShapeSrc={null} />
         <About
+          leftShapeSrc={null}
+          rightShapeSrc="/images/shape/about-right-shape.png"
           image={treatmentImages.details[0]}
           subTitle="Ingredient Guide"
           title={<>Which Creambath Formula is Right for You?</>}
@@ -211,6 +221,9 @@ export default function HairCreambath() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          leftShapeSrc="/images/shape/step-shape-left.png"
+          rightShapeSrc="/images/shape/banner-six-shape2.png"
+          rightDecoration={<FloralDecoration clustered />}
           image={treatmentImages.details[1]}
           subTitle="Hair Benefits"
           badgeTopText="Bring Back"
@@ -231,6 +244,7 @@ export default function HairCreambath() {
           buttonLink={bookingUrl}
         />
         <About
+          rightShapeSrc="/images/shape/banner-three-shape2.png"
           image={treatmentImages.details[2]}
           subTitle="The Ritual"
           badgeTopText="Restore From"
@@ -261,7 +275,14 @@ export default function HairCreambath() {
             items={faqItems}
           />
         </div>
-        <div>
+        <div className="hair-creambath-services">
+          <Services
+            leftShapeSrc="/images/shape/service-shape-left.png"
+            rightShapeSrc="/images/shape/service-shape-right.png"
+            title="Discover More Ways to Nourish and Unwind" showFullTreatmentSlider embedded
+          />
+        </div>
+        <div className="hair-creambath-paper-section section__decoration-top section__decoration-bottom bg-sub">
           <ReserveCta
             standardSpacing
             backgroundImage={treatmentImages.cta}
@@ -269,9 +290,6 @@ export default function HairCreambath() {
             text="Sun exposure, ocean water, and humidity can affect the way your hair feels and looks. A Creambath treatment helps replenish moisture, soften dry strands, and provide relaxing scalp care through nourishing creams and gentle massage techniques. Enjoy your session at our spa or request a home service at your villa or hotel for a convenient hair care experience during your stay in Bali."
             closingText="Refresh your hair and enjoy a calming self-care moment designed around your needs."
           />
-        </div>
-        <div className="hair-creambath-services section__decoration-top section__decoration-bottom bg-sub">
-          <Services title="Discover More Ways to Nourish and Unwind" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

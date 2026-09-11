@@ -1,3 +1,4 @@
+import FloralDecoration from "../components/elements/FloralDecoration";
 import React from "react";
 import Layout from "../components/layout/Layout";
 import Banner from "../components/sections/Home2/Banner";
@@ -11,6 +12,7 @@ import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
+import { seoFor } from "@/lib/seo";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -79,11 +81,14 @@ const faqItems = [
   },
 ];
 
+const PAGE_SEO_ROUTE = "/seminyak/foot-reflexology";
+const PAGE_SEO = seoFor(PAGE_SEO_ROUTE);
+
 export default function FootReflexology() {
   const treatmentImages = createTreatmentImageSet("footreflexology", sessionOptions.length);
   return (
     <>
-      <Layout HeaderStyle="one" FooterStyle="two">
+      <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
         <div className="foot-reflexology-banner">
           <Banner
             image={treatmentImages.hero}
@@ -93,6 +98,8 @@ export default function FootReflexology() {
           />
         </div>
         <AboutOld
+          leftShapeSrc="/images/shape/about-two-left.png"
+          rightShapeSrc="/images/shape/about-two-right.png"
           primaryImage={treatmentImages.intro[0]}
           secondaryImage={treatmentImages.intro[1]}
           subTitle="Understanding Reflexology"
@@ -105,6 +112,7 @@ export default function FootReflexology() {
         />
         <div className="foot-reflexology-pricing">
           <Pricing
+            leftShapeSrc="/images/shape/package-four-shape-left.png"
             images={treatmentImages.pricing}
             subTitle="Session Options"
             title="Choose the Session That Fits You"
@@ -116,8 +124,10 @@ export default function FootReflexology() {
           <Funfact items={serviceHighlights} />
         </div>
 
-        <Testimonial />
+        <Testimonial rightShapeSrc={null} />
         <About
+          leftShapeSrc={null}
+          rightShapeSrc="/images/shape/about-right-shape.png"
           image={treatmentImages.details[0]}
           subTitle="Benefits of Foot Reflexology"
           title={<>A Simple Way to Refresh Tired Feet</>}
@@ -136,6 +146,9 @@ export default function FootReflexology() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          leftShapeSrc="/images/shape/step-shape-left.png"
+          rightShapeSrc="/images/shape/banner-six-shape2.png"
+          rightDecoration={<FloralDecoration clustered />}
           image={treatmentImages.details[1]}
           subTitle="Reflex Points"
           badgeTopText="The Reflex"
@@ -156,6 +169,7 @@ export default function FootReflexology() {
           buttonLink={bookingUrl}
         />
         <About
+          rightShapeSrc="/images/shape/banner-three-shape2.png"
           image={treatmentImages.details[2]}
           subTitle="The Technique"
           badgeTopText="A Guided"
@@ -186,7 +200,14 @@ export default function FootReflexology() {
             items={faqItems}
           />
         </div>
-        <div>
+        <div className="foot-reflexology-services">
+          <Services
+            leftShapeSrc="/images/shape/service-shape-left.png"
+            rightShapeSrc="/images/shape/service-shape-right.png"
+            title="Step Into More Feel-Good Treatments" showFullTreatmentSlider embedded
+          />
+        </div>
+        <div className="foot-reflexology-paper-section section__decoration-top section__decoration-bottom bg-sub">
           <ReserveCta
             standardSpacing
             backgroundImage={treatmentImages.cta}
@@ -194,9 +215,6 @@ export default function FootReflexology() {
             text="Long days exploring Bali often begin with excitement and end with tired, overworked feet. Foot Reflexology offers a relaxing way to pause, helping your feet recover through carefully applied pressure-point techniques in a calm and comfortable setting. Visit our spa or enjoy the same professional treatment from your villa or hotel with our convenient home service."
             closingText="Reserve your Foot Reflexology session and bring comfort back to every step."
           />
-        </div>
-        <div className="foot-reflexology-services section__decoration-top section__decoration-bottom bg-sub">
-          <Services title="Step Into More Feel-Good Treatments" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

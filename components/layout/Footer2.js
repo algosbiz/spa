@@ -19,7 +19,7 @@ const Footer = () => {
         setMessage('');
 
         try {
-            const response = await fetch('/api/subscribe', {
+            const response = await fetch('/api/subscribe/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email }),
@@ -108,7 +108,7 @@ const Footer = () => {
                                 </Link>
                             </h3>
                             <ul className="links">
-                                <li><Link href="/massage-hotel-villa">Massage Hotel &amp; Villa</Link></li>
+                                <li><Link href="/villa-hotel-massage">Massage Hotel &amp; Villa</Link></li>
                                 <li><Link href="/">Massage Seminyak</Link></li>
                                 <li><Link href="/massage-kuta">Massage Kuta</Link></li>
                                 <li style={{ display: 'flex', flexDirection: 'column', marginTop: '12px', alignItems: 'flex-start' }}>
@@ -159,7 +159,7 @@ const Footer = () => {
                 </div>
                 <div className="footer__bottom" style={{ display: 'flex', justifyContent: 'center', marginTop: '40px', paddingTop: '20px', borderTop: '1px solid rgba(95, 90, 84, 0.12)' }}>
                     <p className="copyright-text" style={{ textAlign: 'center', marginBottom: 0 }}>
-                        All Rights Reserved &copy; 2026 <Link href="/">Spa Bali Moon</Link> &middot; <Link href="/privacy-policy">Privacy Policy</Link> &middot; <Link href="/terms-conditions">Terms &amp; Conditions</Link>
+                        All Rights Reserved &copy; 2026 <Link href="/">Spa Bali Moon</Link> &middot; <Link href="/privacy-policy">Privacy Policy</Link> &middot; <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
                     </p>
                 </div>
             </div>

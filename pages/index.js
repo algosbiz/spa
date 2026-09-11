@@ -14,6 +14,7 @@ import Feature from "../components/sections/Home1/Feature";
 import Testimonial from "../components/sections/Home3/Testimonial";
 import { homepageTreatments } from "@/lib/homepageTreatments";
 import { getGoogleReviews, fallbackGoogleReviews } from "@/lib/googleReviews";
+import { seoFor } from "@/lib/seo";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://spabalimoon.com";
 
@@ -144,6 +145,9 @@ const FONT_TRIALS = {
   },
 };
 
+const PAGE_SEO_ROUTE = "/";
+const PAGE_SEO = seoFor(PAGE_SEO_ROUTE);
+
 export default function Home5({ googleReviews = fallbackGoogleReviews }) {
   // Read the trial face from the URL after mount. This page is statically
   // generated, so router.query is still empty during hydration; going straight
@@ -205,11 +209,18 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
           />
         </Head>
       )}
-      <Layout HeaderStyle="one" FooterStyle="two">
+      <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
+        {/* H1 kept byte-identical to the live WordPress homepage, split over
+            two lines the way the hero is designed for.
+            Worth knowing if this is ever revisited: over Jun-Sep 2026 this
+            page earned ~510 clicks on outcall queries and ~236 on home
+            service / home massage, and zero on "day spa". Of those, only
+            "home service" appears in the hero; "outcall" is carried by the
+            title tag and the nav. */}
         <Banner
-          title="Traditional Spa &"
-          highlightedTitle="Massage in Seminyak"
-          text="Since 2009, Spa Bali Moon has welcomed travellers and local guests with professional massage, beauty, and wellness treatments in Seminyak. Our experienced therapists provide a wide range of traditional Balinese therapies, body treatments, and beauty services at our spa or through convenient home service."
+          title="Our Seminyak"
+          highlightedTitle="Day Spa"
+          text="Since 2009, Spa Bali Moon has provided professional Balinese massage and spa treatments in Seminyak, Bali. Our experienced therapists offer traditional massage, body treatments, facials, and beauty services at our Seminyak spa, with home service also available for hotels and villas in nearby areas."
           primaryImage="/images/home/homepage-1.webp"
           secondaryImage="/images/home/homepage-2.webp"
         />
@@ -429,28 +440,41 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
            Re-measure with a pixel ruler after changing either number.
            ========================================================== */
         @media (min-width: 992px) {
-          .page-wrapper.page-wrapper .step-section,
+          .page-wrapper.page-wrapper .step-section {
+            padding-top: 143px !important;
+          }
+
           .page-wrapper.page-wrapper .package-intro-text {
-            padding-top: 124px !important;
+            padding-top: 144px !important;
           }
 
           /* FAQ above the closing tear. Its inner column already carries
              70px of its own bottom padding here (30px on phones), so the
              section padding is the part that gets trimmed. Measured 159px
              where 150px was wanted, so it loses the 9px difference. */
+          /* The photo and the card edge stay on the same 150px line as every
+             other section. The answer card keeps a tighter 40px inset so its
+             first line of text is not pushed as deep as the theme's 70-90px
+             would push it. */
           .page-wrapper.page-wrapper .homepage-faq-section .faq-section {
+            padding-top: 143px !important;
             padding-bottom: 137px !important;
+          }
+
+          .homepage-faq-section .faq-section .content-column .inner-column {
+            padding-top: 40px !important;
+            padding-bottom: 40px !important;
           }
 
           /* The other two sections that sit above a tear, measured the same
              way. The testimonial ends on its pagination dots and the intro
              on its closing line, which is why they need different numbers. */
           .page-wrapper.page-wrapper .testimonial-section-two {
-            padding-bottom: 130px !important;
+            padding-bottom: 131px !important;
           }
 
           .page-wrapper.page-wrapper .package-intro-text {
-            padding-bottom: 115px !important;
+            padding-bottom: 132px !important;
           }
 
           /* Pricing and services share one cream sheet with the tear between
@@ -459,7 +483,7 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
              stay joined because neither the background nor the tear changes,
              only the breathing room. */
           .page-wrapper.page-wrapper .homepage-services-section .service-section {
-            padding-top: 146px !important;
+            padding-top: 163px !important;
           }
 
           /* The rest of the page, measured the same way. A boundary that ends
@@ -467,25 +491,25 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
              on a line of text: the letters' ink starts that far inside their
              own box, so the eye reads the same distance from a shorter gap. */
           .page-wrapper.page-wrapper .step-section {
-            padding-bottom: 115px !important;
+            padding-bottom: 132px !important;
           }
 
           .page-wrapper.page-wrapper .homepage-about-paper-section > .about-section-three {
-            padding-top: 146px !important;
+            padding-top: 163px !important;
             padding-bottom: 157px !important;
           }
 
           .page-wrapper.page-wrapper .package-section {
-            padding-top: 146px !important;
+            padding-top: 163px !important;
             padding-bottom: 155px !important;
           }
 
           .page-wrapper.page-wrapper .homepage-pricing-section .pricing-section-five {
-            padding-top: 146px !important;
+            padding-top: 163px !important;
           }
 
           .page-wrapper.page-wrapper .homepage-services-section .service-section {
-            padding-bottom: 135px !important;
+            padding-bottom: 152px !important;
           }
 
           .page-wrapper.page-wrapper .homepage-closing-section .reserve-cta-section {
@@ -494,9 +518,12 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
         }
 
         @media (max-width: 991px) {
-          .page-wrapper.page-wrapper .step-section,
+          .page-wrapper.page-wrapper .step-section {
+            padding-top: 54px !important;
+          }
+
           .page-wrapper.page-wrapper .package-intro-text {
-            padding-top: 35px !important;
+            padding-top: 55px !important;
           }
 
           /* Plain section sitting ABOVE a top tear. This one also carries
@@ -510,17 +537,27 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
             padding-bottom: 52px !important;
           }
 
+          /* On a phone the card sits below the photo, so only its bottom edge
+             touches a tear. */
+          .homepage-faq-section .faq-section .content-column .inner-column {
+            padding-top: 24px !important;
+            padding-bottom: 24px !important;
+          }
+
+          /* The slider runs in auto-height mode, so the dots below it move a
+             little with each quote. This lands the dots on the line for the
+             quotes as they read today. */
           .page-wrapper.page-wrapper .testimonial-section-two {
-            padding-bottom: 46px !important;
+            padding-bottom: 52px !important;
           }
 
           .page-wrapper.page-wrapper .package-intro-text {
-            padding-bottom: 30px !important;
+            padding-bottom: 47px !important;
           }
 
           .page-wrapper.page-wrapper .homepage-services-section .service-section {
-            padding-top: 81px !important;
-            padding-bottom: 74px !important;
+            padding-top: 98px !important;
+            padding-bottom: 91px !important;
           }
 
           /* Same split as the desktop block. The stacked phone layout puts a
@@ -528,7 +565,7 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
              with a heading, so the numbers are not simply the desktop ones
              scaled down. */
           .page-wrapper.page-wrapper .step-section {
-            padding-bottom: 30px !important;
+            padding-bottom: 47px !important;
           }
 
           .page-wrapper.page-wrapper .homepage-about-paper-section > .about-section-three {
@@ -544,12 +581,12 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
           }
 
           .page-wrapper.page-wrapper .package-section {
-            padding-top: 81px !important;
-            padding-bottom: 76px !important;
+            padding-top: 98px !important;
+            padding-bottom: 93px !important;
           }
 
           .page-wrapper.page-wrapper .homepage-pricing-section .pricing-section-five {
-            padding-top: 81px !important;
+            padding-top: 98px !important;
           }
 
           .page-wrapper.page-wrapper .homepage-closing-section .reserve-cta-section {
@@ -558,7 +595,10 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
           }
         }
 
-        .homepage-pricing-section .pricing-section-five {
+        /* Pricing and services share one cream sheet with no tear between
+           them, so this zero is deliberate -- keep it specific enough to
+           outrank the site-wide torn-paper rhythm. */
+        .page-wrapper.page-wrapper .homepage-pricing-section .pricing-section-five {
           padding-bottom: 0 !important;
         }
 

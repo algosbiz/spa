@@ -1,0 +1,48 @@
+# Spa Bali Moon — robots.txt
+# Carried over from the live WordPress/Yoast rules and adapted to the
+# Next.js site: the wp-* paths no longer exist, the query-string and
+# feed rules do the same job here, and the private areas are now
+# /admin and /api instead of /wp-admin.
+
+User-agent: *
+Allow: /
+
+# Private / non-content areas
+Disallow: /admin
+Disallow: /api/
+
+# Theme demo pages that are not part of the live site
+Disallow: /index-1-dark
+Disallow: /index-1-single
+Disallow: /index-2-dark
+Disallow: /index-2-single
+Disallow: /index-3
+Disallow: /index-3-dark
+Disallow: /index-3-single
+Disallow: /index-4
+Disallow: /index-4-dark
+Disallow: /index-4-single
+Disallow: /index-5-dark
+Disallow: /index-5-single
+Disallow: /index-6
+Disallow: /index-6-dark
+Disallow: /index-6-single
+Disallow: /indexOld
+Disallow: /page-404
+Disallow: /page-gallery
+Disallow: /page-services
+Disallow: /page-service-details
+Disallow: /news-details
+Disallow: /shop-cart
+Disallow: /shop-checkout
+Disallow: /shop-products
+Disallow: /shop-products-sidebar
+Disallow: /shop-product-details
+
+# Tracking and search parameters (kept from the live robots.txt)
+Disallow: /*?s=
+Disallow: /*?utm_source
+Disallow: /*?utm_medium
+Disallow: /*?utm_campaign
+
+Sitemap: https://spabalimoon.com/sitemap.xml

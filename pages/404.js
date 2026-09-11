@@ -4,7 +4,7 @@ import Page404 from "../components/sections/Page404";
 
 export default function Custom404() {
     return (
-        <Layout HeaderStyle="error" FooterStyle="error">
+        <Layout HeaderStyle="error" FooterStyle="error" robots="noindex, nofollow">
             <Page404 />
         </Layout>
     );

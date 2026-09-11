@@ -14,7 +14,7 @@ import Video from "../components/sections/Home1/Video";
 export default function HomeServicePage() {
     return (
       <>
-        <Layout HeaderStyle="five" FooterStyle="two">
+        <Layout HeaderStyle="five" FooterStyle="two" robots="noindex, nofollow">
           {/* Custom Banner with different shape and titles */}
           <HomeServiceBanner />
           {/* <AboutOld /> */}

@@ -85,6 +85,7 @@ CSS TABLE OF CONTENTS
 @import "_layout/_team";
 @import "_layout/_testimonial";
 @import "_layout/_video";
+@import "_layout/_treatment-ornaments";
 
 @import "_components/_footer";
 
@@ -99,3 +100,6 @@ CSS TABLE OF CONTENTS
 @import "inner/news-comment";
 @import "inner/team-details";
 @import "inner/contact-page";
+
+// Measured torn-paper rhythm; must come last so it wins on order.
+@import "_base/_tear-rhythm";

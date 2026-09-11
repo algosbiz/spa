@@ -12,7 +12,10 @@ const PageTitle = (props) => {
                     <div className="title-outer text-center">
                         <h1 className="title">{props.pageName}</h1>
                         <ul className="page-breadcrumb">
-                            <li><Link href="">Home</Link></li>
+                            {/* An empty href resolves to the current route
+                                pattern, which on /guide/[slug] rendered a link
+                                to the literal "/guide/[slug]" — a 404. */}
+                            <li><Link href="/">Home</Link></li>
                             <li>{props.pageName}</li>
                         </ul>
                     </div>

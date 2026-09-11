@@ -1,3 +1,4 @@
+import FloralDecoration from "../components/elements/FloralDecoration";
 import React from "react";
 import Layout from "../components/layout/Layout";
 import Banner from "../components/sections/Home2/Banner";
@@ -12,6 +13,7 @@ import SessionOptions from "../components/sections/Home1/SessionOptions";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
+import { seoFor } from "@/lib/seo";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -150,11 +152,14 @@ const faqItems = [
   },
 ];
 
+const PAGE_SEO_ROUTE = "/seminyak/manicure-pedicure";
+const PAGE_SEO = seoFor(PAGE_SEO_ROUTE);
+
 export default function ManicurePedicure() {
   const treatmentImages = createTreatmentImageSet("manicurepedicure", packageOptions.length);
   return (
     <>
-      <Layout HeaderStyle="one" FooterStyle="two">
+      <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
         <div className="manicure-pedicure-banner">
           <Banner
             image={treatmentImages.hero}
@@ -164,6 +169,8 @@ export default function ManicurePedicure() {
           />
         </div>
         <AboutOld
+          leftShapeSrc="/images/shape/about-two-left.png"
+          rightShapeSrc="/images/shape/about-two-right.png"
           primaryImage={treatmentImages.intro[0]}
           secondaryImage={treatmentImages.intro[1]}
           subTitle="Essentials Care"
@@ -176,6 +183,7 @@ export default function ManicurePedicure() {
         />
         <div className="manicure-pedicure-pricing">
           <Pricing
+            leftShapeSrc="/images/shape/package-four-shape-left.png"
             images={treatmentImages.pricing}
             subTitle="Find Yours"
             title="Our Package Options"
@@ -196,8 +204,10 @@ export default function ManicurePedicure() {
           <Funfact items={serviceHighlights} />
         </div>
 
-        <Testimonial />
+        <Testimonial rightShapeSrc={null} />
         <About
+          leftShapeSrc={null}
+          rightShapeSrc="/images/shape/about-right-shape.png"
           image={treatmentImages.details[0]}
           subTitle="The Reason"
           title={<>Why Is Regular Nail Care Important?</>}
@@ -216,6 +226,9 @@ export default function ManicurePedicure() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          leftShapeSrc="/images/shape/step-shape-left.png"
+          rightShapeSrc="/images/shape/banner-six-shape2.png"
+          rightDecoration={<FloralDecoration clustered />}
           image={treatmentImages.details[1]}
           subTitle="What's Included"
           badgeTopText="Beauty in"
@@ -236,6 +249,7 @@ export default function ManicurePedicure() {
           buttonLink={bookingUrl}
         />
         <About
+          rightShapeSrc="/images/shape/banner-three-shape2.png"
           image={treatmentImages.details[2]}
           subTitle="The Process"
           badgeTopText="The Finishing"
@@ -266,7 +280,14 @@ export default function ManicurePedicure() {
             items={faqItems}
           />
         </div>
-        <div>
+        <div className="manicure-pedicure-services">
+          <Services
+            leftShapeSrc="/images/shape/service-shape-left.png"
+            rightShapeSrc="/images/shape/service-shape-right.png"
+            title="Complete Your Care Beyond Nails" showFullTreatmentSlider embedded
+          />
+        </div>
+        <div className="manicure-pedicure-paper-section section__decoration-top section__decoration-bottom bg-sub">
           <ReserveCta
             standardSpacing
             backgroundImage={treatmentImages.cta}
@@ -274,9 +295,6 @@ export default function ManicurePedicure() {
             text="Well-groomed nails are about more than appearance, they also contribute to everyday comfort and confidence. Whether you're preparing for a special occasion, recovering after days of exploring Bali, or simply taking time for yourself, our Manicure & Pedicure treatments provide professional care in a calm and relaxing environment. Enjoy your appointment at our spa or choose our convenient home service for villas and hotels throughout Seminyak and surrounding areas."
             closingText="Reserve your Manicure & Pedicure treatment and enjoy polished, comfortable care."
           />
-        </div>
-        <div className="manicure-pedicure-services section__decoration-top section__decoration-bottom bg-sub">
-          <Services title="Complete Your Care Beyond Nails" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

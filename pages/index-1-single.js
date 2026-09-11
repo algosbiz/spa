@@ -18,7 +18,7 @@ import Instagram from "../components/sections/Home1/Instagram";
 export default function Home1Single() {
     return (
         <>
-            <Layout HeaderStyle="one-single">
+            <Layout HeaderStyle="one-single" robots="noindex, nofollow">
                 <Banner />
                 <About />
                 <Feature />

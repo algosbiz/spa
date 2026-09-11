@@ -39,6 +39,9 @@ export default function Home1_About({
     badgeTopText,
     badgeBottomText = "Experience",
 }) {
+    // undefined falls back to the treatment leaf as before; an explicit null
+    // means the caller wants no left ornament at all.
+    const showLeftShape = leftShapeSrc !== null
     const resolvedLeftShape = leftShapeSrc || getTreatmentLeafShape(
         image,
         "/images/shape/about-left-shape.png"
@@ -55,9 +58,11 @@ export default function Home1_About({
     return (
         <>
             <section id="about" className={`about-section pt-130 pb-100${usesTreatmentLayout ? " about-section--treatment" : ""}`}>
-                <div className={`shape1 wow slideInLeft${hasTreatmentLeftShape ? " treatment-leaf-position--left" : ""}`} data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <img loading="lazy" decoding="async" src={resolvedLeftShape} alt="" aria-hidden="true" />
-                </div>
+                {showLeftShape && (
+                    <div className={`shape1 wow slideInLeft${hasTreatmentLeftShape ? " treatment-leaf-position--left" : ""}`} data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <img loading="lazy" decoding="async" src={resolvedLeftShape} alt="" aria-hidden="true" />
+                    </div>
+                )}
                 <div className={`shape2 wow slideInRight${hasTreatmentRightShape ? " treatment-leaf-position--right" : ""}`} data-wow-delay="400ms" data-wow-duration="1500ms">
                     <div className={hasTreatmentRightShape ? "treatment-leaf-shape--right" : undefined}>
                         {rightDecoration || <img loading="lazy" decoding="async" className="sway_Y__animation" src={resolvedRightShape} alt="" aria-hidden="true" />}

@@ -59,7 +59,7 @@ export default function RichTextEditor({ initialContent = '', onChange }) {
         e.target.value = ''; // allow re-picking the same file later
         if (!file) return;
         try {
-            const res = await fetch('/api/admin/upload', {
+            const res = await fetch('/api/admin/upload/', {
                 method: 'POST',
                 headers: { 'Content-Type': file.type, 'x-filename': file.name },
                 body: file,

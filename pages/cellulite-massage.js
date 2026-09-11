@@ -1,3 +1,4 @@
+import FloralDecoration from "../components/elements/FloralDecoration";
 import React from "react";
 import Layout from "../components/layout/Layout";
 import Banner from "../components/sections/Home2/Banner";
@@ -11,6 +12,7 @@ import ReserveCta from "../components/sections/Home1/ReserveCta";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
+import { seoFor } from "@/lib/seo";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -80,6 +82,9 @@ const faqItems = [
   },
 ];
 
+const PAGE_SEO_ROUTE = "/seminyak/anti-cellulite-massage";
+const PAGE_SEO = seoFor(PAGE_SEO_ROUTE);
+
 export default function CelluliteMassage() {
   const treatmentImages = createTreatmentImageSet("cellulitemassage", sessionOptions.length);
   const pricingOptions = sessionOptions.map(({ duration, price, recommendations }) => ({
@@ -90,7 +95,7 @@ export default function CelluliteMassage() {
 
   return (
     <>
-      <Layout HeaderStyle="one" FooterStyle="two">
+      <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
         <div className="cellulite-massage-banner">
           <Banner
             image={treatmentImages.hero}
@@ -100,6 +105,8 @@ export default function CelluliteMassage() {
           />
         </div>
         <AboutOld
+          leftShapeSrc="/images/shape/about-two-left.png"
+          rightShapeSrc="/images/shape/about-two-right.png"
           primaryImage={treatmentImages.intro[0]}
           secondaryImage={treatmentImages.intro[1]}
           subTitle="Smoother Skin Support"
@@ -112,20 +119,22 @@ export default function CelluliteMassage() {
         />
         <div className="cellulite-massage-pricing">
           <Pricing
+            leftShapeSrc="/images/shape/package-four-shape-left.png"
             images={treatmentImages.pricing}
             subTitle="Choose Your Session"
             title="Treatment Duration & Pricing"
             text="Every cellulite massage session is tailored to your body and treatment goals. Choose the session length that best suits the areas you'd like us to focus on. Longer sessions allow more time to work across multiple areas while maintaining steady and targeted techniques."
             packages={pricingOptions}
-            leftShapeSrc="/images/shape/testimonial-two-shape-left.png"
           />
         </div>
         <div className="cellulite-massage-funfact">
           <Funfact items={serviceHighlights} />
         </div>
 
-        <Testimonial />
+        <Testimonial rightShapeSrc={null} />
         <About
+          leftShapeSrc={null}
+          rightShapeSrc="/images/shape/about-right-shape.png"
           image={treatmentImages.details[0]}
           subTitle="Understanding Cellulite"
           title={<>Why Does Cellulite Form in the First Place?</>}
@@ -144,6 +153,9 @@ export default function CelluliteMassage() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          leftShapeSrc="/images/shape/step-shape-left.png"
+          rightShapeSrc="/images/shape/banner-six-shape2.png"
+          rightDecoration={<FloralDecoration clustered />}
           image={treatmentImages.details[1]}
           subTitle="Treatment Benefits"
           badgeTopText="Shape &"
@@ -164,6 +176,7 @@ export default function CelluliteMassage() {
           buttonLink={bookingUrl}
         />
         <About
+          rightShapeSrc="/images/shape/banner-three-shape2.png"
           image={treatmentImages.details[2]}
           subTitle="Inside the Session"
           badgeTopText="The Art"
@@ -194,7 +207,14 @@ export default function CelluliteMassage() {
             items={faqItems}
           />
         </div>
-        <div>
+        <div className="cellulite-massage-services">
+          <Services
+            leftShapeSrc="/images/shape/service-shape-left.png"
+            rightShapeSrc="/images/shape/service-shape-right.png"
+            title="Continue Your Body-Care Journey" showFullTreatmentSlider embedded
+          />
+        </div>
+        <div className="cellulite-massage-paper-section section__decoration-top section__decoration-bottom bg-sub">
           <ReserveCta
             standardSpacing
             backgroundImage={treatmentImages.cta}
@@ -202,9 +222,6 @@ export default function CelluliteMassage() {
             text="Whether you visit our spa or prefer the privacy of your villa or hotel, our cellulite massage treatment can be arranged around your schedule. Home service is available for an additional IDR 75,000 per therapist within Seminyak and nearby areas, allowing you to enjoy focused body care without interrupting your plans in Bali."
             closingText="Reserve your session and let our therapists help you create a treatment plan that fits your comfort and body goals."
           />
-        </div>
-        <div className="cellulite-massage-services section__decoration-top section__decoration-bottom bg-sub">
-          <Services title="Continue Your Body-Care Journey" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

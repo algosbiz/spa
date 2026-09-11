@@ -92,7 +92,7 @@ const Footer = () => {
                             <p className="copyright-text">All Rights Reserved &copy; 2026 Spa Bali Moon</p>
                             <div className="footer__bottom-links">
                                 <Link href="/privacy-policy">Privacy Policy</Link>
-                                <Link href="/terms-conditions">Terms &amp; Conditions</Link>
+                                <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
                             </div>
                         </div>
                     </div>

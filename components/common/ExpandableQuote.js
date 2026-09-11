@@ -38,6 +38,13 @@ export default function ExpandableQuote({ text, onExpandChange, onMeasure }) {
         return () => observer.disconnect();
     }, [expanded, text, onMeasure]);
 
+    // Revealing the toggle makes the slide taller than it was when the measure
+    // above ran, so the slider has to be told again once the button is on screen
+    // -- otherwise it keeps the shorter height and clips the longest review.
+    useEffect(() => {
+        if (onMeasure) onMeasure();
+    }, [truncated, onMeasure]);
+
     const didMount = useRef(false);
     useEffect(() => {
         if (!didMount.current) {

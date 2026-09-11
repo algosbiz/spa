@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 import Layout from "../components/layout/Layout";
 import Banner from "../components/sections/Home2/Banner";
@@ -11,6 +10,7 @@ import HomeServiceInfo from "../components/sections/HomeService/Info";
 import Faq from "../components/sections/Home6/Faq";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import { getListMenuImage } from "@/lib/listMenuImages";
+import { seoFor } from "@/lib/seo";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -635,21 +635,15 @@ const faqItems = [
   },
 ];
 
+const PAGE_SEO_ROUTE = "/outcall-home-service-massage";
+const PAGE_SEO = seoFor(PAGE_SEO_ROUTE);
+
 export default function OutcallHomeServiceMassage() {
   return (
     <>
-      <Head>
-        <title>Outcall & Home Service Massage in Bali | Spa Bali Moon</title>
-        <meta
-          name="description"
-          content="Book a professional home service massage in Bali for your hotel, villa, or private accommodation, available daily from 9am to 11pm."
-        />
-        <link
-          rel="canonical"
-          href="https://spabalimoon.com/outcall-home-service-massage/"
-        />
-      </Head>
-      <Layout HeaderStyle="one" FooterStyle="two">
+      {/* Title, description and canonical come from lib/seo.js (the live
+          WordPress values) through Layout -> PageHead. */}
+      <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
         <main className="outcall-page">
           <Banner
             subTitle="Home Comfort Spa"

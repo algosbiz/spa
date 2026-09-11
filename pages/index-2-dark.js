@@ -16,7 +16,7 @@ import Instagram from "../components/sections/Home2/Instagram";
 export default function Home2Dark() {
     return (
         <>
-            <Layout HeaderStyle="two-dark" FooterStyle="two" styleMode="Dark">
+            <Layout HeaderStyle="two-dark" FooterStyle="two" styleMode="Dark" robots="noindex, nofollow">
                 <Banner />
                 <About />
                 <ServicesDark />

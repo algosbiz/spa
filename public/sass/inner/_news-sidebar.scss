@@ -25,12 +25,14 @@ Sidebar
 }
 .sidebar__search-form {
   position: relative;
+  // Outlined rather than filled gold: white-on-gold placeholder text only
+  // reached about 3.4:1 contrast, which read as washed out.
   input[type="search"] {
     display: block;
-    border: none;
+    border: 1px solid var(--theme-color1);
     outline: none;
-    background-color: var(--theme-color1);
-    color: var(--theme-color-light);
+    background-color: transparent;
+    color: var(--theme-color-dark);
     font-size: 16px;
     font-weight: 500;
     padding-left: 50px;
@@ -38,12 +40,17 @@ Sidebar
     width: 100%;
     padding-right: 80px;
     border-radius: 10px;
-    &::-webkit-input-placeholder,
-    &:-ms-input-placeholder,
-    &::-ms-input-placeholder,
+    // Kept as its own rule: grouping `::placeholder` with the IE-only
+    // `:-ms-input-placeholder` made browsers drop the whole block, so the
+    // colour set here never actually applied.
     &::placeholder {
-      color: var(--theme-color-white);
+      color: var(--text-color);
       opacity: 1;
+    }
+    // `* { outline: none }` removes the default focus ring, so the field needs
+    // to supply its own visible focus state.
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(167, 134, 39, 0.18);
     }
     @media only screen and (max-width: 767px){
       padding-left: 30px;
@@ -51,7 +58,7 @@ Sidebar
   }
   button[type="submit"] {
     background-color: transparent;
-    color: var(--theme-color-light);
+    color: var(--theme-color1);
     font-size: 22px;
     position: absolute;
     top: 0;

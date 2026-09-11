@@ -28,7 +28,7 @@ const MobileMenu = () => {
     useEffect(() => {
         const controller = new AbortController();
 
-        fetch('/api/search-posts?menu=1', { signal: controller.signal })
+        fetch('/api/search-posts/?menu=1', { signal: controller.signal })
             .then((response) => (response.ok ? response.json() : { posts: [] }))
             .then((data) => setBlogPosts(data.posts || []))
             .catch((error) => {
@@ -77,7 +77,7 @@ const MobileMenu = () => {
                     <Link href="/reservation">Reservation</Link>
                 </li>
                 <li>
-                    <Link href="/blog">Blog</Link>
+                    <Link href="/guide">Blog</Link>
                     {blogPosts.length > 0 && (
                         <>
                             <div

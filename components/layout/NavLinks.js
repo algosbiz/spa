@@ -11,12 +11,12 @@ const NavLinks = () => {
     const isTreatmentsActive = TREATMENT_MENU_COLUMNS.some((column) =>
         column.some((item) => isActiveHref(item.href))
     );
-    const isBlogActive = currentPath === '/blog' || currentPath.startsWith('/guide/');
+    const isBlogActive = currentPath === '/guide' || currentPath.startsWith('/guide/');
 
     useEffect(() => {
         const controller = new AbortController();
 
-        fetch('/api/search-posts?menu=1', { signal: controller.signal })
+        fetch('/api/search-posts/?menu=1', { signal: controller.signal })
             .then((response) => (response.ok ? response.json() : { posts: [] }))
             .then((data) => setBlogPosts(data.posts || []))
             .catch((error) => {
@@ -54,7 +54,7 @@ const NavLinks = () => {
             <li><Link href="/outcall-home-service-massage">Outcall</Link></li>
             <li><Link href="/reservation">Reservation</Link></li>
             <li className={`blog-menu-item${isBlogActive ? ' is-active' : ''}`}>
-                <Link href="/blog">Blog {blogPosts.length > 0 && <i className="fa-solid fa-angle-down"></i>}</Link>
+                <Link href="/guide">Blog {blogPosts.length > 0 && <i className="fa-solid fa-angle-down"></i>}</Link>
                 {blogPosts.length > 0 && (
                     <ul className="sub-menu blog-dropdown-menu">
                         {blogPosts.map((post) => (

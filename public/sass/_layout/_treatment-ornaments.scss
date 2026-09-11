@@ -1,0 +1,94 @@
+// ===========================================================================
+// Treatment-page ornaments.
+//
+// Every treatment page now renders the same set of corner ornaments the
+// Balinese page uses. The sizes below are the ones measured there; they are
+// keyed on the artwork rather than on a page class so a page only has to pass
+// the image and gets the proportions with it. The Balinese page's own rules
+// carry the same numbers, so nothing shifts there.
+// ===========================================================================
+
+.pricing-section-three .shape1 img[src$="package-four-shape-left.png"] {
+	width: 230px;
+	height: auto;
+}
+
+.about-section > .shape2 img[src$="about-right-shape.png"] {
+	width: 185px;
+	height: auto;
+}
+
+.about-section > .shape1 img[src$="step-shape-left.png"] {
+	width: 230px;
+	height: auto;
+}
+
+.about-section > .shape2 img[src$="banner-three-shape2.png"] {
+	width: 210px;
+	height: auto;
+}
+
+.about-section > .shape1 img[src*="/shape/leaf/"] {
+	width: 180px;
+	height: auto;
+}
+
+.testimonial-section-two .shape1 img[src$="testimonial-two-shape-left.png"] {
+	width: 270px;
+	height: auto;
+}
+
+// The theme leaves the service slider's two ornaments in normal flow, where
+// each one adds its own line height above the heading. Park them in the
+// corners instead, behind the cards -- the section already clips its overflow.
+.service-section-two > .shape1:has(img[src$="service-shape-left.png"]) {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+}
+
+// 170px keeps the 511px-tall artwork clear of the slider's prev arrow.
+.service-section-two > .shape1 img[src$="service-shape-left.png"] {
+	width: 170px;
+	height: auto;
+}
+
+.service-section-two > .shape2:has(img[src$="service-shape-right.png"]) {
+	position: absolute;
+	top: 40px;
+	right: 0;
+	z-index: -1;
+}
+
+.service-section-two > .shape2 img[src$="service-shape-right.png"] {
+	width: 230px;
+	height: auto;
+}
+
+// The floral cluster sits one level deeper than a plain ornament image, so the
+// wrapper is scaled instead of the two images -- that keeps the petals and the
+// blossoms in proportion to each other. `:has(> div)` is what separates it
+// from a wrapper holding a single image.
+.about-section > .shape2:has(> div > div) {
+	top: 35px;
+	z-index: 2;
+}
+
+.about-section > .shape2 > div:has(> div) {
+	transform: scale(1.2);
+	transform-origin: top right;
+}
+
+// Home1/About and AboutReverse render their left ornament without an
+// animation class, so it sat still while its partner on the right drifted.
+// Same keyframes and timing the other ornaments use.
+.about-section > .shape1 img:not([class]) {
+	animation: sway_Y 3s linear infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.about-section > .shape1 img:not([class]) {
+		animation: none !important;
+	}
+}

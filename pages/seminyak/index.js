@@ -14,6 +14,7 @@ import Banner from "../../components/sections/Home2/Banner";
 import ReserveCta from "../../components/sections/Home1/ReserveCta";
 import Faq from "../../components/sections/Home6/Faq";
 import { getListMenuImage } from "@/lib/listMenuImages";
+import { seoFor } from "@/lib/seo";
 
 const pricingTreatmentImages = Object.fromEntries(Object.entries({
   "Aloe Vera Massage": "/images/homepage/homepage-12.webp",
@@ -397,11 +398,14 @@ const pricingTabs = [
   { label: "For Couples", services: coupleTreatments },
 ];
 
+const PAGE_SEO_ROUTE = "/seminyak";
+const PAGE_SEO = seoFor(PAGE_SEO_ROUTE);
+
 export default function Home() {
 
   return (
     <>
-      <Layout HeaderStyle="one" FooterStyle="two">
+      <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
         <Banner
           subTitle="Find Your Treatment"
           titleSpan="Spa Treatments for"

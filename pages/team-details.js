@@ -7,7 +7,7 @@ export default function Home() {
 
     return (
         <>
-            <Layout HeaderStyle="one" FooterStyle="four">
+            <Layout HeaderStyle="one" FooterStyle="four" robots="noindex, nofollow">
                 <PageTitle pageName="Team Details" />
                 <TeamDetails />
             </Layout>

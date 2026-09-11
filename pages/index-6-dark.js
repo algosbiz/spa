@@ -15,7 +15,7 @@ import News from "../components/sections/Home6/News";
 export default function Home6() {
     return (
         <> 
-            <Layout HeaderStyle="one-dark" FooterStyle="four" styleMode="Dark">
+            <Layout HeaderStyle="one-dark" FooterStyle="four" styleMode="Dark" robots="noindex, nofollow">
                 <Banner />
                 <Feature />
                 <About />

@@ -21,6 +21,7 @@ import About from "../components/sections/Home1/About";
 import SessionOptions from "../components/sections/Home1/SessionOptions";
 import ReserveCta from "../components/sections/Home1/ReserveCta";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
+import { seoFor } from "@/lib/seo";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -77,11 +78,13 @@ const faqItems = [
   },
 ];
 
+const PAGE_SEO_ROUTE = "/seminyak/balinese-massage";
+const PAGE_SEO = seoFor(PAGE_SEO_ROUTE);
+
 export default function Home2({
   bannerShapeImage = "/images/shape/banner-two-shape.png",
   introLeftShapeImage = "/images/shape/about-two-left.png",
   introRightShapeImage = "/images/shape/about-two-right.png",
-  benefitsLeftShapeImage = "/images/shape/about-left-shape.png",
   benefitsRightShapeImage = "/images/shape/about-right-shape.png",
 }) {
   const decorationRoot = useRef(null);
@@ -89,7 +92,7 @@ export default function Home2({
   const treatmentImages = createTreatmentImageSet("balinesemassage", packageOptions.length);
     return (
       <>
-        <Layout HeaderStyle="one" FooterStyle="two">
+        <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
           <div className="balinese-massage-page" ref={decorationRoot}>
           <div className="balinese-massage-banner">
             <Banner
@@ -133,14 +136,14 @@ export default function Home2({
           {/* <Instagram /> */}
 
           <div className="balinese-massage-testimonial">
-            <Testimonial rightShapeSrc="/images/shape/hotstone.png" />
+            <Testimonial rightShapeSrc={null} />
           </div>
           {/* <Team /> */}
           {/* <Contact /> */}
           <div className="balinese-massage-benefits">
           <About
             image={treatmentImages.details[0]}
-            leftShapeSrc={benefitsLeftShapeImage}
+            leftShapeSrc={null}
             rightShapeSrc={benefitsRightShapeImage}
             subTitle="The Benefits"
             title={<>Why Guests Choose Balinese Massage</>}
@@ -278,7 +281,7 @@ export default function Home2({
             .balinese-massage-page.balinese-massage-page .about-section:not([class*="decoration"]),
             #balinese-massage-funfact#balinese-massage-funfact > .funfact-section,
             #balinese-massage-services-section#balinese-massage-services-section > .service-section-two {
-              padding-top: 124px !important;
+              padding-top: 143px !important;
             }
 
             /* The closing CTA sits under its wrapper's TOP tear, not under a
@@ -293,11 +296,11 @@ export default function Home2({
                of element -- a paragraph, a stats row, a Book Now button --
                so each needed its own measured number. */
             .balinese-massage-page.balinese-massage-page .about-section-two {
-              padding-bottom: 101px !important;
+              padding-bottom: 118px !important;
             }
 
             #balinese-massage-funfact#balinese-massage-funfact > .funfact-section {
-              padding-bottom: 116px !important;
+              padding-bottom: 135px !important;
             }
 
             .balinese-massage-page.balinese-massage-page .about-section:not([class*="decoration"]) {
@@ -308,7 +311,7 @@ export default function Home2({
                numbers and ended up wider than its neighbours above and
                narrower below. */
             .balinese-massage-page.balinese-massage-page .about-section[class*="decoration"] {
-              padding-top: 146px !important;
+              padding-top: 163px !important;
               padding-bottom: 157px !important;
             }
 
@@ -330,6 +333,11 @@ export default function Home2({
               padding-top: 163px !important;
               padding-bottom: 157px !important;
             }
+
+            .balinese-massage-faq .faq-section .content-column .inner-column {
+              padding-top: 40px !important;
+              padding-bottom: 40px !important;
+            }
           }
 
           @media (max-width: 991px) {
@@ -340,7 +348,7 @@ export default function Home2({
                their desktop counterparts. */
             .balinese-massage-page.balinese-massage-page .about-section:not([class*="decoration"]),
             #balinese-massage-services-section#balinese-massage-services-section > .service-section-two {
-              padding-top: 35px !important;
+              padding-top: 54px !important;
             }
 
             .balinese-massage-page.balinese-massage-page .about-section-two,
@@ -375,22 +383,27 @@ export default function Home2({
 
             .balinese-massage-page.balinese-massage-page .balinese-massage-testimonial > .testimonial-section-two {
               padding-top: 98px !important;
-              padding-bottom: 90px !important;
+              padding-bottom: 96px !important;
             }
 
             .balinese-massage-page.balinese-massage-page .balinese-massage-faq > .faq-section {
-              padding-top: 98px !important;
+              padding-top: 115px !important;
               padding-bottom: 96px !important;
+            }
+
+            .balinese-massage-faq .faq-section .content-column .inner-column {
+              padding-top: 24px !important;
+              padding-bottom: 24px !important;
             }
 
             /* The two about-sections already measure right on phones, so only
                these two move. */
             .balinese-massage-page.balinese-massage-page .about-section-two {
-              padding-bottom: 30px !important;
+              padding-bottom: 47px !important;
             }
 
             #balinese-massage-funfact#balinese-massage-funfact > .funfact-section {
-              padding-bottom: 31px !important;
+              padding-bottom: 48px !important;
             }
           }
 
@@ -464,12 +477,21 @@ export default function Home2({
             z-index: 1;
           }
 
+          /* Flush into the bottom-right corner. step-shape-left.png is drawn for
+             a left edge: its artwork ends 66px (at this size) before the file's
+             right edge, so right:0 alone would leave the bowl floating away
+             from the corner. Mirroring moves that padding to the left and puts
+             the artwork against the edge -- the same trick the FAQ shape below
+             uses. The bottom of the artwork is fully opaque, so bottom:0 lands
+             it on the corner. The transform lives on the wrapper, leaving the
+             image's own arryUpDown translate untouched. */
           .balinese-massage-cta-shape {
             position: absolute;
-            left: 0;
-            bottom: 120px;
+            right: 0;
+            bottom: 0;
             z-index: 1;
             pointer-events: none;
+            transform: scaleX(-1);
           }
 
           .balinese-massage-faq {
@@ -502,8 +524,18 @@ export default function Home2({
             height: auto;
           }
 
+          /* The CTA banner is a fixed 1410px and centred, so the margin beside
+             it is only wide enough for the 134px of artwork once the viewport
+             passes ~1680px. Below that the corner ornament would land on the
+             photo rather than next to it, so it stays hidden -- a higher bar
+             than the 1399px the other ornaments use. */
+          @media (max-width: 1679px) {
+            .balinese-massage-cta-shape {
+              display: none;
+            }
+          }
+
           @media (max-width: 1399px) {
-            .balinese-massage-cta-shape,
             .balinese-massage-faq-shape {
               display: none;
             }
@@ -546,7 +578,6 @@ export default function Home2({
           /* Home1/About renders its left ornament without an animation class,
              so those three sat still while their partner on the right moved.
              Same keyframes and 3s timing the homepage ornaments use. */
-          .balinese-massage-benefits .about-section > .shape1 img,
           .balinese-massage-suitable .about-section > .shape1 img,
           .balinese-massage-experience .about-section > .shape1 img {
             animation: sway_Y 3s linear infinite alternate;
@@ -573,11 +604,6 @@ export default function Home2({
 
           .balinese-massage-testimonial .testimonial-section-two .shape1 img {
             width: 270px;
-            height: auto;
-          }
-
-          .balinese-massage-testimonial .testimonial-section-two .shape2 img {
-            width: 260px;
             height: auto;
           }
 

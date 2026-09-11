@@ -1,3 +1,4 @@
+import FloralDecoration from "../components/elements/FloralDecoration";
 import React from "react";
 import Layout from "../components/layout/Layout";
 import Banner from "../components/sections/Home2/Banner";
@@ -12,6 +13,7 @@ import SessionOptions from "../components/sections/Home1/SessionOptions";
 import Faq from "../components/sections/Home6/Faq";
 import Services from "../components/sections/Home2/Services";
 import { createTreatmentImageSet } from "@/lib/treatmentImages";
+import { seoFor } from "@/lib/seo";
 
 const bookingUrl = "https://wa.me/6287863175144";
 
@@ -200,11 +202,14 @@ const faqItems = [
   },
 ];
 
+const PAGE_SEO_ROUTE = "/seminyak/couple-spa";
+const PAGE_SEO = seoFor(PAGE_SEO_ROUTE);
+
 export default function CoupleMassage() {
   const treatmentImages = createTreatmentImageSet("couplemassage", packageOptions.length);
   return (
     <>
-      <Layout HeaderStyle="one" FooterStyle="two">
+      <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
         <div className="couple-massage-banner">
           <Banner
             image={treatmentImages.hero}
@@ -214,6 +219,8 @@ export default function CoupleMassage() {
           />
         </div>
         <AboutOld
+          leftShapeSrc="/images/shape/about-two-left.png"
+          rightShapeSrc="/images/shape/about-two-right.png"
           primaryImage={treatmentImages.intro[0]}
           secondaryImage={treatmentImages.intro[1]}
           subTitle="Shared Wellness"
@@ -226,6 +233,7 @@ export default function CoupleMassage() {
         />
         <div className="couple-massage-pricing">
           <Pricing
+            leftShapeSrc="/images/shape/package-four-shape-left.png"
             images={treatmentImages.pricing}
             subTitle="Find Yours"
             title="Our Package Options"
@@ -246,8 +254,10 @@ export default function CoupleMassage() {
           <Funfact items={serviceHighlights} />
         </div>
 
-        <Testimonial />
+        <Testimonial rightShapeSrc={null} />
         <About
+          leftShapeSrc={null}
+          rightShapeSrc="/images/shape/about-right-shape.png"
           image={treatmentImages.details[0]}
           subTitle="Shared Moments"
           title={<>Why Is Couple Massage So Popular in Bali?</>}
@@ -266,6 +276,9 @@ export default function CoupleMassage() {
           buttonLink={bookingUrl}
         />
         <AboutReverse
+          leftShapeSrc="/images/shape/step-shape-left.png"
+          rightShapeSrc="/images/shape/banner-six-shape2.png"
+          rightDecoration={<FloralDecoration clustered />}
           image={treatmentImages.details[1]}
           subTitle="Suitable For"
           badgeTopText="A Moment"
@@ -286,6 +299,7 @@ export default function CoupleMassage() {
           buttonLink={bookingUrl}
         />
         <About
+          rightShapeSrc="/images/shape/banner-three-shape2.png"
           image={treatmentImages.details[2]}
           subTitle="Your Visit"
           badgeTopText="Two in"
@@ -316,7 +330,14 @@ export default function CoupleMassage() {
             items={faqItems}
           />
         </div>
-        <div>
+        <div className="couple-massage-services">
+          <Services
+            leftShapeSrc="/images/shape/service-shape-left.png"
+            rightShapeSrc="/images/shape/service-shape-right.png"
+            title="Discover More Ways to Relax Together" showFullTreatmentSlider embedded
+          />
+        </div>
+        <div className="couple-massage-paper-section section__decoration-top section__decoration-bottom bg-sub">
           <ReserveCta
             standardSpacing
             backgroundImage={treatmentImages.cta}
@@ -324,9 +345,6 @@ export default function CoupleMassage() {
             text="A Couple Massage is a simple way to enjoy quality time while also giving your body a chance to relax. Many guests book this experience during their holiday, honeymoon, anniversary, or even as a wellness activity with friends or family. Sessions are available in our spa or through home service at villas and hotels, with an additional IDR 75,000 per therapist within Seminyak and nearby areas."
             closingText="Create a memorable wellness experience together and let our therapists take care of the rest."
           />
-        </div>
-        <div className="couple-massage-services section__decoration-top section__decoration-bottom bg-sub">
-          <Services title="Discover More Ways to Relax Together" showFullTreatmentSlider embedded />
         </div>
       </Layout>
       <style jsx global>{`

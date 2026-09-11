@@ -7,7 +7,7 @@ export default function PageShopSidebar() {
 
     return (
         <>
-            <Layout HeaderStyle="one" FooterStyle="four">
+            <Layout HeaderStyle="one" FooterStyle="four" robots="noindex, nofollow">
                 <PageTitle pageName="Shop Sidebar" />
                 <ShopSidebar />
             </Layout>

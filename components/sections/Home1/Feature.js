@@ -48,7 +48,7 @@ const treatmentNameAliases = {
 
 const standaloneServiceHrefs = {
     "Hair Braiding": "/seminyak/hair-braiding",
-    "Nail Art": "/seminyak/nail-art",
+    "Nail Art": "/seminyak/nail-spa",
 };
 
 const linkedServices = services.map((service) => {

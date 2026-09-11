@@ -55,7 +55,7 @@ const faqItems = [
 export default function MassageSeminyak() {
     return (
         <>
-            <Layout HeaderStyle="one" FooterStyle="two">
+            <Layout HeaderStyle="one" FooterStyle="two" robots="noindex, nofollow">
                 <Banner
                     subTitle="A Better Way to Refresh"
                     titleSpan="Massage in"

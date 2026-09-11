@@ -3,11 +3,15 @@ import Layout from "../components/layout/Layout";
 import PageTitle from "../components/sections/PageTitle";
 import ContactInner from "../components/sections/ContactInner";
 import Banner from "../components/sections/Home2/Banner";
+import { seoFor } from "@/lib/seo";
+const PAGE_SEO_ROUTE = "/contact";
+const PAGE_SEO = seoFor(PAGE_SEO_ROUTE);
+
 export default function Home() {
 
     return (
       <>
-        <Layout HeaderStyle="one" FooterStyle="two">
+        <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
           <Banner
             subTitle="Ready When You Are"
             titleSpan="Book Your Spa"
