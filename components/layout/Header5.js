@@ -32,7 +32,7 @@ const Header5 = ({ scroll }) => {
             <header className={`header-area ${scroll ? "menu-fixed" : ""}`}>
                 <div className="header-one__wrp">
                     <div className="header__main">
-                        <Link href="/" className="logo">
+                        <Link prefetch={false} href="/" className="logo">
                             <img src="/images/logo/SMBtitle.svg" alt="logo" width="435" height="80"/>
                         </Link>
                         <div className="main-menu">
@@ -41,7 +41,7 @@ const Header5 = ({ scroll }) => {
                             </nav>
                             <div className="menu-btns">
                                 <button className="search-trigger d-none d-lg-block" onClick={handleToggleSearch}><i className="fa-light fa-magnifying-glass"></i></button>
-                                <Link href="/contact" className="book-now d-none d-xl-inline-block">Book An Appoinment
+                                <Link prefetch={false} href="/contact" className="book-now d-none d-xl-inline-block">Book An Appoinment
                                     <svg width="12" height="13" viewBox="0 0 12 13" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <g clipPath="url(#clip0_1_441)">
@@ -75,7 +75,7 @@ const Header5 = ({ scroll }) => {
             {/* <!-- Sidebar area start here --> */}
             <div className={`sidebar-area sidebar-area--white offcanvas offcanvas-end ${sidebarToggle ? 'show' : ''}`} id="menubar" style={{ backgroundColor: "#ffffff", borderLeft: "1px solid rgba(95, 90, 84, 0.12)" }}>
                 <div className="offcanvas-header">
-                    <Link href="/" className="logo"> <img src="/images/logo/SMBtitle.svg" alt="logo" width="435" height="80"/></Link>
+                    <Link prefetch={false} href="/" className="logo"> <img src="/images/logo/SMBtitle.svg" alt="logo" width="435" height="80"/></Link>
                     <button type="button" className="btn-close" onClick={handleToggleSidebar}><i
                             className="fa-regular fa-xmark"></i></button>
                 </div>
@@ -90,15 +90,15 @@ const Header5 = ({ scroll }) => {
                     <div className="sidebar__contact-info mt-30">
                         <h5 className="mb-20" style={{ color: "#2f2924" }}>Contact Info</h5>
                         <ul>
-                            <li><i className="fa-solid fa-location-dot" style={{ color: "#A78627" }}></i> <Link href="/#0" style={{ color: "#5f5a54" }}>Jl. Panggung Sari No. 30, Seminyak, Bali</Link></li>
-                            <li className="py-2"><i className="fa-solid fa-phone-volume" style={{ color: "#A78627" }}></i> <Link href="tel:+6287863175144" style={{ color: "#5f5a54" }}>+62 878-6317-5144</Link></li>
-                            <li><i className="fa-solid fa-paper-plane" style={{ color: "#A78627" }}></i> <Link href="mailto:info@spabalimoon.com" style={{ color: "#5f5a54" }}>info@spabalimoon.com</Link></li>
+                            <li><i className="fa-solid fa-location-dot" style={{ color: "#A78627" }}></i> <Link prefetch={false} href="/#0" style={{ color: "#5f5a54" }}>Jl. Panggung Sari No. 30, Seminyak, Bali</Link></li>
+                            <li className="py-2"><i className="fa-solid fa-phone-volume" style={{ color: "#A78627" }}></i> <Link prefetch={false} href="tel:+6287863175144" style={{ color: "#5f5a54" }}>+62 878-6317-5144</Link></li>
+                            <li><i className="fa-solid fa-paper-plane" style={{ color: "#A78627" }}></i> <Link prefetch={false} href="mailto:info@spabalimoon.com" style={{ color: "#5f5a54" }}>info@spabalimoon.com</Link></li>
                         </ul>
                     </div>
                     <div className="sidebar__socials mt-30">
                         <ul>
                             <li>
-                                <Link href="/#0">
+                                <Link prefetch={false} href="/#0">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -108,7 +108,7 @@ const Header5 = ({ scroll }) => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/#0">
+                                <Link prefetch={false} href="/#0">
                                     <svg width="8" height="16" viewBox="0 0 8 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -119,7 +119,7 @@ const Header5 = ({ scroll }) => {
                             </li>
 
                             <li>
-                                <Link href="/#0">
+                                <Link prefetch={false} href="/#0">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -130,7 +130,7 @@ const Header5 = ({ scroll }) => {
                             </li>
 
                             <li>
-                                <Link href="/#0">
+                                <Link prefetch={false} href="/#0">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path

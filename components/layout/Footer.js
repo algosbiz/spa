@@ -10,7 +10,7 @@ const Footer = () => {
 			</div>
 			<div className="container">
 				<div className="footer__head">
-					<Link href="/" className="logo"><img loading="lazy" decoding="async" src="/images/logo/logo-light.png" alt="logo"/></Link>
+					<Link prefetch={false} href="/" className="logo"><img loading="lazy" decoding="async" src="/images/logo/logo-light.png" alt="logo"/></Link>
 				</div>
 				<div className="row g-5">
 					<div className="col-md-6 col-xl-4">
@@ -22,7 +22,7 @@ const Footer = () => {
 										egestas
 										magna mi ut arcu.</p>
 									<div className="socials">
-										<Link href="#0">
+										<Link prefetch={false} href="#0">
 											<svg width="22" height="23" viewBox="0 0 25 26" fill="none"
 												xmlns="http://www.w3.org/2000/svg">
 												<path
@@ -30,12 +30,12 @@ const Footer = () => {
 													fill="white" />
 											</svg>
 										</Link>
-										<Link href="#0"><i className="fa-brands fa-facebook-f"></i></Link>
-										<Link href="#0"><i className="fa-brands fa-pinterest-p"></i></Link>
-										<Link href="#0"><i className="fa-brands fa-vimeo-v"></i></Link>
+										<Link prefetch={false} href="#0"><i className="fa-brands fa-facebook-f"></i></Link>
+										<Link prefetch={false} href="#0"><i className="fa-brands fa-pinterest-p"></i></Link>
+										<Link prefetch={false} href="#0"><i className="fa-brands fa-vimeo-v"></i></Link>
 									</div>
 								</div>
-								<p className="copyright-text">&copy; 2025 <Link href="/">Sparelx</Link>, All Rights Reserved
+								<p className="copyright-text">&copy; 2025 <Link prefetch={false} href="/">Sparelx</Link>, All Rights Reserved
 								</p>
 							</div>
 						</div>
@@ -44,10 +44,10 @@ const Footer = () => {
 						<div className="footer__item">
 							<h3 className="title">Links</h3>
 							<ul className="links">
-								<li><Link href="#0">About</Link></li>
-								<li><Link href="#0">Pricing</Link></li>
-								<li><Link href="#0">Shop</Link></li>
-								<li><Link href="#0">Contact</Link></li>
+								<li><Link prefetch={false} href="#0">About</Link></li>
+								<li><Link prefetch={false} href="#0">Pricing</Link></li>
+								<li><Link prefetch={false} href="#0">Shop</Link></li>
+								<li><Link prefetch={false} href="#0">Contact</Link></li>
 							</ul>
 						</div>
 					</div>
@@ -55,9 +55,9 @@ const Footer = () => {
 						<div className="footer__item">
 							<h3 className="title">Contact</h3>
 							<ul className="links">
-								<li><Link href="#0">2972 Westheimer Rd. Santa Ana, <br /> Illinois 85486</Link></li>
-								<li><Link href="#0">(907) 555-0101</Link></li>
-								<li><Link href="#0">curtis.weaver@example.com</Link></li>
+								<li><Link prefetch={false} href="#0">2972 Westheimer Rd. Santa Ana, <br /> Illinois 85486</Link></li>
+								<li><Link prefetch={false} href="#0">(907) 555-0101</Link></li>
+								<li><Link prefetch={false} href="#0">curtis.weaver@example.com</Link></li>
 							</ul>
 						</div>
 					</div>

@@ -32,7 +32,7 @@ const Header4 = ({ scroll }) => {
             <header class={`header-area header-four-area ${scroll ? "menu-fixed" : ""}`}>
                 <div class="header-one__wrp">
                     <div class="header__main">
-                        <Link href="/" class="logo">
+                        <Link prefetch={false} href="/" class="logo">
                             <img src="/images/logo/SMBtitle.svg" alt="logo" width="435" height="80"/>
                         </Link>
                         <div class="main-menu main-menu-light">
@@ -59,7 +59,7 @@ const Header4 = ({ scroll }) => {
             {/* <!-- Sidebar area start here --> */}
             <div className={`sidebar-area sidebar-area--white offcanvas offcanvas-end ${sidebarToggle ? 'show' : ''}`} id="menubar" style={{ backgroundColor: "#ffffff", borderLeft: "1px solid rgba(95, 90, 84, 0.12)" }}>
                 <div className="offcanvas-header">
-                    <Link href="/" className="logo"> <img src="/images/logo/SMBtitle.svg" alt="logo" width="435" height="80"/></Link>
+                    <Link prefetch={false} href="/" className="logo"> <img src="/images/logo/SMBtitle.svg" alt="logo" width="435" height="80"/></Link>
                     <button type="button" className="btn-close" onClick={handleToggleSidebar}><i
                             className="fa-regular fa-xmark"></i></button>
                 </div>
@@ -74,15 +74,15 @@ const Header4 = ({ scroll }) => {
                     <div className="sidebar__contact-info mt-30">
                         <h5 className="mb-20" style={{ color: "#2f2924" }}>Contact Info</h5>
                         <ul>
-                            <li><i className="fa-solid fa-location-dot" style={{ color: "#A78627" }}></i> <Link href="/#0" style={{ color: "#5f5a54" }}>Jl. Panggung Sari No. 30, Seminyak, Bali</Link></li>
-                            <li className="py-2"><i className="fa-solid fa-phone-volume" style={{ color: "#A78627" }}></i> <Link href="tel:+6287863175144" style={{ color: "#5f5a54" }}>+62 878-6317-5144</Link></li>
-                            <li><i className="fa-solid fa-paper-plane" style={{ color: "#A78627" }}></i> <Link href="mailto:info@spabalimoon.com" style={{ color: "#5f5a54" }}>info@spabalimoon.com</Link></li>
+                            <li><i className="fa-solid fa-location-dot" style={{ color: "#A78627" }}></i> <Link prefetch={false} href="/#0" style={{ color: "#5f5a54" }}>Jl. Panggung Sari No. 30, Seminyak, Bali</Link></li>
+                            <li className="py-2"><i className="fa-solid fa-phone-volume" style={{ color: "#A78627" }}></i> <Link prefetch={false} href="tel:+6287863175144" style={{ color: "#5f5a54" }}>+62 878-6317-5144</Link></li>
+                            <li><i className="fa-solid fa-paper-plane" style={{ color: "#A78627" }}></i> <Link prefetch={false} href="mailto:info@spabalimoon.com" style={{ color: "#5f5a54" }}>info@spabalimoon.com</Link></li>
                         </ul>
                     </div>
                     <div className="sidebar__socials mt-30">
                         <ul>
                             <li>
-                                <Link href="/#0">
+                                <Link prefetch={false} href="/#0">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -92,7 +92,7 @@ const Header4 = ({ scroll }) => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/#0">
+                                <Link prefetch={false} href="/#0">
                                     <svg width="8" height="16" viewBox="0 0 8 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -103,7 +103,7 @@ const Header4 = ({ scroll }) => {
                             </li>
 
                             <li>
-                                <Link href="/#0">
+                                <Link prefetch={false} href="/#0">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -114,7 +114,7 @@ const Header4 = ({ scroll }) => {
                             </li>
 
                             <li>
-                                <Link href="/#0">
+                                <Link prefetch={false} href="/#0">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path

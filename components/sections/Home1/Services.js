@@ -129,7 +129,7 @@ export default function Home1_Services({
                                         fill="#A78627" />
                                 </svg>
                             </div>
-                            <h4 className="title"><Link href={services[0].href}>{services[0].title}</Link></h4>
+                            <h4 className="title"><Link prefetch={false} href={services[0].href}>{services[0].title}</Link></h4>
                             <p className="text">{services[0].text}</p>
                         </div>
                     </div>
@@ -225,7 +225,7 @@ export default function Home1_Services({
                                         fill="#A78627" />
                                 </svg>
                             </div>
-                            <h4 className="title"><Link href={services[1].href}>{services[1].title}</Link></h4>
+                            <h4 className="title"><Link prefetch={false} href={services[1].href}>{services[1].title}</Link></h4>
                             <p className="text">{services[1].text}</p>
                         </div>
                     </div>
@@ -340,7 +340,7 @@ export default function Home1_Services({
                                         fill="#A78627" />
                                 </svg>
                             </div>
-                            <h4 className="title"><Link href={services[2].href}>{services[2].title}</Link></h4>
+                            <h4 className="title"><Link prefetch={false} href={services[2].href}>{services[2].title}</Link></h4>
                             <p className="text">{services[2].text}</p>
                         </div>
                     </div>
@@ -424,7 +424,7 @@ export default function Home1_Services({
                                         fill="#A78627" />
                                 </svg>
                             </div>
-                            <h4 className="title"><Link href={services[3].href}>{services[3].title}</Link></h4>
+                            <h4 className="title"><Link prefetch={false} href={services[3].href}>{services[3].title}</Link></h4>
                             <p className="text">{services[3].text}</p>
                         </div>
                     </div>

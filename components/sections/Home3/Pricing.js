@@ -110,7 +110,7 @@ export default function Home3_Pricing({
                                         <ul>
                                             {packageItem.treatments.map((treatment) => <li key={treatment}>{treatment}</li>)}
                                         </ul>
-                                        <Link href="https://wa.me/6287863175144" target="_blank" rel="noopener noreferrer" className="btn-two mt-35">Book Now
+                                        <Link prefetch={false} href="https://wa.me/6287863175144" target="_blank" rel="noopener noreferrer" className="btn-two mt-35">Book Now
                                             <span className="icon_box">
                                                 <i className="fa-regular icon_first fa-arrow-right-long"></i>
                                                 <i className="fa-regular icon_second fa-arrow-right-long"></i>

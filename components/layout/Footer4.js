@@ -12,7 +12,7 @@ const Footer = () => {
                                 <div className="footer__item">
                                     <div className="footer-about">
                                         <div>
-                                            <Link href="/" className="logo footer__brand">
+                                            <Link prefetch={false} href="/" className="logo footer__brand">
                                                 <img loading="lazy" decoding="async" src="/images/logo/SMBtitle.svg" alt="Spa Bali Moon" />
                                             </Link>
                                             <p className="text">Spa Bali Moon offers high-quality traditional massages and spa therapies, with outcall and home services by skilled therapists specializing in Balinese Body Massage.</p>
@@ -33,10 +33,10 @@ const Footer = () => {
                                     <div className="footer__follow">
                                         <h3 className="title">Follow Us</h3>
                                         <div className="socials">
-                                            <Link href="#0" aria-label="Tripadvisor">
+                                            <Link prefetch={false} href="#0" aria-label="Tripadvisor">
                                                 <i className="fa-brands fa-tripadvisor"></i>
                                             </Link>
-                                            <Link href="#0" aria-label="Instagram">
+                                            <Link prefetch={false} href="#0" aria-label="Instagram">
                                                 <i className="fa-brands fa-instagram"></i>
                                             </Link>
                                         </div>
@@ -50,7 +50,7 @@ const Footer = () => {
                                         <li>Day Spa in Seminyak</li>
                                         <li>Open Daily: 9am-11pm</li>
                                         <li>Address: Jl. Pangkung Sari No. 30, Seminyak, Bali</li>
-                                        <li><Link href="/home-service" style={{ color: 'inherit', textDecoration: 'underline' }}><strong>Home service fee</strong></Link> 75k/therapist</li>
+                                        <li><Link prefetch={false} href="/home-service" style={{ color: 'inherit', textDecoration: 'underline' }}><strong>Home service fee</strong></Link> 75k/therapist</li>
                                     </ul>
                                 </div>
                             </div>
@@ -58,9 +58,9 @@ const Footer = () => {
                                 <div className="footer__item">
                                     <h3 className="title">Home Services</h3>
                                     <ul className="links">
-                                        <li><Link href="#0">Massage Hotel &amp; Villa</Link></li>
-                                        <li><Link href="#0">Massage Seminyak</Link></li>
-                                        <li><Link href="#0">Massage Kuta</Link></li>
+                                        <li><Link prefetch={false} href="#0">Massage Hotel &amp; Villa</Link></li>
+                                        <li><Link prefetch={false} href="#0">Massage Seminyak</Link></li>
+                                        <li><Link prefetch={false} href="#0">Massage Kuta</Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -91,8 +91,8 @@ const Footer = () => {
                         <div className="footer__bottom">
                             <p className="copyright-text">All Rights Reserved &copy; 2026 Spa Bali Moon</p>
                             <div className="footer__bottom-links">
-                                <Link href="/privacy-policy">Privacy Policy</Link>
-                                <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
+                                <Link prefetch={false} href="/privacy-policy">Privacy Policy</Link>
+                                <Link prefetch={false} href="/terms-and-conditions">Terms &amp; Conditions</Link>
                             </div>
                         </div>
                     </div>

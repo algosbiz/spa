@@ -134,13 +134,13 @@ export default function Home2_Services() {
                                     </div>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-service-details">Foot Reflexology</Link></h3>
+                                    <h3 className="title"><Link prefetch={false} href="/page-service-details">Foot Reflexology</Link></h3>
                                     <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.</p>
                                 </div>
                                 <div className="shape">
                                     <img loading="lazy" decoding="async" src="/images/service/shape.png" alt="shape"/>
                                 </div>
-                                <Link href="/page-service-details" className="arry-icon">
+                                <Link prefetch={false} href="/page-service-details" className="arry-icon">
                                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <g clipPath="url(#clip0_1_1417)">
@@ -261,13 +261,13 @@ export default function Home2_Services() {
                                     </div>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-service-details">Head Message</Link></h3>
+                                    <h3 className="title"><Link prefetch={false} href="/page-service-details">Head Message</Link></h3>
                                     <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.</p>
                                 </div>
                                 <div className="shape">
                                     <img loading="lazy" decoding="async" src="/images/service/shape.png" alt="shape"/>
                                 </div>
-                                <Link href="/page-service-details" className="arry-icon">
+                                <Link prefetch={false} href="/page-service-details" className="arry-icon">
                                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <g clipPath="url(#clip0_1_1417)">
@@ -319,13 +319,13 @@ export default function Home2_Services() {
                                     </div>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-service-details">Stone Message</Link></h3>
+                                    <h3 className="title"><Link prefetch={false} href="/page-service-details">Stone Message</Link></h3>
                                     <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.</p>
                                 </div>
                                 <div className="shape">
                                     <img loading="lazy" decoding="async" src="/images/service/shape.png" alt="shape"/>
                                 </div>
-                                <Link href="/page-service-details" className="arry-icon">
+                                <Link prefetch={false} href="/page-service-details" className="arry-icon">
                                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <g clipPath="url(#clip0_1_1417)">
@@ -394,13 +394,13 @@ export default function Home2_Services() {
                                     </div>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="#0">Foot Reflexology</Link></h3>
+                                    <h3 className="title"><Link prefetch={false} href="#0">Foot Reflexology</Link></h3>
                                     <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.</p>
                                 </div>
                                 <div className="shape">
                                     <img loading="lazy" decoding="async" src="/images/service/shape.png" alt="shape"/>
                                 </div>
-                                <Link href="#0" className="arry-icon">
+                                <Link prefetch={false} href="#0" className="arry-icon">
                                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clipPath="url(#clip0_1_1417)">
                                             <path

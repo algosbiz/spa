@@ -47,7 +47,7 @@ export default function Home4_Pricing() {
                             </div>
                             <div className="content">
                                 <h3 className="title">
-                                    <Link href="/page-pricing">Aroma therapy</Link>
+                                    <Link prefetch={false} href="/page-pricing">Aroma therapy</Link>
                                     <span className="line"></span>
                                     <span>from</span> $50
                                 </h3>
@@ -60,7 +60,7 @@ export default function Home4_Pricing() {
                             </div>
                             <div className="content">
                                 <h3 className="title">
-                                    <Link href="/page-pricing">Sauna relax</Link>
+                                    <Link prefetch={false} href="/page-pricing">Sauna relax</Link>
                                     <span className="line"></span>
                                     <span>from</span> $50
                                 </h3>
@@ -73,7 +73,7 @@ export default function Home4_Pricing() {
                             </div>
                             <div className="content">
                                 <h3 className="title">
-                                    <Link href="/page-pricing">Geothermal spa</Link>
+                                    <Link prefetch={false} href="/page-pricing">Geothermal spa</Link>
                                     <span className="line"></span>
                                     <span>from</span> $50
                                 </h3>
@@ -86,7 +86,7 @@ export default function Home4_Pricing() {
                             </div>
                             <div className="content">
                                 <h3 className="title">
-                                    <Link href="/page-pricing">Aroma therapy</Link>
+                                    <Link prefetch={false} href="/page-pricing">Aroma therapy</Link>
                                     <span className="line"></span>
                                     <span>from</span> $50
                                 </h3>
@@ -101,7 +101,7 @@ export default function Home4_Pricing() {
                             </div>
                             <div className="content">
                                 <h3 className="title">
-                                    <Link href="/page-pricing">Aroma therapy</Link>
+                                    <Link prefetch={false} href="/page-pricing">Aroma therapy</Link>
                                     <span className="line"></span>
                                     <span>from</span> $50
                                 </h3>
@@ -114,7 +114,7 @@ export default function Home4_Pricing() {
                             </div>
                             <div className="content">
                                 <h3 className="title">
-                                    <Link href="/page-pricing">Sauna relax</Link>
+                                    <Link prefetch={false} href="/page-pricing">Sauna relax</Link>
                                     <span className="line"></span>
                                     <span>from</span> $50
                                 </h3>
@@ -127,7 +127,7 @@ export default function Home4_Pricing() {
                             </div>
                             <div className="content">
                                 <h3 className="title">
-                                    <Link href="/page-pricing">Geothermal spa</Link>
+                                    <Link prefetch={false} href="/page-pricing">Geothermal spa</Link>
                                     <span className="line"></span>
                                     <span>from</span> $50
                                 </h3>
@@ -140,7 +140,7 @@ export default function Home4_Pricing() {
                             </div>
                             <div className="content">
                                 <h3 className="title">
-                                    <Link href="/page-pricing">Aroma therapy</Link>
+                                    <Link prefetch={false} href="/page-pricing">Aroma therapy</Link>
                                     <span className="line"></span>
                                     <span>from</span> $50
                                 </h3>

@@ -30,6 +30,7 @@ CSS TABLE OF CONTENTS
     4.01 --> All Section
 
 ------------------------------------------------------------------*/
+@import url("google-fonts.css");
 @import url("meanmenu.css");
 @import url("animate.css");
 @import url("fontawesome.css");

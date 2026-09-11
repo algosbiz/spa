@@ -128,7 +128,7 @@ export default function Home1_Feature({
                                         </div>
                                         <div className="info">
                                             <h6 className="sub-title">From $50 | 60 mins</h6>
-                                            <h3><Link href={service.href || "/page-service-details"}>{service.name}</Link></h3>
+                                            <h3><Link prefetch={false} href={service.href || "/page-service-details"}>{service.name}</Link></h3>
                                             <p className="text">Relax and rejuvenate your body and soul.</p>
                                         </div>
                                     </div>

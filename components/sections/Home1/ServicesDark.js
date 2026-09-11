@@ -114,7 +114,7 @@ export default function Home1_Services() {
                                     fill="#A78627" />
                             </svg>
                             </div>
-                            <h4 className="title"><Link href="/page-service-details">Stone spa</Link></h4>
+                            <h4 className="title"><Link prefetch={false} href="/page-service-details">Stone spa</Link></h4>
                             <p className="text">
                                 Risus commodo viverra maecenas accumsan lacus vel facilisis.
                             </p>
@@ -210,7 +210,7 @@ export default function Home1_Services() {
                                         fill="#A78627" />
                                 </svg>
                             </div>
-                            <h4 className="title"><Link href="/page-service-details">Body Therapy</Link></h4>
+                            <h4 className="title"><Link prefetch={false} href="/page-service-details">Body Therapy</Link></h4>
                             <p className="text">Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
                         </div>
                     </div>
@@ -323,7 +323,7 @@ export default function Home1_Services() {
                                         fill="#A78627" />
                                 </svg>
                             </div>
-                            <h4 className="title"><Link href="/page-service-details">Facials</Link></h4>
+                            <h4 className="title"><Link prefetch={false} href="/page-service-details">Facials</Link></h4>
                             <p className="text">Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
                         </div>
                     </div>
@@ -406,7 +406,7 @@ export default function Home1_Services() {
                                         fill="#A78627" />
                                 </svg>
                             </div>
-                            <h4 className="title"><Link href="/page-service-details">Medicine</Link></h4>
+                            <h4 className="title"><Link prefetch={false} href="/page-service-details">Medicine</Link></h4>
                             <p className="text">Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
                         </div>
                     </div>

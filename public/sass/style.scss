@@ -31,10 +31,12 @@ CSS TABLE OF CONTENTS
 ------------------------------------------------------------------*/
 
 // Google fonts ***
-// Google Fonts are requested from PageHead via <link rel="preconnect"> +
-// <link rel="stylesheet">; importing them here too only added a slower,
-// chained copy of the same request.
+// Literata + Mulish are self-hosted (public/css/google-fonts.css). Fetching them
+// from fonts.googleapis.com meant a render-blocking stylesheet on a third-party
+// origin, plus a second origin for the files themselves -- PSI costed that at
+// 900ms. Same files, same descriptors; only the round-trips are gone.
 
+@import url("google-fonts.css");
 @import url("meanmenu.css");
 @import url("animate.css");
 @import url("fontawesome.css");

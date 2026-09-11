@@ -104,10 +104,10 @@ export default function Home4_Services() {
                                     </svg>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-service-details">Foot Reflexology</Link></h3>
+                                    <h3 className="title"><Link prefetch={false} href="/page-service-details">Foot Reflexology</Link></h3>
                                     <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur
                                         ligula, eget egestas.</p>
-                                    <Link href="/page-service-details" className="arry-btn"><i
+                                    <Link prefetch={false} href="/page-service-details" className="arry-btn"><i
                                             className="fa-light fa-arrow-right-long"></i></Link>
                                 </div>
                             </div>
@@ -223,10 +223,10 @@ export default function Home4_Services() {
                                     </svg>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-service-details">Foot Reflexology</Link></h3>
+                                    <h3 className="title"><Link prefetch={false} href="/page-service-details">Foot Reflexology</Link></h3>
                                     <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur
                                         ligula, eget egestas.</p>
-                                    <Link href="/page-service-details" className="arry-btn"><i
+                                    <Link prefetch={false} href="/page-service-details" className="arry-btn"><i
                                             className="fa-light fa-arrow-right-long"></i></Link>
                                 </div>
                             </div>
@@ -273,10 +273,10 @@ export default function Home4_Services() {
                                     </svg>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-service-details">Stone Message</Link></h3>
+                                    <h3 className="title"><Link prefetch={false} href="/page-service-details">Stone Message</Link></h3>
                                     <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur
                                         ligula, eget egestas.</p>
-                                    <Link href="/page-service-details" className="arry-btn"><i
+                                    <Link prefetch={false} href="/page-service-details" className="arry-btn"><i
                                             className="fa-light fa-arrow-right-long"></i></Link>
                                 </div>
                             </div>

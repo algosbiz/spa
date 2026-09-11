@@ -87,7 +87,7 @@ export default function Home1_Feature() {
                                     </div>
                                     <div className="info">
                                         <h6 className="sub-title">75$ | 30 mins</h6>
-                                        <h3 className="title"><Link href="/page-service-details">Stone Message</Link></h3>
+                                        <h3 className="title"><Link prefetch={false} href="/page-service-details">Stone Message</Link></h3>
                                         <p className="text">Proin efficitur, mauris vel condimentum pulvinar.</p>
                                     </div>
                                 </div>
@@ -151,7 +151,7 @@ export default function Home1_Feature() {
                                     </div>
                                     <div className="info">
                                         <h6 className="sub-title">75$ | 30 mins</h6>
-                                        <h3 className="title"><Link href="/page-service-details">Foot Reflexology</Link></h3>
+                                        <h3 className="title"><Link prefetch={false} href="/page-service-details">Foot Reflexology</Link></h3>
                                         <p className="text">Proin efficitur, mauris vel condimentum pulvinar.</p>
                                     </div>
                                 </div>
@@ -197,7 +197,7 @@ export default function Home1_Feature() {
                                     </div>
                                     <div className="info">
                                         <h6 className="sub-title">75$ | 30 mins</h6>
-                                        <h3 className="title"><Link href="/page-service-details">Stone Message</Link></h3>
+                                        <h3 className="title"><Link prefetch={false} href="/page-service-details">Stone Message</Link></h3>
                                         <p className="text">Proin efficitur, mauris vel condimentum pulvinar.</p>
                                     </div>
                                 </div>
@@ -261,7 +261,7 @@ export default function Home1_Feature() {
                                     </div>
                                     <div className="info">
                                         <h6 className="sub-title">75$ | 30 mins</h6>
-                                        <h3 className="title"><Link href="/page-service-details">Foot Reflexology</Link></h3>
+                                        <h3 className="title"><Link prefetch={false} href="/page-service-details">Foot Reflexology</Link></h3>
                                         <p className="text">Proin efficitur, mauris vel condimentum pulvinar.</p>
                                     </div>
                                 </div>

@@ -58,7 +58,7 @@ const Footer = () => {
                         <div className="footer__item">
                             <div className="footer-about">
                                 <div>
-                                    <Link href="/" className="logo footer__brand">
+                                    <Link prefetch={false} href="/" className="logo footer__brand">
                                         <img loading="lazy" decoding="async" src="/images/logo/SMBtitle-footer.svg" alt="Spa Bali Moon"/>
                                     </Link>
                                     <p className="text">Spa Bali Moon offers high-quality traditional massages and spa therapies, with outcall and home services by skilled therapists specializing in Balinese Body Massage.</p>
@@ -84,7 +84,7 @@ const Footer = () => {
                     <div className="col-md-6 col-xl-2">
                         <div className="footer__item">
                             <h3 className="title">
-                                <Link href="/seminyak/day-spa" style={{ color: 'inherit' }}>
+                                <Link prefetch={false} href="/seminyak/day-spa" style={{ color: 'inherit' }}>
                                     Our Day Spa
                                 </Link>
                             </h3>
@@ -103,14 +103,14 @@ const Footer = () => {
                     <div className="col-md-6 col-xl-2">
                         <div className="footer__item">
                             <h3 className="title">
-                                <Link href="/home-service" style={{ color: 'inherit' }}>
+                                <Link prefetch={false} href="/home-service" style={{ color: 'inherit' }}>
                                     Home Services
                                 </Link>
                             </h3>
                             <ul className="links">
-                                <li><Link href="/villa-hotel-massage">Massage Hotel &amp; Villa</Link></li>
-                                <li><Link href="/">Massage Seminyak</Link></li>
-                                <li><Link href="/massage-kuta">Massage Kuta</Link></li>
+                                <li><Link prefetch={false} href="/villa-hotel-massage">Massage Hotel &amp; Villa</Link></li>
+                                <li><Link prefetch={false} href="/">Massage Seminyak</Link></li>
+                                <li><Link prefetch={false} href="/massage-kuta">Massage Kuta</Link></li>
                                 <li style={{ display: 'flex', flexDirection: 'column', marginTop: '12px', alignItems: 'flex-start' }}>
                                     <span style={{ fontSize: '14px', marginBottom: '2px' }}>Home service fee:</span>
                                     <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>75k / therapist</span>
@@ -159,7 +159,7 @@ const Footer = () => {
                 </div>
                 <div className="footer__bottom" style={{ display: 'flex', justifyContent: 'center', marginTop: '40px', paddingTop: '20px', borderTop: '1px solid rgba(95, 90, 84, 0.12)' }}>
                     <p className="copyright-text" style={{ textAlign: 'center', marginBottom: 0 }}>
-                        All Rights Reserved &copy; 2026 <Link href="/">Spa Bali Moon</Link> &middot; <Link href="/privacy-policy">Privacy Policy</Link> &middot; <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
+                        All Rights Reserved &copy; 2026 <Link prefetch={false} href="/">Spa Bali Moon</Link> &middot; <Link prefetch={false} href="/privacy-policy">Privacy Policy</Link> &middot; <Link prefetch={false} href="/terms-and-conditions">Terms &amp; Conditions</Link>
                     </p>
                 </div>
             </div>

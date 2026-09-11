@@ -38,7 +38,7 @@ export default function Home5_Pricing({
               </p>
               {showMore && (
                 <div className="mt-30 wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
-                  <Link href="/seminyak" className="btn-two">
+                  <Link prefetch={false} href="/seminyak" className="btn-two">
                     {ctaText}
                     <span className="icon_box">
                       <i className="fa-regular icon_first fa-arrow-right-long"></i>
@@ -215,7 +215,7 @@ export default function Home5_Pricing({
                     <li><span className="duration">1 Hr</span><span className="service">Mani &amp; Pedi</span></li>
                     <li><span className="duration">30 Mins</span><span className="service">Cream bath</span></li>
                   </ul>
-                  <Link href="/contact" className="btn-two mt-35">
+                  <Link prefetch={false} href="/contact" className="btn-two mt-35">
                     Reserve
                     <span className="icon_box">
                       <i className="fa-regular icon_first fa-arrow-right-long"></i>
@@ -293,7 +293,7 @@ export default function Home5_Pricing({
                     <li><span className="duration">1 Hr</span><span className="service">Mani &amp; Pedi</span></li>
                     <li><span className="duration">1 Hr</span><span className="service">Bali Moon Facial</span></li>
                   </ul>
-                  <Link href="/contact" className="btn-two mt-35">
+                  <Link prefetch={false} href="/contact" className="btn-two mt-35">
                     Reserve
                     <span className="icon_box">
                       <i className="fa-regular icon_first fa-arrow-right-long"></i>
@@ -388,7 +388,7 @@ export default function Home5_Pricing({
                     <li><span className="duration">30 Mins</span><span className="service">Cream bath</span></li>
                     <li><span className="duration">1 Hr</span><span className="service">Bali Moon Facial</span></li>
                   </ul>
-                  <Link href="/contact" className="btn-two mt-35">
+                  <Link prefetch={false} href="/contact" className="btn-two mt-35">
                     Reserve
                     <span className="icon_box">
                       <i className="fa-regular icon_first fa-arrow-right-long"></i>
@@ -483,7 +483,7 @@ export default function Home5_Pricing({
                     <li><span className="duration">30 Mins</span><span className="service">Manicure</span></li>
                     <li><span className="duration">30 Mins</span><span className="service">Pedicure</span></li>
                   </ul>
-                  <Link href="/contact" className="btn-two mt-35">
+                  <Link prefetch={false} href="/contact" className="btn-two mt-35">
                     Reserve
                     <span className="icon_box">
                       <i className="fa-regular icon_first fa-arrow-right-long"></i>

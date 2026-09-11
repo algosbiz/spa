@@ -16,7 +16,7 @@ function TreatmentItem({ item, itemKey, isOpen, onToggle }) {
   return (
     <article className={`treatment-catalog__item${isOpen ? " is-open" : ""}`}>
       {item.href ? (
-        <Link href={item.href} className="treatment-catalog__image" aria-label={`View ${item.name}`}>
+        <Link prefetch={false} href={item.href} className="treatment-catalog__image" aria-label={`View ${item.name}`}>
           <img loading="lazy" decoding="async" src={item.image} alt={item.name} />
         </Link>
       ) : (
@@ -27,7 +27,7 @@ function TreatmentItem({ item, itemKey, isOpen, onToggle }) {
       <div className="treatment-catalog__content">
         <div className="treatment-catalog__heading">
           <h3 className="title">
-            {item.href ? <Link href={item.href}>{item.name}</Link> : item.name}
+            {item.href ? <Link prefetch={false} href={item.href}>{item.name}</Link> : item.name}
           </h3>
           <button
             type="button"
@@ -65,7 +65,7 @@ function TreatmentItem({ item, itemKey, isOpen, onToggle }) {
               ))}
             </div>
             {item.href ? (
-              <Link
+              <Link prefetch={false}
                 href={item.href}
                 className="treatment-catalog__details-link"
                 // The panel is aria-hidden while collapsed, so its link must leave

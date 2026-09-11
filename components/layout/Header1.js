@@ -134,7 +134,7 @@ const Header1 = ({ scroll }) => {
             <header className={`header-area header-three-area ${scroll ? "menu-fixed" : ""}`}>
                 <div className="header-one__wrp">
                     <div className="header__main">
-                        <Link href="/" className="logo">
+                        <Link prefetch={false} href="/" className="logo">
                             <img src="/images/logo/SMBtitle.svg" alt="logo" width="435" height="80"/>
                         </Link>
                         <div className="main-menu">
@@ -164,7 +164,7 @@ const Header1 = ({ scroll }) => {
                                             {searchResults.length > 0 ? (
                                                 searchResults.map((item) => (
                                                     <li key={item.href}>
-                                                        <Link href={item.href} className="header-search__result" onClick={closeSearch}>
+                                                        <Link prefetch={false} href={item.href} className="header-search__result" onClick={closeSearch}>
                                                             <i className="fa-light fa-arrow-right-long"></i>
                                                             <span>{item.title}</span>
                                                         </Link>
@@ -177,7 +177,7 @@ const Header1 = ({ scroll }) => {
                                     )}
                                 </div>
                             </div>
-                            <Link href="/contact" className="book-now d-none d-xxl-inline-block">Book an Appointment
+                            <Link prefetch={false} href="/contact" className="book-now d-none d-xxl-inline-block">Book an Appointment
                                 <svg width="18" height="18" viewBox="0 0 25 26" fill="none"
                                     xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                     <path d="M12.5 17.6875C12.3459 17.6875 12.199 17.6187 12.1 17.5C8.47609 13.15 8.47609 8.16143 12.1 3.81143C12.2969 3.57393 12.7021 3.57393 12.9 3.81143C16.524 8.16143 16.524 13.15 12.9 17.5C12.8011 17.6187 12.6542 17.6875 12.5 17.6875ZM12.5 4.98226C9.71359 8.66143 9.71359 12.651 12.5 16.3302C15.2865 12.651 15.2865 8.66143 12.5 4.98226Z" fill="currentColor" />
@@ -217,7 +217,7 @@ const Header1 = ({ scroll }) => {
                 style={{ backgroundColor: "#ffffff", borderLeft: "1px solid rgba(95, 90, 84, 0.12)" }}
             >
                 <div className="offcanvas-header">
-                    <Link href="/" className="logo"> <img src="/images/logo/sbm.webp" alt="Spa Bali Moon" width="56" height="44"/></Link>
+                    <Link prefetch={false} href="/" className="logo"> <img src="/images/logo/sbm.webp" alt="Spa Bali Moon" width="56" height="44"/></Link>
                     <button type="button" className="btn-close" onClick={handleCloseSidebar}><i
                             className="fa-regular fa-xmark"></i></button>
                 </div>
@@ -232,15 +232,15 @@ const Header1 = ({ scroll }) => {
                     <div className="sidebar__contact-info mt-30">
                         <p className="mb-20" style={{ color: "#2f2924", fontFamily: "var(--title-font)", fontSize: "20px", fontWeight: 500, lineHeight: "30px" }}>Contact Info</p>
                         <ul>
-                            <li><i className="fa-solid fa-location-dot" style={{ color: "#A78627" }}></i> <Link href="/#0" style={{ color: "#5f5a54" }}>Jl. Panggung Sari No. 30, Seminyak, Bali</Link></li>
-                            <li className="py-2"><i className="fa-solid fa-phone-volume" style={{ color: "#A78627" }}></i> <Link href="tel:+6287863175144" style={{ color: "#5f5a54" }}>+62 878-6317-5144</Link></li>
-                            <li><i className="fa-solid fa-paper-plane" style={{ color: "#A78627" }}></i> <Link href="mailto:info@spabalimoon.com" style={{ color: "#5f5a54" }}>info@spabalimoon.com</Link></li>
+                            <li><i className="fa-solid fa-location-dot" style={{ color: "#A78627" }}></i> <Link prefetch={false} href="/#0" style={{ color: "#5f5a54" }}>Jl. Panggung Sari No. 30, Seminyak, Bali</Link></li>
+                            <li className="py-2"><i className="fa-solid fa-phone-volume" style={{ color: "#A78627" }}></i> <Link prefetch={false} href="tel:+6287863175144" style={{ color: "#5f5a54" }}>+62 878-6317-5144</Link></li>
+                            <li><i className="fa-solid fa-paper-plane" style={{ color: "#A78627" }}></i> <Link prefetch={false} href="mailto:info@spabalimoon.com" style={{ color: "#5f5a54" }}>info@spabalimoon.com</Link></li>
                         </ul>
                     </div>
                     <div className="sidebar__socials mt-30">
                         <ul>
                             <li>
-                                <Link href="/#0">
+                                <Link prefetch={false} href="/#0">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path

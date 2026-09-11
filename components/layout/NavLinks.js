@@ -30,10 +30,10 @@ const NavLinks = () => {
 
         <>
         <ul>
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/seminyak">Pricelist</Link></li>
+            <li><Link prefetch={false} href="/">Home</Link></li>
+            <li><Link prefetch={false} href="/seminyak">Pricelist</Link></li>
             <li className={`treatments-menu-item${isTreatmentsActive ? ' is-active' : ''}`}>
-                <Link href="/#0">Treatments <i className="fa-solid fa-angle-down"></i></Link>
+                <Link prefetch={false} href="/#0">Treatments <i className="fa-solid fa-angle-down"></i></Link>
                 <ul className="sub-menu treatment-mega-menu">
                     {TREATMENT_MENU_COLUMNS.map((column, columnIndex) => (
                         <li className="treatment-mega-menu__column" key={columnIndex}>
@@ -43,7 +43,7 @@ const NavLinks = () => {
                                         className={`treatment-mega-menu__link-item${isActiveHref(item.href) ? ' is-active' : ''}`}
                                         key={item.href}
                                     >
-                                        <Link href={item.href}>{item.title}</Link>
+                                        <Link prefetch={false} href={item.href}>{item.title}</Link>
                                     </li>
                                 ))}
                             </ul>
@@ -51,21 +51,21 @@ const NavLinks = () => {
                     ))}
                 </ul>
             </li>
-            <li><Link href="/outcall-home-service-massage">Outcall</Link></li>
-            <li><Link href="/reservation">Reservation</Link></li>
+            <li><Link prefetch={false} href="/outcall-home-service-massage">Outcall</Link></li>
+            <li><Link prefetch={false} href="/reservation">Reservation</Link></li>
             <li className={`blog-menu-item${isBlogActive ? ' is-active' : ''}`}>
-                <Link href="/guide">Blog {blogPosts.length > 0 && <i className="fa-solid fa-angle-down"></i>}</Link>
+                <Link prefetch={false} href="/guide">Blog {blogPosts.length > 0 && <i className="fa-solid fa-angle-down"></i>}</Link>
                 {blogPosts.length > 0 && (
                     <ul className="sub-menu blog-dropdown-menu">
                         {blogPosts.map((post) => (
                             <li key={post.id || post.slug}>
-                                <Link href={`/guide/${post.slug}`}>{post.title}</Link>
+                                <Link prefetch={false} href={`/guide/${post.slug}`}>{post.title}</Link>
                             </li>
                         ))}
                     </ul>
                 )}
             </li>
-            <li><Link href="/contact">Contact</Link></li>
+            <li><Link prefetch={false} href="/contact">Contact</Link></li>
         </ul>
         <style jsx global>{`
             .header__main .main-menu ul li .treatment-mega-menu {

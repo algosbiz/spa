@@ -72,14 +72,14 @@ const AdditionalTreatmentCard = ({ treatment }) => (
             </div>
             <div className="content">
                 <h3 className="title">
-                    <Link href={treatment.href || '/contact'}>{treatment.name}</Link>
+                    <Link prefetch={false} href={treatment.href || '/contact'}>{treatment.name}</Link>
                 </h3>
                 <p className="text">{treatment.desc}</p>
             </div>
             <div className="shape">
                 <img loading="lazy" decoding="async" src="/images/service/shape.png" alt="" aria-hidden="true" />
             </div>
-            <Link
+            <Link prefetch={false}
                 href={treatment.href || '/contact'}
                 className="arry-icon"
                 aria-label={`View ${treatment.name}`}
@@ -273,13 +273,13 @@ export default function Home2_Services({
                                         </div>
                                     </div>
                                     <div className="content">
-                                        <h3 className="title"><Link href={footReflexology.href}>{footReflexology.name}</Link></h3>
+                                        <h3 className="title"><Link prefetch={false} href={footReflexology.href}>{footReflexology.name}</Link></h3>
                                         <p className="text">{footReflexology.desc}</p>
                                     </div>
                                     <div className="shape">
                                         <img loading="lazy" decoding="async" src="/images/service/shape.png" alt="shape" />
                                     </div>
-                                    <Link href={footReflexology.href} className="arry-icon" aria-label={`View ${footReflexology.name}`}>
+                                    <Link prefetch={false} href={footReflexology.href} className="arry-icon" aria-label={`View ${footReflexology.name}`}>
                                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <g clipPath="url(#clip0_1_1417)">
@@ -400,13 +400,13 @@ export default function Home2_Services({
                                         </div>
                                     </div>
                                     <div className="content">
-                                        <h3 className="title"><Link href={headMassage.href}>{headMassage.name}</Link></h3>
+                                        <h3 className="title"><Link prefetch={false} href={headMassage.href}>{headMassage.name}</Link></h3>
                                         <p className="text">{headMassage.desc}</p>
                                     </div>
                                     <div className="shape">
                                         <img loading="lazy" decoding="async" src="/images/service/shape.png" alt="shape" />
                                     </div>
-                                    <Link href={headMassage.href} className="arry-icon" aria-label={`View ${headMassage.name}`}>
+                                    <Link prefetch={false} href={headMassage.href} className="arry-icon" aria-label={`View ${headMassage.name}`}>
                                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <g clipPath="url(#clip0_1_1417)">
@@ -458,13 +458,13 @@ export default function Home2_Services({
                                         </div>
                                     </div>
                                     <div className="content">
-                                        <h3 className="title"><Link href={hotStoneMassage.href}>{hotStoneMassage.name}</Link></h3>
+                                        <h3 className="title"><Link prefetch={false} href={hotStoneMassage.href}>{hotStoneMassage.name}</Link></h3>
                                         <p className="text">{hotStoneMassage.desc}</p>
                                     </div>
                                     <div className="shape">
                                         <img loading="lazy" decoding="async" src="/images/service/shape.png" alt="shape" />
                                     </div>
-                                    <Link href={hotStoneMassage.href} className="arry-icon" aria-label={`View ${hotStoneMassage.name}`}>
+                                    <Link prefetch={false} href={hotStoneMassage.href} className="arry-icon" aria-label={`View ${hotStoneMassage.name}`}>
                                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <g clipPath="url(#clip0_1_1417)">
@@ -540,13 +540,13 @@ export default function Home2_Services({
                                         </div>
                                     </div>
                                     <div className="content">
-                                        <h3 className="title"><Link href="/page-service-details">Foot Reflexology</Link></h3>
+                                        <h3 className="title"><Link prefetch={false} href="/page-service-details">Foot Reflexology</Link></h3>
                                         <p className="text">Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas.</p>
                                     </div>
                                     <div className="shape">
                                         <img loading="lazy" decoding="async" src="/images/service/shape.png" alt="shape" />
                                     </div>
-                                    <Link href="/page-service-details" className="arry-icon">
+                                    <Link prefetch={false} href="/page-service-details" className="arry-icon">
                                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clipPath="url(#clip0_1_1417)">
                                                 <path

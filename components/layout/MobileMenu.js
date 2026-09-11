@@ -41,17 +41,17 @@ const MobileMenu = () => {
     return (
         <>
             <ul>
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/seminyak">Pricelist</Link></li>
+                <li><Link prefetch={false} href="/">Home</Link></li>
+                <li><Link prefetch={false} href="/seminyak">Pricelist</Link></li>
                 <li>
-                    <Link href="#0">Treatments</Link>
+                    <Link prefetch={false} href="#0">Treatments</Link>
                     <div
                         className={`mobile-submenu ${treatmentsExpanded ? "is-open" : ""}`}
                         aria-hidden={!treatmentsExpanded}
                     >
                         <ul className="sub-menu">
                             {TREATMENT_LINKS.map((item) => (
-                                <li key={item.href}><Link href={item.href}>{item.title}</Link></li>
+                                <li key={item.href}><Link prefetch={false} href={item.href}>{item.title}</Link></li>
                             ))}
                         </ul>
                     </div>
@@ -72,12 +72,12 @@ const MobileMenu = () => {
                         <i className="fa fa-angle-down" />
                     </div>
                 </li>
-                <li><Link href="/outcall-home-service-massage">Outcall</Link></li>
+                <li><Link prefetch={false} href="/outcall-home-service-massage">Outcall</Link></li>
                 <li>
-                    <Link href="/reservation">Reservation</Link>
+                    <Link prefetch={false} href="/reservation">Reservation</Link>
                 </li>
                 <li>
-                    <Link href="/guide">Blog</Link>
+                    <Link prefetch={false} href="/guide">Blog</Link>
                     {blogPosts.length > 0 && (
                         <>
                             <div
@@ -87,7 +87,7 @@ const MobileMenu = () => {
                                 <ul className="sub-menu">
                                     {blogPosts.map((post) => (
                                         <li key={post.id || post.slug}>
-                                            <Link href={`/guide/${post.slug}`}>{post.title}</Link>
+                                            <Link prefetch={false} href={`/guide/${post.slug}`}>{post.title}</Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -111,7 +111,7 @@ const MobileMenu = () => {
                         </>
                     )}
                 </li>
-                <li><Link href="/contact">Contact</Link></li>
+                <li><Link prefetch={false} href="/contact">Contact</Link></li>
             </ul>
             <style jsx>{`
                 .mobile-submenu {

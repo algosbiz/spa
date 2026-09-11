@@ -52,7 +52,7 @@ export default function PackageSection() {
                                     <img loading="lazy" decoding="async" src="/images/package/package-image1.png" alt="image"/>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-pricing">Aroma therapy</Link> <span
+                                    <h3 className="title"><Link prefetch={false} href="/page-pricing">Aroma therapy</Link> <span
                                             className="line"></span>
                                         <span>from</span> $50
                                     </h3>
@@ -64,7 +64,7 @@ export default function PackageSection() {
                                     <img loading="lazy" decoding="async" src="/images/package/package-image2.png" alt="image"/>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-pricing">Sauna relax</Link> <span
+                                    <h3 className="title"><Link prefetch={false} href="/page-pricing">Sauna relax</Link> <span
                                             className="line"></span>
                                         <span>from</span> $50
                                     </h3>
@@ -76,7 +76,7 @@ export default function PackageSection() {
                                     <img loading="lazy" decoding="async" src="/images/package/package-image3.png" alt="image"/>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-pricing">Geothermal spa</Link> <span
+                                    <h3 className="title"><Link prefetch={false} href="/page-pricing">Geothermal spa</Link> <span
                                             className="line"></span>
                                         <span>from</span> $50
                                     </h3>
@@ -88,7 +88,7 @@ export default function PackageSection() {
                                     <img loading="lazy" decoding="async" src="/images/package/package-image4.png" alt="image"/>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-pricing">Aroma therapy</Link> <span
+                                    <h3 className="title"><Link prefetch={false} href="/page-pricing">Aroma therapy</Link> <span
                                             className="line"></span>
                                         <span>from</span> $50
                                     </h3>
@@ -103,7 +103,7 @@ export default function PackageSection() {
                                     <img loading="lazy" decoding="async" src="/images/package/package-image5.png" alt="image"/>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-pricing">Aroma therapy</Link> <span
+                                    <h3 className="title"><Link prefetch={false} href="/page-pricing">Aroma therapy</Link> <span
                                             className="line"></span>
                                         <span>from</span> $50
                                     </h3>
@@ -115,7 +115,7 @@ export default function PackageSection() {
                                     <img loading="lazy" decoding="async" src="/images/package/package-image6.png" alt="image"/>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-pricing">Sauna relax</Link> <span
+                                    <h3 className="title"><Link prefetch={false} href="/page-pricing">Sauna relax</Link> <span
                                             className="line"></span>
                                         <span>from</span> $50
                                     </h3>
@@ -127,7 +127,7 @@ export default function PackageSection() {
                                     <img loading="lazy" decoding="async" src="/images/package/package-image7.png" alt="image"/>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-pricing">Geothermal spa</Link> <span
+                                    <h3 className="title"><Link prefetch={false} href="/page-pricing">Geothermal spa</Link> <span
                                             className="line"></span>
                                         <span>from</span> $50
                                     </h3>
@@ -139,7 +139,7 @@ export default function PackageSection() {
                                     <img loading="lazy" decoding="async" src="/images/package/package-image8.png" alt="image"/>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-pricing">Aroma therapy</Link> <span
+                                    <h3 className="title"><Link prefetch={false} href="/page-pricing">Aroma therapy</Link> <span
                                             className="line"></span>
                                         <span>from</span> $50
                                     </h3>
@@ -157,7 +157,7 @@ export default function PackageSection() {
                                     <img loading="lazy" decoding="async" src="/images/package/package-image1.png" alt="image"/>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-pricing">Aroma therapy</Link> <span
+                                    <h3 className="title"><Link prefetch={false} href="/page-pricing">Aroma therapy</Link> <span
                                             className="line"></span>
                                         <span>from</span> $50
                                     </h3>
@@ -169,7 +169,7 @@ export default function PackageSection() {
                                     <img loading="lazy" decoding="async" src="/images/package/package-image2.png" alt="image"/>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-pricing">Sauna relax</Link> <span
+                                    <h3 className="title"><Link prefetch={false} href="/page-pricing">Sauna relax</Link> <span
                                             className="line"></span>
                                         <span>from</span> $60
                                     </h3>
@@ -181,7 +181,7 @@ export default function PackageSection() {
                                     <img loading="lazy" decoding="async" src="/images/package/package-image3.png" alt="image"/>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-pricing">Geothermal spa</Link> <span
+                                    <h3 className="title"><Link prefetch={false} href="/page-pricing">Geothermal spa</Link> <span
                                             className="line"></span>
                                         <span>from</span> $70
                                     </h3>
@@ -193,7 +193,7 @@ export default function PackageSection() {
                                     <img loading="lazy" decoding="async" src="/images/package/package-image4.png" alt="image"/>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-pricing">Aroma therapy</Link> <span
+                                    <h3 className="title"><Link prefetch={false} href="/page-pricing">Aroma therapy</Link> <span
                                             className="line"></span>
                                         <span>from</span> $80
                                     </h3>
@@ -208,7 +208,7 @@ export default function PackageSection() {
                                     <img loading="lazy" decoding="async" src="/images/package/package-image5.png" alt="image"/>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-pricing">Aroma therapy</Link> <span
+                                    <h3 className="title"><Link prefetch={false} href="/page-pricing">Aroma therapy</Link> <span
                                             className="line"></span>
                                         <span>from</span> $90
                                     </h3>
@@ -220,7 +220,7 @@ export default function PackageSection() {
                                     <img loading="lazy" decoding="async" src="/images/package/package-image6.png" alt="image"/>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-pricing">Sauna relax</Link> <span
+                                    <h3 className="title"><Link prefetch={false} href="/page-pricing">Sauna relax</Link> <span
                                             className="line"></span>
                                         <span>from</span> $50
                                     </h3>
@@ -232,7 +232,7 @@ export default function PackageSection() {
                                     <img loading="lazy" decoding="async" src="/images/package/package-image7.png" alt="image"/>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-pricing">Geothermal spa</Link> <span
+                                    <h3 className="title"><Link prefetch={false} href="/page-pricing">Geothermal spa</Link> <span
                                             className="line"></span>
                                         <span>from</span> $30
                                     </h3>
@@ -244,7 +244,7 @@ export default function PackageSection() {
                                     <img loading="lazy" decoding="async" src="/images/package/package-image8.png" alt="image"/>
                                 </div>
                                 <div className="content">
-                                    <h3 className="title"><Link href="/page-pricing">Aroma therapy</Link> <span
+                                    <h3 className="title"><Link prefetch={false} href="/page-pricing">Aroma therapy</Link> <span
                                             className="line"></span>
                                         <span>from</span> $60
                                     </h3>
