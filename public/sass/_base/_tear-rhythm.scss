@@ -181,6 +181,11 @@
 		padding-bottom: 17px !important;
 	}
 
+	// The inner-page title banner, where a torn edge follows it straight away.
+	@include before-tear(".page-title") {
+		padding-bottom: 47px !important;
+	}
+
 	// The "more guides" panel keeps its own section padding on phones, which
 	// lands on top of the panel's safe area.
 	.section__decoration-top > .post-more {

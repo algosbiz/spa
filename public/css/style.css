@@ -13676,6 +13676,12 @@ Sidebar
   *:has(+ * > .section__decoration-top) > .service-section-two:last-child:not(.section__decoration-bottom) {
     padding-bottom: 17px !important;
   }
+  .page-title:not(.section__decoration-bottom):has(+ .section__decoration-top),
+  .page-title:not(.section__decoration-bottom):has(+ * > .section__decoration-top),
+  *:has(+ .section__decoration-top) > .page-title:last-child:not(.section__decoration-bottom),
+  *:has(+ * > .section__decoration-top) > .page-title:last-child:not(.section__decoration-bottom) {
+    padding-bottom: 47px !important;
+  }
   .section__decoration-top > .post-more {
     padding-top: 9px !important;
   }
