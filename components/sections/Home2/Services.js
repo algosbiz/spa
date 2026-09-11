@@ -96,6 +96,8 @@ export default function Home2_Services({
     additionalTreatmentIds = [],
     showFullTreatmentSlider = false,
     embedded = false,
+    leftShapeSrc,
+    rightShapeSrc,
 }) {
     const router = useRouter();
     const currentTreatmentHref = TREATMENT_LINKS.find((treatment) =>
@@ -169,6 +171,20 @@ export default function Home2_Services({
                 id="services"
                 className={`service-section-two${embedded ? "" : " section__decoration-top section__decoration-bottom"} pt-130 pb-100${paperBackground ? " service-section-two--paper bg-sub" : ""}`}
             >
+                {/* Opt-in only: callers that pass nothing render no ornament, so
+                    every existing page keeps the layout it has today. The
+                    section is already position:relative with overflow:hidden,
+                    so the shapes clip at its edges. */}
+                {leftShapeSrc && (
+                    <div className="shape1">
+                        <img loading="lazy" decoding="async" className="sway__animation" src={leftShapeSrc} alt="" aria-hidden="true" />
+                    </div>
+                )}
+                {rightShapeSrc && (
+                    <div className="shape2">
+                        <img loading="lazy" decoding="async" className="animation__arryUpDown" src={rightShapeSrc} alt="" aria-hidden="true" />
+                    </div>
+                )}
                 <div className="container">
                     <div className="section-header mb-60 center">
                         <p className="sub-title wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">

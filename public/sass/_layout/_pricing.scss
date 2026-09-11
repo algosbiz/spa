@@ -262,6 +262,13 @@
 				font-weight: 500;
 				color: var(--theme-color1);
 			}
+			.pax-note {
+				margin-left: 8px;
+				font-family: var(--text-font);
+				font-size: 14px;
+				font-weight: 500;
+				color: var(--headings-color);
+			}
 		}
 		ul {
 			display: inline-block;
@@ -271,17 +278,19 @@
 			li {
 				color: var(--headings-color);
 				margin-top: 18px;
-				font-size: 16px;
+				// 16px wrapped the longest treatment names onto a second line in the
+				// four-up card grid; 15px with a tighter duration column keeps them on one.
+				font-size: 15px;
 				line-height: 24px;
 				display: flex;
 				align-items: center;
-				gap: 18px;
+				gap: 12px;
 				&:first-child {
 					margin-top: 0;
 				}
 				.duration {
 					display: inline-block;
-					min-width: 60px;
+					min-width: 54px;
 					flex-shrink: 0;
 				}
 				@include breakpoint(max-md) {

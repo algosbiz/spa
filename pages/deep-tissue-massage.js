@@ -44,14 +44,14 @@ const serviceHighlights = [
 
 const faqItems = [
   {
-    question: "Is deep tissue massage painful?",
+    question: "Does deep tissue massage hurt?",
     answer:
       "Deep Tissue Massage may feel intense, especially when working on tight muscles, but it should remain within your comfort level. Our therapists adjust pressure throughout the session based on your feedback.",
   },
   {
-    question: "What is the difference between Deep Tissue Massage and a regular massage?",
+    question: "What's the difference between Swedish and deep tissue massage?",
     answer:
-      "Deep Tissue Massage focuses on deeper muscle layers using slower and firmer techniques, while regular massage generally uses lighter movements for relaxation and overall comfort.",
+      "Swedish massage uses lighter to moderate pressure and gentle, flowing movements to promote relaxation. Deep tissue massage uses firmer, slower pressure to target deeper muscle tension and tight areas.",
   },
   {
     question: "Is Deep Tissue Massage suitable after exercise?",
@@ -67,6 +67,21 @@ const faqItems = [
     question: "Can Deep Tissue Massage be done at a villa or hotel?",
     answer:
       "Yes. Home service is available for guests staying in selected villas, hotels, and accommodations around Seminyak.",
+  },
+  {
+    question: "What should I do after a deep tissue massage?",
+    answer:
+      "Drink plenty of water, rest, and avoid strenuous exercise for the rest of the day. Gentle stretching can also help your muscles recover.",
+  },
+  {
+    question: "Is deep tissue massage good for sciatica?",
+    answer:
+      "Deep tissue massage may help relieve muscle tension and discomfort associated with sciatica. However, it is not a treatment for the underlying cause, so it is best to consult a healthcare professional if your symptoms are severe or persistent.",
+  },
+  {
+    question: "What are the benefits of a deep tissue massage?",
+    answer:
+      "Deep tissue massage can help reduce muscle tension, relieve stiffness, improve circulation, and support recovery after physical activity. It may also help improve flexibility and overall relaxation.",
   },
 ];
 
@@ -87,7 +102,7 @@ export default function DeepTissueMassage() {
           primaryImage={treatmentImages.intro[0]}
           secondaryImage={treatmentImages.intro[1]}
           subTitle="Therapeutic Care"
-          title={<>Deep Tissue Massage: for Deeper Muscle Tension</>}
+          title={<>What Is Deep Tissue Massage?</>}
           text="Deep Tissue Massage is a therapeutic technique that uses slow, firm pressure to target deeper layers of muscles and connective tissues. Unlike a relaxing massage that focuses on gentle movements, this treatment is designed for areas affected by stiffness, repetitive activities, exercise, poor posture, or prolonged sitting. The controlled pressure works on areas of tension while supporting easier movement and improved flexibility."
           feature1Title="Deep Muscle Focus"
           feature1Text="Targets areas where long-term tension and stiffness commonly develop."
@@ -112,16 +127,16 @@ export default function DeepTissueMassage() {
           image={treatmentImages.details[0]}
           subTitle="Common Reasons"
           title={<>Why Do People Get Deep Tissue Massage?</>}
-          text="Deep Tissue Massage is often selected by guests who feel that regular massage does not provide enough focus on areas of strong tension. The technique is especially popular among active travellers, office workers, and individuals who experience recurring muscle tightness."
+          text="People often choose Deep Tissue Massage when they feel a regular massage doesn't focus enough on areas of persistent tension. It is particularly popular among active travellers, office workers, and people who regularly experience muscle tightness. Some of the main reasons to choose Deep Tissue Massage include:"
           featuresLeft={[
-            "Helps relieve the feeling of tight muscles",
-            "Supports easier movement and flexibility",
-            "Focuses on common tension areas",
+            "Relieving the feeling of tight muscles",
+            "Supporting easier movement and flexibility",
+            "Targeting common areas of muscle tension",
           ]}
           featuresRight={[
-            "Suitable after physical activities or long journeys",
-            "Helps loosen stiff areas caused by daily habits",
-            "Preferred by guests who enjoy firmer massage pressure",
+            "Relaxing the body after physical activities or long journeys",
+            "Loosening stiff areas caused by daily habits",
+            "Enjoying a firmer massage pressure",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}
@@ -132,7 +147,7 @@ export default function DeepTissueMassage() {
           badgeTopText="Where Tension"
           badgeBottomText="Lives"
           title={<>Which Parts of the Body Are Commonly Treated?</>}
-          text="Muscle tension does not always appear in the same place for everyone. During a Deep Tissue Massage session, our therapists usually focus on areas affected by posture, movement patterns, and physical activities."
+          text="During a Deep Tissue Massage session, we typically focus on areas affected by posture, movement patterns, or physical activities. But depending on your needs, common areas that may receive focused attention include:"
           featuresLeft={[
             "Shoulders and upper back from desk work or travel",
             "Neck area affected by daily posture",
@@ -152,7 +167,7 @@ export default function DeepTissueMassage() {
           badgeTopText="Power in"
           badgeBottomText="Technique"
           title={<>How Does Deep Tissue Massage Work?</>}
-          text="Deep Tissue Massage uses specific manual techniques to work on areas where muscle tension commonly builds. Our therapists apply sustained pressure, slow muscle stripping movements, cross-fiber techniques, and targeted trigger point work while adjusting intensity based on your body's response."
+          text="We combine several manual techniques to address areas of muscle tension and stiffness. We also adjust the technique and pressure according to the treatment area, your needs, and your comfort level. Common techniques may include:"
           featuresLeft={[
             "Sustained pressure for deeper muscle work",
             "Slow stripping techniques along muscle fibers",

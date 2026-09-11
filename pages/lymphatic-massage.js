@@ -77,6 +77,21 @@ const faqItems = [
     answer:
       "Absolutely. Many guests combine it with facials, reflexology, or relaxing body treatments to create a more complete wellness experience.",
   },
+  {
+    question: "Is lymphatic drainage real?",
+    answer:
+      "Yes. Lymphatic drainage is a gentle massage technique designed to encourage the movement of lymph fluid through the body. It is commonly used to help manage swelling and support relaxation.",
+  },
+  {
+    question: "Does lymphatic drainage work on the face?",
+    answer:
+      "Yes. Facial lymphatic drainage uses gentle movements around the face and neck to encourage lymph flow. It may help reduce temporary puffiness and leave the face feeling refreshed.",
+  },
+  {
+    question: "Can lymphatic drainage make you sick?",
+    answer:
+      "Lymphatic drainage is generally gentle, but some people may feel tired, thirsty, or slightly light-headed afterward. Drinking water and resting after the treatment can help. If you feel unwell or have a medical condition, consult a healthcare professional before having lymphatic drainage.",
+  },
 ];
 
 export default function LymphaticMassage() {
@@ -121,16 +136,16 @@ export default function LymphaticMassage() {
           image={treatmentImages.details[0]}
           subTitle="Body Recovery"
           title={<>When Lymphatic Massage Helps</>}
-          text="Fluid retention can occur after travel, prolonged sitting, intense activity, or limited movement, often creating a feeling of heaviness in the body. Lymphatic Massage supports natural drainage pathways to encourage fluid movement and promote a lighter, more comfortable feeling."
+          text="Lymphatic Massage may be a suitable choice when the body feels heavy, puffy, or less comfortable after changes in routine or periods of limited movement. It uses gentle massage techniques to support the body's natural lymphatic flow and can be incorporated into a wider wellness routine. We may consider this treatment for situations such as:"
           featuresLeft={[
-            "Helps reduce fluid retention",
-            "Supports natural lymph circulation",
-            "May ease feelings of puffiness",
+            "Reducing feelings of fluid retention",
+            "Supporting natural lymphatic circulation",
+            "Easing feelings of puffiness",
           ]}
           featuresRight={[
-            "Encourages post-travel recovery",
-            "Promotes lighter body movement",
-            "Complements overall wellness routines",
+            "Supporting comfort after travel",
+            "Promoting a lighter, more comfortable feeling",
+            "Adding gentle care to a regular wellness routine",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}
@@ -140,8 +155,8 @@ export default function LymphaticMassage() {
           subTitle="Guided Pathways"
           badgeTopText="Follow the"
           badgeBottomText="Flow"
-          title={<>Where Does Lymphatic Massage Work on the Body?</>}
-          text="Instead of concentrating only on muscles, Lymphatic Massage follows the body's natural drainage routes. Gentle movements begin around the main lymph node regions before continuing across areas where fluid commonly collects, allowing the treatment to work with the body's own circulation rather than against it."
+          title={<>Where Does Lymphatic Drainage Go?</>}
+          text="Lymphatic Massage uses gentle, rhythmic movements across specific areas of the body to support natural lymphatic flow. The therapist works through key areas in a gradual sequence, with attention given to regions where lymphatic pathways are commonly found. Depending on the treatment, attention may be given to:"
           featuresLeft={[
             "Neck and collarbone",
             "Underarms",
@@ -162,7 +177,7 @@ export default function LymphaticMassage() {
           badgeTopText="Lightness in"
           badgeBottomText="Motion"
           title={<>What to Expect from a Lymphatic Massage</>}
-          text="Our treatment begins with a brief consultation to identify areas where swelling, fluid retention, or heaviness are most noticeable. Using natural massage oil together with a slimming cream, our therapist performs slow, wave-like movements that follow the direction of lymph flow instead of applying deep pressure into the muscles."
+          text="A Lymphatic Massage follows a gentle and gradual approach designed to keep the body comfortable throughout the session. The therapist first discusses your needs before using light, rhythmic movements across selected areas of the body. The session generally follows these steps:"
           featuresLeft={[
             "Brief body consultation",
             "Gentle oil application",

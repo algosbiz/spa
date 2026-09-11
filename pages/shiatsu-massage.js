@@ -77,6 +77,21 @@ const faqItems = [
     answer:
       "Yes. Shiatsu is often combined with body treatments or other wellness services as part of a longer spa experience.",
   },
+  {
+    question: "Is shiatsu massage painful?",
+    answer:
+      "Shiatsu massage can feel firm or intense when pressure is applied to tense areas, but it should remain comfortable. Our therapist can adjust the pressure based on your preference.",
+  },
+  {
+    question: "What is shiatsu massage good for?",
+    answer:
+      "Shiatsu massage may help relieve muscle tension, reduce stress, and promote relaxation. It can also help improve flexibility and overall body comfort.",
+  },
+  {
+    question: "When should you not do shiatsu massage?",
+    answer:
+      "Shiatsu massage may not be suitable if you have certain medical conditions, injuries, or are recovering from surgery. If you are unsure whether it is right for you, consult a healthcare professional before your session.",
+  },
 ];
 
 export default function ShiatsuMassage() {
@@ -121,16 +136,16 @@ export default function ShiatsuMassage() {
           image={treatmentImages.details[0]}
           subTitle="The Reason"
           title={<>Why Do People Choose Shiatsu Massage?</>}
-          text="Shiatsu is often chosen by guests who prefer a structured massage technique that focuses on pressure points instead of continuous oil massage. It is suitable for people experiencing muscular tightness, physical fatigue, or those looking for a traditional Japanese wellness approach."
+          text="Shiatsu offers a different approach to massage by using focused pressure rather than continuous oil-based strokes. Its structured technique makes it a popular choice for guests who want focused bodywork while also enjoying a traditional Japanese wellness experience. People may choose Shiatsu for reasons such as:"
           featuresLeft={[
-            "Helps ease muscle tension",
-            "Supports better flexibility",
-            "Encourages comfortable body movement",
+            "Easing feelings of muscle tension",
+            "Supporting flexibility and mobility",
+            "Encouraging more comfortable body movement",
           ]}
           featuresRight={[
-            "Promotes physical relaxation",
+            "Promoting physical relaxation",
             "Suitable after work, travel, or exercise",
-            "Performed with controlled pressure throughout the session",
+            "Enjoying a traditional Japanese massage approach",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}
@@ -141,7 +156,7 @@ export default function ShiatsuMassage() {
           badgeTopText="Guided by"
           badgeBottomText="Pressure"
           title={<>Which Areas Does Shiatsu Commonly Target?</>}
-          text="Rather than concentrating on only one muscle group, Shiatsu follows pressure points throughout the body while paying extra attention to areas where tension commonly develops from daily activities and posture."
+          text="Shiatsu works across different parts of the body using focused pressure and rhythmic techniques. We can adjust the focus based on where you tend to experience tension or physical fatigue, giving particular attention to areas such as:"
           featuresLeft={[
             "Neck and shoulders",
             "Upper and lower back",
@@ -150,7 +165,7 @@ export default function ShiatsuMassage() {
           featuresRight={[
             "Hips and legs",
             "Feet and lower limbs",
-            "Whole body pressure point pathways",
+            "Pressure points across the body",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}
@@ -160,12 +175,12 @@ export default function ShiatsuMassage() {
           subTitle="The Method"
           badgeTopText="The Shiatsu"
           badgeBottomText="Rhythm"
-          title={<>How Is a Shiatsu Massage Performed?</>}
-          text="Shiatsu is performed using steady finger, thumb, and palm pressure combined with gentle stretching techniques. Instead of long gliding movements, our therapists work gradually across specific pressure points while adjusting intensity according to your body's response. The treatment follows a calm rhythm to encourage comfort throughout the entire session."
+          title={<>How Does Our Shiatsu Massage Work?</>}
+          text="A Shiatsu Massage uses focused pressure and gentle movement rather than long, flowing massage strokes. The therapist works through selected areas at a steady pace, adapting the intensity to keep the treatment comfortable throughout. The session may involve techniques such as:"
           featuresLeft={[
             "Finger pressure techniques",
-            "Thumb pressure on key points",
-            "Palm compression methods",
+            "Thumb pressure on selected points",
+            "Palm compression",
           ]}
           featuresRight={[
             "Gentle assisted stretching",

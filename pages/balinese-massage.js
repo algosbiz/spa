@@ -209,6 +209,9 @@ export default function Home2({
           />
           </div>
           <div className="balinese-massage-faq">
+            <div className="balinese-massage-faq-shape" aria-hidden="true">
+              <img loading="lazy" decoding="async" className="animation__arryUpDown" src="/images/shape/step-shape-left.png" alt="" />
+            </div>
             <Faq
               removeTopPadding
               paperDecoration
@@ -219,9 +222,18 @@ export default function Home2({
             />
           </div>
           <div id="balinese-massage-services-section" className="balinese-massage-services">
-            <Services title="Explore Beyond Your Balinese Massage" showFullTreatmentSlider embedded />
+            <Services
+              title="Explore Beyond Your Balinese Massage"
+              leftShapeSrc="/images/shape/service-shape-left.png"
+              rightShapeSrc="/images/shape/service-shape-right.png"
+              showFullTreatmentSlider
+              embedded
+            />
           </div>
           <div id="balinese-massage-paper-section" className="balinese-massage-paper-section section__decoration-top section__decoration-bottom bg-sub">
+            <div className="balinese-massage-cta-shape" aria-hidden="true">
+              <img loading="lazy" decoding="async" className="animation__arryUpDown" src="/images/shape/step-shape-left.png" alt="" />
+            </div>
             <ReserveCta
               standardSpacing
               backgroundImage={treatmentImages.cta}
@@ -240,6 +252,182 @@ export default function Home2({
             }
           }
 
+
+
+
+
+          /* ==========================================================
+             TORN-EDGE CORRECTIONS — same pattern confirmed on the
+             homepage: a plain section sitting directly under a bottom
+             tear reads 150px (desktop) / 75px (mobile) from the visible
+             torn edge to its first line of text at these paddings.
+
+               desktop  124px      mobile  35px
+
+             The numbers differ between breakpoints because the torn PNG
+             is 1920px wide and centred, so a phone shows the middle of
+             the artwork where the tear runs deeper.
+
+             Sections with a tear of their own are excluded -- their
+             padding belongs to the tear, not to the gap. The IDs are
+             repeated because this page's own rules use ID selectors,
+             which outrank any number of classes.
+             ========================================================== */
+          @media (min-width: 992px) {
+            .balinese-massage-page.balinese-massage-page .about-section-two,
+            .balinese-massage-page.balinese-massage-page .about-section:not([class*="decoration"]),
+            #balinese-massage-funfact#balinese-massage-funfact > .funfact-section,
+            #balinese-massage-services-section#balinese-massage-services-section > .service-section-two {
+              padding-top: 124px !important;
+            }
+
+            /* The closing CTA sits under its wrapper's TOP tear, not under a
+               bottom tear, and its first painted thing is the photo card --
+               no text leading to absorb. Measured separately on each
+               breakpoint: it came out short on desktop and long on phones. */
+            #balinese-massage-paper-section#balinese-massage-paper-section > .reserve-cta-section {
+              padding-top: 163px !important;
+            }
+
+            /* Sections sitting ABOVE a tear. Each ends on a different kind
+               of element -- a paragraph, a stats row, a Book Now button --
+               so each needed its own measured number. */
+            .balinese-massage-page.balinese-massage-page .about-section-two {
+              padding-bottom: 101px !important;
+            }
+
+            #balinese-massage-funfact#balinese-massage-funfact > .funfact-section {
+              padding-bottom: 116px !important;
+            }
+
+            .balinese-massage-page.balinese-massage-page .about-section:not([class*="decoration"]) {
+              padding-bottom: 137px !important;
+            }
+
+            /* This one carries both tears itself, so it kept the theme's own
+               numbers and ended up wider than its neighbours above and
+               narrower below. */
+            .balinese-massage-page.balinese-massage-page .about-section[class*="decoration"] {
+              padding-top: 146px !important;
+              padding-bottom: 157px !important;
+            }
+
+            /* The other three sections that carry their own tears all start
+               from the same theme padding, but one opens on a photo, one on
+               the quote mark and one on a heading, so each lands somewhere
+               else. These trim them onto the same line. */
+            .balinese-massage-page.balinese-massage-page .balinese-massage-pricing > .pricing-section-three {
+              padding-top: 161px !important;
+              padding-bottom: 157px !important;
+            }
+
+            .balinese-massage-page.balinese-massage-page .balinese-massage-testimonial > .testimonial-section-two {
+              padding-top: 163px !important;
+              padding-bottom: 151px !important;
+            }
+
+            .balinese-massage-page.balinese-massage-page .balinese-massage-faq > .faq-section {
+              padding-top: 163px !important;
+              padding-bottom: 157px !important;
+            }
+          }
+
+          @media (max-width: 991px) {
+            /* Same split as the desktop block: a boundary that ends on text
+               needs 35px here, one that ends on a photo, card or button needs
+               the extra 17px on top of it. On phones the stacked layout puts a
+               photo first in several of these, which is why they differ from
+               their desktop counterparts. */
+            .balinese-massage-page.balinese-massage-page .about-section:not([class*="decoration"]),
+            #balinese-massage-services-section#balinese-massage-services-section > .service-section-two {
+              padding-top: 35px !important;
+            }
+
+            .balinese-massage-page.balinese-massage-page .about-section-two,
+            #balinese-massage-funfact#balinese-massage-funfact > .funfact-section {
+              padding-top: 54px !important;
+            }
+
+            .balinese-massage-page.balinese-massage-page .about-section:not([class*="decoration"]) {
+              padding-bottom: 52px !important;
+            }
+
+            #balinese-massage-services-section#balinese-massage-services-section > .service-section-two {
+              padding-bottom: 17px !important;
+            }
+
+            #balinese-massage-paper-section#balinese-massage-paper-section > .reserve-cta-section {
+              padding-top: 28px !important;
+              padding-bottom: 10px !important;
+            }
+
+            /* Same four tear-carrying sections, measured again on a phone --
+               the stacked layout changes what sits first and last in each. */
+            .balinese-massage-page.balinese-massage-page .about-section[class*="decoration"] {
+              padding-top: 98px !important;
+              padding-bottom: 96px !important;
+            }
+
+            .balinese-massage-page.balinese-massage-page .balinese-massage-pricing > .pricing-section-three {
+              padding-top: 96px !important;
+              padding-bottom: 96px !important;
+            }
+
+            .balinese-massage-page.balinese-massage-page .balinese-massage-testimonial > .testimonial-section-two {
+              padding-top: 98px !important;
+              padding-bottom: 90px !important;
+            }
+
+            .balinese-massage-page.balinese-massage-page .balinese-massage-faq > .faq-section {
+              padding-top: 98px !important;
+              padding-bottom: 96px !important;
+            }
+
+            /* The two about-sections already measure right on phones, so only
+               these two move. */
+            .balinese-massage-page.balinese-massage-page .about-section-two {
+              padding-bottom: 30px !important;
+            }
+
+            #balinese-massage-funfact#balinese-massage-funfact > .funfact-section {
+              padding-bottom: 31px !important;
+            }
+          }
+
+          /* The services section is the one section the theme ships without an
+             ornament, so it read bare next to its neighbours. The pair is the
+             same one the homepage services section uses, placed at the same
+             edges (bottom-left / top-right) and sized to this page's 180-270px
+             range. z-index -1 keeps them behind the heading and the cards, the
+             section is already overflow:hidden so they clip at its edges, and
+             the 1399px rule above hides them with every other ornament. */
+          #balinese-massage-services-section .service-section-two > .shape1 {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+          }
+
+          /* 170px keeps the 511px-tall artwork at 266px, which starts below the
+             slider's prev arrow (it sits at left 50px, 60% down) instead of
+             running behind it. */
+          #balinese-massage-services-section .service-section-two > .shape1 img {
+            width: 170px;
+            height: auto;
+          }
+
+          #balinese-massage-services-section .service-section-two > .shape2 {
+            position: absolute;
+            right: 0;
+            top: 40px;
+            z-index: -1;
+          }
+
+          #balinese-massage-services-section .service-section-two > .shape2 img {
+            width: 230px;
+            height: auto;
+          }
+
           /* Vary the ornaments within the existing edge positions and spacing. */
           .balinese-massage-pricing .pricing-section-three .shape1 img {
             width: 230px;
@@ -256,14 +444,69 @@ export default function Home2({
             height: auto;
           }
 
-          .balinese-massage-suitable .about-section .shape2 > div > img {
-            width: 190px;
-            height: auto;
+          /* The floral cluster sits two levels deep inside .shape2, so scale the
+             wrapper instead of sizing the images individually -- it keeps the
+             petals and blossoms in proportion to each other. */
+          .balinese-massage-suitable .about-section > .shape2 > div {
+            transform: scale(1.2);
+            transform-origin: top right;
           }
 
           .balinese-massage-experience .about-section .shape1 img {
             width: 180px;
             height: auto;
+          }
+
+          /* The torn-paper edges already own ::before and ::after on this
+             section, so the ornament is a real element rather than a pseudo. */
+          .balinese-massage-paper-section {
+            position: relative;
+            z-index: 1;
+          }
+
+          .balinese-massage-cta-shape {
+            position: absolute;
+            left: 0;
+            bottom: 120px;
+            z-index: 1;
+            pointer-events: none;
+          }
+
+          .balinese-massage-faq {
+            position: relative;
+            z-index: 1;
+            /* The shape below deliberately hangs past the right edge; without
+               this it would widen the document and add a horizontal scrollbar. */
+            overflow: hidden;
+          }
+
+          /* Only 82px of margin is clear to the right of the FAQ card, so the
+             shape is mirrored and hangs off the edge rather than sitting over
+             the copy -- the left side belongs to the photo. */
+          .balinese-massage-faq-shape {
+            position: absolute;
+            right: -100px;
+            bottom: 40px;
+            z-index: 1;
+            pointer-events: none;
+            transform: scaleX(-1);
+          }
+
+          .balinese-massage-faq-shape img {
+            width: 180px;
+            height: auto;
+          }
+
+          .balinese-massage-cta-shape img {
+            width: 200px;
+            height: auto;
+          }
+
+          @media (max-width: 1399px) {
+            .balinese-massage-cta-shape,
+            .balinese-massage-faq-shape {
+              display: none;
+            }
           }
 
           .balinese-massage-suitable .about-section > .shape2 {
@@ -276,26 +519,41 @@ export default function Home2({
             height: auto;
           }
 
+          /* No z-index here: the theme parks every .shape1/.shape2 at -1 so the
+             ornament stays behind the copy. Setting 2 lifted each one above the
+             content column, and the pale corner of about-left-shape.png then
+             washed out the benefits list underneath it. */
           .balinese-massage-page [data-decoration-motion] {
             translate: 0 var(--decoration-scroll, 0px);
             pointer-events: auto;
-            z-index: 2;
           }
+          /* Deliberately no animation shorthand on this selector. Every ornament
+             already ships with the theme's own class -- animation__arryUpDown,
+             animation__arryLeftRight, animation__floatBob, sway_Y__animation --
+             which is what the homepage ornaments run. A blanket
+             balinese-decoration-drift here overrode all of them with a single
+             8-11s tween that also stayed paused until the observer fired, so
+             these read as frozen next to the homepage. Only the scroll-linked
+             nudge belongs on this selector. */
           .balinese-massage-page [data-decoration-motion] img {
-            animation: balinese-decoration-drift var(--decoration-duration, 9s) ease-in-out infinite alternate;
-            animation-play-state: paused;
             transition: translate 450ms ease;
-          }
-          .balinese-massage-page [data-motion-visible="true"] img {
-            animation-play-state: running;
           }
           .balinese-massage-page [data-decoration-motion]:hover img,
           .balinese-massage-page [data-decoration-motion]:active img {
             translate: 3px -5px;
           }
-          @keyframes balinese-decoration-drift {
-            from { transform: translateY(0) rotate(-1.5deg); }
-            to { transform: translateY(7px) rotate(1.5deg); }
+
+          /* Home1/About renders its left ornament without an animation class,
+             so those three sat still while their partner on the right moved.
+             Same keyframes and 3s timing the homepage ornaments use. */
+          .balinese-massage-benefits .about-section > .shape1 img,
+          .balinese-massage-suitable .about-section > .shape1 img,
+          .balinese-massage-experience .about-section > .shape1 img {
+            animation: sway_Y 3s linear infinite alternate;
+          }
+
+          .balinese-massage-banner .banner-two__shape img {
+            animation: arryUpDown 2s ease infinite alternate;
           }
           @media (prefers-reduced-motion: reduce) {
             .balinese-massage-page [data-decoration-motion],
@@ -319,7 +577,7 @@ export default function Home2({
           }
 
           .balinese-massage-testimonial .testimonial-section-two .shape2 img {
-            width: 200px;
+            width: 260px;
             height: auto;
           }
 
@@ -493,8 +751,9 @@ export default function Home2({
             margin-left: auto;
           }
 
+          /* Above the closing tear. Measured 218px where 133px was wanted. */
           #balinese-massage-services-section > .service-section-two {
-            padding-bottom: 170px !important;
+            padding-bottom: 102px !important;
           }
 
           #balinese-massage-services-section .service-block-two .inner-box {
@@ -523,7 +782,8 @@ export default function Home2({
 
           #balinese-massage-paper-section > .reserve-cta-section {
             padding-top: 170px !important;
-            padding-bottom: 170px !important;
+            /* Above the wrapper bottom tear. Measured 163px, wanted 133px. */
+            padding-bottom: 157px !important;
           }
 
           @media (max-width: 767px) {
@@ -535,7 +795,7 @@ export default function Home2({
                gap above the CTA card on 86px — the same as the gap below it,
                which the paper wrapper's own padding sets. */
             #balinese-massage-services-section > .service-section-two {
-              padding-bottom: 10px !important;
+              padding-bottom: 0 !important;
             }
 
             #balinese-massage-services-section .service-block-two .content .title {

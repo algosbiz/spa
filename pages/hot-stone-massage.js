@@ -106,6 +106,11 @@ const faqItems = [
     answer:
       "Yes. Our therapists provide professional home service throughout Seminyak and nearby areas, bringing all necessary equipment for a comfortable treatment.",
   },
+  {
+    question: "What is a hot stone massage?",
+    answer:
+      "Hot stone massage uses smooth, heated stones placed on selected areas of the body alongside massage techniques. The warmth helps relax the muscles while the massage creates a deeper sense of relaxation.",
+  },
 ];
 
 export default function HotStoneMassage() {
@@ -159,16 +164,16 @@ export default function HotStoneMassage() {
           image={treatmentImages.details[0]}
           subTitle="Treatment Benefits"
           title={<>How Can Hot Stone Massage Support Your Wellbeing?</>}
-          text="The combination of therapeutic warmth and massage techniques creates benefits that go beyond muscle relaxation alone. Many guests choose Hot Stone Massage after travelling, busy schedules, or physically demanding activities because the treatment helps the body relax naturally while encouraging overall comfort."
+          text="Hot Stone Massage combines the soothing warmth of heated stones with flowing massage techniques to help you feel more relaxed and comfortable. The warmth can help prepare your muscles for massage, while the treatment offers a calming experience many guests enjoy after travel, busy days, or physical activity. Some of the key benefits are:"
           featuresLeft={[
             "Helps soften tight muscles before massage",
             "Supports healthy circulation",
-            "Encourages deeper relaxation",
+            "Encourages a deeper sense of relaxation",
           ]}
           featuresRight={[
-            "May reduce feelings of physical tension",
-            "Provides soothing warmth throughout the body",
-            "Suitable after travel or active days",
+            "May ease feelings of physical tension",
+            "Provides soothing warmth throughout the treatment",
+            "Offers a relaxing option after travel or active days",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}
@@ -179,7 +184,7 @@ export default function HotStoneMassage() {
           badgeTopText="Heat in the"
           badgeBottomText="Right Places"
           title={<>Where Are the Warm Stones Used?</>}
-          text="Different stone sizes are selected depending on the treatment area. Larger stones provide broad warming across major muscle groups, while smaller stones deliver focused attention to areas where tension commonly develops."
+          text="Warm stones can be placed on different parts of the body depending on where you want to focus the treatment. Larger stones are generally used on broader areas, while smaller stones allow for more focused warmth. Common areas for warm stone placement are:"
           featuresLeft={[
             "Back and shoulders",
             "Neck area",
@@ -199,16 +204,16 @@ export default function HotStoneMassage() {
           badgeTopText="Feel the"
           badgeBottomText="Heat Work"
           title={<>What Happens During a Hot Stone Massage</>}
-          text="The session begins with heated basalt stones placed on selected areas to gradually warm the muscles before massage begins. Throughout the treatment, our therapists alternate between flowing hand techniques and warm stone massage while adjusting the temperature for your comfort. Smaller stones may also be used to address areas of deeper muscular tension before the session concludes with a calming finish."
+          text="A Hot Stone Massage follows a gradual process that combines heated stones with traditional massage techniques. The treatment starts by preparing the body for the warmth, followed by a combination of stone and hand massage. Throughout the session, we pay attention to your comfort and adjust the treatment as needed. The session generally follows these steps:"
           featuresLeft={[
             "Comfort consultation before treatment",
-            "Warm stone placement on key muscle areas",
-            "Flowing massage using heated stones",
+            "Warm stone placement on selected areas",
+            "Flowing massage with heated stones",
           ]}
           featuresRight={[
             "Combination of stone and hand techniques",
-            "Temperature monitored throughout the session",
-            "Relaxing finishing placement of warm stones",
+            "Temperature checks throughout the session",
+            "Calming finishing placement of warm stones",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}

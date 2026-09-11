@@ -109,16 +109,16 @@ export default function EarCandle() {
           image={treatmentImages.details[0]}
           subTitle="Common Uses"
           title={<>When Is Ear Candle Commonly Chosen?</>}
-          text="Ear Candle is commonly chosen by guests looking for a gentle wellness treatment after long flights, extended travel, or busy schedules. Many also include it alongside massage treatments as part of a more complete spa visit, enjoying the calming warmth and relaxing attention around the ears, temples, and neck."
+          text="Ear Candle is often chosen as a gentle wellness treatment during a relaxing spa visit. It may be suitable for guests looking to unwind after travel, take a short break from a busy schedule, or enjoy a calming treatment around the ears and head. Common reasons they choose Ear Candle include:"
           featuresLeft={[
-            "Popular after flights and long journeys",
-            "Often combined with massage treatments",
-            "Creates a calming wellness break",
+            "Relaxing after flights or long journeys",
+            "Combining it with a massage treatment",
+            "Taking a short wellness break",
           ]}
           featuresRight={[
-            "Gentle care around the ear and head area",
-            "Suitable for first-time Ear Candle guests",
-            "Short treatment with minimal time commitment",
+            "Enjoying gentle attention around the ears and head",
+            "Trying Ear Candle for the first time",
+            "Choosing a treatment with a shorter time commitment",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}
@@ -129,7 +129,7 @@ export default function EarCandle() {
           badgeTopText="Beyond the"
           badgeBottomText="Ear"
           title={<>Areas Included During an Ear Candle Session</>}
-          text="Although the hollow candle is positioned only at the outer ear, the treatment also includes gentle attention to nearby areas that contribute to overall comfort. Relaxing massage around the temples, jaw, and upper neck complements the session, creating a soothing experience beyond the ear itself."
+          text="During an Ear Candle session, gentle attention may be given to the outer ear and nearby areas for a more relaxing experience. Depending on the treatment, this may include:"
           featuresLeft={[
             "Outer ear area",
             "Temples",
@@ -148,17 +148,17 @@ export default function EarCandle() {
           subTitle="Step by Step"
           badgeTopText="Handled With"
           badgeBottomText="Care"
-          title={<>How Is Ear Candle Performed?</>}
-          text="The treatment begins with a brief consultation before the therapist carefully positions the hollow ear candle at the outer ear. Throughout the session, the flame is continuously monitored while gentle massage around the ears, temples, jaw, and neck may be included to enhance relaxation. Every step is performed with comfort and safety in mind."
+          title={<>How Does an Ear Wax Candle Work?</>}
+          text="An ear wax candle session follows a simple and gentle process designed to create a relaxing experience. Firstly, we make sure you are comfortably positioned before placing the hollow candle near the outer ear. During the session, the candle is carefully monitored, and gentle massage may be included to help you relax. This treatment typically involves:"
           featuresLeft={[
-            "Brief consultation before treatment",
-            "Hollow candle placed at the outer ear",
-            "Controlled flame throughout the session",
+            "Positioning the hollow candle near the outer ear",
+            "Gently lighting the candle at the opposite end",
+            "Monitoring the flame throughout the session",
           ]}
           featuresRight={[
-            "Continuous therapist supervision",
-            "Optional massage around the ears, temples, and neck",
-            "Available at the spa or your accommodation",
+            "Providing continuous therapist supervision",
+            "Including gentle massage around the ears, temples, jaw, and neck",
+            "Enjoying the treatment at the spa or your accommodation",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}

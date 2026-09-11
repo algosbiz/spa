@@ -386,7 +386,9 @@ const coupleTreatments = (
 ).map((child, index) => ({
   ...child,
   id: `couple-${index + 1}`,
-  image: pricingTreatmentImages[COUPLE_TREATMENT_NAME],
+  // Each option has its own photo; the shared couple image is only the fallback
+  // for an option that has none, so the rows do not all look alike.
+  image: getListMenuImage(child.name, pricingTreatmentImages[COUPLE_TREATMENT_NAME]),
 }));
 
 const pricingTabs = [

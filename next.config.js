@@ -27,6 +27,10 @@ const treatmentSlugs = [
 
 const nextConfig = {
   reactStrictMode: true,
+  // A second dev server (a preview running alongside the one in your terminal)
+  // would otherwise write into the same .next folder as the first and corrupt
+  // its chunks. Setting NEXT_DIST_DIR gives that second server its own folder.
+  distDir: process.env.NEXT_DIST_DIR || '.next',
   webpack: (config, { dev }) => {
     // Webpack's filesystem cache writes .next/cache/webpack/*.pack.gz_ and then
     // renames it into place. On this machine that rename keeps failing (ENOENT),

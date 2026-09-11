@@ -215,14 +215,14 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
         />
         <Step
           flowerPetals
-          subTitle="Start Here"
+          subTitle="Booking Made Simple"
           title="How Do You Book Your Spa Experience?"
           steps={bookingSteps}
         />
         <div className="homepage-about-paper-section section__decoration-top section__decoration-bottom bg-sub">
           <About
             subTitle="Beyond Relaxation"
-            title={<>Why Spa Is Part of the Bali Experience</>}
+            title={<>Why Spa Bali Moon Is Part of the Bali Experience</>}
             text="After long flights, sightseeing, surfing, or time in the tropical sun, your body needs time to recover. We offer massage, beauty, and body care treatments that ease muscle tension, refresh tired skin, and help you feel refreshed with treatments chosen to suit your body and your time in Bali. Here’s what makes us a trusted choice:"
             features={[
               "Established since 2009",
@@ -409,6 +409,152 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
           .banner-five-area .banner-five__content .title {
             font-size: clamp(38px, 11vw, 52px);
             line-height: 1.1;
+          }
+        }
+
+        /* ==========================================================
+           TORN-EDGE CORRECTIONS — plain section sitting under a bottom
+           tear. Measured on the rendered page, not derived from the
+           asset height.
+
+           desktop  124px  (confirmed: reads 150px on a pixel ruler)
+                           overhead = 150 - 124 = 26px
+           mobile    35px  same overhead recomputed for the phone crop:
+                           the PNG is 1920px wide and centred, so a
+                           375px viewport shows x 773-1148 where the
+                           opaque tail is 21px instead of the 7px the
+                           desktop crop shows. 21 + 19px of text leading
+                           = 40px overhead, so 75 - 40 = 35px.
+
+           Re-measure with a pixel ruler after changing either number.
+           ========================================================== */
+        @media (min-width: 992px) {
+          .page-wrapper.page-wrapper .step-section,
+          .page-wrapper.page-wrapper .package-intro-text {
+            padding-top: 124px !important;
+          }
+
+          /* FAQ above the closing tear. Its inner column already carries
+             70px of its own bottom padding here (30px on phones), so the
+             section padding is the part that gets trimmed. Measured 159px
+             where 150px was wanted, so it loses the 9px difference. */
+          .page-wrapper.page-wrapper .homepage-faq-section .faq-section {
+            padding-bottom: 137px !important;
+          }
+
+          /* The other two sections that sit above a tear, measured the same
+             way. The testimonial ends on its pagination dots and the intro
+             on its closing line, which is why they need different numbers. */
+          .page-wrapper.page-wrapper .testimonial-section-two {
+            padding-bottom: 130px !important;
+          }
+
+          .page-wrapper.page-wrapper .package-intro-text {
+            padding-bottom: 115px !important;
+          }
+
+          /* Pricing and services share one cream sheet with the tear between
+             them switched off, so this gap is a plain content-to-content
+             distance -- no tear offset applies. Measured 164px; the sections
+             stay joined because neither the background nor the tear changes,
+             only the breathing room. */
+          .page-wrapper.page-wrapper .homepage-services-section .service-section {
+            padding-top: 146px !important;
+          }
+
+          /* The rest of the page, measured the same way. A boundary that ends
+             on a photo, card or button needs 17px more room than one that ends
+             on a line of text: the letters' ink starts that far inside their
+             own box, so the eye reads the same distance from a shorter gap. */
+          .page-wrapper.page-wrapper .step-section {
+            padding-bottom: 115px !important;
+          }
+
+          .page-wrapper.page-wrapper .homepage-about-paper-section > .about-section-three {
+            padding-top: 146px !important;
+            padding-bottom: 157px !important;
+          }
+
+          .page-wrapper.page-wrapper .package-section {
+            padding-top: 146px !important;
+            padding-bottom: 155px !important;
+          }
+
+          .page-wrapper.page-wrapper .homepage-pricing-section .pricing-section-five {
+            padding-top: 146px !important;
+          }
+
+          .page-wrapper.page-wrapper .homepage-services-section .service-section {
+            padding-bottom: 135px !important;
+          }
+
+          .page-wrapper.page-wrapper .homepage-closing-section .reserve-cta-section {
+            padding-bottom: 157px !important;
+          }
+        }
+
+        @media (max-width: 991px) {
+          .page-wrapper.page-wrapper .step-section,
+          .page-wrapper.page-wrapper .package-intro-text {
+            padding-top: 35px !important;
+          }
+
+          /* Plain section sitting ABOVE a top tear. This one also carries
+             30px of inner-column padding below its last divider line, which
+             the other side of a tear does not have, so the section padding
+             is what absorbs it: 3 + 30 = 33px below the divider, matching
+             the 35px the opposite side contributes. Measured 107px where
+             75px was wanted, so it loses the 32px difference. */
+          .page-wrapper.page-wrapper .homepage-faq-section .faq-section {
+            padding-top: 54px !important;
+            padding-bottom: 52px !important;
+          }
+
+          .page-wrapper.page-wrapper .testimonial-section-two {
+            padding-bottom: 46px !important;
+          }
+
+          .page-wrapper.page-wrapper .package-intro-text {
+            padding-bottom: 30px !important;
+          }
+
+          .page-wrapper.page-wrapper .homepage-services-section .service-section {
+            padding-top: 81px !important;
+            padding-bottom: 74px !important;
+          }
+
+          /* Same split as the desktop block. The stacked phone layout puts a
+             photo first in several of these where the desktop layout starts
+             with a heading, so the numbers are not simply the desktop ones
+             scaled down. */
+          .page-wrapper.page-wrapper .step-section {
+            padding-bottom: 30px !important;
+          }
+
+          .page-wrapper.page-wrapper .homepage-about-paper-section > .about-section-three {
+            padding-top: 9px !important;
+            padding-bottom: 10px !important;
+          }
+
+          /* The theme's own rule for "section right after a tear" reaches this
+             one through :has(), which counts for more than three classes, so
+             this needs the wrapper in the selector to outrank it. */
+          .page-wrapper.page-wrapper .homepage-service-slider .feature-section {
+            padding-top: 54px !important;
+          }
+
+          .page-wrapper.page-wrapper .package-section {
+            padding-top: 81px !important;
+            padding-bottom: 76px !important;
+          }
+
+          .page-wrapper.page-wrapper .homepage-pricing-section .pricing-section-five {
+            padding-top: 81px !important;
+          }
+
+          .page-wrapper.page-wrapper .homepage-closing-section .reserve-cta-section {
+            padding-top: 9px !important;
+            padding-bottom: 10px !important;
           }
         }
 

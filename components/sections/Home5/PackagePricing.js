@@ -802,6 +802,7 @@ const categories = [
     "title": "Couples Massage Packages",
     "description": "A soothing massage experience to enjoy side by side. Great to spend a quiet moment together in a peaceful place. Sessions can be conducted in-spa or at home. The opportunity to get custom packages or book reservations are available on WhatsApp.",
     "cardTitle": "Couple Massage",
+    "twoPax": true,
     "packages": [
       {
         "price": "IDR 639K",
@@ -834,11 +835,11 @@ const categories = [
         "items": [
           {
             "duration": "1 Hr",
-            "service": "Warm Candle 2 pax"
+            "service": "Warm Candle"
           },
           {
             "duration": "30 Mins",
-            "service": "Ear Candle 2 pax"
+            "service": "Ear Candle"
           }
         ]
       },
@@ -847,11 +848,11 @@ const categories = [
         "items": [
           {
             "duration": "1 Hr",
-            "service": "Warm Candle 2 pax"
+            "service": "Warm Candle"
           },
           {
             "duration": "1 Hr",
-            "service": "Bali Moon Facial 2 pax"
+            "service": "Bali Moon Facial"
           }
         ]
       }
@@ -921,7 +922,10 @@ export default function Home5_PackagePricing() {
                         <h4>
                           {cat.cardTitle} <br /> Package {String.fromCharCode(65 + pi)}
                         </h4>
-                        <h2 className="price">{formatPrice(pkg.price)}</h2>
+                        <h2 className="price">
+                          {formatPrice(pkg.price)}
+                          {cat.twoPax && <span className="pax-note">2 pax</span>}
+                        </h2>
                         <ul>
                           {pkg.items.map((it, ii) => (
                             <li key={ii}>

@@ -160,16 +160,16 @@ export default function BaliMoonFacial() {
           badgeTopText="Made for"
           badgeBottomText="Your Skin"
           title={<>Which Mask is Right for Your Skin?</>}
-          text="Different skin concerns require different approaches. During your appointment, we help determine which mask best suits your skin's current condition and treatment goals."
+          text="The right mask depends on what your skin needs at the time of your treatment. Tea Tree and Gold masks offer different benefits, making them suitable for different skin types and concerns. We can help you choose the most appropriate option based on your skin's condition:"
           featuresLeft={[
-            "Tea Tree for oily skin and visible congestion",
-            "Tea Tree for blemish-prone skin concerns",
+            "Tea Tree for oily and congested skin",
+            "Tea Tree for blemish-prone skin",
             "Gold for dry or dehydrated skin",
           ]}
           featuresRight={[
-            "Gold for improving softness and comfort",
-            "Suitable for combination skin types",
-            "Recommended for guests exposed to sun",
+            "Gold for softening and comforting the skin",
+            "Tea Tree or Gold for combination skin, depending on your needs",
+            "Gold may be suitable for skin affected by sun exposure",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}

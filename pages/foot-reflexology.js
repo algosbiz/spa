@@ -119,18 +119,18 @@ export default function FootReflexology() {
         <Testimonial />
         <About
           image={treatmentImages.details[0]}
-          subTitle="Why Guests Choose It"
+          subTitle="Benefits of Foot Reflexology"
           title={<>A Simple Way to Refresh Tired Feet</>}
-          text="Hours of walking, standing, travelling, or exploring Bali often leave the feet feeling sore and heavy. Foot Reflexology is commonly chosen as a comfortable wellness treatment that focuses on specific pressure points while creating a deeply relaxing experience from the feet upward."
+          text="After a day of walking, standing, travelling, or exploring Bali, your feet can start to feel tired and heavy. Foot Reflexology offers a simple way to give them focused care while creating a relaxing wellness experience. You may choose this treatment for reasons such as:"
           featuresLeft={[
-            "Helps tired feet feel lighter",
-            "Encourages local blood circulation",
-            "Promotes relaxation after long walks",
+            "Helping tired feet feel lighter",
+            "Encouraging healthy local circulation",
+            "Promoting relaxation after long walks",
           ]}
           featuresRight={[
-            "Supports everyday foot comfort",
-            "Suitable for regular wellness routines",
-            "Popular among travellers in Bali",
+            "Supporting everyday foot comfort",
+            "Fitting easily into regular wellness routines",
+            "Providing soothing care for travellers in Bali",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}
@@ -141,14 +141,14 @@ export default function FootReflexology() {
           badgeTopText="The Reflex"
           badgeBottomText="Map"
           title={<>Where Does Foot Reflexology Focus?</>}
-          text="Rather than massaging every part of the foot equally, Foot Reflexology follows a structured map of reflex points. Different areas receive controlled pressure according to traditional reflexology principles while maintaining a relaxing and comfortable treatment."
+          text="Foot Reflexology uses focused pressure on specific areas of the feet based on traditional reflexology principles. Rather than applying the same pressure everywhere, we work through different zones to create a balanced and comfortable treatment. Our session may focus on:"
           featuresLeft={[
             "Toes and forefoot reflex points",
-            "Ball of the foot",
-            "Foot arch",
+            "The ball of the foot",
+            "The foot arch",
           ]}
           featuresRight={[
-            "Heel area",
+            "The heel area",
             "Inner and outer foot zones",
             "Lower leg finishing techniques",
           ]}
@@ -161,16 +161,16 @@ export default function FootReflexology() {
           badgeTopText="A Guided"
           badgeBottomText="Sequence"
           title={<>What Is a Foot Reflexology Session Like?</>}
-          text="Each session begins with gentle warm-up movements before our therapist applies steady thumb and finger pressure to carefully selected reflex points across the feet. The treatment follows a structured sequence rather than random massage strokes, allowing consistent pressure while keeping the experience comfortable and relaxing throughout the session."
+          text="A Foot Reflexology session follows a gentle, structured approach that combines warm-up movements with focused pressure on selected reflex points. The therapist adjusts the technique throughout the treatment to keep the pressure comfortable while maintaining a steady rhythm. The session typically involves:"
           featuresLeft={[
             "Gentle warm-up techniques",
-            "Structured reflex point sequence",
-            "Thumb and finger pressure methods",
+            "A structured reflex point sequence",
+            "Thumb and finger pressure techniques",
           ]}
           featuresRight={[
-            "Controlled pressure adjustments",
+            "Controlled adjustments to pressure",
             "Relaxing finishing movements",
-            "Available at the spa or your accommodation",
+            "A comfortable treatment experience from start to finish",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}

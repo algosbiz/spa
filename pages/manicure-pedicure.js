@@ -143,6 +143,11 @@ const faqItems = [
     answer:
       "Yes. Our therapists provide professional home service throughout Seminyak and nearby areas with all required equipment.",
   },
+  {
+    question: "What is a manicure and pedicure?",
+    answer:
+      "A manicure is a treatment for the hands and fingernails, while a pedicure focuses on the feet and toenails. Both typically include nail cleaning, shaping, cuticle care, and moisturising, with polish or gel available depending on the treatment.",
+  },
 ];
 
 export default function ManicurePedicure() {
@@ -196,16 +201,16 @@ export default function ManicurePedicure() {
           image={treatmentImages.details[0]}
           subTitle="The Reason"
           title={<>Why Is Regular Nail Care Important?</>}
-          text="Hands and feet are exposed to daily activities that can leave nails brittle, cuticles dry, and skin rough over time. Regular Manicure & Pedicure treatments help maintain healthy nails, improve skin condition, and keep hands and feet looking clean, comfortable, and well cared for."
+          text="Regular nail care is about more than keeping your hands and feet looking neat. Manicure & Pedicure treatments give attention to the nails, cuticles, and surrounding skin, helping maintain a clean and well-groomed appearance as part of your regular self-care routine. Regular care can help with:"
           featuresLeft={[
-            "Maintains healthy nail growth",
-            "Helps prevent dry cuticles",
-            "Softens rough skin",
+            "Maintaining healthy-looking nails",
+            "Keeping cuticles soft and cared for",
+            "Smoothing rough or dry skin",
           ]}
           featuresRight={[
-            "Keeps nails neatly shaped",
-            "Improves the appearance of hands and feet",
-            "Suitable for routine self-care",
+            "Keeping nails neatly shaped",
+            "Enhancing the appearance of hands and feet",
+            "Making nail care part of your regular self-care routine",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}
@@ -216,7 +221,7 @@ export default function ManicurePedicure() {
           badgeTopText="Beauty in"
           badgeBottomText="the Details"
           title={<>Professional Care from Nails to Skin</>}
-          text="Our Manicure & Pedicure treatment combines essential nail care with skin conditioning to create a complete maintenance routine. Every step is performed carefully to improve both comfort and appearance."
+          text="Our Manicure & Pedicure session gives attention to both the nails and the surrounding skin, with each part of the treatment carried out to leave your hands and feet feeling clean and well cared for. Depending on the service selected, your treatment may cover:"
           featuresLeft={[
             "Nail trimming and shaping",
             "Gentle cuticle care",
@@ -236,7 +241,7 @@ export default function ManicurePedicure() {
           badgeTopText="The Finishing"
           badgeBottomText="Touch"
           title={<>What Can You Expect During Your Appointment?</>}
-          text="Our therapist begins by assessing your nails before cleaning, shaping, and caring for the cuticles. After the nails are prepared, the skin is moisturised using nourishing products, followed by your selected polish or gel finish if included. Every stage is completed with attention to hygiene, comfort, and long-lasting results."
+          text="Our Manicure & Pedicure appointment follows a simple sequence, starting with an assessment of your nails and ending with the finish you have selected. The treatment is carried out step by step, with attention to keeping your nails and skin clean, comfortable, and well cared for. The appointment typically covers:"
           featuresLeft={[
             "Consultation and nail assessment",
             "Nail cleaning and shaping",

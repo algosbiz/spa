@@ -77,6 +77,16 @@ const faqItems = [
     answer:
       "Yes. Professional home service is available throughout Seminyak and nearby areas for guests who prefer treatment in their accommodation.",
   },
+  {
+    question: "Does head massage help hair growth?",
+    answer:
+      "Head massage may support scalp circulation and relaxation, but there is limited evidence that it directly promotes hair growth. It can still be a soothing addition to your hair and scalp care routine.",
+  },
+  {
+    question: "Why does a head massage feel so good?",
+    answer:
+      "A head massage can feel good because it helps relax the scalp, neck, and surrounding muscles. The gentle pressure and rhythmic movements can also help reduce tension and create a calming, relaxing feeling.",
+  },
 ];
 
 export default function HeadMassage() {
@@ -121,16 +131,16 @@ export default function HeadMassage() {
           image={treatmentImages.details[0]}
           subTitle="Daily Relief"
           title={<>How Can a Head Massage Help?</>}
-          text="Although Head Massage is often associated with relaxation, many guests also choose it to reduce physical tension around the scalp and neck after work, travel, or mentally demanding days. Gentle massage techniques encourage the body to slow down while creating a lighter, more comfortable feeling throughout the upper body."
+          text="A Head Massage is a simple way to give focused attention to the head, scalp, neck, and surrounding areas. It can be a comfortable choice when you want to relax after a demanding day or ease the physical strain that can build up through work and travel. You may choose a Head Massage for reasons such as:"
           featuresLeft={[
-            "Helps ease head and neck tension",
-            "Supports scalp comfort",
-            "Encourages relaxation",
+            "Easing tension around the head and neck",
+            "Supporting scalp comfort",
+            "Encouraging relaxation",
           ]}
           featuresRight={[
-            "May reduce feelings of mental fatigue",
-            "Suitable after travel or long workdays",
-            "Complements other spa treatments",
+            "Helping with feelings of mental fatigue",
+            "Providing relief after travel or long workdays",
+            "Adding a relaxing element to other spa treatments",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}
@@ -141,7 +151,7 @@ export default function HeadMassage() {
           badgeTopText="Relief Around"
           badgeBottomText="the Head"
           title={<>Which Areas Receive the Most Attention?</>}
-          text="Rather than concentrating on the scalp alone, a Head Massage also includes nearby muscles that commonly contribute to feelings of tightness. Treating these connected areas creates a more balanced and comfortable experience."
+          text="A Head Massage focuses on more than just the scalp. The therapist also works on nearby areas that can become tense during long workdays, travel, or daily activities. Depending on your needs, particular attention may be given to:"
           featuresLeft={[
             "Scalp",
             "Temples",
@@ -161,16 +171,16 @@ export default function HeadMassage() {
           badgeTopText="Rhythm of"
           badgeBottomText="Release"
           title={<>What to Expect During a Head Massage Session</>}
-          text="Our therapist begins with gentle movements across the scalp before gradually working through the temples, neck, and upper shoulders. Different massage techniques are combined throughout the session, including circular movements, rhythmic pressure, kneading, and slow strokes that help release built-up tension while maintaining a calm, comfortable pace."
+          text="A Head Massage follows a gentle progression from the scalp to the surrounding areas, with the pressure adjusted throughout the treatment to keep you comfortable. We use different movements and techniques to work through areas that may feel tense, creating a calm and unhurried experience. Our typical session involves:"
           featuresLeft={[
             "Brief consultation before treatment",
-            "Scalp massage using rhythmic movements",
+            "Rhythmic movements across the scalp",
             "Circular pressure around the temples",
           ]}
           featuresRight={[
-            "Neck and shoulder massage",
-            "Pressure adjusted throughout the session",
-            "Relaxing finish for overall comfort",
+            "Massage of the neck and upper shoulders",
+            "Pressure adjusted to your comfort level",
+            "Gentle finishing movements to end the session",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}

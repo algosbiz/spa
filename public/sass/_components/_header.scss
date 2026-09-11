@@ -356,7 +356,8 @@
 				transition: all 0.3s;
 				svg {
 					margin-left: 10px;
-					margin-top: -5px;
+					margin-top: -3px;
+					vertical-align: middle;
 					transition: all 0.3s;
 					path {
 						fill: var(--theme-color1);
@@ -533,6 +534,10 @@
 		&.show {
 			opacity: 1;
 		}
+	}
+	.offcanvas-header .logo img {
+		width: auto;
+		height: 44px;
 	}
 	.btn-close {
 		@include radius(25px, 25px, 25px);

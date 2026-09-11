@@ -21,15 +21,13 @@ export default function useDecorationMotion(ref) {
     };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(({ target, isIntersecting }) => {
-        target.dataset.motionVisible = String(isIntersecting);
         if (isIntersecting) visible.add(target);
         else visible.delete(target);
       });
       queue();
     });
-    ornaments.forEach((element, index) => {
+    ornaments.forEach((element) => {
       element.dataset.decorationMotion = "true";
-      element.style.setProperty("--decoration-duration", `${8 + index % 4}s`);
       observer.observe(element);
     });
     window.addEventListener("scroll", queue, { passive: true });
@@ -41,9 +39,7 @@ export default function useDecorationMotion(ref) {
       cancelAnimationFrame(frame);
       ornaments.forEach((element) => {
         delete element.dataset.decorationMotion;
-        delete element.dataset.motionVisible;
         element.style.removeProperty("--decoration-scroll");
-        element.style.removeProperty("--decoration-duration");
       });
     };
   }, [ref]);

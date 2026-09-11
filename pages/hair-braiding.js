@@ -126,16 +126,15 @@ export default function HairBraiding() {
           image={treatmentImages.details[0]}
           subTitle="Very Popular"
           title={<>Why Many Visitors Choose Hair Braiding in Bali</>}
-          text="Braided hairstyles have become one of the most popular beauty services in Bali because they combine style with practicality. They help keep hair comfortable in warm, humid weather while reducing the need for daily styling, making them ideal for beach days, sightseeing, outdoor adventures, and special occasions."
+          text="Hair braiding is a practical and stylish choice for many tourists in Bali. Braids can help keep hair manageable in the island's warm, humid climate while making everyday styling easier during a holiday. They often choose braiding for benefits such as:"
           featuresLeft={[
-            "Keeps hair neat in Bali's tropical climate",
-            "Helps reduce tangling from wind and humidity",
-            "Comfortable for swimming and beach activities",
+            "Keeping hair neat in Bali's tropical climate",
+            "Reducing tangling caused by wind and humidity",
+            "Making hair easier to manage during swimming and beach activities",
           ]}
           featuresRight={[
-            "Suitable for holidays, events, and festivals",
-            "Low-maintenance hairstyle for several days",
-            "Available in a variety of braid patterns",
+            "Creating a convenient style for holidays, events, and festivals",
+            "Maintaining a low-maintenance hairstyle for several days",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}
@@ -146,7 +145,7 @@ export default function HairBraiding() {
           badgeTopText="Find Your"
           badgeBottomText="Style"
           title={<>Explore Our Most Popular Hair Braiding Styles</>}
-          text="Every hairstyle creates a different look and level of hold. Whether you prefer a clean everyday braid or something more detailed for a special occasion, we'll help you choose a style that matches your hair type, plans, and personal preference."
+          text="From simple braids for everyday wear to more detailed styles for holidays and special occasions, there are plenty of options to choose from. Each style creates a different look and can be adapted to suit your hair, outfit, and plans. Our best hair braiding styles include:"
           featuresLeft={[
             "Classic Double Dutch",
             "Single Dutch Braid",
@@ -168,7 +167,7 @@ export default function HairBraiding() {
           badgeTopText="Planned for"
           badgeBottomText="Your Look"
           title={<>Every Braid Starts with the Right Plan</>}
-          text="Before braiding begins, we discuss your preferred hairstyle, braid size, hair length, and whether you'd like to include extensions. Each section of hair is carefully prepared before braiding to create an even, comfortable finish. Once complete, we'll also share simple aftercare tips to help your hairstyle stay neat for longer."
+          text="Before braiding begins, we discuss your preferred hairstyle, braid size, hair length, and whether you'd like to include extensions. Each section of hair is carefully prepared before braiding to create an even, comfortable finish. Once complete, we'll also share simple aftercare tips to help your hairstyle stay neat for longer. The process covers:"
           featuresLeft={[
             "Hairstyle consultation",
             "Braid size selection",

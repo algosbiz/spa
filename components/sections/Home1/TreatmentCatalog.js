@@ -151,7 +151,6 @@ export default function TreatmentCatalog({
                 }}
               >
                 <span>{category.label}</span>
-                <i className="fa-regular fa-arrow-right-long" aria-hidden="true"></i>
               </button>
             );
           })}
@@ -205,7 +204,6 @@ export default function TreatmentCatalog({
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          gap: 16px;
           min-height: 58px;
           padding: 12px 32px;
           border: 1px solid var(--theme-color1);
@@ -219,22 +217,12 @@ export default function TreatmentCatalog({
           transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
         }
 
-        .treatment-catalog__category i {
-          font-size: 16px;
-          transition: transform 0.25s ease;
-        }
-
         .treatment-catalog__category:hover,
         .treatment-catalog__category:focus-visible,
         .treatment-catalog__category.is-active {
           color: #fff;
           background: var(--theme-color1);
           outline: none;
-        }
-
-        .treatment-catalog__category:hover i,
-        .treatment-catalog__category:focus-visible i {
-          transform: translateX(3px);
         }
 
         .treatment-catalog__item {
@@ -468,7 +456,6 @@ export default function TreatmentCatalog({
           .treatment-catalog__dropdown,
           .treatment-catalog__image img,
           .treatment-catalog__category,
-          .treatment-catalog__category i,
           .treatment-catalog__toggle,
           .treatment-catalog__toggle i {
             transition: none;

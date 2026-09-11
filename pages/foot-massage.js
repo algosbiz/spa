@@ -77,6 +77,26 @@ const faqItems = [
     answer:
       "Yes. Home service is available for selected hotels, villas, and accommodations around Seminyak.",
   },
+  {
+    question: "Does foot massage help neuropathy?",
+    answer:
+      "Foot massage may help relieve discomfort and promote relaxation, but it does not treat the underlying cause of neuropathy. If you have reduced sensation in your feet, speak with a healthcare professional before getting a massage.",
+  },
+  {
+    question: "Is foot massage good for plantar fasciitis?",
+    answer:
+      "Foot massage may help ease tension and discomfort associated with plantar fasciitis. Gentle massage can be particularly soothing, but it should not replace professional treatment when symptoms persist.",
+  },
+  {
+    question: "Can I get a foot massage while pregnant?",
+    answer:
+      "Foot massage can be relaxing during pregnancy, but it is best to check with your healthcare provider first, especially if you have any pregnancy-related complications. Let your therapist know that you are pregnant so they can adjust the treatment accordingly.",
+  },
+  {
+    question: "Why does a foot massage feel so good?",
+    answer:
+      "A foot massage can feel good because it helps relax tense muscles, stimulates the feet, and promotes a sense of relaxation. The combination of gentle pressure and soothing movements can also help reduce everyday stress and tension.",
+  },
 ];
 
 export default function FootMassage() {
@@ -121,16 +141,16 @@ export default function FootMassage() {
           image={treatmentImages.details[0]}
           subTitle="Common Situations"
           title={<>When Is a Foot Massage Most Helpful?</>}
-          text="Foot Massage is often chosen when the feet feel tired from daily movement or extended periods of activity. Many guests book this treatment after travelling, walking around Bali, or spending long hours standing, giving their feet dedicated care that full-body massages may not always provide."
+          text="A Foot Massage can be especially enjoyable when your feet have been working hard throughout the day. Whether you've spent hours exploring Bali, standing for long periods, or travelling, a dedicated foot treatment gives tired feet focused attention. It can be particularly helpful after situations such as:"
           featuresLeft={[
-            "Relieves tired feet after sightseeing",
-            "Comforts sore arches and heels",
-            "Supports recovery after long flights",
+            "Tired feet after sightseeing or exploring",
+            "Sore arches or heels after extended walking",
+            "Foot fatigue following a long flight",
           ]}
           featuresRight={[
-            "Refreshes feet after standing for hours",
-            "Suitable after light physical activities",
-            "Provides dedicated care for overworked feet",
+            "Tired feet after standing for several hours",
+            "Muscle fatigue after light physical activities",
+            "General discomfort from overworked feet",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}
@@ -141,16 +161,16 @@ export default function FootMassage() {
           badgeTopText="From Heel"
           badgeBottomText="to Toe"
           title={<>Where Does Foot Massage Work?</>}
-          text="Rather than treating the feet as one single area, the massage focuses on different structures that commonly hold tension. By addressing each part individually, the treatment creates a more balanced feeling throughout the feet and lower legs."
+          text="A Foot Massage focuses on several areas of the feet and lower legs that can become tired or tense throughout the day. Each area receives focused attention to help create a more comfortable and relaxed feeling. The massage may focus on:"
           featuresLeft={[
             "Soles that absorb daily impact",
-            "Arches supporting body weight",
+            "Arches that support body weight",
             "Heels affected by prolonged standing",
           ]}
           featuresRight={[
-            "Ankles that assist movement",
-            "Calf muscles connected to foot tension",
-            "Toes and surrounding soft tissues",
+            "Ankles involved in everyday movement",
+            "Calf muscles that can contribute to foot tension",
+            "Toes and the surrounding soft tissues",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}
@@ -161,16 +181,16 @@ export default function FootMassage() {
           badgeTopText="The Rhythm"
           badgeBottomText="of Relief"
           title={<>How Our Foot Massage Is Performed</>}
-          text="Each session combines smooth massage strokes, circular movements, warm natural oils, and reflexology-inspired pressure techniques to relieve tension throughout the feet and lower legs. Special attention is given to the arches, heels, and areas that commonly become sore after walking or standing. The pressure remains comfortable throughout the treatment and can be adjusted to suit your preferences."
+          text="Our Foot Massage uses a combination of gentle techniques to work through tension in the feet and lower legs. Warm natural oils help create smooth, comfortable movements, while focused pressure is applied to areas that may feel particularly tired after walking or standing. The treatment can be tailored to your comfort, with techniques such as:"
           featuresLeft={[
             "Warm oil for smooth massage movements",
-            "Gentle circular techniques",
-            "Pressure applied to key foot zones",
+            "Gentle circular massage techniques",
+            "Reflexology-inspired pressure on key foot zones",
           ]}
           featuresRight={[
-            "Care for arches and heels",
-            "Lower leg massage for added relief",
-            "Comfort adjusted throughout the session",
+            "Focused attention on the arches and heels",
+            "Massage of the lower legs and calves",
+            "Pressure adjusted to your comfort level",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}

@@ -546,7 +546,7 @@ const beautyTreatments = [
 const coupleTreatments = [
   treatment(
     "couple-balinese",
-    "Couple Massage",
+    "Couple Balinese Massage",
     "Designed for two to relax together while easing the body and sharing a calm moment.",
     "/images/homepage/homepage-21.webp",
     coupleBalineseOptions

@@ -136,9 +136,60 @@
 			color: var(--headings-color);
 			font-family: var(--text-font);
 			font-weight: 400;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: var(--quote-clamp, 4);
+			overflow: hidden;
 			@include breakpoint(max-sm) {
 				font-size: 16px;
 				line-height: 28px;
+			}
+			&.is-expanded {
+				display: block;
+				-webkit-line-clamp: unset;
+				overflow: visible;
+			}
+		}
+		.quote-toggle {
+			display: inline-flex;
+			align-items: center;
+			gap: 7px;
+			margin-top: 10px;
+			padding: 6px 8px;
+			border: 0;
+			background: none;
+			font-family: var(--text-font);
+			font-size: 14px;
+			font-weight: 600;
+			line-height: 1;
+			color: var(--headings-color);
+			cursor: pointer;
+			transition: color 0.3s ease;
+			.quote-toggle__label {
+				text-decoration: underline;
+				text-underline-offset: 3px;
+			}
+			.quote-toggle__caret {
+				color: var(--theme-color1);
+				transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+			}
+			&:hover {
+				color: var(--theme-color1);
+			}
+			&:focus-visible {
+				outline: 2px solid var(--theme-color1);
+				outline-offset: 4px;
+				border-radius: 2px;
+			}
+			&[aria-expanded="true"] {
+				.quote-toggle__caret {
+					transform: rotate(180deg);
+				}
+			}
+			@media (prefers-reduced-motion: reduce) {
+				.quote-toggle__caret {
+					transition: none;
+				}
 			}
 		}
 		.info {

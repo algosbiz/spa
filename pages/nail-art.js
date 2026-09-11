@@ -77,6 +77,11 @@ const faqItems = [
     answer:
       "Many guests enjoy beautiful results for around two to three weeks, depending on nail growth and daily activities.",
   },
+  {
+    question: "What is nail art?",
+    answer:
+      "Nail art is the decoration of fingernails or toenails using colours, patterns, designs, or other decorative details. It can be added to natural nails or applied over gel or polish.",
+  },
 ];
 
 export default function NailArt() {
@@ -121,16 +126,16 @@ export default function NailArt() {
           image={treatmentImages.details[0]}
           subTitle="Beauty Benefits"
           title={<>What Makes Gel Nail Art So Popular?</>}
-          text="Beautiful nails are more than decoration. Gel Nail Art helps create a polished appearance while protecting the design from everyday wear. Many guests choose it because it combines creativity, durability, and professional finishing in a single treatment."
+          text="Gel Nail Art offers a practical way to add colour and personality to your nails while maintaining a neat, polished look. It can suit different styles and occasions, from simple everyday designs to more creative looks for holidays or special events. People often choose gel nails for reasons such as:"
           featuresLeft={[
             "Long-lasting shine",
-            "Helps reduce frequent polish touch-ups",
-            "Wide selection of colours and designs",
+            "Less need for frequent polish touch-ups",
+            "A wide selection of colours and designs",
           ]}
           featuresRight={[
             "Suitable for holidays and special occasions",
-            "Comfortable lightweight finish",
-            "Applied with attention to natural nail health",
+            "A lightweight, comfortable finish",
+            "Careful application to support natural nail health",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}
@@ -141,7 +146,7 @@ export default function NailArt() {
           badgeTopText="Your Signature"
           badgeBottomText="Set"
           title={<>Find Nail Art Style That Matches You</>}
-          text="Every guest has a different style preference. Our therapists can create clean minimalist looks, elegant classic finishes, or detailed artistic designs based on your inspiration and the condition of your natural nails."
+          text="Your nail design can be simple, elegant, playful, or more detailed depending on the look you have in mind. We can work from your inspiration and adapt the design to suit your natural nails, preferred colours, and occasion. Some popular styles are:"
           featuresLeft={[
             "Minimalist nail designs",
             "French tips",
@@ -150,7 +155,6 @@ export default function NailArt() {
           featuresRight={[
             "Floral or artistic patterns",
             "Seasonal colour combinations",
-            "Custom designs from your reference photos",
           ]}
           buttonText="Book Now"
           buttonLink={bookingUrl}
@@ -161,15 +165,15 @@ export default function NailArt() {
           badgeTopText="Built Layer"
           badgeBottomText="by Layer"
           title={<>How Is Gel Nail Art Applied?</>}
-          text="Each appointment begins with nail preparation to create a smooth foundation before colour or gel is applied. Designs are built layer by layer using professional products, then cured under a UV or LED lamp to achieve a durable finish. Throughout the session, our nail artists work carefully to keep both the design and your natural nails in excellent condition."
+          text="Gel Nail Art is applied through a step-by-step process that prepares the nails before the colour and design are added. Each layer is carefully finished and cured to create a smooth, polished result while keeping the application neat and comfortable. The process typically involves:"
           featuresLeft={[
             "Nail preparation and shaping",
             "Cuticle care",
             "Gel or colour application",
           ]}
           featuresRight={[
-            "Design created by hand",
-            "UV or LED curing process",
+            "Hand-created nail design",
+            "UV or LED curing",
             "Protective finishing top coat",
           ]}
           buttonText="Book Now"
