@@ -124,6 +124,30 @@ const nextConfig = {
       ...treatmentRedirects,
     ].map(withTrailingSlashDestination)
   },
+
+  // Everything under public/ is served `max-age=0, must-revalidate` by default,
+  // so a repeat visitor re-validates ~86 image requests before anything renders.
+  // These filenames are stable, so cache them and refresh in the background --
+  // a replaced image can take up to a day to reach someone who already has it.
+  async headers() {
+    return [
+      {
+        source: '/images/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=2592000, stale-while-revalidate=86400',
+          },
+        ],
+      },
+      {
+        source: '/webfonts/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
