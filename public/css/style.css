@@ -5615,10 +5615,9 @@ textarea.form-control {
     right: -80px;
   }
 }
-@media (max-width: 1399px) and (max-width: 575px) {
+@media (max-width: 575px) {
   .about-section-two .image-column .inner-column .image-box .circle-image {
-    top: 30px;
-    right: 30px;
+    display: none;
   }
 }
 .about-section-two .image-column .inner-column .circle-btn {

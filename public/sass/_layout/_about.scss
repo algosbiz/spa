@@ -263,11 +263,13 @@
 						width: 200px;
 						height: 200px;
 						right: -80px;
+					}
 
-						@include breakpoint(max-sm) {
-							top: 30px;
-							right: 30px;
-						}
+					// On phones there is no room left of the column for the circle to
+					// overhang into, so it used to be pulled inside the photo and sat
+					// right on top of the subject. Hide it there, like the leaf shapes.
+					@include breakpoint(max-sm) {
+						display: none;
 					}
 				}
 			}
