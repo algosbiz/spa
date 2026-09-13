@@ -64,15 +64,13 @@
     margin-left: 18px;
   }
   li {
-    a {
+    // Was `a`. The category is a plain label now, so the hover colour is gone
+    // with it -- a colour change on something that cannot be clicked just
+    // invites the click.
+    .blog-details__category {
       font-size: 15px;
       color: #777;
       font-weight: 500;
-      -webkit-transition: all 500ms ease;
-      transition: all 500ms ease;
-      &:hover {
-        color: var(--theme-color1);
-      }
       i {
         color: var(--theme-color1);
         margin-right: 6px;
@@ -110,13 +108,17 @@
   }
 }
 .blog-details__tags {
-  span {
+  // Was a bare `span`, which is why the tags could not become spans until the
+  // label was given a class of its own.
+  .blog-details__tags-label {
     color: #0e2207;
     font-size: 20px;
     margin-right: 14px;
     font-weight: var(--body-font-weight-bold);
   }
-  a {
+  // Was `a`. Same gold pill, minus the hover swap: these are labels, and there
+  // is no tag archive for them to lead to.
+  .blog-details__tag {
     position: relative;
     font-size: 12px;
     background-color: var(--theme-color2);
@@ -124,16 +126,9 @@
     display: inline-block;
     padding: 5px 30px 5px;
     font-weight: var(--body-font-weight-bold);
-    -webkit-transition: all 500ms ease;
-    transition: all 500ms ease;
     border-radius: 35px;
-    &:hover {
-      background-color: var(--theme-color1);
-      color: var(--theme-color-light);
-      text-decoration: none;
-    }
   }
-  a+a {
+  .blog-details__tag+.blog-details__tag {
     margin-left: 6px;
   }
 }

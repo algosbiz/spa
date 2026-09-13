@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
@@ -17,6 +18,11 @@ export default function Home2_Banner({
     buttonText = "Book Now",
     buttonLink = "https://wa.me/6287863175144",
 }) {
+    // scripts/make-hero-variants.py writes an 828px copy of every hero beside
+    // the original under this exact name, discovering them by the same rule
+    // used here. Re-run it after adding a page with a new hero, or the phone
+    // media query below will point at a file that does not exist.
+    const mobileImage = image.replace(/(\.[a-z0-9]+)$/i, '-sm$1');
     const swiperOptions = {
         modules: [Pagination],
         slidesPerView: 1,
@@ -28,14 +34,38 @@ export default function Home2_Banner({
     };
     return (
         <>
+            {/* This banner's photo is the LCP element on every page that uses
+                it, and it is painted as a CSS background on .slide-bg. The
+                preload scanner only ever looks at markup, so a background URL
+                is invisible to it: measured, the file did not start
+                downloading until ~133ms, once the stylesheet had parsed and
+                layout had run. Preloading declares it in the <head>, where the
+                scanner finds it on the first pass, and fetchPriority lifts it
+                over the decorative shapes queued alongside it. */}
+            <Head>
+                <link rel="preload" as="image" href={mobileImage} media="(max-width: 767px)" fetchpriority="high" />
+                <link rel="preload" as="image" href={image} media="(min-width: 768px)" fetchpriority="high" />
+            </Head>
+
             <section className="banner-two-area section__decoration-bottom">
                 <div className="banner-two__shape">
-                    <img src={shapeImage} alt="" aria-hidden="true" />
+                    {/* Decorative and off to the side; it competed with the
+                        banner photo for the same early bandwidth. */}
+                    <img src={shapeImage} alt="" aria-hidden="true" fetchpriority="low" decoding="async" />
                 </div>
                 <Swiper {...swiperOptions} className="swiper  banner-two__slider">
                     <div className="swiper-wrapper">
                         <SwiperSlide className="swiper-slide">
-                            <div className="slide-bg" style={{ backgroundImage: `url(${image})` }}></div>
+                            {/* The two candidates are handed over as custom
+                                properties instead of a background-image, so the
+                                media query below can choose between them. Set
+                                as an inline background-image, the desktop file
+                                would win on every viewport -- an inline style
+                                outranks any selector. */}
+                            <div
+                                className="slide-bg"
+                                style={{ '--hero-lg': `url(${image})`, '--hero-sm': `url(${mobileImage})` }}
+                            ></div>
                             <div className="container">
                                 <div className=" banner-two__content">
                                     <p className="sub-title" data-animation="fadeInUp" data-delay=".3s">
@@ -81,6 +111,20 @@ export default function Home2_Banner({
                 <div className="banner-two__pagination" />
             </section>
             <style jsx global>{`
+                /* Desktop keeps the full-size photo; the 767px breakpoint is
+                   the same one the banner's own layout turns on, so the image
+                   swaps exactly where the design already changes. Same aspect
+                   ratio and same background-size: cover, so nothing about how
+                   it is framed moves -- only the pixel count. */
+                .banner-two-area .slide-bg {
+                    background-image: var(--hero-lg);
+                }
+                @media (max-width: 767px) {
+                    .banner-two-area .slide-bg {
+                        background-image: var(--hero-sm, var(--hero-lg));
+                    }
+                }
+
                 .banner-two__content .opening-times {
                     margin: 28px 0 0;
                     color: rgba(255, 255, 255, 0.85);

@@ -91,9 +91,15 @@ const BlogDetails = ({ post, recentPosts = [], prevPost = null, nextPost = null,
                                     <ul className="list-unstyled blog-details__meta">
                                         {post?.category && (
                                             <li>
-                                                <a href="#">
+                                                {/* A label, not a link. This was an <a href="#">
+                                                    from the theme: it went nowhere, jumped the
+                                                    reader to the top of the page, and offered
+                                                    keyboard and screen-reader users a focus stop
+                                                    with nothing behind it. There is no
+                                                    category archive to point it at. */}
+                                                <span className="blog-details__category">
                                                     <i className="fas fa-folder"></i> {post.category}
-                                                </a>
+                                                </span>
                                             </li>
                                         )}
                                         {post?.published_at && (
@@ -115,14 +121,36 @@ const BlogDetails = ({ post, recentPosts = [], prevPost = null, nextPost = null,
                                 {tags.length > 0 && (
                                     <div className="blog-details__bottom">
                                         <p className="blog-details__tags">
-                                            <span>Tags</span>
+                                            {/* Both halves carry a class. The label used to be
+                                                styled as the only <span> in here, so turning the
+                                                tags into spans would have handed them the
+                                                label's 20px type instead of the pill. */}
+                                            <span className="blog-details__tags-label">Tags</span>
                                             {tags.map((t) => (
-                                                <a href="#" key={t}>{t}</a>
+                                                <span className="blog-details__tag" key={t}>{t}</span>
                                             ))}
                                         </p>
                                         <div className="blog-details__social-list">
-                                            <a href="#"><i className="fab fa-facebook"></i></a>
-                                            <a href="#"><i className="fab fa-instagram"></i></a>
+                                            {/* Follow links, not share buttons -- the accounts the
+                                                live site already points at. rel="noopener" because
+                                                target="_blank" otherwise hands the opened tab a
+                                                window.opener reference back to this page. */}
+                                            <a
+                                                href="https://www.facebook.com/spabalimoon"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label="Spa Bali Moon on Facebook"
+                                            >
+                                                <i className="fab fa-facebook" aria-hidden="true"></i>
+                                            </a>
+                                            <a
+                                                href="https://www.instagram.com/spabalimoon_/"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label="Spa Bali Moon on Instagram"
+                                            >
+                                                <i className="fab fa-instagram" aria-hidden="true"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 )}

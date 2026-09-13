@@ -23,6 +23,19 @@
       "env": {
         "NEXT_DIST_DIR": ".next-preview"
       }
+    },
+    {
+      "name": "spa-prod",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "next",
+        "start"
+      ],
+      "port": 3100,
+      "autoPort": true,
+      "env": {
+        "NEXT_DIST_DIR": ".next-prod"
+      }
     }
   ]
 }

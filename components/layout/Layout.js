@@ -1,26 +1,45 @@
 import { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import BackToTop from '../elements/BackToTop';
 import WhatsAppButton from '../elements/WhatsAppButton';
-import Footer from './Footer';
-import Footer2 from './Footer2';
-import Footer3 from './Footer3';
-import Footer4 from './Footer4';
-import Header1 from './Header1';
-import Header1Single from './Header1Single';
-import Header1Dark from './Header1Dark';
-import Header2 from './Header2';
-import Header2Single from './Header2Single';
-import Header2Dark from './Header2Dark';
-import Header3 from './Header3';
-import Header3Single from './Header3Single';
-import Header3Dark from './Header3Dark';
-import Header4 from './Header4';
-import Header4Single from './Header4Single';
-import Header4Dark from './Header4Dark';
-import Header5 from './Header5';
-import Header5Single from './Header5Single';
-import Header5Dark from './Header5Dark';
 import PageHead from './PageHead';
+
+// Every page imports Layout, and Layout used to import all fifteen headers and
+// all four footers statically -- 270KB of source that webpack could not drop,
+// because every one of them was referenced in the render. Fifty-two of the
+// ~seventy pages show Header1 and Footer2 and nothing else; the remaining
+// variants belong to the theme's demo pages, one page each.
+//
+// next/dynamic still renders these on the server, so the markup, the SEO that
+// reads it and the layout stability that depends on it are all unchanged --
+// the only difference is that each variant now gets its own client chunk, and
+// a page downloads just the header it actually shows.
+const HEADERS = {
+    one: dynamic(() => import('./Header1')),
+    'one-single': dynamic(() => import('./Header1Single')),
+    'one-dark': dynamic(() => import('./Header1Dark')),
+    two: dynamic(() => import('./Header2')),
+    'two-single': dynamic(() => import('./Header2Single')),
+    'two-dark': dynamic(() => import('./Header2Dark')),
+    three: dynamic(() => import('./Header3')),
+    'three-single': dynamic(() => import('./Header3Single')),
+    'three-dark': dynamic(() => import('./Header3Dark')),
+    four: dynamic(() => import('./Header4')),
+    'four-single': dynamic(() => import('./Header4Single')),
+    'four-dark': dynamic(() => import('./Header4Dark')),
+    five: dynamic(() => import('./Header5')),
+    'five-single': dynamic(() => import('./Header5Single')),
+    'five-dark': dynamic(() => import('./Header5Dark')),
+};
+
+const FOOTERS = {
+    two: dynamic(() => import('./Footer2')),
+    three: dynamic(() => import('./Footer3')),
+    four: dynamic(() => import('./Footer4')),
+};
+
+const DefaultHeader = HEADERS.one;
+const DefaultFooter = dynamic(() => import('./Footer'));
 
 const Layout = ({ children, HeaderStyle, FooterStyle, styleMode, headTitle, metaDescription, canonicalPath, ogImage, ogType, robots }) => {
     const [searchToggle, setSearchToggled] = useState(false);
@@ -59,6 +78,13 @@ const Layout = ({ children, HeaderStyle, FooterStyle, styleMode, headTitle, meta
     }, [styleMode]);
 
 
+    // No style named means Header1/Footer, matching the old `{!HeaderStyle &&
+    // <Header1 …>}` branch. An unrecognised style resolves to undefined and
+    // renders nothing, which is also what the old chain did -- the 404 page
+    // passes HeaderStyle="error" precisely to get no header at all.
+    const Header = HeaderStyle ? HEADERS[HeaderStyle] : DefaultHeader;
+    const PageFooter = FooterStyle ? FOOTERS[FooterStyle] : DefaultFooter;
+
     return (
         <>
             <PageHead
@@ -71,31 +97,13 @@ const Layout = ({ children, HeaderStyle, FooterStyle, styleMode, headTitle, meta
             />
             <div className="page-wrapper" id="top">
 
-                {!HeaderStyle && <Header1 handleOpen={handleOpen} handleRemove={handleRemove} searchToggle={searchToggle} handleToggle={handleToggle} scroll={scroll} />}
-                {HeaderStyle === "one" && <Header1 handleOpen={handleOpen} handleRemove={handleRemove} searchToggle={searchToggle} handleToggle={handleToggle} scroll={scroll} />}
-                {HeaderStyle === "one-single" && <Header1Single handleOpen={handleOpen} handleRemove={handleRemove} searchToggle={searchToggle} handleToggle={handleToggle} scroll={scroll} />}
-                {HeaderStyle === "one-dark" && <Header1Dark handleOpen={handleOpen} handleRemove={handleRemove} searchToggle={searchToggle} handleToggle={handleToggle} scroll={scroll} />}
-                {HeaderStyle === "two" && <Header2 handleOpen={handleOpen} handleRemove={handleRemove} searchToggle={searchToggle} handleToggle={handleToggle} scroll={scroll} />}
-                {HeaderStyle === "two-single" && <Header2Single handleOpen={handleOpen} handleRemove={handleRemove} searchToggle={searchToggle} handleToggle={handleToggle} scroll={scroll} />}
-                {HeaderStyle === "two-dark" && <Header2Dark handleOpen={handleOpen} handleRemove={handleRemove} searchToggle={searchToggle} handleToggle={handleToggle} scroll={scroll} />}
-                {HeaderStyle === "three" && <Header3 handleOpen={handleOpen} handleRemove={handleRemove} searchToggle={searchToggle} handleToggle={handleToggle} scroll={scroll} />}
-                {HeaderStyle === "three-single" && <Header3Single handleOpen={handleOpen} handleRemove={handleRemove} searchToggle={searchToggle} handleToggle={handleToggle} scroll={scroll} />}
-                {HeaderStyle === "three-dark" && <Header3Dark handleOpen={handleOpen} handleRemove={handleRemove} searchToggle={searchToggle} handleToggle={handleToggle} scroll={scroll} />}
-                {HeaderStyle === "four" && <Header4 handleOpen={handleOpen} handleRemove={handleRemove} searchToggle={searchToggle} handleToggle={handleToggle} scroll={scroll} />}
-                {HeaderStyle === "four-single" && <Header4Single handleOpen={handleOpen} handleRemove={handleRemove} searchToggle={searchToggle} handleToggle={handleToggle} scroll={scroll} />}
-                {HeaderStyle === "four-dark" && <Header4Dark handleOpen={handleOpen} handleRemove={handleRemove} searchToggle={searchToggle} handleToggle={handleToggle} scroll={scroll} />}
-                {HeaderStyle === "five" && <Header5 handleOpen={handleOpen} handleRemove={handleRemove} searchToggle={searchToggle} handleToggle={handleToggle} scroll={scroll} />}
-                {HeaderStyle === "five-single" && <Header5Single handleOpen={handleOpen} handleRemove={handleRemove} searchToggle={searchToggle} handleToggle={handleToggle} scroll={scroll} />}
-                {HeaderStyle === "five-dark" && <Header5Dark handleOpen={handleOpen} handleRemove={handleRemove} searchToggle={searchToggle} handleToggle={handleToggle} scroll={scroll} />}
+                {Header && <Header handleOpen={handleOpen} handleRemove={handleRemove} searchToggle={searchToggle} handleToggle={handleToggle} scroll={scroll} />}
 
                 {/* <Sidebar /> */}
 
                 {children}
 
-                {!FooterStyle && <Footer />}
-                {FooterStyle === "two" && <Footer2 />}
-                {FooterStyle === "three" && <Footer3 />}
-                {FooterStyle === "four" && <Footer4 />}
+                {PageFooter && <PageFooter />}
             </div>
             {/* <BackToTop /> */}
 

@@ -12,13 +12,36 @@ function MyApp({ Component, pageProps }) {
 
 
     useEffect(() => {
-        // Timing is unchanged; the timeout is just tracked so it can be cleared.
-        // (While the stylesheet was still ~1MB, hydration ran long enough that
-        // this teardown landed before the browser had painted the preloader at
-        // all, and first paint slipped to ~1.25s. With the CSS trimmed it paints
-        // at ~0.23s, as intended.)
-        const timer = window.setTimeout(() => setLoading(false), 1000);
-        return () => window.clearTimeout(timer);
+        // This used to be a flat 1000ms after hydration. PageSpeed scores what
+        // is on screen over time, not what is in the DOM, so a full second of
+        // loading overlay was paid for twice: once in Speed Index, and again in
+        // LCP wherever the hero behind it would otherwise have been the largest
+        // paint. By the time this effect runs the page underneath is already
+        // hydrated, so the only thing left worth waiting for is one painted
+        // frame. The floor keeps the overlay from flashing on a fast
+        // connection; the ceiling is the old 1000ms, kept as a backstop in case
+        // a frame never arrives. Raise MIN_VISIBLE_MS if the brand moment
+        // should linger -- it is the only number here that is taste, not
+        // measurement.
+        const MIN_VISIBLE_MS = 250;
+        let settled = false;
+        const clear = () => {
+            if (settled) return;
+            settled = true;
+            setLoading(false);
+        };
+
+        const floor = window.setTimeout(() => {
+            // Two frames: the first is scheduled before paint, the second runs
+            // after it, so the page underneath is genuinely on screen.
+            window.requestAnimationFrame(() => window.requestAnimationFrame(clear));
+        }, MIN_VISIBLE_MS);
+        const ceiling = window.setTimeout(clear, 1000);
+
+        return () => {
+            window.clearTimeout(floor);
+            window.clearTimeout(ceiling);
+        };
     }, []);
 
     useEffect(() => {
@@ -49,12 +72,20 @@ function MyApp({ Component, pageProps }) {
             <div id="preloader">
                 <div className="animation-preloader">
                     <div className="preloader-mark">
+                        {/* Lowercase on purpose. React 18.2 does not know the
+                            camelCase `fetchPriority` prop (it landed in 18.3),
+                            so it forwarded it as an unknown attribute and
+                            logged a warning on every page. HTML attributes are
+                            case-insensitive, so the lowercase spelling reaches
+                            the browser identically and the warning is gone. */}
                         <img
                             className="preloader-logo"
-                            fetchPriority="high"
+                            fetchpriority="high"
                             decoding="async"
                             src="/images/logo/sbm.webp"
                             alt="Spa Bali Moon logo"
+                            width="280"
+                            height="219"
                         />
                     </div>
                     <div className="preloader-brand">Spa Bali Moon</div>

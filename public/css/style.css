@@ -1959,7 +1959,7 @@ svg.icon[viewBox="0 0 25 26"],
   width: 28px;
   height: 28px;
   flex: 0 0 28px;
-  background: url("../images/logo/sbm.webp") no-repeat center/contain;
+  background: url("/images/logo/sbm.webp") no-repeat center/contain;
 }
 .brand-lotus-icon-svg > *,
 svg.icon[viewBox="0 0 25 26"] > *,
@@ -12518,17 +12518,12 @@ Page Title
 .blog-details__meta li + li {
   margin-left: 18px;
 }
-.blog-details__meta li a {
+.blog-details__meta li .blog-details__category {
   font-size: 15px;
   color: #777;
   font-weight: 500;
-  -webkit-transition: all 500ms ease;
-  transition: all 500ms ease;
 }
-.blog-details__meta li a:hover {
-  color: var(--theme-color1);
-}
-.blog-details__meta li a i {
+.blog-details__meta li .blog-details__category i {
   color: var(--theme-color1);
   margin-right: 6px;
 }
@@ -12566,13 +12561,13 @@ Page Title
   margin: 0;
 }
 
-.blog-details__tags span {
+.blog-details__tags .blog-details__tags-label {
   color: #0e2207;
   font-size: 20px;
   margin-right: 14px;
   font-weight: var(--body-font-weight-bold);
 }
-.blog-details__tags a {
+.blog-details__tags .blog-details__tag {
   position: relative;
   font-size: 12px;
   background-color: var(--theme-color2);
@@ -12580,16 +12575,9 @@ Page Title
   display: inline-block;
   padding: 5px 30px 5px;
   font-weight: var(--body-font-weight-bold);
-  -webkit-transition: all 500ms ease;
-  transition: all 500ms ease;
   border-radius: 35px;
 }
-.blog-details__tags a:hover {
-  background-color: var(--theme-color1);
-  color: var(--theme-color-light);
-  text-decoration: none;
-}
-.blog-details__tags a + a {
+.blog-details__tags .blog-details__tag + .blog-details__tag {
   margin-left: 6px;
 }
 
