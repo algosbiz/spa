@@ -12,6 +12,10 @@
 # next.js
 /.next/
 /.next-preview/
+# Production build used for performance measurement (.claude/launch.json:
+# "spa-prod"). Same reason NEXT_DIST_DIR exists: a second build must not share
+# a folder with the dev server's.
+/.next-prod/
 /out/
 
 # production

@@ -658,7 +658,12 @@ svg.icon[viewBox="0 0 25 26"],
 	width: 28px;
 	height: 28px;
 	flex: 0 0 28px;
-	background: url("../images/logo/sbm.webp") no-repeat center / contain;
+	// Root-relative on purpose. A "../images/..." URL is resolved by webpack's
+	// css-loader, which re-emits the file under /_next/static/media with a hash
+	// -- so the same logo downloaded twice per page, once here and once for the
+	// <img src="/images/logo/sbm.webp"> in the header and preloader. A
+	// root-relative URL is left alone, so both now hit one cached file.
+	background: url("/images/logo/sbm.webp") no-repeat center / contain;
 
 	> * {
 		opacity: 0;
