@@ -419,6 +419,16 @@ export default function PackageSection({
             }
 
             @media (max-width: 575px) {
+              /* Same tightness the treatment catalog had: the card runs to the
+                 container gutter, so the toggle ring and the prices inside it
+                 ended up 12px from the screen with nothing between them and the
+                 edge. Both live inside .content, so padding it moves the ring
+                 and every price in together and they stay on one right edge.
+                 Only below 576px -- at 576px the gutter already gives 30px. */
+              .package-spread-toggles .package-block .inner-box .content {
+                padding-right: 16px;
+              }
+
               .package-spread-toggles .package-block .inner-box .content .title {
                 width: 100%;
               }
