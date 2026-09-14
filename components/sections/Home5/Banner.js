@@ -21,7 +21,7 @@ export default function Home5_Banner({
                     <div className="banner-five__content">
                         <h1 className="title">{title} <span>{highlightedTitle}</span></h1>
                         <div className="info">
-                            <a href="https://wa.me/6287863031503" target="_blank" rel="noopener noreferrer" className="video-btn wow zoomIn" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', borderColor: '#a78627' }}>
+                            <a href="https://wa.me/6287863175144" target="_blank" rel="noopener noreferrer" className="video-btn wow zoomIn" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', borderColor: '#a78627' }}>
                                 <i className="fa-brands fa-whatsapp" style={{ color: '#a78627', fontSize: '45px' }}></i>
                             </a>
                             <p className="text">{text}</p>

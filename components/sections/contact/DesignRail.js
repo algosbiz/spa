@@ -27,6 +27,7 @@ export default function DesignRail({
     handleReset,
     submitting,
     turnstileProps,
+    whatsappOnly = false,
 }) {
 
     return (
@@ -94,9 +95,16 @@ export default function DesignRail({
                                 />
                             </div>
 
-                            <div className="cf-verify">
-                                <Turnstile {...turnstileProps} />
-                            </div>
+                            {/* The captcha guards the POST to /api/contact. In
+                                WhatsApp-only mode nothing is posted, so the widget
+                                has nothing to protect -- and with the test sitekey
+                                configured it renders a "for testing only" warning
+                                to visitors. */}
+                            {!whatsappOnly && (
+                                <div className="cf-verify">
+                                    <Turnstile {...turnstileProps} />
+                                </div>
+                            )}
 
                             <input name="form_botcheck" type="hidden" value={formData.form_botcheck} onChange={handleChange} />
 

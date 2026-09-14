@@ -415,13 +415,22 @@ export default function TreatmentCatalog({
           background: var(--theme-color1);
         }
 
+        /* inline-block, not inline-flex: as a flex container the label and the
+           arrow are two items, so a label that wraps leaves the arrow centred
+           against the whole block -- stranded at the far right, level with the
+           gap between the lines. Six of the twenty labels already wrapped at
+           390px. Laid out as inline content the arrow simply follows the last
+           word. inline-block rather than inline so margin-top still applies. */
         .treatment-catalog__details-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 9px;
+          display: inline-block;
           margin-top: 16px;
           color: var(--title-color);
           font-weight: 600;
+        }
+
+        .treatment-catalog__details-link i {
+          margin-left: 9px;
+          vertical-align: middle;
         }
 
         @media (max-width: 767px) {
@@ -462,6 +471,17 @@ export default function TreatmentCatalog({
 
           .treatment-catalog__dropdown-inner {
             margin-right: 0;
+          }
+
+          /* Dropping the 48px gutter above gives the text the full card width,
+             which on a phone put the toggle, the prices and the details arrow
+             hard against the card edge -- 12px from the screen, the container
+             gutter and nothing else. The image on the left reads as an edge
+             block so it carries that tightness fine; numbers and a ring do not.
+             Padding the content column moves all three in together, so they
+             stay on the one right edge they were aligned to. */
+          .treatment-catalog__content {
+            padding-right: 16px;
           }
         }
 

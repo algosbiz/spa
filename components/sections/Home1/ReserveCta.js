@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 
 const lotusIcon = (
     <svg className="brand-lotus-icon-svg" width="26" height="27" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -118,15 +117,17 @@ export default function Home1_ReserveCta({
                             {closingText}
                         </p>
 
-                        <Link
-                            href="/contact"
+                        <a
+                            href="https://wa.me/6287863175144"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="reserve-cta-button mt-30 wow fadeInUp"
                             data-wow-delay="500ms"
                             data-wow-duration="1500ms"
                         >
                             Reserve
                             <i className="fa-light fa-arrow-down-right" aria-hidden="true"></i>
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </div>

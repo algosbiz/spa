@@ -3,6 +3,7 @@ import useContactForm from './contact/useContactForm';
 import ContactToast from './contact/ContactToast';
 import DesignRail from './contact/DesignRail';
 import MapPanel from './contact/MapPanel';
+import WhatsAppPrompt from './contact/WhatsAppPrompt';
 
 const defaultContactItems = [
     {
@@ -75,6 +76,14 @@ export default function ContactForm({
             <MapPanel embedSrc={MAP_EMBED} />
 
             <ContactToast toast={form.toast} onClose={() => form.setToast((prev) => ({ ...prev, show: false }))} />
+
+            {/* Submitting opens this instead of posting while enquiries are
+                handled on WhatsApp only -- see CONTACT_WHATSAPP_ONLY. */}
+            <WhatsAppPrompt
+                open={form.waPrompt}
+                onClose={() => form.setWaPrompt(false)}
+                href={form.whatsappHref}
+            />
         </>
     );
 }

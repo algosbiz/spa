@@ -1,4 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
+import { contactFormToWhatsappMessage, whatsappLink } from '../../../lib/whatsapp';
+
+/**
+ * While this is true the form collects what the visitor typed but does not post
+ * it: submitting opens a prompt that hands the message to WhatsApp instead.
+ * The posting path below is left intact -- flip this back to false and the form
+ * works exactly as it did, captcha included.
+ */
+export const CONTACT_WHATSAPP_ONLY = true;
 
 const EMPTY_FORM = {
     form_name: '',
@@ -17,6 +26,7 @@ export default function useContactForm() {
     const turnstileRef = useRef(null);
     const [submitting, setSubmitting] = useState(false);
     const [toast, setToast] = useState({ show: false, message: '', type: '' });
+    const [waPrompt, setWaPrompt] = useState(false);
 
     useEffect(() => {
         if (!toast.show) return;
@@ -35,6 +45,14 @@ export default function useContactForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (CONTACT_WHATSAPP_ONLY) {
+            // No fetch and no captcha check: nothing is sent, so there is
+            // nothing to verify. The prompt reads formData for its link.
+            setWaPrompt(true);
+            return;
+        }
+
         setSubmitting(true);
         setToast({ show: false, message: '', type: '' });
 
@@ -85,7 +103,22 @@ export default function useContactForm() {
         options: { theme: 'light' },
     };
 
-    return { formData, handleChange, handleSubmit, handleReset, submitting, toast, setToast, turnstileProps };
+    const whatsappHref = whatsappLink(contactFormToWhatsappMessage(formData));
+
+    return {
+        formData,
+        handleChange,
+        handleSubmit,
+        handleReset,
+        submitting,
+        toast,
+        setToast,
+        turnstileProps,
+        whatsappOnly: CONTACT_WHATSAPP_ONLY,
+        waPrompt,
+        setWaPrompt,
+        whatsappHref,
+    };
 }
 
 // Field list shared by the designs, so a copy change lands in one place.
