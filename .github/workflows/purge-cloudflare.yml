@@ -68,9 +68,13 @@ jobs:
       # the failure this workflow exists to catch, so prove the cache is cold
       # rather than trusting the API's word for it.
       - name: Confirm the edge is cold
+        env:
+          # Same source the purge script reads, so the check and the purge
+          # can never end up pointed at two different sites.
+          SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL || 'https://spabalimoon.com' }}
         run: |
           sleep 5
-          age=$(curl -sI https://spabalimoon.com/ | tr -d '\r' \
+          age=$(curl -sI "$SITE_URL/" | tr -d '\r' \
                 | awk 'tolower($1)=="age:"{print $2}')
           echo "Age after purge: ${age:-<none>}"
           if [ -n "$age" ] && [ "$age" -gt 60 ]; then
