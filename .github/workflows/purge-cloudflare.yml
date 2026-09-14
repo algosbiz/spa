@@ -48,6 +48,17 @@ jobs:
       # the purge is something we rely on: the first run of this workflow passed
       # while silently purging nothing, and the stale page went unnoticed. Fail
       # here instead, before the script gets a chance to shrug.
+      # TEMPORARY: six runs reported both credentials empty while the names
+      # were demonstrably right in the UI, so ask the runner what it can
+      # actually see. GitHub masks secret values in logs, so this prints names
+      # only. Remove once the cause is known.
+      - name: Report which secrets this job can see
+        env:
+          ALL_SECRETS: ${{ toJSON(secrets) }}
+        run: |
+          names=$(node -e "console.log(Object.keys(JSON.parse(process.env.ALL_SECRETS)).join(', ') || '(none)')")
+          echo "::error::Secrets visible to this job: $names"
+
       - name: Check the credentials are present
         env:
           CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
