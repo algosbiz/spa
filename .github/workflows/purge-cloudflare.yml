@@ -1,0 +1,42 @@
+name: Purge Cloudflare cache
+
+# Cloudflare caches pages for two hours, so a deploy is invisible to visitors
+# until its cache is dropped -- that is how a corrected phone number kept being
+# served after the fix was already live.
+#
+# This runs on deployment_status rather than on push because the purge has to
+# happen AFTER the new build is serving. Purging while Vercel is still building
+# just refills Cloudflare from the old origin, which is worse than not purging
+# at all. Vercel reports the deployment to GitHub when it goes live, and that
+# report is what triggers this.
+on:
+  deployment_status:
+  # So the cache can also be dropped by hand from the Actions tab.
+  workflow_dispatch:
+
+jobs:
+  purge:
+    # deployment_status fires for previews and for every intermediate state.
+    # Only a production deployment that actually succeeded serves the live
+    # domain. (String comparison in GitHub expressions is case-insensitive, so
+    # this matches Vercel's "Production" too.) workflow_dispatch carries no
+    # deployment payload, hence the event-name branch.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.deployment_status.state == 'success' &&
+       github.event.deployment.environment == 'production')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # The script imports only node:fs and node:path and uses global fetch, so
+      # there is nothing to install -- no npm ci step on purpose.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Purge the zone
+        run: node scripts/purge-cloudflare.mjs
+        env:
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
