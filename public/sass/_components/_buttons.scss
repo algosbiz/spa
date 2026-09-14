@@ -66,18 +66,25 @@
 	&-two {
 		@extend .btn-one;
 		border-width: 2px;
+		// The hero banners' CTA. It keeps the white fill it needs to stay legible
+		// over a photo, but carries the same gold outline as every other button
+		// on the site instead of the invisible transparent border it had.
 		&-light {
 			@extend .btn-two;
 			background-color: var(--theme-color-white);
-			color: var(--theme-color2);
-			border: 1px solid transparent;
+			// Gold label and gold arrow inside the gold ring, over the white fill.
+			color: var(--theme-color1);
+			border: 2px solid var(--theme-color1);
 			font-family: var(--text-font);
 			.icon_first,
 			.icon_second {
-				color: var(--theme-color2) !important;
+				color: var(--theme-color1) !important;
 			}
+			// Hover fills the button gold, so the label has to flip to white with
+			// the arrow -- gold on gold would be unreadable.
 			&:hover {
 				background-color: var(--theme-color1);
+				color: var(--theme-color-white);
 				.icon_first,
 				.icon_second {
 					color: var(--theme-color-white) !important;
@@ -323,18 +330,22 @@ Scroll To Top style
     color: #ffffff;
 }
 
+// Outlined like the pricing toggles: white fill, gold ring, gold glyph.
+// box-sizing keeps the ring inside the 56px circle instead of growing it.
 .whatsapp-float {
     position: fixed;
     right: 20px;
     bottom: 72px;
     width: 56px;
     height: 56px;
+    box-sizing: border-box;
+    border: 2px solid var(--theme-color1);
     font-size: 30px;
-    line-height: 56px;
-    color: var(--theme-color-white);
+    line-height: 52px;
+    color: var(--theme-color1);
     text-align: center;
     cursor: pointer;
-    background-color: var(--theme-color1);
+    background-color: var(--theme-color-white);
     z-index: 100;
     display: flex;
     align-items: center;
@@ -348,6 +359,7 @@ Scroll To Top style
 }
 
 .whatsapp-float:hover {
-    background: var(--theme-color-dark);
-    color: #ffffff;
+    background: var(--theme-color-white);
+    border-color: #8a6f1c;
+    color: #8a6f1c;
 }

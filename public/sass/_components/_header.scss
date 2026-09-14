@@ -745,6 +745,81 @@
 		}
 	}
 }
+
+// Every round control in the white sidebar follows the pricing toggle: white
+// fill, 2px gold ring, gold glyph, and hover only deepens the gold instead of
+// filling the shape. Scoped to --white so the theme's own dark sidebar keeps
+// its original look.
+.sidebar-area--white {
+	.btn-close {
+		box-sizing: border-box;
+		// The theme sized this at 25px with a 22px glyph, which only worked
+		// because the glyph could bleed over a solid fill. Inside a ring the
+		// 21px of clear space cut the cross into a hook, so the button gets a
+		// real 40px circle -- the same size as the social icon beside it -- and
+		// a glyph that fits within it.
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		font-size: 17px;
+		line-height: 1;
+		border: 2px solid var(--theme-color1);
+		background-color: var(--theme-color-white);
+		color: var(--theme-color1);
+
+		&:hover {
+			background-color: var(--theme-color-white);
+			border-color: #8a6f1c;
+			color: #8a6f1c;
+		}
+	}
+
+	.mobile-menu ul li .dropdown-btn i {
+		box-sizing: border-box;
+		border: 2px solid var(--theme-color1);
+		background-color: var(--theme-color-white);
+		color: var(--theme-color1);
+		// The glyph was centred against a padded box; with a ring the box is the
+		// circle itself, so centre it properly instead.
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		line-height: 1;
+	}
+
+	.mobile-menu ul li .dropdown-btn:hover i,
+	.mobile-menu ul li .dropdown-btn:focus-visible i {
+		border-color: #8a6f1c;
+		color: #8a6f1c;
+	}
+
+	.sidebar__socials ul li {
+		box-sizing: border-box;
+		border: 2px solid var(--theme-color1);
+		background-color: var(--theme-color-white);
+		color: var(--theme-color1);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&:hover {
+			border-color: #8a6f1c;
+			color: #8a6f1c;
+		}
+
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: inherit;
+		}
+	}
+}
+
 // Mobile menu area end here ***
 
 // Fullscreen search area start here ***
