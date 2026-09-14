@@ -26,14 +26,6 @@ jobs:
       (github.event.deployment_status.state == 'success' &&
        github.event.deployment.environment == 'production')
     runs-on: ubuntu-latest
-    # Declaring the environment is what this job is actually doing -- acting on
-    # the production deployment -- and it also widens what it can read: a job
-    # with an environment sees that environment's secrets as well as the
-    # repository's. Vercel creates Production and Preview on this repo, and a
-    # credential dropped into one of those is invisible to a job without this
-    # line, which is how the first five runs came up empty. Neither environment
-    # carries protection rules, so nothing here waits for an approval.
-    environment: Production
     steps:
       - uses: actions/checkout@v4
 
