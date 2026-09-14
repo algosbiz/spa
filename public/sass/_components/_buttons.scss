@@ -356,6 +356,17 @@ Scroll To Top style
     @include media-breakpoint-down(xxl){
         bottom: 122px;
     }
+
+    // It floats over the page, so on a phone a 56px ring lands squarely on the
+    // toggle circles at the right edge of the treatment cards. 44px is as small
+    // as it can go while still meeting the 44px minimum touch target, so it
+    // covers noticeably less without becoming awkward to tap.
+    @include breakpoint(max-md) {
+        width: 44px;
+        height: 44px;
+        font-size: 23px;
+        line-height: 40px;
+    }
 }
 
 .whatsapp-float:hover {

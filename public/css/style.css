@@ -3339,6 +3339,14 @@ Scroll To Top style
     bottom: 122px;
   }
 }
+@media (max-width: 767px) {
+  .whatsapp-float {
+    width: 44px;
+    height: 44px;
+    font-size: 23px;
+    line-height: 40px;
+  }
+}
 
 .whatsapp-float:hover {
   background: var(--theme-color-white);
