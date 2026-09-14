@@ -12,6 +12,14 @@ const catalogCategories = [
 function TreatmentItem({ item, itemKey, isOpen, onToggle }) {
   const panelId = `treatment-pricing-${itemKey}`;
   const isBookingLink = item.href === "/contact";
+  // Split off the last word so it can be glued to the arrow below.
+  const detailsLabel = (() => {
+      const text = isBookingLink ? `Book ${item.name}` : `View ${item.name} details`;
+      const cut = text.lastIndexOf(' ');
+      return cut === -1
+          ? { head: '', tail: text }
+          : { head: text.slice(0, cut + 1), tail: text.slice(cut + 1) };
+  })();
 
   return (
     <article className={`treatment-catalog__item${isOpen ? " is-open" : ""}`}>
@@ -73,8 +81,16 @@ function TreatmentItem({ item, itemKey, isOpen, onToggle }) {
                 // screen readers have been told does not exist.
                 tabIndex={isOpen ? undefined : -1}
               >
-                {isBookingLink ? `Book ${item.name}` : `View ${item.name} details`}
-                <i className="fa-regular fa-arrow-right" aria-hidden="true"></i>
+                {/* The arrow glyph lives in the Private Use Area, and Chrome
+                    treats PUA characters as breakable on both sides -- so even
+                    with no whitespace before it the arrow dropped onto a line of
+                    its own while the label still fitted above. Binding it to the
+                    final word keeps the two together and lets the rest wrap. */}
+                {detailsLabel.head}
+                <span className="treatment-catalog__details-tail">
+                  {detailsLabel.tail}
+                  <i className="fa-regular fa-arrow-right" aria-hidden="true"></i>
+                </span>
               </Link>
             ) : null}
           </div>
@@ -431,6 +447,10 @@ export default function TreatmentCatalog({
         .treatment-catalog__details-link i {
           margin-left: 9px;
           vertical-align: middle;
+        }
+
+        .treatment-catalog__details-tail {
+          white-space: nowrap;
         }
 
         @media (max-width: 767px) {
