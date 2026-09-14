@@ -427,4 +427,14 @@
 		display: none;
 	}
 }
+
+// The floating WhatsApp button is 88px tall and sits 24px off the bottom on
+// phones, so at the end of the page it landed on the copyright line and made
+// "Terms & Conditions" and the site link under it untappable. Give the last
+// row enough room to finish above the button rather than behind it.
+@include breakpoint(max-md) {
+	.footer__bottom {
+		padding-bottom: 112px;
+	}
+}
 // Footer two area end here ***

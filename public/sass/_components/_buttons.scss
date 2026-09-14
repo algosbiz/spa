@@ -357,15 +357,19 @@ Scroll To Top style
         bottom: 122px;
     }
 
-    // It floats over the page, so on a phone a 56px ring lands squarely on the
-    // toggle circles at the right edge of the treatment cards. 44px is as small
-    // as it can go while still meeting the 44px minimum touch target, so it
-    // covers noticeably less without becoming awkward to tap.
+    // Deliberately large on a phone: this is the primary way guests get in
+    // touch, and shrinking it to dodge the treatment cards made it easy to
+    // miss. Dropping it to the bottom of the screen buys the room instead --
+    // the 122px lift above dated from the go-to-top button that used to sit
+    // underneath, and that button is gone, so nothing is being cleared any
+    // more. env(safe-area-inset-bottom) keeps it off the home indicator on
+    // an iPhone; browsers without it fall back to the flat 24px.
     @include breakpoint(max-md) {
-        width: 44px;
-        height: 44px;
-        font-size: 23px;
-        line-height: 40px;
+        width: 88px;
+        height: 88px;
+        font-size: 46px;
+        line-height: 84px;
+        bottom: calc(24px + env(safe-area-inset-bottom, 0px));
     }
 }
 
