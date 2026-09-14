@@ -31,7 +31,12 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env*.local
+# .env*.local alone left .env, .env.production and .env.development tracked,
+# which is how a real Cloudflare token reached .env.example. Ignore every .env
+# file and opt the committed template back in.
+.env
+.env.*
+!.env.example
 
 # vercel
 .vercel

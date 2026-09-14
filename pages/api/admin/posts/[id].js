@@ -2,6 +2,7 @@ import { requireAdmin } from '@/lib/session';
 import { supabaseAdmin } from '@/lib/supabase';
 import { makeSlug } from '@/lib/slug';
 import { ensureUniqueSlug } from '@/lib/posts';
+import { refreshPostCaches } from '@/lib/publishCache';
 
 async function handler(req, res) {
     const { id } = req.query;
@@ -26,9 +27,12 @@ async function handler(req, res) {
         const status = body.status === 'published' ? 'published' : 'draft';
 
         // Preserve the original publish date the first time it was published.
+        // slug and status come back too: a rename has to purge the URL the
+        // article used to live at, and un-publishing has to purge the URL it
+        // is disappearing from.
         const { data: existing } = await supabaseAdmin
             .from('posts')
-            .select('published_at')
+            .select('published_at, slug, status')
             .eq('id', id)
             .maybeSingle();
 
@@ -53,14 +57,36 @@ async function handler(req, res) {
 
         const { data, error } = await supabaseAdmin.from('posts').update(update).eq('id', id).select().single();
         if (error) return res.status(500).json({ error: error.message });
-        return res.status(200).json({ post: data });
+
+        // Skip only the draft-to-draft case: nothing public changed, so there
+        // is nothing cached to refresh. Publishing, un-publishing and editing
+        // a live post all do.
+        const wasPublic = existing?.status === 'published';
+        const cache = status === 'published' || wasPublic
+            ? await refreshPostCaches(res, { slug: data.slug, previousSlug: existing?.slug })
+            : null;
+
+        return res.status(200).json({ post: data, cache });
     }
 
     // Delete a post.
     if (req.method === 'DELETE') {
+        // Read the slug before the row is gone -- afterwards there is no way
+        // to know which URL Cloudflare is still serving.
+        const { data: doomed } = await supabaseAdmin
+            .from('posts')
+            .select('slug, status')
+            .eq('id', id)
+            .maybeSingle();
+
         const { error } = await supabaseAdmin.from('posts').delete().eq('id', id);
         if (error) return res.status(500).json({ error: error.message });
-        return res.status(200).json({ ok: true });
+
+        const cache = doomed?.status === 'published'
+            ? await refreshPostCaches(res, { slug: doomed.slug })
+            : null;
+
+        return res.status(200).json({ ok: true, cache });
     }
 
     return res.status(405).json({ error: 'Method not allowed' });

@@ -303,9 +303,24 @@ export default function Home2_About({
                     display: none;
                 }
 
+                /* The badge sits in the notch the mask cuts out of the photo's
+                   bottom-right corner. That notch is not a fixed size: the mask is
+                   stretched to "100% 100%", so the notch is always 19.5% of the photo's
+                   height, and this page's photo (570x496) is shorter than the one the
+                   treatment pages use. At a fixed 100px the badge was bigger than the
+                   opening it sits in -- it overhung the notch by 2px from 768px up and
+                   by 12px between 576px and 767px, which is what read as the badge
+                   being stuck to the photo. Below 768px the column is fluid, so no set
+                   of pixel breakpoints lands on the right size either.
+
+                   So size it off the notch instead. The column's height is the photo's
+                   height, so a percentage height tracks the notch at every width; 16.7%
+                   leaves the badge filling ~85% of the notch, the same proportion the
+                   treatment pages' 100px button has in their taller notch. */
                 .about-section-two .image-column .inner-column .brand-card {
-                    width: 100px;
-                    height: 100px;
+                    height: 16.7%;
+                    width: auto;
+                    aspect-ratio: 1;
                     border-color: var(--theme-color1);
                     border-radius: 50%;
                 }
@@ -315,26 +330,26 @@ export default function Home2_About({
                     .inner-column
                     .brand-card
                     .brand-lotus-icon {
-                    width: 48px;
-                    height: 48px;
-                    flex-basis: 48px;
+                    width: 48%;
+                    height: 48%;
+                    flex-basis: 48%;
                 }
 
-                @media (max-width: 500px) {
-                    .about-section-two .image-column .inner-column .brand-card {
-                        width: 50px;
-                        height: 50px;
-                        border-radius: 50%;
-                    }
-
-                    .about-section-two
-                        .image-column
-                        .inner-column
-                        .brand-card
-                        .brand-lotus-icon {
-                        width: 26px;
-                        height: 26px;
-                        flex-basis: 26px;
+                /* This page's main photo is shorter than the one the treatment
+                   pages use -- 503px tall against their 613px -- so from 1400px up
+                   the 330px circle had only 403px of room above the badge and ran
+                   27px into it. Merely lifting it cleared the badge but pushed the
+                   circle against the top edge. Scaling it to the shorter photo
+                   keeps the treatment pages' proportions instead: a margin above
+                   the circle and a clear gap below it, rather than a circle that
+                   fills the column. Below 1400px the circle is already 200px and
+                   needs none of this. */
+                @media (min-width: 1400px) {
+                    .about-section-two .image-column .inner-column .image-box .circle-image {
+                        top: 75px;
+                        width: 260px;
+                        height: 260px;
+                        right: -125px;
                     }
                 }
             `}</style>

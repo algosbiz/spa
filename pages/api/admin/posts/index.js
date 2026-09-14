@@ -2,6 +2,7 @@ import { requireAdmin } from '@/lib/session';
 import { supabaseAdmin } from '@/lib/supabase';
 import { makeSlug } from '@/lib/slug';
 import { ensureUniqueSlug } from '@/lib/posts';
+import { refreshPostCaches } from '@/lib/publishCache';
 
 async function handler(req, res) {
     // List every post (drafts included) for the admin dashboard.
@@ -43,7 +44,13 @@ async function handler(req, res) {
 
         const { data, error } = await supabaseAdmin.from('posts').insert(record).select().single();
         if (error) return res.status(500).json({ error: error.message });
-        return res.status(201).json({ post: data });
+
+        // A draft is not on the public site, so nothing cached can be stale.
+        const cache = status === 'published'
+            ? await refreshPostCaches(res, { slug: data.slug })
+            : null;
+
+        return res.status(201).json({ post: data, cache });
     }
 
     return res.status(405).json({ error: 'Method not allowed' });

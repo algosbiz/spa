@@ -11739,6 +11739,28 @@ Page Title
   font-size: 64px;
   color: #ffffff;
   margin-bottom: 17px;
+  overflow-wrap: break-word;
+}
+@media (max-width: 991px) {
+  .page-title .title {
+    font-size: 48px;
+    line-height: 1.15;
+  }
+}
+@media (max-width: 767px) {
+  .page-title .title {
+    font-size: 40px;
+  }
+}
+@media (max-width: 575px) {
+  .page-title .title {
+    font-size: 34px;
+  }
+}
+@media (max-width: 450px) {
+  .page-title .title {
+    font-size: 30px;
+  }
 }
 .page-title .text {
   position: relative;

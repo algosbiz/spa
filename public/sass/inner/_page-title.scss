@@ -51,6 +51,33 @@ Page Title
     font-size: 64px;
     color: #ffffff;
     margin-bottom: 17px;
+
+    // 64px was the only size this heading had, at every width. A single long
+    // word is then wider than a phone -- "Techniques" measures 369px, so
+    // /guide/what-is-thai-massage/ pushed the whole page 49px sideways on a
+    // 320px screen, and anything narrower than 369px scrolled horizontally.
+    // One word cannot wrap, so the size itself has to come down.
+    @include breakpoint(max-lg) {
+      font-size: 48px;
+      line-height: 1.15;
+    }
+
+    @include breakpoint(max-md) {
+      font-size: 40px;
+    }
+
+    @include breakpoint(max-sm) {
+      font-size: 34px;
+    }
+
+    @include breakpoint(max-xxsmall) {
+      font-size: 30px;
+    }
+
+    // Belt and braces: these sizes clear every title the site has today, but a
+    // longer one added later would silently start scrolling the page again.
+    // Breaking a word is much cheaper than that.
+    overflow-wrap: break-word;
   }
   .text {
     position: relative;
