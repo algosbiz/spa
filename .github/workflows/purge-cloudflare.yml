@@ -35,8 +35,45 @@ jobs:
         with:
           node-version: 20
 
+      # purge-cloudflare.mjs exits 0 when the credentials are absent, so that a
+      # pipeline without them still goes green. That is the wrong behaviour once
+      # the purge is something we rely on: the first run of this workflow passed
+      # while silently purging nothing, and the stale page went unnoticed. Fail
+      # here instead, before the script gets a chance to shrug.
+      - name: Check the credentials are present
+        env:
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          missing=
+          [ -n "$CLOUDFLARE_ZONE_ID" ] || missing="$missing CLOUDFLARE_ZONE_ID"
+          [ -n "$CLOUDFLARE_API_TOKEN" ] || missing="$missing CLOUDFLARE_API_TOKEN"
+          if [ -n "$missing" ]; then
+            echo "::error::Missing secret(s):$missing"
+            echo "Add them under Settings > Secrets and variables > Actions as"
+            echo "*Repository* secrets. Secrets stored against the Production or"
+            echo "Preview environment are not visible here, because this job does"
+            echo "not declare an environment."
+            exit 1
+          fi
+          echo "Both credentials are present."
+
       - name: Purge the zone
         run: node scripts/purge-cloudflare.mjs
         env:
           CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+      # A purge that returns success but leaves the edge serving the old copy is
+      # the failure this workflow exists to catch, so prove the cache is cold
+      # rather than trusting the API's word for it.
+      - name: Confirm the edge is cold
+        run: |
+          sleep 5
+          age=$(curl -sI https://spabalimoon.com/ | tr -d '\r' \
+                | awk 'tolower($1)=="age:"{print $2}')
+          echo "Age after purge: ${age:-<none>}"
+          if [ -n "$age" ] && [ "$age" -gt 60 ]; then
+            echo "::error::Cloudflare still served a ${age}s-old copy, so the purge did not take effect."
+            exit 1
+          fi
