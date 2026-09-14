@@ -26,6 +26,14 @@ jobs:
       (github.event.deployment_status.state == 'success' &&
        github.event.deployment.environment == 'production')
     runs-on: ubuntu-latest
+    # Declaring the environment is what this job is actually doing -- acting on
+    # the production deployment -- and it also widens what it can read: a job
+    # with an environment sees that environment's secrets as well as the
+    # repository's. Vercel creates Production and Preview on this repo, and a
+    # credential dropped into one of those is invisible to a job without this
+    # line, which is how the first five runs came up empty. Neither environment
+    # carries protection rules, so nothing here waits for an approval.
+    environment: Production
     steps:
       - uses: actions/checkout@v4
 
@@ -50,10 +58,11 @@ jobs:
           [ -n "$CLOUDFLARE_API_TOKEN" ] || missing="$missing CLOUDFLARE_API_TOKEN"
           if [ -n "$missing" ]; then
             echo "::error::Missing secret(s):$missing"
-            echo "Add them under Settings > Secrets and variables > Actions as"
-            echo "*Repository* secrets. Secrets stored against the Production or"
-            echo "Preview environment are not visible here, because this job does"
-            echo "not declare an environment."
+            echo "This job reads repository secrets and Production environment"
+            echo "secrets, so neither placement explains an empty value. Check"
+            echo "Settings > Secrets and variables > Actions on algosbiz/spa and"
+            echo "confirm the names match exactly -- and that they were added to"
+            echo "this repository rather than another one."
             exit 1
           fi
           echo "Both credentials are present."
