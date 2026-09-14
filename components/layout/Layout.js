@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import BackToTop from '../elements/BackToTop';
 import WhatsAppButton from '../elements/WhatsAppButton';
 import PageHead from './PageHead';
 
@@ -105,10 +104,8 @@ const Layout = ({ children, HeaderStyle, FooterStyle, styleMode, headTitle, meta
 
                 {PageFooter && <PageFooter />}
             </div>
-            {/* <BackToTop /> */}
 
             <WhatsAppButton />
-            <BackToTop />
         </>
     );
 };

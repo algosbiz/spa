@@ -295,14 +295,15 @@ export default function TreatmentCatalog({
           width: 34px;
           height: 34px;
           flex: 0 0 34px;
-          border: 0;
+          box-sizing: border-box;
+          border: 2px solid var(--theme-color1);
           border-radius: 50%;
-          background: transparent;
-          color: var(--title-color);
+          background: var(--theme-color-white);
+          color: var(--theme-color1);
           font-family: Arial, sans-serif;
-          font-size: 18px;
+          font-size: 16px;
           line-height: 1;
-          transition: color 0.25s ease, background-color 0.25s ease;
+          transition: color 0.25s ease, border-color 0.25s ease;
         }
 
         .treatment-catalog__toggle i {
@@ -313,11 +314,14 @@ export default function TreatmentCatalog({
           transform: rotate(180deg);
         }
 
+        /* Stays an outline in every state -- open and hover only deepen the
+           gold, so the control never turns into a filled disc. */
         .treatment-catalog__toggle:hover,
         .treatment-catalog__toggle:focus-visible,
         .treatment-catalog__item.is-open .treatment-catalog__toggle {
-          color: #fff;
-          background: var(--theme-color1);
+          color: #8a6f1c;
+          border-color: #8a6f1c;
+          background: var(--theme-color-white);
           outline: none;
         }
 
@@ -343,6 +347,11 @@ export default function TreatmentCatalog({
         .treatment-catalog__dropdown-inner {
           min-height: 0;
           overflow: hidden;
+          /* The description already clears the toggle with a 48px right margin;
+             the price rows did not, so they ran 48px further right than every
+             other line in the card. Same gutter here puts the durations, the
+             prices and the details link on one right edge with the text. */
+          margin-right: 48px;
         }
 
         .treatment-catalog__prices {
@@ -449,6 +458,10 @@ export default function TreatmentCatalog({
           .treatment-catalog__description {
             margin-right: 0;
             font-size: 14px;
+          }
+
+          .treatment-catalog__dropdown-inner {
+            margin-right: 0;
           }
         }
 

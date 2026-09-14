@@ -1,4 +1,4 @@
-import { SITEMAP_STATIC_ROUTES, PAGE_SEO, canonicalFor } from '@/lib/seo';
+import { SITEMAP_STATIC_ROUTES, PAGE_SEO, PAGE_IMAGES, canonicalFor, assetUrl } from '@/lib/seo';
 import { getPublishedSlugsWithDates } from '@/lib/posts';
 
 /**
@@ -18,16 +18,49 @@ const escapeXml = (s) =>
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&apos;');
 
-const urlEntry = ({ loc, lastmod }) =>
-    '    <url>\n' +
-    `        <loc>${escapeXml(loc)}</loc>\n` +
-    (lastmod ? `        <lastmod>${escapeXml(lastmod)}</lastmod>\n` : '') +
-    '    </url>';
+/**
+ * Yoast wrote every lastmod as "2026-07-07T04:53:20+00:00" -- whole seconds,
+ * numeric UTC offset. Supabase timestamps come back with milliseconds
+ * ("2026-09-13T13:24:40.811+00:00"), so guide articles were emitting a
+ * spelling the live sitemap never used. Normalising here keeps both halves of
+ * the sitemap in one format. An unparseable value is dropped rather than
+ * shipped, since a malformed lastmod invalidates the whole <url> entry.
+ */
+const formatLastmod = (value) => {
+    if (!value) return null;
+    const d = new Date(value);
+    if (Number.isNaN(d.getTime())) return null;
+    return d.toISOString().replace(/\.\d+Z$/, '+00:00');
+};
 
+const urlEntry = ({ loc, lastmod, image }) => {
+    const stamp = formatLastmod(lastmod);
+    return (
+        '    <url>\n' +
+        `        <loc>${escapeXml(loc)}</loc>\n` +
+        (stamp ? `        <lastmod>${escapeXml(stamp)}</lastmod>\n` : '') +
+        (image
+            ? '        <image:image>\n' +
+              `            <image:loc>${escapeXml(assetUrl(image))}</image:loc>\n` +
+              '        </image:image>\n'
+            : '') +
+        '    </url>'
+    );
+};
+
+/**
+ * The image namespace is only declared when something actually uses it, so a
+ * sitemap with no images stays byte-identical to the plain one.
+ */
 function buildSitemap(entries) {
+    const hasImages = entries.some((e) => e.image);
     return (
         '<?xml version="1.0" encoding="UTF-8"?>\n' +
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"' +
+        (hasImages
+            ? '\n        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'
+            : '') +
+        '>\n' +
         entries.map(urlEntry).join('\n') +
         '\n</urlset>\n'
     );
@@ -37,6 +70,7 @@ export async function getServerSideProps({ res }) {
     const entries = SITEMAP_STATIC_ROUTES.map((route) => ({
         loc: canonicalFor(route),
         lastmod: PAGE_SEO[route]?.lastmod || null,
+        image: PAGE_IMAGES[route] || null,
     }));
 
     // Guide articles come from Supabase. If that call fails the sitemap still
@@ -47,6 +81,7 @@ export async function getServerSideProps({ res }) {
             entries.push({
                 loc: canonicalFor(`/guide/${post.slug}`),
                 lastmod: post.lastmod,
+                image: post.image || null,
             });
         }
     } catch (e) {

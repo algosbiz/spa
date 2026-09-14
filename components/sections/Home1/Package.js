@@ -284,12 +284,6 @@ export default function PackageSection({
                     <div className="icon-box"></div>
                     <h6 className="title">
                       {tab.label}
-                      {tabs && (
-                        <span className="icon_box" aria-hidden="true">
-                          <i className="fa-regular icon_first fa-arrow-right-long"></i>
-                          <i className="fa-regular icon_second fa-arrow-right-long"></i>
-                        </span>
-                      )}
                     </h6>
                   </button>
                 </li>
@@ -381,21 +375,27 @@ export default function PackageSection({
               width: 34px;
               height: 34px;
               flex: 0 0 34px;
+              box-sizing: border-box;
+              border: 2px solid var(--theme-color1);
               border-radius: 50%;
-              color: var(--title-color);
-              font-size: 18px;
-              transition: color 0.25s ease, background-color 0.25s ease;
+              background: var(--theme-color-white);
+              color: var(--theme-color1);
+              font-size: 16px;
+              transition: color 0.25s ease, border-color 0.25s ease;
             }
 
             .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle__icon i {
               transition: transform 0.25s ease;
             }
 
+            /* Matches the homepage catalog toggle: an outline in every state, with
+               open and hover only deepening the gold rather than filling the disc. */
             .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle[aria-expanded="true"] .package-row-toggle__icon,
             .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle:hover .package-row-toggle__icon,
             .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle:focus-visible .package-row-toggle__icon {
-              color: #fff;
-              background: var(--theme-color1);
+              color: #8a6f1c;
+              border-color: #8a6f1c;
+              background: var(--theme-color-white);
             }
 
             .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle[aria-expanded="true"] .package-row-toggle__icon i {

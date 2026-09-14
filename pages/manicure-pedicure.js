@@ -85,11 +85,20 @@ const treatmentOptions = [
   },
   {
     price: "IDR 138K",
-    duration: "Nail Gel Color Feet & Hands",
+    duration: "Nail Color Feet & Hands",
     details: [
-      "Gel colour application",
+      "Nail colour application",
       "For hands and feet",
       "A polished colour finish",
+    ],
+  },
+  {
+    price: "IDR 69K",
+    duration: "Nail Color Feet or Hands",
+    details: [
+      "Nail colour application",
+      "For hands or feet",
+      "A quick colour refresh",
     ],
   },
   {
@@ -107,6 +116,15 @@ const treatmentOptions = [
     details: [
       "Gel nail treatment",
       "For hands and feet",
+      "A longer-lasting finish",
+    ],
+  },
+  {
+    price: "IDR 219K",
+    duration: "Nail Gel Feet or Hands",
+    details: [
+      "Gel nail treatment",
+      "For hands or feet",
       "A longer-lasting finish",
     ],
   },

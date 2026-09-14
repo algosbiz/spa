@@ -152,9 +152,11 @@ const mostPopularTreatments = [
       option("Manicure & Pedicure", "IDR 238K"),
       option("Manicure", "IDR 99K"),
       option("Pedicure", "IDR 139K"),
+      option("Nail Color Feet & Hands", "IDR 138K"),
+      option("Nail Color Feet or Hands", "IDR 69K"),
       option("Nail Remover Feet & Hands", "IDR 98K"),
       option("Nail Gel Feet & Hands", "IDR 438K"),
-      option("Nail Gel Color Feet & Hands", "IDR 138K"),
+      option("Nail Gel Feet or Hands", "IDR 219K"),
     ]
   ),
   treatment(
@@ -521,9 +523,11 @@ const beautyTreatments = [
       option("Manicure & Pedicure", "IDR 238K"),
       option("Manicure", "IDR 99K"),
       option("Pedicure", "IDR 139K"),
+      option("Nail Color Feet & Hands", "IDR 138K"),
+      option("Nail Color Feet or Hands", "IDR 69K"),
       option("Nail Remover Feet & Hands", "IDR 98K"),
       option("Nail Gel Feet & Hands", "IDR 438K"),
-      option("Nail Gel Color Feet & Hands", "IDR 138K"),
+      option("Nail Gel Feet or Hands", "IDR 219K"),
     ]
   ),
   treatment(

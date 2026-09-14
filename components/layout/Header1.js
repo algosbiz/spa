@@ -209,6 +209,17 @@ const Header1 = ({ scroll }) => {
             {/* <!-- Header area end here --> */}
 
             {/* <!-- Sidebar area start here --> */}
+            {/* Blurs and dims the page behind the open panel. Rendered while the
+                panel is closing too, so it fades out with it rather than snapping
+                away. Clicking it closes the menu, which is what a dimmed page
+                behind a drawer is expected to do. */}
+            {sidebarState !== 'closed' && (
+                <div
+                    className={`sidebar-backdrop${sidebarState === 'open' ? ' is-visible' : ''}`}
+                    onClick={handleCloseSidebar}
+                    aria-hidden="true"
+                />
+            )}
             <div
                 className={`sidebar-area sidebar-area--white offcanvas offcanvas-end ${sidebarState === 'open' ? 'show' : ''} ${sidebarState === 'closing' ? 'hiding' : ''}`}
                 id="menubar"
@@ -217,7 +228,10 @@ const Header1 = ({ scroll }) => {
                 style={{ backgroundColor: "#ffffff", borderLeft: "1px solid rgba(95, 90, 84, 0.12)" }}
             >
                 <div className="offcanvas-header">
-                    <Link prefetch={false} href="/" className="logo"> <img src="/images/logo/sbm.webp" alt="Spa Bali Moon" width="56" height="44"/></Link>
+                    <Link prefetch={false} href="/" className="logo">
+                        <img src="/images/logo/sbm.webp" alt="" aria-hidden="true" width="56" height="44" />
+                        <span className="offcanvas-brand">Spa Bali Moon</span>
+                    </Link>
                     <button type="button" className="btn-close" onClick={handleCloseSidebar}><i
                             className="fa-regular fa-xmark"></i></button>
                 </div>
@@ -245,7 +259,7 @@ const Header1 = ({ scroll }) => {
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M15.9466 4.69593C15.8843 3.41522 15.5906 2.27682 14.6563 1.34297C13.7219 0.409114 12.5829 0.11562 11.3014 0.053363C9.97553 -0.0177877 6.01557 -0.0177877 4.69855 0.053363C3.41713 0.11562 2.28699 0.409114 1.34372 1.34297C0.400455 2.27682 0.115684 3.41522 0.0533926 4.69593C-0.0177975 6.02111 -0.0177975 9.97887 0.0533926 11.3041C0.115684 12.5848 0.409354 13.7232 1.34372 14.657C2.28699 15.5909 3.41713 15.8844 4.69855 15.9466C6.02447 16.0178 9.98443 16.0178 11.3014 15.9466C12.5829 15.8844 13.7219 15.5909 14.6563 14.657C15.5906 13.7232 15.8843 12.5848 15.9466 11.3041C16.0178 9.97887 16.0178 6.02112 15.9466 4.70483V4.69593ZM7.99111 12.2201C5.65963 12.2201 3.76419 10.3257 3.76419 7.99555C3.76419 5.66536 5.65963 3.77098 7.99111 3.77098C10.3226 3.77098 12.218 5.66536 12.218 7.99555C12.218 10.3257 10.3226 12.2201 7.99111 12.2201ZM12.9032 3.99332C12.4138 3.99332 12.0133 3.5931 12.0133 3.10394C12.0133 2.61478 12.4049 2.21456 12.9032 2.21456C13.3926 2.21456 13.7931 2.61478 13.7931 3.10394C13.7931 3.5931 13.3926 3.99332 12.9032 3.99332ZM10.8832 7.99555C10.8832 9.58754 9.58399 10.886 7.99111 10.886C6.39823 10.886 5.09901 9.58754 5.09901 7.99555C5.09901 6.40355 6.39823 5.10505 7.99111 5.10505C9.58399 5.10505 10.8832 6.40355 10.8832 7.99555Z"
-                                            fill="white" />
+                                            fill="currentColor" />
                                     </svg>
                                 </Link>
                             </li>
@@ -256,6 +270,51 @@ const Header1 = ({ scroll }) => {
             {/* <!-- Sidebar area end here --> */}
 
             <style jsx>{`
+                /* Lotus + wordmark, sized to sit on one line beside the close
+                   button in a ~330px drawer rather than dominating it. */
+                .offcanvas-header :global(.logo) {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 10px;
+                    min-width: 0;
+                }
+                .offcanvas-header :global(.logo img) {
+                    width: auto;
+                    height: 32px;
+                    flex: none;
+                }
+                .offcanvas-brand {
+                    font-family: var(--title-font);
+                    font-size: 17px;
+                    line-height: 1.2;
+                    font-weight: 500;
+                    letter-spacing: 0.01em;
+                    color: var(--theme-color1);
+                    white-space: nowrap;
+                }
+
+                .sidebar-backdrop {
+                    position: fixed;
+                    inset: 0;
+                    /* Between the page furniture (header 99, WhatsApp float 100) and
+                       the panel itself, which Bootstrap's .offcanvas puts at 1045.
+                       Anything higher would blur the panel along with the page. */
+                    z-index: 1040;
+                    background: rgba(28, 26, 29, 0.35);
+                    backdrop-filter: blur(6px);
+                    -webkit-backdrop-filter: blur(6px);
+                    opacity: 0;
+                    transition: opacity 0.35s ease;
+                }
+                .sidebar-backdrop.is-visible {
+                    opacity: 1;
+                }
+                @media (prefers-reduced-motion: reduce) {
+                    .sidebar-backdrop {
+                        transition: none;
+                    }
+                }
+
                 .header-search {
                     position: relative;
                     display: inline-flex;

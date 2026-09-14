@@ -268,9 +268,11 @@ const pricingTreatments = [
       priceOption("Manicure & Pedicure", "238K"),
       priceOption("Manicure", "99K"),
       priceOption("Pedicure", "139K"),
-      priceOption("Nail Gel Color Feet & Hands", "138K"),
+      priceOption("Nail Color Feet & Hands", "138K"),
+      priceOption("Nail Color Feet or Hands", "69K"),
       priceOption("Nail Remover Feet & Hands", "98K"),
       priceOption("Nail Gel Feet & Hands", "438K"),
+      priceOption("Nail Gel Feet or Hands", "219K"),
     ],
   },
   {
