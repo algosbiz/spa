@@ -650,7 +650,7 @@ export default function OutcallHomeServiceMassage() {
       <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
         <main className="outcall-page">
           <Banner
-            subTitle="Home Comfort Spa"
+            subTitle="Outcall Spa Service"
             titleSpan="Home Service"
             title="Massage in Bali"
             text="Experience our traditional massage and spa treatments in the comfort of your home, hotel, or villa."
@@ -667,10 +667,13 @@ export default function OutcallHomeServiceMassage() {
                 Find an authentic Balinese massage without the hassle. Let the
                 stress of the week ease away as you enjoy a quiet, well-prepared
                 session that fits naturally into your day.
-                <br />
-                <br />
-                Explore treatment and package options that can be customized to
-                your preferences.
+                {/* A <br /> would not do it: the theme hides every br below
+                    1400px so that headline breaks collapse, which ran these two
+                    sentences together as "your day.Explore" on every phone. */}
+                <span style={{ display: "block", marginTop: "16px" }}>
+                  Explore treatment and package options that can be customized
+                  to your preferences.
+                </span>
               </>
             }
             feature1Title="Easy Booking via WhatsApp"
