@@ -3904,6 +3904,18 @@ textarea.form-control {
   font-size: 24px;
   color: var(--headings-color);
 }
+.header__main .menu-btns .header-call {
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+  color: var(--theme-color1);
+  transition: color 0.3s;
+  padding: 12px;
+  margin: -12px;
+}
+.header__main .menu-btns .header-call:hover, .header__main .menu-btns .header-call:focus-visible {
+  color: #8a6f1c;
+}
 .header__main .menu-btns.light .search-trigger {
   color: var(--theme-color-white);
 }

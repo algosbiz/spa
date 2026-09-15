@@ -339,6 +339,26 @@
 				font-size: 24px;
 				color: var(--headings-color);
 			}
+
+			// Gold rather than the menu icon's grey: this is an action, and it
+			// reads as one next to a control that only opens a panel.
+			.header-call {
+				align-items: center;
+				justify-content: center;
+				font-size: 21px;
+				color: var(--theme-color1);
+				transition: color 0.3s;
+				// The glyph is 21px, well under the 44px a finger needs. Padding
+				// out and pulling the same amount back in grows the tap area
+				// without moving the icon or the menu button beside it.
+				padding: 12px;
+				margin: -12px;
+
+				&:hover,
+				&:focus-visible {
+					color: #8a6f1c;
+				}
+			}
 			&.light {
 				.search-trigger {
 					color: var(--theme-color-white);
