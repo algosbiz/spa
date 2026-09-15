@@ -42,6 +42,15 @@
 		.title {
 			margin-bottom: 30px;
 		}
+		.footer__field-label {
+			font-size: 14px;
+			line-height: 1.45;
+		}
+		.footer__field-value {
+			font-size: 16px;
+			line-height: 1.5;
+			font-weight: 600;
+		}
 		ul {
 			li {
 				&:not(:last-child) {
@@ -57,6 +66,30 @@
 			&.time-table {
 				li {
 					@include justify-wrp;
+				}
+			}
+			// Label-over-value pairs (Phone, Open Daily, Address, the home
+			// service fee). Each one used to carry its own inline layout and
+			// its own margin, which is why the rhythm drifted: some had a 12px
+			// top margin, some leaned on the list's 12px bottom margin, and the
+			// first one under a heading had neither. One rule, one gap.
+			// Placed after .time-table so it wins the tie on those rows, which
+			// are otherwise laid out as a space-between line.
+			li.footer__field {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: flex-start;
+				gap: 3px;
+
+				&:not(:last-child) {
+					margin-bottom: 18px;
+				}
+
+				// Follows a run of plain links rather than another field, so it
+				// needs the gap that separates the two kinds of row.
+				&.footer__field--spaced {
+					margin-top: 18px;
 				}
 			}
 		}
@@ -191,6 +224,15 @@
 	}
 	&-area--white-simple {
 		background: #ffffff;
+		// g-5 is a 48px gutter drawn for the four-across desktop grid. Stacked
+		// on a phone it put more air between two columns than a heading has
+		// from its own content, which is what made the column order hard to
+		// read on the way down.
+		@include breakpoint(max-md) {
+			.container > .row {
+				--bs-gutter-y: 34px;
+			}
+		}
 		.footer__shape {
 			opacity: 0.14;
 			filter: invert(1) brightness(0.55);
@@ -226,10 +268,19 @@
 			.copyright-text {
 				color: #5f5a54;
 			}
+			// The column headings were within a couple of pixels of the values
+			// under them, so nothing in the block read as its heading.
 			.title {
 				color: #2f2924;
 				white-space: nowrap;
+				font-size: 24px;
+				line-height: 1.3;
+				margin-bottom: 18px;
 			}
+			.footer__field-label {
+				color: #6f6a64;
+			}
+			.footer__field-value,
 			ul.time-table li span {
 				color: #2f2924;
 			}
@@ -428,9 +479,9 @@
 	}
 }
 
-// The floating WhatsApp button is 64px tall and sits 24px off the bottom on
+// The floating WhatsApp button is 56px tall and sits 24px off the bottom on
 // phones, so at the end of the page it landed on the copyright line and made
-// "Terms & Conditions" and the site link under it untappable. 88px clears the
+// "Terms & Conditions" and the site link under it untappable. 80px clears the
 // button itself; the rest is slack so a small size change does not silently
 // put those links back underneath it.
 @include breakpoint(max-md) {

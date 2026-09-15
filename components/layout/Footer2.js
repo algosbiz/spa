@@ -70,13 +70,13 @@ const Footer = () => {
                         <div className="footer__item">
                             <h3 className="title">Contact Us</h3>
                             <ul className="links">
-                                <li style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                                    <span style={{ fontSize: '14px', marginBottom: '2px' }}>Phone:</span>
-                                    <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>+62 878-6317-5144</span>
+                                <li className="footer__field">
+                                    <span className="footer__field-label">Phone:</span>
+                                    <span className="footer__field-value">+62 878-6317-5144</span>
                                 </li>
-                                <li style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginTop: '12px' }}>
-                                    <span style={{ fontSize: '14px', marginBottom: '2px' }}>Email:</span>
-                                    <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>spabalimoon@gmail.com</span>
+                                <li className="footer__field">
+                                    <span className="footer__field-label">Email:</span>
+                                    <span className="footer__field-value">spabalimoon@gmail.com</span>
                                 </li>
                             </ul>
                         </div>
@@ -89,13 +89,13 @@ const Footer = () => {
                                 </Link>
                             </h3>
                             <ul className="time-table">
-                                <li style={{ display: 'flex', flexDirection: 'column', marginBottom: '12px', alignItems: 'flex-start' }}>
-                                    <span style={{ fontSize: '14px', marginBottom: '2px' }}>Open Daily:</span>
-                                    <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>9am - 11pm</span>
+                                <li className="footer__field">
+                                    <span className="footer__field-label">Open Daily:</span>
+                                    <span className="footer__field-value">9am - 11pm</span>
                                 </li>
-                                <li style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                                    <span style={{ fontSize: '14px', marginBottom: '2px' }}>Address:</span>
-                                    <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>Jl. Pangkung Sari No. 30, Seminyak, Bali</span>
+                                <li className="footer__field">
+                                    <span className="footer__field-label">Address:</span>
+                                    <span className="footer__field-value">Jl. Pangkung Sari No. 30, Seminyak, Bali</span>
                                 </li>
                             </ul>
                         </div>
@@ -111,9 +111,9 @@ const Footer = () => {
                                 <li><Link prefetch={false} href="/villa-hotel-massage">Massage Hotel &amp; Villa</Link></li>
                                 <li><Link prefetch={false} href="/">Massage Seminyak</Link></li>
                                 <li><Link prefetch={false} href="/massage-kuta">Massage Kuta</Link></li>
-                                <li style={{ display: 'flex', flexDirection: 'column', marginTop: '12px', alignItems: 'flex-start' }}>
-                                    <span style={{ fontSize: '14px', marginBottom: '2px' }}>Home service fee:</span>
-                                    <span style={{ fontWeight: '600', color: '#2f2924', fontSize: '16px' }}>75k / therapist</span>
+                                <li className="footer__field footer__field--spaced">
+                                    <span className="footer__field-label">Home service fee:</span>
+                                    <span className="footer__field-value">75k / therapist</span>
                                 </li>
                             </ul>
                         </div>

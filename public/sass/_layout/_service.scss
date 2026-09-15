@@ -731,3 +731,41 @@
 	}
 }
 // Service six area end here ***
+
+// The treatment slider's cards mask a notch out of the photo's top-right
+// corner and drop the ring into it. The mask is 390x274 and its notch is a
+// 99px square -- measured across the straight part of the edge, not the
+// extreme row, which runs through the frame's own rounded corner. The mask is
+// sized with cover and on these cards the frame is always narrower than the
+// mask, so height drives the scale and the notch lands at 36.1% of the
+// frame's HEIGHT. Every photo in this slider is 630x580, so that is 33.23% of
+// the frame's WIDTH -- and width is what everything below is measured in,
+// deliberately: the frame takes its height from the photo, so a height-based
+// rule collapses the ring to nothing until the image has loaded. A percentage
+// margin resolves against the containing block's width even when it is a top
+// or bottom margin, which is what pins the ring without touching height.
+// Pinned at top:0/right:0 the old fixed 85px ring sat hard in the corner with
+// all of the notch's slack pooled below and to its left -- 45px of it at
+// desktop width. Centred in the opening it gets an even gap at every width.
+// Scoped to the slider: .service-block-two is also the session-option card,
+// whose .icon has no photo to measure against.
+.service-slider-two {
+	.service-block-two .inner-box .image-box {
+		.icon {
+			width: 25.8%;
+			height: auto;
+			aspect-ratio: 1;
+			line-height: normal;
+			top: 0;
+			right: 0;
+			margin: 3.72% 3.72% 0 0;
+
+			> svg,
+			> img,
+			.service-treatment-icon {
+				width: 50%;
+				height: auto;
+			}
+		}
+	}
+}

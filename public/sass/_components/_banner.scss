@@ -167,6 +167,23 @@
 			color: var(--theme-color-white);
 			@include flex;
 			gap: 10px;
+			// It sits straight on the hero photo, and on the warmer heroes
+			// both the gold lotus and the white type washed into it. A tinted
+			// pill gives the line a ground of its own; inline-flex so the pill
+			// stops at the text rather than running the column's full width.
+			display: inline-flex;
+			width: -moz-fit-content;
+			width: fit-content;
+			padding: 7px 18px 7px 14px;
+			border-radius: 999px;
+			background-color: rgba(28, 26, 29, 0.38);
+			border: 1px solid rgba(255, 255, 255, 0.18);
+			backdrop-filter: blur(6px);
+			-webkit-backdrop-filter: blur(6px);
+			@include breakpoint(max-md) {
+				font-size: 17px;
+				padding: 6px 15px 6px 12px;
+			}
 		}
 		.title {
 			color: var(--theme-color-white);

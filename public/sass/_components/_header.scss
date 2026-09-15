@@ -335,6 +335,13 @@
 		.menu-btns {
 			@include flex;
 			gap: 25px;
+			// On a phone the only two controls left in here are the call icon
+			// and the menu button, and the logo beside them keeps its 210px.
+			// At 360px and under the call icon was landing against "Moon", so
+			// close the gap on this side to move it across to the menu button.
+			@include breakpoint(max-lg) {
+				gap: 14px;
+			}
 			.search-trigger {
 				font-size: 24px;
 				color: var(--headings-color);

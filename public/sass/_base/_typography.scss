@@ -585,6 +585,20 @@ br {
 				box-shadow: none;
 				border-radius: 0 !important;
 				padding: 20px 0px;
+				// The +/- sits absolutely at right:0 inside a 30px box, so the
+				// question ran underneath it on every line that reached the
+				// edge. Keep that column clear.
+				padding-right: 40px;
+				// 22px is set for the desktop column. On a phone the question
+				// ended up larger than the answer under it and took three
+				// lines; this keeps it above the 16px body text without
+				// dominating the panel.
+				@include breakpoint(max-md) {
+					font-size: 18px;
+					line-height: 28px;
+					padding: 16px 0px;
+					padding-right: 36px;
+				}
 			}
 		}
 		.accordion-body {
@@ -606,6 +620,9 @@ br {
 			font-weight: 700;
 			top: 20px;
 			right: 0px;
+			@include breakpoint(max-md) {
+				top: 16px;
+			}
 			font-size: 18px;
 			width: 30px;
 			height: 30px;
@@ -700,6 +717,19 @@ svg.icon[viewBox="0 0 25 26"],
 			gap: 10px;
 			text-transform: capitalize;
 			color: var(--text-color);
+			// 20px is set against the desktop column. On a phone the longer
+			// eyebrows ("Spa Bali Moon in Seminyak, Bali") took a second line
+			// and read as a heading in their own right rather than as a label
+			// over the one below.
+			@include breakpoint(max-md) {
+				font-size: 17px;
+				line-height: 26px;
+			}
+			// 320px leaves about 252px beside the 28px lotus, and the longest
+			// of them needs 254px at 17px.
+			@include breakpoint(max-xs) {
+				font-size: 16px;
+			}
 		}
 		.title {
 			text-transform: capitalize;
