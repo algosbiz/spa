@@ -203,9 +203,9 @@ const Header1 = ({ scroll }) => {
                                 {/* Inline rather than a Font Awesome class: the
                                     bundled subset carries only phone-plus (which has
                                     a "+" on it), phone-volume (sound waves) and
-                                    headset, so a plain handset had to be drawn. The
-                                    scale(-1,1) mirrors it to face the other way, and
-                                    the stroke weight is tuned to read at 24px rather
+                                    headset, so a plain handset had to be drawn. It
+                                    faces right, towards the menu button beside it.
+                                    The stroke weight is tuned to read at 24px rather
                                     than to look right zoomed in -- at 22px a thinner
                                     version collapsed into a squiggle. */}
                                 <svg
@@ -219,7 +219,6 @@ const Header1 = ({ scroll }) => {
                                     aria-hidden="true"
                                 >
                                     <path
-                                        transform="scale(-1,1) translate(-24,0)"
                                         d="M17.6 14.3l-2.4-.3c-.6-.1-1.1.1-1.5.5l-1.7 1.7a13.1 13.1 0 0 1-5.8-5.8l1.7-1.7c.4-.4.6-.9.5-1.5l-.3-2.4A1.5 1.5 0 0 0 6.6 3.5H5C4.1 3.5 3.4 4.2 3.5 5.1 4 12.1 9.9 18 16.9 18.5c.9.1 1.6-.6 1.6-1.5v-1.6c0-.8-.6-1.4-1.4-1.5z"
                                     />
                                 </svg>
