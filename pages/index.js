@@ -226,7 +226,7 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
         />
         <Step
           flowerPetals
-          subTitle="Booking Made Simple"
+          subTitle="Book via WhatsApp"
           title="How Do You Book Your Spa Experience?"
           steps={bookingSteps}
         />
@@ -254,8 +254,8 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
         </div>
         <Testimonial testimonialsData={testimonials} />
         <TreatmentCatalog
-          subTitle="Signature Collection"
-          title="Find Your Perfect Spa Experience"
+          subTitle="Our Spa Menu"
+          title="Browse Our Spa Treatments"
           treatments={homepageTreatments}
         />
         <PackageIntroText
