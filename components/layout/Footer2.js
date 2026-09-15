@@ -140,17 +140,36 @@ const Footer = () => {
                                         {message}
                                     </p>
                                 ) : (
-                                    <p className="footer__newsletter-note">We Won&apos;t Spam. We Hate It More Than You Do.</p>
+                                    <p className="footer__newsletter-note">Just the occasional note about new treatments and offers.</p>
                                 )}
                             </div>
                             <div className="footer__payments">
                                 <h3 className="title">Accepted Payments:</h3>
                                 <div className="footer__payment-list">
+                                    {/* Drawn rather than pulled from Font Awesome's card set, whose
+                                        marks are the pre-2016 ones. Mastercard is its current
+                                        two-circle symbol; Visa is its wordmark in the brand blue. */}
                                     <span className="footer__payment-card" role="img" aria-label="Mastercard">
-                                        <i className="fa-brands fa-cc-mastercard"></i>
+                                        <svg width="40" height="25" viewBox="0 0 48 30" fill="none" aria-hidden="true">
+                                            <circle cx="18.5" cy="15" r="11.5" fill="#EB001B" />
+                                            <circle cx="29.5" cy="15" r="11.5" fill="#F79E1B" />
+                                            <path
+                                                d="M24 6.06a11.48 11.48 0 0 0 0 17.88 11.48 11.48 0 0 0 0-17.88Z"
+                                                fill="#FF5F00" />
+                                        </svg>
                                     </span>
                                     <span className="footer__payment-card" role="img" aria-label="Visa">
-                                        <i className="fa-brands fa-cc-visa"></i>
+                                        <span className="footer__payment-visa">VISA</span>
+                                    </span>
+                                    <span className="footer__payment-card" role="img" aria-label="Cash">
+                                        <svg width="28" height="19" viewBox="0 0 26 18" fill="none" aria-hidden="true">
+                                            <rect x="1" y="1" width="24" height="16" rx="3"
+                                                fill="#EDF5EF" stroke="#2F7D5B" strokeWidth="1.5" />
+                                            <circle cx="13" cy="9" r="3.6" fill="none" stroke="#2F7D5B" strokeWidth="1.5" />
+                                            <path d="M4.6 4.6h1.8M19.6 13.4h1.8" stroke="#2F7D5B"
+                                                strokeWidth="1.5" strokeLinecap="round" />
+                                        </svg>
+                                        <span className="footer__payment-label">Cash</span>
                                     </span>
                                 </div>
                             </div>

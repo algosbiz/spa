@@ -687,23 +687,16 @@ svg.icon[viewBox="0 0 25 26"],
 	}
 }
 
-:is(
-	.banner__content,
-	.banner-two__content,
-	.banner-three__content,
-	.banner-four__content,
-	.banner-six__content
-) .sub-title > svg[viewBox="0 0 25 25"] {
-	width: 44px;
-	height: 44px;
-	flex-basis: 44px;
-	background-size: contain;
-
-	@include breakpoint(max-sm) {
-		width: 40px;
-		height: 40px;
-		flex-basis: 40px;
-	}
+// No mark in front of an eyebrow. Every one of them drew the same brand lotus
+// that already sits in the header, so on a page with four section headers the
+// logo appeared five times; over a hero photo at 44px it mostly read as noise
+// in front of the line it was meant to introduce. The same flower still does
+// its job where it means something: as the bullet in a feature list, as the
+// divider ornament, and on the header's own button.
+.sub-title > svg[viewBox="0 0 25 25"],
+.sub-title > svg.icon[viewBox="0 0 25 26"],
+.sub-title > .brand-lotus-icon {
+	display: none;
 }
 
 .section {

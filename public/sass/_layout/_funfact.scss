@@ -34,13 +34,20 @@
 			text-align: center;
 			justify-content: center;
 			gap: 8px;
+			// These are four short labels sitting two-up on a phone, not
+			// headings: at 26px they carried more weight than the section
+			// heading above them and wrapped onto a second line.
 			.title {
-				font-size: 26px;
-				line-height: 36px;
+				font-size: 20px;
+				line-height: 28px;
 			}
 			.content > span {
-				font-size: 15px;
-				line-height: 24px;
+				font-size: 13px;
+				line-height: 20px;
+			}
+			.icon svg {
+				width: 52px;
+				height: 52px;
 			}
 		}
 	}

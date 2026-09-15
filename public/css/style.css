@@ -1981,26 +1981,10 @@ svg.icon[viewBox="0 0 25 26"] > *,
   opacity: 0;
 }
 
-:is(.banner__content,
-.banner-two__content,
-.banner-three__content,
-.banner-four__content,
-.banner-six__content) .sub-title > svg[viewBox="0 0 25 25"] {
-  width: 44px;
-  height: 44px;
-  flex-basis: 44px;
-  background-size: contain;
-}
-@media (max-width: 575px) {
-  :is(.banner__content,
-  .banner-two__content,
-  .banner-three__content,
-  .banner-four__content,
-  .banner-six__content) .sub-title > svg[viewBox="0 0 25 25"] {
-    width: 40px;
-    height: 40px;
-    flex-basis: 40px;
-  }
+.sub-title > svg[viewBox="0 0 25 25"],
+.sub-title > svg.icon[viewBox="0 0 25 26"],
+.sub-title > .brand-lotus-icon {
+  display: none;
 }
 
 .section-header .sub-title, .section-header__flex .sub-title {
@@ -4613,20 +4597,11 @@ textarea.form-control {
   display: flex;
   align-items: center;
   gap: 10px;
-  display: inline-flex;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 7px 18px 7px 14px;
-  border-radius: 999px;
-  background-color: rgba(28, 26, 29, 0.38);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  text-shadow: 0 1px 12px rgba(28, 26, 29, 0.55);
 }
 @media (max-width: 767px) {
   .banner-two__content .sub-title {
     font-size: 17px;
-    padding: 6px 15px 6px 12px;
   }
 }
 .banner-two__content .title {
@@ -6716,12 +6691,16 @@ textarea.form-control {
     gap: 8px;
   }
   .funfact-block .inner-box .title {
-    font-size: 26px;
-    line-height: 36px;
+    font-size: 20px;
+    line-height: 28px;
   }
   .funfact-block .inner-box .content > span {
-    font-size: 15px;
-    line-height: 24px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .funfact-block .inner-box .icon svg {
+    width: 52px;
+    height: 52px;
   }
 }
 
@@ -10086,7 +10065,7 @@ textarea.form-control {
 .footer__payment-card {
   min-width: 70px;
   height: 48px;
-  padding: 0 16px;
+  padding: 0 14px;
   border-radius: 14px;
   background: #fff;
   border: 1px solid rgba(95, 90, 84, 0.08);
@@ -10094,11 +10073,24 @@ textarea.form-control {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 34px;
-  color: #24418f;
+  gap: 8px;
 }
-.footer__payment-card:first-child {
-  color: #e05b2d;
+
+.footer__payment-visa {
+  font-family: var(--text-font);
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  color: #1434cb;
+}
+
+.footer__payment-label {
+  font-family: var(--text-font);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  color: #2f7d5b;
 }
 
 .footer__bottom {
@@ -10135,17 +10127,23 @@ textarea.form-control {
   }
 }
 @media (max-width: 767px) {
+  .footer__newsletter .input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
   .footer__newsletter .input input {
-    padding-right: 30px !important;
-    padding-bottom: 62px;
+    padding: 15px 24px !important;
   }
   .footer__newsletter .input button {
+    position: static !important;
+    width: 100% !important;
+    height: 48px;
     top: auto !important;
-    bottom: 6px;
-    left: 6px;
-    right: 6px !important;
+    right: auto !important;
     transform: none;
-    height: 44px;
+    background: var(--theme-color1) !important;
+    color: #fff;
   }
   .footer__bottom-links a:not(:last-child)::after {
     display: none;

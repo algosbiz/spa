@@ -410,7 +410,7 @@
 .footer__payment-card {
 	min-width: 70px;
 	height: 48px;
-	padding: 0 16px;
+	padding: 0 14px;
 	border-radius: 14px;
 	background: #fff;
 	border: 1px solid rgba(95, 90, 84, 0.08);
@@ -418,11 +418,25 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 34px;
-	color: #24418f;
-	&:first-child {
-		color: #e05b2d;
-	}
+	gap: 8px;
+}
+
+.footer__payment-visa {
+	font-family: var(--text-font);
+	font-size: 19px;
+	font-weight: 800;
+	letter-spacing: 0.01em;
+	line-height: 1;
+	// Visa's current brand blue.
+	color: #1434cb;
+}
+
+.footer__payment-label {
+	font-family: var(--text-font);
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1;
+	color: #2f7d5b;
 }
 
 .footer__bottom {
@@ -460,18 +474,31 @@
 }
 
 @media (max-width: 767px) {
+	// The desktop field parks the button inside the pill as gold text, which
+	// needs 145px of right padding to keep clear of the placeholder. There is
+	// no room for that on a phone: the button landed on top of "Your Email"
+	// (the previous fix set padding-bottom, which the shorthand above wins
+	// against because it carries !important). Stack them instead, and make the
+	// button look like one.
+	.footer__newsletter .input {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
 	.footer__newsletter .input input {
-		padding-right: 30px !important;
-		padding-bottom: 62px;
+		padding: 15px 24px !important;
 	}
 
 	.footer__newsletter .input button {
+		position: static !important;
+		width: 100% !important;
+		height: 48px;
 		top: auto !important;
-		bottom: 6px;
-		left: 6px;
-		right: 6px !important;
+		right: auto !important;
 		transform: none;
-		height: 44px;
+		background: var(--theme-color1) !important;
+		color: #fff;
 	}
 
 	.footer__bottom-links a:not(:last-child)::after {
