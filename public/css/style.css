@@ -3341,10 +3341,10 @@ Scroll To Top style
 }
 @media (max-width: 767px) {
   .whatsapp-float {
-    width: 88px;
-    height: 88px;
-    font-size: 46px;
-    line-height: 84px;
+    width: 64px;
+    height: 64px;
+    font-size: 34px;
+    line-height: 60px;
     bottom: calc(24px + env(safe-area-inset-bottom, 0px));
   }
 }
@@ -10028,7 +10028,7 @@ textarea.form-control {
 }
 @media (max-width: 767px) {
   .footer__bottom {
-    padding-bottom: 112px;
+    padding-bottom: 96px;
   }
 }
 /***

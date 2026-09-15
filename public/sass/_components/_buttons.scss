@@ -364,11 +364,16 @@ Scroll To Top style
     // underneath, and that button is gone, so nothing is being cleared any
     // more. env(safe-area-inset-bottom) keeps it off the home indicator on
     // an iPhone; browsers without it fall back to the flat 24px.
+    // 64px, not the 88px first tried: doubling it read as overbearing on a
+    // phone. This still sits well above the 56px it uses on desktop, which is
+    // the point -- it is the main way guests get in touch. If this number
+    // changes, check .footer__bottom in _footer.scss, which reserves room for
+    // it so the copyright links do not end up behind it.
     @include breakpoint(max-md) {
-        width: 88px;
-        height: 88px;
-        font-size: 46px;
-        line-height: 84px;
+        width: 64px;
+        height: 64px;
+        font-size: 34px;
+        line-height: 60px;
         bottom: calc(24px + env(safe-area-inset-bottom, 0px));
     }
 }
