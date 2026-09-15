@@ -146,7 +146,7 @@ const mostPopularTreatments = [
   treatment(
     "popular-manicure-pedicure",
     "Manicure Pedicure",
-    "A grooming treatment for hands and feet, including nail care, cuticle work, and polish.",
+    "Providing complete hand and foot care with a clean and polished finish.",
     "/images/homepage/homepage-19.webp",
     [
       option("Manicure & Pedicure", "IDR 238K"),
@@ -162,7 +162,7 @@ const mostPopularTreatments = [
   treatment(
     "popular-sports",
     "Sport Massage",
-    "Targeted to ease muscle soreness, reduce stiffness, and support physical recovery.",
+    "A focused massage designed to relieve muscle tightness and support mobility.",
     "/images/homepage/homepage-8.webp",
     [option("1 Hour", "IDR 269K"), option("1.5 Hours", "IDR 359K")]
   ),
@@ -244,7 +244,7 @@ const massageTreatments = [
   treatment(
     "massage-couple",
     "Couple Massage",
-    "",
+    "Designed for two to relax together while easing the body and sharing a calm moment.",
     "/images/homepage/homepage-21.webp",
     [],
     undefined,
@@ -370,7 +370,7 @@ const massageTreatments = [
   treatment(
     "massage-sports",
     "Sport Massage",
-    "Targeted to ease muscle soreness, reduce stiffness, and support physical recovery.",
+    "A focused massage designed to relieve muscle tightness and support mobility.",
     "/images/homepage/homepage-8.webp",
     [option("1 Hour", "IDR 269K"), option("1.5 Hours", "IDR 359K")]
   ),
@@ -432,7 +432,7 @@ const beautyTreatments = [
   treatment(
     "beauty-tea-tree-facial",
     "Bali Moon Tea Tree Facial",
-    "A purifying facial treatment for oily or blemish-prone skin using clay, tea tree care, and nourishing oils to restore balance.",
+    "Purifying facial care for oily or blemish-prone skin using clay and tea tree–based products. Benefits:",
     "/images/homepage/homepage-9.webp",
     [option("Price", "IDR 196K")],
     [
@@ -445,7 +445,7 @@ const beautyTreatments = [
   treatment(
     "beauty-gold-facial",
     "Bali Moon Gold Facial",
-    "Premium facial care using gold and argan oil to support skin radiance and firmness.",
+    "Premium facial care using gold and argan oil to support skin radiance and firmness. Benefits:",
     "/images/homepage/homepage-9.webp",
     [option("Price", "IDR 269K")],
     [
@@ -473,7 +473,7 @@ const beautyTreatments = [
   treatment(
     "beauty-biokos-facial",
     "Biokos Facial",
-    "Spa facials for dry, normal, and oily skin, with custom care including facial massage and mask application.",
+    "Spa Facials For Dry, Normal & Oily Face",
     "/images/homepage/homepage-9.webp",
     [
       option("Biokos", "IDR 179K"),
@@ -517,7 +517,7 @@ const beautyTreatments = [
   treatment(
     "beauty-manicure-pedicure",
     "Manicure Pedicure",
-    "A grooming treatment for hands and feet, including nail care, cuticle work, and polish.",
+    "Providing complete hand and foot care with a clean and polished finish.",
     "/images/homepage/homepage-19.webp",
     [
       option("Manicure & Pedicure", "IDR 238K"),
@@ -551,7 +551,7 @@ const coupleTreatments = [
   treatment(
     "couple-balinese",
     "Couple Balinese Massage",
-    "Designed for two to relax together while easing the body and sharing a calm moment.",
+    "Performed side by side using steady pressure and flowing techniques for shared relaxation.",
     "/images/homepage/homepage-21.webp",
     coupleBalineseOptions
   ),

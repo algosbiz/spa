@@ -52,12 +52,12 @@ const priceOption = (time, price) => ({ time, price: `IDR ${price}` });
 const pricingTreatments = [
   {
     name: "Aloe Vera Massage",
-    desc: "A soothing treatment that helps calm the skin, reduce irritation, and support gentle recovery after travel or sun exposure.",
+    desc: "A soothing massage that helps calm the skin, reduce irritation, and support gentle recovery after travel or sun exposure.",
     options: [priceOption("1 Hour", "199K")],
   },
   {
     name: "Aromatherapy Massage",
-    desc: "A calming treatment that uses essential oils and gentle strokes to ease tension and support circulation.",
+    desc: "A calming massage that uses essential oils and gentle strokes to ease tension and support circulation.",
     options: [
       priceOption("1 Hour", "169K"),
       priceOption("1.5 Hours", "239K"),
@@ -66,7 +66,7 @@ const pricingTreatments = [
   },
   {
     name: "Bali Moon Tea Tree Facial",
-    desc: "A purifying facial treatment for oily or blemish-prone skin using clay, tea tree care, and nourishing oils to restore balance.",
+    desc: "A purifying facial treatment for oily or blemish-prone skin using clay, tea tree care, and nourishing oils to restore balance. Benefits:",
     benefits: [
       "Regulates shine and excess oil",
       "Aids in decreasing redness and breakouts",
@@ -77,7 +77,7 @@ const pricingTreatments = [
   },
   {
     name: "Bali Moon Gold Facial",
-    desc: "A restorative facial treatment using gold and argan oil to enhance radiance, hydration, and skin firmness.",
+    desc: "A restorative facial treatment using gold and argan oil to enhance radiance, hydration, and skin firmness. Benefits:",
     benefits: [
       "Restores a natural glow",
       "Smooths and firms the skin",
@@ -88,7 +88,7 @@ const pricingTreatments = [
   },
   {
     name: "Balinese Massage - Relaxing",
-    desc: "A holistic treatment that combines flowing movements, gentle stretches, and aromatherapy to encourage deep relaxation.",
+    desc: "A holistic massage that combines flowing movements, gentle stretches, and aromatherapy to encourage deep relaxation.",
     options: [
       priceOption("1 Hour", "159K"),
       priceOption("1.5 Hours", "239K"),
@@ -98,7 +98,7 @@ const pricingTreatments = [
   },
   {
     name: "Back Massage",
-    desc: "A focused treatment that targets back tension to improve circulation and restore comfort.",
+    desc: "A focused massage that targets back tension to improve circulation and restore comfort.",
     options: [
       priceOption("30 Minutes", "90K"),
       priceOption("1 Hour", "169K"),
@@ -122,7 +122,7 @@ const pricingTreatments = [
   },
   {
     name: "Biokos Facial",
-    desc: "Spa Facials For Dry, Normal & Oily Face. A customized facial treatment for dry, normal, or oily skin, including a facial massage and mask.",
+    desc: "Spa Facials For Dry, Normal & Oily Face",
     options: [
       priceOption("Biokos", "179K"),
       priceOption("Mustika Ratu", "169K"),
@@ -147,7 +147,7 @@ const pricingTreatments = [
     children: [
       {
         name: "Couple Balinese Massage",
-        desc: "A shared treatment that allows you and your partner to relax together in a calm and comfortable setting.",
+        desc: "1 Hour – Balinese Massage",
         options: [
           priceOption("1 Hour · Balinese Massage · 2 Pax", "319K"),
           priceOption("1.5 Hours · Balinese Massage · 2 Pax", "479K"),
@@ -156,7 +156,7 @@ const pricingTreatments = [
       },
       {
         name: "Couple Traditional Massage",
-        desc: "A shared treatment with firmer pressure, allowing both of you to release tension side by side.",
+        desc: "A side-by-side massage with firmer pressure to help release tension together.",
         options: [
           priceOption("1 Hour · Traditional Massage · 2 Pax", "339K"),
           priceOption("1.5 Hours · Traditional Massage · 2 Pax", "519K"),
@@ -165,7 +165,7 @@ const pricingTreatments = [
       },
       {
         name: "Couple Deep Tissue Massage",
-        desc: "A deeper-pressure shared treatment focused on easing muscle tightness and improving comfort.",
+        desc: "A deeper-pressure massage for two, focused on easing tight muscles and improving comfort.",
         options: [
           priceOption("1 Hour · Deep Tissue Massage · 2 Pax", "539K"),
           priceOption("1.5 Hours · Deep Tissue Massage · 2 Pax", "719K"),
@@ -173,7 +173,7 @@ const pricingTreatments = [
       },
       {
         name: "Couple Warm Candle Oil Massages",
-        desc: "A warming treatment for two using melted candle oils to soften muscles and create a soothing shared experience.",
+        desc: "A comforting couple’s massage using gently heated candle oils to soften muscles and create a sense of calm.",
         options: [
           priceOption("1 Hour · Warm Candle Massage · 2 Pax", "539K"),
           priceOption("1.5 Hours · Warm Candle Massage · 2 Pax", "799K"),
@@ -193,12 +193,12 @@ const pricingTreatments = [
   },
   {
     name: "Cellulite Massage",
-    desc: "A targeted treatment that helps stimulate circulation and support firmer-looking skin.",
+    desc: "A targeted massage that helps stimulate circulation and support firmer-looking skin.",
     options: [priceOption("1 Hour", "350K"), priceOption("1.5 Hours", "450K")],
   },
   {
     name: "Deep Tissue Massage",
-    desc: "A therapeutic treatment that uses deeper pressure to ease muscle stiffness and release tension.",
+    desc: "A therapeutic massage that uses deeper pressure to ease muscle stiffness and release tension.",
     options: [priceOption("1 Hour", "269K"), priceOption("1.5 Hours", "359K")],
   },
   {
@@ -208,7 +208,7 @@ const pricingTreatments = [
   },
   {
     name: "Foot Reflexology",
-    desc: "A focused treatment applying pressure to reflex points on the feet to support circulation and relaxation.",
+    desc: "A focused massage applying pressure to reflex points on the feet to support circulation and relaxation.",
     options: [
       priceOption("30 Minutes", "99K"),
       priceOption("1 Hour", "169K"),
@@ -217,7 +217,7 @@ const pricingTreatments = [
   },
   {
     name: "Foot Massage",
-    desc: "A relieving treatment that focuses on the soles, heels, and ankles to reduce stiffness.",
+    desc: "A relieving massage that focuses on the soles, heels, and ankles to reduce stiffness.",
     options: [
       priceOption("1 Hour", "159K"),
       priceOption("1.5 Hours", "239K"),
@@ -226,7 +226,7 @@ const pricingTreatments = [
   },
   {
     name: "Four Hand Massage",
-    desc: "A coordinated treatment performed by two therapists working in harmony for deeper relaxation.",
+    desc: "A coordinated massage performed by two therapists working in harmony for deeper relaxation.",
     options: [
       priceOption("1 Hour", "339K"),
       priceOption("1.5 Hours", "499K"),
@@ -240,12 +240,12 @@ const pricingTreatments = [
   },
   {
     name: "Hot Stone Massage",
-    desc: "A soothing treatment using heated basalt stones to relax muscles and encourage circulation.",
+    desc: "A soothing massage using heated basalt stones to relax muscles and encourage circulation.",
     options: [priceOption("1.5 Hours", "299K"), priceOption("2 Hours", "439K")],
   },
   {
     name: "Head Massage",
-    desc: "A calming treatment that helps release tension around the head and scalp.",
+    desc: "A calming massage that helps release tension around the head and scalp.",
     options: [
       priceOption("1 Hour", "159K"),
       priceOption("1.5 Hours", "239K"),
@@ -254,7 +254,7 @@ const pricingTreatments = [
   },
   {
     name: "Lymphatic Massage",
-    desc: "A gentle treatment that supports natural drainage, circulation, and overall body balance.",
+    desc: "A gentle massage that supports natural drainage, circulation, and overall body balance.",
     options: [
       priceOption("1 Hour", "300K"),
       priceOption("1.5 Hours", "440K"),
@@ -277,7 +277,7 @@ const pricingTreatments = [
   },
   {
     name: "Organic Warm Candle Oil Massage",
-    desc: "A warming treatment using natural candle oils to relax muscles and ease tension.",
+    desc: "1 Hr – warm candle wax balinese",
     options: [
       priceOption("1 Hour · Warm Candle Wax Balinese", "269K"),
       priceOption("1.5 Hours · Warm Candle Wax Balinese", "399K"),
@@ -297,7 +297,7 @@ const pricingTreatments = [
   },
   {
     name: "Shiatsu Massage",
-    desc: "A traditional Japanese treatment using oil-free pressure-point techniques to release tension.",
+    desc: "A traditional Japanese massage using oil-free pressure-point techniques to release tension.",
     options: [
       priceOption("30 Minutes", "119K"),
       priceOption("1 Hour", "219K"),
@@ -306,12 +306,12 @@ const pricingTreatments = [
   },
   {
     name: "Sport Massage",
-    desc: "A focused treatment designed to relieve muscle tightness and support mobility.",
+    desc: "A focused massage designed to relieve muscle tightness and support mobility.",
     options: [priceOption("1 Hour", "269K"), priceOption("1.5 Hours", "359K")],
   },
   {
     name: "Traditional Massage - Strong",
-    desc: "A firmer treatment using deeper pressure for a more intense muscle release.",
+    desc: "A firmer massage using deeper pressure for a more intense muscle release.",
     options: [
       priceOption("30 Minutes", "90K"),
       priceOption("1 Hour", "169K"),
@@ -321,7 +321,7 @@ const pricingTreatments = [
   },
   {
     name: "Thai Massage",
-    desc: "A traditional oil-free treatment using assisted stretches and deep pressure techniques.",
+    desc: "A traditional oil-free massage using assisted stretches and deep pressure techniques.",
     options: [
       priceOption("30 Minutes", "133K"),
       priceOption("1 Hour", "259K"),
@@ -330,7 +330,7 @@ const pricingTreatments = [
   },
   {
     name: "Virgin Cold-Press Coconut Oil Massage",
-    desc: "A nourishing treatment using pure coconut oil to relax muscles and soften the skin.",
+    desc: "A nourishing massage using pure coconut oil to relax muscles and soften the skin.",
     options: [
       priceOption("1 Hour", "300K"),
       priceOption("1.5 Hours", "440K"),
