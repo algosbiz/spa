@@ -321,8 +321,12 @@ export default function Home2_About({
                     height: 16.7%;
                     width: auto;
                     aspect-ratio: 1;
-                    border-color: var(--theme-color1);
-                    border-radius: 50%;
+                    /* Ringed and filled it read as a button sitting on the
+                       photo rather than as the mark it is, so the frame comes
+                       off and the lotus stands on the notch's own white. */
+                    background-color: transparent;
+                    border: none;
+                    border-radius: 0;
                 }
 
                 .about-section-two
@@ -330,9 +334,9 @@ export default function Home2_About({
                     .inner-column
                     .brand-card
                     .brand-lotus-icon {
-                    width: 48%;
-                    height: 48%;
-                    flex-basis: 48%;
+                    width: 72%;
+                    height: 72%;
+                    flex-basis: 72%;
                 }
 
                 /* This page's main photo is shorter than the one the treatment
