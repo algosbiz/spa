@@ -45,7 +45,6 @@ export default function Home1_ReserveCta({
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
-                        padding: '95px 70px',
                         textAlign: 'center',
                         borderRadius: '18px',
                         overflow: 'hidden',
@@ -53,21 +52,21 @@ export default function Home1_ReserveCta({
                 >
                     {/* Decorative hand-painted brush-stroke frame (top / bottom / left / right) */}
                     <svg viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"
-                        style={{ position: 'absolute', top: '14px', left: '26px', width: 'calc(100% - 52px)', height: '30px', pointerEvents: 'none', zIndex: 1 }}>
+                        className="reserve-cta-frame reserve-cta-frame--top">
                         <path d="M0,22 C160,8 320,30 480,18 C640,8 820,30 1000,16" style={brush(0.6, 2)} />
                         <path d="M130,30 C300,22 450,32 620,26" style={brush(0.3, 1.5)} />
                     </svg>
                     <svg viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"
-                        style={{ position: 'absolute', bottom: '14px', left: '26px', width: 'calc(100% - 52px)', height: '30px', pointerEvents: 'none', zIndex: 1 }}>
+                        className="reserve-cta-frame reserve-cta-frame--bottom">
                         <path d="M0,18 C160,32 320,10 480,22 C640,32 820,10 1000,24" style={brush(0.6, 2)} />
                         <path d="M380,10 C560,18 720,8 880,14" style={brush(0.3, 1.5)} />
                     </svg>
                     <svg viewBox="0 0 40 1000" preserveAspectRatio="none" aria-hidden="true"
-                        style={{ position: 'absolute', left: '14px', top: '26px', height: 'calc(100% - 52px)', width: '30px', pointerEvents: 'none', zIndex: 1 }}>
+                        className="reserve-cta-frame reserve-cta-frame--left">
                         <path d="M22,0 C12,160 30,320 20,500 C12,680 30,840 22,1000" style={brush(0.55, 2)} />
                     </svg>
                     <svg viewBox="0 0 40 1000" preserveAspectRatio="none" aria-hidden="true"
-                        style={{ position: 'absolute', right: '14px', top: '26px', height: 'calc(100% - 52px)', width: '30px', pointerEvents: 'none', zIndex: 1 }}>
+                        className="reserve-cta-frame reserve-cta-frame--right">
                         <path d="M18,0 C28,160 10,320 20,500 C28,680 10,840 18,1000" style={brush(0.55, 2)} />
                     </svg>
 
@@ -76,7 +75,7 @@ export default function Home1_ReserveCta({
                             className="title text-white wow fadeInUp"
                             data-wow-delay="00ms"
                             data-wow-duration="1500ms"
-                            style={{ fontSize: '32px', lineHeight: 1.3, marginBottom: 0 }}
+                            style={{ marginBottom: 0 }}
                         >
                             {title}
                         </h2>
@@ -131,6 +130,71 @@ export default function Home1_ReserveCta({
                     </div>
                 </div>
             </div>
+            <style jsx global>{`
+                .reserve-cta-frame {
+                    position: absolute;
+                    pointer-events: none;
+                    z-index: 1;
+                }
+                .reserve-cta-frame--top,
+                .reserve-cta-frame--bottom {
+                    left: 26px;
+                    width: calc(100% - 52px);
+                    height: 30px;
+                }
+                .reserve-cta-frame--top { top: 14px; }
+                .reserve-cta-frame--bottom { bottom: 14px; }
+                .reserve-cta-frame--left,
+                .reserve-cta-frame--right {
+                    top: 26px;
+                    height: calc(100% - 52px);
+                    width: 30px;
+                }
+                .reserve-cta-frame--left { left: 14px; }
+                .reserve-cta-frame--right { right: 14px; }
+
+                .reserve-cta-banner {
+                    padding: 95px 70px;
+                }
+
+                .reserve-cta-banner .title {
+                    font-size: 32px;
+                    line-height: 1.3;
+                }
+
+                /* On a phone the 70px side padding left the copy about 250px
+                   of column, so a 32px heading broke into three or four lines
+                   and swamped the card. Pull the brush frame in with the
+                   padding so the text keeps its clearance from it. */
+                @media (max-width: 767px) {
+                    .reserve-cta-banner {
+                        padding: 56px 34px;
+                    }
+
+                    .reserve-cta-banner .title {
+                        font-size: 24px;
+                        line-height: 1.32;
+                    }
+
+                    .reserve-cta-frame--top,
+                    .reserve-cta-frame--bottom {
+                        left: 16px;
+                        width: calc(100% - 32px);
+                        height: 22px;
+                    }
+                    .reserve-cta-frame--top { top: 9px; }
+                    .reserve-cta-frame--bottom { bottom: 9px; }
+
+                    .reserve-cta-frame--left,
+                    .reserve-cta-frame--right {
+                        top: 16px;
+                        height: calc(100% - 32px);
+                        width: 22px;
+                    }
+                    .reserve-cta-frame--left { left: 9px; }
+                    .reserve-cta-frame--right { right: 9px; }
+                }
+            `}</style>
         </section>
     );
 }
