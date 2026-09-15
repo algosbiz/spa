@@ -188,14 +188,17 @@ const Header1 = ({ scroll }) => {
                                     <path d="M12.4906 17.6772C12.4739 17.6772 12.4583 17.6772 12.4416 17.6751C6.77286 17.1501 3.63849 14.0157 3.12703 8.35949C3.11244 8.20636 3.16869 8.05324 3.27807 7.94386C3.38744 7.83449 3.53849 7.7772 3.69369 7.79386C6.53015 8.05428 8.75099 8.98241 10.2989 10.5512C10.4999 10.7564 10.4979 11.0855 10.2927 11.2876C10.0895 11.4897 9.75932 11.4876 9.55619 11.2824C8.30203 10.0105 6.51453 9.21157 4.23536 8.90324C4.86453 13.647 7.58744 16.1793 12.5374 16.6376C12.8239 16.6637 13.0354 16.9178 13.0083 17.2043C12.9833 17.4741 12.7562 17.6772 12.4906 17.6772Z" fill="currentColor" />
                                 </svg>
                             </a>
-                            {/* Tap-to-call, next to the menu button and on the same
-                                breakpoint: a phone number is only actionable on a
-                                device that can dial, which is also the only place
-                                "Book an Appointment" is hidden. */}
+                            {/* Opens WhatsApp rather than dialling: every other
+                                contact route on the site goes there, so a tel:
+                                link would be the one that lands somewhere else.
+                                Sits beside the menu button on the same breakpoint,
+                                which is where "Book an Appointment" drops out. */}
                             <a
-                                href="tel:+6287863175144"
+                                href="https://wa.me/6287863175144"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="header-call d-flex d-lg-none"
-                                aria-label="Call Spa Bali Moon"
+                                aria-label="Contact Spa Bali Moon on WhatsApp"
                             >
                                 <i className="fa-classic fa-light fa-phone-plus" aria-hidden="true"></i>
                             </a>
