@@ -706,6 +706,22 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
             display: none !important;
           }
 
+          /* With the WhatsApp button gone the arrow curls away towards nothing,
+             and the paragraph is left-aligned in a column it no longer shares,
+             so it reads as off-centre under the centred heading. */
+          .banner-five-area .banner-five__content .info .arry {
+            display: none;
+          }
+
+          .banner-five-area .banner-five__content .info {
+            justify-content: center;
+          }
+
+          .banner-five-area .banner-five__content .info .text {
+            max-width: 100%;
+            text-align: center;
+          }
+
           /* The 190px top padding makes room for the banner images, which are
              display:none at this width, so it is dead space above the heading. */
           .banner-five-area {
