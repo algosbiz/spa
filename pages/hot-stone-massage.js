@@ -56,7 +56,16 @@ const packageOptions = [
 
 const durationOptions = [
   {
-    price: "IDR 299K",
+    price: "IDR 250K",
+    duration: "1 Hour",
+    details: [
+      "Full-body hot stone massage",
+      "Warmth across the main muscle groups",
+      "Ideal for a first hot stone session",
+    ],
+  },
+  {
+    price: "IDR 370K",
     duration: "1.5 Hours",
     details: [
       "Full-body hot stone massage",

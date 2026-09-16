@@ -50,6 +50,11 @@ const scrubVariants = [
   "Spa Sari",
 ].map((variant) => ({ duration: variant, price: "IDR 169K" }));
 
+const scrubOptions = [
+  ...scrubVariants,
+  { duration: "Additional Body Mask", price: "IDR 100K" },
+];
+
 const serviceHighlights = [
   { title: "Natural", text: "Ingredients" },
   { title: "Multiple", text: "Scrub Choices" },
@@ -134,11 +139,11 @@ export default function BodyScrub() {
             packages={packageOptions}
             topContent={
               <SessionOptions
-                sessions={scrubVariants}
+                sessions={scrubOptions}
                 layout="compact"
                 subTitle="Pick Your Scent"
                 title="Body Scrub Options"
-                text="Our Body Scrub is available in a selection of natural-inspired variants, so you can enjoy the same full-body exfoliating treatment with the fragrance and blend you prefer."
+                text="Our Body Scrub is available in a selection of natural-inspired variants, so you can enjoy the same full-body exfoliating treatment with the fragrance and blend you prefer. An additional body mask can be applied after the scrub and followed by a shower."
                 icon="/images/spa/Scrub.svg"
               />
             }

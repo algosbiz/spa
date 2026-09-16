@@ -31,6 +31,7 @@ const pricingTreatmentImages = Object.fromEntries(Object.entries({
   "Deep Tissue Massage": "/images/services/deeptissuemassage/deeptissuemassage-1.webp",
   "Ear Candle": "/images/services/earcandle/earcandle-1.webp",
   "Foot Reflexology": "/images/services/footreflexology/footreflexology-1.webp",
+  "Foot Scrub": "/images/services/bodyscrub/bodyscrub-1.webp",
   "Foot Massage": "/images/services/footmassage/footmassage-1.webp",
   "Four Hand Massage": "/images/homepage/homepage-3.webp",
   "Herbal Massage": "/images/homepage/homepage-25.webp",
@@ -53,13 +54,13 @@ const pricingTreatments = [
   {
     name: "Aloe Vera Massage",
     desc: "A soothing massage that helps calm the skin, reduce irritation, and support gentle recovery after travel or sun exposure.",
-    options: [priceOption("1 Hour", "199K")],
+    options: [priceOption("1 Hour", "250K")],
   },
   {
     name: "Aromatherapy Massage",
     desc: "A calming massage that uses essential oils and gentle strokes to ease tension and support circulation.",
     options: [
-      priceOption("1 Hour", "169K"),
+      priceOption("1 Hour", "199K"),
       priceOption("1.5 Hours", "239K"),
       priceOption("2 Hours", "339K"),
     ],
@@ -101,7 +102,7 @@ const pricingTreatments = [
     desc: "A focused massage that targets back tension to improve circulation and restore comfort.",
     options: [
       priceOption("30 Minutes", "90K"),
-      priceOption("1 Hour", "169K"),
+      priceOption("1 Hour", "199K"),
       priceOption("1.5 Hours", "259K"),
       priceOption("2 Hours", "339K"),
     ],
@@ -118,7 +119,13 @@ const pricingTreatments = [
       priceOption("Jasmine", "169K"),
       priceOption("Green Tea", "169K"),
       priceOption("Spa Sari", "169K"),
+      priceOption("Additional Body Mask", "100K"),
     ],
+  },
+  {
+    name: "Foot Scrub",
+    desc: "A short exfoliating treatment that smooths rough skin on the feet and leaves them feeling refreshed.",
+    options: [priceOption("30 Minutes", "100K")],
   },
   {
     name: "Biokos Facial",
@@ -241,7 +248,11 @@ const pricingTreatments = [
   {
     name: "Hot Stone Massage",
     desc: "A soothing massage using heated basalt stones to relax muscles and encourage circulation.",
-    options: [priceOption("1.5 Hours", "299K"), priceOption("2 Hours", "439K")],
+    options: [
+      priceOption("1 Hour", "250K"),
+      priceOption("1.5 Hours", "370K"),
+      priceOption("2 Hours", "439K"),
+    ],
   },
   {
     name: "Head Massage",
@@ -364,6 +375,7 @@ const BEAUTY_TREATMENT_NAMES = new Set([
   "Biokos Facial",
   "Body Scrub",
   "Creambath & Hair Mask",
+  "Foot Scrub",
   "Ear Candle",
   "Manicure Pedicure",
   "Waxing",

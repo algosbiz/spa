@@ -197,7 +197,7 @@ const massageTreatments = [
     "Aloe Vera Massage",
     "Using cooling aloe vera to help soothe the skin and support gentle recovery.",
     "/images/homepage/homepage-12.webp",
-    [option("1 Hour", "IDR 199K")]
+    [option("1 Hour", "IDR 250K")]
   ),
   treatment(
     "massage-aromatherapy",
@@ -205,7 +205,7 @@ const massageTreatments = [
     "Essential oils combined with gentle movements promote calm and body relaxation.",
     "/images/homepage/homepage-1.webp",
     [
-      option("1 Hour", "IDR 169K"),
+      option("1 Hour", "IDR 199K"),
       option("1.5 Hours", "IDR 239K"),
       option("2 Hours", "IDR 339K"),
     ]
@@ -229,7 +229,7 @@ const massageTreatments = [
     "/images/homepage/homepage-16.webp",
     [
       option("30 Minutes", "IDR 90K"),
-      option("1 Hour", "IDR 169K"),
+      option("1 Hour", "IDR 199K"),
       option("1.5 Hours", "IDR 259K"),
       option("2 Hours", "IDR 339K"),
     ]
@@ -424,7 +424,11 @@ const massageTreatments = [
     "Warm Stone Massage",
     "Using heated stones to help relax muscles and support healthy circulation.",
     "/images/homepage/homepage-7.webp",
-    [option("1.5 Hours", "IDR 299K"), option("2 Hours", "IDR 439K")]
+    [
+      option("1 Hour", "IDR 250K"),
+      option("1.5 Hours", "IDR 370K"),
+      option("2 Hours", "IDR 439K"),
+    ]
   ),
 ];
 
@@ -461,6 +465,7 @@ const beautyTreatments = [
     "Gently exfoliating the skin to help refresh the body and leave the skin smooth and clean.",
     "/images/homepage/homepage-13.webp",
     [
+      option("Body Massage & Scrub · Start From", "IDR 169K"),
       option("Chocolate", "IDR 169K"),
       option("Coconut", "IDR 169K"),
       option("Strawberry", "IDR 169K"),
@@ -468,7 +473,15 @@ const beautyTreatments = [
       option("Jasmine", "IDR 169K"),
       option("Green Tea", "IDR 169K"),
       option("Spa Sari", "IDR 169K"),
+      option("Additional Body Mask", "IDR 100K"),
     ]
+  ),
+  treatment(
+    "beauty-foot-scrub",
+    "Foot Scrub",
+    "Exfoliating the feet to help soften rough skin and leave them feeling refreshed.",
+    "/images/homepage/homepage-13.webp",
+    [option("30 Minutes", "IDR 100K")]
   ),
   treatment(
     "beauty-biokos-facial",

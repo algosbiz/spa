@@ -18,7 +18,7 @@ const bookingUrl = "https://wa.me/6287863175144";
 
 const treatmentOptions = [
   {
-    price: "IDR 199K",
+    price: "IDR 250K",
     name: "1 Hour",
     treatments: [
       "Mild sunburn and skin redness",
