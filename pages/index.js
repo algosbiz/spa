@@ -20,29 +20,147 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://spabalimoon.com";
 
 // Used until the Google Places API is configured, and whenever Google returns no
 // review long enough to fill a slide.
+// Taken from the staging site's review carousel, which is the set the
+// owner curates. The homepage used to render whatever the Places API
+// returned, which meant a four-star review about a burn mark led the
+// section; these are the reviews chosen for the page instead.
 const fallbackTestimonials = [
   {
-    name: "Putu Ayu",
-    designation: "Loyal Customer",
-    text: "Layanan di sini sangat luar biasa! Saya merasa jauh lebih segar setelah melakukan perawatan massage. Terapisnya sangat profesional.",
+    name: "Bea Tan",
+    designation: "Customer review",
+    text: "Enjoyed our treatment by Sumi and Fera. Highly recommended!",
     stars: 5,
   },
   {
-    name: "Made Suardana",
-    designation: "Happy Client",
-    text: "Tempat yang sangat tenang dan nyaman. Fasilitasnya sangat lengkap dan stafnya ramah-ramah. Sangat direkomendasikan!",
+    name: "Michael Smith",
+    designation: "Customer review",
+    text: "Great customer service,friendly staff",
     stars: 5,
   },
   {
-    name: "Nyoman Sari",
-    designation: "Relaxed Guest",
-    text: "Saya sering ke sini untuk spa bulanan. Hasilnya selalu memuaskan dan harga yang ditawarkan sangat kompetitif.",
+    name: "Trisna faris",
+    designation: "Customer review",
+    text: "I felt so relaxed after my session. Perfect way to end the day",
     stars: 5,
   },
   {
-    name: "Ketut Wijaya",
-    designation: "New Client",
-    text: "Pertama kali ke sini dan langsung suka! Pelayanannya cepat dan hasilnya instan terasa di tubuh.",
+    name: "Elena Lagovskaya",
+    designation: "Customer review",
+    text: "Good quality massage and good price",
+    stars: 5,
+  },
+  {
+    name: "Chantal Haban",
+    designation: "Customer review",
+    text: "cheap and great massage! would recommend ear wax as well",
+    stars: 5,
+  },
+  {
+    name: "Bill Peterson",
+    designation: "Customer review",
+    text: "Good massage,nice person&professional staff .",
+    stars: 5,
+  },
+  {
+    name: "Ava Saraskittya",
+    designation: "Customer review",
+    text: "Verry recomended , good massage and nice place.",
+    stars: 5,
+  },
+  {
+    name: "J. L.H.D",
+    designation: "Customer review",
+    text: "Very nice place!",
+    stars: 5,
+  },
+  {
+    name: "Pong ki",
+    designation: "Customer review",
+    text: "Love the full body massage!",
+    stars: 5,
+  },
+  {
+    name: "Lina Kamsiana",
+    designation: "Customer review",
+    text: "Best Spa in Bali for me",
+    stars: 5,
+  },
+  {
+    name: "Putra Wirawan",
+    designation: "Customer review",
+    text: "Good massage and professional.",
+    stars: 5,
+  },
+  {
+    name: "wulan Dhari",
+    designation: "Customer review",
+    text: "Nice place for massage.",
+    stars: 5,
+  },
+  {
+    name: "Eny Harnani",
+    designation: "Customer review",
+    text: "Love it body massage.",
+    stars: 5,
+  },
+  {
+    name: "Aziz",
+    designation: "Customer review",
+    text: "Good massage 👍",
+    stars: 5,
+  },
+  {
+    name: "Sascha US TT (Hothouse2001)",
+    designation: "Customer review",
+    text: "Nice small Shop, with very friendly therapist there. The massage was very strong and helpful. Everytime again.",
+    stars: 5,
+  },
+  {
+    name: "Pur Nami",
+    designation: "Customer review",
+    text: "Come to balimoon for relaxing,massage,scrub,facial, was good am missing",
+    stars: 5,
+  },
+  {
+    name: "Soojung Park",
+    designation: "Customer review",
+    text: "Real good massage, best massage place to end your trip. Thank you",
+    stars: 5,
+  },
+  {
+    name: "WILLY COPPENOLLE",
+    designation: "Customer review",
+    text: "Best spa in Bali for me, it's affordable, its professional. Very Recommended",
+    stars: 5,
+  },
+  {
+    name: "Agita Ajeng",
+    designation: "Customer review",
+    text: "Good massages in this spa! I have wonderful experience 😊😍",
+    stars: 5,
+  },
+  {
+    name: "Tudor Dinu",
+    designation: "Customer review",
+    text: "Nice people . good masage . medium price so i recomand it !",
+    stars: 5,
+  },
+  {
+    name: "Надежда Селезнева",
+    designation: "Customer review",
+    text: "Very good massage, nice staff",
+    stars: 5,
+  },
+  {
+    name: "Komang Eka",
+    designation: "Customer review",
+    text: "Spa Balimoon, nice place, very professional massage",
+    stars: 5,
+  },
+  {
+    name: "WAWAN DARMAWAN",
+    designation: "Customer review",
+    text: "The place and service are 5 stars..comfortable and clean..",
     stars: 5,
   },
 ];
@@ -159,17 +277,9 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
   }, []);
   const fontTrial = (fontKey && FONT_TRIALS[fontKey]) || null;
 
-  const testimonials =
-    googleReviews.reviews.length > 0
-      ? googleReviews.reviews.map((review) => ({
-          name: review.name,
-          designation: review.relativeTime ? `Google review · ${review.relativeTime}` : "Google review",
-          text: review.text,
-          stars: Math.round(review.rating),
-          avatar: review.photo,
-          sourceUrl: review.url || googleReviews.reviewsUrl,
-        }))
-      : fallbackTestimonials;
+  // The curated set, not whatever the Places API hands back. Live reviews
+  // still feed the aggregateRating below, which stays the real Google number.
+  const testimonials = fallbackTestimonials;
 
   const ratingSchema = googleReviews.isLive &&
     googleReviews.userRatingCount > 0 && {

@@ -70,6 +70,10 @@ export default function Home3_Testimonial({ testimonialsData = defaultTestimonia
         loop: true,
         pagination: {
             clickable: true,
+            // With 23 reviews a plain bullet list becomes a long row of dots
+            // that reads as clutter. dynamicBullets keeps a short, sliding
+            // group instead, which is what the staging carousel does.
+            dynamicBullets: true,
         },
         onSwiper: (swiper) => { swiperRef.current = swiper; },
         onDestroy: () => { swiperRef.current = null; },
