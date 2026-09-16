@@ -22,7 +22,10 @@ export default function Home3_About({
     secondaryImage = "/images/about/about-three-image2.png",
     googleReviews = null,
 }) {
-    const reviewCard = (
+    // Only when there is real data to show. GoogleReviewCard falls back to a
+    // flat five-star card when the Places API is not configured, so rendering
+    // it unconditionally would put an invented rating on the page.
+    const reviewCard = googleReviews ? (
         <div className="info">
             <GoogleReviewCard
                 rating={googleReviews?.rating}
@@ -33,7 +36,7 @@ export default function Home3_About({
                 avatars={googleReviews?.reviews}
             />
         </div>
-    );
+    ) : null;
     return (
         <>
         <section id="about" className="about-section-three pt-130 pb-130 paralax__animation">

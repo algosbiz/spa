@@ -246,7 +246,6 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
             ctaHref="/seminyak"
             primaryImage="/images/home/homepage-3.webp"
             secondaryImage="/images/home/homepage-4.webp"
-            googleReviews={googleReviews}
           />
         </div>
         <div className="homepage-service-slider">

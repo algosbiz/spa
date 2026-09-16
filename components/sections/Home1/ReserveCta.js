@@ -99,7 +99,7 @@ export default function Home1_ReserveCta({
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 gap: '15px',
-                                margin: '22px 0',
+                                margin: '18px 0',
                             }}
                         >
                             <span style={{ width: '60px', height: '1px', background: 'rgba(255, 255, 255, 0.5)' }}></span>
@@ -153,8 +153,11 @@ export default function Home1_ReserveCta({
                 .reserve-cta-frame--left { left: 14px; }
                 .reserve-cta-frame--right { right: 14px; }
 
+                /* Vertical padding only -- the 70px sides are tuned to keep the
+                   copy clear of the brush frame. At 95px the card stood 545px
+                   tall, two thirds of a laptop screen, for four short lines. */
                 .reserve-cta-banner {
-                    padding: 95px 70px;
+                    padding: 62px 70px;
                 }
 
                 .reserve-cta-banner .title {
@@ -168,7 +171,7 @@ export default function Home1_ReserveCta({
                    padding so the text keeps its clearance from it. */
                 @media (max-width: 767px) {
                     .reserve-cta-banner {
-                        padding: 56px 34px;
+                        padding: 38px 34px;
                     }
 
                     .reserve-cta-banner .title {
