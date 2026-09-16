@@ -228,7 +228,7 @@ export default function LymphaticMassage() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Renew Balance from the Inside Out with Lymphatic Massage"
-            text="Lymphatic Massage uses gentle, rhythmic techniques to support the body's natural drainage pathways and encourage a lighter, more balanced feeling. This restorative treatment is ideal after travel, periods of reduced movement, or times when the body feels heavy from fluid retention. Enjoy personalised care from our experienced therapists at our spa or in the comfort of your home, villa, or hotel across Seminyak and nearby areas."
+            text="Gentle, rhythmic techniques that support the body's natural drainage and leave it feeling lighter, ideal after travel or long periods of sitting. At our spa, or at your accommodation."
             closingText="Reserve a session designed around your wellness needs and experience gentle relaxation wherever you stay in Bali."
           />
         </div>

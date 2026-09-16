@@ -231,7 +231,7 @@ export default function BaliMoonFacial() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Professional Facial Care at Your Spa, Villa, or Hotel"
-            text="Enjoy the convenience of professional facial treatments without changing your plans for the day. Bali Moon Facial is available both in our spa and through home service appointments, allowing you to enjoy personalised skincare in the environment where you feel most comfortable. Home service is available for an additional IDR 75,000 per therapist within Seminyak and nearby areas."
+            text="Professional facial care at our Seminyak spa, or at your villa or hotel for an extra IDR 75,000 per therapist. Personalised skincare, without rearranging your day."
             closingText="Reserve your appointment and give your skin the attention it deserves."
           />
         </div>

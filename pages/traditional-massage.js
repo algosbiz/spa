@@ -212,7 +212,7 @@ export default function TraditionalMassage() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Restore Your Body After Long Days in Bali"
-            text="Travel, outdoor activities, and daily movement can leave muscles feeling tight and tired. Traditional Massage offers a stronger yet balanced approach using firm techniques to release tension, improve comfort, and help the body feel refreshed again. Enjoy your treatment at Spa Bali Moon or request our home service option for a relaxing experience at your villa or hotel."
+            text="Travel and daily activity leave muscles tight and tired. Traditional Massage uses firm, balanced technique to release tension and leave the body refreshed. At our spa, or at your villa."
             closingText="Reserve your Traditional Massage session and restore comfort after long days in Bali."
           />
         </div>

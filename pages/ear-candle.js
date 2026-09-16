@@ -199,7 +199,7 @@ export default function EarCandle() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Restore a Sense of Comfort Around Your Ears"
-            text="Sometimes the smallest treatments can make the biggest difference in how you feel. Ear Candle is a gentle wellness ritual that many guests choose to unwind, relax around the head and ear area, and take a quiet break from a busy holiday schedule. Available at our spa or as a home service for selected villas and hotels throughout Seminyak and nearby areas."
+            text="A gentle wellness ritual for the head and ear area, and a quiet break from a busy holiday schedule. Available at our spa, or as home service around Seminyak."
             closingText="Reserve your session and enjoy a calm wellness break during your Bali stay."
           />
         </div>

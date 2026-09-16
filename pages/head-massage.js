@@ -222,7 +222,7 @@ export default function HeadMassage() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Refresh Your Mind While Caring for Your Body"
-            text="Busy travel schedules, long hours in front of a screen, or simply keeping up with daily activities can leave tension concentrated around the head and neck. A professional Head Massage offers a simple way to slow down, release built-up tightness, and enjoy a greater sense of comfort without committing to a full-body treatment. Visit our spa or enjoy the same relaxing experience through our home service at selected villas and hotels around Seminyak."
+            text="Travel, screens, and busy days concentrate tension around the head and neck. A Head Massage releases it without committing to a full-body treatment. At our spa, or through home service."
             closingText="Reserve your Head Massage session and give your upper body time to unwind."
           />
         </div>

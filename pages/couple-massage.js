@@ -342,7 +342,7 @@ export default function CoupleMassage() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Make Time for Each Other While You're in Bali"
-            text="A Couple Massage is a simple way to enjoy quality time while also giving your body a chance to relax. Many guests book this experience during their holiday, honeymoon, anniversary, or even as a wellness activity with friends or family. Sessions are available in our spa or through home service at villas and hotels, with an additional IDR 75,000 per therapist within Seminyak and nearby areas."
+            text="A simple way to share quality time and let the body rest, popular for honeymoons, anniversaries, or a day with friends. At our spa, or at your villa or hotel."
             closingText="Create a memorable wellness experience together and let our therapists take care of the rest."
           />
         </div>

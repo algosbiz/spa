@@ -212,7 +212,7 @@ export default function FootReflexology() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Restore Comfort to Every Step"
-            text="Long days exploring Bali often begin with excitement and end with tired, overworked feet. Foot Reflexology offers a relaxing way to pause, helping your feet recover through carefully applied pressure-point techniques in a calm and comfortable setting. Visit our spa or enjoy the same professional treatment from your villa or hotel with our convenient home service."
+            text="Long days exploring Bali end with tired feet. Foot Reflexology helps them recover through carefully applied pressure-point work. Visit our spa, or stay put with home service."
             closingText="Reserve your Foot Reflexology session and bring comfort back to every step."
           />
         </div>

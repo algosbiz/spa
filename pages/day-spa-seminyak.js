@@ -159,7 +159,7 @@ export default function DaySpaSeminyak() {
             topSpacing={100}
             bottomSpacing={100}
             title="Leave Room in Your Bali Holiday for Yourself"
-            text="Seminyak offers plenty to fill a day, from beaches and boutiques to restaurants and late evenings. A visit to Spa Bali Moon gives you a reason to slow the pace and spend a little longer being looked after. Choose a massage, add the body or beauty care that appeals to you, and enjoy a few hours that leave you feeling rested, refreshed, and ready for whatever comes next."
+            text="Seminyak fills a day quickly. A few hours at Spa Bali Moon is a reason to slow down: choose a massage, add body or beauty care, and leave feeling rested."
             closingText="Visit Spa Bali Moon in Seminyak or arrange selected services at your hotel, villa, or private accommodation through our home service."
             backgroundImage="/images/services/dayspaseminyak/dayspa-8.webp"
           />

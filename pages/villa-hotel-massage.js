@@ -151,7 +151,7 @@ export default function MassageHotelVilla() {
         <ReserveCta
           standardSpacing
           title="Bring the Spa Experience to Your Hotel or Villa"
-          text="Your Bali itinerary does not need to end when you get back to your room. Our therapists bring professional massage and selected spa treatments to your hotel, villa, or private accommodation in Seminyak and nearby areas, carrying everything the session needs so you can stay exactly where you are."
+          text="Your Bali itinerary does not have to end at your room. Our therapists bring professional massage and selected treatments to your hotel or villa around Seminyak, carrying everything needed."
           closingText="Send us a message on WhatsApp and we will arrange the rest of the details."
           backgroundImage="/images/services/massagehotelvilla/massagehotelvilla-8.webp"
         />

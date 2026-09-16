@@ -227,7 +227,7 @@ export default function ShiatsuMassage() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Experience the Traditional Japanese Approach to Body Wellness"
-            text="Shiatsu offers a different massage experience from conventional oil massage by combining pressure point therapy with mindful body movement. Whether you're recovering after travel, easing everyday muscle tension, or simply curious about traditional Japanese wellness, our therapists tailor every session to your comfort and needs."
+            text="Shiatsu works differently from oil massage, combining pressure-point therapy with mindful movement. Whether recovering after travel or easing everyday tension, each session is tailored to you."
             closingText="Restore balance through one of Japan's most recognised therapeutic massage techniques."
           />
         </div>

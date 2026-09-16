@@ -222,7 +222,7 @@ export default function VirginCoconutOilMassage() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Experience the Natural Comfort of Virgin Coconut Oil"
-            text="Sometimes the simplest ingredients create the most relaxing experiences. Our Virgin Cold Press Coconut Oil Massage combines traditional massage techniques with pure coconut oil to leave both your body and skin feeling refreshed. Enjoy your treatment at our spa or through home service in your villa or hotel, with appointments available throughout Seminyak and nearby areas."
+            text="Traditional massage technique with pure cold-pressed coconut oil, leaving both body and skin refreshed. At our spa, or through home service at your villa or hotel around Seminyak."
             closingText="Let yourself unwind with one of Bali's most naturally nourishing massage experiences."
           />
         </div>

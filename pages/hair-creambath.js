@@ -287,7 +287,7 @@ export default function HairCreambath() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Restore Your Hair After Bali's Tropical Days"
-            text="Sun exposure, ocean water, and humidity can affect the way your hair feels and looks. A Creambath treatment helps replenish moisture, soften dry strands, and provide relaxing scalp care through nourishing creams and gentle massage techniques. Enjoy your session at our spa or request a home service at your villa or hotel for a convenient hair care experience during your stay in Bali."
+            text="Sun, salt water, and humidity take their toll on hair. A Creambath restores moisture, softens dry strands, and adds relaxing scalp care. At our spa, or at your villa or hotel."
             closingText="Refresh your hair and enjoy a calming self-care moment designed around your needs."
           />
         </div>

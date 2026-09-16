@@ -255,7 +255,7 @@ export default function HotStoneMassage() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Warmth That Helps the Body Fully Unwind"
-            text="Sometimes the body doesn't need stronger pressure, it simply needs warmth that allows muscles to let go naturally. Hot Stone Massage offers a slower, deeply comforting experience that combines therapeutic heat with skilled massage techniques to ease tension and restore a lasting sense of balance. Visit our spa or enjoy the same relaxing treatment from your villa or hotel through our convenient home service."
+            text="Sometimes muscles need warmth rather than stronger pressure. Hot Stone Massage combines therapeutic heat with skilled technique to ease tension and restore balance. At our spa, or at your villa."
             closingText="Reserve your Hot Stone Massage package and enjoy warmth-led relaxation."
           />
         </div>

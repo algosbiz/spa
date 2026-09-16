@@ -194,7 +194,7 @@ export default function SunburnTreatment() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Give Your Skin the Recovery Time It Deserves"
-            text="Hours spent surfing, swimming, sightseeing, or relaxing under Bali's sunshine can leave your skin feeling warmer and more sensitive than expected. Our Sunburn Treatment provides gentle after-sun care using cooling aloe vera and hydrating botanical ingredients to restore comfort without placing additional stress on the skin. Relax at our spa or enjoy the same soothing treatment from your villa or hotel through our available home service."
+            text="Hours in Bali's sun can leave skin warm and sensitive. Our Sunburn Treatment cools and rehydrates with aloe vera and botanical ingredients. At our spa, or at your villa or hotel."
             closingText="Reserve your Sunburn Treatment and let your skin recover comfortably."
           />
         </div>

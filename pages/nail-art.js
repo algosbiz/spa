@@ -216,7 +216,7 @@ export default function NailArt() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Experience Beautiful Nails That Last Beyond Your Bali Holiday"
-            text="Whether you're preparing for a beach holiday, a romantic dinner, a wedding, or simply want beautifully finished nails, our Nail Art service offers personalised designs created with professional care and long-lasting gel products. Every appointment is tailored to your preferred style while keeping your natural nails healthy and comfortable."
+            text="Personalised nail designs created with professional care and long-lasting gel products, for a beach holiday, a dinner, a wedding, or simply because. Your natural nails stay healthy."
             closingText="Leave with polished nails that feel as beautiful as they look."
           />
         </div>

@@ -218,7 +218,7 @@ export default function HairBraiding() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="A Hairstyle That Keeps Up with Your Bali Plans"
-            text="From beach mornings and sunset dinners to island tours and special celebrations, the right hairstyle lets you enjoy every moment without constantly fixing your hair. Our Hair Braiding service combines personalised styling with practical comfort, creating braids that are made to suit your holiday, your plans, and your personal style. Visit our spa to create a look that's comfortable to wear, easy to maintain, and ready for wherever Bali takes you next."
+            text="Beach mornings, sunset dinners, island tours: the right braids let you enjoy them without fixing your hair. Personalised styling, comfortable to wear and easy to keep."
             closingText="Reserve your Hair Braiding appointment and create a style made for your Bali plans."
           />
         </div>

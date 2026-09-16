@@ -253,7 +253,7 @@ export default function Waxing() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Smooth Skin Starts with the Right Care at Spa Bali Moon"
-            text="Whether preparing for a beach holiday, a special occasion, or maintaining your regular grooming routine, our Waxing Treatment helps keep your skin smooth and refreshed. With careful techniques, quality products, and personalized service, you can enjoy professional waxing at our spa or through selected home service options around Seminyak."
+            text="Careful technique, quality products, and personal service keep your skin smooth and refreshed, for a beach holiday, a special occasion, or your regular routine. At our spa or yours."
             closingText="Reserve your Waxing Treatment and enjoy smooth, well-maintained skin."
           />
         </div>

@@ -323,7 +323,7 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
           <ReserveCta
             standardSpacing
             title="A Better Way to Experience Wellness in Bali"
-            text="Bali is made for exploring, from beach mornings and surfing sessions to long afternoons discovering the island. After a full day, giving your body time to recover can make every part of your holiday even more enjoyable. At Spa Bali Moon, you'll find professional massage, beauty, and wellness treatments that help ease tired muscles, refresh your skin, and create a welcome pause from a busy itinerary."
+            text="Some treatments are for tired muscles. Others for tired skin, overworked feet, or simply the feeling of moving from one plan to the next. Browse the price list and find yours."
             closingText="Visit our spa in Seminyak or enjoy the same trusted care through our home service, delivered by experienced therapists directly to your villa or hotel."
             backgroundImage="/images/home/homepage-5.webp"
           />

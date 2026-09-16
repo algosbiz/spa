@@ -241,7 +241,7 @@ export default function Home2({
               standardSpacing
               backgroundImage={treatmentImages.cta}
               title="Enjoy Balinese Massage Wherever You Stay"
-              text="Balinese massage is available at our Seminyak spa and as home service at your villa or hotel, with an additional IDR 75,000 per therapist for locations in Seminyak and nearby areas. Our therapists adjust the pressure to suit you, from a gentle relaxing session through to firmer work on tired muscles and stiff shoulders."
+              text="Available at our Seminyak spa, or as home service at your villa or hotel for an extra IDR 75,000 per therapist. Our therapists adjust the pressure to suit you, gentle through to firm."
               closingText="Reserve a session that fits your plans, in our spa or at your villa."
             />
           </div>

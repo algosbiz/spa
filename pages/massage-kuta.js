@@ -151,7 +151,7 @@ export default function MassageKuta() {
                 <ReserveCta
                     standardSpacing
                     title="Take Time to Feel Better in Kuta"
-                    text="When your body begins to feel the pace of it all, a professional massage can offer a welcome pause. At Spa Bali Moon, you can choose from traditional Balinese therapies, targeted recovery treatments, and relaxing beauty services to help you feel lighter, more comfortable, and ready to enjoy the rest of your stay."
+                    text="When the pace catches up with you, a professional massage is a welcome pause. Traditional Balinese therapies, targeted recovery work, and relaxing beauty treatments."
                     closingText="Visit us for your treatment or ask about selected home service options at your hotel or villa in nearby areas."
                     backgroundImage="/images/services/massagekuta/massagekuta-8.webp"
                 />

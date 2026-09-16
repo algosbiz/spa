@@ -232,7 +232,7 @@ export default function FootMassage() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Give Your Feet the Attention They Rarely Receive"
-            text="Your feet support every walk, every adventure, and every journey, yet they're often the last part of the body we think to care for. A dedicated Foot Massage helps ease accumulated tension, restore everyday comfort, and leave you feeling lighter with every step. Choose an appointment at our spa or enjoy the same professional treatment through our home service in selected villas and hotels around Seminyak."
+            text="Your feet carry every walk and every adventure. A dedicated Foot Massage eases the tension they collect and leaves each step lighter. At our spa, or at your villa or hotel."
             closingText="Reserve your session and step back into your day feeling lighter."
           />
         </div>

@@ -310,7 +310,7 @@ export default function ManicurePedicure() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Keep Your Hands and Feet Looking Their Best"
-            text="Well-groomed nails are about more than appearance, they also contribute to everyday comfort and confidence. Whether you're preparing for a special occasion, recovering after days of exploring Bali, or simply taking time for yourself, our Manicure & Pedicure treatments provide professional care in a calm and relaxing environment. Enjoy your appointment at our spa or choose our convenient home service for villas and hotels throughout Seminyak and surrounding areas."
+            text="Well-groomed nails are about comfort as much as appearance. Professional manicure and pedicure care in a calm setting, at our spa or at your villa or hotel."
             closingText="Reserve your Manicure & Pedicure treatment and enjoy polished, comfortable care."
           />
         </div>

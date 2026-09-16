@@ -219,7 +219,7 @@ export default function CelluliteMassage() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Support Smoother Skin Wherever You Prefer to Relax"
-            text="Whether you visit our spa or prefer the privacy of your villa or hotel, our cellulite massage treatment can be arranged around your schedule. Home service is available for an additional IDR 75,000 per therapist within Seminyak and nearby areas, allowing you to enjoy focused body care without interrupting your plans in Bali."
+            text="Focused body care at our spa, or in the privacy of your villa or hotel. Home service is an extra IDR 75,000 per therapist within Seminyak and nearby areas."
             closingText="Reserve your session and let our therapists help you create a treatment plan that fits your comfort and body goals."
           />
         </div>

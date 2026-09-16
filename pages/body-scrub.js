@@ -257,7 +257,7 @@ export default function BodyScrub() {
             standardSpacing
             backgroundImage={treatmentImages.cta}
             title="Give Your Skin a Fresh Start After Days in the Bali Sun"
-            text="Long days spent at the beach, by the pool, or exploring Bali can leave the skin feeling dry, rough, or tired. Our Body Scrub treatment helps lift away buildup and dead skin cells while leaving the skin smoother, softer, and more comfortable to the touch. Treatments are available at our spa or through home service appointments for guests staying in villas and hotels throughout Seminyak and nearby areas."
+            text="Beach days and Bali sun leave skin dry and rough. Our Body Scrub lifts away dead skin and leaves it smoother and softer. At our spa, or at your villa or hotel."
             closingText="Reserve your appointment and enjoy refreshed, smoother-feeling skin."
           />
         </div>
