@@ -36,7 +36,27 @@ export default function Home3_About({
                 avatars={googleReviews?.reviews}
             />
         </div>
-    ) : null;
+    ) : (
+        // The rating card used to sit here; without it the top-right of the
+        // photo group is an empty rectangle. A quiet brand mark fills the same
+        // slot, so the composition keeps its third element.
+        <div className="info">
+            <div className="about-brand-mark">
+                <img
+                    className="about-brand-mark__logo"
+                    src="/images/logo/sbm.webp"
+                    alt=""
+                    aria-hidden="true"
+                    width="56"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                />
+                <span className="about-brand-mark__name">Spa Bali Moon</span>
+                <span className="about-brand-mark__meta">Seminyak &middot; Since 2009</span>
+            </div>
+        </div>
+    );
     return (
         <>
         <section id="about" className="about-section-three pt-130 pb-130 paralax__animation">
@@ -162,6 +182,58 @@ export default function Home3_About({
                 </div>
             </div>
         </section>
+
+        <style jsx global>{`
+            .about-section-three .image-column .inner-column .info .about-brand-mark {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 6px;
+                padding: 26px 22px;
+                border-radius: 16px;
+                background: rgba(255, 255, 255, 0.92);
+                box-shadow: 0 1px 2px rgba(28, 26, 29, 0.04),
+                    0 18px 46px -26px rgba(28, 26, 29, 0.32);
+                text-align: center;
+            }
+
+            .about-section-three .image-column .inner-column .info .about-brand-mark__logo {
+                width: 46px;
+                height: auto;
+                margin-bottom: 4px;
+            }
+
+            .about-section-three .image-column .inner-column .info .about-brand-mark__name {
+                font-family: var(--title-font);
+                font-size: 20px;
+                line-height: 1.3;
+                color: var(--headings-color);
+            }
+
+            .about-section-three .image-column .inner-column .info .about-brand-mark__meta {
+                font-family: var(--text-font);
+                font-size: 12px;
+                font-weight: 600;
+                line-height: 1.4;
+                letter-spacing: 0.11em;
+                text-transform: uppercase;
+                color: var(--theme-color1);
+            }
+
+            @media (max-width: 991px) {
+                .about-section-three .image-column .inner-column .info .about-brand-mark {
+                    padding: 20px 16px;
+                }
+
+                .about-section-three .image-column .inner-column .info .about-brand-mark__name {
+                    font-size: 17px;
+                }
+
+                .about-section-three .image-column .inner-column .info .about-brand-mark__meta {
+                    font-size: 11px;
+                }
+            }
+        `}</style>
         </>
     )
 }
