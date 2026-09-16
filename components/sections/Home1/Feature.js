@@ -42,7 +42,6 @@ const treatmentNameAliases = {
     "Coconut Oil Massage": "Virgin Cold-Press Coconut Oil Massage",
     "Couple Massage": "Couple Massage Balinese",
     "Cream Bath": "Hair Cream Bath",
-    "Hot Stone Massage": "Warm Stone Massage",
     "Sunburn Treatment": "Aloe Vera Massage",
 };
 

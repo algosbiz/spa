@@ -421,7 +421,7 @@ const massageTreatments = [
   ),
   treatment(
     "massage-warm-stone",
-    "Warm Stone Massage",
+    "Hot Stone Massage",
     "Using heated stones to help relax muscles and support healthy circulation.",
     "/images/homepage/homepage-7.webp",
     [
@@ -480,7 +480,7 @@ const beautyTreatments = [
     "beauty-foot-scrub",
     "Foot Scrub",
     "Exfoliating the feet to help soften rough skin and leave them feeling refreshed.",
-    "/images/homepage/homepage-13.webp",
+    "/images/services/footscrub/footscrub-1.webp",
     [option("30 Minutes", "IDR 100K")]
   ),
   treatment(

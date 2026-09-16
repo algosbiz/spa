@@ -31,7 +31,7 @@ const pricingTreatmentImages = Object.fromEntries(Object.entries({
   "Deep Tissue Massage": "/images/services/deeptissuemassage/deeptissuemassage-1.webp",
   "Ear Candle": "/images/services/earcandle/earcandle-1.webp",
   "Foot Reflexology": "/images/services/footreflexology/footreflexology-1.webp",
-  "Foot Scrub": "/images/services/bodyscrub/bodyscrub-1.webp",
+  "Foot Scrub": "/images/services/footscrub/footscrub-1.webp",
   "Foot Massage": "/images/services/footmassage/footmassage-1.webp",
   "Four Hand Massage": "/images/homepage/homepage-3.webp",
   "Herbal Massage": "/images/homepage/homepage-25.webp",
