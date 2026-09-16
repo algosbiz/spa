@@ -10,7 +10,7 @@ export default function PackageSection() {
   return (
     <section className="package-section section__decoration-top section__decoration-bottom pt-170 pb-170">
         <div className="shape1 wow slideInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-            <img loading="lazy" decoding="async" className="sway_Y__animationY" src="/images/shape/package-shape-left.png" alt="image"/>
+            <img loading="lazy" decoding="async" className="sway_Y__animationY" src="/images/shape/leaf/4a.png" alt="image"/>
         </div>
         <div className="shape2">
             <img loading="lazy" decoding="async" className="sway__animation" src="/images/shape/package-shape-right.png" alt="image"/>

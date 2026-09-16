@@ -34,7 +34,9 @@ export default function Home3_Pricing({
     title = <>Our Flexible Price</>,
     text = "Proin efficitur, mauris vel condimentum pulvinar, velit orci consectetur ligula, eget egestas magna mi ut arcu. Phasellus nec odio orci. Nunc id massa ante. Suspendisse sit amet neque euismod, convallis quam eget,",
     packages = defaultPackages,
-    leftShapeSrc = "/images/shape/pricing-three-shape-left.png",
+    // Was pricing-three-shape-left.png, a cannabis leaf. Pages that care
+    // pass their own shape; this is what the rest fall back to.
+    leftShapeSrc = "/images/shape/leaf/4a.png",
     images = [],
     topContent,
     children,

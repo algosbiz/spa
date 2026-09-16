@@ -6,7 +6,7 @@ export default function Home3_Pricing() {
         <>
         <section className="pricing-section-three section__decoration-top section__decoration-bottom pt-130 pb-170">
             <div className="shape1">
-                <img loading="lazy" decoding="async" className="animation__arryUpDown" src="/images/shape/pricing-three-shape-left.png" alt="image"/>
+                <img loading="lazy" decoding="async" className="animation__arryUpDown" src="/images/shape/leaf/4a.png" alt="image"/>
             </div>
             <div className="shape2">
                 <img loading="lazy" decoding="async" className="animation__arryLeftRight" src="/images/shape/pricing-three-shape-right.png" alt="image"/>
