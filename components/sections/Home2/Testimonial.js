@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { curatedTestimonials } from "@/lib/testimonials";
 import { useRouter } from 'next/router';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
@@ -66,27 +67,12 @@ export default function Home2_Testimonial({
         swiper.updateAutoHeight(320);
     }, []);
 
-    useEffect(() => {
-        if (googleReviews?.reviews?.length || testimonialsData?.length) return;
-
-        let cancelled = false;
-        fetch(`/api/google-reviews/?key=${encodeURIComponent(pageKey)}`)
-            .then((response) => response.ok ? response.json() : null)
-            .then((data) => {
-                if (!cancelled && data) {
-                    setLiveReviews(data.reviews || []);
-                    setReviewsUrl(data.reviewsUrl || null);
-                }
-            })
-            .catch(() => {});
-
-        return () => { cancelled = true; };
-    }, [googleReviews, testimonialsData, pageKey]);
 
     const items = useMemo(() => {
         if (testimonialsData?.length) return testimonialsData;
         if (liveReviews.length) return liveReviews.map((review) => reviewToTestimonial(review, reviewsUrl));
-        return defaultTestimonials;
+        // The curated set, not the placeholder copy this component shipped with.
+        return curatedTestimonials;
     }, [liveReviews, reviewsUrl, testimonialsData]);
 
     const swiperOptions = {

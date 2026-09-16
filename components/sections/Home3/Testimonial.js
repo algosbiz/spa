@@ -1,4 +1,5 @@
 import React, { useCallback, useRef } from 'react';
+import { curatedTestimonials } from "@/lib/testimonials";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import ExpandableQuote from '../../common/ExpandableQuote';
@@ -37,7 +38,10 @@ const defaultTestimonials = [
     }
 ];
 
-export default function Home3_Testimonial({ testimonialsData = defaultTestimonials }) {
+// Falls back to the curated reviews, not the template's lorem ipsum: the
+// price list renders this component with no props, so the placeholder copy
+// was reaching visitors.
+export default function Home3_Testimonial({ testimonialsData = curatedTestimonials }) {
     const swiperRef = useRef(null);
 
     // The ref can still hold a torn-down instance after a strict-mode remount or HMR.
