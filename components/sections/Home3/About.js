@@ -55,7 +55,7 @@ export default function Home3_About({
                 <span className="about-brand-mark__name">Spa Bali Moon</span>
                 <span className="about-brand-mark__meta">Seminyak &middot; Since 2009</span>
                 <p className="about-brand-mark__text">
-                    Traditional massage, beauty and body care &mdash; at our spa or your villa.
+                    Traditional massage, beauty and body care at our spa or your villa.
                 </p>
             </div>
         </div>
