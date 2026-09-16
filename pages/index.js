@@ -944,7 +944,17 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
 }
 
 export async function getStaticProps() {
-  const googleReviews = await getGoogleReviews();
+  const live = await getGoogleReviews();
+
+  // Only the three fields the rating schema reads. The carousel runs on the
+  // curated set now, so shipping the review bodies would put text nobody
+  // renders into every visitor's __NEXT_DATA__ -- including the four-star
+  // review this page was changed to stop leading with.
+  const googleReviews = {
+    isLive: live.isLive,
+    rating: live.rating,
+    userRatingCount: live.userRatingCount,
+  };
 
   return {
     props: { googleReviews },
