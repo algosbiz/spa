@@ -69,6 +69,12 @@ const nextConfig = {
     }
     return config
   },
+  // Every rule below uses statusCode: 301 rather than `permanent: true`.
+  // Next spells `permanent` as 308, but the WordPress site these URLs come from
+  // answered 301, and the brief is to keep the old links behaving identically.
+  // Google treats the two the same; older crawlers and link checkers do not.
+  // The old canonicals all ended in "/", and in that form a rule here is the
+  // only hop -- so an old link now gets one 301, exactly as it used to.
   async redirects() {
     const treatmentRedirects = []
     for (const [oldSlug, liveSlug] of Object.entries(treatmentSlugMap)) {
@@ -76,14 +82,14 @@ const nextConfig = {
       treatmentRedirects.push({
         source: `/${oldSlug}`,
         destination: `/seminyak/${liveSlug}`,
-        permanent: true,
+        statusCode: 301,
       })
       // A renamed slug that was already published under /seminyak/.
       if (oldSlug !== liveSlug) {
         treatmentRedirects.push({
           source: `/seminyak/${oldSlug}`,
           destination: `/seminyak/${liveSlug}`,
-          permanent: true,
+          statusCode: 301,
         })
       }
     }
@@ -91,35 +97,44 @@ const nextConfig = {
     return [
       // --- Redirects that already exist on the live WordPress site ---
       // Verified with curl against spabalimoon.com; keep these in step with it.
-      { source: '/massage-seminyak', destination: '/seminyak', permanent: true },
-      { source: '/blog', destination: '/guide', permanent: true },
-      { source: '/day-spa-seminyak', destination: '/seminyak/day-spa', permanent: true },
+      { source: '/massage-seminyak', destination: '/seminyak', statusCode: 301 },
+      { source: '/blog', destination: '/guide', statusCode: 301 },
+      { source: '/day-spa-seminyak', destination: '/seminyak/day-spa', statusCode: 301 },
+      // Found by crawling the old WordPress site rather than reading a plugin:
+      // there is no redirect plugin there, so these come from WordPress's own
+      // old-slug memory. /spa-packages went through the price-list URL in two
+      // hops; both spellings are still live, so both are caught here and sent
+      // straight to /seminyak in one.
+      { source: '/spa-treatments', destination: '/seminyak', statusCode: 301 },
+      { source: '/spa-packages', destination: '/seminyak', statusCode: 301 },
+      { source: '/spa-massage-seminyak-bali-price-list', destination: '/seminyak', statusCode: 301 },
+      { source: '/massage-petitenget', destination: '/contact', statusCode: 301 },
 
       // --- Yoast sitemap URLs -> the single Next sitemap ---
       // Search Console has sitemap_index.xml on file; keep it resolving.
-      { source: '/sitemap_index.xml', destination: '/sitemap.xml', permanent: true },
-      { source: '/page-sitemap.xml', destination: '/sitemap.xml', permanent: true },
-      { source: '/post-sitemap.xml', destination: '/sitemap.xml', permanent: true },
+      { source: '/sitemap_index.xml', destination: '/sitemap.xml', statusCode: 301 },
+      { source: '/page-sitemap.xml', destination: '/sitemap.xml', statusCode: 301 },
+      { source: '/post-sitemap.xml', destination: '/sitemap.xml', statusCode: 301 },
 
       // --- Old blog URLs -> /guide routes ---
-      { source: '/news-grid', destination: '/guide', permanent: true },
-      { source: '/news/:slug', destination: '/guide/:slug', permanent: true },
-      { source: '/blog/:slug', destination: '/guide/:slug', permanent: true },
+      { source: '/news-grid', destination: '/guide', statusCode: 301 },
+      { source: '/news/:slug', destination: '/guide/:slug', statusCode: 301 },
+      { source: '/blog/:slug', destination: '/guide/:slug', statusCode: 301 },
 
       // --- Pages whose slug now matches the live site ---
-      { source: '/terms-conditions', destination: '/terms-and-conditions', permanent: true },
-      { source: '/massage-hotel-villa', destination: '/villa-hotel-massage', permanent: true },
+      { source: '/terms-conditions', destination: '/terms-and-conditions', statusCode: 301 },
+      { source: '/massage-hotel-villa', destination: '/villa-hotel-massage', statusCode: 301 },
 
       // --- Renamed theme pages -> cleaner routes ---
-      { source: '/page-about', destination: '/seminyak', permanent: true },
-      { source: '/pricing', destination: '/seminyak', permanent: true },
+      { source: '/page-about', destination: '/seminyak', statusCode: 301 },
+      { source: '/pricing', destination: '/seminyak', statusCode: 301 },
       // The price list moved up from /seminyak/pricing to the location root.
-      { source: '/seminyak/pricing', destination: '/seminyak', permanent: true },
-      { source: '/page-contact', destination: '/contact', permanent: true },
-      { source: '/page-faq', destination: '/faq', permanent: true },
-      { source: '/page-testimonial', destination: '/testimonials', permanent: true },
-      { source: '/page-team', destination: '/team', permanent: true },
-      { source: '/page-team-details', destination: '/team-details', permanent: true },
+      { source: '/seminyak/pricing', destination: '/seminyak', statusCode: 301 },
+      { source: '/page-contact', destination: '/contact', statusCode: 301 },
+      { source: '/page-faq', destination: '/faq', statusCode: 301 },
+      { source: '/page-testimonial', destination: '/testimonials', statusCode: 301 },
+      { source: '/page-team', destination: '/team', statusCode: 301 },
+      { source: '/page-team-details', destination: '/team-details', statusCode: 301 },
 
       ...treatmentRedirects,
     ].map(withTrailingSlashDestination)
