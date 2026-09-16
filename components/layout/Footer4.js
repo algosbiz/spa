@@ -50,7 +50,7 @@ const Footer = () => {
                                         <li>Day Spa in Seminyak</li>
                                         <li>Open Daily: 9am-11pm</li>
                                         <li>Address: Jl. Pangkung Sari No. 30, Seminyak, Bali</li>
-                                        <li><Link prefetch={false} href="/home-service" style={{ color: 'inherit', textDecoration: 'underline' }}><strong>Home service fee</strong></Link> 75k/therapist</li>
+                                        <li><Link prefetch={false} href="/outcall-home-service-massage" style={{ color: 'inherit', textDecoration: 'underline' }}><strong>Home service fee</strong></Link> 75k/therapist</li>
                                     </ul>
                                 </div>
                             </div>

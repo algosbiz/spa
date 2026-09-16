@@ -103,7 +103,7 @@ const Footer = () => {
                     <div className="col-md-6 col-xl-2">
                         <div className="footer__item">
                             <h3 className="title">
-                                <Link prefetch={false} href="/home-service" style={{ color: 'inherit' }}>
+                                <Link prefetch={false} href="/outcall-home-service-massage" style={{ color: 'inherit' }}>
                                     Home Services
                                 </Link>
                             </h3>

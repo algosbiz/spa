@@ -66,17 +66,17 @@ const differentiators = [
   {
     title: "Experienced Therapists",
     text: "Skilled professionals who adjust every treatment to your comfort level and individual needs.",
-    href: "/team",
+    href: "/seminyak",
   },
   {
     title: "Home Service Available",
     text: "Enjoy the same professional treatments at your villa, hotel, or private residence around Seminyak.",
-    href: "/home-service",
+    href: "/outcall-home-service-massage",
   },
   {
     title: "Complete Wellness Menu",
     text: "Massage, facials, body care, beauty treatments, and spa packages are all available in one destination.",
-    href: "/page-services",
+    href: "/seminyak",
   },
   {
     title: "Easy WhatsApp Booking",

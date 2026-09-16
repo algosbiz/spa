@@ -22,7 +22,7 @@ const SEARCH_INDEX = [
     { title: 'Massage in Kuta', href: '/massage-kuta', keywords: 'massage kuta outcall home service' },
     { title: 'Hotel & Villa Massage', href: '/villa-hotel-massage', keywords: 'hotel villa massage outcall home service' },
     { title: 'Day Spa Seminyak', href: '/seminyak/day-spa', keywords: 'day spa facial cream bath seminyak treatment' },
-    { title: 'Home Service', href: '/home-service', keywords: 'home service outcall massage whatsapp booking' },
+    { title: 'Home Service', href: '/outcall-home-service-massage', keywords: 'home service outcall massage whatsapp booking' },
     { title: 'FAQ', href: '/faq', keywords: 'faq frequently asked questions help' },
     { title: 'Privacy Policy', href: '/privacy-policy', keywords: 'privacy policy data personal' },
     { title: 'Terms & Conditions', href: '/terms-and-conditions', keywords: 'terms conditions rules booking' },
