@@ -54,6 +54,9 @@ export default function Home3_About({
                 />
                 <span className="about-brand-mark__name">Spa Bali Moon</span>
                 <span className="about-brand-mark__meta">Seminyak &middot; Since 2009</span>
+                <p className="about-brand-mark__text">
+                    Traditional massage, beauty and body care &mdash; at our spa or your villa.
+                </p>
             </div>
         </div>
     );
@@ -210,6 +213,14 @@ export default function Home3_About({
                 color: var(--headings-color);
             }
 
+            .about-section-three .image-column .inner-column .info .about-brand-mark__text {
+                margin: 10px 0 0;
+                font-family: var(--text-font);
+                font-size: 13px;
+                line-height: 21px;
+                color: var(--text-color);
+            }
+
             .about-section-three .image-column .inner-column .info .about-brand-mark__meta {
                 font-family: var(--text-font);
                 font-size: 12px;
@@ -231,6 +242,12 @@ export default function Home3_About({
 
                 .about-section-three .image-column .inner-column .info .about-brand-mark__meta {
                     font-size: 11px;
+                }
+
+                .about-section-three .image-column .inner-column .info .about-brand-mark__text {
+                    margin-top: 8px;
+                    font-size: 12px;
+                    line-height: 19px;
                 }
             }
         `}</style>
