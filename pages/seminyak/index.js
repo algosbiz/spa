@@ -422,8 +422,8 @@ export default function Home() {
       <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
         <Banner
           subTitle="Find Your Treatment"
-          titleSpan="Spa Treatments for"
-          title="Every Kind of Day"
+          titleSpan="Our Massage"
+          title="in Seminyak"
           buttonText="Book Now"
           image="/images/pricelist/pricelist-1.webp"
         />
