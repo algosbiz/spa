@@ -28,7 +28,6 @@ const Footer = () => {
                                     <h3 className="title">Contact Us</h3>
                                     <ul className="links">
                                         <li>Phone: +62 878-6317-5144</li>
-                                        <li>Email: spabalimoon@gmail.com</li>
                                     </ul>
                                     <div className="footer__follow">
                                         <h3 className="title">Follow Us</h3>

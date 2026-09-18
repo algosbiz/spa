@@ -1,0 +1,195 @@
+/* Hero decoration for the homepage banner. Two pieces:
+
+   .spray  a cluster of blossoms anchored to the right edge on desktop, and
+           re-placed to bleed off the corners on phones -- where the banner
+           photos are display:none and the section was otherwise a bare cream
+           rectangle behind the headline.
+   .mark   a centred blossom-and-rule ornament above the H1, matching the gold
+           lotus icons the section sub-titles use further down the page.
+
+   Everything here is decoration, so it sits behind .banner-five__wrp (z-index
+   1) and takes no pointer events. */
+
+.spray {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: min(42vw, 560px);
+	height: 100%;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.glow {
+	position: absolute;
+	top: -12%;
+	right: -18%;
+	width: 106%;
+	height: 70%;
+	border-radius: 50%;
+	background: radial-gradient(
+		circle at 55% 45%,
+		rgba(233, 199, 122, 0.4) 0%,
+		rgba(233, 199, 122, 0.16) 42%,
+		rgba(233, 199, 122, 0) 70%
+	);
+}
+
+.bloom,
+.petal {
+	position: absolute;
+	display: block;
+	height: auto;
+	filter: drop-shadow(0 14px 26px rgba(120, 95, 40, 0.14));
+	transform-origin: 50% 50%;
+	animation: drift 13s ease-in-out infinite;
+}
+
+.one {
+	width: 31%;
+	top: 26%;
+	right: 5%;
+}
+
+.two {
+	width: 18%;
+	top: 10%;
+	right: 28%;
+	opacity: 0.92;
+	animation-duration: 17s;
+	animation-delay: -4s;
+}
+
+.three {
+	width: 11%;
+	top: 58%;
+	right: 30%;
+	opacity: 0.8;
+	animation-duration: 15s;
+	animation-delay: -8s;
+}
+
+.petalA {
+	width: 6.5%;
+	top: 63%;
+	right: 11%;
+	transform: rotate(-32deg);
+	opacity: 0.75;
+	animation: none;
+}
+
+.petalB {
+	width: 5%;
+	top: 75%;
+	right: 23%;
+	transform: rotate(148deg);
+	opacity: 0.6;
+	animation: none;
+}
+
+@keyframes drift {
+	0%,
+	100% {
+		transform: translate3d(0, 0, 0) rotate(0deg);
+	}
+	50% {
+		transform: translate3d(-6px, -14px, 0) rotate(-3deg);
+	}
+}
+
+/* The ornament above the headline. */
+.mark {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 11px;
+	margin-bottom: 22px;
+}
+
+.rule {
+	display: block;
+	width: clamp(38px, 7.5vw, 78px);
+	height: 1px;
+	background: linear-gradient(
+		to right,
+		rgba(167, 134, 39, 0) 0%,
+		rgba(167, 134, 39, 0.55) 100%
+	);
+}
+
+.ruleFlip {
+	transform: scaleX(-1);
+}
+
+.markBloom {
+	width: 34px;
+	height: auto;
+	display: block;
+	filter: drop-shadow(0 6px 12px rgba(120, 95, 40, 0.16));
+}
+
+.markBud {
+	width: 15px;
+	height: auto;
+	display: block;
+	opacity: 0.7;
+}
+
+@media (max-width: 991px) {
+	/* The photo columns are hidden at this width, so the spray takes the whole
+	   section and the blossoms bleed off the corners behind the text rather
+	   than sitting in a column of their own. */
+	.spray {
+		width: 100%;
+	}
+
+	.glow {
+		top: -6%;
+		right: -30%;
+		width: 90%;
+		height: 60%;
+	}
+
+	/* Clamped rather than a percentage of the section: this block runs all
+	   the way up to 991px, and a flat 52% that reads right on a 390px phone
+	   is a 400px blot on a tablet. */
+	.one {
+		width: clamp(130px, 37vw, 205px);
+		top: -7%;
+		right: -4%;
+		opacity: 0.55;
+	}
+
+	.two {
+		width: clamp(82px, 22vw, 128px);
+		top: 71%;
+		right: 80%;
+		opacity: 0.34;
+	}
+
+	/* No room for a third blossom without it landing in the middle of a line
+	   of the intro paragraph. */
+	.three {
+		display: none;
+	}
+
+	.petalA,
+	.petalB {
+		display: none;
+	}
+
+	.mark {
+		gap: 10px;
+		margin-bottom: 18px;
+	}
+
+	.markBloom {
+		width: 30px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.bloom {
+		animation: none;
+	}
+}

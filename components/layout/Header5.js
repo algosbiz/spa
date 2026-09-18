@@ -92,7 +92,6 @@ const Header5 = ({ scroll }) => {
                         <ul>
                             <li><i className="fa-solid fa-location-dot" style={{ color: "#A78627" }}></i> <Link prefetch={false} href="/#0" style={{ color: "#5f5a54" }}>Jl. Panggung Sari No. 30, Seminyak, Bali</Link></li>
                             <li className="py-2"><i className="fa-solid fa-phone-volume" style={{ color: "#A78627" }}></i> <Link prefetch={false} href="tel:+6287863175144" style={{ color: "#5f5a54" }}>+62 878-6317-5144</Link></li>
-                            <li><i className="fa-solid fa-paper-plane" style={{ color: "#A78627" }}></i> <Link prefetch={false} href="mailto:info@spabalimoon.com" style={{ color: "#5f5a54" }}>info@spabalimoon.com</Link></li>
                         </ul>
                     </div>
                     <div className="sidebar__socials mt-30">

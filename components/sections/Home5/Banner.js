@@ -1,4 +1,5 @@
 import React from 'react';
+import FrangipaniSpray, { FrangipaniMark } from '../../elements/FrangipaniSpray';
 
 export default function Home5_Banner({
     title = "Experience",
@@ -13,12 +14,14 @@ export default function Home5_Banner({
             <div className="banner-five__shape-one parallaxLeftScroll">
                 <img src="/images/shape/about-two-left.png" alt="" aria-hidden="true"/>
             </div>
-            <div className="banner-five__shape-two parallaxLeftScroll">
-                <img className="animation__arryLeftRight" src="/images/shape/banner-five-shape2.png" alt="image"/>
-            </div>
+            {/* Replaces the theme's magenta petal and pink cosmos cut-outs, which
+                were the only two things on the page outside the gold and cream
+                palette, with the flower the spa is actually surrounded by. */}
+            <FrangipaniSpray />
             <div className="container">
                 <div className="banner-five__wrp">
                     <div className="banner-five__content">
+                        <FrangipaniMark />
                         <h1 className="title">{title} <span>{highlightedTitle}</span></h1>
                         <div className="info">
                             <a href="https://wa.me/6287863175144" target="_blank" rel="noopener noreferrer" className="video-btn wow zoomIn" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', borderColor: '#a78627' }}>
@@ -36,13 +39,6 @@ export default function Home5_Banner({
                         </div>
                         <img className="shape" data-depth="0.03" src={secondaryImage}
                             alt="Hot stone spa treatment"/>
-                    </div>
-                    <div className="banner-five__image-right">
-                        <div className="gsap__parallax">
-                            <img src="/images/banner/banner-five-image1-shape.png" alt="image"/>
-                        </div>
-                        <img className="shape parallaxRightRotateScroll" src="/images/banner/banner-five-image2-shape.png"
-                            alt="image"/>
                     </div>
                 </div>
             </div>

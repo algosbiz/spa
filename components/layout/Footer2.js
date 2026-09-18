@@ -74,10 +74,6 @@ const Footer = () => {
                                     <span className="footer__field-label">Phone:</span>
                                     <span className="footer__field-value">+62 878-6317-5144</span>
                                 </li>
-                                <li className="footer__field">
-                                    <span className="footer__field-label">Email:</span>
-                                    <span className="footer__field-value">spabalimoon@gmail.com</span>
-                                </li>
                             </ul>
                         </div>
                     </div>

@@ -363,15 +363,57 @@ export default function Home5({ googleReviews = fallbackGoogleReviews }) {
         }
 
         /* The gold second line competed with the logo and the header CTA for
-           attention, so the whole headline is now set in the heading colour. */
+           attention, so the whole headline is set in one colour. */
         .banner-five-area .banner-five__content .title,
         .banner-five-area .banner-five__content .title span {
           color: var(--headings-color);
         }
 
+        /* What made the headline read as a slab was the flat cream behind it,
+           not the weight of the type -- so the shading goes behind the words
+           and the type stays at full strength. A soft warm ellipse, sat a
+           little low so it falls the way a shadow would, and wide enough that
+           its edge never lands inside the text. */
+        .banner-five-area .banner-five__content .title {
+          position: relative;
+        }
+
+        /* Sized in absolute units, not a percentage of .title: that element is
+           the full 1070px content column while the words only fill about half
+           of it, so a percentage stretched the bloom into a lozenge running
+           the width of the page. closest-side lands the last stop exactly on
+           the box edge, so there is no rim anywhere. */
+        .banner-five-area .banner-five__content .title::before {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          left: 50%;
+          top: 54%;
+          transform: translate(-50%, -50%);
+          width: clamp(340px, 46vw, 640px);
+          height: clamp(215px, 25vw, 360px);
+          background: radial-gradient(
+            closest-side,
+            rgba(74, 66, 58, 0.26) 0%,
+            rgba(74, 66, 58, 0.14) 48%,
+            rgba(74, 66, 58, 0.04) 74%,
+            rgba(74, 66, 58, 0) 100%
+          );
+          pointer-events: none;
+        }
+
         .banner-five-area .banner-five__content .title {
           font-size: clamp(72px, 5.75vw, 80px);
           line-height: 1.08;
+        }
+
+        /* The theme ships this flourish as slate line art, which was fine next
+           to the magenta cut-outs it came with and is the only cool-toned thing
+           left in the hero now that they are frangipani. Tinted rather than
+           redrawn -- it is a 3KB PNG of a single stroke. */
+        .banner-five-area .banner-five__content .info .arry img {
+          filter: sepia(1) saturate(1.7) hue-rotate(-12deg) brightness(1.05);
+          opacity: 0.75;
         }
 
         /* Capped at the 72px the rule above bottoms out at, so the headline does
