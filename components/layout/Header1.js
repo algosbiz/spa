@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import NavLinks from './NavLinks';
 import MobileMenu from './MobileMenu';
 import { TREATMENT_LINKS } from '../../lib/treatments';
+import { FrangipaniSidebar } from '../elements/FrangipaniSpray';
 
 // Searchable site destinations (pages + treatments). Add entries here to extend search.
 const SEARCH_INDEX = [
@@ -285,20 +286,7 @@ const Header1 = ({ scroll }) => {
                             <li className="py-2"><i className="fa-solid fa-phone-volume" style={{ color: "#A78627" }}></i> <a href="https://wa.me/6287863175144" target="_blank" rel="noopener noreferrer" style={{ color: "#5f5a54" }}>+62 878-6317-5144</a></li>
                         </ul>
                     </div>
-                    <div className="sidebar__socials mt-30">
-                        <ul>
-                            <li>
-                                <Link prefetch={false} href="/#0">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M15.9466 4.69593C15.8843 3.41522 15.5906 2.27682 14.6563 1.34297C13.7219 0.409114 12.5829 0.11562 11.3014 0.053363C9.97553 -0.0177877 6.01557 -0.0177877 4.69855 0.053363C3.41713 0.11562 2.28699 0.409114 1.34372 1.34297C0.400455 2.27682 0.115684 3.41522 0.0533926 4.69593C-0.0177975 6.02111 -0.0177975 9.97887 0.0533926 11.3041C0.115684 12.5848 0.409354 13.7232 1.34372 14.657C2.28699 15.5909 3.41713 15.8844 4.69855 15.9466C6.02447 16.0178 9.98443 16.0178 11.3014 15.9466C12.5829 15.8844 13.7219 15.5909 14.6563 14.657C15.5906 13.7232 15.8843 12.5848 15.9466 11.3041C16.0178 9.97887 16.0178 6.02112 15.9466 4.70483V4.69593ZM7.99111 12.2201C5.65963 12.2201 3.76419 10.3257 3.76419 7.99555C3.76419 5.66536 5.65963 3.77098 7.99111 3.77098C10.3226 3.77098 12.218 5.66536 12.218 7.99555C12.218 10.3257 10.3226 12.2201 7.99111 12.2201ZM12.9032 3.99332C12.4138 3.99332 12.0133 3.5931 12.0133 3.10394C12.0133 2.61478 12.4049 2.21456 12.9032 2.21456C13.3926 2.21456 13.7931 2.61478 13.7931 3.10394C13.7931 3.5931 13.3926 3.99332 12.9032 3.99332ZM10.8832 7.99555C10.8832 9.58754 9.58399 10.886 7.99111 10.886C6.39823 10.886 5.09901 9.58754 5.09901 7.99555C5.09901 6.40355 6.39823 5.10505 7.99111 5.10505C9.58399 5.10505 10.8832 6.40355 10.8832 7.99555Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
+                    <FrangipaniSidebar />
                 </div>
             </div>
             {/* <!-- Sidebar area end here --> */}

@@ -474,10 +474,12 @@ export default function TreatmentCatalog({
             gap: 14px;
           }
 
+          /* 76px of a 390px screen plus the gap is a fifth of the row, spent
+             on a photo too small to tell one treatment from another, while
+             the name and the price table it opens share what is left. The
+             menu reads better with the row given over to the words. */
           .treatment-catalog__image {
-            width: 76px;
-            height: 74px;
-            flex-basis: 76px;
+            display: none;
           }
 
           .treatment-catalog__heading .title {
@@ -493,15 +495,12 @@ export default function TreatmentCatalog({
             margin-right: 0;
           }
 
-          /* Dropping the 48px gutter above gives the text the full card width,
-             which on a phone put the toggle, the prices and the details arrow
-             hard against the card edge -- 12px from the screen, the container
-             gutter and nothing else. The image on the left reads as an edge
-             block so it carries that tightness fine; numbers and a ring do not.
-             Padding the content column moves all three in together, so they
-             stay on the one right edge they were aligned to. */
+          /* The row now starts at the container gutter on both sides, so the
+             content column needs no inset of its own -- one used to sit here
+             to keep the toggle and the price figures off the card edge while
+             the thumbnail held the left. */
           .treatment-catalog__content {
-            padding-right: 16px;
+            padding-right: 0;
           }
         }
 

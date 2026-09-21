@@ -16,7 +16,7 @@ const PETAL_STROKE = "rgba(150, 118, 44, 0.28)";
 
 // useId returns ":r1:"-style values. Colons are legal in an id but make the
 // value unusable anywhere a CSS selector is parsed, so they come out here.
-const useLocalId = () => useId().replace(/:/g, "");
+export const useLocalId = () => useId().replace(/:/g, "");
 
 export function FrangipaniPetal({ className, style }) {
     const id = useLocalId();
@@ -39,6 +39,41 @@ export function FrangipaniPetal({ className, style }) {
             </defs>
             <path d={PETAL} fill={`url(#${id}-p)`} stroke={PETAL_STROKE} strokeWidth="1.2" strokeLinejoin="round" />
         </svg>
+    );
+}
+
+// The blossom and its gradients as <defs>, for callers that want several
+// copies inside one SVG -- `<use href="#{id}-b" />` places one, and a
+// transform on that <use> scales and positions it.
+export function FrangipaniDefs({ id }) {
+    return (
+        <defs>
+            <linearGradient id={`${id}-p`} gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="-106">
+                <stop offset="0%" stopColor="#D9A52C" />
+                <stop offset="16%" stopColor="#F3D488" />
+                <stop offset="42%" stopColor="#FCF2DE" />
+                <stop offset="100%" stopColor="#FFFFFF" />
+            </linearGradient>
+            <radialGradient id={`${id}-c`}>
+                <stop offset="0%" stopColor="#C79422" stopOpacity="0.85" />
+                <stop offset="45%" stopColor="#DCAE3A" stopOpacity="0.45" />
+                <stop offset="100%" stopColor="#DCAE3A" stopOpacity="0" />
+            </radialGradient>
+            <g id={`${id}-b`}>
+                {[0, 1, 2, 3, 4].map((i) => (
+                    <path
+                        key={i}
+                        transform={`rotate(${i * 72})`}
+                        d={PETAL}
+                        fill={`url(#${id}-p)`}
+                        stroke={PETAL_STROKE}
+                        strokeWidth="1.2"
+                        strokeLinejoin="round"
+                    />
+                ))}
+                <circle r="42" fill={`url(#${id}-c)`} />
+            </g>
+        </defs>
     );
 }
 

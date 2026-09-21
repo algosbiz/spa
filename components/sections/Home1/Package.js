@@ -343,6 +343,20 @@ export default function PackageSection({
         </div>
         {useSpreadToggle && (
           <style jsx global>{`
+            /* Same call as the homepage menu: on a phone the 76px thumbnail
+               and its gap eat a fifth of the row for a photo too small to
+               read, and the treatment name is what people are scanning for.
+               The flex gap goes with it so the text starts at the gutter. */
+            @media (max-width: 767px) {
+              .package-section .package-block .inner-box .image {
+                display: none;
+              }
+
+              .package-section .package-block .inner-box {
+                gap: 0;
+              }
+            }
+
             .package-spread-toggles .package-block .inner-box .content .title .package-row-toggle {
               display: flex;
               align-items: center;
