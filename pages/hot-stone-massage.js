@@ -19,7 +19,7 @@ const bookingUrl = "https://wa.me/6287863175144";
 
 const packageOptions = [
   {
-    price: "IDR 449K",
+    price: "IDR 549K",
     name: "Package A",
     treatments: [
       "1.5 Hr Hot Stone",
@@ -28,7 +28,7 @@ const packageOptions = [
     ],
   },
   {
-    price: "IDR 559K",
+    price: "IDR 549K",
     name: "Package B",
     treatments: [
       "1 Hr Hot Stone",
@@ -37,7 +37,7 @@ const packageOptions = [
     ],
   },
   {
-    price: "IDR 489K",
+    price: "IDR 449K",
     name: "Package C",
     treatments: [
       "1 Hr Hot Stone",
@@ -45,7 +45,7 @@ const packageOptions = [
     ],
   },
   {
-    price: "IDR 439K",
+    price: "IDR 519K",
     name: "Package D",
     treatments: [
       "1.5 Hr Hot Stone",
@@ -65,7 +65,7 @@ const durationOptions = [
     ],
   },
   {
-    price: "IDR 370K",
+    price: "IDR 380K",
     duration: "1.5 Hours",
     details: [
       "Full-body hot stone massage",
@@ -74,7 +74,7 @@ const durationOptions = [
     ],
   },
   {
-    price: "IDR 439K",
+    price: "IDR 495K",
     duration: "2 Hours",
     details: [
       "Extended hot stone treatment",

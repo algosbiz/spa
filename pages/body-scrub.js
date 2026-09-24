@@ -24,7 +24,7 @@ const packageOptions = [
     treatments: ["30 Mins Body Scrub", "1 Hr Balinese Massage", "1 Hr Bali Moon Facial"],
   },
   {
-    price: "IDR 449K",
+    price: "IDR 549K",
     name: "Package B",
     treatments: ["30 Mins Body Scrub", "1.5 Hr Hot Stone", "30 Mins Head Massage"],
   },

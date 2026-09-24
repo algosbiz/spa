@@ -28,11 +28,23 @@ const sessionOptions = [
   },
   {
     duration: "1.5 Hours",
-    price: "IDR 450K",
+    price: "IDR 520K",
     recommendations: [
       "Multiple treatment areas",
       "More detailed treatment",
       "Guests wanting a longer session",
+    ],
+  },
+  {
+    duration: "2 Hours",
+    price: "IDR 695K",
+    // Added after the photo set was numbered, so it brings its own photo
+    // rather than shifting every numbered image below the price list.
+    image: "/images/services/cellulitemassage/cellulitemassage-11.webp",
+    recommendations: [
+      "All main target areas",
+      "Most thorough treatment",
+      "Guests wanting the fullest session",
     ],
   },
 ];
@@ -86,7 +98,11 @@ const PAGE_SEO_ROUTE = "/seminyak/anti-cellulite-massage";
 const PAGE_SEO = seoFor(PAGE_SEO_ROUTE);
 
 export default function CelluliteMassage() {
-  const treatmentImages = createTreatmentImageSet("cellulitemassage", sessionOptions.length);
+  const numberedSessions = sessionOptions.filter((session) => !session.image);
+  const treatmentImages = createTreatmentImageSet("cellulitemassage", numberedSessions.length);
+  const pricingImages = sessionOptions.map(
+    (session) => session.image || treatmentImages.pricing[numberedSessions.indexOf(session)]
+  );
   const pricingOptions = sessionOptions.map(({ duration, price, recommendations }) => ({
     name: duration,
     price,
@@ -120,7 +136,7 @@ export default function CelluliteMassage() {
         <div className="cellulite-massage-pricing">
           <Pricing
             leftShapeSrc="/images/shape/package-four-shape-left.png"
-            images={treatmentImages.pricing}
+            images={pricingImages}
             subTitle="Choose Your Session"
             title="Treatment Duration & Pricing"
             text="Every cellulite massage session is tailored to your body and treatment goals. Choose the session length that best suits the areas you'd like us to focus on. Longer sessions allow more time to work across multiple areas while maintaining steady and targeted techniques."

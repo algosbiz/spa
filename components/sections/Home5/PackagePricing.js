@@ -351,6 +351,7 @@ const icons = [
 ];
 
 const packageIconByCardTitle = {
+  "Balinese Massage": "/images/icon/icon-spa/Balinese.png",
   "Thai Massage": "/images/icon/icon-spa/Thai Massage.png",
   "Cream Bath": "/images/icon/icon-spa/Cream Bath.png",
   "Body Scrub": "/images/icon/icon-spa/Body Scrub.png",
@@ -361,6 +362,82 @@ const packageIconByCardTitle = {
 };
 
 const categories = [
+  {
+    "subTitle": "Rejuvenate and Revive",
+    "title": "Balinese Massage Packages",
+    "description": "Our signature Balinese massage is a traditional treatment designed to release muscle tension, ease stress, and restore balance. Available at our Seminyak spa or as a convenient home service, this therapy offers complete relaxation wherever you are. For bookings or package details, please contact us via WhatsApp.",
+    "cardTitle": "Balinese Massage",
+    "packages": [
+      {
+        "price": "IDR 449K",
+        "items": [
+          {
+            "duration": "1 Hr",
+            "service": "Balinese Massage"
+          },
+          {
+            "duration": "1 Hr",
+            "service": "Mani & Pedi"
+          },
+          {
+            "duration": "30 Mins",
+            "service": "Cream Bath"
+          }
+        ]
+      },
+      {
+        "price": "IDR 549K",
+        "items": [
+          {
+            "duration": "1 Hr",
+            "service": "Balinese Massage"
+          },
+          {
+            "duration": "1 Hr",
+            "service": "Mani & Pedi"
+          },
+          {
+            "duration": "1 Hr",
+            "service": "Bali Moon Facial"
+          }
+        ]
+      },
+      {
+        "price": "IDR 449K",
+        "items": [
+          {
+            "duration": "1 Hr",
+            "service": "Balinese Massage"
+          },
+          {
+            "duration": "30 Mins",
+            "service": "Cream Bath"
+          },
+          {
+            "duration": "1 Hr",
+            "service": "Bali Moon Facial"
+          }
+        ]
+      },
+      {
+        "price": "IDR 399K",
+        "items": [
+          {
+            "duration": "1 Hr",
+            "service": "Balinese Massage"
+          },
+          {
+            "duration": "30 Mins",
+            "service": "Manicure"
+          },
+          {
+            "duration": "30 Mins",
+            "service": "Pedicure"
+          }
+        ]
+      }
+    ]
+  },
   {
     "subTitle": "Relax and Revitalize",
     "title": "Thai Massage Packages",
@@ -457,7 +534,7 @@ const categories = [
         ]
       },
       {
-        "price": "IDR 589K",
+        "price": "IDR 549K",
         "items": [
           {
             "duration": "1 Hr",
@@ -533,7 +610,7 @@ const categories = [
         ]
       },
       {
-        "price": "IDR 449K",
+        "price": "IDR 549K",
         "items": [
           {
             "duration": "30 Mins",
@@ -592,7 +669,7 @@ const categories = [
     "cardTitle": "Hot Stone",
     "packages": [
       {
-        "price": "IDR 449K",
+        "price": "IDR 549K",
         "items": [
           {
             "duration": "1,5 Hr",
@@ -609,7 +686,7 @@ const categories = [
         ]
       },
       {
-        "price": "IDR 599K",
+        "price": "IDR 549K",
         "items": [
           {
             "duration": "1 Hr",
@@ -626,7 +703,7 @@ const categories = [
         ]
       },
       {
-        "price": "IDR 489K",
+        "price": "IDR 449K",
         "items": [
           {
             "duration": "1 Hr",
@@ -639,7 +716,7 @@ const categories = [
         ]
       },
       {
-        "price": "IDR 439K",
+        "price": "IDR 519K",
         "items": [
           {
             "duration": "1,5 Hr",

@@ -29,12 +29,12 @@ const packageOptions = [
   {
     price: "IDR 449K",
     name: "Package A",
-    treatments: ["1 Hr Balinese Massage", "1 Hr Medi Pedi", "30 Mins Cream Bath"],
+    treatments: ["1 Hr Balinese Massage", "1 Hr Mani & Pedi", "30 Mins Cream Bath"],
   },
   {
     price: "IDR 549K",
     name: "Package B",
-    treatments: ["1 Hr Balinese Massage", "1 Hr Medi Pedi", "1 Hr Bali Moon Facial"],
+    treatments: ["1 Hr Balinese Massage", "1 Hr Mani & Pedi", "1 Hr Bali Moon Facial"],
   },
   {
     price: "IDR 449K",

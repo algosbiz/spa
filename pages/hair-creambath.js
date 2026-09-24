@@ -24,7 +24,7 @@ const packageOptions = [
     treatments: ["1 Hr Cream Bath", "1 Hr Thai Massage", "1 Hr Bali Moon Facial"],
   },
   {
-    price: "IDR 589K",
+    price: "IDR 549K",
     name: "Package B",
     treatments: ["1 Hr Cream Bath", "1 Hr Hot Stone", "30 Mins Reflexology"],
   },

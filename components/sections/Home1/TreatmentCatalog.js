@@ -55,6 +55,16 @@ function TreatmentItem({ item, itemKey, isOpen, onToggle }) {
           aria-hidden={!isOpen}
         >
           <div className="treatment-catalog__dropdown-inner">
+            {item.benefits?.length ? (
+              <div className="treatment-catalog__benefits">
+                <p className="treatment-catalog__benefits-title">Benefits:</p>
+                <ul>
+                  {item.benefits.map((benefit) => (
+                    <li key={benefit}>{benefit}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
             <div className="treatment-catalog__prices">
               {item.options.map((option) => (
                 <div className="treatment-catalog__option" key={`${option.label}-${option.price}`}>
@@ -370,6 +380,45 @@ export default function TreatmentCatalog({
           margin-right: 48px;
         }
 
+        .treatment-catalog__benefits {
+          margin-top: 16px;
+        }
+
+        .treatment-catalog__benefits-title {
+          margin: 0 0 6px;
+          color: var(--title-color);
+          font-family: var(--text-font);
+          font-size: 15px;
+          font-weight: 700;
+        }
+
+        .treatment-catalog__benefits ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+
+        .treatment-catalog__benefits li {
+          position: relative;
+          padding-left: 14px;
+          color: #5f5a54;
+          font-size: 15px;
+          line-height: 1.65;
+        }
+
+        /* Half the 1.65 line height, less half the dot: centred on the first
+           line at either font size. */
+        .treatment-catalog__benefits li::before {
+          content: "";
+          position: absolute;
+          top: calc(0.825em - 2px);
+          left: 0;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background: var(--theme-color1);
+        }
+
         .treatment-catalog__prices {
           margin-top: 18px;
           border-top: 1px solid rgba(95, 90, 84, 0.18);
@@ -486,7 +535,8 @@ export default function TreatmentCatalog({
             font-size: 20px;
           }
 
-          .treatment-catalog__description {
+          .treatment-catalog__description,
+          .treatment-catalog__benefits li {
             margin-right: 0;
             font-size: 14px;
           }

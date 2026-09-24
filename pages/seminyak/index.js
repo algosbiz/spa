@@ -61,8 +61,8 @@ const pricingTreatments = [
     desc: "A calming massage that uses essential oils and gentle strokes to ease tension and support circulation.",
     options: [
       priceOption("1 Hour", "199K"),
-      priceOption("1.5 Hours", "239K"),
-      priceOption("2 Hours", "339K"),
+      priceOption("1.5 Hours", "339K"),
+      priceOption("2 Hours", "439K"),
     ],
   },
   {
@@ -129,7 +129,7 @@ const pricingTreatments = [
   },
   {
     name: "Biokos Facial",
-    desc: "Spa Facials For Dry, Normal & Oily Face",
+    desc: "A customized facial treatment for dry, normal, or oily skin, including a facial massage and mask.",
     options: [
       priceOption("Biokos", "179K"),
       priceOption("Mustika Ratu", "169K"),
@@ -201,7 +201,11 @@ const pricingTreatments = [
   {
     name: "Cellulite Massage",
     desc: "A targeted massage that helps stimulate circulation and support firmer-looking skin.",
-    options: [priceOption("1 Hour", "350K"), priceOption("1.5 Hours", "450K")],
+    options: [
+      priceOption("1 Hour", "350K"),
+      priceOption("1.5 Hours", "520K"),
+      priceOption("2 Hours", "695K"),
+    ],
   },
   {
     name: "Deep Tissue Massage",
@@ -250,8 +254,8 @@ const pricingTreatments = [
     desc: "A soothing massage using heated basalt stones to relax muscles and encourage circulation.",
     options: [
       priceOption("1 Hour", "250K"),
-      priceOption("1.5 Hours", "370K"),
-      priceOption("2 Hours", "439K"),
+      priceOption("1.5 Hours", "380K"),
+      priceOption("2 Hours", "495K"),
     ],
   },
   {
@@ -288,7 +292,7 @@ const pricingTreatments = [
   },
   {
     name: "Organic Warm Candle Oil Massage",
-    desc: "1 Hr – warm candle wax balinese",
+    desc: "A warming massage using natural candle oils to relax muscles and ease tension.",
     options: [
       priceOption("1 Hour · Warm Candle Wax Balinese", "269K"),
       priceOption("1.5 Hours · Warm Candle Wax Balinese", "399K"),

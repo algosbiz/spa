@@ -18,7 +18,7 @@ const bookingUrl = "https://wa.me/6287863175144";
 
 const sessionOptions = [
   {
-    price: "IDR 219K",
+    price: "IDR 269K",
     name: "1 Hour",
     treatments: [
       "Neck, shoulder, or back tension",
@@ -27,7 +27,7 @@ const sessionOptions = [
     ],
   },
   {
-    price: "IDR 319K",
+    price: "IDR 359K",
     name: "1.5 Hours",
     treatments: [
       "Multiple areas with muscle tightness",

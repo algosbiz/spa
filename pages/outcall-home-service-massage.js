@@ -73,25 +73,47 @@ const couplePackageOptions = [
   ),
 ];
 
-const couplePackageChildren = [
-  childTreatment("Couple Massage Package A", "", [
-    option("1.5 Hours – Balinese Massage + Ear Candle · 2 pax", "IDR 639K"),
-  ]),
-  childTreatment("Couple Massage Package B", "", [
-    option(
-      "2.5 Hours – Balinese Massage + Bali Moon Facial · 2 pax",
-      "IDR 709K"
-    ),
-  ]),
-  childTreatment("Couple Massage Package C", "", [
-    option("1.5 Hours – Warm Candle + Ear Candle · 2 pax", "IDR 849K"),
-  ]),
-  childTreatment("Couple Massage Package D", "", [
-    option(
-      "2.5 Hours – Warm Candle + Bali Moon Facial · 2 pax",
-      "IDR 929K"
-    ),
-  ]),
+// Couple Packages has its own tab, as it had its own group on the old site,
+// so each package is a row there instead of a child of one grouped row.
+const couplePackageTreatments = [
+  treatment(
+    "couple-package-a",
+    "Couple Massage Package A",
+    "",
+    "/images/homepage/homepage-21.webp",
+    [option("1.5 Hours – Balinese Massage + Ear Candle · 2 pax", "IDR 639K")]
+  ),
+  treatment(
+    "couple-package-b",
+    "Couple Massage Package B",
+    "",
+    "/images/homepage/homepage-21.webp",
+    [
+      option(
+        "2.5 Hours – Balinese Massage + Bali Moon Facial · 2 pax",
+        "IDR 709K"
+      ),
+    ]
+  ),
+  treatment(
+    "couple-package-c",
+    "Couple Massage Package C",
+    "",
+    "/images/homepage/homepage-21.webp",
+    [option("1.5 Hours – Warm Candle + Ear Candle · 2 pax", "IDR 849K")]
+  ),
+  treatment(
+    "couple-package-d",
+    "Couple Massage Package D",
+    "",
+    "/images/homepage/homepage-21.webp",
+    [
+      option(
+        "2.5 Hours – Warm Candle + Bali Moon Facial · 2 pax",
+        "IDR 929K"
+      ),
+    ]
+  ),
 ];
 
 const mostPopularTreatments = [
@@ -162,7 +184,7 @@ const mostPopularTreatments = [
   treatment(
     "popular-sports",
     "Sport Massage",
-    "A focused massage designed to relieve muscle tightness and support mobility.",
+    "Targeted to ease muscle soreness, reduce stiffness, and support physical recovery.",
     "/images/homepage/homepage-8.webp",
     [option("1 Hour", "IDR 269K"), option("1.5 Hours", "IDR 359K")]
   ),
@@ -206,8 +228,8 @@ const massageTreatments = [
     "/images/homepage/homepage-1.webp",
     [
       option("1 Hour", "IDR 199K"),
-      option("1.5 Hours", "IDR 239K"),
-      option("2 Hours", "IDR 339K"),
+      option("1.5 Hours", "IDR 339K"),
+      option("2 Hours", "IDR 439K"),
     ]
   ),
   treatment(
@@ -239,7 +261,11 @@ const massageTreatments = [
     "Cellulite Massage",
     "Targeting specific areas to help stimulate circulation and support skin firmness.",
     "/images/homepage/homepage-17.webp",
-    [option("1 Hour", "IDR 350K"), option("1.5 Hours", "IDR 450K")]
+    [
+      option("1 Hour", "IDR 350K"),
+      option("1.5 Hours", "IDR 520K"),
+      option("2 Hours", "IDR 695K"),
+    ]
   ),
   treatment(
     "massage-couple",
@@ -266,7 +292,7 @@ const massageTreatments = [
       ),
       childTreatment(
         "Couple Massage Warm Candle",
-        "Using gently warmed candle oils to help soften muscles and create a calming shared experience.",
+        "Using gently warmed candle oils to create comfort and a deeper sense of relaxation for couples.",
         coupleWarmCandleOptions
       ),
       childTreatment(
@@ -370,7 +396,7 @@ const massageTreatments = [
   treatment(
     "massage-sports",
     "Sport Massage",
-    "A focused massage designed to relieve muscle tightness and support mobility.",
+    "Targeted to ease muscle soreness, reduce stiffness, and support physical recovery.",
     "/images/homepage/homepage-8.webp",
     [option("1 Hour", "IDR 269K"), option("1.5 Hours", "IDR 359K")]
   ),
@@ -426,8 +452,8 @@ const massageTreatments = [
     "/images/homepage/homepage-7.webp",
     [
       option("1 Hour", "IDR 250K"),
-      option("1.5 Hours", "IDR 370K"),
-      option("2 Hours", "IDR 439K"),
+      option("1.5 Hours", "IDR 380K"),
+      option("2 Hours", "IDR 495K"),
     ]
   ),
 ];
@@ -486,7 +512,7 @@ const beautyTreatments = [
   treatment(
     "beauty-biokos-facial",
     "Biokos Facial",
-    "Spa Facials For Dry, Normal & Oily Face",
+    "Custom facial care adjusted for dry, normal, or oily skin, including facial massage and mask application.",
     "/images/homepage/homepage-9.webp",
     [
       option("Biokos", "IDR 179K"),
@@ -564,7 +590,7 @@ const coupleTreatments = [
   treatment(
     "couple-balinese",
     "Couple Balinese Massage",
-    "Performed side by side using steady pressure and flowing techniques for shared relaxation.",
+    "Designed for two to relax together while easing the body and sharing a calm moment.",
     "/images/homepage/homepage-21.webp",
     coupleBalineseOptions
   ),
@@ -585,18 +611,9 @@ const coupleTreatments = [
   treatment(
     "couple-warm-candle",
     "Couple Massage Warm Candle",
-    "Using gently warmed candle oils to help soften muscles and create a calming shared experience.",
+    "Using gently warmed candle oils to create comfort and a deeper sense of relaxation for couples.",
     "/images/homepage/homepage-21.webp",
     coupleWarmCandleOptions
-  ),
-  treatment(
-    "couple-packages",
-    "Couple Packages",
-    "",
-    "/images/homepage/homepage-21.webp",
-    [],
-    undefined,
-    couplePackageChildren
   ),
 ];
 
@@ -605,6 +622,7 @@ const pricingTabs = [
   { label: "Massage", services: massageTreatments },
   { label: "Beauty", services: beautyTreatments },
   { label: "For Couples", services: coupleTreatments },
+  { label: "Couple Packages", services: couplePackageTreatments },
 ];
 
 const outcallHighlights = [

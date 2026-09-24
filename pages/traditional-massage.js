@@ -18,6 +18,18 @@ const bookingUrl = "https://wa.me/6287863175144";
 
 const sessionOptions = [
   {
+    price: "IDR 90K",
+    name: "30 Minutes",
+    // Added after the photo set was numbered, so it brings its own photo
+    // rather than shifting every numbered image below the price list.
+    image: "/images/services/traditionalmassage/traditionalmassage-12.webp",
+    treatments: [
+      "Quick relief for one tense area",
+      "A short break between plans",
+      "Guests short on time",
+    ],
+  },
+  {
     price: "IDR 169K",
     name: "1 Hour",
     treatments: [
@@ -85,7 +97,11 @@ const PAGE_SEO_ROUTE = "/seminyak/traditional-massage";
 const PAGE_SEO = seoFor(PAGE_SEO_ROUTE);
 
 export default function TraditionalMassage() {
-  const treatmentImages = createTreatmentImageSet("traditionalmassage", sessionOptions.length);
+  const numberedSessions = sessionOptions.filter((session) => !session.image);
+  const treatmentImages = createTreatmentImageSet("traditionalmassage", numberedSessions.length);
+  const pricingImages = sessionOptions.map(
+    (session) => session.image || treatmentImages.pricing[numberedSessions.indexOf(session)]
+  );
   return (
     <>
       <Layout HeaderStyle="one" FooterStyle="two" headTitle={PAGE_SEO.title} metaDescription={PAGE_SEO.description} canonicalPath={PAGE_SEO_ROUTE}>
@@ -113,7 +129,7 @@ export default function TraditionalMassage() {
         <div className="traditional-massage-pricing">
           <Pricing
             leftShapeSrc="/images/shape/package-four-shape-left.png"
-            images={treatmentImages.pricing}
+            images={pricingImages}
             subTitle="Select Yours"
             title="Our Session Options"
             text="Our Traditional Massage session provides enough time for therapists to work through areas that hold tension. Choose a shorter treatment for focused relaxation or a longer session for more complete body care."
