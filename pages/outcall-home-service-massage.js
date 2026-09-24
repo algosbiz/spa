@@ -586,6 +586,9 @@ const beautyTreatments = [
   ),
 ];
 
+// The tab fills the left column first. Deep Tissue sits second so it lands
+// across from Warm Candle: both descriptions run to two lines on desktop,
+// which keeps the rows of the two columns level.
 const coupleTreatments = [
   treatment(
     "couple-balinese",
@@ -595,18 +598,18 @@ const coupleTreatments = [
     coupleBalineseOptions
   ),
   treatment(
-    "couple-traditional",
-    "Couple Traditional Massage",
-    "Applied with firmer pressure to help reduce tension while relaxing together.",
-    "/images/homepage/homepage-21.webp",
-    coupleTraditionalOptions
-  ),
-  treatment(
     "couple-deep-tissue",
     "Couple Deep Tissue Massage",
     "Delivered with deeper pressure for two, aimed at easing tight muscles and improving comfort.",
     "/images/homepage/homepage-21.webp",
     coupleDeepTissueOptions
+  ),
+  treatment(
+    "couple-traditional",
+    "Couple Traditional Massage",
+    "Applied with firmer pressure to help reduce tension while relaxing together.",
+    "/images/homepage/homepage-21.webp",
+    coupleTraditionalOptions
   ),
   treatment(
     "couple-warm-candle",
