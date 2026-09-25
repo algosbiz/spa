@@ -362,7 +362,7 @@ const pricingTreatments = [
       priceOption("Full Back", "299K"),
       priceOption("Half Legs", "149K"),
       priceOption("Full Legs", "299K"),
-      priceOption("Waxing Brazilian", "269K"),
+      priceOption("Waxing Brazilian", "350K"),
     ],
   },
 ].map((treatment, index) => ({

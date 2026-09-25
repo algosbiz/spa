@@ -581,7 +581,7 @@ const beautyTreatments = [
       option("Full Back", "IDR 299K"),
       option("Half Legs", "IDR 149K"),
       option("Full Legs", "IDR 299K"),
-      option("Waxing Brazilian", "IDR 269K"),
+      option("Waxing Brazilian", "IDR 350K"),
     ]
   ),
 ];

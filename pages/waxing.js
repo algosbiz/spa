@@ -72,7 +72,7 @@ const waxingOptions = [
     ],
   },
   {
-    price: "IDR 269K",
+    price: "IDR 350K",
     name: "Waxing Brazilian",
     treatments: [
       "Private treatment setting",
