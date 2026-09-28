@@ -116,28 +116,35 @@ const Footer = () => {
                     </div>
                     <div className="col-md-12 col-xl-3">
                         <div className="footer__item">
-                            <h3 className="title">Join Our Newsletter</h3>
-                            <div className="newsletter footer__newsletter">
-                                <form className="input" onSubmit={handleSubscribe}>
-                                    <input
-                                        type="email"
-                                        placeholder="Your Email"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        disabled={status === 'loading'}
-                                        required
-                                    />
-                                    <button type="submit" disabled={status === 'loading'}>
-                                        {status === 'loading' ? 'Sending...' : 'Subscribe'}
-                                    </button>
-                                </form>
-                                {message ? (
-                                    <p className="footer__newsletter-note" style={{ color: status === 'success' ? '#28a745' : '#dc3545' }}>
-                                        {message}
-                                    </p>
-                                ) : (
-                                    <p className="footer__newsletter-note">Just the occasional note about new treatments and offers.</p>
-                                )}
+                            {/* Wrapped so the heading and the form hide together on a
+                                phone -- the column is already long there and the sign-up
+                                was the one block nobody scrolled that far to use. It
+                                still renders (and still gets indexed) on tablet and up;
+                                the rule lives in _footer.scss under max-md. */}
+                            <div className="footer__newsletter-block">
+                                <h3 className="title">Join Our Newsletter</h3>
+                                <div className="newsletter footer__newsletter">
+                                    <form className="input" onSubmit={handleSubscribe}>
+                                        <input
+                                            type="email"
+                                            placeholder="Your Email"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            disabled={status === 'loading'}
+                                            required
+                                        />
+                                        <button type="submit" disabled={status === 'loading'}>
+                                            {status === 'loading' ? 'Sending...' : 'Subscribe'}
+                                        </button>
+                                    </form>
+                                    {message ? (
+                                        <p className="footer__newsletter-note" style={{ color: status === 'success' ? '#28a745' : '#dc3545' }}>
+                                            {message}
+                                        </p>
+                                    ) : (
+                                        <p className="footer__newsletter-note">Just the occasional note about new treatments and offers.</p>
+                                    )}
+                                </div>
                             </div>
                             <div className="footer__payments">
                                 <h3 className="title">Accepted Payments:</h3>

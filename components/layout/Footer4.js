@@ -65,13 +65,17 @@ const Footer = () => {
                             </div>
                             <div className="col-md-12 col-xl-3">
                                 <div className="footer__item">
-                                    <h3 className="title">Join Our Newsletter</h3>
-                                    <div className="newsletter footer__newsletter">
-                                        <div className="input">
-                                            <input type="email" placeholder="Your Email" />
-                                            <button type="button">Subscribe</button>
+                                    {/* Same wrapper as Footer2: the sign-up is hidden
+                                        below 768px so the column does not run on. */}
+                                    <div className="footer__newsletter-block">
+                                        <h3 className="title">Join Our Newsletter</h3>
+                                        <div className="newsletter footer__newsletter">
+                                            <div className="input">
+                                                <input type="email" placeholder="Your Email" />
+                                                <button type="button">Subscribe</button>
+                                            </div>
+                                            <p className="footer__newsletter-note">We Won&apos;t Spam. We Hate It More Than You Do.</p>
                                         </div>
-                                        <p className="footer__newsletter-note">We Won&apos;t Spam. We Hate It More Than You Do.</p>
                                     </div>
                                     <div className="footer__payments">
                                         <h3 className="title">Accepted Payments:</h3>

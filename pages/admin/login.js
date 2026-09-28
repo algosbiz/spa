@@ -50,7 +50,7 @@ export default function AdminLogin() {
                     <div className="card-accent" aria-hidden="true" />
 
                     <div className="brand">
-                        <img src="/images/logo/SMBtitle.svg" alt="Spa Bali Moon" width="435" height="80" />
+                        <img src="/images/logo/SMBtitle.svg" alt="Spa Bali Moon" width="444" height="80" />
                     </div>
 
                     <div className="divider" aria-hidden="true">

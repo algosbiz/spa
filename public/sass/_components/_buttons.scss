@@ -339,19 +339,24 @@ Scroll To Top style
     width: 56px;
     height: 56px;
     box-sizing: border-box;
-    border: 2px solid var(--theme-color1);
-    font-size: 30px;
-    line-height: 52px;
-    color: var(--theme-color1);
+    // WhatsApp's own colours rather than the site gold. The gold outline read
+    // as a decorative badge and people were not clicking it; the green disc
+    // with the white glyph is the mark everyone already knows, so it is worth
+    // the one place on the site that steps outside the palette.
+    // #25D366 is WhatsApp's brand green, #128C7E the darker one it pairs with.
+    border: none;
+    font-size: 32px;
+    line-height: 1;
+    color: #ffffff;
     text-align: center;
     cursor: pointer;
-    background-color: var(--theme-color-white);
+    background-color: #25d366;
     z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 4px 14px rgba(18, 140, 126, 0.35);
 	transition: all 0.3s;
     @include media-breakpoint-down(xxl){
         bottom: 122px;
@@ -372,8 +377,9 @@ Scroll To Top style
     }
 }
 
-.whatsapp-float:hover {
-    background: var(--theme-color-white);
-    border-color: #8a6f1c;
-    color: #8a6f1c;
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+    background: #1da851;
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(18, 140, 126, 0.45);
 }

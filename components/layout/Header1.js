@@ -136,7 +136,7 @@ const Header1 = ({ scroll }) => {
                 <div className="header-one__wrp">
                     <div className="header__main">
                         <Link prefetch={false} href="/" className="logo">
-                            <img src="/images/logo/SMBtitle.svg" alt="logo" width="435" height="80"/>
+                            <img src="/images/logo/SMBtitle.svg" alt="logo" width="444" height="80"/>
                         </Link>
                         <div className="main-menu">
                             <nav>
@@ -282,7 +282,7 @@ const Header1 = ({ scroll }) => {
                     <div className="sidebar__contact-info mt-30">
                         <p className="mb-20" style={{ color: "#2f2924", fontFamily: "var(--title-font)", fontSize: "20px", fontWeight: 500, lineHeight: "30px" }}>Contact Info</p>
                         <ul>
-                            <li><i className="fa-solid fa-location-dot" style={{ color: "#A78627" }}></i> <Link prefetch={false} href="/#0" style={{ color: "#5f5a54" }}>Jl. Panggung Sari No. 30, Seminyak, Bali</Link></li>
+                            <li><i className="fa-solid fa-location-dot" style={{ color: "#A78627" }}></i> <Link prefetch={false} href="/#0" style={{ color: "#5f5a54" }}>Jl. Pangkung Sari No. 30, Seminyak, Bali</Link></li>
                             <li className="py-2"><i className="fa-solid fa-phone-volume" style={{ color: "#A78627" }}></i> <a href="https://wa.me/6287863175144" target="_blank" rel="noopener noreferrer" style={{ color: "#5f5a54" }}>+62 878-6317-5144</a></li>
                         </ul>
                     </div>

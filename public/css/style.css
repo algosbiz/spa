@@ -3328,19 +3328,19 @@ Scroll To Top style
   width: 56px;
   height: 56px;
   box-sizing: border-box;
-  border: 2px solid var(--theme-color1);
-  font-size: 30px;
-  line-height: 52px;
-  color: var(--theme-color1);
+  border: none;
+  font-size: 32px;
+  line-height: 1;
+  color: #ffffff;
   text-align: center;
   cursor: pointer;
-  background-color: var(--theme-color-white);
+  background-color: #25d366;
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 14px rgba(18, 140, 126, 0.35);
   transition: all 0.3s;
 }
 @media (max-width: 1399.98px) {
@@ -3354,10 +3354,11 @@ Scroll To Top style
   }
 }
 
-.whatsapp-float:hover {
-  background: var(--theme-color-white);
-  border-color: #8a6f1c;
-  color: #8a6f1c;
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  background: #1da851;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(18, 140, 126, 0.45);
 }
 
 .progress-area .progress {
@@ -10147,6 +10148,12 @@ textarea.form-control {
   }
   .footer__bottom-links a:not(:last-child)::after {
     display: none;
+  }
+  .footer__newsletter-block {
+    display: none;
+  }
+  .footer__newsletter-block + .footer__payments {
+    margin-top: 0;
   }
 }
 @media (max-width: 767px) {

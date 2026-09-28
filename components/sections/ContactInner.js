@@ -21,7 +21,7 @@ const defaultContactItems = [
     {
         icon: 'fa-location-dot',
         title: 'Visit anytime',
-        text: 'Jl. Panggung Sari No. 30, Seminyak, Bali',
+        text: 'Jl. Pangkung Sari No. 30, Seminyak, Bali',
     },
 ];
 

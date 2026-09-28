@@ -67,7 +67,7 @@ export default async function handler(req, res) {
                     </div>
                     <div style="padding: 30px; text-align: center; border-top: 1px solid #e5ddd0;">
                         <h3 style="color: #3d3428; margin: 0 0 12px; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Contact Info</h3>
-                        <p style="margin: 0 0 5px; color: #6b5e4e; font-size: 13px;">Jl. Panggung Sari No. 30, Seminyak, Bali</p>
+                        <p style="margin: 0 0 5px; color: #6b5e4e; font-size: 13px;">Jl. Pangkung Sari No. 30, Seminyak, Bali</p>
                         <p style="margin: 0 0 5px; color: #6b5e4e; font-size: 13px;">+62 878-6317-5144</p>
                         <p style="margin: 0 0 20px; font-size: 13px;"><a href="mailto:info@spabalimoon.com" style="color: #b8952e; text-decoration: none;">info@spabalimoon.com</a></p>
                         

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 28.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 434.9 80" style="enable-background:new 0 0 434.9 80;" xml:space="preserve">
+	 viewBox="0 0 444 80" style="enable-background:new 0 0 444 80;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#A78627;}
 </style>
@@ -46,7 +46,15 @@
 			<path class="st0" d="M40.3,66.9c-3.5-2.9-5.7-6.5-7.3-10.6C34.6,56.7,40.2,64.9,40.3,66.9z"/>
 		</g>
 	</g>
-	<g>
+<!-- The wordmark is nudged right so the lotus is not sitting on the "S".
+     Master artwork had 11.3 units of air there against 13.5 and 14.3 between
+     the words, and the mark being a big round shape made it read tighter
+     still. 20.4 is the same clear space, relative to the lotus, that
+     SMBtitle-footer.svg already uses, so the two lockups now match.
+     The viewBox grew by the same 9.1, so keep the width attribute on every
+     img that points here (444x80) in step with it, or the reserved box is
+     the wrong shape and the header shifts on load. -->
+<g transform="translate(9.1,0)">
 		<path class="st0" d="M112.2,55.7c-1.9,0-3.6-0.4-5.3-1.1c-1.7-0.7-3-1.6-4.1-2.8l-0.7,3.4h-1.8l-1.1-11.4l2.1-0.2
 			c0.5,1.7,1.2,3.1,1.9,4.3c0.7,1.2,1.6,2.1,2.5,2.9c0.9,0.7,1.9,1.3,3,1.6c1.1,0.4,2.2,0.5,3.3,0.5c1.4,0,2.6-0.2,3.7-0.7
 			c1.1-0.5,2-1.2,2.6-2.2c0.7-1,1-2.3,1-4c0-1.2-0.2-2.3-0.7-3.2s-1.3-1.8-2.5-2.6c-1.2-0.8-2.9-1.5-5.1-2.3c-2-0.7-3.7-1.3-5-2

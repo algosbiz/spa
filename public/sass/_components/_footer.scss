@@ -504,6 +504,20 @@
 	.footer__bottom-links a:not(:last-child)::after {
 		display: none;
 	}
+
+	// Sign-up hidden on phones. The rules above still stack the field and the
+	// button for tablets in portrait, which is where the newsletter now starts
+	// showing; they are kept rather than deleted for that reason.
+	// "Accepted Payments" is the next block in the same column and carries a
+	// 28px top margin meant to separate it from the form -- with the form gone
+	// the column heading would start with a stray gap, so it is dropped here.
+	.footer__newsletter-block {
+		display: none;
+	}
+
+	.footer__newsletter-block + .footer__payments {
+		margin-top: 0;
+	}
 }
 
 // The floating WhatsApp button is 56px tall and sits 24px off the bottom on

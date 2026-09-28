@@ -70,7 +70,7 @@ export default function AdminDashboard({ initialPosts }) {
                 <header className="topbar">
                     <div className="topbar-inner">
                         <Link href="/admin" className="brand">
-                            <img src="/images/logo/SMBtitle.svg" alt="Spa Bali Moon" width="435" height="80" />
+                            <img src="/images/logo/SMBtitle.svg" alt="Spa Bali Moon" width="444" height="80" />
                             <span className="eyebrow">Content Studio</span>
                         </Link>
                         <div className="top-actions">
